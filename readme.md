@@ -1,6 +1,6 @@
 # Localized [AVA](https://github.com/sindresorhus/ava) docs
 
-- None yet.
+- [French](fr_FR/readme.md)
 
 
 ## Contribute
