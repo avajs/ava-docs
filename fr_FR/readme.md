@@ -1,3 +1,8 @@
+___
+**Note du traducteur**
+
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/52d2a7a1625f31c86bd2a1ad5222013bf20b6d5e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > Lanceur de test futuriste
@@ -33,6 +38,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Asserts améliorées](#asserts-améliorées)
+- [Sortie facultative au format TAP](#sortie-facultative-au-format-tap)
 
 
 ## Syntaxe d'un Test
@@ -105,6 +111,7 @@ $ ava --help
     --fail-fast  Stop after first test failure
     --serial     Run tests serially
     --require    Module to preload (Can be repeated)
+    --tap        Generate TAP output
 
   Examples
     ava
@@ -356,17 +363,7 @@ test(t => {
 
 ### Prise en charge de ES2015
 
-AVA est livré avec un support intégré pour ES2015 via [Babel](https://babeljs.io).
-
-Il suffit d'écrire vos tests en ES2015. Aucune configuration supplémentaire n'est nécessaire.
-
-```js
-test(t => {
-	t.pass();
-});
-```
-
-Nous ne supportons pas encore [Babel 6](https://github.com/sindresorhus/ava/pull/221), mais vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle.
+AVA est livré avec un support intégré pour ES2015 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2015. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec les presets [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) et [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/).
 
 #### Transpilation des modules importés
 
@@ -455,6 +452,16 @@ test.cb(t => {
 	fs.readFile('data.txt', t.end);
 });
 ```
+
+### Sortie facultative au format TAP
+
+AVA peut générer une sortie au format TAP via l'option `--tap` pour utiliser un ["reporter TAP"](https://github.com/sindresorhus/awesome-tap#reporters).
+
+```
+$ ava --tap | tap-nyan
+```
+
+<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
 
 ## API
@@ -556,10 +563,6 @@ Affirme que `function` lève `error` ou rejète `promise`.
 
 Affirme que `function` ne lève pas `error` ou résout `promise`.
 
-### .regexTest(regex, contents, [message])
-
-Affirme que `regex` correspond à `contents`.
-
 ### .ifError(error, [message])
 
 Affirme que `error` est falsy.
@@ -653,7 +656,7 @@ Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` a
 
 ### Comment l'écrire et le prononcer ?
 
-AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?raw=true).
+AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### Que représente l'arrière plan de l'image ?
 
