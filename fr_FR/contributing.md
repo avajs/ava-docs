@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0f0cbe9b0d5a71609a8f5a7afcb412f2bf41ad91...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/65ae07c76b2a5927e6bcc00630a691c98f6e7c46...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -38,6 +38,7 @@ Nous avons un [chat](https://gitter.im/sindresorhus/ava). Venez, espionnez, parl
 ### Soumettez un pull request
 
 - Les changements non triviaux doivent d'abord plutôt être débattus dans une issue : pour éviter de faire un travail inutile.
+- Pour des tâches importantes, nous vous conseillons  dès que possible de présenter votre travail à la communauté pour avoir son avis. Ouvrez un pull request, dès que vous avez fait le minimum nécessaire, pour démontrer votre idée. À ce stade précoce, ne vous inquiétez pas si les choses ne sont pas parfaites ou 100% terminées. Ajouter un préfixe [WIP] dans le titre et décrivez ce que vous avez encore besoin de faire. Cela permet à ceux qui l'examine de ne pas chercher la petite bête ou de signaler des améliorations dont vous savez déjà que vous devez les faire.
 - Les nouvelles fonctionnalités doivent être accompagnées avec des tests et de la documentation (en anglais).
 - N'ajoutez pas des changements qui ne sont pas en rapport avec le pull request.
 - Vérifiez (Lint) et testez avant de soumettre un pull request en exécutant `$ npm test`.
