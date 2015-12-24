@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/52d2a7a1625f31c86bd2a1ad5222013bf20b6d5e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/f6cef7fcf361a33d22a6eeefdf067c41c0fbdc98...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -124,7 +124,7 @@ $ ava --help
   test.js test-*.js test/*.js
 ```
 
-Les fichiers qui commencent par `_` sont ignorés. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
+Les fichiers, qui sont dans les répertoires nommés `fixtures` et `helpers`, sont ignorés, de la même manière que les fichiers qui commencent par `_`. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
 
 *AVERTISSEMENT : COMPORTEMENT NON-STANDARD :* Le CLI de AVA essaiera toujours de trouver et d'utiliser l'installation AVA locale dans vos projets. Cela est vrai même lorsque vous exécutez la commande globale `ava`. Ce comportement non-standard résout une importante [issue](https://github.com/sindresorhus/ava/issues/157) et ne devrait avoir aucun impact sur l'utilisation quotidienne.
 
