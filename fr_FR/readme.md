@@ -152,7 +152,7 @@ test('name', t => {
 
 ### Nom facultatif du test
 
-La dénomination du test est facultatif, mais nous vous recommandons d'en utiliser une si vous avez plusieurs tests.
+La dénomination du test est facultative, mais nous vous recommandons d'en utiliser une si vous avez plusieurs tests.
 
 ```js
 test(t => {
@@ -170,7 +170,7 @@ test(function name(t) {
 
 ### Assertion planifiée
 
-Une assertion **plan**-ifiée peut être utilisée pour s'assurer qu'un certain nombre d'assertions soient faites. Dans le scénario le plus courant, il confirme que le test n'est pas sorti avant d'exécuter le nombre prévu d'assertions. Il fait échoué également le test si trop d'assertions sont exécutées, ce qui peut être utile si vous avez des assertions à l'intérieur des callbacks ou des boucles.
+Une assertion **plan**-ifiée peut être utilisée pour s'assurer qu'un certain nombre d'assertions soient faites. Dans le scénario le plus courant, il confirme que le test n'est pas sorti avant d'exécuter le nombre prévu d'assertions. Il fait également échouer le test si trop d'assertions sont exécutées, ce qui peut être utile si vous avez des assertions à l'intérieur des callbacks ou des boucles.
 
 Cela se traduira par un test réussi :
 
@@ -238,7 +238,7 @@ test.serial(t => {
 
 ### Les tests avec only
 
-Les tests avec `only` sont les seuls tests qui seront exécuter. Cela peut être utile pour exécuter seulement quelques tests lors du développement.
+Les tests avec `only` sont les seuls tests qui seront exécutés. Cela peut être utile pour exécuter seulement quelques tests lors du développement.
 
 ```js
 test('ne sera pas exécuté', t => {
@@ -263,7 +263,7 @@ test.skip('ne sera pas exécuté', t => {
 ### Les [hooks](https://fr.wikipedia.org/wiki/Hook_%28informatique%29) before & after
 
 Lorsqu'une configuration et/ou une déconfiguration est nécessaire, vous pouvez utiliser `test.before()` et `test.after()`,
-de la même manière que `test()`. Les fonctions de test `test.before()` et `test.after()` sont appelées avant/après tous les tests. Vous pouvez aussi utiliser `test.beforeEach()` et `test.afterEach()` si vous avez besoin de configurer/déconfigurer pour chaque test. Les hooks sont exécutés en série dans le fichier de test. Ajoutez en autant que vous le voulez. Vous pouvez éventuellement spécifier un titre qui sera affiché en cas d'échec.
+de la même manière que `test()`. Les fonctions de test `test.before()` et `test.after()` sont appelées avant/après tous les tests. Vous pouvez aussi utiliser `test.beforeEach()` et `test.afterEach()` si vous avez besoin de configurer/déconfigurer pour chaque test. Les hooks sont exécutés en série dans le fichier de test. Ajoutez-en autant que vous le voulez. Vous pouvez éventuellement spécifier un titre qui sera affiché en cas d'échec.
 
 
 ```js
@@ -503,7 +503,7 @@ La fin du test. Fonctionne uniquement avec `test.cb()`.
 
 ## Assertions
 
-Les assertions sont mélangés dans le [contexte](#context) du test :
+Les assertions sont mélangées dans le [contexte](#context) du test :
 
 ```js
 test(t => {
@@ -557,7 +557,7 @@ Affirme que `value` n'est pas deep equal à `expected`.
 
 Affirme que `function` lève `error` ou rejète `promise`.
 
-`error` peut-être un constructeur, une regex, une message d'erreur ou une fonction de validation.
+`error` peut-être un constructeur, une regex, un message d'erreur ou une fonction de validation.
 
 ### .doesNotThrow(function|promise, [message])
 
@@ -624,7 +624,7 @@ Amusez-vous !
 
 ## Environnement isolé
 
-Chaque fichier de test est exécuté dans un processus Node.js séparé. Cela apporte beaucoup d'avantages. Les différentes fichiers de test ne peuvent plus affecter les autres. Comme pour les fichiers de test maquettés avec l'environnement global, réécriture de fonction interne, etc. Cependant, cela a été principalement fait pour des raisons de performance. Même si Node.js peut exécuter des IO simultanément en asynchrone, cela ne vous aide pas beaucoup lorsque les tests sont lourds sur des opérations synchrones, qui bloque le thread principal. En exécutant des tests simultanément et des fichiers de test en parallèle, nous tirons pleinement parti des systèmes modernes.
+Chaque fichier de test est exécuté dans un processus Node.js séparé. Cela apporte beaucoup d'avantages. Les différents fichiers de test ne peuvent plus affecter les autres. Comme pour les fichiers de test maquettés avec l'environnement global, réécriture de fonction interne, etc. Cependant, cela a été principalement fait pour des raisons de performance. Même si Node.js peut exécuter des IO simultanément en asynchrone, cela ne vous aide pas beaucoup lorsque les tests sont lourds sur des opérations synchrones, qui bloque le thread principal. En exécutant des tests simultanément et des fichiers de test en parallèle, nous tirons pleinement parti des systèmes modernes.
 
 
 ## Astuces
