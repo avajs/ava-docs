@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/72e87d9466a3a6f7b035a61cb526f25c32b414bf...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/16c7282e97c9ab671bc1d56920fd3fb125a65eab...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -18,6 +18,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 
 - [Utilisation](#utilisation)
 - [Utilisation du CLI](#cli)
+- [Configuration](#configuration)
 - [Documentation](#documentation)
 - [API](#api)
 - [Assertions](#assertions)
@@ -129,6 +130,28 @@ $ ava --help
 Les répertoires sont par défaut récursifs. Les fichiers, qui sont dans les répertoires nommés `fixtures` et `helpers`, sont ignorés, de la même manière que les fichiers qui commencent par `_`. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
 
 *AVERTISSEMENT : COMPORTEMENT NON-STANDARD :* Le CLI de AVA essaiera toujours de trouver et d'utiliser l'installation AVA locale dans vos projets. Cela est vrai même lorsque vous exécutez la commande globale `ava`. Ce comportement non-standard résout une importante [issue](https://github.com/sindresorhus/ava/issues/157) et ne devrait avoir aucun impact sur l'utilisation quotidienne.
+
+## Configuration
+
+Toutes les options du CLI peuvent être configurés dans la section `ava` de votre `package.json`. Cela vous permet de modifier le comportement par défaut de la commande `ava`, ainsi vous n'avez plus besoin à chaque fois de taper les mêmes options sur l'invite de commande.
+
+```json
+{
+  "ava": {
+    "files": [
+      "my-test-folder/*.js",
+      "!**/not-this-file.js"
+    ],
+    "failFast": true,
+    "serial": true,
+    "tap": true,
+    "verbose": true,
+    "require": ["babel-core/register", "coffee-script/register"]
+  }
+}
+```
+
+Les arguments passés au CLI seront toujours prioritaire sur ceux de la configuration dans `package.json`.
 
 ## Documentation
 
@@ -569,6 +592,17 @@ Affirme que `function` ne lève pas `error` ou résout `promise`.
 
 Affirme que `error` est falsy.
 
+## Assertions ignorées
+
+Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les assertions ignorées sont encore comptées, donc il n'y a pas besoin de changer le nombre d'assertion dans `plan`.
+
+```js
++test(t => {
+  t.plan(2);
+  t.skip.is(foo(), 5); // pas besoin de changer le nombre d'assertion dans `plan`.
+  t.is(1, 1);
+});
+```
 
 ## Asserts améliorées
 
