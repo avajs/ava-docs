@@ -23,6 +23,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 - [API](#api)
 - [Aserciones](#aserciones)
 - [FAQ](#faq)
+- [Recetas](#Recetas)
 
 
 ## ¿Por qué AVA?
@@ -700,6 +701,10 @@ AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/sindreso
 ### Concurrencia vs. paralelismo
 
 Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stackoverflow.com/q/1050222)
+
+## Recetas
+
+- [Endpoint testing](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)
 
 
 ## Soporte
