@@ -23,7 +23,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 - [API](#api)
 - [Aserciones](#aserciones)
 - [FAQ](#faq)
-- [Recetas](#Recetas)
+- [Recetas](#recetas)
 
 
 ## ¿Por qué AVA?
