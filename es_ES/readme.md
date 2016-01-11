@@ -109,7 +109,7 @@ $ ava --help
     ava [<file|folder|glob> ...]
 
   Options (Opciones)
-    --init       Add AVA to your project (Añadir a AVA a su proyecto)
+    --init       Add AVA to your project (Añadir AVA a su proyecto)
     --fail-fast  Stop after first test failure (Parar después de que el test falle)
     --serial     Run tests serially (Ejecutar tests en serie)
     --require    Module to preload (Can be repeated) (Módulo a precargar (se puede repetir))
