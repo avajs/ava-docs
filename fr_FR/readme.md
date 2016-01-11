@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/16c7282e97c9ab671bc1d56920fd3fb125a65eab...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -23,6 +23,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 - [API](#api)
 - [Assertions](#assertions)
 - [FAQ](#faq)
+- [Recettes](#recettes)
 
 
 ## Pourquoi AVA?
@@ -104,18 +105,18 @@ $ npm test
 ```
 $ ava --help
 
-  Usage
+  Usage (Utilisation)
     ava [<file|folder|glob> ...]
 
   Options
-    --init       Add AVA to your project
-    --fail-fast  Stop after first test failure
-    --serial     Run tests serially
-    --require    Module to preload (Can be repeated)
-    --tap        Generate TAP output
-    --verbose    Enable verbose output
+    --init       Add AVA to your project (Ajouter AVA à votre projet)
+    --fail-fast  Stop after first test failure (Arrêter dès qu'un test échoue)
+    --serial     Run tests serially (Lancer les tests  )
+    --require    Module to preload (Can be repeated) (Module à précharger (peut être répété))
+    --tap        Generate TAP output (Générer une sortie au format TAP)
+    --verbose    Enable verbose output (Activer le mode verbose)
 
-  Examples
+  Examples (Exemples)
     ava
     ava test.js test2.js
     ava test-*.js
@@ -123,7 +124,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments:
+  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments):
   test.js test-*.js test/**/*.js
 ```
 
@@ -151,7 +152,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
 }
 ```
 
-Les arguments passés au CLI seront toujours prioritaire sur ceux de la configuration dans `package.json`.
+Les arguments passés au CLI seront toujours prioritaires sur ceux de la configuration dans `package.json`.
 
 ## Documentation
 
@@ -701,6 +702,11 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 ### Simultanéité et parallélisme
 
 La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En savoir plus](http://stackoverflow.com/q/1050222).
+
+
+## Recettes
+
+- [Tester un endpoint](docs/recipes/endpoint-testing.md)
 
 
 ## Support
