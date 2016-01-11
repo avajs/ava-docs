@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/16c7282e97c9ab671bc1d56920fd3fb125a65eab...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -105,18 +105,18 @@ $ npm test
 ```
 $ ava --help
 
-  Usage
+  Usage (Uso)
     ava [<file|folder|glob> ...]
 
-  Options
-    --init       Add AVA to your project
-    --fail-fast  Stop after first test failure
-    --serial     Run tests serially
-    --require    Module to preload (Can be repeated)
-    --tap        Generate TAP output
-    --verbose    Enable verbose output
+  Options (Opciones)
+    --init       Add AVA to your project (Añadir a AVA a su proyecto)
+    --fail-fast  Stop after first test failure (Parar después de que el test falle)
+    --serial     Run tests serially (Ejecutar tests en serie)
+    --require    Module to preload (Can be repeated) (Módulo a precargar (se puede repetir))
+    --tap        Generate TAP output (Generar salida de TAP)
+    --verbose    Enable verbose output (Habilitar el modo verboso)
 
-  Examples
+  Examples (Ejemplos)
     ava
     ava test.js test2.js
     ava test-*.js
@@ -124,7 +124,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments:
+  Default patterns when no arguments (Patrones por defecto cuando no hay argumentos):
   test.js test-*.js test/**/*.js
 ```
 
