@@ -704,7 +704,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 
 ## Recetas
 
-- [Endpoint testing](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)
+- [Endpoint testing](docs/recipes/endpoint-testing.md)
 
 
 ## Soporte
