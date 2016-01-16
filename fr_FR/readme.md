@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/f5369c779f81cbe4c1cc260380afdab6e18a2603...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/d6032fc4cc94d3fc6bce37b2d917492e76381c73...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -41,7 +41,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Asserts améliorées](#asserts-améliorées)
 - [Sortie facultative au format TAP](#sortie-facultative-au-format-tap)
-- [Nettoyage de la stack trace](nettoyage-de-la-stack-trace)
+- [Nettoyage de la stack trace](#nettoyage-de-la-stack-trace)
 
 
 ## Syntaxe d'un Test
@@ -469,7 +469,7 @@ test(t => {
 });
 ```
 
-### Callback support
+### Prise en charge du Callback
 
 AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'utilisation de callback d'API avec le style node d'["erreur-en-premier"](http://thenodeway.io/posts/understanding-error-first-callbacks/). AVA considérera toute valeur truthy passée comme premier argument à `t.end` comme une erreur. Notez que `t.end` exige le "mode callback", qui peut être activé en utilisant le chainage `test.cb`.
 
@@ -698,6 +698,10 @@ Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de v
 ### Pourquoi ne pas utiliser `mocha`, `tape` ou `node-tap` ?
 
 Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` avec l'interface par défaut (que la plupart des gens utilisent), il est trop flexible, gourmand, synchrone par défaut, l'exécution des tests se fait en série et il est lent. Tape et node-tap sont bons. AVA est fortement inspiré par leur syntaxe. Cependant, tous les deux exécutent les tests en série et ils ont rendu [TAP](https://testanything.org) comme un élément indispensable, ce qui a mon avis, rend leurs codes de base un peu compliqué et sans possibilité de s'en séparer. La restitution de TAP est difficile à lire donc vous avez toujours besoin de l'aide d'un "reporter". AVA est très opiniâtre et s'exécute en simultané. Il est livré avec un "reporter" simple par défaut et il supporte TAP grâce à une option du CLI.
+
+### Comment puis-je utiliser des "reporters" personnalisés ?
+
+Utilisez l'[option `--tap`](##sortie-facultative-au-format-tap) avec un [reporter TAP](https://github.com/sindresorhus/awesome-tap#reporters).
 
 ### Comment l'écrire et le prononcer ?
 
