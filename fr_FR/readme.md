@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/d6032fc4cc94d3fc6bce37b2d917492e76381c73...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/61008b23a57488d2f2b53ffd874ca43f5701ab9e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -701,7 +701,7 @@ Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` a
 
 ### Comment puis-je utiliser des "reporters" personnalisés ?
 
-Utilisez l'[option `--tap`](##sortie-facultative-au-format-tap) avec un [reporter TAP](https://github.com/sindresorhus/awesome-tap#reporters).
+Utilisez l'[option `--tap`](#sortie-facultative-au-format-tap) avec un [reporter TAP](https://github.com/sindresorhus/awesome-tap#reporters).
 
 ### Comment l'écrire et le prononcer ?
 
@@ -736,6 +736,7 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
+- [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
 
 
 ## Créé par
