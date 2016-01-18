@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/61008b23a57488d2f2b53ffd874ca43f5701ab9e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/5d36a8045d5f124b63b0b287091f8efc0ef732a4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -110,12 +110,12 @@ $ ava --help
     ava [<file|folder|glob> ...]
 
   Options
-    --init       Add AVA to your project (Ajouter AVA à votre projet)
-    --fail-fast  Stop after first test failure (Arrêter dès qu'un test échoue)
-    --serial     Run tests serially (Lancer les tests  )
-    --require    Module to preload (Can be repeated) (Module à précharger (peut être répété))
-    --tap        Generate TAP output (Générer une sortie au format TAP)
-    --verbose    Enable verbose output (Activer le mode verbose)
+    --init           Add AVA to your project (Ajouter AVA à votre projet)
+    --fail-fast      Stop after first test failure (Arrêter dès qu'un test échoue)
+    --serial, -s     Run tests serially (Lancer les tests  )
+    --require, -r    Module to preload (Can be repeated) (Module à précharger (peut être répété))
+    --tap, -t        Generate TAP output (Générer une sortie au format TAP)
+    --verbose, -v    Enable verbose output (Activer le mode verbose)
 
   Examples (Exemples)
     ava
