@@ -718,6 +718,7 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 
 ## Recettes
 
+- [Couverture de code](docs/recipes/code-coverage.md)
 - [Tester un endpoint](docs/recipes/endpoint-testing.md)
 
 
