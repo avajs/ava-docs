@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/5d36a8045d5f124b63b0b287091f8efc0ef732a4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -41,6 +41,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 - [Soporte a Observable](#soporte-a-observable)
 - [Aserciones mejoradas](#aserciones-mejoradas)
 - [Salida de TAP opcional](#salida-tap-opcional)
+- [Trazas de pila limpias](#trazas-de-pila-limpias)
 
 
 ## Sintaxis de test
@@ -109,12 +110,12 @@ $ ava --help
     ava [<file|folder|glob> ...]
 
   Options (Opciones)
-    --init       Add AVA to your project (Añadir AVA a su proyecto)
-    --fail-fast  Stop after first test failure (Parar después de que el test falle)
-    --serial     Run tests serially (Ejecutar tests en serie)
-    --require    Module to preload (Can be repeated) (Módulo a precargar (se puede repetir))
-    --tap        Generate TAP output (Generar salida de TAP)
-    --verbose    Enable verbose output (Habilitar el modo verboso)
+    --init       	Add AVA to your project (Añadir AVA a su proyecto)
+    --fail-fast  	Stop after first test failure (Parar después de que el test falle)
+    --serial, -s    Run tests serially (Ejecutar tests en serie)
+    --require, -r   Module to preload (Can be repeated) (Módulo a precargar (se puede repetir))
+    --tap, -t       Generate TAP output (Generar salida de TAP)
+    --verbose, -v   Enable verbose output (Habilitar el modo verboso)
 
   Examples (Ejemplos)
     ava
@@ -488,6 +489,12 @@ $ ava --tap | tap-nyan
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
+### Trazas de pila limpias
+
+AVA elimina automáticamente líneas sin relación de la pila, lo que le permite encontrar la fuente de un error mucho más rápido.
+
+<img src="ttps://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
+
 
 ## API
 
@@ -690,6 +697,10 @@ Desde la versión `5.0.0` utiliza source maps para reportar la cobertura de su c
 
 Mocha requiere el uso de globales implícitas como `describe` y `it` por defecto (que utilizan la mayoría de las personas), sin demasiadas opiniones buenas, hinchado, síncrono por defecto, ejecuta los tests en serie y es lento. Tape y node-tap son bastante buenos. AVA está muy inspirado en su sintaxis. Sin embargo, ambos ejecutan los tests en serie y han hecho de [TAP](https://testanything.org) un ciudadano de primera clase que ha hecho en mi humilde opinión que sus códigos base sean un poco enrevesadas y acopladas. La salida de TAP es difícil de leer, así que siempre terminan usando una herramienta de reporte de TAP externa. AVA tiene bastantes buenas opiniones y es concurrente. Viene con un simple reporter por defecto y tiene voluntad en el futuro de dar apoyo a Tun TAP reporter.
 
+### ¿Cómo puedo utilizar reportes personalizados?
+
+Use la [opción `--tap`](#salida-tap-opcional) con cualquier [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters).
+
 ### ¿Cómo es el nombre escrito y pronunciado?
 
 AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
@@ -704,6 +715,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 
 ## Recetas
 
+- [Cobertura de código](docs/recipes/code-coverage.md)
 - [Endpoint testing](docs/recipes/endpoint-testing.md)
 
 
@@ -717,6 +729,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Ejecutar tests con gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Ejecutar tests con grunt
+- [fly-ava](https://github.com/pine613/fly-ava) - Ejecutar tests con fly
 
 
 ## Creado por
