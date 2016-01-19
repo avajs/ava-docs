@@ -493,7 +493,7 @@ $ ava --tap | tap-nyan
 
 AVA elimina automáticamente líneas sin relación de la pila, lo que le permite encontrar la fuente de un error mucho más rápido.
 
-<img src="ttps://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
+<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
 
 ## API
