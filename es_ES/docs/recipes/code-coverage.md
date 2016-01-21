@@ -3,7 +3,6 @@ ___
 
 Esta es la traducción del archivo [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/c636fe46eb04aac4f8dc3001c1192badb1c4ad57...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-coverage.md`, será por que la traducción está actualizada).
 ___
-
 # Cobertura de código
 
 Como AVA [genera los archivos de test][isolated-env] no se puede usar ['istanbul'] para la cobertura de código, en cambio, se puede lograr esto con ['nyc'] que es básicamente ['istanbul'] con apoyo de sub-process.
@@ -15,6 +14,7 @@ Primero instalar NYC:
 ```
 $ npm install nyc --save-dev
 ```
+
 Luego añadir los directorios de '.nyc_output' y 'coverage' al archivo '.gitignore'.
 
 `.gitignore`:
@@ -70,6 +70,7 @@ Hay dos cosas importantes a tener en cuenta en el ejemplo anterior.
   1. Ignorar los archivos de test porque AVA ya maneja la transpilación de los tests por usted.
 
   2. Especificar 'inline' en sourceMaps para desarrollo. Esto es importante para generar correctamente la cobertura. Utilizando la sección 'env' de la configuración de Babel nos permite desactivar la opción de sourceMaps para construcciones de producción.
+
 
 ### Crear script de compilación
 
@@ -139,6 +140,7 @@ Para combinarlos en un reporte HTML entendible, haga lo siguiente:
 ```
 $ ./node_modules/.bin/nyc report --reporter=html
 ```
+
 O use un script de npm para ahorrarse el escribrlo:
 
 ```json
@@ -170,12 +172,13 @@ Entonces añada lo siguiente a su archivo de `.travis.yml`:
 after_success:
     - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
 ```
+
 Su informe de cobertura aparecerá en coveralls poco después de que Travis termine.
 
 [`babel`]:      https://github.com/babel/babel
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava#isolated-environment
+[isolated-env]: https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md#entorno-aislado
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
