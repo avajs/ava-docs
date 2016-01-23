@@ -1,3 +1,9 @@
+---
+**訳注**
+
+これは[code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/66aeefb5a2b90d90a82f91b32b6c202f2b2567a2...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`code-coverage.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+---
+
 # コードカバレッジ
 
 AVAは[テストファイルの実行を隔離された環境で行う][isolated-env]ので、コードカバレッジに[`istanbul`]を使うことはできません。代わりに、基本的にはサブプロセスのサポートがある[`istanbul`]である[`nyc`]で代用できます。なので、まずこれをインストールする必要があります:

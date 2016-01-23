@@ -1,3 +1,9 @@
+---
+**訳注**
+
+これは[readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+---
+
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > 未来型のテストランナー
