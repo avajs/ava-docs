@@ -427,7 +427,7 @@ test(t => {
 
 ### generator関数のサポート
 
-AVAは[generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)をサポートしています。
+AVAは[generator](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/function*)をサポートしています。
 
 ```js
 test(function * (t) {
@@ -533,7 +533,7 @@ Type: `function`
 
 ## アサーション
 
-アサーションはテストの[コンテキスト](#コンテキスト)に混ぜられます:
+アサーションはテストの[コンテキスト](#context)に混ぜられます:
 
 ```js
 test(t => {
@@ -685,7 +685,7 @@ $ ava --serial
 
 ### コードカバレッジ
 
-AVAが[実行するテストファイル](#isolated-environment)のコードカバレッジに[`istanbul`](https://github.com/gotwarlost/istanbul)を使うことは出来ませんが、代わりに基本的にサブプロセスのサポートがある`istanbul`である[`nyc`](https://github.com/bcoe/nyc)を利用できます。
+AVAが[実行するテストファイル](#隔離された環境)のコードカバレッジに[`istanbul`](https://github.com/gotwarlost/istanbul)を使うことは出来ませんが、代わりに基本的にサブプロセスのサポートがある`istanbul`である[`nyc`](https://github.com/bcoe/nyc)を利用できます。
 
 バージョン`5.0.0`では、トランスパイルに関係なく、実際のコードのカバレッジをレポートするのにソースマップを使います。テスト対象のコードがインラインのソースマップかソースマップファイルへの参照のいずれかを含んでいることを確認してください。`babel/register`を使っていれば、`.babelrc`で`sourceMaps`オプションを`inline`に設定することができます。
 
@@ -702,7 +702,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 ### ヘッダーの背景は何?
 
-[アンドロメダ銀河です。](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
+[アンドロメダ銀河です。](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AD%E3%83%A1%E3%83%80%E9%8A%80%E6%B2%B3)
 
 ### 並行 vs. 並列
 
@@ -711,6 +711,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 ## レシピ
 
+- [コードカバレッジ](docs/recipes/code-coverage.md)
 - [エンドポイントのテスト](docs/recipes/endpoint-testing.md)
 
 
