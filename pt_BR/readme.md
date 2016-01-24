@@ -89,7 +89,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="screenshot.png" width="150" align="right">
+<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
 
 #### Execute
 
@@ -154,7 +154,7 @@ Argumentos passados para a CLI sempre terão precedência sobre a configuração
 
 ## Documentação
 
-Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promessa, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [async functions](#async-function-support); Elas produzem código assíncrono conciso e legível, e retornam, implicitamente, uma promessa, assim você não precisa fazê-lo.
+Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promessa, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [async functions](#suporte-para-funções-assíncronas); Elas produzem código assíncrono conciso e legível, e retornam, implicitamente, uma promessa, assim você não precisa fazê-lo.
 
 Se você não retornar um dos objetos assíncronos suportados, mencionados acima, o teste é considerado síncrono e encerrado imediatamente.
 
@@ -166,7 +166,7 @@ Arquivos de teste são executados a partir de seu diretório atual, portanto, [`
 
 ### Teste de anatomia
 
-Para criar um teste, você chama a função `test` após o `require` do AVA e passa um nome de teste opcional e uma função que contém a execução do teste. A função fornecida recebe o contexto como primeiro argumento, onde você pode chamar os distintos métodos de AVA [assertions](#assertions).
+Para criar um teste, você chama a função `test` após o `require` do AVA e passa um nome de teste opcional e uma função que contém a execução do teste. A função fornecida recebe o contexto como primeiro argumento, onde você pode chamar os distintos métodos de AVA [assertions](#asserções).
 
 ```js
 test('name', t => {
@@ -220,7 +220,7 @@ test.cb(t => {
 AVA não suporta mais encerrar automaticamente testes via `t.plan(...)`. Isso ajuda a evitar falsos positivos se você adiciona asserções, mas se esquece de aumentar sua contagem de plano.
 
 ```js
-// This no longer works
+// Isto não funciona mais
 
 test('auto ending is dangerous', t => {
 	t.plan(2);
@@ -228,7 +228,7 @@ test('auto ending is dangerous', t => {
 	t.pass();
 	t.pass();
 
-	// auto-ending after reaching the planned two assertions will miss this final one
+	// auto-encerramento depois de alcançar as duas asserções planejadas fará com que este último se perca
 	setTimeout(() => t.fail(), 10000);
 });
 ```
@@ -243,7 +243,7 @@ test.cb('explicitly end your tests', t => {
 	t.pass();
 
 	setTimeout(() => {
-		// This failure is now reliably caught.
+		// Esta falha é agora detectada de forma confiável.
 		t.fail();
 		t.end();
 	}, 1000);
@@ -290,27 +290,27 @@ Quando instalação e/ou subdivisão é necessária, você pode usar `test.befor
 
 ```js
 test.before(t => {
-	// this runs before all tests
+	// isto é executado antes de todos os testes
 });
 
 test.before(t => {
-	// this runs after the above, but before tests
+	// isto é executado após o acima, mas antes dos testes
 });
 
 test.after('cleanup', t => {
-	// this runs after all tests
+	// isto é executado após todos os testes
 });
 
 test.beforeEach(t => {
-	// this runs before each test
+	// isto é executado antes de cada teste
 });
 
 test.afterEach(t => {
-	// this runs after each test
+	// isto é executado após cada teste
 });
 
 test(t => {
-	// regular test
+	// teste normal
 });
 ```
 
@@ -396,7 +396,7 @@ Como uma solução simples, você pode usar [Babel's require hook](https://babel
 ```js
 import test from 'ava';
 import 'babel-core/register';
-import foo from './foo'; // <-- foo can be written in ES2015!
+import foo from './foo'; // <-- foo pode ser escrito em ES2015!
 
 test('foo bar', t => {
 	t.same('baz', foo('bar'));
@@ -419,7 +419,7 @@ test(t => {
 
 ### Suporte para função geradora
 
-AVA vem com suporte embutido para [funções geradoras](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
+AVA vem com suporte embutido para [funções geradoras](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/function*).
 
 ```js
 test(function * (t) {
@@ -438,7 +438,7 @@ test(async function (t) {
 	t.true(value);
 });
 
-// async arrow function
+// função arrow assíncrona
 test(async t => {
 	const value = await promiseFn();
 	t.true(value);
@@ -457,7 +457,7 @@ test(t => {
 	t.plan(3);
 	return Observable.of(1, 2, 3, 4, 5, 6)
 		.filter(n => {
-			// only even numbers
+			// somente números pares
 			return n % 2 === 0;
 		})
 		.map(() => t.pass());
@@ -470,7 +470,7 @@ AVA suporta o uso de `t.end` como callback final ao usar APIs de callback node-s
 
 ```js
 test.cb(t => {
-	// t.end automatically checks for error as first argument
+	// t.end  verifica automaticamente se há erro como primeiro argumento
 	fs.readFile('data.txt', t.end);
 });
 ```
@@ -483,14 +483,14 @@ AVA pode gerar saída TAP através da opção `--tap` para uso com qualquer [TAP
 $ ava --tap | tap-nyan
 ```
 
-<img src="media/tap-output.png" width="398">
+<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
 
 ### Rastreamentos limpos de Pilha
 
 AVA automaticamente remove linhas independentes em rastreamentos de pilha, permitindo que você encontre a fonte de um erro muito mais rápido.
 
-<img src="media/stack-traces.png" width="300">
+<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
 
 ## API
@@ -536,7 +536,7 @@ Asserções são misturadas no [context](#context) do teste:
 
 ```js
 test(t => {
-	t.ok('unicorn'); // assertion
+	t.ok('unicorn'); // asserção
 });
 ```
 
@@ -603,7 +603,7 @@ Qualquer asserção pode ser ignorada usando o modificador `skip`. Asserções i
 ```js
 test(t => {
   t.plan(2);
-  t.skip.is(foo(), 5); // no need to change your plan count when skipping.
+  t.skip.is(foo(), 5); // não é necessário mudar sua contagem de plano ao ignorar.
   t.is(1, 1);
 });
 ```
@@ -698,11 +698,11 @@ Use a [`--tap` flag](#optional-tap-output) com qualquer [TAP reporter](https://g
 
 ### Como o nome é escrito e pronunciado?
 
-AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?raw=true).
+AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### O que é o plano de fundo do cabeçalho?
 
-[Galáxia de Andrômeda.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
+[Galáxia de Andrômeda.](https://pt.wikipedia.org/wiki/Gal%C3%A1xia_de_Andr%C3%B4meda)
 
 ### Simultaneidade vs. paralelismo
 
