@@ -1,8 +1,8 @@
----
+___
 **訳注**
 
 これは[code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/b76f3d513a41edd876f70fc3e61d7d968cd531a6...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`code-of-conduct.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
----
+___
 
 # コントリビューターの行動規範
 

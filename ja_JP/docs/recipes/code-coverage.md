@@ -1,8 +1,8 @@
----
+___
 **訳注**
 
 これは[code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/66aeefb5a2b90d90a82f91b32b6c202f2b2567a2...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`code-coverage.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
----
+___
 
 # コードカバレッジ
 
