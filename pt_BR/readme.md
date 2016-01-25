@@ -1,4 +1,4 @@
-# ![AVA](media/header.png)
+# ![AVA](https://raw.githubusercontent.com/sindresorhus/ava/master/media/header.png)
 
 > Executor de testes futurista
 

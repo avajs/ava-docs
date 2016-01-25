@@ -6,7 +6,7 @@ Como o AVA [gera os arquivos de teste][isolated-env], você não pode usar [`ist
 
 ## Configuração
 
-Primeiro instale o NYC:
+Primeiro, instale o NYC:
 
 ```
 $ npm install nyc --save-dev
@@ -42,7 +42,7 @@ Se você deseja criar relatórios de cobertura HTML, ou carregar dados de cobert
 
 Usar Babel para transpilar seu código de produção é um pouco mais complicado. Aqui, dividimos essa tarefa em vários passos.
 
-### Configure Babel
+### Configure o Babel
 
 Em primeiro lugar, precisamos de uma configuração do Babel. O que se segue é apenas um exemplo. Você terá que modificá-lo para atender às suas necessidades.
 
