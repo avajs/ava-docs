@@ -38,7 +38,7 @@ Usar NYC para fornecer cobertura para o código de produção escrito em ES5 é 
 
 Se você deseja criar relatórios de cobertura HTML, ou carregar dados de cobertura para o Coveralls, você deve pular para as seções abaixo.
 
-## ES2015 coverage
+## Cobertura ES2015
 
 Usar Babel para transpilar seu código de produção é um pouco mais complicado. Aqui, dividimos essa tarefa em vários passos.
 
