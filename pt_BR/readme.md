@@ -14,7 +14,7 @@ Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_
 ## Índice
 
 - [Utilização](#utilização)
-- [Utilização da CLI](#cli)
+- [Utilização do CLI](#cli)
 - [Configuração](#configuração)
 - [Documentação](#documentação)
 - [API](#api)
@@ -32,7 +32,7 @@ Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_
 - Sem globais implícitas
 - [Ambiente isolado para cada arquivo de teste](#ambiente-isolado)
 - [Escreva seus teste em ES2015](#suporte-para-es2015)
-- [Suporte para Promessas](#suporte-para-promessas)
+- [Suporte para promises](#suporte-para-promises)
 - [Suporte para função geradora](#suporte-para-função-geradora)
 - [Suporte para funções assíncronas](#suporte-para-funções-assíncronas)
 - [Suporte para Observável](#suporte-para-observável)
@@ -128,7 +128,7 @@ $ ava --help
 
 Diretórios são recursivos por padrão. Os arquivos em diretórios nomeados `fixtures` e `helpers` são ignorados, assim como arquivos que começam com `_`. Isso pode ser útil para ter helpers no mesmo diretório que seus arquivos de teste.
 
-*ATENÇÃO: COMPORTAMENTO NÃO-PADRÃO:* A CLI AVA sempre tentará encontrar e usar a instalação local do AVA em seus projetos. Isto é verdadeiro mesmo quando você executar o comando global `ava`. Este comportamento não-padrão resolve uma importante [issue](https://github.com/sindresorhus/ava/issues/157), e não deve ter nenhum impacto no uso diário.
+*ATENÇÃO: COMPORTAMENTO NÃO-PADRÃO:* O CLI AVA sempre tentará encontrar e usar a instalação local do AVA em seus projetos. Isto é verdadeiro mesmo quando você executar o comando global `ava`. Este comportamento não-padrão resolve uma importante [issue](https://github.com/sindresorhus/ava/issues/157), e não deve ter nenhum impacto no uso diário.
 
 ## Configuração
 
@@ -154,11 +154,11 @@ Argumentos passados para a CLI sempre terão precedência sobre a configuração
 
 ## Documentação
 
-Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promessa, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [async functions](#suporte-para-funções-assíncronas); Elas produzem código assíncrono conciso e legível, e retornam, implicitamente, uma promessa, assim você não precisa fazê-lo.
+Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promise, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [async functions](#suporte-para-funções-assíncronas); Elas produzem código assíncrono conciso e legível, e retornam implicitamente uma promise, assim você não precisa fazê-lo.
 
 Se você não retornar um dos objetos assíncronos suportados, mencionados acima, o teste é considerado síncrono e encerrado imediatamente.
 
-Se você é incapaz de usar promessas ou outros objetos assíncronos suportados, você pode ativar o "callback mode", definindo seu teste com `test.cb([title], fn)`. Testes declarados desta forma **devem** deve ser manualmente encerrados com `t.end()`. Este modo destina-se principalmente para testar APIs do estilo callback.
+Se você é incapaz de usar promises ou outros objetos assíncronos suportados, você pode ativar o "callback mode", definindo seu teste com `test.cb([title], fn)`. Testes declarados desta forma **devem** deve ser manualmente encerrados com `t.end()`. Este modo destina-se principalmente para testar APIs do estilo callback.
 
 Você deve definir todos os testes de forma síncrona. Eles não podem ser definidos dentro de `setTimeout`, `setImmediate`, etc.
 
@@ -166,7 +166,7 @@ Arquivos de teste são executados a partir de seu diretório atual, portanto, [`
 
 ### Teste de anatomia
 
-Para criar um teste, você chama a função `test` após o `require` do AVA e passa um nome de teste opcional e uma função que contém a execução do teste. A função fornecida recebe o contexto como primeiro argumento, onde você pode chamar os distintos métodos de AVA [assertions](#asserções).
+Para criar um teste, você chama a função `test` após o `require` do AVA e passa um nome de teste opcional e uma função que contém a execução do teste. A função fornecida recebe o contexto como primeiro argumento, no qual você pode chamar os distintos métodos e [asserções](#asserções) do AVA.
 
 ```js
 test('name', t => {
@@ -194,7 +194,7 @@ test(function name(t) {
 
 ### Plano de asserção
 
-Um plano de asserção pode ser usado para garantir que um número específico de asserções é feito. No cenário mais comum, ele valida que o teste não saia antes de executar o número esperado de asserções. Ele também falha o teste se muitas asserções são executadas, o que pode ser útil se você tem afirmações dentro de callbacks ou loops.
+Um plano de asserção pode ser usado para garantir que um número específico de asserções seja feito. No cenário mais comum, ele valida que o teste não saia antes de executar o número esperado de asserções. Ele também falha o teste se muitas asserções são executadas, o que pode ser útil se você tem afirmações dentro de callbacks ou loops.
 
 Isso resultará em um teste aprovado:
 
@@ -217,7 +217,7 @@ test.cb(t => {
 
 #### ATENÇÃO: Ruptura recente.
 
-AVA não suporta mais encerrar automaticamente testes via `t.plan(...)`. Isso ajuda a evitar falsos positivos se você adiciona asserções, mas se esquece de aumentar sua contagem de plano.
+AVA não suporta mais encerrar automaticamente testes via `t.plan(...)`. Isso ajuda a evitar falsos positivos se você adicionar asserções, mas se esquecer de aumentar sua contagem de plano.
 
 ```js
 // Isto não funciona mais
@@ -286,7 +286,7 @@ test.skip('will not be run', t => {
 
 ### Hooks before e after
 
-Quando instalação e/ou subdivisão é necessária, você pode usar `test.before()` e `test.after()`, da mesma maneira que `test()`. A função de teste fornecida para `test.before()` e `test.after()` é chamada antes/após todos os testes. Você também pode usar `test.beforeEach()` e `test.afterEach()` se você precisa de configuração/subdivisão para cada teste. Hooks são executados serialmente no arquivo teste. Adicione quantos quiser. Opcionalmente, você pode especificar um título que é mostrado em caso de falha.
+Quando instalação e/ou subdivisão é necessária, você pode usar `test.before()` e `test.after()`, da mesma maneira que `test()`. A função de teste fornecida para `test.before()` e `test.after()` é chamada antes ou após todos os testes. Você também pode usar `test.beforeEach()` e `test.afterEach()` se você precisa de configuração/subdivisão para cada teste. Hooks são executados serialmente no arquivo teste. Adicione quantos quiser. Opcionalmente, você pode especificar um título que é mostrado em caso de falha.
 
 ```js
 test.before(t => {
@@ -373,7 +373,7 @@ Isso é especialmente útil temporariamente usando `skip` ou `only` em um teste,
 
 ### Módulo personalizado de asserção
 
-Você pode usar qualquer módulo de asserção no lugar, ou além, do que vem com o AVA, mas você não será capaz de usar o método `.plan()`, [ainda](https://github.com/sindresorhus/ava/issues/25).
+Você pode usar qualquer módulo de asserção no lugar ou além do que vem com o AVA, mas você não será capaz de usar o método `.plan()`, [ainda](https://github.com/sindresorhus/ava/issues/25).
 
 ```js
 import assert from 'assert';
@@ -405,9 +405,9 @@ test('foo bar', t => {
 
 [#111](https://github.com/sindresorhus/ava/issues/111) está rastreando este item como um melhoria em potencial.
 
-### Suporte para Promessas
+### Suporte para promises
 
-Se você retornar uma promessa no teste, você não precisa explicitamente encerrá-lo, já que se encerrará quando a promessa for resolvida.
+Se você retornar uma promise no teste, você não precisa explicitamente encerrá-lo, já que se encerrará quando a promise for resolvida.
 
 ```js
 test(t => {
@@ -664,7 +664,7 @@ Divirta-se!
 
 ## Ambiente isolado
 
-Cada arquivo de teste é executado em um processo separado do Node.js. Isso traz uma série de benefícios. Arquivos de teste diferentes já não podem afetar uns aos outros. Como arquivos de teste afetando o ambiente global, substituindo builtins, etc. No entanto, isso é feito principalmente por motivos de desempenho. Mesmo que Node.js possa executar IO assíncronos simultaneamente, isso não ajuda muito quando testes são pesados em operações síncronas, o que bloqueia o thread principal.  Ao executar testes simultaneamente e arquivos de teste em paralelo, podemos tirar o máximo proveito de sistemas modernos.
+Cada arquivo de teste é executado em um processo separado do Node.js. Isso traz uma série de benefícios. Arquivos de teste diferentes já não podem afetar uns aos outros. Como arquivos de teste afetando o ambiente global, substituindo builtins, etc. No entanto, isso é feito principalmente por motivos de desempenho. Mesmo que o Node.js possa executar IO assíncronos simultaneamente, isso não ajuda muito quando testes são pesados em operações síncronas, o que bloqueia o thread principal.  Ao executar testes simultaneamente e arquivos de teste em paralelo, podemos tirar o máximo proveito de sistemas modernos.
 
 ## Dicas
 
