@@ -1,3 +1,9 @@
+___
+**Nota do tradutor**
+
+Esta é a tradução de [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). [Este link](https://github.com/sindresorhus/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master) compara a versão em que se baseiou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `code-coverage.md`, então a tradução está atualizada.
+___
+
 # Cobertura de código
 
 Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md)

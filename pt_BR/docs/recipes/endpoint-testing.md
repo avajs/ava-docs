@@ -1,3 +1,9 @@
+___
+**Nota do tradutor**
+
+Esta é a tradução de [endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md). [Este link](https://github.com/sindresorhus/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master) compara a versão em que se baseiou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `endpoint-testing.md`, então a tradução está atualizada.
+___
+
 # Teste de Endpoint
 
 Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](endpoint-testing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md)
