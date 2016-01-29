@@ -598,6 +598,10 @@ Afirma que `function` gera um erro ou rejeições de `promise`.
 
 Afirma que `function` não gera um `error` ou resoluções de `promise`.
 
+### .regex(contents, regex, [message])
+
+Afirma que `contents` corresponde a `regex`.
+
 ### .ifError(error, [message])
 
 Afirma que `error` é falsy.
