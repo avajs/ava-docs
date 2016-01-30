@@ -1,13 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/b76f3d513a41edd876f70fc3e61d7d968cd531a6...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/d72723b9154f992b62b1e995bd7756cb93e7674c...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
 ✨ Merci pour votre contribution à AVA ! ✨
 
 Veuillez noter que ce projet est publié avec un [Code de conduite du contributeur](code-of-conduct.md). En participant à ce projet, vous vous engagez à respecter ses termes.
+
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md)
 
 ## Comment puis-je contribuer ?
 

@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/c636fe46eb04aac4f8dc3001c1192badb1c4ad57...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Couverture de code
+
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md)
 
 Comme AVA [génère les fichiers de test][isolated-env], vous ne pouvez pas utiliser [`istanbul`] pour la couverture de code. A la place, vous pouvez le faire avec [`nyc`] qui est essentiellement comme [`istanbul`] avec le support des sous-processus (sub-process).
 
@@ -67,9 +69,9 @@ Tout d'abord, nous aurons besoin d'une configuration de Babel. Ce qui suit est j
 
 Il y a deux choses importantes à noter sur l'exemple ci-dessus.
 
-  1. Nous ignorons les fichiers de test car AVA gère déjà pour vous la transpilation des tests.
+1. Nous ignorons les fichiers de test car AVA gère déjà pour vous la transpilation des tests.
 
-  2. Nous spécifions `inline` pour sourceMaps pour l'environnement `development`. Ceci est important pour générer correctement la couverture. L'utilisation de la section `env` dans la configuration de Babel, nous permet de désactiver les sources maps lors du build de la production.
+2. Nous spécifions `inline` pour sourceMaps pour l'environnement `development`. Ceci est important pour générer correctement la couverture. L'utilisation de la section `env` dans la configuration de Babel, nous permet de désactiver les sources maps lors du build de la production.
 
 
 ### Créez un script build
@@ -80,9 +82,9 @@ Comme il est peu probable de vouloir `inline` pour les source maps dans votre co
 
 ```json
 {
-  "scripts": {
-    "build": "BABEL_ENV=production babel --out-dir=dist index.js"
-  }
+	"scripts": {
+		"build": "BABEL_ENV=production babel --out-dir=dist index.js"
+	}
 }
 ```
 
@@ -109,7 +111,7 @@ Pour utiliser le hook `require` de Babel, ajoutez `babel-core/register` à la se
 En combinant les étapes ci-dessus, votre `package.json` complet devrait ressembler à ceci :
 
 ```json
-{    
+{
 	"scripts": {
 		"test": "nyc ava",
 		"build": "BABEL_ENV=production babel --out-dir=dist index.js"
@@ -170,7 +172,7 @@ Ensuite, ajoutez ce qui suit à votre `.travis.yml` :
 
 ```yaml
 after_success:
-    - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
+	- './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
 ```
 
 Votre rapport de couverture apparaîtra alors sur coveralls peu de temps après que le service Travis soit terminé.

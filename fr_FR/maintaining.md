@@ -1,9 +1,9 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0f0cbe9b0d5a71609a8f5a7afcb412f2bf41ad91...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0316047c8df66202e308ce095eb2f335f4aac1c1...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# Maintenance
+# Maintenance [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
 
 
 ## Test
@@ -28,3 +28,35 @@ ___
 - Assurez vous que le [guide de contribution](contributing.md) est respecté.
 - Au moins deux membres de l'équipe doivent apposer un `LGTM` sur le pull request avant de le merger.
 - Faites un squash des commits avant de merger.
+
+
+## Analyse de l'exécution
+
+Vous devez d'abord installer globalement [`iron-node`](https://github.com/s-a/iron-node) et / ou [`devtool`](https://github.com/Jam3/devtool) :
+
+```
+$ npm install --global iron-node devtool
+```
+
+A la racine du projet qui utilise AVA, exécutez :
+
+```
+$ iron-node node_modules/ava/profile.js <test-file>
+```
+
+Ou :
+
+```
+$ devtool node_modules/ava/profile.js <test-file>
+```
+
+Une fois que la fenêtre Dev Tools est chargée, activez l'analyse de la mémoire ou du CPU, puis appuyez sur <kbd>Cmd</kbd> <kbd>R</kbd> pour relancer les tests.
+
+Dès que les tests sont terminés, arrêtez l'enregistrement et inspectez les résultats d'analyse'. Le flamegraph peut être affiché en choisissant `Chart` (graphique) dans la liste déroulante sur l'onglet `Profiles` (il y a d'autres vues `Tree (top down)` et `Heavy (bottom up)`).
+
+Vous pouvez également consulter la page Settings (Paramètres) dans Dev Tools et activer une ou plusieurs options dans la section Profiling (Analyse).
+
+##### Ressources utiles
+
+ - [Une introduction pour déboguer Node.js avec `devtool`](http://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools).
+ - [Une vidéo d'introduction sur l'analyse d'exécution du CPU et de la mémoire avec Chrome DevTools](https://www.youtube.com/watch?v=KKwmdTByxLk).
