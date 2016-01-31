@@ -1,9 +1,11 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/c636fe46eb04aac4f8dc3001c1192badb1c4ad57...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-coverage.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-coverage.md`, será por que la traducción está actualizada).
 ___
 # Cobertura de código
+
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md)
 
 Como AVA [genera los archivos de test][isolated-env] no se puede usar ['istanbul'] para la cobertura de código, en cambio, se puede lograr esto con ['nyc'] que es básicamente ['istanbul'] con apoyo de sub-process.
 
