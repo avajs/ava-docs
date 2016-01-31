@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/5d36a8045d5f124b63b0b287091f8efc0ef732a4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/9f1a38e222be1318292ec748358dfe161ad50432...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -12,6 +12,8 @@ ___
 A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecutarse en paralelo debido a su naturaleza asíncrona. AVA aprovecha esto y corre sus tests al mismo tiempo, lo que es especialmente beneficioso para tests pesados en IO. Además, los archivos de test se ejecutan en paralelo como procesos separados, que le da un mejor rendimiento y un entorno aislado para cada archivo de test. [Cambiando](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha a AVA en Pageres llevó el tiempo de los test por debajo de 31 segundos, concretamente a 11 segundos. El tener tests que se ejecutan al mismo tiempo nos obliga a escribir tests atómicos, es decir, los tests no dependen del estado global o el estado de otros tests, lo que está muy bien!
 
 *Lea nuestra [guía de contribución](contributing.md) si está pensando en contribuir (issues/PRs/etc).*
+
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md)
 
 
 ## Tabla de contenidos
@@ -585,7 +587,7 @@ Afirmando que `valor` es profundamente igual a `esperado`.
 
 Afirmando que `valor` no es profundamente igual a `esperado`.
 
-### .throws(function|promise, error, [mensaje])
+### .throws(function|promise, [error, [message]])
 
 Afirmando que `function` arroja un error o `promesa` rechazada.
 
@@ -594,6 +596,10 @@ Afirmando que `function` arroja un error o `promesa` rechazada.
 ### .doesNotThrow(function|promise, [mensaje])
 
 Afirma que `function` no lanza un `error` o resuelve la `promise`.
+
+### .regex(contents, regex, [message])
+
+Afirma que `contents` coincide con `regex`.
 
 ### .ifError(error, [mensaje])
 
