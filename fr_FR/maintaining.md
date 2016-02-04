@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0316047c8df66202e308ce095eb2f335f4aac1c1...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/c22eabd717451dbeaeeff1520f399f5a5fd85764...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
 
@@ -60,3 +60,44 @@ Vous pouvez également consulter la page Settings (Paramètres) dans Dev Tools e
 
  - [Une introduction pour déboguer Node.js avec `devtool`](http://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools).
  - [Une vidéo d'introduction sur l'analyse d'exécution du CPU et de la mémoire avec Chrome DevTools](https://www.youtube.com/watch?v=KKwmdTByxLk).
+
+
+## Benchmarking
+
+D'abord, collectez des données de benchmark pour une branche/un commit :
+
+```
+$ node bench/run
+```
+
+Une fois que vous avez recueilli des données à partir de deux/trois branches/commits :
+
+```
+$ node bench/compare
+```
+
+*Vous pouvez par exemple recueillir des données de benchmark de votre travail et du dernier commit.*
+
+![](https://cloud.githubusercontent.com/assets/4082216/12700805/bf18f730-c7bf-11e5-8a4f-fec0993c053f.png)
+
+Vous pouvez maintenant lancer un sous-ensemble de test :
+
+```
+$ node bench/run.js concurrent/sync.js serial/sync.js -- concurrent/sync.js -- serial/sync.js
+```
+
+Veuillez remarquer le séparateur `--`. Cela correspond au même benchmark que les trois commandes suivantes.
+
+```
+$ ava concurrent/sync.js serial/sync.js
+$ ava concurrent/sync.js
+$ ava serial/sync.js
+```
+
+Aussi, si vous faites une suite de benchmark qui doit échouer, vous devez ajouter l'option `--should-fail` dans ce groupe :
+
+```
+$ node bench/run.js concurrent/sync.js -- --should-fail other/failures.js
+```
+
+Le benchmark ci-dessus a deux commandes, mais il s'attend à ce que la seconde échoue.

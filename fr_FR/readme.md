@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/9f1a38e222be1318292ec748358dfe161ad50432...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/39982a5c12b90c31ef3e0dea8c0e3499c47a7bc9...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -726,6 +726,7 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 
 - [Couverture de code](docs/recipes/code-coverage.md)
 - [Tester un endpoint](docs/recipes/endpoint-testing.md)
+- [Quand utiliser `t.plan()` ?](docs/recipes/when-to-use-plan.md)
 
 
 ## Support
