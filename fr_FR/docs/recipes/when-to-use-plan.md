@@ -5,7 +5,7 @@ C'est la traduction du fichier [when-to-use-plan.md](https://github.com/sindreso
 ___
 # Quand utiliser `t.plan()` ?
 
-Une des différences principales entre AVA et [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape), c'est le comportement de `t.plan()`. Dans AVA, `t.plan()` est uniquement utiliser pour vérifier que le nombre assertions appelées correspond, il n'arrête pas automatiquement le test.
+Une des différences principales entre AVA et [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape), c'est le comportement de `t.plan()`. Dans AVA, `t.plan()` est uniquement utilisé pour vérifier que le nombre assertions appelées correspond, il n'arrête pas automatiquement le test.
 
 ## Les mauvaises utilisations de `t.plan()`
 
@@ -39,7 +39,7 @@ test(t => {
 });
 ```
 
-A première vue, ces tests semblent utiliser correctement `t.plan()` car un gestionnaire de promesse asynchrone est implémenté. Cependant, il y a plusieurs problèmes avec ces tests :
+A première vue, ce test semblent utiliser correctement `t.plan()` car un gestionnaire de promesse asynchrone est implémenté. Cependant, il y a plusieurs problèmes avec ce test :
 
 1. `t.plan()` est sans doute utilisé ici pour se protéger contre la possibilité que `somePromise()` soit rejetée.  Mais le retour d'une promesse rejetée fera échouer de toute façon le test.
 
@@ -68,9 +68,9 @@ test(t => {
 });
 ```
 
-Ici, `t.plan()` est utilisé pour s'assurer que le code à l'intérieur du bloc `catch` soit exécuté. Dans la plupart des cas, vous devez préférer l'assertion `t.throws()`. Mais c'est une utilisation acceptable puisque `t.throws()` vous permet seulement d'affirmer la propriété `message` de l'erreur.
+Ici, `t.plan()` est utilisé pour s'assurer que le code à l'intérieur du bloc `catch` soit exécuté. Dans la plupart des cas, vous devez préférer l'assertion `t.throws()`. Mais c'est une utilisation acceptable puisque `t.throws()` vous permet seulement de contrôler la propriété `message` de l'erreur.
 
-### S'Assurer qu'une implémentation catch s'exécute
+### S'assurer qu'une implémentation catch s'exécute
 
 ```js
 test(t => {
@@ -85,7 +85,7 @@ test(t => {
 });
 ```
 
-Comme indiqué dans l'exemple `try`/`catch` ci-dessus, l'utilisation de l'assertion `t.throws()` est généralement un meilleur choix, mais il vous permet seulement d'affirmer la propriété `message` de l'erreur.
+Comme indiqué dans l'exemple `try`/`catch` ci-dessus, l'utilisation de l'assertion `t.throws()` est généralement un meilleur choix, mais il vous permet seulement de contrôler la propriété `message` de l'erreur.
 
 ### S'assurer que plusieurs callbacks sont réellement appelés
 
@@ -133,4 +133,4 @@ testData.forEach(testDefinition => {
 
 ## Conclusion
 
-`t.plan()` a beaucoup d'utilisations valables, mais il ne doit pas être utilisé de façon hasardeuse. Une bonne règle est de l'utiliser chaque fois que votre *test* est compliqué, c'est souvent le cas pour le flux de code. Les tests avec des assertions à l'intérieur des callbacks, d'implémentations `if`/`then`, des boucles `for`/`while` et (dans plusieurs cas) dand des blocs `try`/`catch`, sont tous des bons candidats pour `t.plan()`.
+`t.plan()` a beaucoup d'utilisations valables, mais il ne doit pas être utilisé de façon hasardeuse. Une bonne règle est de l'utiliser chaque fois que votre *test* est compliqué, c'est souvent le cas pour le flux de code. Les tests avec des assertions à l'intérieur des callbacks, d'implémentations `if`/`then`, des boucles `for`/`while` et (dans plusieurs cas) dans des blocs `try`/`catch`, sont tous des bons candidats pour `t.plan()`.
