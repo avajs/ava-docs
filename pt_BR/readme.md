@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/9f1a38e222be1318292ec748358dfe161ad50432...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/39982a5c12b90c31ef3e0dea8c0e3499c47a7bc9...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # ![AVA](https://raw.githubusercontent.com/sindresorhus/ava/master/media/header.png)
@@ -721,8 +721,9 @@ Simultaneidade não é paralelismo. Ela permite o paralelismo. [Saiba mais.](htt
 
 ## Receitas
 
-- [Code coverage](docs/recipes/code-coverage.md)
-- [Endpoint testing](docs/recipes/endpoint-testing.md)
+- [Cobertura de código](docs/recipes/code-coverage.md)
+- [Teste de Endpoint](docs/recipes/endpoint-testing.md)
+- [Quando usar `t.plan()`](docs/recipes/when-to-use-plan.md)
 
 
 ## Suporte
