@@ -3,6 +3,7 @@
 - [Español](es_ES/readme.md) *(by [@AlbertoFuente](https://github.com/AlbertoFuente))*
 - [Français](fr_FR/readme.md) *(by [@forresst](https://github.com/forresst))*
 - [日本語](ja_JP/readme.md) *(by [@makotot](https://github.com/makotot))*
+- [Português](pt_BR/readme.md) *(by [@charbelrami](https://github.com/charbelrami))*
 
 
 ## Contribute
