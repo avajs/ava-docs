@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/39982a5c12b90c31ef3e0dea8c0e3499c47a7bc9...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/780d48f89906257910c1999514a2c980ed5f303c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -13,7 +13,9 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 
 *Lisez notre [guide de contribution](contributing.md) si vous souhaitez contribuer (issues/PRs/etc).*
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md)
+Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à jour.
+
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## Table des matières
@@ -595,7 +597,7 @@ Affirme que `function` lève `error` ou rejète `promise`.
 
 `error` peut-être un constructeur, une regex, un message d'erreur ou une fonction de validation.
 
-### .doesNotThrow(function|promise, [message])
+### .notThrows(function|promise, [message])
 
 Affirme que `function` ne lève pas `error` ou résout `promise`.
 
@@ -733,6 +735,7 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Twitter](https://twitter.com/ava__js)
 
 
 ## Autre
@@ -745,6 +748,7 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
+- [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
 
 
 ## Créé par

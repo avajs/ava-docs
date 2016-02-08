@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [when-to-use-plan.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/39982a5c12b90c31ef3e0dea8c0e3499c47a7bc9...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [when-to-use-plan.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Quand utiliser `t.plan()` ?
+
+Traductions : [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
 
 Une des différences principales entre AVA et [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape), c'est le comportement de `t.plan()`. Dans AVA, `t.plan()` est uniquement utilisé pour vérifier que le nombre assertions appelées correspond, il n'arrête pas automatiquement le test.
 

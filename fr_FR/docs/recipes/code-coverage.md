@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Couverture de code
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md)
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
 Comme AVA [génère les fichiers de test][isolated-env], vous ne pouvez pas utiliser [`istanbul`] pour la couverture de code. A la place, vous pouvez le faire avec [`nyc`] qui est essentiellement comme [`istanbul`] avec le support des sous-processus (sub-process).
 
