@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/9f1a38e222be1318292ec748358dfe161ad50432...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/780d48f89906257910c1999514a2c980ed5f303c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -13,7 +13,9 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 
 *Lea nuestra [guía de contribución](contributing.md) si está pensando en contribuir (issues/PRs/etc).*
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md)
+Siga la [cuenta de Twitter de AVA](https://twitter.com/ava__js) para actualizaciones.
+
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## Tabla de contenidos
@@ -593,7 +595,7 @@ Afirmando que `function` arroja un error o `promesa` rechazada.
 
 `error` puede contener un constructor, expresiones regulares, mensaje de error o la función de validación.
 
-### .doesNotThrow(function|promise, [mensaje])
+### .notThrows(function|promise, [mensaje])
 
 Afirma que `function` no lanza un `error` o resuelve la `promise`.
 
@@ -723,12 +725,14 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 
 - [Cobertura de código](docs/recipes/code-coverage.md)
 - [Endpoint testing](docs/recipes/endpoint-testing.md)
+- [Cuando usar `t.plan()`](docs/recipes/when-to-use-plan.md)
 
 
 ## Soporte
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Twitter](https://twitter.com/ava__js)
 
 
 ## Relacionado
@@ -736,6 +740,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Ejecutar tests con gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Ejecutar tests con grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Ejecutar tests con fly
+- [start-ava](https://github.com/start-runner/ava) - Ejecutar los tests con inicio
 
 
 ## Creado por

@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/0316047c8df66202e308ce095eb2f335f4aac1c1...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `maintaining.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/c22eabd717451dbeaeeff1520f399f5a5fd85764...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `maintaining.md`, será por que la traducción está actualizada).
 ___
 # Mantenimiento [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
 
@@ -59,3 +59,43 @@ También puede desproteger la página de configuración en herramientas de desar
 
  - [Una introducción a Node.js depuración con 'devtool'](http://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools).
  - [Un video introductorio a las Chrome DevTools CPU y Memory profiling](https://www.youtube.com/watch?v=KKwmdTByxLk).
+
+ ## Evaluación comparativa
+
+Primero Recopilamos datos de referencia para una branch/commit:
+
+```
+$ node bench/run
+```
+
+Una vez que han recogido datos de dos/tres branches/commits:
+
+```
+$ node bench/compare
+```
+
+*Por ejemplo podría recopilar datos de referencia del árbol de trabajo y el último commit.*
+
+![](https://cloud.githubusercontent.com/assets/4082216/12700805/bf18f730-c7bf-11e5-8a4f-fec0993c053f.png)
+
+Ahora puede lanzar un subconjunto de la suite:
+
+```
+$ node bench/run.js concurrent/sync.js serial/sync.js -- concurrent/sync.js -- serial/sync.js
+```
+
+Note el separador '--'. Lo anterior sería lo mismo que tres de los siguientes comandos de benchmarking.
+
+```
+$ ava concurrent/sync.js serial/sync.js
+$ ava concurrent/sync.js
+$ ava serial/sync.js
+```
+
+También si esta haciendo una evaluación comparativa de una suite que puede fallar, debe añadir el flag `--should-fail` en este grupo:
+
+```
+$ node bench/run.js concurrent/sync.js -- --should-fail other/failures.js
+```
+
+Lo anterior pone de referencia dos comandos, pero espera que el segundo falle.
