@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/39982a5c12b90c31ef3e0dea8c0e3499c47a7bc9...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/780d48f89906257910c1999514a2c980ed5f303c...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # ![AVA](https://raw.githubusercontent.com/sindresorhus/ava/master/media/header.png)
@@ -13,6 +13,8 @@ ___
 Apesar de o JavaScript ser single-threaded, as IO no Node.js podem acontecer em paralelo devido à sua natureza assíncrona. AVA aproveita-se disso e executa os testes simultaneamente, o que é especialmente favorável para testes pesados de IO. Além disso, arquivos de teste são executados em paralelo como processos separados, oferencendo ainda melhor desempenho e um ambiente isolado para cada arquivo de teste. [Migrar]( https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha para AVA no Pageres reduziu o tempo de teste de 31 para 11 segundos. Testes executados simultaneamente forçam a escrever testes atômicos, ou seja, testes que não dependem do estado global ou do estado de outros testes, o que representa um grande diferencial!
 
 *Leia nosso [guia para contribuir](contributing.md) se deseja contribuir (issues/PRs/etc).*
+
+Siga o [AVA no Twitter](https://twitter.com/ava__js) para atualizações.
 
 Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md)
 
@@ -268,7 +270,7 @@ test.serial(t => {
 
 ### Testes-only
 
-Testes-only impõe apenas aqueles testes a serem executados. Isso pode ser útil para a execução de apenas alguns testes durante o desenvolvimento.
+Testes-only impõem apenas aqueles testes a serem executados. Isso pode ser útil para a execução de apenas alguns testes durante o desenvolvimento.
 
 ```js
 test('will not be run', t => {
@@ -594,7 +596,7 @@ Afirma que `function` gera um erro ou rejeições de `promise`.
 
 `error` pode ser construtor, regex, mensagem de erro ou função de validação.
 
-### .doesNotThrow(function|promise, [message])
+### .notThrows(function|promise, [message])
 
 Afirma que `function` não gera um `error` ou resoluções de `promise`.
 
@@ -694,7 +696,7 @@ $ ava --serial
 
 Você não pode usar [`istanbul`](https://github.com/gotwarlost/istanbul) para cobertura de código porque o AVA [gera os arquivos de teste](#isolated-environment), mas você pode usar [`nyc`](https://github.com/bcoe/nyc) em vez disso, que é basicamente `istanbul` com suporte para subprocessos.
 
-A partir da versão `5.0.0` ele usa source maps para relatar cobertura para seu código real, independentemente da transpilation. Certifique-se de que o código que você está testando inclui source map inlineou faz referência a um arquivo source map. Se você usar `babel/register`, você pode definir a opção `sourceMaps` em seu `.babelrc` como `inline`.
+A partir da versão `5.0.0` ele usa source maps para relatar cobertura para seu código real, independentemente da transpilation. Certifique-se de que o código que você está testando inclui source map inline ou faz referência a um arquivo source map. Se você usar `babel/register`, você pode definir a opção `sourceMaps` em seu `.babelrc` como `inline`.
 
 ## Perguntas Frequentes
 
@@ -730,6 +732,7 @@ Simultaneidade não é paralelismo. Ela permite o paralelismo. [Saiba mais.](htt
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Twitter](https://twitter.com/ava__js)
 
 
 ## Outros
@@ -742,6 +745,7 @@ Simultaneidade não é paralelismo. Ela permite o paralelismo. [Saiba mais.](htt
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Execute testes com gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Execute testes com grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Execute testes com fly
+- [start-ava](https://github.com/start-runner/ava) - Execute testes com start
 
 
 ## Criado por
