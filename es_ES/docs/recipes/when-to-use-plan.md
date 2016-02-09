@@ -5,8 +5,8 @@ Esta es la traducción del archivo [when-to-use-plan.md](https://github.com/sind
 ___
 # Cuándo utilizar `t.plan()`
 
-Traducciones: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md),
-[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
+Traducciones: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md),
+[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
 
 Una gran diferencia entre AVA y [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) es el comportamiento de 't.plan()'. En AVA, 't.plan()' se utiliza para afirmar que el número esperado de aserciones son llamadas; esto no auto termina el test.
 
