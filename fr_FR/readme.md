@@ -72,25 +72,24 @@ Installez globalement AVA `$ npm install --global ava` et lancez `$ ava --init` 
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^0.6.0"
+		"ava": "^0.11.0"
 	}
 }
 ```
 
 #### Créez votre fichier de test
 
+Créez un fichier nommé `test.js` dans le répertoire racine du projet :
+
 ```js
 import test from 'ava';
-import delay from 'delay';
 
 test('foo', t => {
 	t.pass();
 });
 
 test('bar', async t => {
-	t.plan(1);
-
-	const bar = Promise.resolve('bar').then(delay(200));
+	const bar = Promise.resolve('bar');
 
 	t.is(await bar, 'bar');
 });
@@ -120,6 +119,7 @@ $ ava --help
     --require, -r    Module to preload (Can be repeated) (Module à précharger (peut être répété))
     --tap, -t        Generate TAP output (Générer une sortie au format TAP)
     --verbose, -v    Enable verbose output (Activer le mode verbose)
+    --no-cache       Disable the transpiler cache (Désactive le cache du transpileur)
 
   Examples (Exemples)
     ava
@@ -133,9 +133,11 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
-Les répertoires sont par défaut récursifs. Les fichiers, qui sont dans les répertoires nommés `fixtures` et `helpers`, sont ignorés, de la même manière que les fichiers qui commencent par `_`. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
+Les répertoires sont par défaut récursifs. Les répertoires nommés `fixtures` et `helpers` sont ignorés, de la même manière que les fichiers qui commencent par `_`. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
 
-*AVERTISSEMENT : COMPORTEMENT NON-STANDARD :* Le CLI de AVA essaiera toujours de trouver et d'utiliser l'installation AVA locale dans vos projets. Cela est vrai même lorsque vous exécutez la commande globale `ava`. Ce comportement non-standard résout une importante [issue](https://github.com/sindresorhus/ava/issues/157) et ne devrait avoir aucun impact sur l'utilisation quotidienne.
+Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
+
+*AVERTISSEMENT : Comportement non-standard :* Le CLI de AVA essaiera toujours d'utiliser l'installation AVA locale dans vos projets. Cela est vrai même lorsque vous exécutez la commande globale `ava`. Ce comportement non-standard résout une importante [issue](https://github.com/sindresorhus/ava/issues/157) et ne devrait avoir aucun impact sur l'utilisation quotidienne.
 
 ## Configuration
 
@@ -152,7 +154,9 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "serial": true,
     "tap": true,
     "verbose": true,
-    "require": ["babel-core/register", "coffee-script/register"]
+    "require": [
+      "babel-core/register", "coffee-script/register"
+    ]
   }
 }
 ```
@@ -615,9 +619,9 @@ Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les ass
 
 ```js
 +test(t => {
-  t.plan(2);
-  t.skip.is(foo(), 5); // pas besoin de changer le nombre d'assertion dans `plan`.
-  t.is(1, 1);
+	t.plan(2);
+	t.skip.is(foo(), 5); // pas besoin de changer le nombre d'assertion dans `plan`.
+	t.is(1, 1);
 });
 ```
 
@@ -705,7 +709,7 @@ Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de v
 
 ### Pourquoi ne pas utiliser `mocha`, `tape` ou `node-tap` ?
 
-Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` avec l'interface par défaut (que la plupart des gens utilisent), il est trop flexible, gourmand, synchrone par défaut, l'exécution des tests se fait en série et il est lent. Tape et node-tap sont bons. AVA est fortement inspiré par leur syntaxe. Cependant, tous les deux exécutent les tests en série et ils ont rendu [TAP](https://testanything.org) comme un élément indispensable, ce qui a mon avis, rend leurs codes de base un peu compliqué et sans possibilité de s'en séparer. La restitution de TAP est difficile à lire donc vous avez toujours besoin de l'aide d'un "reporter". AVA est très opiniâtre et s'exécute en simultané. Il est livré avec un "reporter" simple par défaut et il supporte TAP grâce à une option du CLI.
+Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` avec l'interface par défaut (que la plupart des gens utilisent), il est trop flexible, gourmand, synchrone par défaut, une API de programmation inutilisable, l'exécution des tests se fait en série et il est lent. Tape et node-tap sont bons. AVA est fortement inspiré par leur syntaxe. Cependant, tous les deux exécutent les tests en série et ils ont rendu [TAP](https://testanything.org) comme un élément indispensable, ce qui a mon avis, rend leurs codes de base un peu compliqué et sans possibilité de s'en séparer. La restitution de TAP est difficile à lire donc vous avez toujours besoin de l'aide d'un "reporter". AVA est très opiniâtre et s'exécute en simultané. Il est livré avec un "reporter" simple par défaut et il supporte TAP grâce à une option du CLI.
 
 ### Comment puis-je utiliser des "reporters" personnalisés ?
 
@@ -721,7 +725,7 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 
 ### Simultanéité et parallélisme
 
-La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En savoir plus](http://stackoverflow.com/q/1050222).
+[La simultanéité n'est pas du parallélisme. Il permet le parallélisme.](http://stackoverflow.com/q/1050222).
 
 
 ## Recettes
@@ -751,11 +755,16 @@ La simultanéité n'est pas du parallélisme. Il permet le parallélisme. [En sa
 - [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
 
 
-## Créé par
+## L'équipe
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
+[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
 ---|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Kevin Mårtensson](https://github.com/kevva) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
+[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
+
+#### Auparavant dans l'équipe
+
+- [Kevin Mårtensson](https://github.com/kevva)
+
 
 
 <div align="center">
