@@ -1,18 +1,18 @@
-# Code coverage
+# Покрытие кода
 
-Translations: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
-As AVA [spawns the test files][isolated-env], you can't use [`istanbul`] for code coverage; instead, you can achieve this with [`nyc`] which is basically [`istanbul`] with sub-process support.
+Так как AVA [запускает тестовые файлы в отдельном окружении][isolated-env], Вы не можете использовать [`istanbul`] для покрытия кода; вместо этого, воспользуйтесь [`nyc`], который похож на [`istanbul`] но с поддержкой запуска в отдельном окружении(sub-process).
 
-## Setup
+## Установка
 
-First install NYC:
+Установите NYC:
 
 ```
 $ npm install nyc --save-dev
 ```
 
-Then add both the `.nyc_output` and `coverage` directories to your `.gitignore` file.
+Затем добавьте `.nyc_output` и `coverage` каталоги в Ваш `.gitignore` файл.
 
 `.gitignore`:
 
@@ -22,9 +22,9 @@ coverage
 .nyc_output
 ```
 
-## ES5 coverage
+## ES5 покрытие
 
-Using NYC to provide coverage for production code written in ES5 is simple. Just prepend your test script with `nyc`:
+Использовать NYC для покрытия кода, написанного в ES5 весьма просто. Просто добавьте в начало Вашего тестового скрипта `nyc`:
 
 ```json
 {
@@ -34,17 +34,17 @@ Using NYC to provide coverage for production code written in ES5 is simple. Just
 }
 ```
 
-That's it!
+Это все!
 
-If you want to create HTML coverage reports, or upload coverage data to Coveralls, you should skip down to those sections below.
+Если Вам нужно сделать HTML отчет о покрытии кода или залить данные о покрытии кода в Coveralls, Вы должны пролистать до нужных секций в этом документе.
 
-## ES2015 coverage
+## ES2015 покрытие
 
-Using Babel to transpile your production code is a bit more involved. Here we've broken it down into multiple steps.
+Использование Babel транспиллера немного более сложно. Мы разбили описание на несколько этапов.
 
-### Configure Babel
+### Конфигурирование Babel
 
-First, we need a Babel configuration. The following is just an example. You will need to modify it to fit your needs.
+Во-первых, нам нужна Babel конфигурация. Пример ниже должен быть изменен под Ваши нужды.
 
 `package.json`:
 ```json
@@ -62,16 +62,16 @@ First, we need a Babel configuration. The following is just an example. You will
 }
 ```
 
-There are two important things to note from the example above.
+На заметку - в примере выше есть две важные вещи.
 
-1. We ignore test files because AVA already handles transpiling tests for you.
+1. Мы игнорируем тестовые файлы, так как AVA уже обрабатывает тесты, прошедшие через транспиллер.
 
-2. We specify `inline` source maps for development. This is important for properly generating coverage. Using the `env` section of the Babel configuration allows us to disable source maps for production builds.
+2. Мы указали `inline` source maps для разработки. Это важно для корретной генерации покрытия кода. Использование `env` секции в конфигурации Babel позволяет нам отключить source maps для сборки на продуктиве.
 
 
-### Create a build script
+### Создание скрипта сборки
 
-Since it is unlikely you want `inline` source maps in your production code. You should specify an alternate environment variable in your build scripts:
+Поскольку Вам вряд ли потребуется `inline` source maps в продуктиве, Вам необходимо указать альтернативное окружение в Ваших сборочных скриптах:
 
 `package.json`
 
@@ -83,13 +83,13 @@ Since it is unlikely you want `inline` source maps in your production code. You 
 }
 ```
 
-> WARNING: `BABEL_ENV=production` does not work on Windows, you must use the `set` keyword  (`set BABEL_ENV=production`).  For cross platform builds, check out [`cross-env`].
+> ВНИМАНИЕ: `BABEL_ENV=production` не работает нв машинах с ОС Windows, Вы должны использовать `set` (`set BABEL_ENV=production`). Для кросс-платформенных сборок, смотрите [`cross-env`].
 
-Note that the build script really has very little to do with AVA, and is just a demonstration of how to use Babel's `env` configuration to manipulate your config so it's compatible with AVA.
+Обратите внимание, что скрипт сборки имеет очень мало общего с AVA и это просто примеры, демонстрирующие установку 'env' для совместимости конфига Babel с AVA.
 
-### Use the Babel require hook
+### Использование require хука в Babel
 
-To use the Babel require hook, add `babel-core/register` to the `require` section of you AVA config in `package.json`.
+Для использование require хука в Babel, добавьте `babel-core/register` в секцию `require` конфига AVA в файле `package.json`.
 
 ```json
 {
@@ -99,11 +99,11 @@ To use the Babel require hook, add `babel-core/register` to the `require` sectio
 }
 ```
 
-*Note*: You can also set the require hook from the command line: `ava --require=babel-core/register`. However, configuring it in `package.json` saves you from repeatedly typing that flag.
+*Замечание*: Вы так же можете установить require хук используя командную строку: `ava --require=babel-core/register`. Однако, конфигурирование через файл `package.json` спасет Вас от постоянного набор этой строки в терминале.
 
-### Putting it all together
+### Суммарно
 
-Combining the above steps, your complete `package.json` should look something like this:
+Объединяя предыдущие шаги выше, Ваш файл `package.json` должен быть похож на:
 
 ```json
 {
@@ -128,17 +128,17 @@ Combining the above steps, your complete `package.json` should look something li
 ```
 
 
-## HTML reports
+## HTML отчеты
 
-NYC creates a `json` coverage file for each forked process in the `.nyc_ouput` directory.
+NYC создает `json` файл с покрытием кода для каждого форкнутого процесса в каталоге `.nyc_ouput`.
 
-To combine those into a human readable HTML report, do the following:
+Для объединения этих файлов в читабельным HTML отчет, сделайте следующее:
 
 ```
 $ ./node_modules/.bin/nyc report --reporter=html
 ```
 
-Or, use an npm script to save on typing:
+Или используйте npm script:
 
 ```json
 {
@@ -148,29 +148,29 @@ Or, use an npm script to save on typing:
 }
 ```
 
-This will output a HTML file to the `coverage` directory.
+Эти команды создадут HTML отчет в каталоге `coverage`.
 
 
-## Hosted coverage
+## Внешний хостинг покрытия кода
 
 ### Travis CI & Coveralls
 
-First, you must login to [coveralls.io] and activate your repository.
+Во-первых, Вы должны залогиниться в [coveralls.io] и активировать Ваш репозитарий кода.
 
-Once that is done, add [`coveralls`] as a development dependency:
+После этого добавьте [`coveralls`] как development зависимость:
 
 ```
 $ npm install coveralls --save-dev
 ```
 
-Then add the following to your `.travis.yml`:
+Добавьте следующие строки в Ваш `.travis.yml` файл:
 
 ```yaml
 after_success:
 	- './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
 ```
 
-Your coverage report will then appear on coveralls shortly after Travis completes.
+Ваш отчет о покрытии появиться в Coveralls вскоре, после тогда как завершится сборка в Travis.
 
 [`babel`]:      https://github.com/babel/babel
 [coveralls.io]: https://coveralls.io
