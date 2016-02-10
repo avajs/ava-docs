@@ -1,10 +1,10 @@
-# Endpoint testing
+# Тестирование "конечных точек"
 
-Translations: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/endpoint-testing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md)
+Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/endpoint-testing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md)
 
-AVA doesn't have a builtin method for testing endpoints, but you can use any assertion library with it. Let's use [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
+AVA не имеет встроенных средств для тестирования "конечных точек", но Вы можете использовать любую библиотеку для этого. Воспользуемся [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 
-Since tests run concurrently, it's best to create a fresh server instance for each test, because if we referenced the same instance, it could be mutated between tests. This can be accomplished with a `test.beforeEach` and `t.context`, or with simply a factory function:
+Так как все тесты запускаются конкурентно, то лучше всего создавать отдельный инстанс сервера для каждого теста, потому как, инстанс может изменить свое состояние между тестами. Мы можем сделать это при помощи `test.beforeEach` и `t.context`, или же воспользоваться фабричным методом:
 
 ```js
 function makeApp() {
@@ -14,7 +14,7 @@ function makeApp() {
 }
 ```
 
-Next, just inject your server instance into supertest. The only gotcha is to use a promise or async/await syntax instead of the supertest `end` method:
+Далее, передайте инстанс сервера в supertest. Используйте синтаксис обещаний или async/await вместо метода `end` supertest'a:
 
 ```js
 test('signup:Success', async t => {
