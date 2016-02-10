@@ -155,7 +155,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "tap": true,
     "verbose": true,
     "require": [
-      "babel-core/register", "coffee-script/register"
+      "babel-core/register"
     ]
   }
 }
