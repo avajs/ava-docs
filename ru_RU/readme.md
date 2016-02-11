@@ -433,7 +433,7 @@ test(t => {
 
 ### Поддержка генераторов
 
-AVA имеет встроенную поддержку [генераторов](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
+AVA имеет встроенную поддержку [генераторов](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/function*).
 
 ```js
 test(function * (t) {
@@ -718,7 +718,7 @@ Mocha требует использование неявных глобальн�
 
 ### Как произносится и пишется название проекта?
 
-AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?raw=true).
+AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### Что за картинка используется в логотипе?
 
