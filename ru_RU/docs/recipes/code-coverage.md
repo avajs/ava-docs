@@ -1,3 +1,8 @@
+___
+**Примечание от переводчика**
+
+Здесь содержится перевод файл [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Вот [ссылка]() если при нажатии на ссылку, Вы не можете найти файл readme.md, то можете считать что перевод актуален).
+___
 # Покрытие кода
 
 Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)

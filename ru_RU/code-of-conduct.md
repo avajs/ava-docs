@@ -1,3 +1,8 @@
+___
+**Примечание от переводчика**
+
+Здесь содержится перевод файл [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Вот [ссылка]() если при нажатии на ссылку, Вы не можете найти файл readme.md, то можете считать что перевод актуален).
+___
 # Кодекс Поведения участника
 
 Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
