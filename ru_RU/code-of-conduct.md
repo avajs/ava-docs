@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Вот [ссылка]() если при нажатии на ссылку, Вы не можете найти файл readme.md, то можете считать что перевод актуален).
+Здесь содержится перевод файл [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Если при нажатии на [ссылку](), Вы не можете найти файл code-of-conduct.md, то можете считать что перевод актуален).
 ___
 # Кодекс Поведения участника
 
@@ -48,7 +48,7 @@ ___
 обязаны сохранять конфиденциальность в отношении лица, направившего жалобу.
 
 Кодекс Поведения адаптирован с [Contributor Covenant][homepage],
-врсия 1.3.0, доступна здесь
+версия 1.3.0, доступна здесь
 [http://contributor-covenant.org/version/1/3/0/][version]
 
 [homepage]: http://contributor-covenant.org

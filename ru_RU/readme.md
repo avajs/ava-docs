@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Вот [ссылка]() если при нажатии на ссылку, Вы не можете найти файл readme.md, то можете считать что перевод актуален).
+Здесь содержится перевод файл [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](), Вы не можете найти файл readme.md, то можете считать что перевод актуален).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -62,7 +62,7 @@ test(t => {
 
 ## Использование
 
-#### Initialize
+#### Инициализация
 
 Установите AVA глобально `$ npm install --global ava` или выполните `$ ava --init` (с любыми аргументами) для добавления AVA в Ваш файл package.json или создания нового.
 
@@ -731,9 +731,9 @@ AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](
 
 ## Рецепты
 
-- [Code coverage](docs/recipes/code-coverage.md)
-- [Endpoint testing](docs/recipes/endpoint-testing.md)
-- [When to use `t.plan()`](docs/recipes/when-to-use-plan.md)
+- [Покрытие кода](docs/recipes/code-coverage.md)
+- [Тестирование "конечных точек"](docs/recipes/endpoint-testing.md)
+- [Когда применять `t.plan()`](docs/recipes/when-to-use-plan.md)
 
 
 ## Поддержка
