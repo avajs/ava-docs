@@ -170,7 +170,7 @@ $ ava --help
 
 Все тестовые файлы запускаются из текущего каталога, так что [`process.cwd()`](https://nodejs.org/api/process.html#process_process_cwd) тот же, что и [`__dirname`](https://nodejs.org/api/globals.html#globals_dirname). Вы можете использовать относительные пути вместо `path.join(__dirname, 'relative/path')`.
 
-### Анатомия тестовы
+### Анатомия тестов
 
 Для создания теста, Вы можете вызвать функцию `test` которую Вы импортировали `require` из AVA и передать опциональное имя теста и функцию, содержажую выполнение теста. Переданной функции задается контекст первым аргументом, так что Вы можете вызывать методы AVA и [сравнения](#Сравнения).
 
@@ -200,9 +200,9 @@ test(function name(t) {
 
 ### План сравнений
 
-An assertion plan can be used to ensure a specific number of assertions are made. In the most common scenario, it validates that the test didn't exit before executing the expected number of assertions. It also fails the test if too many assertions are executed, which can be useful if you have assertions inside callbacks or loops.
+План сравнений необходим для того, чтобы убедиться, что заданное количество сравнений будет выполнено. В большинстве случаев, он гарантирует, что тест не прервется до того, как ожидаемое количество сравнений выполнится. План может провалить тест, если будет выполнено большое число сравнений, это удобно, если сравнения выполняются в коллбеке или цикле.
 
-This will result in a passed test:
+В результате этот тест завершится успешно:
 
 ```js
 test(t => {
@@ -221,12 +221,12 @@ test.cb(t => {
 });
 ```
 
-#### WARNING: Recent breaking change.
+#### ВНИМАНИЕ: последние изменения
 
-AVA no longer supports automatically ending tests via `t.plan(...)`. This helps prevent false positives if you add assertions, but forget to increase your plan count.
+AVA больше не поддерживает автоматическое завершение тестов через `t.plan(...)`. Это помогает избежать ложных срабатываний, если Вы добавили сравнения, но забыли увеличить ожидаемое количество сравнений в `t.plan(...)`.
 
 ```js
-// This no longer works
+// Это больше не работает
 
 test('auto ending is dangerous', t => {
 	t.plan(2);
@@ -234,12 +234,12 @@ test('auto ending is dangerous', t => {
 	t.pass();
 	t.pass();
 
-	// auto-ending after reaching the planned two assertions will miss this final one
+	// После достижений запланированных сравнений этот блок не сработает
 	setTimeout(() => t.fail(), 10000);
 });
 ```
 
-For this to work, you must now use "callback mode", and explicitly call `t.end()`.
+Для того, чтобы пример выше сработал, Вы должны использовать "коллбек мод" и явно вызвать `t.end()`.
 
 ```js
 test.cb('explicitly end your tests', t => {
@@ -249,16 +249,16 @@ test.cb('explicitly end your tests', t => {
 	t.pass();
 
 	setTimeout(() => {
-		// This failure is now reliably caught.
+		// Ошибка здесь будет обработана
 		t.fail();
 		t.end();
 	}, 1000);
 });
 ```
 
-### Serial-tests
+### Последовательные тесты
 
-While concurrency is awesome, there are some things that can't be done concurrently. In these rare cases, you can call `test.serial`, which will force those tests to run serially before the concurrent ones.
+Конкурентность - это прекрасно, но есть некоторые вещи, которые не могут выполняться конкурентно. В редких случаях, Вы можете вызвать `test.serial`, для запуска последовательных тестов.
 
 ```js
 test.serial(t => {
@@ -266,9 +266,9 @@ test.serial(t => {
 });
 ```
 
-### Only-tests
+### Конкретные тесты
 
-Only-tests enforces only those tests to be run. This can be useful for running only a few tests during development.
+Конкретные тесты указывают тесты для выполнения. Это может быть удобно для запуска определенных тестов во время разработки.
 
 ```js
 test('will not be run', t => {
@@ -280,9 +280,9 @@ test.only('will be run', t => {
 });
 ```
 
-### Skip-tests
+### Пропуск тестов
 
-Skip-tests are shown in the output as skipped but never run.
+Пропущенные тесты показываются в выводе, но никогда не выполняются.
 
 ```js
 test.skip('will not be run', t => {
@@ -290,7 +290,7 @@ test.skip('will not be run', t => {
 });
 ```
 
-### Before & after hooks
+### До & после хуки
 
 When setup and/or teardown is required, you can use `test.before()` and `test.after()`,
 used in the same manner as `test()`. The test function given to `test.before()` and `test.after()` is called before/after all tests. You can also use `test.beforeEach()` and `test.afterEach()` if you need setup/teardown for each test. Hooks are run serially in the test file. Add as many of these as you want. You can optionally specify a title that is shown on failure.
