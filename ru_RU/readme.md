@@ -1,4 +1,4 @@
-# ![AVA](media/header.png)
+# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > Футуристичный запускатор тестов
 
@@ -33,14 +33,15 @@ Even though JavaScript is single-threaded, IO in Node.js can happen in parallel 
 - Атомарные тесты
 - Нет явных globals
 - [Изолированное окружение для каждого теста](#Изолированное-окружение-для-каждого-теста)
-- [Поддержка ES2015](#es2015-support)
-- [Поддержка обещаний](#promise-support)
-- [Поддержка генераторов](#generator-function-support)
+- [Поддержка ES2015](#Поддержка-ES2015)
+- [Поддержка обещаний](#Поддержка-обещаний)
+- [Поддержка генераторов](#Поддержка-генераторов)
 - [Поддержка асинхронных функций](#Поддержка-асинхронных-функций)
-- [Поддержка Observable типов](#observable-support)
-- [Улучшенные assert'ы](#enhanced-asserts)
-- [Опциональный TAP вывод](#optional-tap-output)
-- [Чистый трейс вызовов](#clean-stack-traces)
+- [Поддержка Observable типов](#Поддержка-Observable-типов)
+- [Поддержка коллбеков](#Поддержка-коллбеков)
+- [Улучшенные assert'ы](#Улучшенные-assert'ы)
+- [Опциональный TAP вывод](#Опциональный-TAP-вывод)
+- [Чистый трейс вызовов](#Чистый-трейс-вызовов)
 
 
 ## Синтаксис теста
@@ -290,39 +291,39 @@ test.skip('will not be run', t => {
 });
 ```
 
-### До & после хуки
+### До и после хуки
 
-When setup and/or teardown is required, you can use `test.before()` and `test.after()`,
-used in the same manner as `test()`. The test function given to `test.before()` and `test.after()` is called before/after all tests. You can also use `test.beforeEach()` and `test.afterEach()` if you need setup/teardown for each test. Hooks are run serially in the test file. Add as many of these as you want. You can optionally specify a title that is shown on failure.
+Когда необходимо допольнительная настройка, Вы можете использовать `test.before()` и `test.after()`,
+в той же манере, что и `test()`. Функция, переданная в `test.before()` и `test.after()`, будет вызвана до/после всех тестов. Вы так же можете использовать `test.beforeEach()` и `test.afterEach()` если Вам нужно выполнить конфигурировать для каждого теста. Хуки запускаются последовательно. Вы можете добавить сколько угодно хуков. Опционально Вы можете указать заголовок, который будет показан при ошибке.
 
 
 ```js
 test.before(t => {
-	// this runs before all tests
+	// выполнится перед всеми тестами
 });
 
 test.before(t => {
-	// this runs after the above, but before tests
+	// выполнится после предыдущего хука, но перед тестами
 });
 
 test.after('cleanup', t => {
-	// this runs after all tests
+	// выполнится после всех тестов
 });
 
 test.beforeEach(t => {
-	// this runs before each test
+	// выполнится перед каждым тестом
 });
 
 test.afterEach(t => {
-	// this runs after each test
+	// выполнится после каждого теста
 });
 
 test(t => {
-	// regular test
+	// обычный тест
 });
 ```
 
-You may use async functions, return async objects, or enable "callback mode" in any of the hooks.
+Вы можете использовать асинхронные функции, возвращать асинхронные объекты или включить "коллбек мод" в любом хуке.
 
 ```js
 test.before(async t => {
@@ -342,7 +343,7 @@ test.after(t => {
 });
 ```
 
-The `beforeEach` & `afterEach` hooks can share context with the test:
+Хуки `beforeEach` и `afterEach` могут делить context с тестом:
 
 ```js
 test.beforeEach(t => {
@@ -354,7 +355,7 @@ test(t => {
 });
 ```
 
-The context is by default an object, but it can also be directly assigned:
+Context по умолчанию - объект, но также он может быть определен:
 
 ```js
 test.beforeEach(t => {
@@ -366,9 +367,9 @@ test(t => {
 });
 ```
 
-### Chaining test modifiers
+### Цепочка тестовых модификаторов
 
-You can chain test modifiers together in the following ways:
+Вы можете сцепить тестовые модификаторы вместе следующим образом:
 
 ```js
 test.before.skip([title], testFn);
@@ -377,11 +378,11 @@ test.serial.only(...);
 test.only.serial(...);
 ```
 
-This is especially helpful temporarily using `skip` or `only` on a test, without losing the information and behavior the other modifiers provide.
+Это особенно полезно, когда необходимо временно использовать `skip` и `only` для теста, без потери информативности и поведения других модификаторов.
 
-### Custom assertion module
+### Кастомный модуль сравнений
 
-You can use any assertion module instead or in addition to the one that comes with AVA, but you won't be able to use the `.plan()` method, [yet](https://github.com/sindresorhus/ava/issues/25).
+Вы можете использовать любую библиотеку сравнений вместо или с тем функционалом, что встроен в AVA, но в этом случае Вы не сможете использовать метод `.plan()`, [пока что](https://github.com/sindresorhus/ava/issues/25).
 
 ```js
 import assert from 'assert';
@@ -391,31 +392,31 @@ test(t => {
 });
 ```
 
-### ES2015 support
+### Поддержка ES2015
 
-AVA comes with builtin support for ES2015 through [Babel 6](https://babeljs.io). Just write your tests in ES2015. No extra setup needed. You can use any Babel version in your project. We use our own bundled Babel with the [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) and [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) presets.
+AVA имеет встроенную поддержку ES2015 через [Babel 6](https://babeljs.io). Просто пишите свои тесты в ES2015. Никакой дополнительной настройки не нужно. Вы можете использовать любую версию Babel в своем проекте. Мы используем наш собственный собранный Babel с [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) и [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) предустановками.
 
-#### Transpiling Imported Modules
+#### Транспиллинг импортированных модулей
 
-AVA currently only transpiles the tests you ask it to run. *It will not transpile modules you ```import``` from outside of the test.* While there are valid reasons for taking this approach, it may not be what you expect!
+AVA в данный момент транспиллит только запущенные тесты. *AVA не делает транспиллинг импортированных модулей ```import``` вне теста.* Есть веские причины для этого подхода, это может быть не тем, что Вы ожидали!
 
-As a simple workaround, you can use [Babel's require hook](https://babeljs.io/docs/usage/require/) in order to do on-the-fly transpiling of modules that are subsequently imported. Because AVA supports ES2015 module syntax, you can use it to import the require hook itself:
+Простым решением может быть [Babel's require hook](https://babeljs.io/docs/usage/require/) для транспиллинга импортированных модулей на лету. Потому как AVA поддерживает модульный синтаксис ES2015, Вы можете использовать это для импорта необходимого хука:
 
 ```js
 import test from 'ava';
 import 'babel-core/register';
-import foo from './foo'; // <-- foo can be written in ES2015!
+import foo from './foo'; // <-- foo может быть написан в ES2015!
 
 test('foo bar', t => {
 	t.same('baz', foo('bar'));
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111) is tracking this item as a potential enhancement.
+[#111](https://github.com/sindresorhus/ava/issues/111) взгляните на это как на как на возможное улучшение.
 
-### Promise support
+### Поддержка обещаний
 
-If you return a promise in the test you don't need to explicitly end the test as it will end when the promise resolves.
+Если Вы возвращаете обещание в свое тесте, то Вам не нужно явно завершать тест, так как он завершиться сразу после успешного выполнения Обещания.
 
 ```js
 test(t => {
@@ -425,9 +426,9 @@ test(t => {
 });
 ```
 
-### Generator function support
+### Поддержка генераторов
 
-AVA comes with builtin support for [generator functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
+AVA имеет встроенную поддержку [генераторов](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
 
 ```js
 test(function * (t) {
@@ -436,9 +437,9 @@ test(function * (t) {
 });
 ```
 
-### Async function support
+### Поддержка асинхронных функций
 
-AVA comes with builtin support for [async functions](https://tc39.github.io/ecmascript-asyncawait/) *(async/await)*.
+AVA имеет поддержку [ансихронных функций](https://tc39.github.io/ecmascript-asyncawait/) *(async/await)*.
 
 ```js
 test(async function (t) {
@@ -453,12 +454,12 @@ test(async t => {
 });
 ```
 
-### Observable support
+### Поддержка Observable типов
 
-AVA comes with builtin support for [observables](https://github.com/zenparsing/es-observable).
-If you return an observable from a test, AVA will automatically consume it to completion before ending the test.
+AVA поддерживает [observables типы](https://github.com/zenparsing/es-observable).
+Если Вы возвращаете объект типа observable в тесте, AVA дождется завершения до окончания теста.
 
-*You do not need to use "callback mode" or call `t.end()`.*
+*Вам не нужно использовать "коллбек мод" или вызывать `t.end()`.*
 
 ```js
 test(t => {
@@ -472,33 +473,33 @@ test(t => {
 });
 ```
 
-### Callback support
+### Поддержка коллбеков
 
-AVA supports using `t.end` as the final callback when using node-style error-first callback APIs. AVA will consider any truthy value passed as the first argument to `t.end` to be an error. Note that `t.end` requires "callback mode", which can be enabled by using the `test.cb` chain.
+AVA поддерживает использование `t.end` как финального коллбека, когда используется node стиль (первый аргумент - ошибка) APIs. AVA ожидает, что любое положительное значение, переданное первым параметром в `t.end` является ошибкой. Обратите внимание, что `t.end` необходим "коллбек мод", который можно включить, используя цепочку `test.cb`.
 
 ```js
 test.cb(t => {
-	// t.end automatically checks for error as first argument
+	// t.end автоматически проверить ошибку в первом аргументе
 	fs.readFile('data.txt', t.end);
 });
 ```
 
-### Optional TAP output
+### Опциональный TAP вывод
 
-AVA can generate TAP output via `--tap` option for use with any [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters).
+AVA может сгенерировать TAP вывод через опцию `--tap` для любого из [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters).
 
 ```
 $ ava --tap | tap-nyan
 ```
 
-<img src="media/tap-output.png" width="398">
+<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
 
-### Clean stack traces
+### Чистый трейс вызовов
 
-AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster.
+AVA автоматически удалить ненужную отладку в трейсе вызовов, что позволить более быстро найти источник ошибки.
 
-<img src="media/stack-traces.png" width="300">
+<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
 
 ## API
@@ -620,11 +621,11 @@ test(t => {
 });
 ```
 
-## Enhanced asserts
+## Улучшенные assert'ы
 
-AVA comes with [`power-assert`](https://github.com/power-assert-js/power-assert) builtin, giving you more descriptive assertion messages. It reads your test and tries to infer more information from the code.
+В AVA включена [`power-assert`](https://github.com/power-assert-js/power-assert) библиотека, предоставляющая более информативные сообщения сравнений. Она читает Ваш тест и пытается получить дополнительную информацию из Вашего кода.
 
-The following test:
+Следующий тест:
 
 ```js
 test(t => {
@@ -633,13 +634,13 @@ test(t => {
 });
 ```
 
-Would normally give the unhelpful output:
+Обычно выдает бесполезный вывод:
 
 ```
 false === true
 ```
 
-With the enhanced asserts, you'll get:
+С улучшенными assert'ами Вы получите на выходе:
 
 ```
 t.ok(x === 'bar')
@@ -649,7 +650,7 @@ t.ok(x === 'bar')
 
 True, you could use `t.is()` in this case, and probably should, but this is just a simple example.
 
-Let try a more advanced example:
+Попробуем более сложный пример:
 
 ```js
 test(t => {
@@ -674,7 +675,7 @@ All the assert methods are enhanced.
 Have fun!
 
 
-## Isolated environment
+## Изолированное окружение для каждого теста
 
 Each test file is run in a separate Node.js process. This comes with a lot of benefits. Different test files can no longer affect each other. Like test files mocking with the global environment, overriding builtins, etc. However, it's mainly done for performance reasons. Even though Node.js can run async IO concurrently, that doesn't help much when tests are heavy on synchronous operations, which blocks the main thread. By running tests concurrently and test files in parallel we take full advantage of modern systems.
 
