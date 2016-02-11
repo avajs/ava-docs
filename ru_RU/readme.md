@@ -17,12 +17,12 @@ Even though JavaScript is single-threaded, IO in Node.js can happen in parallel 
 
 - [Использование](#Использование)
 - [Командная строка](#Командная-строка)
-- [Конфигурирование](#configuration)
-- [Документация](#documentation)
+- [Конфигурация](#Конфигурация)
+- [Документация](#Документация)
 - [API](#api)
-- [Сравнения](#assertions)
+- [Сравнения](#Сравнения)
 - [FAQ](#faq)
-- [Рецепты](#recipes)
+- [Рецепты](#Рецепты)
 
 
 ## Почему AVA?
@@ -32,11 +32,11 @@ Even though JavaScript is single-threaded, IO in Node.js can happen in parallel 
 - Запуск тестов конкурентно
 - Атомарные тесты
 - Нет явных globals
-- [Изолированное окружение для каждого теста](#isolated-environment)
+- [Изолированное окружение для каждого теста](#Изолированное-окружение-для-каждого-теста)
 - [Поддержка ES2015](#es2015-support)
 - [Поддержка обещаний](#promise-support)
 - [Поддержка генераторов](#generator-function-support)
-- [Поддержка асинхронных функций](#async-function-support)
+- [Поддержка асинхронных функций](#Поддержка-асинхронных-функций)
 - [Поддержка Observable типов](#observable-support)
 - [Улучшенные assert'ы](#enhanced-asserts)
 - [Опциональный TAP вывод](#optional-tap-output)
@@ -134,9 +134,9 @@ $ ava --help
 
 *ВНИМАНИЕ - Нестандартное поведение:* Командная строка AVA CLI всегда будет искать локальную установку AVA в Ваших проектах. Поведение сохраняется даже при использовании глобальной команды `ava`. Это нестандартное поведение решает важную [проблему](https://github.com/sindresorhus/ava/issues/157), и не должно влиять на повседневное использование.
 
-## Configuration
+## Конфигурация
 
-All of the CLI options can be configured in the `ava` section of your `package.json`. This allows you to modify the default behavior of the `ava` command, so you don't have to repeatedly type the same options on the command prompt.
+Все опции командной строки могут быть отконфигурированны в секции `ava` вашего `package.json` файла. Это позволяет изменять стандартное поведение команды `ava`, так что Вам не нужно будет постоянно вбивать одни и те же опци в командную строку.
 
 ```json
 {
@@ -156,23 +156,23 @@ All of the CLI options can be configured in the `ava` section of your `package.j
 }
 ```
 
-Arguments passed to the CLI will always take precedence over the configuration in `package.json`.
+Аргументы переданные в командную строку всегда будут иметь приоритет перед конфигурацией в `package.json` файле.
 
-## Documentation
+## Документация
 
-Tests are run asynchronously and require you to return a supported async object (a promise, or [observable](https://github.com/zenparsing/zen-observable)). We *highly* recommend the use of [async functions](#async-function-support); They make async code concise and readable, and they implicitly return a promise, so you don't have to.
+Тесты запускаются асинхронно и требуют, чтобы был возвращен объект, поддерживающий асинхронность(обещание, или [observable](https://github.com/zenparsing/zen-observable)). Мы *сильно* рекомендуем использовать [асинхронные функции](#Поддержка-асинхронных-функций); Они делают асинхронный код кратким и читабельным, неявно возвращая Обещания.
 
-If you don't return one of the supported async objects mentioned above, the test is considered to be synchronous and ended immediately.
+Если в коде Вы не возвращаете объект, поддерживающий асинхронность, тест будет считаться синхронным и завершится незамедлительно.
 
-If you're unable to use promises or other supported async objects, you may enable "callback mode" by defining your test with `test.cb([title], fn)`. Tests declared this way **must** be manually ended with `t.end()`. This mode is mainly intended for testing callback-style APIs.
+Если использовать обещания или любой другой объект, поддерживающий асинхронность, Вы можете включить "коллбек мод" таким образом `test.cb([title], fn)`. Все тесты, которые написаны с "коллбек модом" должны заканчиваться с `t.end()`. Этот режим в основном предназначен для тестирование API в коллбек стиле.
 
-You must define all tests synchronously. They can't be defined inside `setTimeout`, `setImmediate`, etc.
+Вы должны сделать все тесты синхронными. Они не могут быть описаны внутри `setTimeout`, `setImmediate` и т.д.
 
-Test files are run from their current directory, so [`process.cwd()`](https://nodejs.org/api/process.html#process_process_cwd) is always the same as [`__dirname`](https://nodejs.org/api/globals.html#globals_dirname). You can just use relative paths instead of doing `path.join(__dirname, 'relative/path')`.
+Все тестовые файлы запускаются из текущего каталога, так что [`process.cwd()`](https://nodejs.org/api/process.html#process_process_cwd) тот же, что и [`__dirname`](https://nodejs.org/api/globals.html#globals_dirname). Вы можете использовать относительные пути вместо `path.join(__dirname, 'relative/path')`.
 
-### Test anatomy
+### Анатомия тестовы
 
-To create a test, you call the `test` function you `require`d from AVA and pass in an optional test name and a function containing the test execution. The passed function is given the context as the first argument, where you can call the different AVA methods and [assertions](#assertions).
+Для создания теста, Вы можете вызвать функцию `test` которую Вы импортировали `require` из AVA и передать опциональное имя теста и функцию, содержажую выполнение теста. Переданной функции задается контекст первым аргументом, так что Вы можете вызывать методы AVA и [сравнения](#Сравнения).
 
 ```js
 test('name', t => {
@@ -180,9 +180,9 @@ test('name', t => {
 });
 ```
 
-### Optional test name
+### Опциональное имя теста
 
-Naming a test is optional, but you're recommended to use one if you have more than one test.
+Именование теста - опционально, но мы рекомендуем использовать именование, если у Вас больше, чем один тест.
 
 ```js
 test(t => {
@@ -190,7 +190,7 @@ test(t => {
 });
 ```
 
-You can also choose to use a named function instead:
+Вы также можете выбрать именную функцию:
 
 ```js
 test(function name(t) {
@@ -198,7 +198,7 @@ test(function name(t) {
 });
 ```
 
-### Assertion plan
+### План сравнений
 
 An assertion plan can be used to ensure a specific number of assertions are made. In the most common scenario, it validates that the test didn't exit before executing the expected number of assertions. It also fails the test if too many assertions are executed, which can be useful if you have assertions inside callbacks or loops.
 
@@ -718,31 +718,31 @@ AVA, not Ava or ava. Pronounced [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?ra
 
 [Andromeda galaxy.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 
-### Concurrency vs. parallelism
+### Конкурентность и параллелизм
 
 [Concurrency is not parallelism. It enables parallelism.](http://stackoverflow.com/q/1050222)
 
 
-## Recipes
+## Рецепты
 
 - [Code coverage](docs/recipes/code-coverage.md)
 - [Endpoint testing](docs/recipes/endpoint-testing.md)
 - [When to use `t.plan()`](docs/recipes/when-to-use-plan.md)
 
 
-## Support
+## Поддержка
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Gitter chat](https://gitter.im/sindresorhus/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 
-## Other
+## Другое
 
 - [AVA logo stickers](https://www.stickermule.com/user/1070705604/stickers)
 
 
-## Related
+## Похожее
 
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Run tests with gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Run tests with grunt
@@ -750,7 +750,7 @@ AVA, not Ava or ava. Pronounced [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?ra
 - [start-ava](https://github.com/start-runner/ava) - Run tests with start
 
 
-## Team
+## Команда
 
 [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
 ---|---|---|---
