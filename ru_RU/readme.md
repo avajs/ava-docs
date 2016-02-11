@@ -4,7 +4,7 @@
 
 [![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
 
-Even though JavaScript is single-threaded, IO in Node.js can happen in parallel due to its async nature. AVA takes advantage of this and runs your tests concurrently, which is especially beneficial for IO heavy tests. In addition, test files are run in parallel as separate processes, giving you even better performance and an isolated environment for each test file. [Switching](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) from Mocha to AVA in Pageres brought the test time down from 31 sec to 11 sec. Having tests run concurrently forces you to write atomic tests, meaning tests don't depend on global state or the state of other tests, which is a great thing!
+Даже с учетом того, что JavaScript однопоточный, IO в Node.js могут происходить параллельно в связи с асинхронной природой самой Node.js. AVA в полной мере пользуется этим преимуществом и запускает Ваши тесты конкурентно, что особенно важно при серьезных IO в тестах. Кроме того, тестовые файлы запускаются параллельно в разных процессах, предоставляя большую производительность и изолированное окружение для каждого тестового файла. [Переход](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) с Mocha на AVA в Pageres изменил время тестирования с 31 секунды до 11 секунд. Возможность запускать тесты конкурентно, заставляет Вас писать атомарные тесты, а это значит, что нет необходимости зависеть от глобального состояния или состояний других тестов, что поистине круто!
 
 *Прочтите наш [гайд участника](contributing.md) если вы хотите внести вклад в проект(проблемы/пулл реквесты/etc).*
 
@@ -91,7 +91,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="screenshot.png" width="150" align="right">
+<img src="https://github.com/sindresorhus/ava/raw/master/screenshot.png" width="150" align="right">
 
 #### Запуск
 
@@ -161,7 +161,7 @@ $ ava --help
 
 ## Документация
 
-Тесты запускаются асинхронно и требуют, чтобы был возвращен объект, поддерживающий асинхронность(обещание, или [observable](https://github.com/zenparsing/zen-observable)). Мы *сильно* рекомендуем использовать [асинхронные функции](#Поддержка-асинхронных-функций); Они делают асинхронный код кратким и читабельным, неявно возвращая Обещания.
+Тесты запускаются асинхронно и требуют, чтобы был возвращен объект, поддерживающий асинхронность(обещание, или [observable](https://github.com/zenparsing/zen-observable)). Мы *настойчиво* рекомендуем использовать [асинхронные функции](#Поддержка-асинхронных-функций); Они делают асинхронный код кратким и читабельным, неявно возвращая Обещания.
 
 Если в коде Вы не возвращаете объект, поддерживающий асинхронность, тест будет считаться синхронным и завершится незамедлительно.
 
@@ -412,11 +412,11 @@ test('foo bar', t => {
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111) взгляните на это как на как на возможное улучшение.
+[#111](https://github.com/sindresorhus/ava/issues/111) взгляните на это как на возможное улучшение.
 
 ### Поддержка обещаний
 
-Если Вы возвращаете обещание в свое тесте, то Вам не нужно явно завершать тест, так как он завершиться сразу после успешного выполнения Обещания.
+Если Вы возвращаете обещание в свое тесте, то Вам не нужно явно завершать тест, так как он завершиться сразу после успешного выполнения обещания.
 
 ```js
 test(t => {
@@ -516,107 +516,107 @@ AVA автоматически удалить ненужную отладку в
 
 #### title
 
-Type: `string`
+Тип: `string`
 
-Test title.
+Заголовок теста.
 
 #### body(context)
 
-Type: `function`
+Тип: `function`
 
-Should contain the actual test.
+Должна содержать актуальный тест.
 
 ##### context
 
-Passed into the test function and contains the different AVA methods and [assertions](#assertions).
+Передается в тестовую функцию и содержить различные AVA методы и [сравнения](#Сравнения).
 
 ###### .plan(count)
 
-Plan how many assertion there are in the test. The test will fail if the actual assertion count doesn't match planned assertions.
+План о количестве сравнений в тесте. Тест завершится ошибкой, если количество выполненных сравнений не будет соответствовать запланированным.
 
 ###### .end()
 
-End the test. Only works with `test.cb()`.
+Завершить тест. Используется только с `test.cb()`.
 
 
-## Assertions
+## Сравнения
 
-Assertions are mixed into the test [context](#context):
+Сравнения встроены в [context](#context) теста:
 
 ```js
 test(t => {
-	t.ok('unicorn'); // assertion
+	t.ok('unicorn'); // сравнение
 });
 ```
 
-If multiple assertion failures are encountered within a single test, AVA will only display the *first* one.
+Если множество сравнений завершились ошибкой в одном тесте, AVA отобразит лишь *первую* ошибку.
 
 ### .pass([message])
 
-Passing assertion.
+Успешное сравнение.
 
 ### .fail([message])
 
-Failing assertion.
+Ошибочное сравнение.
 
 ### .ok(value, [message])
 
-Assert that `value` is truthy.
+Сравнение, что значение `value` истинно.
 
 ### .notOk(value, [message])
 
-Assert that `value` is falsy.
+Сравнение, что значение `value` ложно.
 
 ### .true(value, [message])
 
-Assert that `value` is `true`.
+Сравнение, что значение `value` - `true`.
 
 ### .false(value, [message])
 
-Assert that `value` is `false`.
+Сравнение, что значение `value` - `false`.
 
 ### .is(value, expected, [message])
 
-Assert that `value` is equal to `expected`.
+Сравнение, что значение `value` эквивалентно `expected`.
 
 ### .not(value, expected, [message])
 
-Assert that `value` is not equal to `expected`.
+Сравнение, что значение `value` не эквивалентно `expected`.
 
 ### .same(value, expected, [message])
 
-Assert that `value` is deep equal to `expected`.
+Сравнение, что значение `value` полностью совпадает(deep equal) с `expected`.
 
 ### .notSame(value, expected, [message])
 
-Assert that `value` is not deep equal to `expected`.
+Сравнение, что значение `value` не полностью совпадает(not deep equal) с `expected`.
 
 ### .throws(function|promise, [error, [message]])
 
-Assert that `function` throws an error or `promise` rejects.
+Сравнение, что `function` вызовет ошибку или `promise` завершиться с ошибкой.
 
-`error` can be a constructor, regex, error message or validation function.
+`error` может быть конструктором, регулярным выражением, сообщением об ошибке или функцией валидации.
 
 ### .notThrows(function|promise, [message])
 
-Assert that `function` doesn't throw an `error` or `promise` resolves.
+Сравнение, что `function` не вызовет ошибку `error` или `promise` завершится успешно.
 
 ### .regex(contents, regex, [message])
 
-Assert that `contents` matches `regex`.
+Сравнение, что `contents` подходит под `regex`.
 
 ### .ifError(error, [message])
 
-Assert that `error` is falsy.
+Сравнение, что `error` ложно.
 
-## Skipping Assertions
+## Пропуск сравнений
 
-Any assertion can be skipped using the `skip` modifier. Skipped assertions are still counted, so there is no need to change your planned assertion count.
+Любое сравнение можно пропустить, используя `skip` модификатор. Пропущенные сравнение подсчитываются, так что Вам не нужно менять запланированное число проверок.
 
 ```js
 test(t => {
 	t.plan(2);
-	t.skip.is(foo(), 5); // no need to change your plan count when skipping
+	t.skip.is(foo(), 5); // не нужно менять количество запланированных проверок
 	t.is(1, 1);
 });
 ```
@@ -648,7 +648,7 @@ t.ok(x === 'bar')
      "foo"
 ```
 
-True, you could use `t.is()` in this case, and probably should, but this is just a simple example.
+Можете воспользоваться `t.is()` в этом случае, и, вероятно, должны, но это просто пример.
 
 Попробуем более сложный пример:
 
@@ -661,7 +661,7 @@ test(t => {
 });
 ```
 
-And there you go:
+На выходе:
 
 ```
 t.ok(a.test(b) || b === c)
@@ -670,54 +670,54 @@ t.ok(a.test(b) || b === c)
        false
 ```
 
-All the assert methods are enhanced.
+Все методы сравнений улучшены.
 
-Have fun!
+Веселитесь!
 
 
 ## Изолированное окружение для каждого теста
 
-Each test file is run in a separate Node.js process. This comes with a lot of benefits. Different test files can no longer affect each other. Like test files mocking with the global environment, overriding builtins, etc. However, it's mainly done for performance reasons. Even though Node.js can run async IO concurrently, that doesn't help much when tests are heavy on synchronous operations, which blocks the main thread. By running tests concurrently and test files in parallel we take full advantage of modern systems.
+Каждый тестовый файл запускается в отдельном процессе Node.js. В этом есть много преимуществ. Разные тестовые файлы больше не влияют друг на друга. Такие как тестовые файлы меняющие глобальное окружение, переопределение встроенных методов и значений атрибутов(monkey patch) и т.д. Однако изолированный запуск тестов сделан из соображений производительности. Даже с учетом того, что Node.js может запускать параллельно асинхронные IO, это не сильно поможет в тестах с большим количеством синхронных операций, что в свою очередь приведет к блокировке основного потока. Запуская тесты конкурентно и тестовые файлы параллельно мы получаем в полной мере можем задействовать современные системы.
 
 
-## Tips
+## Советы
 
-### Temp files
+### Временные файлы
 
-Running tests concurrently comes with some challenges, doing IO is one. Usually, serial tests just create temp directories in the current test directory and cleans it up at the end. This won't work when you run tests concurrently as tests will conflict with each other. The correct way to do it is to use a new temp directory for each test. The [`tempfile`](https://github.com/sindresorhus/tempfile) and [`temp-write`](https://github.com/sindresorhus/temp-write) modules can be helpful.
+Запуск тестов конкурентно имеет свои сложности, выполнение IO одна из них. Обычно, последовательные тесты создают временный каталог в текущей директории тестов и очищают его после выполнения. Такая схема не будет работать с тестами, запущенными конкурентно, так как каждый из тестов бует конфликтовать с другим. Более правильный путь - это создавать новый временный каталог для каждого теста. [`tempfile`](https://github.com/sindresorhus/tempfile) и [`temp-write`](https://github.com/sindresorhus/temp-write) модули могут помочь с этим.
 
-### Debugging
+### Отладка
 
-AVA runs tests concurrently by default, which is suboptimal when you need to debug something. Instead, run tests serially with the `--serial` option:
+AVA по умолчанию запускает тесты конкрутено, что не всегда оптимально для отладки. Вместо этого, можно запустить тесты последовательно с опцией`--serial`:
 
 ```
 $ ava --serial
 ```
 
-### Code coverage
+### Покрытие кода
 
-You can't use [`istanbul`](https://github.com/gotwarlost/istanbul) for code coverage as AVA [spawns the test files](#isolated-environment), but you can use [`nyc`](https://github.com/bcoe/nyc) instead, which is basically `istanbul` with support for subprocesses.
+Вы не можете использовать [`istanbul`](https://github.com/gotwarlost/istanbul) покрытия кода, так как AVA [изолированное окружение для каждого файла](#Изолированное-окружение-для-каждого-теста), однако Вы можете использовать [`nyc`](https://github.com/bcoe/nyc), который похож на [`istanbul`](https://github.com/gotwarlost/istanbul) но с поддержкой запуска в отдельном окружении(sub-process).
 
-As of version `5.0.0` it uses source maps to report coverage for your actual code, regardless of transpilation. Make sure that the code you're testing includes an inline source map or references a source map file. If you use `babel/register` you can set the `sourceMaps` option in your `.babelrc` to `inline`.
+Начиная с версии `5.0.0` используются source maps для отчета о покрытии кода, независимо от транспиллинга. Убедитесь, что код, который Вы тестируете содержит инлайны с source map или ссылку на source map файл. Если Вы используете `babel/register` Вы можете выставить опцию `sourceMaps` в Вашем `.babelrc` файле на `inline`.
 
 
 ## FAQ
 
-### Why not `mocha`, `tape`, `node-tap`?
+### Почему не `mocha`, `tape`, `node-tap`?
 
-Mocha requires you to use implicit globals like `describe` and `it` with the default interface (which most people use), too unopinionated, bloated, synchronous by default, unusable programmatic API, serial test execution, and slow. Tape and node-tap are pretty good. AVA is highly inspired by their syntax. However, they both execute tests serially and they've made [TAP](https://testanything.org) a first-class citizen which has IMHO made their codebases a bit convoluted and coupled. TAP output is hard to read so you always end up using an external tap reporter. AVA is highly opinionated and concurrent. It comes with a default simple reporter and supports TAP through a CLI flag.
+Mocha требует использование неявных глобальных метоов `describe` и `it` в своем интерфейсе по умолчанию(большинство людей используют это), что слишком догматично, раздуто, синхронном по умолчанию, непригодно для программных API, последовательно и слишком медленно. Tape и node-tap вполне хороши. AVA была вдохновлена их синтаксисом. Однако они обе выполняют тесты последовательно и они [TAP](https://testanything.org) своей основной идеей, что сделало их кодовую базу запутанной и связанной. TAP вывод слишком сложен для чтения , так что Вы всегда должны использовать сторонний tap обработчик. AVA является достаточно качественным и конкурентным продуктом. В который включен стандартный и простой обработчик вывода и поддерживающий TAP через параметры командной строки.
 
-### How can I use custom reporters?
+### Как мне использовать кастомные отчеты?
 
-Use the [`--tap` flag](#optional-tap-output) with any [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters).
+Используйте [`--tap` флаг](#Опциональный-TAP-вывод) с любым из [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters).
 
-### How is the name written and pronounced?
+### Как произносится и пишется название проекта?
 
-AVA, not Ava or ava. Pronounced [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?raw=true).
+AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?raw=true).
 
-### What is the header background?
+### Что за картинка используется в логотипе?
 
-[Andromeda galaxy.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
+[Галактика Андромеды.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 
 ### Конкурентность и параллелизм
 
@@ -757,7 +757,7 @@ AVA, not Ava or ava. Pronounced [`/ˈeɪvə/` ay-və](media/pronunciation.m4a?ra
 ---|---|---|---
 [Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
 
-#### Former
+#### Бывший участник
 
 - [Kevin Mårtensson](https://github.com/kevva)
 
