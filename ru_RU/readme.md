@@ -16,7 +16,7 @@ Even though JavaScript is single-threaded, IO in Node.js can happen in parallel 
 ## Содержание
 
 - [Использование](#Использование)
-- [Командная строка](#Командная строка)
+- [Командная строка](#Командная-строка)
 - [Конфигурирование](#configuration)
 - [Документация](#documentation)
 - [API](#api)
