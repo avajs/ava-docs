@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](), Вы не можете найти файл readme.md, то можете считать что перевод актуален).
+Здесь содержится перевод файл [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](), Вы не можете найти файл `readme.md`, то можете считать что перевод актуален).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 

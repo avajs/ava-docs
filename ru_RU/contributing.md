@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Если при нажатии на [ссылку](), Вы не можете найти файл contributing.md, то можете считать что перевод актуален).
+Здесь содержится перевод файл [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Если при нажатии на [ссылку](), Вы не можете найти файл `contributing.md`, то можете считать что перевод актуален).
 ___
 # Вклад в AVA
 

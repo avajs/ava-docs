@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Если при нажатии на [ссылку](), Вы не можете найти файл code-of-conduct.md, то можете считать что перевод актуален).
+Здесь содержится перевод файл [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Если при нажатии на [ссылку](), Вы не можете найти файл `code-of-conduct.md`, то можете считать что перевод актуален).
 ___
 # Кодекс Поведения участника
 
