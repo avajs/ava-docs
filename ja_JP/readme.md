@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
@@ -14,7 +14,9 @@ JavaScriptはシングルスレッドだけれども、Node.jsにおけるIOは�
 
 *Issueやプルリクエストなどで貢献したい場合は、[コントリビューションガイド](contributing.md)を読んでください。
 
-翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md),[日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md)
+アップデートの情報のために[AVA Twitter account](https://twitter.com/ava__js)をフォローしてください。
+
+翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## 目次
@@ -44,6 +46,7 @@ JavaScriptはシングルスレッドだけれども、Node.jsにおけるIOは�
 - [Observableのサポート](#observableのサポート)
 - [強化されたassert](#強化されたassert)
 - [オプション付きのTAP出力](#任意のtapの出力)
+- [綺麗なstack traces](#綺麗なstack-traces)
 
 
 ## テストの構文
@@ -70,25 +73,24 @@ AVAを`$ npm install --global ava`でグローバルにインストールして�
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^0.6.0"
+		"ava": "^0.11.0"
 	}
 }
 ```
 
 #### テストファイルの作成
 
+`test.js`という名前のファイルをプロジェクトのルートディレクトリに作ってください。
+
 ```js
 import test from 'ava';
-import delay from 'delay';
 
 test('foo', t => {
 	t.pass();
 });
 
 test('bar', async t => {
-	t.plan(1);
-
-	const bar = Promise.resolve('bar').then(delay(200));
+	const bar = Promise.resolve('bar');
 
 	t.is(await bar, 'bar');
 });
@@ -112,12 +114,13 @@ $ ava --help
     ava [<file|folder|glob> ...]
 
   Options
-    --init       Add AVA to your project
-    --fail-fast  Stop after first test failure
-    --serial     Run tests serially
-    --require    Module to preload (Can be repeated)
-    --tap        Generate TAP output
-    --verbose    Enable verbose output
+    --init           Add AVA to your project
+    --fail-fast      Stop after first test failure
+    --serial, -s     Run tests serially
+    --require, -r    Module to preload (Can be repeated)
+    --tap, -t        Generate TAP output
+    --verbose, -v    Enable verbose output
+    --no-cache       Disable the transpiler cache
 
   Examples
     ava
@@ -131,9 +134,11 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
-ディレクトリはデフォルトで再帰的です。`fixtures`や`helpers`と名付けられたディレクトリのファイルは無視され、`_`で始まるファイルも同様です。これはテストファイルと同じディレクトリにヘルパーを置くのに役立ちます。
+ディレクトリはデフォルトで再帰的です。`fixtures`や`helpers`と名付けられたディレクトリは無視され、`_`で始まるファイルも同様です。これはテストファイルと同じディレクトリにヘルパーを置くのに役立ちます。
 
-*警告: 非標準の振る舞い:* AVA CLIは常にプロジェクトローカルにインストールされたAVAを探します。それは、グローバルの`ava`コマンドを実行しても変わりません。この非標準の振る舞いは重要な[issue](https://github.com/sindresorhus/ava/issues/157)を解決するもので、日常的に利用する際には影響がないはずです。
+`npm test`を実行するときに、引数を使って`npm test test2.js`のようにテストの位置を直接に渡すことができます。しかし、フラグは`npm test -- --verbose`のように渡されなきゃなりません。
+
+*警告: 非標準の振る舞い:* AVA CLIは常にプロジェクトローカルにインストールされたAVAを使います。それは、グローバルの`ava`コマンドを実行しても変わりません。この非標準の振る舞いは重要な[issue](https://github.com/sindresorhus/ava/issues/157)を解決するもので、日常的に利用する際には影響がないはずです。
 
 ## 設定
 
@@ -150,7 +155,9 @@ CLIの全てのオプションは、`package.json`の`ava`のセクションで�
     "serial": true,
     "tap": true,
     "verbose": true,
-    "require": ["babel-core/register", "coffee-script/register"]
+    "require": [
+      "babel-core/register"
+    ]
   }
 }
 ```
@@ -493,6 +500,12 @@ $ ava --tap | tap-nyan
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
+### 綺麗なstack trace
+
+AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster.
+ソースからエラーをより速く見つけるように、AVAは自動的に関係のない行を排除します。
+
+<img src="https://github.com/sindresorhus/ava/raw/master/media/stack-traces.png" width="398">
 
 ## API
 
@@ -583,15 +596,19 @@ test(t => {
 
 `value`が`expected`と厳密に同じ値でないとします。
 
-### .throws(function|promise, error, [message])
+### .throws(function|promise, [error, [message]])
 
 エラーを投げる`関数`か`promise`のrejectであるとします。
 
 `error`は、コンストラクタ、正規表現、エラーメッセージ、バリデーション関数などにも出来ます。
 
-### .doesNotThrow(function|promise, [message])
+### .notThrows(function|promise, [message])
 
 `error`を投げない`関数`か`promise`のresolveであるとします。
+
+### .regex(contents, regex, [message])
+
+`contents`が`regex`にマッチするとします。
 
 ### .ifError(error, [message])
 
@@ -694,7 +711,11 @@ AVAが[実行するテストファイル](#隔離された環境)のコードカ
 
 ### なぜ`mocha`、`tape`、`node-tap`などではないのか?
 
-Mochaはデフォルトのインターフェース(多くの人々が利用している)で`describe`や`it`のような暗黙のグローバルを利用することを必須としていて、主張が無さすぎて、肥大化していて、デフォルトで同期で、直列でテストを実行して、そして遅いです。Tapeやnode-tapはかなり良いです。AVAはそれらのシンタックスに強く影響を受けています。ですが、それらはいずれも、テストを直列で実行し、[TAP](https://testanything.org/)を第1級オブジェクトとして作り上げ、私の見方ですが、それがそのコードベースを複雑で結合したものにしました。TAPの出力は読みづらいので、外部のレポーターを利用することになります。AVAは自己主張が強く並行です。デフォルトの簡単なレポーターがあり、将来的にはTAPを通したレポーターをサポートします。
+Mochaはデフォルトのインターフェース(多くの人々が利用している)で`describe`や`it`のような暗黙のグローバルを利用することを必須としていて、主張が無さすぎて、肥大化していて、デフォルトで同期で、プログラム的なAPIもなくて、直列でテストを実行して、そして遅いです。Tapeやnode-tapはかなり良いです。AVAはそれらのシンタックスに強く影響を受けています。ですが、それらはいずれも、テストを直列で実行し、[TAP](https://testanything.org/)を第1級オブジェクトとして作り上げ、私の見方ですが、それがそのコードベースを複雑で結合したものにしました。TAPの出力は読みづらいので、外部のレポーターを利用することになります。AVAは自己主張が強く並行です。デフォルトの簡単なレポーターがあり、CLI flagを通じてTAPもサポートしています。
+
+### どうやってカスタムレポータを使いますか？
+
+[TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters)の中で一つを[`--tap` flag](#任意のtapの出力)から使ってください。
 
 ### 名前はどのように書いて、どう発音するのか?
 
@@ -706,34 +727,40 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 ### 並行 vs. 並列
 
-並行は並列ではありません。それは並列を可能にするものです。[より詳しくはこちら。](http://stackoverflow.com/q/1050222)
-
+[並行は並列ではありません。それは並列を可能にするものです。](http://stackoverflow.com/q/1050222)
 
 ## レシピ
 
 - [コードカバレッジ](docs/recipes/code-coverage.md)
 - [エンドポイントのテスト](docs/recipes/endpoint-testing.md)
-
+- [`t.plan()`はいつ使うのか](docs/recipes/when-to-use-plan.md)
 
 ## サポート
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Twitter](https://twitter.com/ava__js)
 
+## その他
 
+- [AVA logo stickers](https://www.stickermule.com/user/1070705604/stickers)
 
 ## 関連リンク
 
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - gulpでテストを実行
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - gruntでテストを実行
-
+- [fly-ava](https://github.com/pine613/fly-ava) - flyでテストを実行
+- [start-ava](https://github.com/start-runner/ava) - startでテストを実行
 
 ## 開発者
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
+[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
 ---|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Kevin Mårtensson](https://github.com/kevva) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
+[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
 
+#### 元メンバー
+
+- [Kevin Mårtensson](https://github.com/kevva)
 
 <div align="center">
 	<br>

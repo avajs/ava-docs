@@ -1,15 +1,16 @@
 ___
 **訳注**
 
-これは[contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/b76f3d513a41edd876f70fc3e61d7d968cd531a6...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-cc4aac3e9be04e0413c9520f223b493c)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # AVAにコントリビュート
 
 ✨ AVAにコントリビュートしてくれてありがとう! ✨
 
+このプロジェクトは[コントリビューターの行動規範](code-of-conduct.md)の元でリリースされます。プロジェクトに参加することにより、この行動規範に従うことを同意することになります。
 
-翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md)
+翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
 
 ## どうやってコントリビュートできますか？
 
