@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md). Если при нажатии на [ссылку](), Вы не можете найти файл `endpoint-testing.md`, то можете считать что перевод актуален).
+Здесь содержится перевод файл [endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/65ae07c76b2a5927e6bcc00630a691c98f6e7c46...master#diff-aee54ab6a703c02779edb3ebbb35e96f), содержащую последние правки в master ветке AVA, Вы не можете найти файл `endpoint-testing.md`, то можете считать что перевод актуален).
 ___
 # Тестирование "конечных точек"
 
