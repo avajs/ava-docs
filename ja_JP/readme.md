@@ -14,7 +14,7 @@ JavaScriptはシングルスレッドだけれども、Node.jsにおけるIOは�
 
 *Issueやプルリクエストなどで貢献したい場合は、[コントリビューションガイド](contributing.md)を読んでください。
 
-アップデートの情報のために[AVA Twitter account](https://twitter.com/ava__js)をフォローしてください。
+アップデートの情報のために[AVAのTwitterアカウント](https://twitter.com/ava__js)をフォローしてください。
 
 翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
@@ -46,7 +46,7 @@ JavaScriptはシングルスレッドだけれども、Node.jsにおけるIOは�
 - [Observableのサポート](#observableのサポート)
 - [強化されたassert](#強化されたassert)
 - [オプション付きのTAP出力](#任意のtapの出力)
-- [綺麗なstack traces](#綺麗なstack-traces)
+- [明快なスタックトレース](#明快なスタックトレース)
 
 
 ## テストの構文
@@ -500,10 +500,9 @@ $ ava --tap | tap-nyan
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
-### 綺麗なstack trace
+### 明快なスタックトレース
 
-AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster.
-ソースからエラーをより速く見つけるように、AVAは自動的に関係のない行を排除します。
+エラーの箇所をより素早く見つけられるように、AVAはスタックトレースから自動的に無関係の行を取り除きます。
 
 <img src="https://github.com/sindresorhus/ava/raw/master/media/stack-traces.png" width="398">
 
@@ -711,11 +710,11 @@ AVAが[実行するテストファイル](#隔離された環境)のコードカ
 
 ### なぜ`mocha`、`tape`、`node-tap`などではないのか?
 
-Mochaはデフォルトのインターフェース(多くの人々が利用している)で`describe`や`it`のような暗黙のグローバルを利用することを必須としていて、主張が無さすぎて、肥大化していて、デフォルトで同期で、プログラム的なAPIもなくて、直列でテストを実行して、そして遅いです。Tapeやnode-tapはかなり良いです。AVAはそれらのシンタックスに強く影響を受けています。ですが、それらはいずれも、テストを直列で実行し、[TAP](https://testanything.org/)を第1級オブジェクトとして作り上げ、私の見方ですが、それがそのコードベースを複雑で結合したものにしました。TAPの出力は読みづらいので、外部のレポーターを利用することになります。AVAは自己主張が強く並行です。デフォルトの簡単なレポーターがあり、CLI flagを通じてTAPもサポートしています。
+Mochaはデフォルトのインターフェース(多くの人々が利用している)で`describe`や`it`のような暗黙のグローバルを利用することを必須としていて、主張が無さすぎて、肥大化していて、デフォルトで同期で、プログラム的なAPIもなくて、直列でテストを実行して、そして遅いです。Tapeやnode-tapはかなり良いです。AVAはそれらのシンタックスに強く影響を受けています。ですが、それらはいずれも、テストを直列で実行し、[TAP](https://testanything.org/)を第1級オブジェクトとして作り上げ、私の見方ですが、それがそのコードベースを複雑で結合したものにしました。TAPの出力は読みづらいので、外部のレポーターを利用することになります。AVAは自己主張が強く並行です。デフォルトの簡単なレポーターがあり、CLIのフラグを通じてTAPもサポートしています。
 
-### どうやってカスタムレポータを使いますか？
+### どうやってカスタムレポーターを使いますか？
 
-[TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters)の中で一つを[`--tap` flag](#任意のtapの出力)から使ってください。
+[TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters)の中で一つを[`--tap` フラグ](#任意のtapの出力)から使ってください。
 
 ### 名前はどのように書いて、どう発音するのか?
 
@@ -733,7 +732,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 - [コードカバレッジ](docs/recipes/code-coverage.md)
 - [エンドポイントのテスト](docs/recipes/endpoint-testing.md)
-- [`t.plan()`はいつ使うのか](docs/recipes/when-to-use-plan.md)
+- [`t.plan()`をいつ使うのか](docs/recipes/when-to-use-plan.md)
 
 ## サポート
 
@@ -743,7 +742,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 ## その他
 
-- [AVA logo stickers](https://www.stickermule.com/user/1070705604/stickers)
+- [AVAのロゴステッカー](https://www.stickermule.com/user/1070705604/stickers)
 
 ## 関連リンク
 
