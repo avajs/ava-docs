@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0c25d982e94d600cb6b8e438a0e67169)になります(このリンクをクリックして、`endpoint-testing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[when-to-use-plan.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0c25d982e94d600cb6b8e438a0e67169)になります(このリンクをクリックして、`when-to-use-plan.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # `t.plan()`をいつ使うのか
