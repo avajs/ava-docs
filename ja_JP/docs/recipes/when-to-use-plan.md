@@ -118,7 +118,7 @@ testData.forEach(testDefinition => {
   test(t => {
     const result = functionUnderTest(testDefinition.input);
 
-    // testDefinitionは`foo`や`bar`の両方ではなくどちらかの一つだけが例外を持ちます。
+    // testDefinitionは`foo`と`bar`の両方ではなく、いずれかが期待値であるべきです。
 
     if (testDefinition.foo) {
       t.is(result.foo, testDefinition.foo);
