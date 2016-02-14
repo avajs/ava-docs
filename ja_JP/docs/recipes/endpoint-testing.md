@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/37e0dd84d25a37ce8eaf907094652bc28e8d0289...master#diff-cb1a0a79c5c751cd6b2568e604d23237ff8eb85f)になります(このリンクをクリックして、`endpoint-testing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-aee54ab6a703c02779edb3ebbb35e96f)になります(このリンクをクリックして、`endpoint-testing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # エンドポイントのテスト
