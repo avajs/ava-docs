@@ -9,7 +9,7 @@ Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es
 
 AVA n'a pas de méthodes internes pour tester les endpoints, mais nous pouvons le faire avec n'importe quelle bibliothèque. Utilisons [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 
-Etant donné que les tests sont exécutés simultanément, il est préférable de créer une nouvelle instance de serveur pour chaque test, car si nous les référençons à la même instance, elle pourrait être mutée entre les tests. Ceci peut être fait avec un `test.beforeEach` et `t.context`, ou simplement avec une fonction factory :
+Étant donné que les tests sont exécutés simultanément, il est préférable de créer une nouvelle instance de serveur pour chaque test, car si nous les référençons à la même instance, elle pourrait être mutée entre les tests. Ceci peut être fait avec un `test.beforeEach` et `t.context`, ou simplement avec une fonction factory :
 
 ```js
 function makeApp() {

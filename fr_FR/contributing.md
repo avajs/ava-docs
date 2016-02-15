@@ -23,7 +23,7 @@ Certaines issues sont créées avec des informations manquantes, non reproductib
 
 ### Faites-nous un retour sur les issues
 
-Nous sommes toujours interessés par d'autres avis dans les discussions des issues. C'est une bonne occasion d'influencer l'orientation future de l'AVA.
+Nous sommes toujours intéressés par d'autres avis dans les discussions des issues. C'est une bonne occasion d'influencer l'orientation future de l'AVA.
 
 ### Promenez-vous sur notre chat
 
@@ -48,5 +48,5 @@ Nous avons un [chat](https://gitter.im/sindresorhus/ava). Venez, espionnez, parl
 - Vérifiez (Lint) et testez avant de soumettre un pull request en exécutant `$ npm test`.
 - Faites un pull request depuis une [branche](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), pas depuis le master.
 - Utilisez un titre clair et descriptif pour le pull request et les commits.
-- Ecrivez une description convaincante pour expliquer pourquoi nous devrions intéger votre pull request. Il est de votre devoir de nous convaincre. Répondre à la question «pourquoi» est nécessaire et fournissez des cas d'utilisation.
+- Écrivez une description convaincante pour expliquer pourquoi nous devrions intégrer votre pull request. Il est de votre devoir de nous convaincre. Répondre à la question «pourquoi» est nécessaire et fournissez des cas d'utilisation.
 - Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)

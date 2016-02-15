@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/780d48f89906257910c1999514a2c980ed5f303c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3c12940ca15be44952a8cce02751c6346c616e3f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -133,11 +133,11 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
+*Notez que le CLI utilisera votre installation locale de AVA lorsqu'il est disponible, même lorsqu'il est exécuté de manière globale.*
+
 Les répertoires sont par défaut récursifs. Les répertoires nommés `fixtures` et `helpers` sont ignorés, de la même manière que les fichiers qui commencent par `_`. Cela peut être utile pour inclure des helpers dans le même répertoire que vos fichiers de test.
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
-
-*AVERTISSEMENT : Comportement non-standard :* Le CLI de AVA essaiera toujours d'utiliser l'installation AVA locale dans vos projets. Cela est vrai même lorsque vous exécutez la commande globale `ava`. Ce comportement non-standard résout une importante [issue](https://github.com/sindresorhus/ava/issues/157) et ne devrait avoir aucun impact sur l'utilisation quotidienne.
 
 ## Configuration
 
@@ -151,9 +151,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
       "!**/not-this-file.js"
     ],
     "failFast": true,
-    "serial": true,
     "tap": true,
-    "verbose": true,
     "require": [
       "babel-core/register"
     ]
@@ -205,7 +203,7 @@ test(function name(t) {
 
 ### Assertion planifiée
 
-Une assertion **plan**-ifiée peut être utilisée pour s'assurer qu'un certain nombre d'assertions soient faites. Dans le scénario le plus courant, il confirme que le test n'est pas sorti avant d'exécuter le nombre prévu d'assertions. Il fait également échouer le test si trop d'assertions sont exécutées, ce qui peut être utile si vous avez des assertions à l'intérieur des callbacks ou des boucles.
+Une assertion **plan**-ifiée peut être utilisée pour s'assurer qu'un certain nombre d'assertions soient faites. Dans le scénario le plus courant, il confirme que le test n'est pas sorti avant d'exécuter le nombre prévu d'assertions. Il fait également échouer le test si trop d'assertions sont exécutées, ce qui peut être utile si vous avez des assertions à l'intérieur des callbacks ou des boucles. Il faut savoir que, contrairement à node-tap et tape, AVA *n'arrête pas* automatiquement un test lorsque le nombre d'assertion prévu est atteint.
 
 Cela se traduira par un test réussi :
 
@@ -219,47 +217,15 @@ test(t => {
 });
 
 test.cb(t => {
-	setTimeout(() => {
+	t.plan(1);
+
+  someAsyncFunction(() => {
 		t.pass();
 		t.end();
-	}, 100);
+  });
 });
 ```
 
-#### AVERTISSEMENT : modifications récentes qui change le comportement
-
-AVA ne supporte plus les tests qui se terminent automatiquement via `t.plan(...)`. Cela permet d'éviter les faux positifs si vous ajoutez des assertions et que vous oubliez d'augmenter le nombre pour plan.
-
-```js
-// Ceci ne fonctionne plus
-
-test('auto ending is dangerous', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	// la fin automatique après avoir atteint les deux assertions prévues manquera ce dernier test
-	setTimeout(() => t.fail(), 10000);
-});
-```
-
-Pour que cela fonctionne, vous devez utiliser le "mode callback" et appelez explicitement `t.end()`.
-
-```js
-test.cb('end explicite pour vos tests', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	setTimeout(() => {
-		// Cet échec est maintenant pris en compte
-		t.fail();
-		t.end();
-	}, 1000);
-});
-```
 
 ### Test en série
 
@@ -343,7 +309,7 @@ test.afterEach.cb(t => {
 });
 
 test.after(t => {
-	return new Promise(/* ... */);
+   return new Promise(/* ... */);
 });
 ```
 
@@ -402,7 +368,7 @@ AVA est livré avec un support intégré pour ES2015 via [Babel 6](https://babel
 
 #### Transpilation des modules importés
 
-AVA transpiles actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Même s'il existe des raisons valables à cette approche, cela peut ne pas être ce que vous attendez !
+AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Même s'il existe des raisons valables à cette approche, cela peut ne pas être ce que vous attendez !
 
 Comme solution de contournement simple, vous pouvez utiliser le [hook require de Babel](https://babeljs.io/docs/usage/require/) afin de faire la transpilation à la volée des modules qui sont importés par la suite. Comme AVA prend en charge la syntaxe du module ES2015, vous pouvez l'utiliser pour importer le hook require :
 
@@ -742,17 +708,20 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 - [Twitter](https://twitter.com/ava__js)
 
 
-## Autre
-
-- [Stickers du logo AVA](https://www.stickermule.com/user/1070705604/stickers)
-
-
 ## En relation
 
+- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Snippets pour les tests AVA
+- [atom-ava](https://github.com/sindresorhus/atom-ava) - Snippets pour les tests AVA
+- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Règles de Lint pour les tests AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
 - [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
+
+
+## Liens
+
+- [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
 
 
 ## L'équipe
