@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3c12940ca15be44952a8cce02751c6346c616e3f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/ef371bd2b59d43e8d8ad6ae319daed8c40773eac...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -712,6 +712,7 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 
 - [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Snippets pour les tests AVA
 - [atom-ava](https://github.com/sindresorhus/atom-ava) - Snippets pour les tests AVA
+- [vscode-ava](https://github.com/samverschueren/vscode-ava) - Snippets pour les tests AVA
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Règles de Lint pour les tests AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
