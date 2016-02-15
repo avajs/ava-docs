@@ -1,13 +1,13 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/780d48f89906257910c1999514a2c980ed5f303c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/3c12940ca15be44952a8cce02751c6346c616e3f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > Test runner futurista
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
 
 A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecutarse en paralelo debido a su naturaleza asíncrona. AVA aprovecha esto y corre sus tests al mismo tiempo, lo que es especialmente beneficioso para tests pesados en IO. Además, los archivos de test se ejecutan en paralelo como procesos separados, que le da un mejor rendimiento y un entorno aislado para cada archivo de test. [Cambiando](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha a AVA en Pageres llevó el tiempo de los test por debajo de 31 segundos, concretamente a 11 segundos. El tener tests que se ejecutan al mismo tiempo nos obliga a escribir tests atómicos, es decir, los tests no dependen del estado global o el estado de otros tests, lo que está muy bien!
 
@@ -133,9 +133,9 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
-Los directorios son recursivos por defecto. Los archivos que se encuentren en directorios llamados `fixtures` y `helpers` serán ignorados, así como los archivos que comienzan con `_`. Esto nos puede ser útil para tener helpers en el mismo directorio que los archivos de test.
+* Tenga en cuenta que el CLI usará su instalación local de AVA cuando esté disponible, incluso cuando se ejecute globalmente.*
 
-*ADVERTENCIA: COMPORTAMIENTO NO ESTÁNDAR:* La CLI de AVA tratará siempre de encontrar y utilizar su instalación local de AVA. Esto será así incluso cuando se ejecuta el comando `ava` global. Este comportamiento no estándar resuelve un importante [problema](https://github.com/sindresorhus/ava/issues/157), y no debe tener ningún impacto en el uso diario.
+Los directorios son recursivos por defecto. Los archivos que se encuentren en directorios llamados `fixtures` y `helpers` serán ignorados, así como los archivos que comienzan con `_`. Esto nos puede ser útil para tener helpers en el mismo directorio que los archivos de test.
 
 ## Configuración
 
@@ -149,9 +149,7 @@ Todas las opciones de CLI pueden configurarse en la sección de 'ava' de su 'pac
       "!**/not-this-file.js"
     ],
     "failFast": true,
-    "serial": true,
     "tap": true,
-    "verbose": true,
     "require": ["babel-core/register", "coffee-script/register"]
   }
 }
@@ -201,7 +199,7 @@ test(function name(t) {
 
 ### Plan de aserción
 
-Un plan de aserción se puede utilizar para garantizar que un número determinado de aserciones se cumplen. El escenario más común es validar que el test no ha salido antes de ejecutar el número esperado de aserciones. También falla el test si se ejecutan demasiadas aserciones, puede ser útil si tiene aserciones dentro de callbacks o bucles.
+Un plan de aserción se puede utilizar para garantizar que un número determinado de afirmaciones se cumplen. El escenario más común es validar que el test no ha salido antes de ejecutar el número esperado de aserciones. También falla el test si se ejecutan demasiadas aserciones, puede ser útil si tiene aserciones dentro de callbacks o bucles. Tenga en cuenta que, a diferencia del nodo-tap y tape, AVA *no* terminará automaticamente un test cuando se alcance el final previsto de la aserción.
 
 Esto terminará en un test ejecutado satisfactoriamente:
 
@@ -215,44 +213,12 @@ test(t => {
 });
 
 test.cb(t => {
-	setTimeout(() => {
-		t.pass();
-		t.end();
-	}, 100);
-});
-```
+	t.plan(1);
 
-#### ADVERTENCIA: Cambio reciente de última hora.
-
-AVA ya no soportará automáticamente la terminación de test via `t.plan(...)`. Esto ayuda a prevenir falsos positivos si añade aserciones, pero olvidese de incrementar su recuento de plan.
-
-```js
-// Esto ya no funcionará
-
-test('auto ending is dangerous', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	// termina automáticamente después de llegar a las dos aserciones planificadas, se perderá la última
-	setTimeout(() => t.fail(), 10000);
-});
-```
-Para que esto funcione, ahora debe usar "callback mode" y llamar explícitamente `t.end()`.
-
-```js
-test.cb('explicitly end your tests', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	setTimeout(() => {
-		// Este fallo ahora es recogido de forma fiable.
-		t.fail();
-		t.end();
-	}, 1000);
+   someAsyncFunction(() => {
+  		t.pass();		  		
+  		t.end();		  		
+ 	});		 
 });
 ```
 
@@ -737,10 +703,19 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 
 ## Relacionado
 
+- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Fragmentos de código para tests de AVA
+- [atom-ava](https://github.com/sindresorhus/atom-ava) - Fragmentos de código para tests de AVA
+- [vscode-ava](https://github.com/samverschueren/vscode-ava) - Fragmentos de código para tests de AVA
+- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Reglas de lint para tests de AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Ejecutar tests con gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Ejecutar tests con grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Ejecutar tests con fly
 - [start-ava](https://github.com/start-runner/ava) - Ejecutar los tests con inicio
+
+
+## Enlaces
+
+- [Compre AVA stickers](https://www.stickermule.com/user/1070705604/stickers)
 
 
 ## Creado por
