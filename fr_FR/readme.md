@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/ef371bd2b59d43e8d8ad6ae319daed8c40773eac...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/11e82e93bdebcbb04a6f317b9d193444b1530b04...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -265,6 +265,8 @@ test.skip('ne sera pas exécuté', t => {
 
 Lorsqu'une configuration et/ou une déconfiguration est nécessaire, vous pouvez utiliser `test.before()` et `test.after()`,
 de la même manière que `test()`. Les fonctions de test `test.before()` et `test.after()` sont appelées avant/après tous les tests. Vous pouvez aussi utiliser `test.beforeEach()` et `test.afterEach()` si vous avez besoin de configurer/déconfigurer pour chaque test. Les hooks sont exécutés en série dans le fichier de test. Ajoutez-en autant que vous le voulez. Vous pouvez éventuellement spécifier un titre qui sera affiché en cas d'échec.
+
+Si vous avez besoin de mettre en place un état global entre les tests en utilisant `test.beforeEach()` et `test.afterEach()` ([par exemple](https://github.com/sindresorhus/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont exécutés en série (en utilisant soit [test.serial](#test-en-série) ou [`--serial`](#cli)).
 
 
 ```js
