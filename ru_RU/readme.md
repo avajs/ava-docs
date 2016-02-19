@@ -25,7 +25,7 @@ ___
 - [Конфигурация](#Конфигурация)
 - [Документация](#Документация)
 - [API](#api)
-- [Сравнения](#Сравнения)
+- [Проверик](#Проверки)
 - [FAQ](#faq)
 - [Рецепты](#Рецепты)
 
@@ -46,7 +46,7 @@ ___
 - [Поддержка коллбеков](#Поддержка-коллбеков)
 - [Улучшенные проверки](#Улучшенные-проверки)
 - [Опциональный TAP вывод](#tap-report)
-- [Чистый Stack trace](#Чистый-трейс-вызовов)
+- [Чистый Stack trace](#stack-trace)
 
 
 ## Синтаксис тестов
@@ -500,7 +500,7 @@ $ ava --tap | tap-nyan
 <img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
 
 
-### Чистый Stack trace
+### <a name="stack-trace"></a>Чистый Stack trace
 
 AVA автоматически удаляет ненужные строки в Stack trace, что позволить более быстро найти источник ошибки.
 
@@ -732,7 +732,7 @@ AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](
 ## Рецепты
 
 - [Покрытие кода](docs/recipes/code-coverage.md)
-- [Тестирование "конечных точек"](docs/recipes/endpoint-testing.md)
+- [Тестирование HTTP серверов](docs/recipes/endpoint-testing.md)
 - [Когда применять `t.plan()`](docs/recipes/when-to-use-plan.md)
 
 
