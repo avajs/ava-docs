@@ -181,6 +181,6 @@ after_success:
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava#isolated-environment
+[изолированное окружение]: https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md#Изолированное-окружение-для-каждого-теста
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
