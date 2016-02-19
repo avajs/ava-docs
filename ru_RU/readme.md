@@ -1,13 +1,13 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/158916cc9d2afbb057f10cbf761475cb1477594f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
 > Футуристичный инструмент для тестирования
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
 
 Даже с учетом того, что JavaScript выполняется в одном потоке, IO в Node.js могут происходить параллельно в связи с природой самого Node.js. AVA в полной мере пользуется этим преимуществом и запускает Ваши тесты одновременно, что особенно важно при серьезных IO в тестах. Кроме того, тестовые файлы запускаются параллельно в разных процессах, предоставляя большую производительность и изолированное окружение для каждого тестового файла. [Переход](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) с Mocha на AVA в Pageres улучшил время тестирования с 31 секунды до 11 секунд. Возможность запускать тесты одновременно, заставляет Вас писать тесты, в которых нет необходимости зависеть от глобального состояния или состояний других тестов, что поистине круто!
 
@@ -134,11 +134,12 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
+*Замечание - командная утилита AVA CLI будет использовать локальную установку AVA, даже при запуске глобальной команды `ava`.*
+
 Каталоги по умолчанию рекурсивны. Каталоги с названием `fixtures` и `helpers` игнорируются, также как и те, что начинаются с `_`. Это весьма полезно, если Ваши вспомогательные файлы находятся в том же каталоге, что и тестовые файлы.
 
 Когда используется команда `npm test`, Вы можете передать дополнительные аргументы `npm test test2.js`, но флаги должны быть переданы вот так - `npm test -- --verbose`.
 
-*ВНИМАНИЕ - Нестандартное поведение:* Командная строка AVA CLI всегда будет искать локальную установку AVA в Ваших проектах. Поведение сохраняется даже при использовании глобальной команды `ava`. Это нестандартное поведение решает важную [проблему](https://github.com/sindresorhus/ava/issues/157), и не должно влиять на повседневное использование.
 
 ## Конфигурация
 
@@ -206,7 +207,7 @@ test(function name(t) {
 
 ### План проверок
 
-План проверок необходим для того, чтобы убедиться, что заданное количество проверок будет выполнено. В большинстве случаев, он гарантирует, что тест не прервется до того, как ожидаемое количество проверок выполнится. План может провалить тест, если будет выполнено большее число проверок - это удобно, если проверки выполняются в коллбеке или цикле.
+План проверок необходим для того, чтобы убедиться, что заданное количество проверок будет выполнено. В большинстве случаев, он гарантирует, что тест не прервется до того, как ожидаемое количество проверок выполнится. План может провалить тест, если будет выполнено большее число проверок - это удобно, если проверки выполняются в коллбеке или цикле. Помните, что в отличие от `node-tap/tape`, AVA автоматически не завершит тест после достижения ожидаемого количества проверок.
 
 В результате этот тест завершится успешно:
 
@@ -220,45 +221,12 @@ test(t => {
 });
 
 test.cb(t => {
-	setTimeout(() => {
+    t.plan(1);
+
+	someAsyncFunction(() => {
 		t.pass();
 		t.end();
-	}, 100);
-});
-```
-
-#### ВНИМАНИЕ: последние изменения
-
-AVA больше не поддерживает автоматическое завершение тестов через `t.plan(...)`. Это помогает избежать ложных срабатываний, если Вы добавили проверки, но забыли увеличить ожидаемое количество в `t.plan(...)`.
-
-```js
-// Это больше не работает
-
-test('auto ending is dangerous', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	// После достижений запланированных проверок этот блок не сработает
-	setTimeout(() => t.fail(), 10000);
-});
-```
-
-Для того, чтобы пример выше сработал, Вы должны использовать "коллбек мод" и явно вызвать `t.end()`.
-
-```js
-test.cb('explicitly end your tests', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	setTimeout(() => {
-		// Ошибка здесь будет обработана
-		t.fail();
-		t.end();
-	}, 1000);
+	});
 });
 ```
 
@@ -301,6 +269,7 @@ test.skip('will not be run', t => {
 Когда необходима допольнительная настройка, Вы можете использовать `test.before()` и `test.after()`,
 в той же манере, что и `test()`. Функция, переданная в `test.before()` и `test.after()`, будет вызвана до/после всех тестов. Вы так же можете использовать `test.beforeEach()` и `test.afterEach()`, если Вам нужно выполнить конфигурацию или подготовку для каждого теста. Хуки запускаются последовательно. Вы можете добавить множество хуков. Опционально Вы можете указать заголовок, который будет показан при ошибке.
 
+Если Вам необходимо установить глобальный state между тестами, исопльзуя `test.beforeEach()` и `test.afterEach()` (отслеживание `console.log` [для примера](https://github.com/sindresorhus/ava/issues/560)), Вам необходимо запускать тесты последовательно (используя [test.serial](#Последовательные тесты) или [`--serial`](#Командная-строка)).
 
 ```js
 test.before(t => {
@@ -743,17 +712,21 @@ AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](
 - [Twitter](https://twitter.com/ava__js)
 
 
-## Другое
-
-- [AVA logo stickers](https://www.stickermule.com/user/1070705604/stickers)
-
-
 ## Похожее
 
+- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Snippets for AVA tests
+- [atom-ava](https://github.com/sindresorhus/atom-ava) - Snippets for AVA tests
+- [vscode-ava](https://github.com/samverschueren/vscode-ava) - Snippets for AVA tests
+- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Lint rules for AVA tests
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Run tests with gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Run tests with grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Run tests with fly
 - [start-ava](https://github.com/start-runner/ava) - Run tests with start
+
+
+## Links
+
+- [Купить наклейки AVA](https://www.stickermule.com/user/1070705604/stickers)
 
 
 ## Команда
