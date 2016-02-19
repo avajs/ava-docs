@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/65ae07c76b2a5927e6bcc00630a691c98f6e7c46...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -35,7 +35,7 @@ ___
 - Минимально и быстро
 - Простой синтаксис тестов
 - Запуск тестов параллельно
-- Атомарные тесты
+- Атомарные операции в тестах
 - Нет неявных глобальных переменных
 - [Изолированное окружение для каждого теста](#Изолированное-окружение-для-каждого-теста)
 - [Поддержка ES2015](#ES2015)
