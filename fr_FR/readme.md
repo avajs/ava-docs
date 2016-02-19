@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/11e82e93bdebcbb04a6f317b9d193444b1530b04...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/5ba0053ecbca12996654c798876377957a566e3d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -153,7 +153,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "failFast": true,
     "tap": true,
     "require": [
-      "babel-core/register"
+      "babel-register"
     ]
   }
 }
@@ -376,7 +376,7 @@ Comme solution de contournement simple, vous pouvez utiliser le [hook require de
 
 ```js
 import test from 'ava';
-import 'babel-core/register';
+import 'babel-register';
 import foo from './foo'; // <-- foo peut-être écrit en ES2015 !
 
 test('foo bar', t => {
@@ -670,7 +670,7 @@ $ ava --serial
 
 Vous ne pouvez pas utiliser [`istanbul`](https://github.com/gotwarlost/istanbul) pour la couverture de code car AVA [génère les fichiers de test](#environnement-isolé), mais vous pouvez utiliser [`nyc`](https://github.com/bcoe/nyc) à la place, c'est essentiellement `istanbul` avec en plus la prise en charge des sous-processus (subprocesses).
 
-Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel/register` vous pouvez définir l'option `sourceMaps` dans votre `.babelrc` à `inline`.
+Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre `.babelrc` à `inline`.
 
 
 ## FAQ
