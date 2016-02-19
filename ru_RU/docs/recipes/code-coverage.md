@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файл [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/65ae07c76b2a5927e6bcc00630a691c98f6e7c46...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален).
+Здесь содержится перевод файла [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/65ae07c76b2a5927e6bcc00630a691c98f6e7c46...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален.
 ___
 # Покрытие кода
 
@@ -76,7 +76,7 @@ coverage
 
 ### Создание скрипта сборки
 
-Поскольку Вам вряд ли потребуется `inline` source maps в продуктиве, Вам необходимо указать альтернативное окружение в Ваших сборочных скриптах:
+Поскольку Вам вряд ли потребуется `inline` source maps в production окружении, Вам необходимо указать альтернативное окружение в Ваших сборочных скриптах:
 
 `package.json`
 
@@ -104,9 +104,9 @@ coverage
 }
 ```
 
-*Замечание*: Вы так же можете установить require хук используя командную строку: `ava --require=babel-core/register`. Однако, конфигурирование через файл `package.json` спасет Вас от постоянного набор этой строки в терминале.
+*Замечание*: Вы так же можете установить require хук используя командную строку: `ava --require=babel-core/register`. Однако, конфигурирование через файл `package.json` спасет Вас от постоянного набора этой строки в терминале.
 
-### Суммарно
+### Конечная конфигурация
 
 Объединяя предыдущие шаги выше, Ваш файл `package.json` должен быть похож на:
 
@@ -135,9 +135,9 @@ coverage
 
 ## HTML отчеты
 
-NYC создает `json` файл с покрытием кода для каждого форкнутого процесса в каталоге `.nyc_ouput`.
+NYC создает `json` файл с покрытием кода для каждого дочернего процесса в каталоге `.nyc_ouput`.
 
-Для объединения этих файлов в читабельным HTML отчет, сделайте следующее:
+Для объединения этих файлов в читабельный HTML отчет, сделайте следующее:
 
 ```
 $ ./node_modules/.bin/nyc report --reporter=html
@@ -160,7 +160,7 @@ $ ./node_modules/.bin/nyc report --reporter=html
 
 ### Travis CI & Coveralls
 
-Во-первых, Вы должны залогиниться в [coveralls.io] и активировать Ваш репозитарий кода.
+Во-первых, Вы должны быть авторизированным в [coveralls.io] и активировать Ваш репозиторий кода.
 
 После этого добавьте [`coveralls`] как development зависимость:
 
@@ -175,7 +175,7 @@ after_success:
 	- './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
 ```
 
-Ваш отчет о покрытии появиться в Coveralls вскоре, после тогда как завершится сборка в Travis.
+Ваш отчет о покрытии появится в Coveralls вскоре, после тогда как завершится сборка в Travis.
 
 [`babel`]:      https://github.com/babel/babel
 [coveralls.io]: https://coveralls.io
