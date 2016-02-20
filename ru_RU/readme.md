@@ -670,7 +670,7 @@ $ ava --serial
 
 ### Покрытие кода
 
-Для покрытия кода Вы не можете использовать [`istanbul`](https://github.com/gotwarlost/istanbul) покрытия кода, так как AVA [изолированное окружение для каждого файла](#Изолированное-окружение-для-каждого-теста), однако Вы можете использовать [`nyc`](https://github.com/bcoe/nyc), который похож на [`istanbul`](https://github.com/gotwarlost/istanbul) но с поддержкой запуска в отдельном окружении(sub-process).
+Для покрытия кода Вы не можете использовать [`istanbul`](https://github.com/gotwarlost/istanbul), так как AVA использует [изолированное окружение для каждого файла](#Изолированное-окружение-для-каждого-теста), однако Вы можете использовать [`nyc`](https://github.com/bcoe/nyc), который похож на [`istanbul`](https://github.com/gotwarlost/istanbul) но с поддержкой запуска в отдельном окружении(sub-process).
 
 Начиная с версии `5.0.0` используются source maps для отчета о покрытии кода, независимо от транспиллинга. Убедитесь, что код, который Вы тестируете содержит инлайны с source map или ссылку на source map файл. Если Вы используете `babel/register` Вы можете выставить опцию `sourceMaps` в Вашем `.babelrc` файле на `inline`.
 
@@ -724,7 +724,7 @@ AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](
 - [start-ava](https://github.com/start-runner/ava) - Run tests with start
 
 
-## Links
+## Ссылки
 
 - [Купить наклейки AVA](https://www.stickermule.com/user/1070705604/stickers)
 
