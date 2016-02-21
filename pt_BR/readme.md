@@ -1,14 +1,14 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/158916cc9d2afbb057f10cbf761475cb1477594f...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/5ba0053ecbca12996654c798876377957a566e3d...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # ![AVA](https://raw.githubusercontent.com/sindresorhus/ava/master/media/header.png)
 
 > Executor de testes futurista
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
 
 Apesar de o JavaScript ser single-threaded, as IO no Node.js podem acontecer em paralelo devido à sua natureza assíncrona. AVA aproveita-se disso e executa os testes simultaneamente, o que é especialmente favorável para testes pesados de IO. Além disso, arquivos de teste são executados em paralelo como processos separados, oferencendo ainda melhor desempenho e um ambiente isolado para cada arquivo de teste. [Migrar]( https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha para AVA no Pageres reduziu o tempo de teste de 31 para 11 segundos. Testes executados simultaneamente forçam a escrever testes atômicos, ou seja, testes que não dependem do estado global ou do estado de outros testes, o que representa um grande diferencial!
 
@@ -134,11 +134,11 @@ $ ava --help
   test.js test-*.js test/**/*.js
 ```
 
+*Note que o CLI usará a instalação local do AVA quando disponível, mesmo quando executado globalmente.*
+
 Diretórios são recursivos por padrão. Os diretórios nomeados `fixtures` e `helpers` são ignorados, assim como arquivos que começam com `_`. Isso pode ser útil para ter helpers no mesmo diretório que seus arquivos de teste.
 
 Ao utilizar `npm test`, você pode passar argumentos posicionais diretamente `npm test test2.js`, mas flags precisam ser passadas como em `npm test -- --verbose`.
-
-*ATENÇÃO: Comportamento não-padrão:* O CLI AVA sempre tentará usar a instalação local do AVA em seus projetos. Isto é verdadeiro mesmo quando você executar o comando global `ava`. Este comportamento não-padrão resolve uma importante [issue](https://github.com/sindresorhus/ava/issues/157), e não deve ter nenhum impacto no uso diário.
 
 ## Configuração
 
@@ -152,11 +152,9 @@ Todas as opções do CLI podem ser configuradas na seção `ava` do seu `package
       "!**/not-this-file.js"
     ],
     "failFast": true,
-    "serial": true,
     "tap": true,
-    "verbose": true,
     "require": [
-      "babel-core/register"
+      "babel-register"
     ]
   }
 }
@@ -206,7 +204,7 @@ test(function name(t) {
 
 ### Plano de asserção
 
-Um plano de asserção pode ser usado para garantir que um número específico de asserções seja feito. No cenário mais comum, ele valida que o teste não saia antes de executar o número esperado de asserções. Ele também falha o teste se muitas asserções são executadas, o que pode ser útil se você tem afirmações dentro de callbacks ou loops.
+Um plano de asserção pode ser usado para garantir que um número específico de asserções seja feito. No cenário mais comum, ele valida que o teste não saia antes de executar o número esperado de asserções. Ele também falha o teste se muitas asserções são executadas, o que pode ser útil se você tem afirmações dentro de callbacks ou loops. Esteja ciente de que, ao contrário de node-tap e tape, AVA *não* auto-encerra um teste quando a contagem de asserção planejada é atingida.
 
 Isso resultará em um teste aprovado:
 
@@ -220,45 +218,11 @@ test(t => {
 });
 
 test.cb(t => {
-	setTimeout(() => {
+  t.plan(1);
+	someAsyncFunction(() => {
 		t.pass();
 		t.end();
-	}, 100);
-});
-```
-
-#### ATENÇÃO: Ruptura recente.
-
-AVA não suporta mais encerrar automaticamente testes via `t.plan(...)`. Isso ajuda a evitar falsos positivos se você adicionar asserções, mas se esquecer de aumentar sua contagem de plano.
-
-```js
-// Isto não funciona mais
-
-test('auto ending is dangerous', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	// auto-encerramento depois de alcançar as duas asserções planejadas fará com que este último se perca
-	setTimeout(() => t.fail(), 10000);
-});
-```
-
-Para que isso funcione, você deve agora usar o "modo callback", e, explicitamente, chamar `t.end()`.
-
-```js
-test.cb('explicitly end your tests', t => {
-	t.plan(2);
-
-	t.pass();
-	t.pass();
-
-	setTimeout(() => {
-		// Esta falha é agora detectada de forma confiável.
-		t.fail();
-		t.end();
-	}, 1000);
+	});
 });
 ```
 
@@ -299,6 +263,9 @@ test.skip('will not be run', t => {
 ### Hooks before e after
 
 Quando instalação e/ou subdivisão é necessária, você pode usar `test.before()` e `test.after()`, da mesma maneira que `test()`. A função de teste fornecida para `test.before()` e `test.after()` é chamada antes ou após todos os testes. Você também pode usar `test.beforeEach()` e `test.afterEach()` se você precisa de configuração/subdivisão para cada teste. Hooks são executados serialmente no arquivo teste. Adicione quantos quiser. Opcionalmente, você pode especificar um título que é mostrado em caso de falha.
+
+Se você precisa configurar um estado global entre testes usando `test.beforeEach()` e `test.afterEach()` (como espiar no `console.log` [por exemplo](https://github.com/sindresorhus/ava/issues/560)), você precisará certificar-se de que os testes são executados serialmente (usando [test.serial](#serial-tests) ou [`--serial`](#cli)).
+
 
 ```js
 test.before(t => {
@@ -407,7 +374,7 @@ Como uma solução simples, você pode usar [Babel's require hook](https://babel
 
 ```js
 import test from 'ava';
-import 'babel-core/register';
+import 'babel-register';
 import foo from './foo'; // <-- foo pode ser escrito em ES2015!
 
 test('foo bar', t => {
@@ -700,7 +667,7 @@ $ ava --serial
 
 Você não pode usar [`istanbul`](https://github.com/gotwarlost/istanbul) para cobertura de código porque o AVA [gera os arquivos de teste](#isolated-environment), mas você pode usar [`nyc`](https://github.com/bcoe/nyc) em vez disso, que é basicamente `istanbul` com suporte para subprocessos.
 
-A partir da versão `5.0.0` ele usa source maps para relatar cobertura para seu código real, independentemente da transpilation. Certifique-se de que o código que você está testando inclui source map inline ou faz referência a um arquivo source map. Se você usar `babel/register`, você pode definir a opção `sourceMaps` em seu `.babelrc` como `inline`.
+A partir da versão `5.0.0` ele usa source maps para relatar cobertura para seu código real, independentemente da transpilation. Certifique-se de que o código que você está testando inclui source map inline ou faz referência a um arquivo source map. Se você usar `babel-register`, você pode definir a opção `sourceMaps` em seu `.babelrc` como `inline`.
 
 ## Perguntas Frequentes
 
@@ -739,17 +706,20 @@ AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/sin
 - [Twitter](https://twitter.com/ava__js)
 
 
-## Outros
-
-- [AVA logo stickers](https://www.stickermule.com/user/1070705604/stickers)
-
-
 ## Relacionados
 
+- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Snippets para testes AVA
+- [atom-ava](https://github.com/sindresorhus/atom-ava) - Snippets para testes AVA
+- [vscode-ava](https://github.com/samverschueren/vscode-ava) - Snippets para testes AVA
+- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Regras de lint para testes AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Execute testes com gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Execute testes com grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Execute testes com fly
 - [start-ava](https://github.com/start-runner/ava) - Execute testes com start
+
+## Links
+
+- [Compre adesivos do AVA](https://www.stickermule.com/user/1070705604/stickers)
 
 
 ## Time
