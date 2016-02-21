@@ -39,7 +39,7 @@ Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_
 - Induz a escrever testes atômicos
 - Sem globais implícitas
 - [Ambiente isolado para cada arquivo de teste](#ambiente-isolado)
-- [Escreva seus teste em ES2015](#suporte-para-es2015)
+- [Escreva seus testes em ES2015](#suporte-para-es2015)
 - [Suporte para promises](#suporte-para-promises)
 - [Suporte para função geradora](#suporte-para-função-geradora)
 - [Suporte para funções assíncronas](#suporte-para-funções-assíncronas)
@@ -218,7 +218,7 @@ test(t => {
 });
 
 test.cb(t => {
-  t.plan(1);
+	t.plan(1);
 	someAsyncFunction(() => {
 		t.pass();
 		t.end();
@@ -309,7 +309,7 @@ test.afterEach.cb(t => {
 });
 
 test.after(t => {
-   return new Promise(/* ... */);
+	return new Promise(/* ... */);
 });
 ```
 
@@ -585,9 +585,9 @@ Qualquer asserção pode ser ignorada usando o modificador `skip`. Asserções i
 
 ```js
 test(t => {
-       t.plan(2);
-       t.skip.is(foo(), 5); // não é necessário mudar sua contagem de plano ao ignorar
-       t.is(1, 1);
+	t.plan(2);
+	t.skip.is(foo(), 5); // não é necessário mudar sua contagem de plano ao ignorar
+	t.is(1, 1);
 });
 ```
 
