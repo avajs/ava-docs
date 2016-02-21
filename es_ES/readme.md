@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/3c12940ca15be44952a8cce02751c6346c616e3f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/11e82e93bdebcbb04a6f317b9d193444b1530b04...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -261,6 +261,7 @@ test.skip('will not be run', t => {
 Cuando se requiera empezar a preparar y/o abandonar, puede usar `test.before()` y `test.after()`,
 usandolo de la misma manera que `test()`. La función test permite el uso de `test.before()` y `test.after()`, siempre serán ejecutadas antes o despues de todos los tests. Puede usar incluso `test.beforeEach()` y `test.afterEach()` si necesita preparar algo antes y despues de cada test. Los hooks se ejecutan en serie en el archivo de test. Añada tantos como quiera. Opcionalmente puede especificar un título que se muestre en el error.
 
+Si necesita crear un estado global entre tests usando 'test.beforeEach()' y 'test.afterEach()' (como espiar 'console.log' [por ejemplo] (https://github.com/sindresorhus/ava/issues/560)), necesitará asegurarse de que los tests se ejecutan en serie (mediante [test.serial](#serial-tests) o ['--serial'](#cli)).
 
 ```js
 test.before(t => {
