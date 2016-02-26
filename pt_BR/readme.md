@@ -160,11 +160,11 @@ Todas as opções do CLI podem ser configuradas na seção `ava` do seu `package
 }
 ```
 
-Argumentos passados para a CLI sempre terão precedência sobre a configuração em `package.json`.
+Argumentos passados para o CLI sempre terão precedência sobre a configuração em `package.json`.
 
 ## Documentação
 
-Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promise, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [async functions](#suporte-para-funções-assíncronas); Elas produzem código assíncrono conciso e legível, e retornam implicitamente uma promise, assim você não precisa fazê-lo.
+Testes são executados de forma assíncrona e exigem que você retorne um objeto assíncrono suportado (uma promise, ou um [observável](https://github.com/zenparsing/zen-observable)). Nós *altamente* recomendamos o uso de [funções assíncronas](#suporte-para-funções-assíncronas); Elas produzem código assíncrono conciso e legível, e retornam implicitamente uma promise, assim você não precisa fazê-lo.
 
 Se você não retornar um dos objetos assíncronos suportados, mencionados acima, o teste é considerado síncrono e encerrado imediatamente.
 

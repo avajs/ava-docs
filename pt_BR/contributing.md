@@ -50,4 +50,4 @@ Nós temos um [chat](https://gitter.im/sindresorhus/ava). Dê um pulo lá e espi
 - Faça a pull request a partir de um [topic branch](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), e não do master.
 - Use um título claro e descritivo para a pull request e os commits.
 - Escreva uma descrição convincente do motivo pelo qual devemos aceitar sua pull request. É seu trabalho nos convencer. Responda "por que" ela é necessária e forneça casos de uso.
-- Podemos pedir que faça mudanças a sua pull request. Nunca há necessidade de abrir outra pull request. [Apenas atualize o existente.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- Podemos pedir que faça mudanças à sua pull request. Nunca há necessidade de abrir outra pull request. [Apenas atualize a existente.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
