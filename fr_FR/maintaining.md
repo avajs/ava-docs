@@ -1,9 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/c22eabd717451dbeaeeff1520f399f5a5fd85764...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/691fdb6f4d6b3ae6b39be449a8577353978866b8...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
+
+
+## Conduite
+
+**Soyez gentil avec tout le monde.**
+Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 
 
 ## Test
@@ -26,8 +32,8 @@ ___
 
 - Les nouvelles fonctionnalités doivent être livrées avec des tests et de la documentation.
 - Assurez vous que le [guide de contribution](contributing.md) est respecté.
-- Au moins deux membres de l'équipe doivent apposer un `LGTM` sur le pull request avant de le merger.
-- Faites un squash des commits avant de merger.
+- Au moins un membre de l'équipe doit apposer un `LGTM` sur le pull request avant de le merger.
+- Faites un squash des commits avant de merger. *[Exemple](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 
 ## Analyse de l'exécution
@@ -101,3 +107,10 @@ $ node bench/run.js concurrent/sync.js -- --should-fail other/failures.js
 ```
 
 Le benchmark ci-dessus a deux commandes, mais il s'attend à ce que la seconde échoue.
+
+
+## Intégration des nouveaux membres de base
+
+- Ajoutez l'utilisateur dans `readme.md` et `package.json`.
+- Ajoutez l'utilisateur comme collaborateur à tous dépôts liés à AVA et les packages npm.
+- Partagez le compte Twitter afin que l'utilisateur soit libre de tweeter/retweeter des choses pertinentes.

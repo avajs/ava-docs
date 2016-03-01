@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/5ba0053ecbca12996654c798876377957a566e3d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -368,6 +368,10 @@ test(t => {
 
 AVA est livré avec un support intégré pour ES2015 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2015. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec les presets [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) et [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/).
 
+### Prise en charge de TypeScript
+
+AVA contient les typages pour TypeScript. Vous devez configurer la transpilation vous-même. Lorsque vous définissez `module` à `commonjs` dans votre fichier `tsconfig.json`, TypeScript trouvera automatiquement les définitions de type pour AVA. Vous devez définir `target` à `es2015` pour utiliser les promesses et les fonctions async.
+
 #### Transpilation des modules importés
 
 AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Même s'il existe des raisons valables à cette approche, cela peut ne pas être ce que vous attendez !
@@ -725,13 +729,14 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 ## Liens
 
 - [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
+- [La liste Awesome](https://github.com/sindresorhus/awesome-ava)
 
 
 ## L'équipe
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
----|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
+[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net)
+---|---|---|---|---
+[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net)
 
 #### Auparavant dans l'équipe
 
