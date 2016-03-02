@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/829f91cdbfcb9bb7e2cd4fe37509c0ff21db9932...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -15,7 +15,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 
 Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à jour.
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md)
 
 
 ## Table des matières
@@ -388,8 +388,6 @@ test('foo bar', t => {
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111) est le suivi de ce point pour une éventuelle amélioration.
-
 ### Prise en charge des promesses
 
 Si vous retournez une promesse dans le test, vous n'avez pas besoin de mettre explicitement un end dans le test car il se terminera lorsque la promesse sera résolue.
@@ -569,9 +567,11 @@ Affirme que `value` n'est pas deep equal à `expected`.
 
 ### .throws(function|promise, [error, [message]])
 
-Affirme que `function` lève `error` ou rejète `promise`.
+Affirme que `function` lève une erreur, ou rejète `promise` avec une erreur.
 
 `error` peut-être un constructeur, une regex, un message d'erreur ou une fonction de validation.
+
+Retourne l'erreur levée par `function` ou le motif du rejet de la `promise`
 
 ### .notThrows(function|promise, [message])
 
@@ -705,7 +705,8 @@ La [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_galaxy)
 - [Couverture de code](docs/recipes/code-coverage.md)
 - [Tester un endpoint](docs/recipes/endpoint-testing.md)
 - [Quand utiliser `t.plan()` ?](docs/recipes/when-to-use-plan.md)
-
+- [Tests de navigateur](docs/recipes/browser-testing.md)
+- [TypeScript](docs/recipes/typescript.md)
 
 ## Support
 

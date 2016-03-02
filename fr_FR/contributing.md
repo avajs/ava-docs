@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -9,7 +9,7 @@ ___
 
 Veuillez noter que ce projet est publié avec un [Code de conduite du contributeur](code-of-conduct.md). En participant à ce projet, vous vous engagez à respecter ses termes.
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md)
 
 ## Comment puis-je contribuer ?
 

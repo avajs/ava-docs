@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Code de Conduite Contributeurs
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/code-of-conduct.md)
 
 En tant que contributeurs et responsables de ce projet, et dans l'intérêt
 de favoriser une communauté ouverte et accueillante, nous nous engageons à
