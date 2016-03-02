@@ -1,3 +1,8 @@
+___
+**Note du traducteur**
+
+C'est la traduction du fichier [browser-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/2f104486f18c520ae2641fd563bcb48da3964618...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+___
 # Configuration de AVA pour des tests de navigateur
 
 AVA ne supporte pas [encore](https://github.com/sindresorhus/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
