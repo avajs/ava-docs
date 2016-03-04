@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/829f91cdbfcb9bb7e2cd4fe37509c0ff21db9932...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e697629a77b511e069eb0a2991c8ee72cd09034c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -253,12 +253,20 @@ test.only('sera exécuté', t => {
 
 ### Les tests avec skip
 
-Les tests avec `skip` apparaissent dans le résultat comme ignorés mais ne sont jamais exécutés.
+Les tests avec `skip` apparaissent dans le résultat comme ignorés mais ne sont jamais exécutés. Les tests avec `skip` nécessitent une fonction.
 
 ```js
 test.skip('ne sera pas exécuté', t => {
 	t.fail();
 });
+```
+
+### Les tests avec `todo`
+
+Les tests avec `todo`, comme les tests avec `skip`, apparaissent dans le résultat mais ne sont jamais exécutés. Ils peuvent être utiles pour planifier des futurs tests. Les tests avec `skip` nécessitent uniquement un titre.
+
+```js
+test.todo('il faudra penser à écrire cela plus tard');
 ```
 
 ### Les [hooks](https://fr.wikipedia.org/wiki/Hook_%28informatique%29) before & after
@@ -483,6 +491,7 @@ AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela p
 ### test.cb([title], body)
 ### test.only([title], body)
 ### test.skip([title], body)
+### test.todo(title)
 ### test.before([title], body)
 ### test.after([title], body)
 ### test.beforeEach([title], body)
