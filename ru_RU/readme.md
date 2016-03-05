@@ -716,6 +716,8 @@ AVA, не Ava или ava. Произносится как [`/ˈeɪvə/` ay-və](
 - [Покрытие кода](docs/recipes/code-coverage.md)
 - [Тестирование HTTP серверов](docs/recipes/endpoint-testing.md)
 - [Когда применять `t.plan()`](docs/recipes/when-to-use-plan.md)
+- [Тестирование в браузере](docs/recipes/browser-testing.md)
+- [TypeScript](docs/recipes/typescript.md)
 
 
 ## Поддержка
