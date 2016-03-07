@@ -283,11 +283,11 @@ $ ava --match='foo*' --match='*bar'
 ```js
 // $ ava --match='*oo'
 
-test('foo s'exécutera', t => {
+test('foo s exécutera', t => {
 	t.pass();
 });
 
-test.only('moo s'exécutera aussi', t => {
+test.only('moo s exécutera aussi', t => {
 	t.pass();
 });
 

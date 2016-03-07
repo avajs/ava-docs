@@ -5,10 +5,10 @@ C'est la traduction du fichier [browser-testing.md](https://github.com/sindresor
 ___
 # Configuration de AVA pour des tests de navigateur
 
-AVA ne supporte pas [encore](https://github.com/sindresorhus/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
+AVA ne supporte pas [encore](https://github.com/sindresorhus/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
 Par exemple, c'est le cas de React, si vous voulez utiliser ReactDOM.render et simuler les événements avec ReactTestUtils.
 
-Cette recette fonctionne pour toute les bibliothèques qui ont besoin d'un environnement de navigateur maquetté.
+Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un environnement de navigateur maquetté.
 
 ## Installez jsdom
 
@@ -50,7 +50,7 @@ Configurez le `require` de AVA avec le helper pour l'exiger avant chaque fichier
 
 ## Amusez-vous !
 
-Écrivez vos tests et profitez un objet window maquetté.
+Écrivez vos tests et profitez d'un objet window maquetté.
 
 `test/my.react.test.js`:
 
