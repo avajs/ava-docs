@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e697629a77b511e069eb0a2991c8ee72cd09034c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/c928cb59b6d2c3ed9aa3df05bc922b885ca5e985...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -120,6 +120,7 @@ $ ava --help
     --tap, -t        Generate TAP output (Générer une sortie au format TAP)
     --verbose, -v    Enable verbose output (Activer le mode verbose)
     --no-cache       Disable the transpiler cache (Désactive le cache du transpileur)
+    --match, -m      Only run tests with matching title (Can be repeated)' (Exécute seulement les tests qui correspondent au titre (peut être répété))
 
   Examples (Exemples)
     ava
@@ -149,6 +150,10 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "files": [
       "my-test-folder/*.js",
       "!**/not-this-file.js"
+    ],
+    "match": [
+      "*oo",
+      "!foo"
     ],
     "failFast": true,
     "tap": true,
@@ -250,6 +255,49 @@ test.only('sera exécuté', t => {
 	t.pass();
 });
 ```
+
+### Les tests correspondants
+
+L'option `--match` permet d'exécuter un sous ensemble de tests où le titre correspond à la demande. Ceci est réalisé avec des patterns génériques simples. Pour plus d'informations, consultez [matcher](https://github.com/sindresorhus/matcher).
+
+```
+# Trouve les titres se terminant par 'foo'
+$ ava --match='*foo'
+
+# Trouve les titres commençant par 'foo'
+$ ava --match='foo*'
+
+# Trouve les titres contenant 'foo'
+$ ava --match='*foo*'
+
+# Trouve les titres ne contenant pas 'foo'
+$ ava --match='!*foo*'
+
+# Trouve les titres commençant par 'foo' et se terminant par 'bar'
+$ ava --match='foo*bar'
+
+# Trouve les titres commençant par 'foo' ou se terminant par 'bar'
+$ ava --match='foo*' --match='*bar'
+```
+
+```js
+// $ ava --match='*oo'
+
+test('foo s'exécutera', t => {
+	t.pass();
+});
+
+test.only('moo s'exécutera aussi', t => {
+	t.pass();
+});
+
+// ne s'exécutera pas !
+test(function () {
+	t.fail();
+});
+```
+
+Remarquez qu'un pattern qui correspond **a** la priorité sur `.only`, et *tous les tests sans un titre explicite* **ne seront pas exécutés** si un pattern est fourni.
 
 ### Les tests avec skip
 
