@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/11e82e93bdebcbb04a6f317b9d193444b1530b04...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -360,7 +360,62 @@ test(t => {
 
 ### Soporte a ES2015
 
-AVA está construido con soporte a ES2015 a través de [Babel 6](https://babeljs.io). Sólo tiene que escribir sus pruebas en ES2015. No necesitará ninguna configuración adicional. Se puede utilizar cualquier versión de Babel en su proyecto. Utilizamos nuestro propio paquete de Babel con el [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) y [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) preajustados.
+AVA está construido con soporte a ES2015 a través de [Babel 6](https://babeljs.io). Sólo tiene que escribir sus pruebas en ES2015. No necesitará ninguna configuración adicional. Se puede utilizar cualquier versión de Babel en su proyecto. Utilizamos nuestro propio paquete de Babel con el [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) y [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) preajustados, así como [`espower`](https://github.com/power-assert-js/babel-plugin-espower) y [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/) plugins.
+
+La correspondiente configuración de Babel para la configuración de AVA es la siguiente:
+
+```json
+{
+  "presets": [
+    "es2015",
+    "stage-0",
+  ],
+  "plugins": [
+    "espower",
+    "transform-runtime"
+  ]
+}
+```
+
+Puede personalizar cómo AVA transpila los archivos de test a través de la opción de `babel` en AVA [`package.json` configuration](#configuración). Por ejemplo, para reemplazar los valores predeterminados se pueden utilizar:
+
+```json
+{
+	"ava": {
+		 "babel": {
+			 "presets": [
+					"es2015",
+					"stage-0",
+					"react"
+			 ]
+		 }
+	},
+}
+```
+
+También puede utilizar la palabra especial `"inherit"`. Esto hace que AVA difiera a la configuración de Babel [archivo `.babelrc` o `package.json`] (https://babeljs.io/docs/usage/babelrc/). De esta manera los archivos de test serán transpilados utilizando la misma configuración como los archivos de origen sin tener que repetirse para AVA:
+
+```json
+{
+   "babel": {
+	   "presets": [
+		   "es2015",
+		   "stage-0",
+		   "react"
+	   ]
+   },
+   "ava": {
+	   "babel": "inherit",
+   },
+}
+```
+
+Tenga en cuenta que AVA *siempre* aplicará la [`espower`] (https://github.com/power-assert-js/babel-plugin-espower) y plugins [`transform-runtime`] (https://babeljs.io/docs/plugins/transform-runtime/).
+
+### Soporte a TypeScript
+
+AVA incluye typings para TypeScript. Tienes que configurar la transpilación por tí mismo. Cuando se establece en el archivo `tsconfig.json` `módulo` a `commonjs`, TypeScript encontrará automáticamente las definiciones de tipo de AVA. Se debe establecer `target` a `es2015` con promesas y funciones de async.
+
 
 #### Transpilando módulos importados
 
@@ -717,13 +772,14 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 ## Enlaces
 
 - [Compre AVA stickers](https://www.stickermule.com/user/1070705604/stickers)
+- [Lista Impresionante](https://github.com/sindresorhus/awesome-ava)
 
 
 ## Creado por
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage)
----|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Kevin Mårtensson](https://github.com/kevva) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage)
+[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net)
+---|---|---|---|---
+[Sindre Sorhus](http://sindresorhus.com) | [Kevin Mårtensson](https://github.com/kevva) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net)
 
 
 <div align="center">

@@ -1,9 +1,14 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/c22eabd717451dbeaeeff1520f399f5a5fd85764...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `maintaining.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/691fdb6f4d6b3ae6b39be449a8577353978866b8...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `maintaining.md`, será por que la traducción está actualizada).
 ___
 # Mantenimiento [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
+
+## Conducta
+
+**Ser amable con todo el mundo.**
+Lea y siga el [código de conducta](code-of-conduct.md).
 
 
 ## Pruebas
@@ -26,8 +31,8 @@ ___
 
 - Las nuevas características deben venir con tests y documentación.
 - Asegúrese de que sigue las [directrices de contribución](contributing.md).
-- Al menos dos miembros del equipo deben `LGTM` un pull request antes de que se fusione.
-- Haz squash de tus commits cuando fusiones.
+- Al menos un miembro del equipo deben `LGTM` un pull request antes de que se fusione.
+- Haz squash de tus commits cuando fusiones. *[Example](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 ## Perfilado
 
@@ -99,3 +104,11 @@ $ node bench/run.js concurrent/sync.js -- --should-fail other/failures.js
 ```
 
 Lo anterior pone de referencia dos comandos, pero espera que el segundo falle.
+
+## Inducción de nuevos miembros
+
+- Agregar el usuario al 'readme.md' y 'package.json'.
+- Add the user as a collaborator to all AVA related repos and npm packages.
+- Agregar el usuario como colaborador a todos los repositorios relacionado a AVA y paquetes npm.
+- Share the Twitter account login info and that he user is free to tweet/retweet relevant stuff.
+- Compartir la información de inicio de sesión de cuenta de Twitter y así el usuario será libre de twittear y retwittear cosas relevantes. 
