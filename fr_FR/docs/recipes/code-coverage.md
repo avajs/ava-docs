@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Couverture de code
 
 Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/code-coverage.md)
 
-Comme AVA [génère les fichiers de test][isolated-env], vous ne pouvez pas utiliser [`istanbul`] pour la couverture de code. A la place, vous pouvez le faire avec [`nyc`] qui est essentiellement comme [`istanbul`] avec le support des sous-processus (sub-process).
+Comme AVA [génère les fichiers de test][process-isolation], vous ne pouvez pas utiliser [`istanbul`] pour la couverture de code. A la place, vous pouvez le faire avec [`nyc`] qui est essentiellement comme [`istanbul`] avec le support des sous-processus (sub-process).
 
 ## Configuration
 
@@ -181,6 +181,6 @@ Votre rapport de couverture apparaîtra alors sur coveralls peu de temps après 
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#environnement-isol%C3%A9
+[process-isolation]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#isolement-du-processus
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
