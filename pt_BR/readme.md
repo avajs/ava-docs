@@ -252,12 +252,19 @@ test.only('will be run', t => {
 
 ### Testes-skip
 
-Testes-skip são mostrados na saída como ignorados, e nunca são executados.
+Testes-skip são mostrados na saída como ignorados, e nunca são executados. Testes-skip requerem uma função.
 
 ```js
 test.skip('will not be run', t => {
 	t.fail();
 });
+```
+### Testes-todo
+
+Testes-todo, assim como Testes-skip, são mostrados na saída, mas nunca são executados. Podem ser úteis para o planejamento de testes futuros. Testes-todo requerem apenas um título de teste.
+
+```js
+test.todo('vou pensar em escrever isto mais tarde');
 ```
 
 ### Hooks before e after
@@ -481,6 +488,7 @@ AVA automaticamente remove linhas independentes em rastreamentos de pilha, permi
 ### test.cb([title], body)
 ### test.only([title], body)
 ### test.skip([title], body)
+### test.todo(title)
 ### test.before([title], body)
 ### test.after([title], body)
 ### test.beforeEach([title], body)
