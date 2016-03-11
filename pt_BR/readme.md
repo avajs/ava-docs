@@ -386,8 +386,6 @@ test('foo bar', t => {
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111) está rastreando este item como um melhoria em potencial.
-
 ### Suporte para promises
 
 Se você retornar uma promise no teste, você não precisa explicitamente encerrá-lo, já que se encerrará quando a promise for resolvida.
