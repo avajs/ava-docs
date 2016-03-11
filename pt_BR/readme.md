@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/11f4362b8fa0f3e87ddaeb56c4bd35cae5fa69a3...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). [Este link](https://github.com/sindresorhus/ava/compare/e697629a77b511e069eb0a2991c8ee72cd09034c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # ![AVA](https://raw.githubusercontent.com/sindresorhus/ava/master/media/header.png)
