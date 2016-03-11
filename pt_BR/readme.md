@@ -724,6 +724,7 @@ AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/sin
 ## Links
 
 - [Compre adesivos do AVA](https://www.stickermule.com/user/1070705604/stickers)
+- [Lista impressionante](https://github.com/sindresorhus/awesome-ava)
 
 
 ## Time
