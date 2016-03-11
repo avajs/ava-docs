@@ -1,13 +1,13 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален.
 ___
 # Покрытие кода
 
 Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
-Так как AVA [запускает тестовые файлы в отдельном окружении][isolated-env], Вы не можете использовать [`istanbul`] для покрытия кода; вместо этого, воспользуйтесь [`nyc`], который похож на [`istanbul`] но с поддержкой запуска в отдельном окружении(sub-process).
+Так как AVA [запускает тестовые файлы в отдельном окружении][process-isolation], Вы не можете использовать [`istanbul`] для покрытия кода; вместо этого, воспользуйтесь [`nyc`], который похож на [`istanbul`] но с поддержкой запуска в отдельном окружении(sub-process).
 
 ## Установка
 
