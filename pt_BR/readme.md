@@ -569,6 +569,8 @@ Afirma que `function` gera um erro, ou rejeições de `promise` com um erro.
 
 `error` pode ser construtor, regex, mensagem de erro ou função de validação.
 
+Retorna o erro gerado pela `function` ou a razão da rejeição da `promise`.
+
 ### .notThrows(function|promise, [message])
 
 Afirma que `function` não gera um `error` ou resoluções de `promise`.
