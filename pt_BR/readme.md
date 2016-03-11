@@ -565,7 +565,7 @@ Afirma que `value` não é estritamente igual a `expected`.
 
 ### .throws(function|promise, [error, [message]])
 
-Afirma que `function` gera um erro ou rejeições de `promise`.
+Afirma que `function` gera um erro, ou rejeições de `promise` com um erro.
 
 `error` pode ser construtor, regex, mensagem de erro ou função de validação.
 
