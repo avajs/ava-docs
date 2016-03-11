@@ -9,7 +9,7 @@ ___
 
 Veuillez noter que ce projet est publié avec un [Code de conduite du contributeur](code-of-conduct.md). En participant à ce projet, vous vous engagez à respecter ses termes.
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/contributing.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md)
 
 ## Comment puis-je contribuer ?
 

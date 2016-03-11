@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/755849fd941b9a9b07adde939a5adcec7b217cab...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e9de64bf0af17bfd6d23e4e45b0fb7dde67a5868...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -131,6 +131,8 @@ $ npm test -- --watch
 AVA est livré avec un mode watch intelligent. [Apprenez en plus avec cette recette](docs/recipes/watch-mode.md).
 
 ## CLI
+
+![](https://github.com/sindresorhus/ava/blob/master/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
