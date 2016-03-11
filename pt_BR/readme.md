@@ -366,6 +366,10 @@ test(t => {
 
 AVA vem com suporte embutido para ES2015 através do [Babel 6](https://babeljs.io). Basta escrever seus testes em ES2015. Nenhuma configuração extra é necessária. Você pode usar qualquer versão do Babel em seu projeto. Usamos nosso próprio Babel empacotado com o [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) e predefinições [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/).
 
+### TypeScript support
+
+AVA inclui tipagens para TypeScript. Você mesmo tem que configurar a transpilação. Quando você define `module` para `commonjs` em seu arquivo `tsconfig.json`, TypeScript encontrará automaticamente as definições de tipo para AVA. Você deve definir `target` para `es2015` para usar Promises e funções assíncronas.
+
 #### Transpiling de Módulos Importados
 
 AVA atualmente só faz o transpiling de testes que você pede para serem executados. *Não fará o transpiling de módulos que você importa (```import```) de fora do teste.*  Embora existam razões válidas para esta abordagem, pode não ser o que você espera!
