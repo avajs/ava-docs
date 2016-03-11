@@ -377,7 +377,57 @@ test(t => {
 
 ### <a name="ES2015"></a>Поддержка ES2015
 
-AVA поддерживает модули ES2015 через [Babel 6](https://babeljs.io). Просто пишите свои тесты в ES2015. Никакой дополнительной настройки не нужно. Вы можете использовать любую версию Babel в своем проекте. Мы используем наш собственный собранный Babel с [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) и [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) предустановками.
+AVA поддерживает модули ES2015 через [Babel 6](https://babeljs.io). Просто пишите свои тесты в ES2015. Никакой дополнительной настройки не нужно. Вы можете использовать любую версию Babel в своем проекте. Мы используем наш собственный собранный Babel с предустановками (пресетами) [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/), [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) и плагинами [`espower`](https://github.com/power-assert-js/babel-plugin-espower), [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
+
+Пример стандартного `babel` конфиг-файла, который использует AVA:
+
+```json
+{
+  "presets": [
+    "es2015",
+    "stage-0",
+  ],
+  "plugins": [
+    "espower",
+    "transform-runtime"
+  ]
+}
+```
+
+При необходимости вы можете внести изменение в поведение транспилера через опцию `babel` в вашем [`package.json`](#configuration). Например, вы можете переопределить пресеты следующим образом:
+
+```json
+{
+	"ava": {
+		 "babel": {
+			 "presets": [
+					"es2015",
+					"stage-0",
+					"react"
+			 ]
+		 }
+	},
+}
+```
+
+Вы также можете использовать ключевое слово `"inherit"`. В таком случае AVA будет ориентироваться на настройки Babel в ваших [`.babelrc` или `package.json` файлах](https://babeljs.io/docs/usage/babelrc/). Таким образом ваши тест файлы будут транспилированы аналогично вашим исходным файлам, в соответствии с вашими настройками и без необходимости создания отдельных настроек для AVA:
+
+ ```json
+{
+	"babel": {
+		"presets": [
+			"es2015",
+			"stage-0",
+			"react"
+		]
+	},
+	"ava": {
+		"babel": "inherit",
+	},
+}
+```
+
+Важно помнить, что AVA *всегда* добавляет плагины [`espower`](https://github.com/power-assert-js/babel-plugin-espower) и [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
 
 ### Поддержка TypeScript
 
