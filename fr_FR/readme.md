@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e9de64bf0af17bfd6d23e4e45b0fb7dde67a5868...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/b163fdefc45045d4ab14f7e3124a0f20c6e19ba8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -923,6 +923,8 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
 - [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
 - [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
+
+[Plus...](https://github.com/sindresorhus/awesome-ava#packages)
 
 ## Liens
 
