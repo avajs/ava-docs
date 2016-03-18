@@ -543,7 +543,7 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 {
   "presets": [
     "es2015",
-    "stage-0",
+    "stage-2",
   ],
   "plugins": [
     "espower",
