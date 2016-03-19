@@ -65,7 +65,7 @@ test(t => {
 
 Istalla AVA globalmente e poi eseguilo con `--init` per aggiungere AVA al tuo `package.json`:
 
-```bash
+```
 $ npm install --global ava
 $ ava --init
 ```
@@ -88,7 +88,7 @@ Ogni parametro passato dopo `--init` viene aggiunto al `package.json`.
 
 È anche possibile istallare AVA direttamente
 
-```bash
+```
 $ nom install --save-dev ava
 ```
 
@@ -118,13 +118,13 @@ test('bar', async t => {
 
 #### Esegui il test
 
-```bash
+```
 $ npm test
 ```
 
 #### Osserva le modifiche ai test
 
-```bash
+```
 $ nom test -- --watch
 ```
 
@@ -326,43 +326,43 @@ Il parametro `--match` permette di eseguire solamente i test il cui titolo corri
 
 Esegui test il cui titolo termina per `foo`:
 
-```bash
+```
 $ ava --match='*foo'
 ```
 
 Esegui test il cui titolo inizia per `foo`:
 
-```bash
+```
 $ ava --match='foo*'
 ```
 
 Esegui test il cui titolo contiene `foo`:
 
-```bash
+```
 $ ava --match='*foo*'
 ```
 
 Esegui test il cui titolo è *esattamente* `foo` (sempre case insensitive):
 
-```bash
+```
 $ ava --match='foo'
 ```
 
 Esegui test il cui titolo non contiene `foo`:
 
-```bash
+```
 $ ava --match='!*foo'
 ```
 
 Esegui test il cui titolo inizia per `foo` e termina per `bar`:
 
-```bash
+```
 $ ava --match='foo*bar'
 ```
 
 Esegui test il cui titolo inizia per `foo` o termina per `bar`:
 
-```bash
+```
 $ ava --match='foo*' --match='*bar'
 ```
 
@@ -863,7 +863,7 @@ Generalmente, i test eseguiti in serie creano cartelle temporanee nella cartella
 
 AVA esegue i test in concorrenza in automatico, il che lo rende sub-ottimale quando devi fare il debug di qualcosa. In questo caso esegui i test in serie con l'opzione `--serial`:
 
-```bash
+```
 $ ava --serial
 ```
 
