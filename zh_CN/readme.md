@@ -12,7 +12,7 @@ ___
 
 虽然JavaScript是单线程，但在Node.js里由于其异步的特性使得IO可以并行。AVA利用这个优点让你的测试可以并发执行，这对于IO繁重的测试特别有用。另外，测试文件可以在不同的进程里并行运行，让每一个测试文件可以获得更好的性能和独立的环境。在Pageres项目中从Mocha[切换](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)到AVA让测试时间从31秒下降到11秒。测试并发执行强制你写原子测试，意味着测试不需要依赖全局状态或者其他测试的状态，这是一件非常好的事情。  
 
-*如果你想贡献（问题、PRs等），请先阅读我们的[贡献向导](https://github.com/sindresorhus/ava/blob/master/contributing.md)。*  
+*如果你想贡献（问题、PRs等），请先阅读我们的[贡献向导](contributing.md)。*  
 
 关注[AVA的Twitter账号](https://twitter.com/ava__js)以获取最新信息。  
 
