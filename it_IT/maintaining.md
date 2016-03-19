@@ -29,7 +29,7 @@ Leggi ed aderisci al [codice di condotta](code-of-conduct.md).
 
 ## Pull requests
 
-- Una nuova carattestica deve avere test e documentazione a supporto.
+- Una nuova funzionalità deve avere test e documentazione a supporto.
 - Assicurati che le [linee guida per contribuzioni](contributing.md) siano rispettate.
 - Al menos un miembro del equipo deben `LGTM` un pull request antes de que se fusione.
 - Fai lo squash dei commit quando si effettua un merge *[Esempio](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
