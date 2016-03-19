@@ -934,7 +934,7 @@ La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3me
 - [Lista fantastica](https://github.com/sindresorhus/awesome-ava)
 
 
-## Creado por
+## Creato da
 
 [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net)
 ---|---|---|---|---
