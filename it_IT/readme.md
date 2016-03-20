@@ -122,13 +122,13 @@ test('bar', async t => {
 $ npm test
 ```
 
-#### Osserva le modifiche ai test
+#### Osserva le modifiche ai file test
 
 ```
 $ nom test -- --watch
 ```
 
-AVA fornisce un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
+AVA integra un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
 
 ## CLI
 
