@@ -89,7 +89,7 @@ Ogni parametro passato dopo `--init` viene aggiunto al `package.json`.
 È anche possibile istallare AVA direttamente
 
 ```
-$ nom install --save-dev ava
+$ npm install --save-dev ava
 ```
 
 Dovrai configurare la sezione di `test` nel `package.json` per usare `ava` correttamente (vedi sopra).
@@ -125,10 +125,10 @@ $ npm test
 #### Osserva le modifiche ai file test
 
 ```
-$ nom test -- --watch
+$ npm test -- --watch
 ```
 
-AVA integra un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
+AVA integra un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](docs/recipes/watch-mode.md)
 
 ## CLI
 
