@@ -3,28 +3,28 @@ ___
 
 Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Questo è il [link](https://github.com/sindresorhus/ava/compare/8d47119458e83d3899683ad3ea3a4c1c01b7dd49...master#diff-8d47119458e83d3899683ad3ea3a4c1c01b7dd49) con le differenza tra il ramo master di AVA ed il commit di quando è stata aggiornata questo file (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa è traduzione aggiornata).
 ___
-# Setting up AVA for browser testing
+# Preparare AVA per il Browser testing
 
-Translations: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
+Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
 
-AVA does not support running tests in browsers [yet](https://github.com/sindresorhus/ava/issues/24). Some libraries require browser specific globals (`window`, `document`, `navigator`, etc).
-An example of this is React, at least if you want to use ReactDOM.render and simulate events with ReactTestUtils.
+Con AVA non è possibile eseguire test all'interno di un browser [ancora](https://github.com/sindresorhus/ava/issues/24). Alcune librerie richiedono alcune variabili globali specifiche del browser (`window`, `document`, `navigator`, etc).
+React ne è un esempio, o almeno se vuoi utilizzare ReactDOM.render e simulare gli eventi con ReactTestUtils.
 
-This recipe works for any library that needs a mocked browser environment.
+Questa ricetta funziona per ogni libreria che ha bisogno di un finto ambiente browser.
 
-## Install jsdom
+## Istallare jsdom
 
-Install [jsdom](https://github.com/tmpvar/jsdom).
+Istallare [jsdom](https://github.com/tmpvar/jsdom).
 
-> A JavaScript implementation of the WHATWG DOM and HTML standards, for use with node.js
+> Un'implementazione JavaScript degli standard WHATWG DOM  e HTML, da usare con node.js
 
 ```
 $ npm install --save-dev jsdom
 ```
 
-## Setup jsdom
+## Configurare jsdom
 
-Create a helper file and place it in the `test/helpers` folder. This ensures AVA does not treat it as a test.
+Creare un file helper e salvalo nella cartella `test/helper`. Questo assicura che AVA non lo consideri un file di test.
 
 `test/helpers/setup-browser-env.js`:
 
@@ -34,9 +34,9 @@ global.window = document.defaultView;
 global.navigator = window.navigator;
 ```
 
-## Configure tests to use jsdom
+## Configura i test per l'utilizzo di jsdom
 
-Configure AVA to `require` the helper before every test file.
+Configura AVA per richiedere con `require` il file helper per ogni file di test.
 
 `package.json`:
 
@@ -50,9 +50,9 @@ Configure AVA to `require` the helper before every test file.
 }
 ```
 
-## Enjoy!
+## Tutto fatto!
 
-Write your tests and enjoy a mocked window object.
+Scrivi i tuoi test e usa il finto oggetto window.
 
 `test/my.react.test.js`:
 
