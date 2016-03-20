@@ -5,19 +5,19 @@ Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava
 ___
 # Watch mode
 
-Translations: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
 
-AVA comes with an intelligent watch mode. It watches for files to change and runs just those tests that are affected.
+AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai fine ed esegue solamente i test che ne affetti.
 
-## Running tests with watch mode enabled
+## Esegui i test con la modalità watch
 
-You can enable watch mode using the `--watch` or `-w` flags. If you have installed AVA globally:
+Puoi abilitare la modalità watch usando il parametro `--watch` o `-w`. Quindi se hai AVA installato globalmente:
 
 ```console
 $ ava --watch
 ```
 
-If you've configured it in your `package.json` like this:
+Se hai configurato AVA nel tuo `package.json` così:
 
 ```json
 {
@@ -27,13 +27,13 @@ If you've configured it in your `package.json` like this:
 }
 ```
 
-You can run:
+Puoi eseguire:
 
 ```console
 $ npm test -- --watch
 ```
 
-You could also set up a special script:
+Puoi anche impostare uno specifico script:
 
 ```json
 {
@@ -44,60 +44,62 @@ You could also set up a special script:
 }
 ```
 
-And then use:
+E poi esegui:
 
 ```console
 $ npm run test:watch
 ```
 
-## Requirements
+## Requisiti
 
-AVA uses [`chokidar`] as the file watcher. It's configured as an optional dependency since `chokidar` sometimes can't be installed. Watch mode is not available if `chokidar` fails to install, instead you'll see a message like:
+AVA utilizza [`chokidar`] come watcher per i file. È configurato come dipendenza opzionale perchè in taluni scenari `chokidar` non può essere istallato. La modalità watch non è disponibile se `chokidar` non viene/può essere installato, verrà quiandi mostrato il seguente messaggio:
 
 > The optional dependency chokidar failed to install and is required for --watch. Chokidar is likely not supported on your platform.
+> La dipendenza opzionale chokidar ha fallito l'istallazione ed è stato richiesto da --watch. Probabilmente Chokidar non è ancora supportato dalla tua piattaforma.
 
-Please refer to the [`chokidar` documentation][`chokidar`] for how to resolve this problem.
+Fai riferimento alla [documentazione di `chokidar`][`chokidar`] per trovare soluzioni a questo problema.
 
-## Source files and test files
+## File sorgente e di test
 
-In AVA there's a distinction between *source files* and *test files*. As you can imagine the *test files* contain your tests. *Source files* are all other files that are needed for the tests to run, be it your source code or test fixtures.
+AVA distingue tra i *file sorgente* e i *file di test*. Come puoi immaginare i *file di test* contengono i tuoi test. I *file sorgente* sono tutti quei file che sono richiesti per eseguire i test, che siano file sorgente o file fixtures.
 
-By default AVA watches for changes to the test files, `package.json`, and any other `.js` files. It'll ignore files in [certain directories](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) as provided by the [`ignore-by-default`] package.
+AVA controlla automaticamente per modifiche nei file di test, `package.json`, ed ogni file `.js`. Ignorerà invece file in [specifiche cartelle]
+(https://github.com/novemberborn/ignore-by-default/blob/master/index.js) come predefinito nel modulo [`ignore-by-default`].
 
-You can configure patterns for the source files using the [`--source` CLI flag] or in the `ava` section of your `package.json` file. Note that if you specify a negative pattern the directories from [`ignore-by-default`] will no longer be ignored, so you may want to repeat these in your config.
+Puoi configurare il pattern per i file sorgente utilizzando il [parametro CLI `--source`] oppure nella sezione `ava` nel file `package.json`. Nota che se specifichi un pattern negativo le cartelle normalmente ignorate da [`ignore-by-default`] non saranno più ignorate, quindi vorrai aggiungere anche queste nella tua configurazione.
 
-If your tests write to disk they may trigger the watcher to rerun your tests. If this occurs you will need to use the `--source` flag.
+Se i tuoi test devono scrivere su disco potrebbero entrare in conflitto con il watcher, che farà ri-eseguire i tuoi test. Se questo avvenisse dovrai usare il parametro `--source`.
 
-## Dependency tracking
+## Tracciare le dipendenza
 
-AVA tracks which source files your test files depend on. If you change such a dependency only the test file that depends on it will be rerun. AVA will rerun all tests if it cannot determine which test file depends on the changed source file.
+AVA traccia quale a file sorgente ogni tuo test dipende. Se cambi questa dipendenza solamente il file di test che dipende verrà rieseguito. AVA ri-eseguirà tutti i test se non può determinare quale file di test dipende dal file sorgente modificato.
 
-Dependency tracking works for required modules. Custom extensions and transpilers are supported, provided you loaded them using the [`--require` CLI flag] and not from inside your test file. Files accessed using the `fs` module are not tracked.
+Il tracciamento delle dipendenze funziona per i moduli richiesti. Estensioni personalizzate e transpiler sono supportati, a patto che vengano caricati utilizzando il [parametro CLI `--require`] e non dall'interno dei tuoi file di test. I file caricati tramite il modulo `fs` non verranno tracciati.
 
-## Manually rerunning all tests
+## Riesecuzione manuale dei test
 
-You can quickly rerun all tests by typing <kbd>r</kbd> on the console, followed by <kbd>Enter</kbd>.
+Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di comando, seguito da <kbd>Invio</kbd>.
 
 ## Debugging
 
-Sometimes watch mode does something surprising like rerunning all tests when you thought only a single test would be run. To see its reasoning you can enable a debug mode:
+Qualche volta la modalità watch può comportarsi stranamente rieseguendo tutti i test quando invece pensavi che un unico test sarebbe stato eseguito. Per capirne il motivo puoi abilitare la modalità debug:
 
 ```console
 $ DEBUG=ava:watcher npm test -- --watch
 ```
 
-On Windows use:
+Su Windows scrivi:
 
 ```console
 $ set DEBUG=ava:watcher
 $ npm test -- --watch
 ```
 
-## Help us make watch mode better
+## Aiutaci a migliorare la modalità watch
 
-Watch mode is relatively new and there might be some rough edges. Please [report](https://github.com/sindresorhus/ava/issues) any issues you encounter. Thanks!
+La modalità watch è una funzionalità relativamente nuova e ci potrebbero essere ancora alcuni difetti. Per favore [notifica](https://github.com/sindresorhus/ava/issues) qualsiasi problema che riscontri. Grazie!
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[`--require` CLI flag]: https://github.com/sindresorhus/ava#cli
-[`--source` CLI flag]: https://github.com/sindresorhus/ava#cli
+[parametro CLI `--require`]: https://github.com/sindresorhus/ava#cli
+[parametro CLI `--source`]: https://github.com/sindresorhus/ava#cli
