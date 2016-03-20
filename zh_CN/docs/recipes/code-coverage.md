@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是[code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/master...zhaozhiming:master)用来查看本翻译与AVA的master分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是[code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/master...zhaozhiming:master)用来查看本翻译与AVA 的master 分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 代码覆盖率
@@ -31,7 +31,7 @@ coverage
 
 ## ES5覆盖率
 
-使用NYC很简单就可以提供使用ES5来写的生产代码的覆盖率，只需要在测试脚本前面加上`nyc`：
+使用NYC 很简单就可以提供使用ES5来写的生产代码的覆盖率，只需要在测试脚本前面加上`nyc`：
 
 ```json
 {
@@ -43,15 +43,15 @@ coverage
 
 就是这样！
 
-如果你想要创建HTML覆盖率报告，或者上传覆盖率数据到Coveralls，你应该跳过下面的那些章节。
+如果你想要创建HTML 覆盖率报告，或者上传覆盖率数据到Coveralls，你应该跳过下面的那些章节。
 
 ## ES2015覆盖率
 
-使用Babel来转换生产代码有点复杂，这里我们把它分成几个步骤。
+使用Babel 来转换生产代码有点复杂，这里我们把它分成几个步骤。
 
 ### 配置Babel
 
-首先，我们需要一个Babel配置，下面是一个例子，你可以修改它以适应你的需要。
+首先，我们需要一个Babel 配置，下面是一个例子，你可以修改它以适应你的需要。
 
 `package.json`:
 ```json
@@ -69,11 +69,11 @@ coverage
 }
 ```
 
-例子中这里有2点比较重要。
+例子中有2点比较重要：
 
-1. 我们忽略测试文件，因为AVA已经为你做了转换处理了。
+1. 我们忽略测试文件，因为AVA 已经为你做了转换处理了。
 
-2. 我们为开发环境指定`inline`（内联）原生映射，为了正确的生成覆盖率这个很重要，使用Babel配置中的`env`属性可以让我们在生产构建中取消原生映射。
+2. 我们为开发环境指定`inline`（内联）原生映射，为了正确的生成覆盖率这个很重要，使用Babel 配置中的`env`属性可以让我们在生产构建中取消原生映射。
 
 
 ### 创建一个构建脚本
@@ -90,13 +90,13 @@ coverage
 }
 ```
 
-> 警告：`BABEL_ENV=production`在Windows中不可用，你必须使用`set`关键字（`set BABEL_ENV=production`），如果是跨平台构建，请检查[`cross-env`]。
+> 警告：`BABEL_ENV=production`在Windows 中不可用，你必须使用`set`关键字（`set BABEL_ENV=production`），如果是跨平台构建，请检查[`cross-env`]。
 
-注意，构建脚本中AVA的部分真的很少，它只是一个如何使用Babel的`env`配置来操作你的配置以兼容AVA的示例。
+注意，构建脚本中AVA 的部分真的很少，它只是一个如何使用Babel 的`env`配置来操作你的配置以兼容AVA 的示例。
 
-### 使用Babel require钩子
+### 使用Babel require 钩子
 
-要使用Babel require钩子，请在`package.json`中的AVA配置里将`require`属性设置为`babel-core/register`。
+要使用Babel require 钩子，请在`package.json`中的AVA 配置里将`require`属性设置为`babel-core/register`。
 
 ```json
 {
@@ -106,7 +106,7 @@ coverage
 }
 ```
 
-*注意*：你也可以在命令行里设置require钩子：`ava --require=babel-core/register`。尽管如此，配置在`package.json`里面可以让你不用重复地写标志。
+*注意*：你也可以在命令行里设置require 钩子：`ava --require=babel-core/register`。尽管如此，配置在`package.json`里面可以让你不用重复地写标志。
 
 ### 把所有东西放在一起
 
@@ -135,17 +135,17 @@ coverage
 ```
 
 
-## HTML报告
+## HTML 报告
 
-NYC创建在`.nyc_ouput`文件夹中为每个进程创建一个`json`的覆盖率文件。
+NYC 在`.nyc_ouput`文件夹中为每个进程创建一个`json`的覆盖率文件。
 
-把这些文件组合成一个可阅读的HTML报告，可以通过下面的方法来做：
+把这些文件组合成一个可阅读的HTML 报告，可以通过下面的方法来做：
 
 ```
 $ ./node_modules/.bin/nyc report --reporter=html
 ```
 
-或者，使用npm脚本来代替打印命令行：
+或者，使用npm 脚本来代替打印命令行：
 
 ```json
 {
@@ -155,7 +155,7 @@ $ ./node_modules/.bin/nyc report --reporter=html
 }
 ```
 
-这样会在`coverage`文件夹中输出一个HTML文件。
+这样会在`coverage`文件夹中输出一个HTML 文件。
 
 
 ## 托管覆盖率报告
@@ -177,12 +177,12 @@ after_success:
     - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
 ```
 
-你的覆盖率报告将在你的Travis完成后很快地出现在coveralls上面。
+你的覆盖率报告将在你的Travis 完成后很快地出现在coveralls 上面。
 
 [`babel`]:      https://github.com/babel/babel
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[process-isolation]: https://github.com/sindresorhus/ava#process-isolation
+[process-isolation]: ../../readme.md#隔离进程
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
