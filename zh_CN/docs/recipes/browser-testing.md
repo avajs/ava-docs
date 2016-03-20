@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是[browser-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md)的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/master...zhaozhiming:master)用来查看本翻译与AVA的master分支是否有差别（如果你没有看到`browser-testing`发生变化，那就意味着这份翻译文档是最新的）。
+这是[browser-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md)的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/master...zhaozhiming:master)用来查看本翻译与AVA的master分支是否有差别（如果你没有看到`browser-testing.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 设置AVA做浏览器测试

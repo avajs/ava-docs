@@ -905,10 +905,10 @@ AVA，不是Ava，也不是ava，发音[`/ˈeɪvə/` ay-və](https://github.com/
 
 - [代码覆盖率](docs/recipes/code-coverage.md)
 - [观察模式](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
-- [端到端测试](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)
+- [端点测试](docs/recipes/endpoint-testing.md)
 - [什么时候使用`t.plan()`](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md)
 - [浏览器测试](docs/recipes/browser-testing.md)
-- [TypeScript](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md)
+- [TypeScript](docs/recipes/typescript.md)
 
 ## 支持 
 
