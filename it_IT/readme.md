@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Questo è il [link](https://github.com/sindresorhus/ava/compare/8d47119458e83d3899683ad3ea3a4c1c01b7dd49...master#diff-8d47119458e83d3899683ad3ea3a4c1c01b7dd49) con le differenza tra il ramo master di AVA ed il commit di quando è stata aggiornata questo file (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa è traduzione aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Questo è il [link](https://github.com/sindresorhus/ava/compare/8d47119458e83d3899683ad3ea3a4c1c01b7dd49...master#diff-8d47119458e83d3899683ad3ea3a4c1c01b7dd49) con le differenza tra il ramo master di AVA ed il commit di quando è stata aggiornato questo file (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa è traduzione aggiornata).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/raw/master/media/header.png)
 
@@ -9,7 +9,7 @@ ___
 
 [![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
 
-Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di IO (Input/Output) in Node.js si possono eseguire in parallelo data la sua natura asincrona. AVA trae vantaggio da questa proprietà ed esegue in modo concorrente i tuoi test, portando forti benefici a pesanti test in IO. Inoltre, i file di test sono eseguiti in parallelo in processi distinti, offrendoti un miglioramento ulteriore delle prestazioni oltre che un ambiente isolato dove far girare ogni file di test. Passando da Mocha ad AVA in Pageres si è migliorato il tempo di esecuzione da 31 secondi a 11 secondi. Avere test eseguiti in modo concorrente si è obbligati a scrivere test atomici, cioè test che non dipendono da un unico stato globale o lo stato impostato da test precedenti, che è grandioso!
+Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di IO (Input/Output) in Node.js si possono eseguire in parallelo data la sua natura asincrona. AVA trae vantaggio da questa proprietà ed esegue in modo concorrente i tuoi test, portando forti benefici a pesanti test in IO. Inoltre, i file di test sono eseguiti in parallelo in processi distinti, offrendoti un miglioramento ulteriore delle prestazioni oltre che un ambiente isolato dove far girare ogni file di test. Passando da Mocha ad AVA in Pageres si è migliorato il tempo di esecuzione da 31 secondi a 11 secondi. Avendo test eseguiti in modo concorrente si è obbligati a scrivere test atomici, cioè test che non dipendono da un unico stato globale o lo stato impostato da test precedenti, che è grandioso!
 
 *Leggi la nostra [guida per contributori](contributing.md) se pensi di contribuire (issues/PRs/etc).*
 
@@ -35,8 +35,8 @@ Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_E
 - Minimale e veloce
 - Sintassi semplice per i test
 - Esegue i test in modo concorrente
-- Spinge a scrivere test atomici
-- Senza variabili globali implicite
+- Obbliga a scrivere test atomici
+- Non ha variabili globali implicite
 - [Ambiente isolato per l'esecuzione di ogni file di test](#ambiente-isolato)
 - [Scrivi i tuoi test usando ES2015](#supporto-a-es2015)
 - [Supporto per Promesse](#supporto-per-promesse)
@@ -552,7 +552,7 @@ La configurazione corrispondente in Babel per il setup di AVA è la seguente:
 }
 ```
 
-Puoi personalizzare come AVA transpila i file di test mediante l'opzione `babel` nella [configurazione `package.json`](#configurazione) di AVA.
+Puoi personalizzare come AVA utilizzi il transpiler per i file di test mediante l'opzione `babel` nella [configurazione `package.json`](#configurazione) di AVA.
 Per sovrascrivere le impostazioni predefinita puoi usare il seguente esempio:
 
 ```json
@@ -569,7 +569,7 @@ Per sovrascrivere le impostazioni predefinita puoi usare il seguente esempio:
 }
 ```
 
-In aggiunta puoi utilizzare la speciale keyword `"inherit"`. Questa fa sì che AVA demandi la configurazione di Babel al tuo [`.babelrc` o file `package.json`](https://babeljs.io/docs/usage/babelrc/). In questo modo i tuoi test saranno transpilati utilizzando la stessa configurazione dei tuoi file sorgente senza alcuna specifica ripetizione per AVA.
+In aggiunta puoi utilizzare la speciale keyword `"inherit"`. Questa fa sì che AVA demandi la configurazione di Babel al tuo [`.babelrc` o file `package.json`](https://babeljs.io/docs/usage/babelrc/). In questo modo il transpiler utilizzerà la stessa configurazione dei tuoi file sorgente per i tuoi file di test senza alcuna specifica ripetizione per AVA.
 
 ```json
 {
@@ -590,15 +590,15 @@ Da notare che AVA applicherà *sempre* i plugin [`espower`] (https://github.com/
 
 ### Support di TypeScript
 
-AVA include i typings per TypeScript. La transpilazione dovrà però essere configurata manualmente. Quando imposterai nel file `tsconfig.json` `module` su `commonjs`, TypeScript troverà automaticamente la definizione dei tipi per AVA. Dovrai impostare `target` su `es2015` per poter utilizzare le promesse e le funzioni asincrone.
+AVA include i typings per TypeScript. La configurazione del transpiler dovrà però essere fatta manualmente. Quando imposterai nel file `tsconfig.json` `module` su `commonjs`, TypeScript troverà automaticamente la definizione dei tipi per AVA. Dovrai impostare `target` su `es2015` per poter utilizzare le promesse e le funzioni asincrone.
 
-### Transpilare moduli importati
+### Usare il transpiler per i moduli importati
 
-AVA al momento transpila solamente i test che richiedi di eseguire. *Non transpilerà i moduli importati al di fuori dei test*. Benchè ci sia una ragione valida per questo comportamento, potrebbe non essere quel che ci si aspetta.
+AVA al momento utilizza il transpiler solamente per i test che richiedi di eseguire. *Non verrà utilizzato il transpiler per i moduli importati al di fuori dei test*. Benchè ci sia una ragione valida per questo comportamento, potrebbe non essere quel che ci si aspetta.
 
-Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/] per transpilare i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#CLI) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
+Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/] per i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#CLI) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
 
-Puoi anche transpilare i tuoi moduli in un processo separato e utilizzare i file transpilati invece dei sorgenti nei tuoi test.
+Puoi anche utilizzare il transpiler per i tuoi moduli in un processo separato e utilizzare i file prodotti invece dei sorgenti nei tuoi test.
 
 ### Supporto per Promesse
 
@@ -871,7 +871,7 @@ $ ava --serial
 
 Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](#processi-isolati) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
 
-Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dalla transpilazione. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
+Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dai file prodotti dal transpiler. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
 
 ## Domande frequenti
 

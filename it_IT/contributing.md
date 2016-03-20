@@ -41,7 +41,7 @@ Abbiamo una [chat](https://gitter.im/sindresorhus/ava). Visita e dai un'occhiata
 
 ### Invia una pull request
 
-- È meglio discutere cambiamenti non triviali in una issue prima di inviare una PR, per evitarti spesso lavoro non necessario.
+- È meglio discutere cambiamenti non banali in una issue prima di inviare una PR, per evitarti spesso lavoro non necessario.
 - Per cambiamenti ambiziosi, cerca di portare il tuo lavoro davanti la comunità per feedback il prima possibile. Invia una pull request non appena hai lo stretto necessario per dimostrare la tua idea. In questa prima fase non preoccuparti di fare tutto perfetto, o completo al 100%. Aggiungi il prefisso [WIP] nel titolo e descrivi cosa manca ancora. Questo permette a reviewer di sapere che non è necessario essere troppo puntigliosi o proporre miglioramenti che hai già in piano di fare.
 - Nuove funzionalità devono essere supportate da test e documentazione.
 - Non includere cambiamenti non necessari alla funzionalità.

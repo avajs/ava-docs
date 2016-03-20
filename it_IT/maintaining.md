@@ -13,7 +13,7 @@ Leggi ed aderisci al [codice di condotta](code-of-conduct.md).
 
 ## Testing
 
- - `npm test`: Esegue una verifica Lint sul codice ed esegue l'intera suite ti test con code coverage
+ - `npm test`: Esegue una verifica Lint sul codice ed esegue l'intera suite di test con code coverage
  - `npm run test-win`: Esegue i test in Windows.
  - `npm run coverage`: Genera un report di code coverage per l'ultima esecuzione (apre una finestra nel browser).
  - `tap test/fork.js --bail`:  Esegue uno specifico file di test ed esce non appena si verifica il primo errore (utile quando si cercano bug).
@@ -31,7 +31,7 @@ Leggi ed aderisci al [codice di condotta](code-of-conduct.md).
 
 - Una nuova funzionalità deve avere test e documentazione a supporto.
 - Assicurati che le [linee guida per contribuzioni](contributing.md) siano rispettate.
-- Al menos un miembro del equipo deben `LGTM` un pull request antes de que se fusione.
+- Almeno uno dei membri del tem deve verificare (`LGTM` - "Looks good to me") una pull request prima di accettarla
 - Fai lo squash dei commit quando si effettua un merge *[Esempio](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 ## Analisi prestazioni (Profiling)
