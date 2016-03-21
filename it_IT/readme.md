@@ -11,7 +11,7 @@ ___
 
 Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di IO (Input/Output) in Node.js si possono eseguire in parallelo data la sua natura asincrona. AVA trae vantaggio da questa proprietà ed esegue in modo concorrente i tuoi test, portando forti benefici a pesanti test in IO. Inoltre, i file di test sono eseguiti in parallelo in processi distinti, offrendoti un miglioramento ulteriore delle prestazioni oltre che un ambiente isolato dove far girare ogni file di test. Passando da Mocha ad AVA in Pageres si è migliorato il tempo di esecuzione da 31 secondi a 11 secondi. Avendo test eseguiti in modo concorrente si è obbligati a scrivere test atomici, cioè test che non dipendono da un unico stato globale o lo stato impostato da test precedenti, che è grandioso!
 
-*Leggi la nostra [guida per contributori](contributing.md) se pensi di contribuire (issues/PRs/etc).*
+*Leggi la nostra [guida per collaboratori](contributing.md) se pensi di contribuire (issue/PRs/etc).*
 
 Segui l'[account Twitter di AVA](https://twitter.com/ava__js) per le ultime notizie.
 

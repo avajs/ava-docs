@@ -30,7 +30,7 @@ Leggi ed aderisci al [codice di condotta](code-of-conduct.md).
 ## Pull requests
 
 - Una nuova funzionalità deve avere test e documentazione a supporto.
-- Assicurati che le [linee guida per contribuzioni](contributing.md) siano rispettate.
+- Assicurati che le [linee guida per collaborare](contributing.md) siano rispettate.
 - Almeno uno dei membri del tem deve verificare (`LGTM` - "Looks good to me") una pull request prima di accettarla
 - Fai lo squash dei commit quando si effettua un merge *[Esempio](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
