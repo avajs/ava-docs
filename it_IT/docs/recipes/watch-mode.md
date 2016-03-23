@@ -78,7 +78,7 @@ Il tracciamento delle dipendenze funziona per i moduli richiesti. Estensioni per
 
 ## Riesecuzione manuale dei test
 
-Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di comando, seguito da <kbd>Invio</kbd>.
+Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di comando.
 
 ## Debugging
 
