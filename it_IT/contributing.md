@@ -50,3 +50,5 @@ Abbiamo una [chat](https://gitter.im/sindresorhus/ava). Visita e dai un'occhiata
 - Usa un titolo chiaro e descrittivo per la pull request ed i commit.
 - Scrivi una descrizione che ci convinca sul perchè dovremmo accettare la tua pull request. È il tuo lavoro convincerci. Fornisci il "perchè" sia necessaria e fornisci dei casi d'uso.
 - Potremmo chiederti di fare dei cambiamenti alla tua pull request. Non c'è bisogno di aprire una nuova pull request, semplicemente [aggiorna quella già aperta](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md).
+
+Attenzione: quando fai modifiche al codice, ricorda che il mantra di AVA (preso da Python) è avere preferibilmente un unico modo di fare qualcosa. Ad esempio, una pull request per aggiungere un alias per una parte dell'API ([come questo](https://github.com/sindresorhus/ava/pull/663))) sarà molto probabilmente rifiutata se non introduce qualche ulteriore beneficio.
