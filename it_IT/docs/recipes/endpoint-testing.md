@@ -9,7 +9,7 @@ Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_E
 
 AVA non ha un metodo nativo per il test di endpoint, ma puoi utilizzare un'altra libreria si asserzione per questo. In questo esempio utilizzeremo [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 
-Poichè i test gsaranno eseguiti in concorrenza, è meglio creare una nuova instanza del server per ciascun file di test, poichè se utilizziamo sempre la stessa istanza, questa potrebbe cambiare il suo stato tra un test e l'altro. Questo si può fare utilizzando `test.beforeEach` e `t.context`, o semplicemente con una funzione factory:
+Poichè i test saranno eseguiti in concorrenza, è meglio creare una nuova instanza del server per ciascun file di test, poichè se utilizzassimo sempre la stessa istanza, questa potrebbe cambiare il suo stato tra un test e l'altro. Questo si può fare utilizzando `test.beforeEach` e `t.context`, o semplicemente con una funzione factory:
 
 ```js
 function makeApp() {
@@ -19,7 +19,7 @@ function makeApp() {
 }
 ```
 
-Poi, iniettiamo l'istanza server in supertest. L'unica particolarità da tenere a mente è quella di usare una promessa o async/await invece del metodo `end` di supertest:
+Poi, iniettiamo l'istanza server in supertest. L'unica particolarità da tenere a mente è quella di usare una Promise o async/await invece del metodo `end` di supertest:
 
 ```js
 test('signup:Success', async t => {
