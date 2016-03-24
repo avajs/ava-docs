@@ -5,6 +5,7 @@
 - [日本語](ja_JP/readme.md) *(by [@makotot](https://github.com/makotot))*
 - [Português](pt_BR/readme.md) *(by [@charbelrami](https://github.com/charbelrami))*
 - [Русский](ru_RU/readme.md) *(by [@sohje](https://github.com/sohje))*
+- [简体中文](zh_CN/readme.md) *(by [@zhaozhiming](https://github.com/zhaozhiming))*
 
 
 ## Contribute
