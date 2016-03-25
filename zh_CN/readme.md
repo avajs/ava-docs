@@ -927,7 +927,7 @@ AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.c
 - [fly-ava](https://github.com/pine613/fly-ava) - 用 fly 运行测试
 - [start-ava](https://github.com/start-runner/ava) - 用 start 运行测试
 
-[更多。..](https://github.com/sindresorhus/awesome-ava#packages)
+[更多...](https://github.com/sindresorhus/awesome-ava#packages)
 
 ## 链接
 
