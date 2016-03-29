@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/raw/master/media/header.png)
 
@@ -244,7 +244,7 @@ test(function name(t) {
 
 ### Soglia per le asserzioni
 
-Le soglie per le asserzione garantiscono che i test passino esclusivamente quando un numero specifico di asserzioni è stato eseguito. Possono aiutare a scoprire casi in cui i test terminano anticipatamente. Inoltre se un test eccede il numero soglia impostato di asserzioni allora viene considerato come fallito: questo è comodo in quei casi in cui si usano asserzioni in callback o cicli.
+Le soglie per le asserzioni garantiscono che i test passino esclusivamente quando un numero specifico di asserzioni è stato eseguito. Possono aiutare a scoprire casi in cui i test terminano anticipatamente. Inoltre se un test eccede il numero soglia impostato di asserzioni allora viene considerato come fallito: questo è comodo in quei casi in cui si usano asserzioni in callback o cicli.
 
 Da notare che, a differenza di [tap](https://www.npmjs.com/package/tap) e [tape](https://www.npmjs.com/package/tape), AVA non termina automaticamente il test quando il numero di asserzioni pianificate viene raggiunto.
 
@@ -351,7 +351,7 @@ $ ava --match='foo'
 Esegui test il cui titolo non contiene `foo`:
 
 ```
-$ ava --match='!*foo'
+$ ava --match='!*foo*'
 ```
 
 Esegui test il cui titolo inizia per `foo` e termina per `bar`:
@@ -396,7 +396,7 @@ test(function foo(t) {
 
 ### Ignorare test
 
-A volte può alcuni test falliscono senza una facile soluzione. In questi casi puoi dire ad AVA di ignorare questi test utilizzando il modificatore `.skip`. Verranno comunque mostrati nell'output (come ignorati) ma non verranno eseguiti.
+A volte può succedere che alcuni test falliscano senza una facile soluzione. In questi casi puoi dire ad AVA di ignorare questi test utilizzando il modificatore `.skip`. Verranno comunque mostrati nell'output (come ignorati) ma non verranno eseguiti.
 
 
 ```js
@@ -453,7 +453,7 @@ test(t => {
 });
 ```
 
-Gli hook possono essere sia sincroni che asincroni, come i test. Per creare un hook asincrono restituisci una promessa o un oggetto osservabile, utilizza una funzione asincrona, o abilità la modalità callback usando `test.cb.before()`, `test.cb.beforeEach()`, etc...
+Gli hook possono essere sia sincroni che asincroni, come i test. Per creare un hook asincrono restituisci una promessa o un oggetto osservabile, utilizza una funzione asincrona, o abilita la modalità callback usando `test.cb.before()`, `test.cb.beforeEach()`, etc...
 
 
 ```js
@@ -475,7 +475,7 @@ test.afterEach.cb(t => {
 
 ```
 
-Non dimenticare che `beforeEach` e `afterEach` vengono eseguiti appena prima e dopo un test è eseguito, e che i test vengono eseguiti in concorrenza. Se hai bisogno di impostare uno stato globale per ogni test (come impostare una *spia* in `console.log` [ad esempio](https://github.com/sindresorhus/ava/issues/560)), dovrai impostare l'esecuzione dei test in [modo seriale](#eseguire-test-in-serie).
+Non dimenticare che `beforeEach` e `afterEach` vengono eseguiti appena prima e dopo l'esecuzione di ogni test, e che i test vengono eseguiti in concorrenza. Se hai bisogno di impostare uno stato globale per ogni test (come impostare una *spia* in `console.log` [ad esempio](https://github.com/sindresorhus/ava/issues/560)), dovrai impostare l'esecuzione dei test in [modo seriale](#eseguire-test-in-serie).
 
 Ricorda che AVA esegue ciascun file di test in un processo isolato. Potresti non aver bisogno di ripristinare lo stato originale dello stato nel'hook `after` poichè verrebbe chiamato non appena prima della chiusura del processo.
 
@@ -521,7 +521,7 @@ Questo ti permette di aggiungere temporaneamente `.skip` o `.only` alla fine di 
 
 ### Personalizzare asserzioni
 
-Puoi utilizzare ogni modulo di asserzioni invece o in aggiunta al modulo integrata, a patto che lanci un'eccezione quando un'asserzione fallisce.
+Puoi utilizzare ogni modulo di asserzioni invece o in aggiunta al modulo integrato, a patto che lanci un'eccezione quando un'asserzione fallisce.
 
 L'uso di un modulo esterno non fornisce lo stesso tipo d'esperienza d'uso di [quella integrata](#asserzioni), e allo stesso modo la [soglia per le asserzioni](#soglia-per-le-asserzioni) non funzionerà ([issue #25](https://github.com/sindresorhus/ava/issues/25)).
 
@@ -553,7 +553,7 @@ La configurazione corrispondente in Babel per il setup di AVA è la seguente:
 ```
 
 Puoi personalizzare come AVA utilizzi il transpiler per i file di test mediante l'opzione `babel` nella [configurazione `package.json`](#configurazione) di AVA.
-Per sovrascrivere le impostazioni predefinita puoi usare il seguente esempio:
+Per sovrascrivere le impostazioni predefinite puoi usare il seguente esempio:
 
 ```json
 {
@@ -763,7 +763,7 @@ Accerta che il `valore` sia `false`.
 
 ### .is(valore, previsto, [messaggio])
 
-Accerta che il `valore` si uguale a `previsto`.
+Accerta che il `valore` sia uguale a `previsto`.
 
 ### .not(valore, previsto, [messaggio])
 
@@ -783,7 +783,7 @@ Accerta che `function` lanci un errore o che  la `promise` sia rifiutata.
 
 `errore` può essere un costruttore, espressione regolare, messaggio di errore o una funzione di validazione.
 
-Restituisce l'errore lanciato dalla `function` o dal ragione del rifiuto della promessa `promise`.
+Restituisce l'errore lanciato dalla `function` o dalla ragione del rifiuto della promessa `promise`.
 
 ### .notThrows(function|promise, [messaggio])
 

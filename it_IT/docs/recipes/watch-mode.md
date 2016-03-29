@@ -1,13 +1,13 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Watch mode
 
 Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
 
-AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai fine ed esegue solamente i test che ne affetti.
+AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai file ed esegue solamente i test che ne sono affetti.
 
 ## Esegui i test con la modalità watch
 
@@ -63,7 +63,7 @@ Fai riferimento alla [documentazione di `chokidar`][`chokidar`] per trovare solu
 
 AVA distingue tra i *file sorgente* e i *file di test*. Come puoi immaginare i *file di test* contengono i tuoi test. I *file sorgente* sono tutti quei file che sono richiesti per eseguire i test, che siano file sorgente o file fixtures.
 
-AVA controlla automaticamente per modifiche nei file di test, `package.json`, ed ogni file `.js`. Ignorerà invece file in [specifiche cartelle]
+AVA controlla automaticamente le modifiche nei file di test, `package.json`, ed ogni file `.js`. Ignorerà invece file in [specifiche cartelle]
 (https://github.com/novemberborn/ignore-by-default/blob/master/index.js) come predefinito nel modulo [`ignore-by-default`].
 
 Puoi configurare il pattern per i file sorgente utilizzando il [parametro CLI `--source`] oppure nella sezione `ava` nel file `package.json`. Nota che se specifichi un pattern negativo le cartelle normalmente ignorate da [`ignore-by-default`] non saranno più ignorate, quindi vorrai aggiungere anche queste nella tua configurazione.
@@ -72,7 +72,7 @@ Se i tuoi test devono scrivere su disco potrebbero entrare in conflitto con il w
 
 ## Tracciare le dipendenza
 
-AVA traccia quale a file sorgente ogni tuo test dipende. Se cambi questa dipendenza solamente il file di test che dipende verrà rieseguito. AVA ri-eseguirà tutti i test se non può determinare quale file di test dipende dal file sorgente modificato.
+AVA traccia quale da file sorgente ogni tuo test dipende. Se cambi questa dipendenza solamente il file di test che dipende verrà rieseguito. AVA ri-eseguirà tutti i test se non può determinare quale file di test dipende dal file sorgente modificato.
 
 Il tracciamento delle dipendenze funziona per i moduli richiesti. Estensioni personalizzate e transpiler sono supportati, a patto che vengano caricati utilizzando il [parametro CLI `--require`] e non dall'interno dei tuoi file di test. I file caricati tramite il modulo `fs` non verranno tracciati.
 

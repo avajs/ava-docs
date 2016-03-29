@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Contribuire ad AVA
 
@@ -42,13 +42,13 @@ Abbiamo una [chat](https://gitter.im/sindresorhus/ava). Visita e dai un'occhiata
 ### Invia una pull request
 
 - È meglio discutere cambiamenti non banali in una issue prima di inviare una PR, per evitarti spesso lavoro non necessario.
-- Per cambiamenti ambiziosi, cerca di portare il tuo lavoro davanti la comunità per feedback il prima possibile. Invia una pull request non appena hai lo stretto necessario per dimostrare la tua idea. In questa prima fase non preoccuparti di fare tutto perfetto, o completo al 100%. Aggiungi il prefisso [WIP] nel titolo e descrivi cosa manca ancora. Questo permette a reviewer di sapere che non è necessario essere troppo puntigliosi o proporre miglioramenti che hai già in piano di fare.
+- Per cambiamenti ambiziosi, cerca di portare il tuo lavoro davanti la comunità per un feedback il prima possibile. Invia una pull request non appena hai lo stretto necessario per dimostrare la tua idea. In questa prima fase non preoccuparti di fare tutto perfetto, o completo al 100%. Aggiungi il prefisso [WIP] nel titolo e descrivi cosa manca ancora. Questo permette a reviewer di sapere che non è necessario essere troppo puntigliosi o proporre miglioramenti che hai già in piano di fare.
 - Nuove funzionalità devono essere supportate da test e documentazione.
 - Non includere cambiamenti non necessari alla funzionalità.
 - Verifica con Lint il codice e testalo prima di inviare la pull request eseguendo `$ npm test`
 - Crea la pull request da una [branch dedicata](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), non master.
 - Usa un titolo chiaro e descrittivo per la pull request ed i commit.
-- Scrivi una descrizione che ci convinca sul perchè dovremmo accettare la tua pull request. È il tuo lavoro convincerci. Fornisci il "perchè" sia necessaria e fornisci dei casi d'uso.
+- Scrivi una descrizione che ci convinca sul perchè dovremmo accettare la tua pull request. È il tuo lavoro convincerci. Fornisci il "perché" sia necessaria e fornisci dei casi d'uso.
 - Potremmo chiederti di fare dei cambiamenti alla tua pull request. Non c'è bisogno di aprire una nuova pull request, semplicemente [aggiorna quella già aperta](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md).
 
 Attenzione: quando fai modifiche al codice, ricorda che il mantra di AVA (preso da Python) è avere preferibilmente un unico modo di fare qualcosa. Ad esempio, una pull request per aggiungere un alias per una parte dell'API ([come questo](https://github.com/sindresorhus/ava/pull/663))) sarà molto probabilmente rifiutata se non introduce qualche ulteriore beneficio.

@@ -1,14 +1,14 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 
 # Quando usare `t.plan()`
 
 Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md)
 
-Una delle differenze sostanziali tra AVA e [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) è il comportamento della funzione `t.plan()`. In AVA, `t.plan()` è solamente usato per verificare che il numero previsto i asserzioni sia rispettato, ma non termina automaticamente il test.
+Una delle differenze sostanziali tra AVA e [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) è il comportamento della funzione `t.plan()`. In AVA, `t.plan()` è solamente usato per verificare che il numero previsto di asserzioni sia rispettato, ma non termina automaticamente il test.
 
 ## Uso superficiale di `t.plan()`
 
@@ -30,7 +30,7 @@ test(t => {
 
 `t.plan()` non fornisce alcun valore aggiunto in questo caso, ma aggiunge solo difficoltà se volessi decidere di aggiungere o rimuovere un'asserzione.
 
-### Promesse che ci sia aspetta siano risolte
+### Promesse che ci si aspetta siano risolte
 
 ```js
 test(t => {
@@ -42,7 +42,7 @@ test(t => {
 });
 ```
 
-Ad una prima occhiata questo test sembra usare giustamente `t.plan()` dato che un handler per una promessa asincrona è conionvolto. Ci sono però alcuni problemi con il test:\
+Ad una prima occhiata questo test sembra usare giustamente `t.plan()` dato che un handler per una promessa asincrona è coinvolta. Ci sono però alcuni problemi con il test:\
 
 1. Probabilmente `t.plan()` è stato usato per proteggersi contro la possibilità che `somePromise()` potrebbe essere rifiutata; Restituire una promessa rifiutata farebbe fallire il test in ogni caso.
 
@@ -71,7 +71,7 @@ test(t => {
 });
 ```
 
-In questo caso `t.plan()` è usato per assicurarsi che il codice all'interno del blocck `catch` sia eseguito. In molti casi, dovresti considerare l'uso dell'asserzione `t.throws()`, ma è considerato un uso accettabile di `t.plan()` poichè `t.throws()` ti permette solamente di verificare la proprietà `message` dell'errore.
+In questo caso `t.plan()` è usato per assicurarsi che il codice all'interno del blocco `catch` sia eseguito. In molti casi, dovresti considerare l'uso dell'asserzione `t.throws()`, ma è considerato un uso accettabile di `t.plan()` poichè `t.throws()` ti permette solamente di verificare la proprietà `message` dell'errore.
 
 ### Assicurarsi che un blocco catch venga eseguito
 
@@ -88,7 +88,7 @@ test(t => {
 });
 ```
 
-Come già specificato nel blocco `try`/`catch` sopra, utilizzare l'asserzione `t.throws()` è generalmente una scelta migliora, anche se ti permette solamente di verificare la proprietà `message` dell'errore.
+Come già specificato nel blocco `try`/`catch` sopra, utilizzare l'asserzione `t.throws()` è generalmente una scelta migliore, anche se ti permette solamente di verificare la proprietà `message` dell'errore.
 
 ### Assicurati che callback multiple vengano eseguite
 
@@ -136,4 +136,4 @@ testData.forEach(testDefinition => {
 
 ## Conclusioni
 
-Ci sono molti usi validi per `t.plan()`, ma questo nno vuole dire che può essere usato in modo indiscriminato. Una semplice regolada seguire è usarlo ogni volta che il tuo *test* non ha un codice con un flusso diretto o facile da comprendere. I testi con asserzioni dentro callback, blocchi `if`/`then`, blocchi `for`/`while` e (in certi casi) `try`/`catch` sono tutti buoni candidati per l'uso di `t.plan()`.
+Ci sono molti usi validi per `t.plan()`, ma questo non vuole dire che può essere usato in modo indiscriminato. Una semplice regola da seguire è usarlo ogni volta che il tuo *test* non ha un codice con un flusso diretto o facile da comprendere. I testi con asserzioni dentro callback, blocchi `if`/`then`, blocchi `for`/`while` e (in certi casi) `try`/`catch` sono tutti buoni candidati per l'uso di `t.plan()`.

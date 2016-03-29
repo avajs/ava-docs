@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Codice di Condotta per il Collaboratore
 
@@ -13,11 +13,11 @@ Noi promettiamo di rendere la parteipazione in questo progetto un'esperienza sen
 
 Esempi di comportamento non tollerato dai partecipanti include:
 
-* L'uso di linguaggio o immaginario a sfondo sessuale
+* L'uso di linguaggio o immagini a sfondo sessuale
 * Attacchi personali
 * Commenti irrispettosi o con insulti (*trolling*)
 * Pubblicazione di informazioni private di altre persone, come indirizzi elettronici o finisci, senza consenso esplicito
-* Altra condotta non etico o non professionale
+* Altra condotta non etica o non professionale
 
 Gli amministratori del progetto hanno il diritto e la responsabilità di rimuovere, modificare o rifutare commenti, commit, codice, modifiche del wiki, issues, e altri tipi di collaborazioni che non sono conformi a questo Codice di Condotta, o bannare temporaneamente o permanentemente ciascun collaboratore il comportamento sia inappropriato, minacciatorio, offensivo o pregiudiziale.
 
@@ -25,6 +25,6 @@ Adottando questo Codice di Condotta, gli amministratori del progetto si dedicano
 
 Questo Codice di Condotta si applica sia all'interno dello spazio del progetto che in luoghi pubblici dove un individuo rappresenta il progetto o la sua comunità.
 
-Istanze di abuso, intimidazione o altro tipi di comportamento non tollerato può essere segnalato contattando l'amministratore del progetto [sindresorhus@gmail.com](mailto:sindresorhus@gmail.com) . Tutte le lamentele saranno controllate ed investigate ed il risultato sarà rilasciato nei modi e forme apropriate alla circostanza. Gli amministratori sono obbligati a mantenere la confidenzialità dell'individuo che ha riportato l'incidente.
+Istanze di abuso, intimidazione o altro tipi di comportamento non tollerato può essere segnalato contattando l'amministratore del progetto [sindresorhus@gmail.com](mailto:sindresorhus@gmail.com) . Tutte le lamentele saranno controllate ed investigate ed il risultato sarà rilasciato nei modi e forme appropriate alla circostanza. Gli amministratori sono obbligati a mantenere la confidenzialità dell'individuo che ha riportato l'incidente.
 
 Questo Codice di Condotta è un adattamento del [Contributor Covenant](http://contributor-covenant.org), versione 1.3.0, disponible su [http://contributor-covenant.org/version/1/3/0/es/](http://contributor-covenant.org/version/1/3/0/es/)

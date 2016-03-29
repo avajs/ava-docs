@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Manutenzione [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
 
@@ -31,7 +31,7 @@ Leggi ed aderisci al [codice di condotta](code-of-conduct.md).
 
 - Una nuova funzionalità deve avere test e documentazione a supporto.
 - Assicurati che le [linee guida per collaborare](contributing.md) siano rispettate.
-- Almeno uno dei membri del tem deve verificare (`LGTM` - "Looks good to me") una pull request prima di accettarla
+- Almeno uno dei membri del team deve verificare (`LGTM` - "Looks good to me") una pull request prima di accettarla
 - Fai lo squash dei commit quando si effettua un merge *[Esempio](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 ## Analisi prestazioni (Profiling)
@@ -43,7 +43,7 @@ Come prima cosa devi istallare
 $ npm install --global iron-node devtool
 ```
 
-Nella cartella principale del progetto dove si usa AVA eseguire la seguente:
+Nella cartella principale del progetto dove si usa AVA eseguire il seguente comando:
 
 ```
 $ iron-node node_modules/ava/profile.js <test-file>
@@ -68,13 +68,13 @@ Potresti anche voler controllare la pagina Impostazioni nei Dev Tools ed abilita
 
  ## Valutazione comparativa (Benchmarking)
 
-Prima di tutto otteniamo i dati per una specifica branch o commit:
+Prima di tutto otteniamo i dati per uno specifico branch o commit:
 
 ```
 $ node bench/run
 ```
 
-Una volta ottenuti i dati per due o tre diverse branch o commit, esegui:
+Una volta ottenuti i dati per due o tre diversi branch o commit, esegui:
 
 ```
 $ node bench/compare
@@ -104,7 +104,7 @@ Inoltre se vuoi fare il benchmark di una suite che dovrebbe fallire, devi aggiun
 $ node bench/run.js concurrent/sync.js -- --should-fail other/failures.js
 ```
 
-Il comando sopra eseguirà equivale a due comandi di benchmark, dove il secondo gruppo di test ci si aspetta fallisca.
+Il comando sopra equivale a due comandi di benchmark, dove il secondo gruppo di test ci si aspetta fallisca.
 
 ## Introduzione di nuovi membri
 

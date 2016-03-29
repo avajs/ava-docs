@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sulla branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Code coverage
 
@@ -45,7 +45,7 @@ Se vuoi creare report HTML per il code coverage, o caricare i risultati su Cover
 
 ## Code coverage ES2015
 
-Usando Babelo per transpilare il tuoi codice in produzione è un po' più complicato. Abbiamo cercato di spiegarlo qui con diversi passaggi.
+Usando Babel per transpilare il tuoi codice in produzione è un po' più complicato. Abbiamo cercato di spiegarlo qui con diversi passaggi.
 
 ### Configurare Babel
 
@@ -69,13 +69,13 @@ Prima cosa, abbiamo bisogno di una configurazione Babel. La seguente è solo un 
 
 Ci sono due cose importanti da considerare dall'esempio qui sopra.
 
-  1. Abbiamo ignorato i file di test perchà AVA già si occupa di transpilarli per te.
+  1. Abbiamo ignorato i file di test perché AVA già si occupa di transpilarli per te.
 
 	2. Abbiamo specificato delle source maps `inline` per lo sviluppo. Questo è importante per la generazione del code coverage. Utilizzando la sezione `env` nella configurazione di Babel possiamo disabilitare le source maps per il codice che andrà in produzione.
 
 ### Creare un build script
 
-Poichè sembra improbabile che tu voglia le source map `inline` nel codice in produzione, dovrai specificare una variabile alternativa di ambiente nel tuo build script:
+Poiché sembra improbabile che tu voglia le source map `inline` nel codice in produzione, dovrai specificare una variabile alternativa di ambiente nel tuo build script:
 
 `package.json`
 
@@ -103,7 +103,7 @@ Per utilizzare l'hook `require` di Babel, aggiungi `babel-core/register` nella s
 }
 ```
 
-*Note*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di risparmiare il dover scrivere quel parametro ogni volta.
+*Note*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di evitare di dover scrivere quel parametro ogni volta.
 
 ### Combinando tutto
 
