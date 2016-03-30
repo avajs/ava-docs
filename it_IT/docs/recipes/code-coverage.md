@@ -142,7 +142,7 @@ Per combinare tutti questi file in un report HTML leggibile, eseguire il seguent
 $ ./node_modules/.bin/nyc report --reporter=html
 ```
 
-Oppure utilizza uno script `npm` per risparmiare di scriverlo ogni volta:
+Oppure utilizza uno script `npm` per evitare di scriverlo ogni volta:
 
 ```json
 {
