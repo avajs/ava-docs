@@ -873,7 +873,7 @@ Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul)
 
 Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dai file prodotti dal transpiler. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
 
-## Domande frequenti
+## FAQ
 
 ### Perchè non usare `mocha`, `tape`, `node-tap`?
 
