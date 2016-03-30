@@ -5,7 +5,7 @@ ___
 ___
 # Когда применять `t.plan()`
 
-Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
+Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/when-to-use-plan.md)
 
 Одна большая разница между AVA и [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) это поведение `t.plan()`. В AVA, `t.plan()` используется для того, чтобы убедиться, что будет выполнено ожидаемое число assert'ов без автоматического завершения теста.
 
