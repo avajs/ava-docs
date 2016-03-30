@@ -5,7 +5,7 @@ Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava
 ___
 # Code coverage
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md)
 
 Poichè AVA [usa processi isolati](#processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
 

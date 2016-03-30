@@ -5,7 +5,7 @@ Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava
 ___
 # Preparare AVA per il Browser testing
 
-Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
+Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/browser-testing.md)
 
 Con AVA non è possibile eseguire test all'interno di un browser [ancora](https://github.com/sindresorhus/ava/issues/24). Alcune librerie richiedono alcune variabili globali specifiche del browser (`window`, `document`, `navigator`, etc).
 React ne è un esempio, o almeno se vuoi utilizzare ReactDOM.render e simulare gli eventi con ReactTestUtils.

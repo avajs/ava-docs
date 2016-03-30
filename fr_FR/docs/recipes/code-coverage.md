@@ -5,7 +5,7 @@ C'est la traduction du fichier [code-coverage.md](https://github.com/sindresorhu
 ___
 # Couverture de code
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md),  [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/code-coverage.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md),  [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md)
 
 Comme AVA [génère les fichiers de test][process-isolation], vous ne pouvez pas utiliser [`istanbul`] pour la couverture de code. A la place, vous pouvez le faire avec [`nyc`] qui est essentiellement comme [`istanbul`] avec le support des sous-processus (sub-process).
 

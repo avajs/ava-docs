@@ -16,7 +16,7 @@ Apesar de o JavaScript ser single-threaded, as IO no Node.js podem acontecer em 
 
 Siga o [AVA no Twitter](https://twitter.com/ava__js) para atualizações.
 
-Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md)
+Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md)
 
 
 ## Índice

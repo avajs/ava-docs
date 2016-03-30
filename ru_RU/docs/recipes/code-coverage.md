@@ -5,7 +5,7 @@ ___
 ___
 # Покрытие кода
 
-Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md)
 
 Так как AVA [запускает тестовые файлы в отдельном окружении][process-isolation], Вы не можете использовать [`istanbul`] для покрытия кода; вместо этого, воспользуйтесь [`nyc`], который похож на [`istanbul`] но с поддержкой запуска в отдельном окружении(sub-process).
 

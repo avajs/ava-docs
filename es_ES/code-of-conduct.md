@@ -5,7 +5,7 @@ Esta es la traducción del archivo [code-of-conduct.md](https://github.com/sindr
 ___
 # Código de Conducta para Contribuyentes
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md)
 
 Como contribuyentes y administradores de este proyecto, y en el interés de fomentar una comunidad abierta y acogedora, nos comprometemos a respetar a todas las personas que colaboran reportando errores, solicitando nuevas funcionalidades, actualizando documentación, generando *pull requests*, entre otras actividades.
 

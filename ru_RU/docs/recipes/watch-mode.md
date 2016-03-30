@@ -5,7 +5,7 @@ ___
 ___
 # Режим наблюдения
 
-Translations: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Translations: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/watch-mode.md)
 
 В AVA включен интеллектуальный режим наблюдения. Режим наблюдения отслеживает все изменения в файлах и запускает необходимые тесты.
 

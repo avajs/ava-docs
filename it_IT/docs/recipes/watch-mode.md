@@ -5,7 +5,7 @@ Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava
 ___
 # Watch mode
 
-Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/watch-mode.md)
 
 AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai file ed esegue solamente i test che ne sono affetti.
 

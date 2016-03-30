@@ -5,7 +5,7 @@ ___
 ___
 # Настройка AVA для тестирования браузера
 
-Переводы: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
+Переводы: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/browser-testing.md)
 
 AVA не поддерживает запуск тестов в браузере, [пока что](https://github.com/sindresorhus/ava/issues/24). Некоторым библиотекам необходимы браузерное глобальное окружение(`window`, `document`, `navigator`, и т.д.).
 Один из примеров - это React, по крайней мере, если Вы собираетесь использовать ReactDOM.render и эмулировать DOM события с ReactTestUtils.

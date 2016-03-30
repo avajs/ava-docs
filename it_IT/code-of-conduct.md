@@ -5,7 +5,7 @@ Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava
 ___
 # Codice di Condotta per il Collaboratore
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md)
 
 Come collaboratore e amministratore di questo progetto, e nell'interesse di incoraggiare una comunità aperta e accogliente, noi promettiamo di rispettare tutte le persone che collaborano mediante la notifica di errori, creando nuove funzionalità, aggiornando la documentazione, inviando pull request o correzioni, e altre attività.
 

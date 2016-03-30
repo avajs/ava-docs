@@ -5,7 +5,7 @@ Esta es la traducción del archivo [endpoint-testing.md](https://github.com/sind
 ___
 # Testando un Endpoint
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](endpoint-testing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md)
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](endpoint-testing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/endpoint-testing.md)
 
 AVA no trae un método integrado para testar endpoints, pero puedes usar cualquier biblioteca de aserción para ello. Vamos a usar [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 
