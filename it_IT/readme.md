@@ -26,7 +26,7 @@ Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_E
 - [Documentazione](#documentazione)
 - [API](#api)
 - [Asserzioni](#asserzioni)
-- [FAQ](#faq)
+- [Domande frequenti](#domande-frequenti)
 - [Ricette](#ricette)
 
 
@@ -37,15 +37,15 @@ Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_E
 - Esegue i test in modo concorrente
 - Obbliga a scrivere test atomici
 - Non ha variabili globali implicite
-- [Ambiente isolato per l'esecuzione di ogni file di test](#ambiente-isolato)
+- [Ambiente isolato per l'esecuzione di ogni file di test](#isolamento-dei-processi)
 - [Scrivi i tuoi test usando ES2015](#supporto-a-es2015)
 - [Supporto per Promesse](#supporto-per-promesse)
 - [Supporto per Generatori](#supporto-per-generatori)
-- [Supporto per funzioni asincrone](#support-per-funzioni-asincrone)
-- [Supporto per Osservabili](#supporto-per-osservabili)
-- [Messaggi di asserzione avanzati](#migliori-asserzioni)
+- [Supporto per funzioni asincrone](#supporto-per-funzioni-asincrone)
+- [Supporto per Oggetti Osservabili](#supporto-per-oggetti-osservabili)
+- [Messaggi di asserzione avanzati](#migliorare-messaggi-delle-asserzioni)
 - [Produzione TAP opzionale](#produzione-tap-opzionale)
-- [Stack traces chiari](#stack-traces-chiari)
+- [Stack trace chiari](#stack-trace-chiari)
 
 
 ## Sintassi per test
@@ -304,7 +304,7 @@ test.serial(t => {
 });
 ```
 
-Da notare che questo vale per i test all'interno di un particolare file. AVA eseguirà comunque file di test multipli nello stesso istante a meno che venga passato il parametro [`--serial` dalla CLI](#CLI).
+Da notare che questo vale per i test all'interno di un particolare file. AVA eseguirà comunque file di test multipli nello stesso istante a meno che venga passato il parametro [`--serial` dalla CLI](#cli).
 
 ### Eseguire test specifici
 
@@ -596,7 +596,7 @@ AVA include i typings per TypeScript. La configurazione del transpiler dovrà pe
 
 AVA al momento utilizza il transpiler solamente per i test che richiedi di eseguire. *Non verrà utilizzato il transpiler per i moduli importati al di fuori dei test*. Benchè ci sia una ragione valida per questo comportamento, potrebbe non essere quel che ci si aspetta.
 
-Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/] per i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#CLI) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
+Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/) per i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#cli) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
 
 Puoi anche utilizzare il transpiler per i tuoi moduli in un processo separato e utilizzare i file prodotti invece dei sorgenti nei tuoi test.
 
@@ -612,7 +612,7 @@ test(t => {
 });
 ```
 
-### Support per Generatori
+### Supporto per Generatori
 
 AVA fornisce supporto nativo per i [generatori](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
 
@@ -727,7 +727,7 @@ Termina il test. Funziona unicamente con `test.cb()`.
 
 ## Asserzioni
 
-Le asserzioni sono contenute nel [contesto di esecuzione](#contesto-di-esecuzione) del test:
+Le asserzioni sono contenute nel [contesto di esecuzione](#t) del test:
 
 ```js
 test(t => {
@@ -869,11 +869,11 @@ $ ava --serial
 
 ### Code coverage
 
-Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](#processi-isolati) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
+Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](##isolamento-dei-processi) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
 
 Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dai file prodotti dal transpiler. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
 
-## FAQ
+## Domande frequenti
 
 ### Perchè non usare `mocha`, `tape`, `node-tap`?
 
