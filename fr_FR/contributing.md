@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -9,7 +9,7 @@ ___
 
 Veuillez noter que ce projet est publié avec un [Code de conduite du contributeur](code-of-conduct.md). En participant à ce projet, vous vous engagez à respecter ses termes.
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/contributing.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/contributing.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md)
 
 ## Comment puis-je contribuer ?
 
@@ -50,3 +50,5 @@ Nous avons un [chat](https://gitter.im/sindresorhus/ava). Venez, espionnez, parl
 - Utilisez un titre clair et descriptif pour le pull request et les commits.
 - Écrivez une description convaincante pour expliquer pourquoi nous devrions intégrer votre pull request. Il est de votre devoir de nous convaincre. Répondre à la question «pourquoi» est nécessaire et fournissez des cas d'utilisation.
 - Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+
+Remarque: lorsque vous modifiez du code, n'oubliez pas que la devise de AVA (volé à Python), c'est d'avoir une unique méthode pour faire quelque chose. Par exemple, une demande pour ajouter un alias à l'API ([comme ceci] (https://github.com/sindresorhus/ava/pull/663)) sera probablement refusée s'il n'y a pas l'ajout d'un autre avantage important.
