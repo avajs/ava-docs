@@ -5,7 +5,7 @@ ___
 ___
 # Кодекс Поведения участника
 
-Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md)
+Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
 
 Как участники и сопровождающие этот проект, в интересах содействия
 открытому и дружелюбному сообществу, мы обязуемся уважать всех людей, которые

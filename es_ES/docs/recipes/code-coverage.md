@@ -5,7 +5,7 @@ Esta es la traducción del archivo [code-coverage.md](https://github.com/sindres
 ___
 # Cobertura de código
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md)
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
 Como AVA [genera los archivos de test][isolated-env] no se puede usar ['istanbul'] para la cobertura de código, en cambio, se puede lograr esto con ['nyc'] que es básicamente ['istanbul'] con apoyo de sub-process.
 

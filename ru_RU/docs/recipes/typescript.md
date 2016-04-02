@@ -5,7 +5,7 @@ ___
 ___
 # TypeScript
 
-Переводы: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/typescript.md)
+Переводы: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/typescript.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md)
 
 В AVA включена поддержка TypeScript файлов. Это позволяет разработчикам использовать TypeScript для написания тестов.
 

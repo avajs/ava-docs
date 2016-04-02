@@ -15,7 +15,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 
 Siga la [cuenta de Twitter de AVA](https://twitter.com/ava__js) para actualizaciones.
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md)
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## Tabla de contenidos

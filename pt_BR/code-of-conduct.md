@@ -6,7 +6,7 @@ ___
 
 # Código de Conduta do Contribuidor
 
-Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md)
+Traduções: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md)
 
 Como contribuidores e mantenedores deste projeto, e no interesse da fomentar uma
 comunidade aberta e acolhedora, nós nos comprometemos a respeitar todas as
