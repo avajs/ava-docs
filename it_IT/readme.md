@@ -640,7 +640,7 @@ test(async t => {
 });
 ```
 
-### Support per Oggetti Osservabili
+### Supporto per Oggetti Osservabili
 
 AVA fornisce supporto nativo per [oggetti osservabili](https://github.com/zenparsing/es-observable). Se restituisci un oggetto osservabile da un test, AVA attenderà automaticamente il completamento di questo prima di terminare il test.
 
