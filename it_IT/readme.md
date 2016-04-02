@@ -15,7 +15,7 @@ Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di I
 
 Segui l'[account Twitter di AVA](https://twitter.com/ava__js) per le ultime notizie.
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md)
+Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## Tabla de contenidos

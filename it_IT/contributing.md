@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `contributing.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Contribuire ad AVA
 
@@ -9,7 +9,7 @@ ___
 
 Considera che questo progetto utilizza un [Codice di Condotta per i Collaboratori](code-of-conduct.md). Partecipando al progetto accetti i suoi termini e condizioni.
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md)
+Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
 
 ## Come posso contribuire?
 

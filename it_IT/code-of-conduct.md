@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-f2c070987ecee3caf7613190acf2c8a90700e058) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Codice di Condotta per il Collaboratore
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md)
+Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
 
 Come collaboratore e amministratore di questo progetto, e nell'interesse di incoraggiare una comunità aperta e accogliente, noi promettiamo di rispettare tutte le persone che collaborano mediante la notifica di errori, creando nuove funzionalità, aggiornando la documentazione, inviando pull request o correzioni, e altre attività.
 
@@ -27,4 +27,4 @@ Questo Codice di Condotta si applica sia all'interno dello spazio del progetto c
 
 Istanze di abuso, intimidazione o altro tipi di comportamento non tollerato può essere segnalato contattando l'amministratore del progetto [sindresorhus@gmail.com](mailto:sindresorhus@gmail.com) . Tutte le lamentele saranno controllate ed investigate ed il risultato sarà rilasciato nei modi e forme appropriate alla circostanza. Gli amministratori sono obbligati a mantenere la confidenzialità dell'individuo che ha riportato l'incidente.
 
-Questo Codice di Condotta è un adattamento del [Contributor Covenant](http://contributor-covenant.org), versione 1.3.0, disponible su [http://contributor-covenant.org/version/1/3/0/es/](http://contributor-covenant.org/version/1/3/0/es/)
+Questo Codice di Condotta è un adattamento del [Contributor Covenant](http://contributor-covenant.org), versione 1.3.0, disponible su [http://contributor-covenant.org/version/1/3/0/it/](http://contributor-covenant.org/version/1/3/0/it/)
