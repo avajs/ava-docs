@@ -101,5 +101,5 @@ La modalità watch è una funzionalità relativamente nuova e ci potrebbero esse
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[parametro CLI `--require`]: https://github.com/sindresorhus/ava#cli
-[parametro CLI `--source`]: https://github.com/sindresorhus/ava#cli
+[parametro CLI `--require`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli
+[parametro CLI `--source`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli

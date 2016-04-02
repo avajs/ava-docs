@@ -869,7 +869,7 @@ $ ava --serial
 
 ### Code coverage
 
-Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](##isolamento-dei-processi) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
+Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](#isolamento-dei-processi) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
 
 Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dai file prodotti dal transpiler. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
 
@@ -893,7 +893,7 @@ AVA, no Ava o ava. Si pronuncia [`/ˈeɪvə/` ay-və](https://github.com/sindres
 
 ### Cos'è lo sfondo del logo in cima?
 
-La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3meda).
+La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 
 ### Qual è la differenza tra concorrenza e parallelismo?
 
@@ -906,6 +906,7 @@ La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3me
 - [Quando usare `t.plan()`](docs/recipes/when-to-use-plan.md)
 - [Browser testing](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Watch Mode](docs/recipes/watch-mode.md)
 
 
 ## Supporto

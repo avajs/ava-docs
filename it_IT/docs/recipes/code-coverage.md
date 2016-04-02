@@ -7,7 +7,7 @@ ___
 
 Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
-Poichè AVA [usa processi isolati](#processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
+Poichè AVA [usa processi isolati](processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
 
 ## Configurazione
 
@@ -179,6 +179,6 @@ La tua code coverage apparirà su coveralls non appena Travis completerà l'esec
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md#entorno-aislado
+[processi-isolati]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#isolamento-dei-processi
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
