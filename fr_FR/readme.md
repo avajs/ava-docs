@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e9c6cc2843e9ee6127aebb2843eafec86cb39bfc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -56,7 +56,7 @@ Traductions : [English](https://github.com/sindresorhus/ava/blob/master/readme.m
 import test from 'ava';
 
 test(t => {
-	t.same([1, 2], [1, 2]);
+	t.deepEqual([1, 2], [1, 2]);
 });
 ```
 
@@ -151,6 +151,7 @@ $ ava --help
     --match, -m      Only run tests with matching title (Can be repeated)' (Exécute seulement les tests qui correspondent au titre (peut être répété))
 		--watch, -w      Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
     --source, -S     Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
+    --timeout, -T    Set global timeout (Définit un timeout global)
 
   Examples (Exemples)
     ava
@@ -684,6 +685,20 @@ AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela p
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
+### Délai (timeout) global
+
+Un délai (timeout) global peut être défini via l'option `--timeout`.
+Le délai de AVA se comporte différemment des autres frameworks de test.
+AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arrêter, si aucun nouveau résultat de test est reçu dans le délai imparti.
+
+Vous pouvez définir des délais qui soient lisibles :
+
+```
+$ ava --timeout=10s # 10 secondes
+$ ava --timeout=2m # 2 minutes
+$ ava --timeout=100 # 100 millisecondes
+```
+
 ## API
 
 ### `test([title], callback)`
@@ -767,11 +782,11 @@ Affirme que `value` est égal à `expected`.
 
 Affirme que `value` n'est pas égal à `expected`.
 
-### `.same(value, expected, [message])`
+### `.deepEqual(value, expected, [message])`
 
 Affirme que `value` est deep equal à `expected`.
 
-### `.notSame(value, expected, [message])`
+### `.notDeepEqual(value, expected, [message])`
 
 Affirme que `value` n'est pas deep equal à `expected`.
 
