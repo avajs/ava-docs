@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/e9c6cc2843e9ee6127aebb2843eafec86cb39bfc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/a7f50eb82d8dae4f9a7e70ae33ef71712a8fd69b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -586,6 +586,8 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 }
 ```
 
+Consultez la [recette `.babelrc`](docs/recipes/babelrc.md) de AVA pour d'autres exemples et une explication plus détaillée des options de configuration.
+
 Notez que AVA appliquera *toujours* les plugins [`espower`](https://github.com/power-assert-js/babel-plugin-espower) et [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
 
 ### Prise en charge de TypeScript
@@ -744,7 +746,7 @@ Les assertions sont mélangées dans l'[objet d'exécution](#t) fourni à chaque
 
 ```js
 test(t => {
-	t.ok('unicorn'); // assertion
+	t.truthy('unicorn'); // assertion
 });
 ```
 
@@ -758,11 +760,11 @@ L'assertion passe.
 
 L'assertion échoue.
 
-### `.ok(value, [message])`
+### `.truthy(value, [message])`
 
 Affirme que `value` est truthy.
 
-### `.notOk(value, [message])`
+### `.falsy(value, [message])`
 
 Affirme que `value` est falsy.
 
@@ -835,7 +837,7 @@ const c = 'baz';
 require('assert').ok(a.test(b) || b === c);
 ```
 
-Si vous collez que dans un REPL de Node, il va retourner :
+Si vous collez ceci dans un REPL de Node, il retournera :
 
 ```
 AssertionError: false == true
@@ -848,16 +850,16 @@ test(t => {
 	const a = /foo/;
 	const b = 'bar';
 	const c = 'baz';
-	t.ok(a.test(b) || b === c);
+	t.true(a.test(b) || b === c);
 });
 ```
 
 Affichera :
 
 ```
-t.ok(a.test(b) || b === c)
-       |    |     |     |
-       |    "bar" "bar" "baz"
+t.true(a.test(b) || b === c)
+       |      |     |     |
+       |      "bar" "bar" "baz"
        false
 ```
 
@@ -921,6 +923,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Quand utiliser `t.plan()` ?](docs/recipes/when-to-use-plan.md)
 - [Tests de navigateur](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Configuration de Babel](docs/recipes/babelrc.md)
 
 ## Support
 
