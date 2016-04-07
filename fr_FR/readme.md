@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/a7f50eb82d8dae4f9a7e70ae33ef71712a8fd69b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/08ce25595d3251351dab798d076fd67f0f86e7ae...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -218,7 +218,7 @@ Les fichiers de test sont exécutés à partir de leur répertoire courant, donc
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction callback. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
 
 ```js
 import test from 'ava';
@@ -371,7 +371,7 @@ Trouve les titres commençant par 'foo' ou se terminant par 'bar'
 $ ava --match='foo*' --match='*bar'
 ```
 
-Remarquez qu'un pattern qui correspond, a la priorité sur `.only`. Seuls les tests avec un titre explicite sont recherchés. Les tests, sans titre ou dont le titre est dérivé de la fonction callback, seront sautés si `--match` est utilisé.
+Remarquez qu'un pattern qui correspond, a la priorité sur `.only`. Seuls les tests avec un titre explicite sont recherchés. Les tests, sans titre ou dont le titre est dérivé de la fonction d'implémentation, seront sautés si `--match` est utilisé.
 
 Voici ce qui arrive lorsque vous exécutez AVA avec un pattern `*oo*` pour les tests suivants :
 
@@ -409,11 +409,11 @@ test.skip('ne sera pas exécuté', t => {
 });
 ```
 
-Vous devez spécifier la fonction callback.
+Vous devez spécifier la fonction d'implémentation.
 
 ### Les tests fictifs ("todo")
 
-Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'écrire un test. Comme les tests passés (`.skip`), ces tests fictifs sont présentés dans le résultat. Ils exigent seulement un titre : vous ne pouvez pas spécifier la fonction callback.
+Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'écrire un test. Comme les tests passés (`.skip`), ces tests fictifs sont présentés dans le résultat. Ils exigent seulement un titre : vous ne pouvez pas spécifier la fonction d'implémentation.
 
 ```js
 test.todo('il faudra penser à écrire cela plus tard');
@@ -703,16 +703,16 @@ $ ava --timeout=100 # 100 millisecondes
 
 ## API
 
-### `test([title], callback)`
-### `test.serial([title], callback)`
-### `test.cb([title], callback)`
-### `test.only([title], callback)`
-### `test.skip([title], callback)`
+### `test([title], implementation)`
+### `test.serial([title], implementation)`
+### `test.cb([title], implementation)`
+### `test.only([title], implementation)`
+### `test.skip([title], implementation)`
 ### `test.todo(title)`
-### `test.before([title], callback)`
-### `test.after([title], callback)`
-### `test.beforeEach([title], callback)`
-### `test.afterEach([title], callback)`
+### `test.before([title], implementation)`
+### `test.after([title], implementation)`
+### `test.beforeEach([title], implementation)`
+### `test.afterEach([title], implementation)`
 
 #### `title`
 
@@ -720,7 +720,7 @@ Type: `string`
 
 Titre du test.
 
-#### `callback(t)`
+#### `implementation(t)`
 
 Type: `function`
 
@@ -730,7 +730,7 @@ Doit contenir le test réel.
 
 Type: `object`
 
-L'objet d'exécution d'un test particulier. Chaque callback de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`.
+L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`.
 
 ###### `t.plan(count)`
 
@@ -742,7 +742,7 @@ La fin du test. Fonctionne uniquement avec `test.cb()`.
 
 ## Assertions
 
-Les assertions sont mélangées dans l'[objet d'exécution](#t) fourni à chaque callback de test :
+Les assertions sont incluses dans l'[objet d'exécution](#t) fourni à chaque implémentation de test :
 
 ```js
 test(t => {
