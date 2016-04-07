@@ -1,4 +1,4 @@
-# Localized [AVA](https://github.com/sindresorhus/ava) docs
+# Localized [AVA](https://ava.li) docs
 
 - [Español](es_ES/readme.md) *(by [@AlbertoFuente](https://github.com/AlbertoFuente))*
 - [Français](fr_FR/readme.md) *(by [@forresst](https://github.com/forresst))*
