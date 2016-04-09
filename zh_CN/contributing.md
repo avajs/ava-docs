@@ -9,7 +9,7 @@ ___
 
 请注意，这个项目发布带有[贡献者的行为准则](code-of-conduct.md)，参与这个项目你需要同意并遵守其中的条款。
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/contributing.md)
+翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/contributing.md)
 
 ## 我怎么贡献？
 
