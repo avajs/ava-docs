@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/691fdb6f4d6b3ae6b39be449a8577353978866b8...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/ad14f5082512bc831002700fb3072eafb737935f...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
 
@@ -35,6 +35,29 @@ Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 - Au moins un membre de l'équipe doit apposer un `LGTM` sur le pull request avant de le merger.
 - Faites un squash des commits avant de merger. *[Exemple](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
+
+## Étiquettes d'une issue
+
+Ajoutez des étiquettes lors du triage des issues :
+
+* `babel`: Utilisez-la lorsque l'issue est liée à notre infrastructure Babel
+* `blocked`: Utilisez-la quand l'issue est bloquée. Veuillez laisser un commentaire ou modifiez la description de l'issue pour expliquer ce qui bloque
+* `bug`: Utilisez-la pour les bugs de AVA
+* `DO NOT MERGE`: Utilisez-la pour les pull requests exploratoires que nous ne devons pas mergé
+* `docs`: Utilisez-la pour suivre l'amélioration de la documentation
+* `enhancement`: Utilisez-la pour les demandes de fonctionnalités
+* `good for beginner`: Utilisez-la pour les issues qui sont bonnes pour les débutants
+* `help wanted`: Utilisez-la pour les issues où nous aimerions vraiment l'aide de personnes extérieures à l'équipe de base
+* `performance`: Utilisez-la pour issues liées à la performance
+* `question`: Utilisez-la pour les issues qui sont en phase de discussion
+
+Veuillez notez la priorité avec les étiquettes suivantes :
+
+* `priority`: Issues à traiter le plus tôt possible
+* `low priority`: Issues que nous aimerions voir avancées
+* `future`: Issues où nous prévoyons leur taitement plus tard. Celles-ci sont des suggestions à long terme pour lesquelles nous n'accepterons probablement pas de PRs
+
+Utilisez l'étiquette `assigned` lorsque quelqu'un est en train de travailler sur l'issue, ainsi nous évitons du travail en double.
 
 ## Analyse de l'exécution
 
