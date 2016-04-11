@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/625080ddb948f849fa7b6c8acd623155e111e2b2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/be7c84b3f624016155e446b1dba9eab9a64cd081...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/sindresorhus/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/eslint-plugin-ava)
 
@@ -27,7 +27,7 @@ Configurez le dans le `package.json`.
 			"es6": true
 		},
 		"parserOptions": {
-			"ecmaVersion": 6,
+			"ecmaVersion": 7,
 			"sourceType": "module"
 		},
 		"plugins": [
@@ -60,6 +60,7 @@ Configurez le dans le `package.json`.
 
 Les règles s'activeront uniquement dans les fichiers de test.
 
+- [assertion-message](docs/rules/assertion-message.md) - Imposer ou interdir les messages d'assertion.
 - [max-asserts](docs/rules/max-asserts.md) - Limiter le nombre d'assertions dans un test.
 - [no-cb-test](docs/rules/no-cb-test.md) - S'assurer qu'aucun `test.cb()` n'est utilisé.
 - [no-identical-title](docs/rules/no-identical-title.md) - S'assurer que chaque test a un titre différent.
@@ -80,7 +81,7 @@ Les règles s'activeront uniquement dans les fichiers de test.
 
 ## Configuration recommandée
 
-Ce plugin exporte une [configuration recommandée](index.js#L9) (`recommended`) qui applique les bonnes pratiques.
+Ce plugin exporte une [configuration recommandée](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/index.js) (`recommended`) qui applique les bonnes pratiques.
 
 Pour activer cette configuration, utilisez la propriété `extends` dans votre `package.json`.
 
@@ -88,26 +89,27 @@ Pour activer cette configuration, utilisez la propriété `extends` dans votre `
 {
 	"name": "my-awesome-project",
 	"eslintConfig": {
-		"extends": "plugin:ava/recommended",
 		"plugins": [
 			"ava"
-		]
+		],
+		"extends": "plugin:ava/recommended",
 	}
 }
 ```
 
 Consulter la [documentation ESLint](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) pour plus d'informations sur l'extension des fichier de configuration.
 
-**Remarque** : Cette configuration activera aussi correctement les [options du parser](http://eslint.org/docs/user-guide/configuring#specifying-parser-options) et de l'[environment](http://eslint.org/docs/user-guide/configuring#specifying-environments).
+**Remarque** : Cette configuration activera aussi correctement les [options du parser](http://eslint.org/docs/user-guide/configuring#specifying-parser-options) et de l'[environnement](http://eslint.org/docs/user-guide/configuring#specifying-environments).
 
 
 ## Auteurs
 
 - [Jeroen Engels](https://github.com/jfmengels)
 - [Takuto Wada](https://github.com/twada)
-- [Et nos supers contributeurs](https://github.com/sindresorhus/eslint-plugin-ava/graphs/contributors)
+
+[Et nos supers contributeurs](https://github.com/sindresorhus/eslint-plugin-ava/graphs/contributors)
 
 
 ## Licence
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)

@@ -1,42 +1,47 @@
-# Ensure no tests are written in ignored files
+___
+**Note du traducteur**
 
-When searching for tests, AVA ignores files contained in `node_modules` or folders named `fixtures` or `helpers`. By default, it will search in `test.js test-*.js test/**/*.js`, which you can override by specifying a path when launching AVA or in the [AVA configuration in the `package.json` file](https://github.com/sindresorhus/ava#configuration).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/ed4057b003e8b1becc085b114830a0177714b7bf...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+___
+# S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
-This rule will verify that files which create tests are in the searched files and not in ignored folders. It will consider the root of the project to be the closest folder containing a `package.json` file, and will not do anything if it can't find one. Test files in `node_modules` will not be linted as they are ignored by ESLint.
+Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`, que vous pouvez remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans le fichier `package.json`](https://github.com/sindresorhus/ava#configuration).
 
-Note that this rule will not be able to warn correctly if you use AVA by specifying the files in the command line ( `ava "lib/**/*.test.js"` ). Prefer configuring AVA as described in the link above.
+Cette règle vérifira que les fichiers qui créent des tests sont dans les fichiers recherchés et non dans des dossiers ignorés. Il examinera ç partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
+
+Notez que cette règle ne pourra pas vous avertir correctement si vous utilisez AVA en spécifiant les fichiers dans la ligne de commande ( `ava "lib/**/*.test.js"` ). Préférez la configuration AVA comme décrite dans le lien ci-dessus.
 
 ## Échoue
 
 ```js
-// File: test/foo/fixtures/bar.js
-// Invalid because in `fixtures` folder
+// Fichier : test/foo/fixtures/bar.js
+// Invalide car dans le répertoire `fixtures`
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: test/foo/helpers/bar.js
-// Invalid because in `helpers` folder
+// Fichier : test/foo/helpers/bar.js
+// Invalide car dans le répertoire `helpers`
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: lib/foo.test.js
-// Invalid because not in the searched files
+// Fichier : lib/foo.test.js
+// Invalide car il n'est pas dans les fichiers recherchés
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: test.js
-// with { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
-// in either `package.json` under 'ava key' or in the rule options
-// Invalid because not in the searched files
+// Fichier : test.js
+// avec { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
+// soit dans `package.json` sous la 'clef ava' ou dans les options de règle
+// Invalide car il n'est pas dans les fichiers recherchés
 import test from 'ava';
 
 test('foo', t => {
@@ -48,30 +53,30 @@ test('foo', t => {
 ## Passe
 
 ```js
-// File: test/foo/not-fixtures/bar.js
+// Fichier : test/foo/not-fixtures/bar.js
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: test/foo/not-helpers/bar.js
+// Fichier : test/foo/not-helpers/bar.js
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: test.js
+// Fichier : test.js
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// File: lib/foo.test.js
-// with { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
-// in either `package.json` under 'ava key' or in the rule options
+// Fichier : lib/foo.test.js
+// avec { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
+// soit dans `package.json` sous la 'clef ava' ou dans les options de règle
 import test from 'ava';
 
 test('foo', t => {
@@ -81,11 +86,11 @@ test('foo', t => {
 
 ## Options
 
-This rule supports the following options:
+Cette règle prend en charge les options suivantes :
 
-`files`: An array of strings representing the files glob that AVA will use to find test files. Overrides the default and the configuration found in the `package.json` file.
+`files`: Un tableau de strings représentant les fichiers glob que nous allons utiliser pour trouver des fichiers de test. Remplace la valeur par défaut et la configuration trouvée dans le fichier de package.json.
 
-You can set the options like this:
+Vous pouvez définir les options comme ceci :
 
 ```js
 "ava/no-ignored-test-files": ["error", {"files": ["lib/**/*.test.js", "utils/**/*.test.js"]}]

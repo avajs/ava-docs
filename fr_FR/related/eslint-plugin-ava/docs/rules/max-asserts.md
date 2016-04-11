@@ -30,7 +30,7 @@ test('getSomeObject devrait définir le nom du joueur', t => {
 ```
 
 
-## Passee
+## Passe
 
 ```js
 import test = from 'ava';
