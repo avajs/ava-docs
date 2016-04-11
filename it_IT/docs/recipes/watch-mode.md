@@ -76,9 +76,13 @@ AVA traccia quale da file sorgente ogni tuo test dipende. Se cambi questa dipend
 
 Il tracciamento delle dipendenze funziona per i moduli richiesti. Estensioni personalizzate e transpiler sono supportati, a patto che vengano caricati utilizzando il [parametro CLI `--require`] e non dall'interno dei tuoi file di test. I file caricati tramite il modulo `fs` non verranno tracciati.
 
+## Watch mode ed il modificator `.only`
+
+Il [modificatore `.only`] disabilità l'algoritmo di tracciamento delle dipendenze in watch mode. Quando avviene un cambiamento, tutti i test con il modificatore `.only` verranno rieseguiti, a prescindere dalla dipendenza dei test dal file sorgente modificato.
+
 ## Riesecuzione manuale dei test
 
-Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di comando.
+Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di comando, seguito da <kbd>Invio</kbd>.
 
 ## Debugging
 
