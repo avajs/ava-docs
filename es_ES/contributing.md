@@ -9,7 +9,7 @@ ___
 
 Tenga en cuenta que este proyecto se ha lanzado con un [Código de conducta](code-of-conduct.md) para el contribuyente. Al participar en este proyecto usted acepta acatar sus términos.
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
+Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
 
 ## ¿Cómo puedo contribuir?
 

@@ -1,13 +1,13 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Questo è il [link](https://github.com/sindresorhus/ava/compare/8d47119458e83d3899683ad3ea3a4c1c01b7dd49...master#diff-8d47119458e83d3899683ad3ea3a4c1c01b7dd49) con le differenza tra il ramo master di AVA ed il commit di quando è stata aggiornata questo file (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa è traduzione aggiornata).
+Questa è la traduzione del file [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Code coverage
 
 Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
-Poichè AVA [usa processi isolati](#processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
+Poichè AVA [usa processi isolati](processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
 
 ## Configurazione
 
@@ -45,7 +45,7 @@ Se vuoi creare report HTML per il code coverage, o caricare i risultati su Cover
 
 ## Code coverage ES2015
 
-Usando Babelo per transpilare il tuoi codice in produzione è un po' più complicato. Abbiamo cercato di spiegarlo qui con diversi passaggi.
+Usando Babel per transpilare il tuoi codice in produzione è un po' più complicato. Abbiamo cercato di spiegarlo qui con diversi passaggi.
 
 ### Configurare Babel
 
@@ -69,13 +69,13 @@ Prima cosa, abbiamo bisogno di una configurazione Babel. La seguente è solo un 
 
 Ci sono due cose importanti da considerare dall'esempio qui sopra.
 
-  1. Abbiamo ignorato i file di test perchà AVA già si occupa di transpilarli per te.
+  1. Abbiamo ignorato i file di test perché AVA già si occupa di transpilarli per te.
 
 	2. Abbiamo specificato delle source maps `inline` per lo sviluppo. Questo è importante per la generazione del code coverage. Utilizzando la sezione `env` nella configurazione di Babel possiamo disabilitare le source maps per il codice che andrà in produzione.
 
 ### Creare un build script
 
-Poichè sembra improbabile che tu voglia le source map `inline` nel codice in produzione, dovrai specificare una variabile alternativa di ambiente nel tuo build script:
+Poiché sembra improbabile che tu voglia le source map `inline` nel codice in produzione, dovrai specificare una variabile alternativa di ambiente nel tuo build script:
 
 `package.json`
 
@@ -103,7 +103,7 @@ Per utilizzare l'hook `require` di Babel, aggiungi `babel-core/register` nella s
 }
 ```
 
-*Note*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di risparmiare il dover scrivere quel parametro ogni volta.
+*Nota*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di evitare di dover scrivere quel parametro ogni volta.
 
 ### Combinando tutto
 
@@ -142,7 +142,7 @@ Per combinare tutti questi file in un report HTML leggibile, eseguire il seguent
 $ ./node_modules/.bin/nyc report --reporter=html
 ```
 
-Oppure utilizza uno script `npm` per risparmiare di scriverlo ogni volta:
+Oppure utilizza uno script `npm` per evitare di scriverlo ogni volta:
 
 ```json
 {
@@ -179,6 +179,6 @@ La tua code coverage apparirà su coveralls non appena Travis completerà l'esec
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md#entorno-aislado
+[processi-isolati]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#isolamento-dei-processi
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc

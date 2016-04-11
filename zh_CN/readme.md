@@ -16,7 +16,7 @@ ___
 
 关注 [AVA 的 Twitter 账号](https://twitter.com/ava__js) 以获取最新信息。
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/readme.md)
+翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/readme.md)
 
 ## 目录
 
@@ -68,7 +68,7 @@ test(t => {
 
 ### 在项目中添加 AVA
 
-通过带`--inin`参数运行 AVA 全局安装命令，将会添加 AVA 到`package.json`：
+通过带`--init`参数运行 AVA 全局安装命令，将会添加 AVA 到`package.json`：
 
 ```console
 $ npm install --global ava

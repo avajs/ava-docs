@@ -6,7 +6,7 @@ ___
 
 # 贡献者的行为准则
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/code-of-conduct.md)
+翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/code-of-conduct.md)
 
 作为这个项目的贡献者和维护者，我们希望社区开放和受欢迎，我们承诺尊重所有参与项目的人，不管是报告问题，提交功能需求，更新文档，提交 pull request 或 patch，或者是其他积极的活动。
 

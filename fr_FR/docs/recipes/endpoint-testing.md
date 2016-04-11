@@ -5,7 +5,7 @@ C'est la traduction du fichier [endpoint-testing.md](https://github.com/sindreso
 ___
 # Tester un endpoint
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md),  [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/endpoint-testing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/endpoint-testing.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/endpoint-testing.md),  [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/endpoint-testing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/endpoint-testing.md)
 
 AVA n'a pas de méthodes internes pour tester les endpoints, mais nous pouvons le faire avec n'importe quelle bibliothèque. Utilisons [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 

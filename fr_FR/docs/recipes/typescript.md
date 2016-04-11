@@ -5,7 +5,7 @@ C'est la traduction du fichier [typescript.md](https://github.com/sindresorhus/a
 ___
 # TypeScript
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/typescript.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/typescript.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 

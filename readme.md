@@ -1,7 +1,8 @@
-# Localized [AVA](https://github.com/sindresorhus/ava) docs
+# Localized [AVA](https://ava.li) docs
 
 - [Español](es_ES/readme.md) *(by [@AlbertoFuente](https://github.com/AlbertoFuente))*
 - [Français](fr_FR/readme.md) *(by [@forresst](https://github.com/forresst))*
+- [Italiano](it_IT/readme.md) *(by [@dej611](https://github.com/dej611))*
 - [日本語](ja_JP/readme.md) *(by [@makotot](https://github.com/makotot))*
 - [Português](pt_BR/readme.md) *(by [@charbelrami](https://github.com/charbelrami))*
 - [Русский](ru_RU/readme.md) *(by [@sohje](https://github.com/sohje))*

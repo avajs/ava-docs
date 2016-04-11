@@ -1,17 +1,17 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Questo è il [link](https://github.com/sindresorhus/ava/compare/8d47119458e83d3899683ad3ea3a4c1c01b7dd49...master#diff-8d47119458e83d3899683ad3ea3a4c1c01b7dd49) con le differenza tra il ramo master di AVA ed il commit di quando è stata aggiornata questo file (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa è traduzione aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/raw/master/media/header.png)
 
 > Test runner futuristico
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/sindresorhus/ava)
 
-Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di IO (Input/Output) in Node.js si possono eseguire in parallelo data la sua natura asincrona. AVA trae vantaggio da questa proprietà ed esegue in modo concorrente i tuoi test, portando forti benefici a pesanti test in IO. Inoltre, i file di test sono eseguiti in parallelo in processi distinti, offrendoti un miglioramento ulteriore delle prestazioni oltre che un ambiente isolato dove far girare ogni file di test. Passando da Mocha ad AVA in Pageres si è migliorato il tempo di esecuzione da 31 secondi a 11 secondi. Avere test eseguiti in modo concorrente si è obbligati a scrivere test atomici, cioè test che non dipendono da un unico stato globale o lo stato impostato da test precedenti, che è grandioso!
+Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di IO (Input/Output) in Node.js si possono eseguire in parallelo data la sua natura asincrona. AVA trae vantaggio da questa proprietà ed esegue in modo concorrente i tuoi test, portando forti benefici a pesanti test in IO. Inoltre, i file di test sono eseguiti in parallelo in processi distinti, offrendoti un miglioramento ulteriore delle prestazioni oltre che un ambiente isolato dove far girare ogni file di test. Passando da Mocha ad AVA in Pageres si è migliorato il tempo di esecuzione da 31 secondi a 11 secondi. Avendo test eseguiti in modo concorrente si è obbligati a scrivere test atomici, cioè test che non dipendono da un unico stato globale o lo stato impostato da test precedenti, che è grandioso!
 
-*Leggi la nostra [guida per contributori](contributing.md) se pensi di contribuire (issues/PRs/etc).*
+*Leggi la nostra [guida per collaboratori](contributing.md) se pensi di contribuire (issue/PRs/etc).*
 
 Segui l'[account Twitter di AVA](https://twitter.com/ava__js) per le ultime notizie.
 
@@ -26,7 +26,7 @@ Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_E
 - [Documentazione](#documentazione)
 - [API](#api)
 - [Asserzioni](#asserzioni)
-- [FAQ](#faq)
+- [Domande frequenti](#domande-frequenti)
 - [Ricette](#ricette)
 
 
@@ -89,7 +89,7 @@ Ogni parametro passato dopo `--init` viene aggiunto al `package.json`.
 È anche possibile istallare AVA direttamente
 
 ```
-$ nom install --save-dev ava
+$ npm install --save-dev ava
 ```
 
 Dovrai configurare la sezione di `test` nel `package.json` per usare `ava` correttamente (vedi sopra).
@@ -122,13 +122,13 @@ test('bar', async t => {
 $ npm test
 ```
 
-#### Osserva le modifiche ai test
+#### Osserva le modifiche ai file test
 
 ```
-$ nom test -- --watch
+$ npm test -- --watch
 ```
 
-AVA fornisce un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
+AVA integra un sistema intelligente di watch. [Guarda più opzioni nella cartella ricette](docs/recipes/watch-mode.md)
 
 ## CLI
 
@@ -244,7 +244,7 @@ test(function name(t) {
 
 ### Soglia per le asserzioni
 
-Le soglie per le asserzione garantiscono che i test passino esclusivamente quando un numero specifico di asserzioni è stato eseguito. Possono aiutare a scoprire casi in cui i test terminano anticipatamente. Inoltre se un test eccede il numero soglia impostato di asserzioni allora viene considerato come fallito: questo è comodo in quei casi in cui si usano asserzioni in callback o cicli.
+Le soglie per le asserzioni garantiscono che i test passino esclusivamente quando un numero specifico di asserzioni è stato eseguito. Possono aiutare a scoprire casi in cui i test terminano anticipatamente. Inoltre se un test eccede il numero soglia impostato di asserzioni allora viene considerato come fallito: questo è comodo in quei casi in cui si usano asserzioni in callback o cicli.
 
 Da notare che, a differenza di [tap](https://www.npmjs.com/package/tap) e [tape](https://www.npmjs.com/package/tape), AVA non termina automaticamente il test quando il numero di asserzioni pianificate viene raggiunto.
 
@@ -304,7 +304,7 @@ test.serial(t => {
 });
 ```
 
-Da notare che questo vale per i test all'interno di un particolare file. AVA eseguirà comunque file di test multipli nello stesso istante a meno che venga passato il parametro [`--serial` dalla CLI](#CLI).
+Da notare che questo vale per i test all'interno di un particolare file. AVA eseguirà comunque file di test multipli nello stesso istante a meno che venga passato il parametro [`--serial` dalla CLI](#cli).
 
 ### Eseguire test specifici
 
@@ -351,7 +351,7 @@ $ ava --match='foo'
 Esegui test il cui titolo non contiene `foo`:
 
 ```
-$ ava --match='!*foo'
+$ ava --match='!*foo*'
 ```
 
 Esegui test il cui titolo inizia per `foo` e termina per `bar`:
@@ -396,7 +396,7 @@ test(function foo(t) {
 
 ### Ignorare test
 
-A volte può alcuni test falliscono senza una facile soluzione. In questi casi puoi dire ad AVA di ignorare questi test utilizzando il modificatore `.skip`. Verranno comunque mostrati nell'output (come ignorati) ma non verranno eseguiti.
+A volte può succedere che alcuni test falliscano senza una facile soluzione. In questi casi puoi dire ad AVA di ignorare questi test utilizzando il modificatore `.skip`. Verranno comunque mostrati nell'output (come ignorati) ma non verranno eseguiti.
 
 
 ```js
@@ -453,7 +453,7 @@ test(t => {
 });
 ```
 
-Gli hook possono essere sia sincroni che asincroni, come i test. Per creare un hook asincrono restituisci una promessa o un oggetto osservabile, utilizza una funzione asincrona, o abilità la modalità callback usando `test.cb.before()`, `test.cb.beforeEach()`, etc...
+Gli hook possono essere sia sincroni che asincroni, come i test. Per creare un hook asincrono restituisci una promessa o un oggetto osservabile, utilizza una funzione asincrona, o abilita la modalità callback usando `test.cb.before()`, `test.cb.beforeEach()`, etc...
 
 
 ```js
@@ -475,7 +475,7 @@ test.afterEach.cb(t => {
 
 ```
 
-Non dimenticare che `beforeEach` e `afterEach` vengono eseguiti appena prima e dopo un test è eseguito, e che i test vengono eseguiti in concorrenza. Se hai bisogno di impostare uno stato globale per ogni test (come impostare una *spia* in `console.log` [ad esempio](https://github.com/sindresorhus/ava/issues/560)), dovrai impostare l'esecuzione dei test in [modo seriale](#eseguire-test-in-serie).
+Non dimenticare che `beforeEach` e `afterEach` vengono eseguiti appena prima e dopo l'esecuzione di ogni test, e che i test vengono eseguiti in concorrenza. Se hai bisogno di impostare uno stato globale per ogni test (come impostare una *spia* in `console.log` [ad esempio](https://github.com/sindresorhus/ava/issues/560)), dovrai impostare l'esecuzione dei test in [modo seriale](#eseguire-test-in-serie).
 
 Ricorda che AVA esegue ciascun file di test in un processo isolato. Potresti non aver bisogno di ripristinare lo stato originale dello stato nel'hook `after` poichè verrebbe chiamato non appena prima della chiusura del processo.
 
@@ -521,7 +521,7 @@ Questo ti permette di aggiungere temporaneamente `.skip` o `.only` alla fine di 
 
 ### Personalizzare asserzioni
 
-Puoi utilizzare ogni modulo di asserzioni invece o in aggiunta al modulo integrata, a patto che lanci un'eccezione quando un'asserzione fallisce.
+Puoi utilizzare ogni modulo di asserzioni invece o in aggiunta al modulo integrato, a patto che lanci un'eccezione quando un'asserzione fallisce.
 
 L'uso di un modulo esterno non fornisce lo stesso tipo d'esperienza d'uso di [quella integrata](#asserzioni), e allo stesso modo la [soglia per le asserzioni](#soglia-per-le-asserzioni) non funzionerà ([issue #25](https://github.com/sindresorhus/ava/issues/25)).
 
@@ -552,8 +552,8 @@ La configurazione corrispondente in Babel per il setup di AVA è la seguente:
 }
 ```
 
-Puoi personalizzare come AVA transpila i file di test mediante l'opzione `babel` nella [configurazione `package.json`](#configurazione) di AVA.
-Per sovrascrivere le impostazioni predefinita puoi usare il seguente esempio:
+Puoi personalizzare come AVA utilizzi il transpiler per i file di test mediante l'opzione `babel` nella [configurazione `package.json`](#configurazione) di AVA.
+Per sovrascrivere le impostazioni predefinite puoi usare il seguente esempio:
 
 ```json
 {
@@ -569,7 +569,7 @@ Per sovrascrivere le impostazioni predefinita puoi usare il seguente esempio:
 }
 ```
 
-In aggiunta puoi utilizzare la speciale keyword `"inherit"`. Questa fa sì che AVA demandi la configurazione di Babel al tuo [`.babelrc` o file `package.json`](https://babeljs.io/docs/usage/babelrc/). In questo modo i tuoi test saranno transpilati utilizzando la stessa configurazione dei tuoi file sorgente senza alcuna specifica ripetizione per AVA.
+In aggiunta puoi utilizzare la speciale keyword `"inherit"`. Questa fa sì che AVA demandi la configurazione di Babel al tuo [`.babelrc` o file `package.json`](https://babeljs.io/docs/usage/babelrc/). In questo modo il transpiler utilizzerà la stessa configurazione dei tuoi file sorgente per i tuoi file di test senza alcuna specifica ripetizione per AVA.
 
 ```json
 {
@@ -590,15 +590,15 @@ Da notare che AVA applicherà *sempre* i plugin [`espower`] (https://github.com/
 
 ### Support di TypeScript
 
-AVA include i typings per TypeScript. La transpilazione dovrà però essere configurata manualmente. Quando imposterai nel file `tsconfig.json` `module` su `commonjs`, TypeScript troverà automaticamente la definizione dei tipi per AVA. Dovrai impostare `target` su `es2015` per poter utilizzare le promesse e le funzioni asincrone.
+AVA include i typings per TypeScript. La configurazione del transpiler dovrà però essere fatta manualmente. Quando imposterai nel file `tsconfig.json` `module` su `commonjs`, TypeScript troverà automaticamente la definizione dei tipi per AVA. Dovrai impostare `target` su `es2015` per poter utilizzare le promesse e le funzioni asincrone.
 
-### Transpilare moduli importati
+### Usare il transpiler per i moduli importati
 
-AVA al momento transpila solamente i test che richiedi di eseguire. *Non transpilerà i moduli importati al di fuori dei test*. Benchè ci sia una ragione valida per questo comportamento, potrebbe non essere quel che ci si aspetta.
+AVA al momento utilizza il transpiler solamente per i test che richiedi di eseguire. *Non verrà utilizzato il transpiler per i moduli importati al di fuori dei test*. Benchè ci sia una ragione valida per questo comportamento, potrebbe non essere quel che ci si aspetta.
 
-Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/] per transpilare i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#CLI) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
+Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/) per i moduli importati sul momento. Esegui AVA con `--require babel-register` (vedi [CLI](#cli) ) o [aggiungi l'impostazione nel tuo `package.json`](#configurazione).
 
-Puoi anche transpilare i tuoi moduli in un processo separato e utilizzare i file transpilati invece dei sorgenti nei tuoi test.
+Puoi anche utilizzare il transpiler per i tuoi moduli in un processo separato e utilizzare i file prodotti invece dei sorgenti nei tuoi test.
 
 ### Supporto per Promesse
 
@@ -612,7 +612,7 @@ test(t => {
 });
 ```
 
-### Support per Generatori
+### Supporto per Generatori
 
 AVA fornisce supporto nativo per i [generatori](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
 
@@ -640,7 +640,7 @@ test(async t => {
 });
 ```
 
-### Support per Oggetti Osservabili
+### Supporto per Oggetti Osservabili
 
 AVA fornisce supporto nativo per [oggetti osservabili](https://github.com/zenparsing/es-observable). Se restituisci un oggetto osservabile da un test, AVA attenderà automaticamente il completamento di questo prima di terminare il test.
 
@@ -727,7 +727,7 @@ Termina il test. Funziona unicamente con `test.cb()`.
 
 ## Asserzioni
 
-Le asserzioni sono contenute nel [contesto di esecuzione](#contesto-di-esecuzione) del test:
+Le asserzioni sono contenute nel [contesto di esecuzione](#t) del test:
 
 ```js
 test(t => {
@@ -763,7 +763,7 @@ Accerta che il `valore` sia `false`.
 
 ### .is(valore, previsto, [messaggio])
 
-Accerta che il `valore` si uguale a `previsto`.
+Accerta che il `valore` sia uguale a `previsto`.
 
 ### .not(valore, previsto, [messaggio])
 
@@ -783,7 +783,7 @@ Accerta che `function` lanci un errore o che  la `promise` sia rifiutata.
 
 `errore` può essere un costruttore, espressione regolare, messaggio di errore o una funzione di validazione.
 
-Restituisce l'errore lanciato dalla `function` o dal ragione del rifiuto della promessa `promise`.
+Restituisce l'errore lanciato dalla `function` o dalla ragione del rifiuto della promessa `promise`.
 
 ### .notThrows(function|promise, [messaggio])
 
@@ -869,9 +869,9 @@ $ ava --serial
 
 ### Code coverage
 
-Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](#processi-isolati) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
+Non è possibile utilizzare [`istanbul`](https://github.com/gotwarlost/istanbul) per il code coverage dato l'[uso di processi isolati](#isolamento-dei-processi) in AVA. In questo caso puoi usare [`nyc`](https://github.com/bcoe/nyc), poichè si tratta sostanzialmente di `istanbul` con il supporto per sub-processi.
 
-Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dalla transpilazione. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
+Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del code coverage per il tuo codice sorgente, a prescindere dai file prodotti dal transpiler. Assicurati che il file che stai testando abbia una source map inline oppure referenzi un file source map. Se utilizzi `babel-register` puoi specificare l'opzione `sourceMaps` come `inline` nella configurazione Babel.
 
 ## Domande frequenti
 
@@ -893,7 +893,7 @@ AVA, no Ava o ava. Si pronuncia [`/ˈeɪvə/` ay-və](https://github.com/sindres
 
 ### Cos'è lo sfondo del logo in cima?
 
-La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3meda).
+La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 
 ### Qual è la differenza tra concorrenza e parallelismo?
 
@@ -906,6 +906,7 @@ La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3me
 - [Quando usare `t.plan()`](docs/recipes/when-to-use-plan.md)
 - [Browser testing](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Watch Mode](docs/recipes/watch-mode.md)
 
 
 ## Supporto
@@ -934,11 +935,15 @@ La [galassia di Andromeda](https://es.wikipedia.org/wiki/Galaxia_de_Andr%C3%B3me
 - [Lista fantastica](https://github.com/sindresorhus/awesome-ava)
 
 
-## Creado por
+## Creato da
 
 [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Kevin Mårtensson](https://avatars.githubusercontent.com/u/709159?s=130)](https://github.com/kevva) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net)
 ---|---|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Kevin Mårtensson](https://github.com/kevva) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net)
+[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net)
+
+### Ex Membri
+
+- [Kevin Mårtensson](https://github.com/kevva)
 
 
 <div align="center">
