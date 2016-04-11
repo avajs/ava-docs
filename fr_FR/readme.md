@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/9ceeb115e75172c01e86bce8e94c2d2fcd8d094a...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -588,7 +588,7 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 
 Consultez la [recette `.babelrc`](docs/recipes/babelrc.md) de AVA pour d'autres exemples et une explication plus détaillée des options de configuration.
 
-Notez que AVA appliquera *toujours* les plugins [`espower`](https://github.com/power-assert-js/babel-plugin-espower) et [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
+Notez que AVA appliquera *toujours* [quelques plugins internes](docs/recipes/babelrc.md#notes) quelle que soit la configuration, mais ils ne doivent pas affecter le comportement de votre code.
 
 ### Prise en charge de TypeScript
 
