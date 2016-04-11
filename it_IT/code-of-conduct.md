@@ -27,4 +27,5 @@ Questo Codice di Condotta si applica sia all'interno dello spazio del progetto c
 
 Istanze di abuso, intimidazione o altro tipi di comportamento non tollerato può essere segnalato contattando l'amministratore del progetto [sindresorhus@gmail.com](mailto:sindresorhus@gmail.com) . Tutte le lamentele saranno controllate ed investigate ed il risultato sarà rilasciato nei modi e forme appropriate alla circostanza. Gli amministratori sono obbligati a mantenere la confidenzialità dell'individuo che ha riportato l'incidente.
 
-Questo Codice di Condotta è un adattamento del [Contributor Covenant](http://contributor-covenant.org), versione 1.3.0, disponible su [http://contributor-covenant.org/version/1/3/0/it/](http://contributor-covenant.org/version/1/3/0/it/)
+
+Questo Codice di Condotta è un adattamento del [Contributor Covenant](http://contributor-covenant.org), versione 1.3.0, disponible su [http://contributor-covenant.org/version/1/3/0/it/](http://contributor-covenant.org/version/1/3/0/it/).

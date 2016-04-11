@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/55dfa4acb11d774b9b0d42e6b678a23510fe0336...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -74,9 +74,13 @@ AVA surveille les fichiers source qui dépendent de vos fichiers de tests. Si vo
 
 La surveillance de dépendance fonctionne pour les modules exigés (require). Les extensions et transpileurs personnalisés sont pris en charge, à condition que vous les chargiez en utilisant [l'option `--require` du CLI] au lieu de le faire à l'intérieur de votre fichier de test. Les fichiers accessibles à l'aide du module `fs` ne sont pas surveillés.
 
+## Le mode watch et `.only`
+
+[`.only`] désactive l'algorithme de suivi des dépendances du mode watch. Lorsqu'une modification est effectuée, tous les tests avec `.only` seront réexécutés, indépendamment du fait que le test dépend du fichier modifié.
+
 ## Relancer manuellement tous les tests
 
-Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la console.
+Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la console, suivie par <kbd>Entrée</kbd>.
 
 ## Débogage
 
@@ -101,3 +105,4 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
 [l'option `--require` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
 [l'option `--source` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
+[`.only`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques

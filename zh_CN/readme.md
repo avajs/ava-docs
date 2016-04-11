@@ -68,7 +68,7 @@ test(t => {
 
 ### 在项目中添加 AVA
 
-通过带`--inin`参数运行 AVA 全局安装命令，将会添加 AVA 到`package.json`：
+通过带`--init`参数运行 AVA 全局安装命令，将会添加 AVA 到`package.json`：
 
 ```console
 $ npm install --global ava

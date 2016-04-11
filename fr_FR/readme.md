@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -56,7 +56,7 @@ Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es
 import test from 'ava';
 
 test(t => {
-	t.same([1, 2], [1, 2]);
+	t.deepEqual([1, 2], [1, 2]);
 });
 ```
 
@@ -151,6 +151,7 @@ $ ava --help
     --match, -m      Only run tests with matching title (Can be repeated)' (Exécute seulement les tests qui correspondent au titre (peut être répété))
 		--watch, -w      Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
     --source, -S     Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
+    --timeout, -T    Set global timeout (Définit un timeout global)
 
   Examples (Exemples)
     ava
@@ -161,7 +162,7 @@ $ ava --help
     ava --init foo.js
 
   Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments):
-  test.js test-*.js test/**/*.js
+  test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
 *Notez que le CLI utilisera votre installation locale de AVA lorsqu'il est disponible, même lorsqu'il est exécuté de manière globale.*
@@ -217,7 +218,7 @@ Les fichiers de test sont exécutés à partir de leur répertoire courant, donc
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction callback. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
 
 ```js
 import test from 'ava';
@@ -370,7 +371,7 @@ Trouve les titres commençant par 'foo' ou se terminant par 'bar'
 $ ava --match='foo*' --match='*bar'
 ```
 
-Remarquez qu'un pattern qui correspond, a la priorité sur `.only`. Seuls les tests avec un titre explicite sont recherchés. Les tests, sans titre ou dont le titre est dérivé de la fonction callback, seront sautés si `--match` est utilisé.
+Remarquez qu'un pattern qui correspond, a la priorité sur `.only`. Seuls les tests avec un titre explicite sont recherchés. Les tests, sans titre ou dont le titre est dérivé de la fonction d'implémentation, seront sautés si `--match` est utilisé.
 
 Voici ce qui arrive lorsque vous exécutez AVA avec un pattern `*oo*` pour les tests suivants :
 
@@ -408,11 +409,11 @@ test.skip('ne sera pas exécuté', t => {
 });
 ```
 
-Vous devez spécifier la fonction callback.
+Vous devez spécifier la fonction d'implémentation.
 
 ### Les tests fictifs ("todo")
 
-Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'écrire un test. Comme les tests passés (`.skip`), ces tests fictifs sont présentés dans le résultat. Ils exigent seulement un titre : vous ne pouvez pas spécifier la fonction callback.
+Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'écrire un test. Comme les tests passés (`.skip`), ces tests fictifs sont présentés dans le résultat. Ils exigent seulement un titre : vous ne pouvez pas spécifier la fonction d'implémentation.
 
 ```js
 test.todo('il faudra penser à écrire cela plus tard');
@@ -585,7 +586,9 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 }
 ```
 
-Notez que AVA appliquera *toujours* les plugins [`espower`](https://github.com/power-assert-js/babel-plugin-espower) et [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
+Consultez la [recette `.babelrc`](docs/recipes/babelrc.md) de AVA pour d'autres exemples et une explication plus détaillée des options de configuration.
+
+Notez que AVA appliquera *toujours* [quelques plugins internes](docs/recipes/babelrc.md#notes) quelle que soit la configuration, mais ils ne doivent pas affecter le comportement de votre code.
 
 ### Prise en charge de TypeScript
 
@@ -684,18 +687,32 @@ AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela p
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
+### Délai (timeout) global
+
+Un délai (timeout) global peut être défini via l'option `--timeout`.
+Le délai de AVA se comporte différemment des autres frameworks de test.
+AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arrêter, si aucun nouveau résultat de test est reçu dans le délai imparti.
+
+Vous pouvez définir des délais qui soient lisibles :
+
+```
+$ ava --timeout=10s # 10 secondes
+$ ava --timeout=2m # 2 minutes
+$ ava --timeout=100 # 100 millisecondes
+```
+
 ## API
 
-### `test([title], callback)`
-### `test.serial([title], callback)`
-### `test.cb([title], callback)`
-### `test.only([title], callback)`
-### `test.skip([title], callback)`
+### `test([title], implementation)`
+### `test.serial([title], implementation)`
+### `test.cb([title], implementation)`
+### `test.only([title], implementation)`
+### `test.skip([title], implementation)`
 ### `test.todo(title)`
-### `test.before([title], callback)`
-### `test.after([title], callback)`
-### `test.beforeEach([title], callback)`
-### `test.afterEach([title], callback)`
+### `test.before([title], implementation)`
+### `test.after([title], implementation)`
+### `test.beforeEach([title], implementation)`
+### `test.afterEach([title], implementation)`
 
 #### `title`
 
@@ -703,7 +720,7 @@ Type: `string`
 
 Titre du test.
 
-#### `callback(t)`
+#### `implementation(t)`
 
 Type: `function`
 
@@ -713,7 +730,7 @@ Doit contenir le test réel.
 
 Type: `object`
 
-L'objet d'exécution d'un test particulier. Chaque callback de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`.
+L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`.
 
 ###### `t.plan(count)`
 
@@ -725,11 +742,11 @@ La fin du test. Fonctionne uniquement avec `test.cb()`.
 
 ## Assertions
 
-Les assertions sont mélangées dans l'[objet d'exécution](#t) fourni à chaque callback de test :
+Les assertions sont incluses dans l'[objet d'exécution](#t) fourni à chaque implémentation de test :
 
 ```js
 test(t => {
-	t.ok('unicorn'); // assertion
+	t.truthy('unicorn'); // assertion
 });
 ```
 
@@ -743,11 +760,11 @@ L'assertion passe.
 
 L'assertion échoue.
 
-### `.ok(value, [message])`
+### `.truthy(value, [message])`
 
 Affirme que `value` est truthy.
 
-### `.notOk(value, [message])`
+### `.falsy(value, [message])`
 
 Affirme que `value` est falsy.
 
@@ -767,11 +784,11 @@ Affirme que `value` est égal à `expected`.
 
 Affirme que `value` n'est pas égal à `expected`.
 
-### `.same(value, expected, [message])`
+### `.deepEqual(value, expected, [message])`
 
 Affirme que `value` est deep equal à `expected`.
 
-### `.notSame(value, expected, [message])`
+### `.notDeepEqual(value, expected, [message])`
 
 Affirme que `value` n'est pas deep equal à `expected`.
 
@@ -820,7 +837,7 @@ const c = 'baz';
 require('assert').ok(a.test(b) || b === c);
 ```
 
-Si vous collez que dans un REPL de Node, il va retourner :
+Si vous collez ceci dans un REPL de Node, il retournera :
 
 ```
 AssertionError: false == true
@@ -833,16 +850,16 @@ test(t => {
 	const a = /foo/;
 	const b = 'bar';
 	const c = 'baz';
-	t.ok(a.test(b) || b === c);
+	t.true(a.test(b) || b === c);
 });
 ```
 
 Affichera :
 
 ```
-t.ok(a.test(b) || b === c)
-       |    |     |     |
-       |    "bar" "bar" "baz"
+t.true(a.test(b) || b === c)
+       |      |     |     |
+       |      "bar" "bar" "baz"
        false
 ```
 
@@ -906,6 +923,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Quand utiliser `t.plan()` ?](docs/recipes/when-to-use-plan.md)
 - [Tests de navigateur](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Configuration de Babel](docs/recipes/babelrc.md)
 
 ## Support
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/ad14f5082512bc831002700fb3072eafb737935f...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -17,6 +17,8 @@ Traductions : [English](https://github.com/sindresorhus/ava/blob/master/contribu
 
 En tant qu'utilisateur de AVA, vous êtes le candidat idéal pour nous aider à améliorer notre documentation : corrections de typo, corrections d'erreur, de meilleures explications, plus d'exemples, etc. Ouvrez des issues pour des choses qui pourraient être améliorées. [Aidez à traduire nos docs.](https://github.com/sindresorhus/ava-docs) N'importe quoi. Même les améliorations apportées à ce document.
 
+Utilisez l'[étiquette `docs`](https://github.com/sindresorhus/ava/labels/docs) pour trouver des suggestions, sur ce que nous aimerions voir en plus dans la documentation.
+
 ### Améliorez les issues
 
 Certaines issues sont créées avec des informations manquantes, non reproductibles, ou simplement invalides. Aidez nous à rendre leur résolution plus facile. La gestion des issues prend beaucoup de temps, grâce à votre aide, nous pouvons consacrer plus de temps à la correction de bugs et l'ajout de fonctionnalités.
@@ -25,11 +27,29 @@ Certaines issues sont créées avec des informations manquantes, non reproductib
 
 Nous sommes toujours intéressés par d'autres avis dans les discussions des issues. C'est une bonne occasion d'influencer l'orientation future de l'AVA.
 
+L'[étiquette `question`](https://github.com/sindresorhus/ava/labels/question) est le bon endroit pour trouver des discussions en cours.
+
+### Écrivez du code
+
+Vous pouvez utiliser les étiquettes pour découvrir les issues où vous pourriez aider :
+
+* [`babel`](https://github.com/sindresorhus/ava/labels/babel) qui se rapporte à notre infrastructure Babel
+* [`blocked`](https://github.com/sindresorhus/ava/labels/blocked) où nous avons besoin d'aide pour débloquer la situation
+* [`bug`](https://github.com/sindresorhus/ava/labels/bug) pour les bugs connus que nous aimerions corriger
+* [`enhancement`](https://github.com/sindresorhus/ava/labels/enhancement) sont des fonctionnalités à ajouter
+* [`performance`](https://github.com/sindresorhus/ava/labels/performance) propose des idées sur la façon d'améliorer les performances de AVA
+
+Les étiquettes [`help wanted`](https://github.com/sindresorhus/ava/labels/help%20wanted) (aide demandée) et [`good for beginner`](https://github.com/sindresorhus/ava/labels/good%20for%20beginner) (bon pour les débutants) sont particulièrement utiles.
+
+Vous trouverez peut-être une issue qui est attribuée, ou qui a l'[étiquette `assigned`](https://github.com/sindresorhus/ava/labels/assigned). Veuillez vérifier avant de commencer sur cette issue parce que quelqu'un d'autre est probablement en train de travailler dessus.
+
+Nous aimerions corriger les [issues `priority`](https://github.com/sindresorhus/ava/labels/priority) (prioritaires) en premier. Nous aimerions aussi voir des avancées sur les [issues `low-priority`](https://github.com/sindresorhus/ava/labels/low%20priority) (de faible priorité). Les [issues `future`](https://github.com/sindresorhus/ava/labels/future) sont celles que nous aimerions avoir, mais pas tout de suite. Veuillez vérifier avant de travailler sur celles-ci, car nous voulons peut-être pas pour l'instant assumer la charge de ces fonctionnalités.
+
 ### Promenez-vous sur notre chat
 
 Nous avons un [chat](https://gitter.im/sindresorhus/ava). Venez, espionnez, parlez-nous et aidez les autres.
 
-### Soumettez une issue
+## Soumettez une issue
 
 - Les issues sont pour les problèmes. Utilisez notre [chat](https://gitter.im/sindresorhus/ava) ou [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) pour le support.
 - Cherchez l'erreur dans les issues existantes avant d'en ouvrir une.
@@ -39,7 +59,7 @@ Nous avons un [chat](https://gitter.im/sindresorhus/ava). Venez, espionnez, parl
 - Plus vous passerez du temps pour rédiger votre issue, plus vite nous la traiterons.
 - [La meilleure façon de reporter une issue, c'est de le prouver par un test qui échoue.](https://twitter.com/sindresorhus/status/579306280495357953)
 
-### Soumettez un pull request
+## Soumettez un pull request
 
 - Les changements non triviaux doivent d'abord être débattus dans une issue : pour éviter de faire un travail inutile.
 - Pour des tâches importantes, nous vous conseillons dès que possible de présenter votre travail à la communauté pour avoir son avis. Ouvrez un pull request, dès que vous avez fait le minimum nécessaire, pour démontrer votre idée. À ce stade précoce, ne vous inquiétez pas si les choses ne sont pas parfaites ou 100% terminées. Ajoutez un préfixe [WIP] dans le titre et décrivez ce que vous avez encore besoin de faire. Cela permet à ceux qui l'examine de ne pas chercher la petite bête ou de signaler des améliorations dont vous savez déjà que vous devez les faire.
