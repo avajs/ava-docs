@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [assertion-message.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/assertion-message.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/be7c84b3f624016155e446b1dba9eab9a64cd081...master#diff-0b23fa0b3ae6c1f427b3c0f3331ea500) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `assertion-message` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [assertion-message.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/assertion-message.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/be7c84b3f624016155e446b1dba9eab9a64cd081...master#diff-0b23fa0b3ae6c1f427b3c0f3331ea500) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `assertion-message` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Imposer ou interdir les messages d'assertion
 

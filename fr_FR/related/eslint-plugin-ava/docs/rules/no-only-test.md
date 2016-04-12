@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-only-test.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-only-test.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/0c58a71767ca67097321b91f0332f543fc719389...master#diff-b7318d07931729c026fb1f61e9734468) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-only-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-only-test.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-only-test.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/0c58a71767ca67097321b91f0332f543fc719389...master#diff-b7318d07931729c026fb1f61e9734468) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-only-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun `test.only()` soit présent
 
