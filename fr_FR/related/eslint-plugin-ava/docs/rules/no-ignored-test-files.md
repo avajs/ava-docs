@@ -5,7 +5,7 @@ C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/sin
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
-Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`, que vous pouvez remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans le fichier `package.json`](https://github.com/sindresorhus/ava#configuration).
+Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`, que vous pouvez remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans le fichier `package.json`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration).
 
 Cette règle vérifira que les fichiers qui créent des tests sont dans les fichiers recherchés et non dans des dossiers ignorés. Il examinera ç partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
 

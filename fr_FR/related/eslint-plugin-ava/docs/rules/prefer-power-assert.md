@@ -5,7 +5,7 @@ C'est la traduction du fichier [prefer-power-assert.md](https://github.com/sindr
 ___
 # Autoriser uniquement l'utilisation des assertions qui n'ont pas d'alternatives dans power-assert
 
-- [`t.truthy()`](https://github.com/sindresorhus/ava#truthyvalue-message) __(Vous pouvez faire la [plupart des choses](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#messages-dassertions-améliorés) avec celui-ci)__
+- [`t.truthy()`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#truthyvalue-message) __(Vous pouvez faire la [plupart des choses](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#messages-dassertions-améliorés) avec celui-ci)__
 - [`t.deepEqual()`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#deepequalvalue-expected-message)
 - [`t.notDeepEqual()`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#notdeepequalvalue-expected-message)
 - [`t.throws()`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#throwsfunctionpromise-error-message)
