@@ -1,6 +1,11 @@
-# Ensure tests have a title
+___
+**Note du traducteur**
 
-Tests should have a title.
+C'est la traduction du fichier [test-title.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/test-title.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/b6d066728f507b03d00004833dbfe68f5a47118c...master#diff-ed02b0af8dd256929d27a1e08192e303) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+___
+# S'assurer que les tests ont un titre
+
+Les tests devraient avoir un titre.
 
 
 ## Échoue
@@ -50,9 +55,9 @@ test('foo', t => {
 
 ## Options
 
-The rule takes one option, a string, which could be either `"always"` or `"if-multiple"`. The default is `"if-multiple"`. If the option is set to `"if-multiple"`, the rule will only trigger if there are multiple tests in a file.
+La règle prend une option, un string, qui peut être soit `"always"` (toujours) ou soit `"if-multiple"` (si-plusieurs). La valeur par défaut est `"if-multiple"`. Si l'option est définie à `"if-multiple"`, la règle se déclenche que s'il y a plusieurs tests dans un fichier.
 
-You can set the option in configuration like this:
+Vous pouvez définir l'option dans la configuration comme ceci :
 
 ```js
 "ava/test-title": ["error", "always"]
