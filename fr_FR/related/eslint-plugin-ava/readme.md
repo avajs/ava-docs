@@ -34,6 +34,7 @@ Configurez le dans le `package.json`.
 			"ava"
 		],
 		"rules": {
+			"ava/assertion-message": ["off", "always"],
 			"ava/max-asserts": ["off", 5],
 			"ava/no-cb-test": "off",
 			"ava/no-identical-title": "error",
@@ -48,8 +49,10 @@ Configurez le dans le `package.json`.
 			"ava/prefer-power-assert": "off",
 			"ava/test-ended": "error",
 			"ava/test-title": ["error", "if-multiple"],
+			"ava/use-t-well": "error",
 			"ava/use-t": "error",
-			"ava/use-test": "error"
+			"ava/use-test": "error",
+			"ava/use-true-false": "error"
 		}
 	}
 }
@@ -75,8 +78,10 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [prefer-power-assert](docs/rules/prefer-power-assert.md) - Autoriser uniquement l'utilisation des assertions qui n'ont pas d'alternatives dans [power-assert](https://github.com/power-assert-js/power-assert).
 - [test-ended](docs/rules/test-ended.md) - S'assurer que les tests de callback soient explicitement terminés.
 - [test-title](docs/rules/test-title.md) - S'assurer que les tests ont un titre.
+- [use-t-well](docs/rules/use-t-well.md) - Empêcher une mauvaise utilisation de `t`.
 - [use-t](docs/rules/use-t.md) - S'assurer que les fonctions de test utilisent `t` comme paramètre.
 - [use-test](docs/rules/use-test.md) - S'assurer que AVA est importé avec la variable nommée `test`.
+- [use-true-false](docs/rules/use-true-false.md) - S'assurer que `t.true()`/`t.false()` sont utilisés à la place de `t.truthy()`/`t.falsy()`.
 
 
 ## Configuration recommandée
@@ -92,7 +97,7 @@ Pour activer cette configuration, utilisez la propriété `extends` dans votre `
 		"plugins": [
 			"ava"
 		],
-		"extends": "plugin:ava/recommended",
+		"extends": "plugin:ava/recommended"
 	}
 }
 ```
