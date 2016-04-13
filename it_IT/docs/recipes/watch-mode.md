@@ -39,7 +39,7 @@ Puoi anche impostare uno specifico script:
 {
   "scripts": {
     "test": "ava",
-    "test:watch": "ava --watch"
+    "watch:test": "ava --watch"
   }
 }
 ```
@@ -47,8 +47,20 @@ Puoi anche impostare uno specifico script:
 E poi esegui:
 
 ```console
-$ npm run test:watch
+$ npm run watch:test
 ```
+
+Finalmente puoi configurare AVA per utilizzare *sempre* il watch mode impostando l'opzione `watch` nella [sezione `ava` del tuo file `package.json`]:
+
+```json
+{
+  "ava": {
+    "watch": true
+  }
+}
+```
+
+Non dimenticare che il reporter TAP non è disponibile quando si utilizza il watch mode.
 
 ## Requisiti
 
@@ -66,7 +78,9 @@ AVA distingue tra i *file sorgente* e i *file di test*. Come puoi immaginare i *
 AVA controlla automaticamente le modifiche nei file di test, `package.json`, ed ogni file `.js`. Ignorerà invece file in [specifiche cartelle]
 (https://github.com/novemberborn/ignore-by-default/blob/master/index.js) come predefinito nel modulo [`ignore-by-default`].
 
-Puoi configurare il pattern per i file sorgente utilizzando il [parametro CLI `--source`] oppure nella sezione `ava` nel file `package.json`. Nota che se specifichi un pattern negativo le cartelle normalmente ignorate da [`ignore-by-default`] non saranno più ignorate, quindi vorrai aggiungere anche queste nella tua configurazione.
+Puoi configurare il pattern per i file sorgente nella [sezione `ava` del tuo file `package.json`], utilizzando l'opzione `source`. Questa è la via consigliata, altrimenti puoi usare anche il [parametro CLI `--source`].
+
+Puoi specificare pattern per file in cartelle che verrebbero altrimenti ignorati, es. puoi specificare `node_modules/some-dependency/*.js` per tutti i file `.js` nella cartella `node_modules/some-dependency` come file sorgente, anche se normalmente i file in `node_modules` sono ignorati. Tieni presente che solamente nomi esatti di cartella verranno considerati, quindi `{bower_components,node_modules}/**/*.js` non funzionerà.
 
 Se i tuoi test devono scrivere su disco potrebbero entrare in conflitto con il watcher, che farà ri-eseguire i tuoi test. Se questo avvenisse dovrai usare il parametro `--source`.
 
@@ -86,17 +100,21 @@ Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di 
 
 ## Debugging
 
-Qualche volta la modalità watch può comportarsi stranamente rieseguendo tutti i test quando invece pensavi che un unico test sarebbe stato eseguito. Per capirne il motivo puoi abilitare la modalità debug:
+Qualche volta la modalità watch può comportarsi stranamente rieseguendo tutti i test quando invece pensavi che un unico test sarebbe stato eseguito. Per capirne il motivo puoi abilitare la modalità debug. È consigliato utilizzare il reporter `verbose`:
+
+This will work best with the verbose reporter:
+
+
 
 ```console
-$ DEBUG=ava:watcher npm test -- --watch
+$ DEBUG=ava:watcher npm test -- --watch --verbose
 ```
 
 Su Windows scrivi:
 
 ```console
 $ set DEBUG=ava:watcher
-$ npm test -- --watch
+$ npm test -- --watch --verbose
 ```
 
 ## Aiutaci a migliorare la modalità watch
@@ -107,3 +125,4 @@ La modalità watch è una funzionalità relativamente nuova e ci potrebbero esse
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
 [parametro CLI `--require`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli
 [parametro CLI `--source`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli
+[sezione `ava` del tuo file `package.json`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#configurazione
