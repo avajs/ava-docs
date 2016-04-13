@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [babelrc.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `babelrc.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [babelrc.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `babelrc.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Configurare Babel
 
