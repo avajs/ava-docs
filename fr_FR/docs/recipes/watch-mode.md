@@ -120,4 +120,4 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [l'option `--require` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
 [l'option `--source` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
 [`.only`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
-[section `ava` de votre `package.json`] : https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration
+[section `ava` de votre `package.json`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration
