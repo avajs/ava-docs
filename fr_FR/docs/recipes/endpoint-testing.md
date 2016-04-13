@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [endpoint-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester un endpoint
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/349ee8177ae791362976be6b83690e1519ef64dc...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Code de Conduite Contributeurs
 

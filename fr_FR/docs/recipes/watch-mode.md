@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/55dfa4acb11d774b9b0d42e6b678a23510fe0336...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/a3565fd685b2a06c63cb1498f37d47e6bafe672c...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -39,7 +39,7 @@ Vous pouvez aussi mettre en place un script spécial :
 {
   "scripts": {
     "test": "ava",
-    "test:watch": "ava --watch"
+    "watch:test": "ava --watch"
   }
 }
 ```
@@ -47,8 +47,20 @@ Vous pouvez aussi mettre en place un script spécial :
 Et l'utiliser ainsi :
 
 ```console
-$ npm run test:watch
+$ npm run watch:test
 ```
+
+Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en definissant la clé `watch` dans la [section `ava` de votre `package.json`] :
+
+```json
+{
+  "ava": {
+    "watch": true
+  }
+}
+```
+
+Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du mode watch.
 
 ## Prérequis
 
@@ -64,7 +76,9 @@ Dans AVA, il y a un distinction entre les *fichiers source* et les *fichiers de 
 
 Par défaut AVA surveille les modifications des fichiers de test, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
-Vous pouvez configurer des patterns pour les fichiers source en utilisant [l'option `--source` du CLI] ou dans la section `ava` de votre fichier `package.json`. Veuillez notez que si vous spécifiez un pattern négatif, les répertoires de [`ignore-by-default`] ne seront plus ignorés, donc vous pouvez répéter ces derniers dans votre config.
+Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`. Ceci est la méthode recommandée, mais vous pouvez aussi utilisez [l'option `--source` du CLI].
+
+Vous pouvez spécifier des patterns pour rechercher des fichiers dans les dossiers qui sont normalement ignorés, par exemple, utilisez `node_modules/some-dependency/*.js` pour spécifier tous les fichiers `.js` dans `node_modules/some-dependency` comme une source, même si normalement tous les fichiers dans `node_modules` sont ignorés.  Notez que vous devez spécifier un répertoire exact : `{bower_components,node_modules}/**/*.js` ne fonctionnera pas.
 
 Si vos tests écrivent quelquechose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Si cela se produit, vous devrez utiliser l'option `--source`.
 
@@ -84,17 +98,17 @@ Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la con
 
 ## Débogage
 
-Parfois, le mode watch fait des choses surprenantes comme re-exécuter tous les tests alors que vous pensiez qu'un seul test aurait été re-exécuté. Pour voir son raisonnement, vous pouvez activer un mode de débogage :
+Parfois, le mode watch fait des choses surprenantes comme re-exécuter tous les tests alors que vous pensiez qu'un seul test aurait été re-exécuté. Pour voir son raisonnement, vous pouvez activer un mode de débogage. Cela fonctionne mieux avec le reporter verbose :
 
 ```console
-$ DEBUG=ava:watcher npm test -- --watch
+$ DEBUG=ava:watcher npm test -- --watch --verbose
 ```
 
 Sous Windows utilisez :
 
 ```console
 $ set DEBUG=ava:watcher
-$ npm test -- --watch
+$ npm test -- --watch --verbose
 ```
 
 ## Aidez-nous à améliorer le mode watch
@@ -106,3 +120,4 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [l'option `--require` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
 [l'option `--source` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
 [`.only`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
+[section `ava` de votre `package.json`] : https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration

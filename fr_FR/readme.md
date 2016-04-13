@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/02b0aaebb7d3299abe733730fc6cd70cb31ea40f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -680,6 +680,8 @@ $ ava --tap | tap-nyan
 ```
 
 <img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
+
+Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
 
 ### Nettoyage de la stack trace
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/ad14f5082512bc831002700fb3072eafb737935f...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
