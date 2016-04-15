@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/7c949162f705ae2cba3f16acc74e80674555daed...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
+
+Traductions : [English](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md)
 
 Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`, que vous pouvez remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans le fichier `package.json`](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration).
 

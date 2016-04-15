@@ -1,12 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/be7c84b3f624016155e446b1dba9eab9a64cd081...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/28040cc8ef74d1d0bcfc7ea3688ccfb787980bdd...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# eslint-plugin-ava [![Build Status](https://travis-ci.org/sindresorhus/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/eslint-plugin-ava)
+# eslint-plugin-ava [![Build Status](https://travis-ci.org/sindresorhus/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/eslint-plugin-ava?branch=master)
 
 > Règles ESLint pour [AVA](https://ava.li)
 
+Traductions : [English](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md)
 
 ## L'installation
 
