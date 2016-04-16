@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/02b0aaebb7d3299abe733730fc6cd70cb31ea40f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/8c604b4300c3e2c21ada22c7552c960655e89e8d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
 
@@ -544,7 +544,7 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 {
   "presets": [
     "es2015",
-    "stage-2",
+    "stage-2"
   ],
   "plugins": [
     "espower",
