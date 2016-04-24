@@ -100,7 +100,7 @@ Puoi rapidamente rieseguire tutti i testi digitando <kbd>r</kbd> sulla linea di 
 
 ## Debugging
 
-Qualche volta la modalità watch può comportarsi stranamente rieseguendo tutti i test quando invece pensavi che un unico test sarebbe stato eseguito. Per capirne il motivo puoi abilitare la modalità debug. È consigliato utilizzare il reporter `verbose`:
+Qualche volta la modalità watch può comportarsi in modo anomalo, rieseguendo tutti i test quando invece pensavi che sarebbe stato eseguito un unico test. Per capirne il motivo puoi abilitare la modalità debug. È consigliato utilizzare il reporter `verbose`:
 
 This will work best with the verbose reporter:
 
