@@ -6,7 +6,7 @@ ___
 
 # Tester les composants React
 
-Traductions : [English]((https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md)
+Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md)
 
 ## Installer Babel
 
