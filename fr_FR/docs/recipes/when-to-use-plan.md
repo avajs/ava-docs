@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [when-to-use-plan.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [when-to-use-plan.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/27bdab9de224801652c4d5cdc30e4e34a840b5ce...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Quand utiliser `t.plan()` ?
 
@@ -53,10 +53,6 @@ test(async t => {
 });
 ```
 
-## Les bonnes utilisations de `t.plan()`
-
-`t.plan()` a de nombreuses utilisations acceptables.
-
 ### Les promesses avec un bloc `.catch()`
 
 ```js
@@ -64,13 +60,22 @@ test(t => {
 	t.plan(2);
 
 	return shouldRejectWithFoo().catch(reason => {
-		t.is(reason.message, 'Hello') // Préférez t.throws(), si la seule chose qui vous importe c'est message
+		t.is(reason.message, 'Hello');
 		t.is(reason.foo, 'bar');
 	});
 });
 ```
 
-Ici, `t.plan()` est utilisé pour s'assurer que le code à l'intérieur du bloc `catch` soit exécuté. Dans la plupart des cas, vous devez préférer l'assertion `t.throws()`. Mais c'est une utilisation acceptable puisque `t.throws()` vous permet seulement de contrôler la propriété `message` de l'erreur.
+Ici, l'utilisation de `t.plan ()` vise à garantir que le code à l'intérieur du bloc `catch` soit exécuté.
+Au lieu de cela, vous devriez profiter de `t.throws` et `async`/`await`, car cela conduit à rendre le code plus simple ce qui est plus facile à suivre :
+
+```js
+test(async t => {
+	const reason = await t.throws(shouldRejectWithFoo());
+	t.is(reason.message, 'Hello');
+	t.is(reason.foo, 'bar');
+});
+```
 
 ### S'assurer qu'une implémentation catch s'exécute
 
@@ -81,13 +86,17 @@ test(t => {
 	try {
 		shouldThrow();
 	} catch (err) {
-		t.is(err.message, 'Hello') // Préférez t.throws(), si la seule chose qui vous importe c'est message
+		t.is(err.message, 'Hello');
 		t.is(err.foo, 'bar');
 	}
 });
 ```
 
-Comme indiqué dans l'exemple `try`/`catch` ci-dessus, l'utilisation de l'assertion `t.throws()` est généralement un meilleur choix, mais il vous permet seulement de contrôler la propriété `message` de l'erreur.
+Comme indiqué dans l'exemple précédent, l'utilisation de l'assertion `t.throws()` avec `async`/`await` est un meilleur choix.
+
+## Les bonnes utilisations de `t.plan()`
+
+`t.plan()` fournit une valeur dans les cas suivants.
 
 ### S'assurer que plusieurs callbacks sont réellement appelés
 

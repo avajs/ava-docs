@@ -1,10 +1,12 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/d3f18233c0f1f0bf351dc1dd7aae9c93aecb2da6...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/5ef4b1411a3f8724261455bc1f5ec68c6df0c29c...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 
 # Tester les composants React
+
+Traductions : [English]((https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md)
 
 ## Installer Babel
 
