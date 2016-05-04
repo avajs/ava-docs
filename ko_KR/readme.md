@@ -949,6 +949,7 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 
 - [AVA 스티커 구입](https://www.stickermule.com/user/1070705604/stickers)
 - [Awesome 리스트](https://github.com/sindresorhus/awesome-ava)
+- [JavaScript Air 팟캐스트 에피소드](http://jsair.io/ava)
 
 ## 팀
 
