@@ -1,7 +1,7 @@
 ___
 **역주**
 
-이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/commits/master)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
+이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/commits/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
 
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
@@ -12,7 +12,7 @@ ___
 
 비록 JavaScript가 싱글-스레드 기반으로 작동할지라도, Node.js에서의 입출력은 비동기 생태계를 통해 병렬 처리가 가능합니다. AVA는 무거운 입출력 작업에 특히 유용한 이 장점을 적극적으로 활용하여 테스트를 동시에 처리합니다. 또한, 테스트 파일들은 분리된 프로세스처럼 병렬로 실행되므로 더 좋은 성능과 각 테스트 파일에 대한 고립된 환경을 제공합니다. Mocha에서 AVA로 [이전](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)한 Pageres는 테스트 시간을 31초에서 11초로 줄였습니다. 테스트를 동시에 실행하는 능력을 갖추는 것은 더 작은 테스트를 작성하도록 유도합니다. 이 말은 테스트가 더 이상 전역 상태나 다른 테스트의 상태에 의존하지 않는다는 것입니다. 정말 대단하지 않나요?
 
-*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](contributing.md)를 확인하세요.*
+*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](https://github.com/sindresorhus/ava/blob/master/contributing.md)를 확인하세요.*
 
 [AVA 트위터 계정](https://twitter.com/ava__js)을 팔로우하면 업데이트에 대한 소식을 받아볼 수 있습니다.
 
@@ -41,15 +41,15 @@ ___
 - 테스트를 동시적으로 실행
 - 작은 테스트를 작성하도록 유도
 - 내재적인 전역 변수 없음
-- [각 테스트 파일마다 고립된 환경](#process-isolation)
-- [ES2015로 테스트 작성](#es2015-support)
-- [Promise 지원](#promise-support)
-- [생성기 함수 지원](#generator-function-support)
-- [비동기 함수 지원](#async-function-support)
-- [Observable 지원](#observable-support)
-- [강화된 가정 메시지](#enhanced-assertion-messages)
-- [선택적인 TAP 출력](#optional-tap-output)
-- [깨끗한 스텍 기록](#clean-stack-traces)
+- [각 테스트 파일마다 고립된 환경](#프로세스-고립)
+- [ES2015로 테스트 작성](#es2015-지원)
+- [Promise 지원](#promise-지원)
+- [생성기 함수 지원](#생성기-함수-지원)
+- [비동기 함수 지원](#비동기-함수-지원)
+- [Observable 지원](#observable-지원)
+- [강화된 가정 메시지](#강화된-가정-메시지)
+- [선택적인 TAP 출력](#선택적인-tap-출력)
+- [깨끗한 스텍 기록](#깨끗한-스택-기록)
 
 ## 테스트 문법
 
@@ -129,7 +129,7 @@ $ npm test
 $ npm test -- --watch
 ```
 
-AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](docs/recipes/watch-mode.md).
+AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md).
 
 ## CLI 사용법
 
@@ -585,9 +585,9 @@ AVA의 [`package.json` 구성](#구성)에서 `babel` 옵션을 통해 AVA 테�
 	},
 }
 ```
-더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](docs/recipes/babelrc.md)를 참고하세요.
+더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md)를 참고하세요.
 
-참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
+참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
 
 ### TypeScript 지원
 
@@ -615,7 +615,7 @@ test(t => {
 
 ### 생성기 함수 지원
 
-AVA는 내부적으로 [생성기 함수](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)를 지원합니다.
+AVA는 내부적으로 [생성기 함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/function*)를 지원합니다.
 
 ```js
 test(function * (t) {
@@ -918,13 +918,13 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 
 ## 레시피
 
-- [코드 커버리지](docs/recipes/code-coverage.md)
-- [감시 모드](docs/recipes/watch-mode.md)
-- [엔드 포인트 테스팅](docs/recipes/endpoint-testing.md)
-- [`t.plan()`를 언제 사용할까](docs/recipes/when-to-use-plan.md)
-- [브라우저 테스팅](docs/recipes/browser-testing.md)
-- [TypeScript](docs/recipes/typescript.md)
-- [Babel 구성](docs/recipes/babelrc.md)
+- [코드 커버리지](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)
+- [감시 모드](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
+- [엔드 포인트 테스팅](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)
+- [`t.plan()`를 언제 사용할까](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md)
+- [브라우저 테스팅](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md)
+- [TypeScript](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md)
+- [Babel 구성](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md)
 
 ## 지원
 
