@@ -1,7 +1,7 @@
 ___
 **역주**
 
-이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/commits/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
+이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
 
 # ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
