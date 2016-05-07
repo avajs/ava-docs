@@ -713,7 +713,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - gulpでテストを実行
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - gruntでテストを実行
-- [fly-ava](https://github.com/pine613/fly-ava) - flyでテストを実行
+- [fly-ava](https://github.com/pine/fly-ava) - flyでテストを実行
 - [start-ava](https://github.com/start-runner/ava) - startでテストを実行
 
 ## リンク

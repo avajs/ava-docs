@@ -924,7 +924,7 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Regole Lint per test AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Esegui i test con gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Esegui i test con grunt
-- [fly-ava](https://github.com/pine613/fly-ava) - Esegui i test con fly
+- [fly-ava](https://github.com/pine/fly-ava) - Esegui i test con fly
 - [start-ava](https://github.com/start-runner/ava) - Esegui i test con start
 
 [Più moduli](https://github.com/sindresorhus/awesome-ava#packages)
