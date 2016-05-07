@@ -924,7 +924,7 @@ AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.c
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - AVA 测试的代码规则
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - 用 gulp 运行测试
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - 用 grunt 运行测试
-- [fly-ava](https://github.com/pine613/fly-ava) - 用 fly 运行测试
+- [fly-ava](https://github.com/pine/fly-ava) - 用 fly 运行测试
 - [start-ava](https://github.com/start-runner/ava) - 用 start 运行测试
 
 [更多...](https://github.com/sindresorhus/awesome-ava#packages)

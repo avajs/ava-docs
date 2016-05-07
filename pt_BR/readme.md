@@ -942,7 +942,7 @@ AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/sin
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Regras de lint para testes AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Execute testes com gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Execute testes com grunt
-- [fly-ava](https://github.com/pine613/fly-ava) - Execute testes com fly
+- [fly-ava](https://github.com/pine/fly-ava) - Execute testes com fly
 - [start-ava](https://github.com/start-runner/ava) - Execute testes com start
 
 [Mais...](https://github.com/sindresorhus/awesome-ava#packages)

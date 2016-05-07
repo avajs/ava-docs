@@ -765,7 +765,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Reglas de lint para tests de AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Ejecutar tests con gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Ejecutar tests con grunt
-- [fly-ava](https://github.com/pine613/fly-ava) - Ejecutar tests con fly
+- [fly-ava](https://github.com/pine/fly-ava) - Ejecutar tests con fly
 - [start-ava](https://github.com/start-runner/ava) - Ejecutar los tests con inicio
 
 

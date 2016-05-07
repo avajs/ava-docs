@@ -942,7 +942,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Règles de Lint pour les tests AVA
 - [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
-- [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
+- [fly-ava](https://github.com/pine/fly-ava) - Exécutez les tests avec fly
 - [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
 
 [Plus...](https://github.com/sindresorhus/awesome-ava#packages)
