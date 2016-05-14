@@ -64,9 +64,9 @@ test(t => {
 
 ## Utilização
 
-### Adicione Ava ao seu projeto
+### Adicione AVA ao seu projeto
 
-Instale o AVA globalmente e o execute com `--init` para adicionar o AVA a seu package.json:
+Instale o AVA globalmente e o execute com `--init` para adicionar o AVA a seu `package.json`:
 
 ```console
 $ npm install --global ava
