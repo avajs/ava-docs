@@ -1,14 +1,14 @@
 ___
 **备注**
 
-这是 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md) 的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`readme.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [readme.md](https://github.com/avajs/ava/blob/master/readme.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`readme.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
-# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
 
 > 未来的测试运行器
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/avajs/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/avajs/ava)
 
 虽然 JavaScript 是单线程，但在 Node.js 里由于其异步的特性使得 IO 可以并行。AVA 利用这个优点让你的测试可以并发执行，这对于 IO 繁重的测试特别有用。另外，测试文件可以在不同的进程里并行运行，让每一个测试文件可以获得更好的性能和独立的环境。在 Pageres 项目中从 Mocha[切换](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) 到 AVA 让测试时间从 31 秒下降到 11 秒。测试并发执行强制你写原子测试，意味着测试不需要依赖全局状态或者其他测试的状态，这是一件非常好的事情。
 
@@ -16,7 +16,7 @@ ___
 
 关注 [AVA 的 Twitter 账号](https://twitter.com/ava__js) 以获取最新信息。
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/readme.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
 ## 目录
 
@@ -116,7 +116,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
 
 ### 运行
 
@@ -134,7 +134,7 @@ AVA 来自一个非常聪明的观察模式。[可以在它的秘方中查看详
 
 ## CLI
 
-![](https://github.com/sindresorhus/ava/blob/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/blob/master/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
@@ -479,7 +479,7 @@ test.afterEach.cb(t => {
 });
 ```
 
-请记住，`beforeEach`和`afterEach`钩子在一个测试之前和之后运行，并且默认情况下测试是并发运行的，如果你需要为每个测试设置一个全局的状态（比如`console.log`的 spying[例子](https://github.com/sindresorhus/ava/issues/560)），你需要确保这些测试是[串行运行](#串行运行测试)的。
+请记住，`beforeEach`和`afterEach`钩子在一个测试之前和之后运行，并且默认情况下测试是并发运行的，如果你需要为每个测试设置一个全局的状态（比如`console.log`的 spying[例子](https://github.com/avajs/ava/issues/560)），你需要确保这些测试是[串行运行](#串行运行测试)的。
 
 记住，AVA 运行每个测试文件会有各自单独的进程，你可能不需要在`after`钩子中清理全局状态，因为它只会在进程退出前被调用。
 
@@ -526,7 +526,7 @@ test.only.serial(...);
 
 你可以使用其他断言库来替代内置的断言库，当断言失败可以让其抛出异常。
 
-但这样做的话你将得不到[内置断言库](#断言)的良好体验，同时你也将不会用到[断言计划](#断言计划） (『看#25](https://github.com/sindresorhus/ava/issues/25))。
+但这样做的话你将得不到[内置断言库](#断言)的良好体验，同时你也将不会用到[断言计划](#断言计划） (『看#25](https://github.com/avajs/ava/issues/25))。
 
 ```js
 import assert from 'assert';
@@ -679,13 +679,13 @@ AVA 可以通过`--tap`选项来生成 TAP 的输出，可以选择任意的 [TA
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
 
 ### 简明的堆栈跟踪
 
 AVA 会在堆栈跟踪信息里面自动移除不相关的行，让你更快地找到错误的原因。
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
+<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
 
 ## API
 
@@ -891,7 +891,7 @@ AVA 支持 TAP 格式，所以它兼容任何 [TAP 报告](https://github.com/si
 
 ### 项目名字要怎么写才是正确的？如何发音？
 
-AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true)。
+AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)。
 
 ### 项目背景图片是什么意思？
 
@@ -913,26 +913,26 @@ AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.c
 ## 支持
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Gitter chat](https://gitter.im/avajs/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 ## 相关
 
-- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - AVA 测试的代码片段
-- [atom-ava](https://github.com/sindresorhus/atom-ava) - AVA 测试的代码片段
+- [sublime-ava](https://github.com/avajs/sublime-ava) - AVA 测试的代码片段
+- [atom-ava](https://github.com/avajs/atom-ava) - AVA 测试的代码片段
 - [vscode-ava](https://github.com/samverschueren/vscode-ava) - AVA 测试的代码片段
-- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - AVA 测试的代码规则
-- [gulp-ava](https://github.com/sindresorhus/gulp-ava) - 用 gulp 运行测试
-- [grunt-ava](https://github.com/sindresorhus/grunt-ava) - 用 grunt 运行测试
+- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - AVA 测试的代码规则
+- [gulp-ava](https://github.com/avajs/gulp-ava) - 用 gulp 运行测试
+- [grunt-ava](https://github.com/avajs/grunt-ava) - 用 grunt 运行测试
 - [fly-ava](https://github.com/pine/fly-ava) - 用 fly 运行测试
 - [start-ava](https://github.com/start-runner/ava) - 用 start 运行测试
 
-[更多...](https://github.com/sindresorhus/awesome-ava#packages)
+[更多...](https://github.com/avajs/awesome-ava#packages)
 
 ## 链接
 
 - [购买 AVA 贴纸](https://www.stickermule.com/user/1070705604/stickers)
-- [Awesome 列表](https://github.com/sindresorhus/awesome-ava)
+- [Awesome 列表](https://github.com/avajs/awesome-ava)
 
 ## 团队
 
@@ -948,7 +948,7 @@ AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.c
     <br>
     <br>
     <br>
-    <img src="https://cdn.rawgit.com/sindresorhus/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+    <img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
     <br>
     <br>
 </div>

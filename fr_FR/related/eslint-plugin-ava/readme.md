@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/1b1986c3b29b8edb08b54881b5c31df678a67871...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/1b1986c3b29b8edb08b54881b5c31df678a67871...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# eslint-plugin-ava [![Build Status](https://travis-ci.org/sindresorhus/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/eslint-plugin-ava?branch=master)
+# eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
 > Règles ESLint pour [AVA](https://ava.li)
 
-Traductions : [English](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/readme.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md)
 
 
 ## L'installation
@@ -90,7 +90,7 @@ Les règles s'activeront uniquement dans les fichiers de test.
 
 ## Config recommandée
 
-Ce plugin exporte une [config recommandée](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/index.js) (`recommended`) qui applique les bonnes pratiques.
+Ce plugin exporte une [config recommandée](https://github.com/avajs/eslint-plugin-ava/blob/master/index.js) (`recommended`) qui applique les bonnes pratiques.
 
 Activez la dans votre `package.json` avec l'option `extends` :
 
@@ -113,11 +113,11 @@ Consulter les [docs ESLint](http://eslint.org/docs/user-guide/configuring#extend
 
 ## Auteurs
 
-- [L'équipe AVA](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#léquipe)
+- [L'équipe AVA](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#léquipe)
 - [Jeroen Engels](https://github.com/jfmengels)
 - [Takuto Wada](https://github.com/twada)
 
-[Et nos supers contributeurs](https://github.com/sindresorhus/eslint-plugin-ava/graphs/contributors)
+[Et nos supers contributeurs](https://github.com/avajs/eslint-plugin-ava/graphs/contributors)
 
 
 ## Licence

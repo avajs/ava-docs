@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/8ba38111c707132c6b4426f583eead0bb776cd05...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/8ba38111c707132c6b4426f583eead0bb776cd05...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
- Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/browser-testing.md)
+ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/browser-testing.md)
 
-AVA ne supporte pas [encore](https://github.com/sindresorhus/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
+AVA ne supporte pas [encore](https://github.com/avajs/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
 Par exemple, c'est le cas de React, si vous voulez utiliser ReactDOM.render et simuler les événements avec ReactTestUtils.
 
 Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un environnement de navigateur maquetté.

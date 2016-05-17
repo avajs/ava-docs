@@ -1,13 +1,13 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [browser-testing.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-9d3d394077fa7f97cbbb0fefc098ac60), содержащую последние правки в master ветке AVA, Вы не можете найти файл `browser-testing.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-9d3d394077fa7f97cbbb0fefc098ac60), содержащую последние правки в master ветке AVA, Вы не можете найти файл `browser-testing.md`, то можете считать что перевод актуален.
 ___
 # Настройка AVA для тестирования браузера
 
-Переводы: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/browser-testing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
+Переводы: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md)
 
-AVA не поддерживает запуск тестов в браузере, [пока что](https://github.com/sindresorhus/ava/issues/24). Некоторым библиотекам необходимы браузерное глобальное окружение(`window`, `document`, `navigator`, и т.д.).
+AVA не поддерживает запуск тестов в браузере, [пока что](https://github.com/avajs/ava/issues/24). Некоторым библиотекам необходимы браузерное глобальное окружение(`window`, `document`, `navigator`, и т.д.).
 Один из примеров - это React, по крайней мере, если Вы собираетесь использовать ReactDOM.render и эмулировать DOM события с ReactTestUtils.
 
 Этот пример работает с любыми библиотеками, которые моделируют браузерное окружение.

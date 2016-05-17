@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [assertion-arguments.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/assertion-arguments.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/29a89e1e32a5631ae5e35813f761358024b9a146...master#diff-02806b2ce1a1f920f52c6ca18a3481a1) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `assertion-arguments` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [assertion-arguments.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/assertion-arguments.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/29a89e1e32a5631ae5e35813f761358024b9a146...master#diff-02806b2ce1a1f920f52c6ca18a3481a1) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `assertion-arguments` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Imposer le passage d'arguments corrects aux assertions
 

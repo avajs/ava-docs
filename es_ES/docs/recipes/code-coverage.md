@@ -1,11 +1,11 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-coverage.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-coverage.md`, será por que la traducción está actualizada).
 ___
 # Cobertura de código
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
 Como AVA [genera los archivos de test][isolated-env] no se puede usar ['istanbul'] para la cobertura de código, en cambio, se puede lograr esto con ['nyc'] que es básicamente ['istanbul'] con apoyo de sub-process.
 
@@ -181,6 +181,6 @@ Su informe de cobertura aparecerá en coveralls poco después de que Travis term
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md#entorno-aislado
+[isolated-env]: https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md#entorno-aislado
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc

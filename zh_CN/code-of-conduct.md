@@ -1,12 +1,12 @@
 ___
 **备注**
 
-这是 [code-of-coduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-coduct.md) 的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-of-coduct.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [code-of-coduct.md](https://github.com/avajs/ava/blob/master/code-of-coduct.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-of-coduct.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 贡献者的行为准则
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/code-of-conduct.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/code-of-conduct.md)
 
 作为这个项目的贡献者和维护者，我们希望社区开放和受欢迎，我们承诺尊重所有参与项目的人，不管是报告问题，提交功能需求，更新文档，提交 pull request 或 patch，或者是其他积极的活动。
 

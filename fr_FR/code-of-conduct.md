@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/0c1dbf0e61846cdaa9f74653ee211013e5993dd1...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Voici un [lien](https://github.com/avajs/ava/compare/0c1dbf0e61846cdaa9f74653ee211013e5993dd1...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-of-conduct.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Charte Code de Conduite Contributeurs
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md), [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/code-of-conduct.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/code-of-conduct.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/code-of-conduct.md)
 
 ## Notre engagement
 

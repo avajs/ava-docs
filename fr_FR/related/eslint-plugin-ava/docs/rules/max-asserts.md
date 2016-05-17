@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [max-asserts.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-fca60e7ef485498c6b37c6a950f9d59a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [max-asserts.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-fca60e7ef485498c6b37c6a950f9d59a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Limiter le nombre d'assertions dans un test
 
-Traductions : [English](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md)
 
 Limite la quantité d'assertions dans un test afin d'appliquer le découpage des gros tests en plusieurs plus petits.
 

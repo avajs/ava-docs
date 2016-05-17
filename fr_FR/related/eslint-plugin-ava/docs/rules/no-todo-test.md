@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-todo-test.md](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-todo-test.md). Voici un [lien](https://github.com/sindresorhus/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-ee78ff1db3f63a4c5de48c6c6c18fcdd) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-todo-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-todo-test.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-todo-test.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-ee78ff1db3f63a4c5de48c6c6c18fcdd) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-todo-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun `test.todo()` soit utilisé
 
-Traductions : [English](https://github.com/sindresorhus/eslint-plugin-ava/blob/master/docs/rules/no-todo-test.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-todo-test.md)
 
 Interdit l'utilisation de `test.todo()`. Vous pouvez effectuer cette opération pour seulement embarquer des fonctionnalités avec des spécifications entièrement écrites et qui passent.
 

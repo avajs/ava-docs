@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)
 
 Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests en utilisant Babel.
 
@@ -53,7 +53,7 @@ Pour transpiler vos sources, vous aurez besoin de définir une [`config babel` ]
 }
 ```
 
-Notez que le chargement de `babel-register` dans chaque processus a un coût non négligeable sur la performance. Si vous avez beaucoup de fichiers de test, vous devriez peut-être envisager l'utilisation d'une étape de build pour transpiler vos sources *avant* l'exécution de vos tests. Ce n'est pas idéal, puisque cela complique l'utilisation du mode watch de AVA, nous vous recommandons d'utiliser `babel-register` tant que cela ne pénalise pas trop les performances. La mise en place d'une étape de précompilation dépasse le sujet de ce document, mais nous vous recommandons de consulter l'un des nombreux [systèmes de build que supporte Babel](http://babeljs.io/docs/setup/). Il y a une [issue ouverte](https://github.com/sindresorhus/ava/issues/577) afin de discuter des possibilités pour améliorer cette expérience.
+Notez que le chargement de `babel-register` dans chaque processus a un coût non négligeable sur la performance. Si vous avez beaucoup de fichiers de test, vous devriez peut-être envisager l'utilisation d'une étape de build pour transpiler vos sources *avant* l'exécution de vos tests. Ce n'est pas idéal, puisque cela complique l'utilisation du mode watch de AVA, nous vous recommandons d'utiliser `babel-register` tant que cela ne pénalise pas trop les performances. La mise en place d'une étape de précompilation dépasse le sujet de ce document, mais nous vous recommandons de consulter l'un des nombreux [systèmes de build que supporte Babel](http://babeljs.io/docs/setup/). Il y a une [issue ouverte](https://github.com/avajs/ava/issues/577) afin de discuter des possibilités pour améliorer cette expérience.
 
 ## Transpilation des tests et des sources de la même manière
 
@@ -127,6 +127,6 @@ AVA ajoute *toujours* quelques plugins Babel personnalisés lors de la transpila
 
  * Active le support de `power-assert`.
  * Réécrit le chemin interne des dépendances de AVA comme `babel-runtime` (important si vous utilisez encore `npm@2`).
- * [`ava-throws-helper`](https://github.com/jamestalmage/babel-plugin-ava-throws-helper) aide AVA à [détecter et à signaler](https://github.com/sindresorhus/ava/pull/742) une mauvaise utilisation de l'assertion `t.throws`.
+ * [`ava-throws-helper`](https://github.com/jamestalmage/babel-plugin-ava-throws-helper) aide AVA à [détecter et à signaler](https://github.com/avajs/ava/pull/742) une mauvaise utilisation de l'assertion `t.throws`.
  * Génére des metadata de test pour déterminer quels fichiers doivent être exécutés en premier (*à venir*).
  * Analyse statique de dépendance pour la précompilation (*à venir*).

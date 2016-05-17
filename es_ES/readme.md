@@ -1,13 +1,13 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/sindresorhus/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
 ___
-# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
 
 > Test runner futurista
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/avajs/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join chat.svg)](https://gitter.im/avajs/ava)
 
 A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecutarse en paralelo debido a su naturaleza asíncrona. AVA aprovecha esto y corre sus tests al mismo tiempo, lo que es especialmente beneficioso para tests pesados en IO. Además, los archivos de test se ejecutan en paralelo como procesos separados, que le da un mejor rendimiento y un entorno aislado para cada archivo de test. [Cambiando](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha a AVA en Pageres llevó el tiempo de los test por debajo de 31 segundos, concretamente a 11 segundos. El tener tests que se ejecutan al mismo tiempo nos obliga a escribir tests atómicos, es decir, los tests no dependen del estado global o el estado de otros tests, lo que está muy bien!
 
@@ -15,7 +15,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 
 Siga la [cuenta de Twitter de AVA](https://twitter.com/ava__js) para actualizaciones.
 
-Traducciones: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## Tabla de contenidos
@@ -96,7 +96,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
 
 #### Ejecutar el test
 
@@ -261,7 +261,7 @@ test.skip('will not be run', t => {
 Cuando se requiera empezar a preparar y/o abandonar, puede usar `test.before()` y `test.after()`,
 usandolo de la misma manera que `test()`. La función test permite el uso de `test.before()` y `test.after()`, siempre serán ejecutadas antes o despues de todos los tests. Puede usar incluso `test.beforeEach()` y `test.afterEach()` si necesita preparar algo antes y despues de cada test. Los hooks se ejecutan en serie en el archivo de test. Añada tantos como quiera. Opcionalmente puede especificar un título que se muestre en el error.
 
-Si necesita crear un estado global entre tests usando 'test.beforeEach()' y 'test.afterEach()' (como espiar 'console.log' [por ejemplo] (https://github.com/sindresorhus/ava/issues/560)), necesitará asegurarse de que los tests se ejecutan en serie (mediante [test.serial](#serial-tests) o ['--serial'](#cli)).
+Si necesita crear un estado global entre tests usando 'test.beforeEach()' y 'test.afterEach()' (como espiar 'console.log' [por ejemplo] (https://github.com/avajs/ava/issues/560)), necesitará asegurarse de que los tests se ejecutan en serie (mediante [test.serial](#serial-tests) o ['--serial'](#cli)).
 
 ```js
 test.before(t => {
@@ -348,7 +348,7 @@ Es especialmente util utilizar temporalmente `skip` o `only` en un test, sin per
 
 ### Módulo aserción customizado
 
-Puede utilizar cualquier módulo de aserción en lugar o además del que viene con AVA, pero no podrá utilizar el método `.plan()`, [aún](https://github.com/sindresorhus/ava/issues/25).
+Puede utilizar cualquier módulo de aserción en lugar o además del que viene con AVA, pero no podrá utilizar el método `.plan()`, [aún](https://github.com/avajs/ava/issues/25).
 
 ```js
 import assert from 'assert';
@@ -433,7 +433,7 @@ test('foo bar', t => {
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111) esta haciendo seguimiento de este tema como una mejora potencial.
+[#111](https://github.com/avajs/ava/issues/111) esta haciendo seguimiento de este tema como una mejora potencial.
 
 ### Soporte a Promesas
 
@@ -513,13 +513,13 @@ AVA puede generar una salida TAP a través de la opción `--tap` para su uso con
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
 
 ### Trazas de pila limpias
 
 AVA elimina automáticamente líneas sin relación de la pila, lo que le permite encontrar la fuente de un error mucho más rápido.
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
+<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
 
 
 ## API
@@ -733,7 +733,7 @@ Use la [opción `--tap`](#salida-tap-opcional) con cualquier [TAP reporter](http
 
 ### ¿Cómo es el nombre escrito y pronunciado?
 
-AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### ¿Cuál es el fondo de la cabecera?
 
@@ -753,18 +753,18 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 ## Soporte
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Gitter chat](https://gitter.im/avajs/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 
 ## Relacionado
 
-- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Fragmentos de código para tests de AVA
-- [atom-ava](https://github.com/sindresorhus/atom-ava) - Fragmentos de código para tests de AVA
+- [sublime-ava](https://github.com/avajs/sublime-ava) - Fragmentos de código para tests de AVA
+- [atom-ava](https://github.com/avajs/atom-ava) - Fragmentos de código para tests de AVA
 - [vscode-ava](https://github.com/samverschueren/vscode-ava) - Fragmentos de código para tests de AVA
-- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Reglas de lint para tests de AVA
-- [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Ejecutar tests con gulp
-- [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Ejecutar tests con grunt
+- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Reglas de lint para tests de AVA
+- [gulp-ava](https://github.com/avajs/gulp-ava) - Ejecutar tests con gulp
+- [grunt-ava](https://github.com/avajs/grunt-ava) - Ejecutar tests con grunt
 - [fly-ava](https://github.com/pine/fly-ava) - Ejecutar tests con fly
 - [start-ava](https://github.com/start-runner/ava) - Ejecutar los tests con inicio
 
@@ -772,7 +772,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 ## Enlaces
 
 - [Compre AVA stickers](https://www.stickermule.com/user/1070705604/stickers)
-- [Lista Impresionante](https://github.com/sindresorhus/awesome-ava)
+- [Lista Impresionante](https://github.com/avajs/awesome-ava)
 
 
 ## Creado por
@@ -786,7 +786,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/sindresorhus/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
 	<br>
 	<br>
 </div>

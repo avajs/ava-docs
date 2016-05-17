@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/avajs/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Codice di Condotta per il Collaboratore
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md)
 
 Come collaboratore e amministratore di questo progetto, e nell'interesse di incoraggiare una comunità aperta e accogliente, noi promettiamo di rispettare tutte le persone che collaborano mediante la notifica di errori, creando nuove funzionalità, aggiornando la documentazione, inviando pull request o correzioni, e altre attività.
 

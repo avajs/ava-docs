@@ -1,9 +1,9 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/sindresorhus/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/58e9f702874723ac45105add628d46206e6e8a03...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/58e9f702874723ac45105add628d46206e6e8a03...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# Maintenance [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
+# Maintenance [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 
 
 ## Conduite
@@ -23,9 +23,9 @@ Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 ## Procédure de version
 
 - Mettez à niveau les dépendances.
-- Assurez vous que [Travis CI](https://travis-ci.org/sindresorhus/ava) et [AppVeyor](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) sont au vert.
+- Assurez vous que [Travis CI](https://travis-ci.org/avajs/ava) et [AppVeyor](https://ci.appveyor.com/project/avajs/ava/branch/master) sont au vert.
 - Publiez une nouvelle version en utilisant [`np`](https://github.com/sindresorhus/np) avec un numéro de version qui respecte [semver](http://semver.org).
-- Écrivez une [note de version](https://github.com/sindresorhus/ava/releases/new) en utilisant le même style que les notes précédentes.
+- Écrivez une [note de version](https://github.com/avajs/ava/releases/new) en utilisant le même style que les notes précédentes.
 
 
 ## Pull requests
@@ -33,7 +33,7 @@ Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 - Les nouvelles fonctionnalités doivent être livrées avec des tests et de la documentation.
 - Assurez vous que le [guide de contribution](contributing.md) est respecté.
 - Au moins un membre de l'équipe doit apposer un `LGTM` sur le pull request avant de le merger.
-- Faites un squash des commits avant de merger. *[Exemple](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
+- Faites un squash des commits avant de merger. *[Exemple](https://github.com/avajs/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 
 ## Étiquettes d'une issue

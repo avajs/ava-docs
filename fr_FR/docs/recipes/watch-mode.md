@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/a3565fd685b2a06c63cb1498f37d47e6bafe672c...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/a3565fd685b2a06c63cb1498f37d47e6bafe672c...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
-Traductions : [English](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
 
 AVA est livré avec un mode watch intelligent. Il surveille les fichiers modifiés et exécute seulement les tests qui sont impactés.
 
@@ -113,11 +113,11 @@ $ npm test -- --watch --verbose
 
 ## Aidez-nous à améliorer le mode watch
 
-Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veuillez [signaler](https://github.com/sindresorhus/ava/issues) (en anglais) les problèmes que vous rencontrez. Merci !
+Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veuillez [signaler](https://github.com/avajs/ava/issues) (en anglais) les problèmes que vous rencontrez. Merci !
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[l'option `--require` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
-[l'option `--source` du CLI]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#cli
-[`.only`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
-[section `ava` de votre `package.json`]: https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md#configuration
+[l'option `--require` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
+[l'option `--source` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
+[`.only`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
+[section `ava` de votre `package.json`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration
