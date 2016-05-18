@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/61f09584ce3b1b0ae088cc8b47446028f71ae812...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/34d27674a7a2675bfbe408965a7d5f34f21564ec...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
+# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/avajs/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -140,18 +140,19 @@ $ ava --help
   Usage (Utilisation)
     ava [<file|directory|glob> ...]
 
-  Options
-    --init           Add AVA to your project (Ajouter AVA à votre projet)
-    --fail-fast      Stop after first test failure (Arrêter dès qu'un test échoue)
-    --serial, -s     Run tests serially (Lancer les tests  )
-    --require, -r    Module to preload (Can be repeated) (Module à précharger (peut être répété))
-    --tap, -t        Generate TAP output (Générer une sortie au format TAP)
-    --verbose, -v    Enable verbose output (Activer le mode verbose)
-    --no-cache       Disable the transpiler cache (Désactive le cache du transpileur)
-    --match, -m      Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
-		--watch, -w      Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
-    --source, -S     Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
-    --timeout, -T    Set global timeout (Définit un timeout global)
+Options
+    --init             Add AVA to your project (Ajouter AVA à votre projet)
+    --fail-fast        Stop after first test failure (Arrêter dès qu'un test échoue)
+    --serial, -s       Run tests serially (Lancer les tests en série)
+    --require, -r      Module to preload (Can be repeated) (Module à précharger (peut être répété))
+    --tap, -t          Generate TAP output (Générer une sortie au format TAP)
+    --verbose, -v      Enable verbose output (Activer le mode verbose)
+    --no-cache         Disable the transpiler cache (Désactive le cache du transpileur)
+    --match, -m        Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
+    --watch, -w        Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
+    --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
+    --timeout, -T      Set global timeout (Définit un timeout global)
+    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
 
   Examples (Exemples)
     ava
@@ -419,6 +420,19 @@ Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'éc
 test.todo('il faudra penser à écrire cela plus tard');
 ```
 
+### Test défaillant
+
+Vous pouvez utiliser le modificateur `.failing` pour marquer les anomalies de votre code qui ont besoin d'être corrigées. Les tests défaillants sont exécutés comme les normaux, mais ils attendent un échec, ainsi ils ne casseront pas votre build quand ils le font. Si un test marqué comme défaillant alors qu'il passe, il sera signalé comme une erreur et fera échouer le build avec un message utile demandant de retirer le modificateur `.failing`.
+
+Cela vous permet de merger les tests de `.failing` avant qu'un correctif soit mis en œuvre sans casser le CI. Ceci est un excellent moyen pour reconnaître un PR avec un bon rapport de bogues avec un commit qui lui est crédité, même si celui qui le rapporte est en réalité incapable de résoudre le problème.
+
+```js
+// Voir : github.com/user/repo/issues/1234
+test.failing('démontrer un bogue', t => {
+	t.fail(); // le test sera compté comme passé
+});
+```
+
 ### Les [hooks](https://fr.wikipedia.org/wiki/Hook_%28informatique%29) before & after
 
 AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de déconfiguration.
@@ -527,6 +541,54 @@ test.only.serial(...);
 ```
 
 Cela signifie que vous pouvez ajouter temporairement `.skip` ou `.only` à la fin d'un test ou sur la définition d'un hook sans apporter d'autres modifications.
+
+### Macros de test
+
+Des arguments supplémentaires passés à la déclaration de test seront transmis à l'implémentation du test. Ceci est utile pour créer des macros de test réutilisables.
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+test('2 + 2 === 4', macro, '2 + 2', 4);
+test('2 * 3 === 6', macro, '2 * 3', 6);
+```
+
+Vous pouvez construire le titre du test par programmation en attachant une fonction `title` à la macro :
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} === ${expected}`.trim();
+
+test(macro, '2 + 2', 4);
+test(macro, '2 * 3', 6);
+test('providedTitle', macro, '3 * 3', 9);
+```
+
+L'argument par défaut de `providedTitle` est une chaine vide si l'utilisateur n'a pas spécifié de titre. Cela permet de faciliter la concaténation sans avoir à se soucier de  `null` / `undefined`. Il convient de rappeler que la chaîne vide est considérée comme une valeur falsy, ainsi vous pouvez toujours utiliser `if (providedTitle) {...}`.
+
+Vous pouvez aussi passer des tableaux de fonction de macro :
+
+```js
+const safeEval = require('safe-eval');
+
+function evalMacro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+function safeEvalMacro(t, input, expected) {
+	t.is(safeEval(input), expected);
+}
+
+test([evalMacro, safeEvalMacro], '2 + 2', 4);
+test([evalMacro, safeEvalMacro], '2 * 3', 6);
+```
+
+Nous vous encourageons à utiliser des macros au lieu de construire vos propres générateurs de test ([voici un exemple](https://github.com/jamestalmage/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) de code qui devrait être remplacé par une macro). Les macros sont conçues pour effectuer une analyse statique de votre code, ce qui peut conduire à améliorer la performance, l'intégration des IDE et les règles de linter.
 
 ### Personnaliser les assertions
 
@@ -971,11 +1033,14 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 
 - [Kevin Mårtensson](https://github.com/kevva)
 
+
 <div align="center">
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<a href="https://ava.li">
+		<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	</a>
 	<br>
 	<br>
 </div>
