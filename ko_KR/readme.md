@@ -1,21 +1,21 @@
 ___
 **역주**
 
-이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
+이 문서는 [readme.md](https://github.com/avajs/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/avajs/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
-# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
+# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > 미래적인 테스트 러너
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
-비록 JavaScript가 싱글-스레드 기반으로 작동할지라도, Node.js에서의 입출력은 비동기 생태계를 통해 병렬 처리가 가능합니다. AVA는 무거운 입출력 작업에 특히 유용한 이 장점을 적극적으로 활용하여 테스트를 동시에 처리합니다. 또한, 테스트 파일들은 분리된 프로세스처럼 병렬로 실행되므로 더 좋은 성능과 각 테스트 파일에 대한 고립된 환경을 제공합니다. Mocha에서 AVA로 [이전](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)한 Pageres는 테스트 시간을 31초에서 11초로 줄였습니다. 테스트를 동시에 실행하는 능력을 갖추는 것은 더 작은 테스트를 작성하도록 유도합니다. 이 말은 테스트가 더 이상 전역 상태나 다른 테스트의 상태에 의존하지 않는다는 것입니다. 정말 대단하지 않나요?
+비록 JavaScript가 싱글-스레드 기반으로 작동할지라도, Node.js에서의 입출력은 비동기 생태계를 통해 병렬 처리가 가능합니다. AVA는 무거운 입출력 작업에 특히 유용한 이 장점을 적극적으로 활용하여 테스트를 동시에 처리합니다. 또한, 테스트 파일들은 분리된 프로세스처럼 병렬로 실행되므로 더 좋은 성능과 각 테스트 파일에 대한 고립된 환경을 제공합니다. Mocha에서 AVA로 [이전](https://github.com/avajs/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)한 Pageres는 테스트 시간을 31초에서 11초로 줄였습니다. 테스트를 동시에 실행하는 능력을 갖추는 것은 더 작은 테스트를 작성하도록 유도합니다. 이 말은 테스트가 더 이상 전역 상태나 다른 테스트의 상태에 의존하지 않는다는 것입니다. 정말 대단하지 않나요?
 
-*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](https://github.com/sindresorhus/ava/blob/master/contributing.md)를 확인하세요.*
+*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](https://github.com/avajs/ava/blob/master/contributing.md)를 확인하세요.*
 
 [AVA 트위터 계정](https://twitter.com/ava__js)을 팔로우하면 업데이트에 대한 소식을 받아볼 수 있습니다.
 
-전체 번역 문서들: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/readme.md), [한국어](https://github.com/sindresorhus/ava-docs/blob/master/ko_KR/readme.md)
+전체 번역 문서들: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md)
 
 ## 목차
 
@@ -114,7 +114,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
 
 ### 실행하기
 
@@ -128,11 +128,11 @@ $ npm test
 $ npm test -- --watch
 ```
 
-AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md).
+AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md).
 
 ## CLI 사용법
 
-![](https://github.com/sindresorhus/ava/raw/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/raw/master/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
@@ -476,7 +476,7 @@ test.afterEach.cb(t => {
 });
 ```
 
-참고로 `beforeEach`와 `afterEach` 그냥 테스트의 이전과 이후에 각각 실행되며 기본적으로 테스트를 동시에 실행시킵니다. 만약 각 테스트를 위해 전역 상태를 설정해야 할 필요가 있는 경우 ([예시](https://github.com/sindresorhus/ava/issues/560)와 같이 `console.log`를 감시한다거나), 테스트가 확실하게 [직렬화로 실행](#테스트를-직렬로-실행하기)하는지 확인해야 합니다.
+참고로 `beforeEach`와 `afterEach` 그냥 테스트의 이전과 이후에 각각 실행되며 기본적으로 테스트를 동시에 실행시킵니다. 만약 각 테스트를 위해 전역 상태를 설정해야 할 필요가 있는 경우 ([예시](https://github.com/avajs/ava/issues/560)와 같이 `console.log`를 감시한다거나), 테스트가 확실하게 [직렬화로 실행](#테스트를-직렬로-실행하기)하는지 확인해야 합니다.
 
 참고로 AVA는 각 테스트 파일을 분리된 프로세스에서 실행합니다. 따라서 `after`-훅이 바로 프로세스가 종료되기 전에 실행되는 이상 따로 전역 상태를 정리하지 않아도 됩니다.
 
@@ -523,7 +523,7 @@ test.only.serial(...);
 
 내장에서 제공하는 가정 라이브러리 대신, 또는 추가적으로 가정 실패시 예외를 던지는것을 지원한다면, 어느 가정 라이브러리라도 사용할 수 있습니다.
 
-이는 [빌트-인 가정](#가정)을 사용하는 것과는 달리 좋은 경험을 제공하지 못하며 [가정 계획](#가정-계획하기)을 사용할 수 없습니다. ([이슈 #25](https://github.com/sindresorhus/ava/issues/25)를 참고하세요)
+이는 [빌트-인 가정](#가정)을 사용하는 것과는 달리 좋은 경험을 제공하지 못하며 [가정 계획](#가정-계획하기)을 사용할 수 없습니다. ([이슈 #25](https://github.com/avajs/ava/issues/25)를 참고하세요)
 
 ```js
 import assert from 'assert';
@@ -584,9 +584,9 @@ AVA의 [`package.json` 구성](#구성)에서 `babel` 옵션을 통해 AVA 테�
 	},
 }
 ```
-더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md)를 참고하세요.
+더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)를 참고하세요.
 
-참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
+참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
 
 ### TypeScript 지원
 
@@ -677,7 +677,7 @@ AVA는 `--tap` 옵션과 [TAP 리포터](https://github.com/sindresorhus/awesome
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
 
 참고로 TAP 리포터는 [감시 모드](#감시-모드로-실행하기)를 사용할 땐 사용할 수 없습니다.
 
@@ -685,7 +685,7 @@ $ ava --tap | tap-nyan
 
 AVA는 스택 출력에서 관련이 없는 줄을 자동으로 삭제하며, 더 빠르게 에러의 원점을 포착할 수 있도록 도와줍니다.
 
-<img src="https://github.com/sindresorhus/ava/raw/master/media/stack-traces.png" width="398">
+<img src="https://github.com/avajs/ava/raw/master/media/stack-traces.png" width="398">
 
 ### 전역 timeout
 
@@ -905,7 +905,7 @@ AVA는 TAP 포맷을 지원하며 따라서 모든 [TAP 리포터](https://githu
 
 ### 이 프로젝트 이름은 어떻게 쓰고 발음이 어떻게 되나요?
 
-AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true)로 발음됩니다.
+AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)로 발음됩니다.
 
 ### 헤더의 배경은 무엇인가요?
 
@@ -917,29 +917,29 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 
 ## 레시피
 
-- [코드 커버리지](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)
-- [감시 모드](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md)
-- [엔드 포인트 테스팅](https://github.com/sindresorhus/ava/blob/master/docs/recipes/endpoint-testing.md)
-- [`t.plan()`를 언제 사용할까](https://github.com/sindresorhus/ava/blob/master/docs/recipes/when-to-use-plan.md)
-- [브라우저 테스팅](https://github.com/sindresorhus/ava/blob/master/docs/recipes/browser-testing.md)
-- [TypeScript](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md)
-- [Babel 구성](https://github.com/sindresorhus/ava/blob/master/docs/recipes/babelrc.md)
+- [코드 커버리지](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md)
+- [감시 모드](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
+- [엔드 포인트 테스팅](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md)
+- [`t.plan()`를 언제 사용할까](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md)
+- [브라우저 테스팅](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md)
+- [TypeScript](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md)
+- [Babel 구성](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)
 
 ## 지원
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter 채팅](https://gitter.im/sindresorhus/ava)
+- [Gitter 채팅](https://gitter.im/avajs/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 ## 관련된 프로젝트
 
-- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - AVA 테스트 코드 조각
-- [atom-ava](https://github.com/sindresorhus/atom-ava) - AVA 테스트 코드 조각
+- [sublime-ava](https://github.com/avajs/sublime-ava) - AVA 테스트 코드 조각
+- [atom-ava](https://github.com/avajs/atom-ava) - AVA 테스트 코드 조각
 - [vscode-ava](https://github.com/samverschueren/vscode-ava) - AVA 테스트 코드 조각
-- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - AVA 테스트를 위한 린팅 규칙
-- [gulp-ava](https://github.com/sindresorhus/gulp-ava) - gulp와 함께 테스트 실행
-- [grunt-ava](https://github.com/sindresorhus/grunt-ava) - grunt와 함께 테스트 실행
-- [fly-ava](https://github.com/pine613/fly-ava) - fly와 함께 테스트 실행
+- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - AVA 테스트를 위한 린팅 규칙
+- [gulp-ava](https://github.com/avajs/gulp-ava) - gulp와 함께 테스트 실행
+- [grunt-ava](https://github.com/avajs/grunt-ava) - grunt와 함께 테스트 실행
+- [fly-ava](https://github.com/pine/fly-ava) - fly와 함께 테스트 실행
 - [start-ava](https://github.com/start-runner/ava) - start와 함께 테스트 실행
 
 [더 알아보기...](https://github.com/sindresorhus/awesome-ava#packages)
@@ -964,7 +964,9 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/sindresorhus/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<a href="https://ava.li">
+		<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	</a>
 	<br>
 	<br>
 </div>

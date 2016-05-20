@@ -1,9 +1,9 @@
 ___
 **역주**
 
-이 문서는 [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/sindresorhus/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
+이 문서는 [readme.md](https://github.com/avajs/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/avajs/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
-# 유지하기 [![Dependency Status](https://david-dm.org/sindresorhus/ava.svg)](https://david-dm.org/sindresorhus/ava) [![devDependency Status](https://david-dm.org/sindresorhus/ava/dev-status.svg)](https://david-dm.org/sindresorhus/ava#info=devDependencies)
+# 유지하기 [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 
 ## 행동강령
 
@@ -20,16 +20,16 @@ ___
 ## 릴리즈 과정
 
 - 종송성을 업데이트합니다.
-- [Travis CI](https://travis-ci.org/sindresorhus/ava)와 [AppVeyor](https://ci.appveyor.com/project/sindresorhus/ava/branch/master)의 상태가 정상인지 확인합니다.
+- [Travis CI](https://travis-ci.org/avajs/ava)와 [AppVeyor](https://ci.appveyor.com/project/avajs/ava/branch/master)의 상태가 정상인지 확인합니다.
 - [semver](http://semver.org)에 따라 [`np`](https://github.com/sindresorhus/np)을 사용하여 새로운 버전을 게시합니다.
-- 이전 릴리즈 노트의 형식에 따라 [릴리즈 노트](https://github.com/sindresorhus/ava/releases/new)를 작성합니다.
+- 이전 릴리즈 노트의 형식에 따라 [릴리즈 노트](https://github.com/avajs/ava/releases/new)를 작성합니다.
 
 ## Pull Request
 
 - 새로운 기능은 반드시 테스트를 제공해야 하고 문서화해야 합니다.
 - [기여자 가이드라인](contributing.md)을 따랐는지 확인합니1다.
 - 최소한 한 명 이상의 팀원이 pull request가 합쳐지기 전에 `LGTM`을 해주어야 합니다.
-- 합치기 전에 커밋들을 squash 합니다. *[예시](https://github.com/sindresorhus/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
+- 합치기 전에 커밋들을 squash 합니다. *[예시](https://github.com/avajs/ava/commit/0675d3444da6958b54c7e5eada91034e516bc97c)*
 
 ## 이슈 라벨
 
