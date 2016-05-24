@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/8ba38111c707132c6b4426f583eead0bb776cd05...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/47f08e09558e808ddfc017b7fe10405f1a8372c4...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 

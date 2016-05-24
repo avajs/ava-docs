@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/47f08e09558e808ddfc017b7fe10405f1a8372c4...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 

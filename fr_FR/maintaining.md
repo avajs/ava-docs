@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/58e9f702874723ac45105add628d46206e6e8a03...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/b8bc21d9b624dd93c851c31cfb0409f537d3f2e3...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 

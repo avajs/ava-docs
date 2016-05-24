@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/a3565fd685b2a06c63cb1498f37d47e6bafe672c...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/47f08e09558e808ddfc017b7fe10405f1a8372c4...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 

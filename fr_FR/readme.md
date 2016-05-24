@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/34d27674a7a2675bfbe408965a7d5f34f21564ec...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/6f8326434f07ead9b51bc69c8beabeb9b8187dfa...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -15,7 +15,7 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 
 Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à jour.
 
-Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
 ## Table des matières
 
@@ -441,6 +441,8 @@ AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos 
 
 `test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test. Utilisez `test.afterEach.always()` pour enregistrer un hook qui est appelé après, même si un autre hook de test ou le test lui-même échouent. Les hooks `.always()` sont idéals pour les tâches de nettoyage.
 
+**Remarque** : Si l'option `--fail-fast` est spécifiée, AVA s'arrêtera après le premier test en échec et le hook `.always` **ne** s'exécutera **pas**.
+
 Comme `test()`, ces méthodes prennent comme arguments un titre facultatif et une fonction callback. Le titre est affiché si votre hook ne parvient pas à s'exécuter. Le callback est appelé avec un [objet d'exécution](#t).
 
 Les hooks `before` s'exécutent avant les hooks `beforeEach`. Les hooks `afterEach` s'exécutent avant les hooks `after`. Au sein de leur catégorie, les hooks s'exécutent dans l'ordre où ils ont été définis.
@@ -588,7 +590,7 @@ test([evalMacro, safeEvalMacro], '2 + 2', 4);
 test([evalMacro, safeEvalMacro], '2 * 3', 6);
 ```
 
-Nous vous encourageons à utiliser des macros au lieu de construire vos propres générateurs de test ([voici un exemple](https://github.com/jamestalmage/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) de code qui devrait être remplacé par une macro). Les macros sont conçues pour effectuer une analyse statique de votre code, ce qui peut conduire à améliorer la performance, l'intégration des IDE et les règles de linter.
+Nous vous encourageons à utiliser des macros au lieu de construire vos propres générateurs de test ([voici un exemple](https://github.com/avajs/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) de code qui devrait être remplacé par une macro). Les macros sont conçues pour effectuer une analyse statique de votre code, ce qui peut conduire à améliorer la performance, l'intégration des IDE et les règles de linter.
 
 ### Personnaliser les assertions
 
@@ -781,6 +783,7 @@ $ ava --timeout=100 # 100 millisecondes
 ### `test.only([title], implementation)`
 ### `test.skip([title], implementation)`
 ### `test.todo(title)`
+### `test.failing([title], implementation)`
 ### `test.before([title], implementation)`
 ### `test.after([title], implementation)`
 ### `test.beforeEach([title], implementation)`
