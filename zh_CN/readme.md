@@ -116,7 +116,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
 
 ### 运行
 
@@ -134,7 +134,7 @@ AVA 来自一个非常聪明的观察模式。[可以在它的秘方中查看详
 
 ## CLI
 
-![](https://github.com/avajs/ava/blob/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
