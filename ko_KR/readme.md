@@ -114,7 +114,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
 
 ### 실행하기
 
@@ -132,7 +132,7 @@ AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대�
 
 ## CLI 사용법
 
-![](https://github.com/avajs/ava/raw/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/raw/master/media/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help

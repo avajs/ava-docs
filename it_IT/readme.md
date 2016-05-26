@@ -114,7 +114,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
 
 #### Esegui il test
 
@@ -132,7 +132,7 @@ AVA integra un sistema intelligente di watch. [Guarda più opzioni nella cartell
 
 ## CLI
 
-![](https://github.com/avajs/ava/raw/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/raw/master/media/screenshot-mini-reporter.gif)
 
 ```
 $ ava --help

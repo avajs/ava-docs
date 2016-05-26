@@ -96,7 +96,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
 
 #### 実行
 

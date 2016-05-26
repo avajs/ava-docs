@@ -117,7 +117,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/raw/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/raw/master/media/screenshot.png" width="150" align="right">
 
 ### Запуск
 
@@ -134,7 +134,7 @@ $ npm test -- --watch
 В AVA есть интеллектуальный режим наблюдения. [Подробнее в этом рецепте](docs/recipes/watch-mode.md).
 
 ## Командная строка
-![](https://github.com/avajs/ava/blob/master/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
