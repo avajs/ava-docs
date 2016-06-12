@@ -6,16 +6,16 @@ ___
 # TypeScript
 
 Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/typescript.md),
-[Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md)
+[Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
 
 AVA viene de serie con un fichero TypeScript con las definiciones. Esto permite a los desarrolladores usar TypeScript para escribir tests.
 
 ## Configuración
 
-Primero instala el compilador de TypeScript [tsc](https://github.com/Microsoft/TypeScript).
+Primero instala [TypeScript](https://github.com/Microsoft/TypeScript).
 
 ```
-$ npm install --save-dev tsc
+$ npm install --save-dev typescript
 ```
 
 Crea un fichero [`tsconfig.json`](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json). Este fichero especifica al compilador las opciones necesarias para compilar el proyecto o el fichero de tests.
