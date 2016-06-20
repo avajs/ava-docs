@@ -921,7 +921,7 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 - [감시 모드](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
 - [엔드 포인트 테스팅](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md)
 - [`t.plan()`를 언제 사용할까](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md)
-- [브라우저 테스팅](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md)
+- [브라우저 테스팅](docs/recipes/browser-testing.md)
 - [TypeScript](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md)
 - [Babel 구성](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)
 
