@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/c7402023d6a3a6b7a03abf2d52d948d0964683c8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/9efcee0940c3a061a0e0f3f58388e9c252177878...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -64,12 +64,14 @@ test(t => {
 
 ### Ajoutez AVA à votre projet
 
-Installez globalement AVA, puis lancez le avec `--init` pour ajouter AVA à votre `package.json` :
+Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json` :
 
 ```console
 $ npm install --global ava
 $ ava --init
 ```
+
+Votre `package.json` ressemblera alors à ceci :
 
 ```json
 {
@@ -78,12 +80,12 @@ $ ava --init
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^0.11.0"
+    "ava": "^0.15.0"
   }
 }
 ```
 
-Tous les arguments passés après `--init` sont ajoutés dans le `package.json`.
+Tous les arguments passés après `--init` sont ajoutés comme config au `package.json`.
 
 #### Installation manuelle
 
@@ -191,6 +193,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
       "*oo",
       "!foo"
     ],
+    "concurrency": 5,
     "failFast": true,
     "tap": true,
     "require": [
@@ -437,7 +440,7 @@ test.failing('démontrer un bogue', t => {
 
 AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de déconfiguration.
 
-`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes, ils sont donc idéals pour des tâches de nettoyage.
+`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes, ils sont donc idéals pour des tâches de nettoyage. Il y a cependant deux exceptions à cela. Si vous utilisez `--fail-fast`, AVA arrêtera le test dès qu'un test échoue, et il n'exécutera pas de hooks, y compris les hooks `.always()`. Les exceptions non interceptées planteront vos tests, empêchant éventuellement les hooks `.always ()` de s'exécuter.
 
 `test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test. Utilisez `test.afterEach.always()` pour enregistrer un hook qui est appelé après, même si un autre hook de test ou le test lui-même échouent. Les hooks `.always()` sont idéals pour les tâches de nettoyage.
 
@@ -665,6 +668,8 @@ Notez que AVA appliquera *toujours* [quelques plugins internes](docs/recipes/bab
 ### Prise en charge de TypeScript
 
 AVA contient les typages pour TypeScript. Vous devez configurer la transpilation vous-même. Lorsque vous définissez `module` à `commonjs` dans votre fichier `tsconfig.json`, TypeScript trouvera automatiquement les définitions de type pour AVA. Vous devez définir `target` à `es2015` pour utiliser les promesses et les fonctions async.
+
+Consultez la [recette TypeScript](docs/recipes/typescript.md) pour une explication plus détaillée.
 
 #### Transpilation des modules importés
 

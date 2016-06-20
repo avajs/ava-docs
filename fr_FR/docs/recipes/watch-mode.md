@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/47f08e09558e808ddfc017b7fe10405f1a8372c4...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/fa854896c92c69eef51e615c190b406afcac526e...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
 
 AVA est livré avec un mode watch intelligent. Il surveille les fichiers modifiés et exécute seulement les tests qui sont impactés.
 
@@ -64,11 +64,7 @@ Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du mod
 
 ## Prérequis
 
-AVA utilise [`chokidar`] pour surveiller les fichiers. Il est configuré comme une dépendance facultative, donc `chokidar` peut parfois ne pas être installé. Le mode watch n'est pas disponible si `chokidar` échoue à l'installation, à la place, vous verrez un message du type :
-
-> The optional dependency chokidar failed to install and is required for --watch. Chokidar is likely not supported on your platform.
-
-Veuillez vous référer à la [documentation de chokidar][`chokidar`] pour savoir comment résoudre ce problème.
+AVA utilise [`chokidar`] pour surveiller les fichiers. Notez que même si vous voyez des avertissements lors de l'installation sur les dépendances optionnelles, il fonctionnera correctement. Veuillez vous référer à la section *[Install Troubleshooting]* de la documentation de `chokidar` pour savoir comment résoudre les problèmes d'installation avec chokidar.
 
 ## Les fichiers sources et les fichiers de test
 
@@ -116,6 +112,7 @@ $ npm test -- --watch --verbose
 Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veuillez [signaler](https://github.com/avajs/ava/issues) (en anglais) les problèmes que vous rencontrez. Merci !
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
+[Install Troubleshooting]: https://github.com/paulmillr/chokidar#install-troubleshooting
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
 [l'option `--require` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
 [l'option `--source` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
