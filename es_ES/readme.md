@@ -1,4 +1,4 @@
-___
+﻿___
 **Nota del traductor**
 
 Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
@@ -748,7 +748,8 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 - [Cobertura de código](docs/recipes/code-coverage.md)
 - [Endpoint testing](docs/recipes/endpoint-testing.md)
 - [Cuando usar `t.plan()`](docs/recipes/when-to-use-plan.md)
-
+- [TypeScript](docs/recipes/typescript.md)
+- [Testeando componentes de React](docs/recipes/react.md)
 
 ## Soporte
 
