@@ -746,10 +746,10 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 ## Recetas
 
 - [Cobertura de código](docs/recipes/code-coverage.md)
-- [Cuando usar `t.plan()`](docs/recipes/when-to-use-plan.md)
 - [Endpoint testing](docs/recipes/endpoint-testing.md)
-- [Testeando componentes de React](docs/recipes/react.md)
+- [Cuando usar `t.plan()`](docs/recipes/when-to-use-plan.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Testeando componentes de React](docs/recipes/react.md)
 
 ## Soporte
 
