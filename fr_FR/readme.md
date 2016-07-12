@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/c3539c1701aba896bfb088ec838e60b34913168d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/b54eafa3dd01c6492bb01a3a0f3924e8de09bff5...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -21,6 +21,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 
 - [Utilisation](#utilisation)
 - [Utilisation du CLI](#cli)
+- [Reporters](#reporters)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
 - [API](#api)
@@ -47,7 +48,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
-- [Sortie facultative au format TAP](#sortie-facultative-au-format-tap)
+- [Reporter de TAP](#reporter-de-tap)
 - [Nettoyage de la stack trace](#nettoyage-de-la-stack-trace)
 
 ## Syntaxe d'un Test
@@ -134,8 +135,6 @@ AVA est livré avec un mode watch intelligent. [Apprenez en plus avec cette rece
 
 ## CLI
 
-![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
-
 ```console
 $ ava --help
 
@@ -173,6 +172,39 @@ Options
 Les répertoires sont récursifs, où tous les fichiers `*.js` sont traités comme des fichiers de test. Les répertoires nommés `fixtures`, `helpers` et `node_modules` sont *toujours* ignorés. C'est aussi le cas pour les fichiers commençant par `_`, cela vous permet de placer des helpers dans le même répertoire que vos fichiers de test.
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
+
+## Reporters
+
+### Mini-reporter
+
+Le mini-reporter est le reporter par défaut.
+
+![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
+
+### Reporter verbose (verbeux)
+
+Le reporter verbose est toujours utilisé dans les environnements de CI, sauf si [`--tap`](#reporter-de-tap) est spécifié. Utilisez l'[option `--verbose`](#reporter-verbose-verbeux) pour activer une affichage verbeux.
+
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150">
+
+### Reporter de TAP
+
+AVA prend en charge le format de TAP et est compatible avec tous les [reporters de TAP](https://github.com/sindresorhus/awesome-tap#reporters). Utilisez l'[option `--tap`](#reporter-de-tap) pour activer la restitution de TAP.
+
+```console
+$ ava --tap | tap-nyan
+```
+
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+
+Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
+
+### Nettoyage de la stack trace
+
+AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement.
+
+<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
+
 
 ## Configuration
 
@@ -646,7 +678,7 @@ Vous pouvez personnaliser la façon dont AVA transpiles les fichiers de test gr�
 
 Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de reporter la configuration de Babel dans votre [fichier `.babelrc` ou `package.json`](https://babeljs.io/docs/usage/babelrc/). De cette façon, vos fichiers de test seront transpilé en utilisant la même configuration que vos fichiers sources sans avoir à le répéter pour AVA :
 
- ```json
+```json
 {
 	"babel": {
 		"presets": [
@@ -747,24 +779,6 @@ test.cb(t => {
 	fs.readFile('data.txt', t.end);
 });
 ```
-
-### Sortie facultative au format TAP
-
-AVA peut générer une sortie au format TAP via l'option `--tap` pour utiliser un ["reporter TAP"](https://github.com/sindresorhus/awesome-tap#reporters).
-
-```console
-$ ava --tap | tap-nyan
-```
-
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
-
-Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
-
-### Nettoyage de la stack trace
-
-AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement.
-
-<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
 
 ### Délai (timeout) global
 
@@ -986,10 +1000,6 @@ Mocha vous oblige à utiliser les globales implicites comme `describe` et `it` a
 Tape et node-tap sont bons. AVA est fortement inspiré par leur syntaxe. Tous les deux exécutent les tests en série. La restitution de [TAP](https://testanything.org) n'est pas facile à lire donc vous avez toujours besoin de l'aide d'un "reporter" tap.
 
 Au contraire, AVA est très opiniâtre et exécute les tests en simultané, avec des processus distincts pour chaque fichier de test. Son "reporter" par défaut est agréable à regarder et pourtant AVA soutient encore la restitution de TAP à travers une option du CLI.
-
-### Comment puis-je utiliser des "reporters" personnalisés ?
-
-AVA prend en charge le format de TAP et est compatible avec tous les [reporters de TAP](https://github.com/sindresorhus/awesome-tap#reporters). Utilisez l'[option `--tap`](#sortie-facultative-au-format-tap) pour activer la restitution de TAP.
 
 ### Comment l'écrire et le prononcer ?
 
