@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/13cbdc228714438f669109b6fef9028a48969047...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/a539c7e1b409778da138754825275be7778b5f7a...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # JSPM et SystemJS pour ES2015
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md)
 
-Cela nécessite un helper de chargement spécial pour résoudre correctement l'`import` des packages de JSPM lors de l'utilisation AVA.
+Cela nécessite un helper de chargement spécial pour résoudre correctement l'`import` des packages de JSPM lors de l'utilisation AVA. Le but du chargeur est de vous permettre d'exécuter vos tests sans avoir à pré-construire votre projet JSPM.
 
 ## Installation
 
