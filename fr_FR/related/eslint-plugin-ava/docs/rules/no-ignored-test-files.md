@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/216cd688cded0f2b79f3f652dc2eb43353f08fc4...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
