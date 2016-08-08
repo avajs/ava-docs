@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a0908d819af83c6efb98761aae417e4c025eb0d6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -43,12 +43,15 @@ Configurez le dans le `package.json`.
 			"ava/no-identical-title": "error",
 			"ava/no-ignored-test-files": "error",
 			"ava/no-invalid-end": "error",
+			"ava/no-nested-tests": "error",
 			"ava/no-only-test": "error",
 			"ava/no-skip-assert": "error",
 			"ava/no-skip-test": "error",
 			"ava/no-statement-after-end": "error",
+			"ava/no-todo-implementation": "error",
 			"ava/no-todo-test": "warn",
 			"ava/no-unknown-modifiers": "error",
+			"ava/prefer-async-await": "error",
 			"ava/prefer-power-assert": "off",
 			"ava/test-ended": "error",
 			"ava/test-title": ["error", "if-multiple"],
@@ -74,11 +77,14 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [no-ignored-test-files](docs/rules/no-ignored-test-files.md) - S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés.
 - [no-invalid-end](docs/rules/no-invalid-end.md) - S'assurer que `t.end()` est seulement appelé dans `test.cb()`.
 - [no-only-test](docs/rules/no-only-test.md) - S'assurer qu'aucun `test.only()` soit présent.
+- [no-nested-tests](docs/rules/no-nested-tests.md) - S'assurer qu'aucun test soit imbriqué.
 - [no-skip-assert](docs/rules/no-skip-assert.md) - S'assurer qu'aucune assertion soit passée (skip).
 - [no-skip-test](docs/rules/no-skip-test.md) - S'assurer qu'aucun test soit passé (skip).
 - [no-statement-after-end](docs/rules/no-statement-after-end.md) - S'assurer que `t.end()` soit la dernière instruction exécutée.
+- [no-todo-implementation](docs/rules/no-todo-implementation.md) - S'assurer que `test.todo()` n'a pas une fonction d'implémentation.
 - [no-todo-test](docs/rules/no-todo-test.md) - S'assurer qu'aucun `test.todo()` soit utilisé.
 - [no-unknown-modifiers](docs/rules/no-unknown-modifiers.md) - Empêcher l'utilisation de modificateurs de test inconnus.
+- [prefer-async-await](docs/rules/prefer-async-await.md) - Préférer l'utilisation de async/await au lieu de retourner une Promesse.
 - [prefer-power-assert](docs/rules/prefer-power-assert.md) - Autoriser uniquement l'utilisation des assertions qui n'ont pas d'alternatives dans [power-assert](https://github.com/power-assert-js/power-assert).
 - [test-ended](docs/rules/test-ended.md) - S'assurer que les tests de callback soient explicitement terminés.
 - [test-title](docs/rules/test-title.md) - S'assurer que les tests ont un titre.
