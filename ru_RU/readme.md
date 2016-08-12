@@ -59,7 +59,7 @@ ___
 import test from 'ava';
 
 test(t => {
-	t.same([1, 2], [1, 2]);
+	t.deepEqual([1, 2], [1, 2]);
 });
 ```
 
@@ -769,11 +769,11 @@ test(t => {
 
 Проверка, что значение `value` не эквивалентно `expected`.
 
-### `.same(value, expected, [message])`
+### `.deepEqual(value, expected, [message])`
 
 Проверка, что значение `value` полностью совпадает(deep equal) с `expected`.
 
-### `.notSame(value, expected, [message])`
+### `.notDeepEqual(value, expected, [message])`
 
 Проверка, что значение `value` не полностью совпадает(not deep equal) с `expected`.
 
