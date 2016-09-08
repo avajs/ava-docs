@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [max-asserts.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-fca60e7ef485498c6b37c6a950f9d59a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [max-asserts.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7cfdf3444ad3567ab40644953e754a49cd5fce78...master#diff-fca60e7ef485498c6b37c6a950f9d59a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Limiter le nombre d'assertions dans un test
 
@@ -16,7 +16,7 @@ Les assertions passées (skip) sont comptés.
 
 ```js
 /*eslint ava/max-asserts: ["error", 5]*/
-import test = from 'ava';
+import test from 'ava';
 
 test('getSomeObject devrait définir le nom du joueur', t => {
 	const object = lib.getSomeObject();
@@ -35,7 +35,7 @@ test('getSomeObject devrait définir le nom du joueur', t => {
 ## Passe
 
 ```js
-import test = from 'ava';
+import test from 'ava';
 
 test('getSomeObject devrait définir le nom du joueur', t => {
 	const object = lib.getSomeObject();

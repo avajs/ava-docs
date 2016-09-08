@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/adc823ecc9747b43d96da70d39cb7040997f8e85...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -119,8 +119,6 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
-
 ### Exécutez le test
 
 ```console
@@ -151,6 +149,7 @@ Options
     --tap, -t          Generate TAP output (Générer une sortie au format TAP)
     --verbose, -v      Enable verbose output (Activer le mode verbose)
     --no-cache         Disable the transpiler cache (Désactive le cache du transpileur)
+    --no-power-assert  Disable Power Assert (Désactive Power Assert)
     --match, -m        Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
     --watch, -w        Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
     --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
@@ -230,6 +229,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "concurrency": 5,
     "failFast": true,
     "tap": true,
+    "powerAssert": false,
     "require": [
       "babel-register"
 		],
@@ -1026,6 +1026,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Configuration de Babel](docs/recipes/babelrc.md)
 - [Tester les composants React](docs/recipes/react.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
+- [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 
 ## Support
 
