@@ -3,7 +3,7 @@
 AVA no soporta ejecutar tests en el navegador, [todavía](https://github.com/avajs/ava/issues/24). Algunas librerías requieren globales especifícos para el navegador (`window`, `document`, `navigator`, etc).
 Un ejemplo de esto es React, al menos si quieres usar ReactDOM.render y simular eventos con ReactTestUtils.
 
-Esta guía funciona para cualquier librería que necesita un en torno de navegador simulado.
+Esta guía funciona para cualquier librería que necesita un entorno de navegador simulado.
 
 ## Instalar jsdom
 
