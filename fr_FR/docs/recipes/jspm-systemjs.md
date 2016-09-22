@@ -50,7 +50,7 @@ REMARQUE : Si vous utilisez async/await dans votre code source (pas dans votre c
 
 ### Exemple de fichier de test
 
-Remarquez que vous aurez besoin d'utiliser les chemins de `System.import` pour tous vos fichiers du projet. Donc, si vous avez nommé votre projet `app` et que vous voulez importer votre `main.js` dans un fichier de test, vous aurez besoinde faire `import main from 'app/main'`.
+Remarquez que vous aurez besoin d'utiliser les chemins de `System.import` pour tous vos fichiers du projet. Donc, si vous avez nommé votre projet `app` et que vous voulez importer votre `main.js` dans un fichier de test, vous aurez besoin de faire `import main from 'app/main'`.
 
 ```js
 import test from 'ava';

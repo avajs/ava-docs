@@ -19,7 +19,7 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
 
 ## Comportement par défaut du transpileur de AVA
 
-Par défaut, AVA transpile vos tests (et uniquement vos tests) en utilisant les presets de Babel [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) et [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/). C'est une bonne option pour des petits modules où vous ne souhaitez pas contruire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
+Par défaut, AVA transpile vos tests (et uniquement vos tests) en utilisant les presets de Babel [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) et [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/). C'est une bonne option pour des petits modules où vous ne souhaitez pas construire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
 
 ## Personnaliser la manière dont AVA transpile vos tests
 
@@ -77,7 +77,7 @@ Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisa
 
 ## Étendre la configuration de transpilation de vos sources
 
-En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `babelrc` à `true`. Cela fusionnera les plugins spécifié avec ceux de votre [`babelrc`](http://babeljs.io/docs/usage/babelrc/).
+En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `babelrc` à `true`. Cela fusionnera les plugins spécifiés avec ceux de votre [`babelrc`](http://babeljs.io/docs/usage/babelrc/).
 
 `package.json`:
 
@@ -128,5 +128,5 @@ AVA ajoute *toujours* quelques plugins Babel personnalisés lors de la transpila
  * Active le support de `power-assert`.
  * Réécrit le chemin interne des dépendances de AVA comme `babel-runtime` (important si vous utilisez encore `npm@2`).
  * [`ava-throws-helper`](https://github.com/jamestalmage/babel-plugin-ava-throws-helper) aide AVA à [détecter et à signaler](https://github.com/avajs/ava/pull/742) une mauvaise utilisation de l'assertion `t.throws`.
- * Génére des metadata de test pour déterminer quels fichiers doivent être exécutés en premier (*à venir*).
+ * Génère des metadata de test pour déterminer quels fichiers doivent être exécutés en premier (*à venir*).
  * Analyse statique de dépendance pour la précompilation (*à venir*).

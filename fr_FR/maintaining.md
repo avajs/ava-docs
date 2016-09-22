@@ -55,7 +55,7 @@ Veuillez notez la priorité avec les étiquettes suivantes :
 
 * `priority`: Issues à traiter le plus tôt possible
 * `low priority`: Issues que nous aimerions voir avancées
-* `future`: Issues où nous prévoyons leur taitement plus tard. Celles-ci sont des suggestions à long terme pour lesquelles nous n'accepterons probablement pas de PRs
+* `future`: Issues où nous prévoyons leur traitement plus tard. Celles-ci sont des suggestions à long terme pour lesquelles nous n'accepterons probablement pas de PRs
 
 Utilisez l'étiquette `assigned` lorsque quelqu'un est en train de travailler sur l'issue, ainsi nous évitons du travail en double.
 

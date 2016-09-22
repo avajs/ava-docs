@@ -50,7 +50,7 @@ Et l'utiliser ainsi :
 $ npm run watch:test
 ```
 
-Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en definissant la clé `watch` dans la [section `ava` de votre `package.json`] :
+Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en définissant la clé `watch` dans la [section `ava` de votre `package.json`] :
 
 ```json
 {
@@ -76,17 +76,17 @@ Vous pouvez configurer des patterns pour les fichiers source dans la [section `a
 
 Vous pouvez spécifier des patterns pour rechercher des fichiers dans les dossiers qui sont normalement ignorés, par exemple, utilisez `node_modules/some-dependency/*.js` pour spécifier tous les fichiers `.js` dans `node_modules/some-dependency` comme une source, même si normalement tous les fichiers dans `node_modules` sont ignorés.  Notez que vous devez spécifier un répertoire exact : `{bower_components,node_modules}/**/*.js` ne fonctionnera pas.
 
-Si vos tests écrivent quelquechose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Si cela se produit, vous devrez utiliser l'option `--source`.
+Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Si cela se produit, vous devrez utiliser l'option `--source`.
 
 ## La surveillance de dépendance
 
-AVA surveille les fichiers source qui dépendent de vos fichiers de tests. Si vous modifiez une telle dépendance, seul le fichier de test qui en dépend pourra être re-exécuter. AVA re-exécutera tous les tests s'il n'arrive pas à déterminer quel est le fichier de test qui dépend du fichier source.
+AVA surveille les fichiers source qui dépendent de vos fichiers de tests. Si vous modifiez une telle dépendance, seul le fichier de test qui en dépend pourra être ré-exécuter. AVA ré-exécutera tous les tests s'il n'arrive pas à déterminer quel est le fichier de test qui dépend du fichier source.
 
 La surveillance de dépendance fonctionne pour les modules exigés (require). Les extensions et transpileurs personnalisés sont pris en charge, à condition que vous les chargiez en utilisant [l'option `--require` du CLI] au lieu de le faire à l'intérieur de votre fichier de test. Les fichiers accessibles à l'aide du module `fs` ne sont pas surveillés.
 
 ## Le mode watch et `.only`
 
-[`.only`] désactive l'algorithme de suivi des dépendances du mode watch. Lorsqu'une modification est effectuée, tous les tests avec `.only` seront réexécutés, indépendamment du fait que le test dépend du fichier modifié.
+[`.only`] désactive l'algorithme de suivi des dépendances du mode watch. Lorsqu'une modification est effectuée, tous les tests avec `.only` seront ré-exécutés, indépendamment du fait que le test dépend du fichier modifié.
 
 ## Relancer manuellement tous les tests
 
@@ -94,7 +94,7 @@ Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la con
 
 ## Débogage
 
-Parfois, le mode watch fait des choses surprenantes comme re-exécuter tous les tests alors que vous pensiez qu'un seul test aurait été re-exécuté. Pour voir son raisonnement, vous pouvez activer un mode de débogage. Cela fonctionne mieux avec le reporter verbose :
+Parfois, le mode watch fait des choses surprenantes comme ré-exécuter tous les tests alors que vous pensiez qu'un seul test aurait été ré-exécuté. Pour voir son raisonnement, vous pouvez activer un mode de débogage. Cela fonctionne mieux avec le reporter verbose :
 
 ```console
 $ DEBUG=ava:watcher npm test -- --watch --verbose

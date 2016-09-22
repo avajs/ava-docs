@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/fe3cf4c88a73719981a210e962ecd4947aa75428...master#diff-7eb46230db3eba276054b9adbc6c82ca) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/09de0064e9c6e1ef355cbf3d7ad476a6aebb8051...master#diff-7eb46230db3eba276054b9adbc6c82ca) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
@@ -29,9 +29,18 @@ Vous pouvez exécuter une opération asynchrone à l'intérieur d'un test et vou
 
 ```js
 test(t => {
-  return fetch().then(data => {
-    t.is(data, 'foo');
-  });
+return fetch().then(data => {
+	t.is(data, 'foo');
+});
+});
+```
+
+Mieux encore, l'utilisation de `async` / `await`:
+
+```js
+test(async t => {
+	const data = await fetch();
+	t.is(data, 'foo');
 });
 ```
 
@@ -39,14 +48,25 @@ Si l'on utilise des callbacks, veuillez utilisez [`test.cb`](https://github.com/
 
 ```js
 test.cb(t => {
-  fetch((err, data) => {
-    t.is(data, 'bar');
-    t.end();
-  });
+fetch((err, data) => {
+	t.is(data, 'foo');
+	t.end();
+});
 });
 ```
 
-Alternativement, vous pouvez transformer une fonction callback en promesse en utilisant quelque chose comme [pify](https://github.com/sindresorhus/pify).
+Alternativement, vous pouvez transformer une fonction callback en promesse en utilisant quelque chose comme [`pify`](https://github.com/sindresorhus/pify).
+
+```js
+test(async t => {
+	const data = await pify(fetch)();
+	t.is(data, 'foo');
+});
+```
+
+### Affectation des exceptions non interceptées par les tests
+
+AVA [ne peut pas tracer les exceptions non interceptées](https://github.com/avajs/ava/issues/214) par le retour du test qui les déclenche. Les fonctions de prise de callback peuvent conduire à des exceptions non interceptées qui peuvent ensuite être difficiles à déboguer. Utilisez la transformation d'un callback en promesse et l'utilisation de `async`/`await`, comme dans l'exemple ci-dessus. Cela devrait permettre à AVA d'attraper l'exception et de l'attribuer au test correctement.
 
 ---
 

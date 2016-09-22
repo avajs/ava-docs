@@ -138,10 +138,10 @@ AVA est livré avec un mode watch intelligent. [Apprenez en plus avec cette rece
 ```console
 $ ava --help
 
-  Usage (Utilisation)
+  Usage
     ava [<file|directory|glob> ...]
 
-Options
+  Options
     --init             Add AVA to your project (Ajouter AVA à votre projet)
     --fail-fast        Stop after first test failure (Arrêter dès qu'un test échoue)
     --serial, -s       Run tests serially (Lancer les tests en série)
@@ -164,7 +164,7 @@ Options
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments):
+  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments) :
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
@@ -218,7 +218,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
       "my-test-folder/*.js",
       "!**/not-this-file.js"
     ],
-		"source": [
+    "source": [
       "**/*.{js,jsx}",
       "!dist/**/*"
     ],
@@ -232,7 +232,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
     "powerAssert": false,
     "require": [
       "babel-register"
-		],
+    ],
     "babel": "inherit"
   }
 }
@@ -256,7 +256,7 @@ Les fichiers de test sont exécutés à partir de leur répertoire courant, donc
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
 
 ```js
 import test from 'ava';
@@ -306,10 +306,10 @@ test(t => {
 test.cb(t => {
 	t.plan(1);
 
-  someAsyncFunction(() => {
+	someAsyncFunction(() => {
 		t.pass();
 		t.end();
-  });
+	});
 });
 ```
 
@@ -472,7 +472,7 @@ test.failing('démontrer un bogue', t => {
 
 ### Les [hooks](https://fr.wikipedia.org/wiki/Hook_%28informatique%29) before & after
 
-AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de déconfiguration.
+AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de dé-configuration.
 
 `test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes, ils sont donc idéals pour des tâches de nettoyage. Il y a cependant deux exceptions à cela. Si vous utilisez `--fail-fast`, AVA arrêtera le test dès qu'un test échoue, et il n'exécutera pas de hooks, y compris les hooks `.always()`. Les exceptions non interceptées planteront vos tests, empêchant éventuellement les hooks `.always ()` de s'exécuter.
 
@@ -538,9 +538,9 @@ test.afterEach.cb(t => {
 });
 ```
 
-Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste avant et après un test qui s'éxécute, et que par défaut les tests s'exécutent simultanément. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/avajs/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont [exécutés en série](#exécution-des-tests-en-série).
+Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste avant et après un test qui s’exécute, et que par défaut les tests s'exécutent simultanément. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/avajs/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont [exécutés en série](#exécution-des-tests-en-série).
 
-Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorqu'on sort du processus.
+Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorsqu’on sort du processus.
 
 Les hooks `beforeEach` & `afterEach` peuvent partager le contexte avec le test :
 
@@ -608,7 +608,7 @@ test(macro, '2 * 3', 6);
 test('providedTitle', macro, '3 * 3', 9);
 ```
 
-L'argument par défaut de `providedTitle` est une chaine vide si l'utilisateur n'a pas spécifié de titre. Cela permet de faciliter la concaténation sans avoir à se soucier de  `null` / `undefined`. Il convient de rappeler que la chaîne vide est considérée comme une valeur falsy, ainsi vous pouvez toujours utiliser `if (providedTitle) {...}`.
+L'argument par défaut de `providedTitle` est une chaîne vide si l'utilisateur n'a pas spécifié de titre. Cela permet de faciliter la concaténation sans avoir à se soucier de  `null` / `undefined`. Il convient de rappeler que la chaîne vide est considérée comme une valeur falsy, ainsi vous pouvez toujours utiliser `if (providedTitle) {...}`.
 
 Vous pouvez aussi passer des tableaux de fonction de macro :
 
@@ -662,7 +662,7 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 }
 ```
 
-Vous pouvez personnaliser la façon dont AVA transpiles les fichiers de test grâce à l'option `babel` dans la [configuration du `package.json`](#configuration) de AVA. Par exemple, pour remplacer les presets, vous pouvez utiliser:
+Vous pouvez personnaliser la façon dont AVA transpile les fichiers de test grâce à l'option `babel` dans la [configuration du `package.json`](#configuration) de AVA. Par exemple, pour remplacer les presets, vous pouvez utiliser:
 
 ```json
 {
@@ -678,7 +678,7 @@ Vous pouvez personnaliser la façon dont AVA transpiles les fichiers de test gr�
 }
 ```
 
-Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de reporter la configuration de Babel dans votre [fichier `.babelrc` ou `package.json`](https://babeljs.io/docs/usage/babelrc/). De cette façon, vos fichiers de test seront transpilé en utilisant la même configuration que vos fichiers sources sans avoir à le répéter pour AVA :
+Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de reporter la configuration de Babel dans votre [fichier `.babelrc` ou `package.json`](https://babeljs.io/docs/usage/babelrc/). De cette façon, vos fichiers de test seront transpilés en utilisant la même configuration que vos fichiers sources sans avoir à le répéter pour AVA :
 
 ```json
 {
@@ -773,7 +773,7 @@ test(t => {
 
 ### Prise en charge du Callback
 
-AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'utilisation de callback d'API avec le style node d'["erreur-en-premier"](http://thenodeway.io/posts/understanding-error-first-callbacks/). AVA considérera toute valeur truthy passée comme premier argument à `t.end` comme une erreur. Notez que `t.end` exige le "mode callback", qui peut être activé en utilisant le chainage `test.cb`.
+AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'utilisation de callback d'API avec le style node d'["erreur-en-premier"](http://thenodeway.io/posts/understanding-error-first-callbacks/). AVA considérera toute valeur truthy passée comme premier argument à `t.end` comme une erreur. Notez que `t.end` exige le "mode callback", qui peut être activé en utilisant le chaînage `test.cb`.
 
 ```js
 test.cb(t => {
@@ -987,7 +987,7 @@ $ ava --serial
 
 Vous ne pouvez pas utiliser [`istanbul`](https://github.com/gotwarlost/istanbul) pour la couverture de code car AVA [génère les fichiers de test](#isolement-du-processus). Vous pouvez utiliser [`nyc`](https://github.com/bcoe/nyc) à la place, c'est essentiellement `istanbul` avec en plus la prise en charge des sous-processus.
 
-Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
+Depuis la version `5.0.0`, il utilise les sources maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
 
 ### Pièges classiques
 
