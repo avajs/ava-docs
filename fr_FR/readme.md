@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/2555461639d6a16fb0d6f19816084ea61ee393c2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -256,7 +256,7 @@ Les fichiers de test sont exécutés à partir de leur répertoire courant, donc
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier argument. Par convention cet argument est nommé `t`.
 
 ```js
 import test from 'ava';
