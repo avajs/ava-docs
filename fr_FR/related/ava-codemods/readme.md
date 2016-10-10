@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava-codemods/blob/master/readme
 
 > Codemods pour [AVA](https://ava.li) qui simplifie la mise à jours des versions plus récentes et la migration vers AVA
 
-<img src="https://github.com/avajs/ava/blob/master/screenshot.gif" width="440" align="right">
+<img src="https://github.com/avajs/ava-codemods/blob/master/screenshot.gif" width="440" align="right">
 
 Les codemods sont des petits programmes qui vous aident à automatiser les changements de votre code. Considérez-les comme des chercheurs et des remplaçants sous stéroïdes.
 

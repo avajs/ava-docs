@@ -14,7 +14,7 @@ Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un envi
 
 ## Installez browser-env
 
-Installez [browser-env](https://github.com/lukechilds/browser-env)).
+Installez [browser-env](https://github.com/lukechilds/browser-env).
 
 > Simule un environnement global d'un navigateur en utilisant jsdom.
 
