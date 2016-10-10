@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/b8bc21d9b624dd93c851c31cfb0409f537d3f2e3...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/16b7e538d2061dbab363087be4babd42e4549aec...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -72,3 +72,5 @@ Nous avons un [chat](https://gitter.im/avajs/ava). Venez, espionnez, parlez-nous
 - Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
 
 Remarque: lorsque vous modifiez du code, n'oubliez pas que la devise de AVA (volé à Python), c'est d'avoir une unique méthode pour faire quelque chose. Par exemple, une demande pour ajouter un alias à l'API ([comme ceci] (https://github.com/avajs/ava/pull/663)) sera probablement refusée s'il n'y a pas l'ajout d'un autre avantage important.
+
+*Vous cherchez à faire votre première contribution à un projet open-source ? Cherchez pas plus loin ! AVA peut être l'un des projets et l'une des communautés les plus accueillants. Lisez l'article de blog ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190) pour démarrer correctement et faire votre première participation pour AVA !*

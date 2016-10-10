@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/2555461639d6a16fb0d6f19816084ea61ee393c2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/17119bcfd822854b0b3bb99e8c14830f9cea50d4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -52,6 +52,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
 - [Reporter de TAP](#reporter-de-tap)
 - [Nettoyage de la stack trace](#nettoyage-de-la-stack-trace)
+- [Migration automatique depuis un autre exécuteur de test](https://github.com/avajs/ava-docs/blob/master/fr_FR/related/ava-codemods/readme.md#migration-vers-ava)
 
 ## Syntaxe d'un Test
 
@@ -145,7 +146,6 @@ $ ava --help
     --init             Add AVA to your project (Ajouter AVA à votre projet)
     --fail-fast        Stop after first test failure (Arrêter dès qu'un test échoue)
     --serial, -s       Run tests serially (Lancer les tests en série)
-    --require, -r      Module to preload (Can be repeated) (Module à précharger (peut être répété))
     --tap, -t          Generate TAP output (Générer une sortie au format TAP)
     --verbose, -v      Enable verbose output (Activer le mode verbose)
     --no-cache         Disable the transpiler cache (Désactive le cache du transpileur)
@@ -709,7 +709,7 @@ Consultez la [recette TypeScript](docs/recipes/typescript.md) pour une explicati
 
 AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
 
-Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Exécutez AVA avec `--require babel-register` (consulter le [CLI](#cli)) ou [configurez le dans votre `package.json`](#configuration).
+Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter,  [configurez le dans votre `package.json`](#configuration).
 
 Vous pouvez également transpiler vos modules dans un processus séparé et référer les fichiers transpilés de vos tests plutôt que les sources.
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/avajs/ava/compare/1b00f42ed906d0e0eb913272970b6ee63db9dbbf...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Voici un [lien](https://github.com/avajs/ava/compare/17119bcfd822854b0b3bb99e8c14830f9cea50d4...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `code-coverage.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Couverture de code
 
@@ -103,8 +103,6 @@ Pour utiliser le hook `require` de Babel, ajoutez `babel-core/register` à la se
 	}
 }
 ```
-
-*Remarque* : Vous pouvez aussi définir le hook require en ligne de commande : `ava --require=babel-core/register`. Toutefois, la configuration dans `package.json` vous évite de taper à plusieurs reprises l'option.
 
 ### Regroupez le tout
 
