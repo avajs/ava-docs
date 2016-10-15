@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/17119bcfd822854b0b3bb99e8c14830f9cea50d4...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/a38bf4035805fa8b099aca9dbb02c28f047131d6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -554,7 +554,7 @@ test(t => {
 });
 ```
 
-Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
+Le contexte n'est pas partagé entre les tests, cela vous permet donc de configurer les données sans incidence sur les autres tests ou les tests précédents. Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
 
 ```js
 test.beforeEach(t => {
