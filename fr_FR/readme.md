@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/a38bf4035805fa8b099aca9dbb02c28f047131d6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/1caefe16348ca4802c1f95149b061bcbce583b0c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Dependency Status](https://dependencyci.com/github/avajs/ava/badge)](https://dependencyci.com/github/avajs/ava) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Dependency Status](https://dependencyci.com/github/avajs/ava/badge)](https://dependencyci.com/github/avajs/ava) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -23,6 +23,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 
 - [Utilisation](#utilisation)
 - [Utilisation du CLI](#cli)
+- [Débogage](#débogage)
 - [Reporters](#reporters)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
@@ -174,6 +175,21 @@ Les répertoires sont récursifs, où tous les fichiers `*.js` sont traités com
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
 
+
+## Débogage
+
+AVA exécute les tests dans des processus enfants, donc pour déboguer les tests, vous devez utiliser cette solution de contournement :
+
+```console
+$ node --inspect node_modules/ava/profile.js some/test/file.js
+```
+
+### Astuces pour débogages spécifiques
+
+- [Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
+- [WebStorm](docs/recipes/debugging-with-webstorm.md)
+
+
 ## Reporters
 
 ### Mini-reporter
@@ -252,11 +268,13 @@ Si vous n'avez pas la possibilité d'utiliser des promesses ou des observables, 
 
 Vous devez définir tous les tests de manière synchrone. Ils ne peuvent pas être définis à l'intérieur de `setTimeout`, `setImmediate`, etc.
 
-Les fichiers de test sont exécutés à partir de leur répertoire courant, donc [`process.cwd()`](https://nodejs.org/api/process.html#process_process_cwd) est toujours identique à [`__dirname`](https://nodejs.org/api/globals.html#globals_dirname). Vous pouvez simplement utiliser des chemins relatifs au lieu de faire `path.join(__dirname, 'relative/path')`.
+AVA essaie d'exécuter les fichiers de test dans leur répertoire de travail courant, c'est à dire le répertoire qui contient votre fichier `package.json`.
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier argument.
+
+**Remarque :** Pour que les [messages d'assertion améliorés](#messages-dassertions-améliorés) se comportent correctement, le premier argument **doit** être nommé `t`.
 
 ```js
 import test from 'ava';
@@ -892,13 +910,38 @@ Affirme que `value` n'est pas deep equal à `expected`.
 
 Affirme que `function` lève une erreur, ou rejète `promise` avec une erreur.
 
-`error` peut-être un constructeur, une regex, un message d'erreur ou une fonction de validation.
+`error` peut-être un constructeur d'une erreur, un message d'erreur, une regex qui correspond à un message d'erreur ou une fonction de validation.
 
-Retourne l'erreur levée par `function` ou le motif du rejet de la `promise`
+Retourne l'erreur levée par `function` ou une promesse avec le motif de rejet de `promise`
+
+Exemple:
+
+```js
+const fn = () => {
+	throw new TypeError('🦄');
+};
+
+test('throws', t => {
+	const error = t.throws(() => {
+		fn();
+	}, TypeError);
+
+	t.is(error.message, '🦄');
+});
+```
+
+```js
+const promise = Promise.reject(new TypeError('🦄'));
+
+test('rejects', async t => {
+	const error = await t.throws(promise);
+	t.is(error.message, '🦄');
+});
+```
 
 ### `.notThrows(function|promise, [message])`
 
-Affirme que `function` ne lève pas `error` ou résout `promise`.
+Affirme que `function` ne lève pas `error` ou que `promise` ne rejette pas une erreur.
 
 ### `.regex(contents, regex, [message])`
 
@@ -975,14 +1018,6 @@ L'exécution des tests en simultané apporte quelques défis, faire de l'IO est 
 
 Habituellement, les tests en série créent juste des répertoires temporaires dans le répertoire de test en cours et les nettoient à la fin. Cela ne fonctionnera pas lorsque vous exécutez des tests en simultané, car les tests seront en conflit les uns avec les autres. La bonne façon de le faire, est d'utiliser un nouveau répertoire temporaire pour chaque test. Les modules [`tempfile`](https://github.com/sindresorhus/tempfile) et [`temp-write`](https://github.com/sindresorhus/temp-write) peuvent être utiles.
 
-### Débogage
-
-AVA exécute par défaut les tests en simultané, ce qui n'est pas optimal lorsque vous avez besoin de déboguer quelque chose. Pour cela, exécuter les tests en série avec l'option `--serial` :
-
-```console
-$ ava --serial
-```
-
 ### Couverture de code
 
 Vous ne pouvez pas utiliser [`istanbul`](https://github.com/gotwarlost/istanbul) pour la couverture de code car AVA [génère les fichiers de test](#isolement-du-processus). Vous pouvez utiliser [`nyc`](https://github.com/bcoe/nyc) à la place, c'est essentiellement `istanbul` avec en plus la prise en charge des sous-processus.
@@ -1026,6 +1061,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Configuration de Babel](docs/recipes/babelrc.md)
 - [Tester les composants React](docs/recipes/react.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
+- [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 
 ## Support
