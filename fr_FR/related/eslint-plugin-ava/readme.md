@@ -1,13 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a443d7a9c94165f42749938e6b491a7c10749b6c...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/6d3bde6e111171941d03a9da2668bd6fd4219fb3...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
 > Règles ESLint pour [AVA](https://ava.li)
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md)
+
+Ce plugin est intégré dans [XO](https://github.com/sindresorhus/xo). Pas besoin de faire quoi que ce soit si vous utilisez XO.
 
 
 ## L'installation
@@ -29,7 +31,7 @@ Configurez le dans le `package.json`.
 			"es6": true
 		},
 		"parserOptions": {
-			"ecmaVersion": 7,
+			"ecmaVersion": 2017,
 			"sourceType": "module"
 		},
 		"plugins": [
@@ -37,7 +39,6 @@ Configurez le dans le `package.json`.
 		],
 		"rules": {
 			"ava/assertion-arguments": "error",
-			"ava/assertion-message": ["off", "always"],
 			"ava/max-asserts": ["off", 5],
 			"ava/no-async-fn-without-await": "error",
 			"ava/no-cb-test": "off",
@@ -72,7 +73,6 @@ Configurez le dans le `package.json`.
 Les règles s'activeront uniquement dans les fichiers de test.
 
 - [assertion-arguments](docs/rules/assertion-arguments.md) - Imposer le passage d'arguments corrects aux assertions.
-- [assertion-message](docs/rules/assertion-message.md) - Imposer ou interdir les messages d'assertion.
 - [max-asserts](docs/rules/max-asserts.md) - Limiter le nombre d'assertions dans un test.
 - [no-async-fn-without-await](docs/rules/no-async-fn-without-await.md) - S'assurer que les tests async utilisent `await`.
 - [no-cb-test](docs/rules/no-cb-test.md) - S'assurer qu'aucun `test.cb()` n'est utilisé.

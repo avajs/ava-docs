@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava-codemods/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava-codemods/compare/e49f8496df390ab45a9804e6fbaed54baaea9513...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de ava-codemods (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava-codemods/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava-codemods/compare/cbddb4b4256a40523b78e873d0ea1248fab17150...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de ava-codemods (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # ava-codemods [![Build Status](https://travis-ci.org/avajs/ava-codemods.svg?branch=master)](https://travis-ci.org/avajs/ava-codemods)
 
