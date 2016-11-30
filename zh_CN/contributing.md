@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md) 的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`contributing.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`contributing.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 # 向 AVA 贡献
 
@@ -9,13 +9,13 @@ ___
 
 请注意，这个项目发布带有[贡献者的行为准则](code-of-conduct.md)，参与这个项目你需要同意并遵守其中的条款。
 
-翻译：[Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/contributing.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/contributing.md)
 
 ## 我怎么贡献？
 
 ### 改进文档
 
-作为 AVA 的用户你是帮助我们改进文档的最佳候选人，修改拼写错误，修复错误，更好的解释，更多的例子等等。为一些可以改进的事情提问题，[帮助我们翻译文档](https://github.com/sindresorhus/ava-docs)，不管任何事情，即使是改善现在这个文档。
+作为 AVA 的用户你是帮助我们改进文档的最佳候选人，修改拼写错误，修复错误，更好的解释，更多的例子等等。为一些可以改进的事情提问题，[帮助我们翻译文档](https://github.com/avajs/ava-docs)，不管任何事情，即使是改善现在这个文档。
 
 ### 改善问题
 
@@ -27,11 +27,11 @@ ___
 
 ### 在我们的聊天室中闲聊
 
-我们有一个[聊天室](https://gitter.im/sindresorhus/ava)，可以进到里面潜水，跟我们聊天，或者帮助其他人。
+我们有一个[聊天室](https://gitter.im/avajs/ava)，可以进到里面潜水，跟我们聊天，或者帮助其他人。
 
 ### 提交问题
 
-- 问题跟踪器是针对问题的，请使用我们的[聊天室](https://gitter.im/sindresorhus/ava) 或者 [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) 来寻求支持。
+- 问题跟踪器是针对问题的，请使用我们的[聊天室](https://gitter.im/avajs/ava) 或者 [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) 来寻求支持。
 - 在新开一个问题之前先搜索以前的问题。
 - 确保你使用的是最新版本的 AVA。
 - 用一个清晰和描述性好的标题。

@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/f2c070987ecee3caf7613190acf2c8a90700e058...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/avajs/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Code coverage
 
-Traduzioni: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
 
 Poichè AVA [usa processi isolati](processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
 
@@ -103,6 +103,7 @@ Per utilizzare l'hook `require` di Babel, aggiungi `babel-core/register` nella s
 }
 ```
 
+
 *Nota*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di evitare di dover scrivere quel parametro ogni volta.
 
 ### Combinando tutto
@@ -179,6 +180,6 @@ La tua code coverage apparirà su coveralls non appena Travis completerà l'esec
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[processi-isolati]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#isolamento-dei-processi
+[processi-isolati]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#isolamento-dei-processi
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc

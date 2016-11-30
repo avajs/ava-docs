@@ -1,26 +1,30 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md). Voici un [lien](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/63e68fa278839662302d8fa2f83122d5253a2289...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
+# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Dependency Status](https://dependencyci.com/github/avajs/ava/badge)](https://dependencyci.com/github/avajs/ava) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
+
+![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
 
 *Lisez notre [guide de contribution](contributing.md) si vous souhaitez contribuer (issues/PRs/etc).*
 
 Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à jour.
 
-Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/readme.md)
+Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
-## Table des matières
+## Contenus
 
 - [Utilisation](#utilisation)
 - [Utilisation du CLI](#cli)
+- [Débogage](#débogage)
+- [Reporters](#reporters)
 - [Configuration](#configuration)
 - [Documentation](#documentation)
 - [API](#api)
@@ -47,8 +51,9 @@ Traductions : [Español](https://github.com/sindresorhus/ava-docs/blob/master/es
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
-- [Sortie facultative au format TAP](#sortie-facultative-au-format-tap)
+- [Reporter de TAP](#reporter-de-tap)
 - [Nettoyage de la stack trace](#nettoyage-de-la-stack-trace)
+- [Migration automatique depuis un autre exécuteur de test](https://github.com/avajs/ava-docs/blob/master/fr_FR/related/ava-codemods/readme.md#migration-vers-ava)
 
 ## Syntaxe d'un Test
 
@@ -64,12 +69,22 @@ test(t => {
 
 ### Ajoutez AVA à votre projet
 
-Installez globalement AVA, puis lancez le avec `--init` pour ajouter AVA à votre `package.json` :
+Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`. [Yarn](https://yarnpkg.com/) permet actuellement d'améliorer la vitesse du processus d'installation par rapport à npm. Penser à [utiliser Yarn](https://yarnpkg.com/en/docs/install) si l'installation est trop lente pour vos exigences.
+
 
 ```console
+$ yarn global add ava
+$ ava --init
+```
+
+Si vous préférez l'utilisation de npm :
+
+```
 $ npm install --global ava
 $ ava --init
 ```
+
+Votre `package.json` ressemblera alors à ceci :
 
 ```json
 {
@@ -78,16 +93,22 @@ $ ava --init
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^0.11.0"
+    "ava": "^0.15.0"
   }
 }
 ```
 
-Tous les arguments passés après `--init` sont ajoutés dans le `package.json`.
+Tous les arguments passés après `--init` sont ajoutés comme config au `package.json`.
 
 #### Installation manuelle
 
 Vous pouvez également installer AVA directement :
+
+```console
+$ yarn add --dev ava
+```
+
+Alternativement en utilisant npm :
 
 ```console
 $ npm install --save-dev ava
@@ -114,8 +135,6 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
-
 ### Exécutez le test
 
 ```console
@@ -132,26 +151,25 @@ AVA est livré avec un mode watch intelligent. [Apprenez en plus avec cette rece
 
 ## CLI
 
-![](https://github.com/sindresorhus/ava/blob/master/screenshot-mini-reporter.gif)
-
 ```console
 $ ava --help
 
-  Usage (Utilisation)
+  Usage
     ava [<file|directory|glob> ...]
 
   Options
-    --init           Add AVA to your project (Ajouter AVA à votre projet)
-    --fail-fast      Stop after first test failure (Arrêter dès qu'un test échoue)
-    --serial, -s     Run tests serially (Lancer les tests  )
-    --require, -r    Module to preload (Can be repeated) (Module à précharger (peut être répété))
-    --tap, -t        Generate TAP output (Générer une sortie au format TAP)
-    --verbose, -v    Enable verbose output (Activer le mode verbose)
-    --no-cache       Disable the transpiler cache (Désactive le cache du transpileur)
-    --match, -m      Only run tests with matching title (Can be repeated)' (Exécute seulement les tests qui correspondent au titre (peut être répété))
-		--watch, -w      Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
-    --source, -S     Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
-    --timeout, -T    Set global timeout (Définit un timeout global)
+    --init             Add AVA to your project (Ajouter AVA à votre projet)
+    --fail-fast        Stop after first test failure (Arrêter dès qu'un test échoue)
+    --serial, -s       Run tests serially (Lancer les tests en série)
+    --tap, -t          Generate TAP output (Générer une sortie au format TAP)
+    --verbose, -v      Enable verbose output (Activer le mode verbose)
+    --no-cache         Disable the transpiler cache (Désactive le cache du transpileur)
+    --no-power-assert  Disable Power Assert (Désactive Power Assert)
+    --match, -m        Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
+    --watch, -w        Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
+    --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
+    --timeout, -T      Set global timeout (Définit un timeout global)
+    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
 
   Examples (Exemples)
     ava
@@ -161,7 +179,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments):
+  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments) :
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
@@ -170,6 +188,54 @@ $ ava --help
 Les répertoires sont récursifs, où tous les fichiers `*.js` sont traités comme des fichiers de test. Les répertoires nommés `fixtures`, `helpers` et `node_modules` sont *toujours* ignorés. C'est aussi le cas pour les fichiers commençant par `_`, cela vous permet de placer des helpers dans le même répertoire que vos fichiers de test.
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
+
+
+## Débogage
+
+AVA exécute les tests dans des processus enfants, donc pour déboguer les tests, vous devez utiliser cette solution de contournement :
+
+```console
+$ node --inspect node_modules/ava/profile.js some/test/file.js
+```
+
+### Astuces pour débogages spécifiques
+
+- [Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
+- [WebStorm](docs/recipes/debugging-with-webstorm.md)
+
+
+## Reporters
+
+### Mini-reporter
+
+Le mini-reporter est le reporter par défaut.
+
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif" width="460">
+
+### Reporter verbose (verbeux)
+
+Utilisez l'option `--verbose` pour activer le reporter verbose. Il est toujours utilisé dans les environnements de CI, sauf si [`--tap`](#reporter-de-tap) est activé.
+
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150">
+
+### Reporter de TAP
+
+AVA prend en charge le format de TAP et est compatible avec [tous les reporters de TAP](https://github.com/sindresorhus/awesome-tap#reporters). Utilisez l'option `--tap` pour activer la restitution de TAP.
+
+```console
+$ ava --tap | tap-nyan
+```
+
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+
+Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
+
+### Nettoyage de la stack trace
+
+AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement.
+
+<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
+
 
 ## Configuration
 
@@ -182,7 +248,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
       "my-test-folder/*.js",
       "!**/not-this-file.js"
     ],
-		"source": [
+    "source": [
       "**/*.{js,jsx}",
       "!dist/**/*"
     ],
@@ -190,11 +256,13 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
       "*oo",
       "!foo"
     ],
+    "concurrency": 5,
     "failFast": true,
     "tap": true,
+    "powerAssert": false,
     "require": [
       "babel-register"
-		],
+    ],
     "babel": "inherit"
   }
 }
@@ -214,11 +282,13 @@ Si vous n'avez pas la possibilité d'utiliser des promesses ou des observables, 
 
 Vous devez définir tous les tests de manière synchrone. Ils ne peuvent pas être définis à l'intérieur de `setTimeout`, `setImmediate`, etc.
 
-Les fichiers de test sont exécutés à partir de leur répertoire courant, donc [`process.cwd()`](https://nodejs.org/api/process.html#process_process_cwd) est toujours identique à [`__dirname`](https://nodejs.org/api/globals.html#globals_dirname). Vous pouvez simplement utiliser des chemins relatifs au lieu de faire `path.join(__dirname, 'relative/path')`.
+AVA essaie d'exécuter les fichiers de test dans leur répertoire de travail courant, c'est à dire le répertoire qui contient votre fichier `package.json`.
 
 ### Création des tests
 
-Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier et unique argument. Par convention cet argument est nommé `t`.
+Pour créer un test, vous appelez la fonction `test` que vous importez de AVA. Fournissez un titre facultatif et une fonction d'implémentation. La fonction sera appelée lorsque votre test sera exécutée. Un [objet d'exécution](#t) est passé comme premier argument.
+
+**Remarque :** Pour que les [messages d'assertion améliorés](#messages-dassertions-améliorés) se comportent correctement, le premier argument **doit** être nommé `t`.
 
 ```js
 import test from 'ava';
@@ -268,10 +338,10 @@ test(t => {
 test.cb(t => {
 	t.plan(1);
 
-  someAsyncFunction(() => {
+	someAsyncFunction(() => {
 		t.pass();
 		t.end();
-  });
+	});
 });
 ```
 
@@ -419,13 +489,28 @@ Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'éc
 test.todo('il faudra penser à écrire cela plus tard');
 ```
 
+### Test défaillant
+
+Vous pouvez utiliser le modificateur `.failing` pour marquer les anomalies de votre code qui ont besoin d'être corrigées. Les tests défaillants sont exécutés comme les normaux, mais ils attendent un échec, ainsi ils ne casseront pas votre build quand ils le font. Si un test marqué comme défaillant alors qu'il passe, il sera signalé comme une erreur et fera échouer le build avec un message utile demandant de retirer le modificateur `.failing`.
+
+Cela vous permet de merger les tests de `.failing` avant qu'un correctif soit mis en œuvre sans casser le CI. Ceci est un excellent moyen pour reconnaître un PR avec un bon rapport de bogues avec un commit qui lui est crédité, même si celui qui le rapporte est en réalité incapable de résoudre le problème.
+
+```js
+// Voir : github.com/user/repo/issues/1234
+test.failing('démontrer un bogue', t => {
+	t.fail(); // le test sera compté comme passé
+});
+```
+
 ### Les [hooks](https://fr.wikipedia.org/wiki/Hook_%28informatique%29) before & after
 
-AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de déconfiguration.
+AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de dé-configuration.
 
-`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test.
+`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes, ils sont donc idéals pour des tâches de nettoyage. Il y a cependant deux exceptions à cela. Si vous utilisez `--fail-fast`, AVA arrêtera le test dès qu'un test échoue, et il n'exécutera pas de hooks, y compris les hooks `.always()`. Les exceptions non interceptées planteront vos tests, empêchant éventuellement les hooks `.always ()` de s'exécuter.
 
-`test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test.
+`test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test. Utilisez `test.afterEach.always()` pour enregistrer un hook qui est appelé après, même si un autre hook de test ou le test lui-même échouent. Les hooks `.always()` sont idéals pour les tâches de nettoyage.
+
+**Remarque** : Si l'option `--fail-fast` est spécifiée, AVA s'arrêtera après le premier test en échec et le hook `.always` **ne** s'exécutera **pas**.
 
 Comme `test()`, ces méthodes prennent comme arguments un titre facultatif et une fonction callback. Le titre est affiché si votre hook ne parvient pas à s'exécuter. Le callback est appelé avec un [objet d'exécution](#t).
 
@@ -444,12 +529,20 @@ test.after('cleanup', t => {
 	// cela s'exécute après tous les tests
 });
 
+test.after.always('guaranteed cleanup', t => {
+	// cela s'exécutera toujours, indépendamment des erreurs précédentes
+});
+
 test.beforeEach(t => {
 	// cela s'exécute avant chaque test
 });
 
 test.afterEach(t => {
 	// cela s'exécute après chaque test
+});
+
+test.afterEach.always(t => {
+	// cela s'exécute après chaque test et autres hooks de test, même s'ils échouent
 });
 
 test(t => {
@@ -477,9 +570,9 @@ test.afterEach.cb(t => {
 });
 ```
 
-Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste avant et après un test qui s'éxécute, et que par défaut les tests s'exécutent simultanément. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/sindresorhus/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont [exécutés en série](#exécution-des-tests-en-série).
+Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste avant et après un test qui s’exécute, et que par défaut les tests s'exécutent simultanément. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/avajs/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont [exécutés en série](#exécution-des-tests-en-série).
 
-Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorqu'on sort du processus.
+Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorsqu’on sort du processus.
 
 Les hooks `beforeEach` & `afterEach` peuvent partager le contexte avec le test :
 
@@ -493,7 +586,7 @@ test(t => {
 });
 ```
 
-Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
+Le contexte n'est pas partagé entre les tests, cela vous permet donc de configurer les données sans incidence sur les autres tests ou les tests précédents. Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
 
 ```js
 test.beforeEach(t => {
@@ -520,11 +613,59 @@ test.only.serial(...);
 
 Cela signifie que vous pouvez ajouter temporairement `.skip` ou `.only` à la fin d'un test ou sur la définition d'un hook sans apporter d'autres modifications.
 
+### Macros de test
+
+Des arguments supplémentaires passés à la déclaration de test seront transmis à l'implémentation du test. Ceci est utile pour créer des macros de test réutilisables.
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+test('2 + 2 === 4', macro, '2 + 2', 4);
+test('2 * 3 === 6', macro, '2 * 3', 6);
+```
+
+Vous pouvez construire le titre du test par programmation en attachant une fonction `title` à la macro :
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} === ${expected}`.trim();
+
+test(macro, '2 + 2', 4);
+test(macro, '2 * 3', 6);
+test('providedTitle', macro, '3 * 3', 9);
+```
+
+L'argument par défaut de `providedTitle` est une chaîne vide si l'utilisateur n'a pas spécifié de titre. Cela permet de faciliter la concaténation sans avoir à se soucier de  `null` / `undefined`. Il convient de rappeler que la chaîne vide est considérée comme une valeur falsy, ainsi vous pouvez toujours utiliser `if (providedTitle) {...}`.
+
+Vous pouvez aussi passer des tableaux de fonction de macro :
+
+```js
+const safeEval = require('safe-eval');
+
+function evalMacro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+function safeEvalMacro(t, input, expected) {
+	t.is(safeEval(input), expected);
+}
+
+test([evalMacro, safeEvalMacro], '2 + 2', 4);
+test([evalMacro, safeEvalMacro], '2 * 3', 6);
+```
+
+Nous vous encourageons à utiliser des macros au lieu de construire vos propres générateurs de test ([voici un exemple](https://github.com/avajs/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) de code qui devrait être remplacé par une macro). Les macros sont conçues pour effectuer une analyse statique de votre code, ce qui peut conduire à améliorer la performance, l'intégration des IDE et les règles de linter.
+
 ### Personnaliser les assertions
 
 Vous pouvez utiliser une bibliothèque d'assertion qui remplace ou s'ajoute à celui qui est fourni, à condition qu'il renvoie des exceptions lorsque l'assertion échoue.
 
-Cela ne vous donnera pas une aussi bonne expérience que celle obtenue avec les [assertions intégrées](#assertions), et vous ne serez pas en mesure d'utiliser l'[assertion planifiée](#assertion-planifiée) ([voir #25](https://github.com/sindresorhus/ava/issues/25)).
+Cela ne vous donnera pas une aussi bonne expérience que celle obtenue avec les [assertions intégrées](#assertions), et vous ne serez pas en mesure d'utiliser l'[assertion planifiée](#assertion-planifiée) ([voir #25](https://github.com/avajs/ava/issues/25)).
 
 ```js
 import assert from 'assert';
@@ -544,7 +685,7 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 {
   "presets": [
     "es2015",
-    "stage-2",
+    "stage-2"
   ],
   "plugins": [
     "espower",
@@ -553,7 +694,7 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 }
 ```
 
-Vous pouvez personnaliser la façon dont AVA transpiles les fichiers de test grâce à l'option `babel` dans la [configuration du `package.json`](#configuration) de AVA. Par exemple, pour remplacer les presets, vous pouvez utiliser:
+Vous pouvez personnaliser la façon dont AVA transpile les fichiers de test grâce à l'option `babel` dans la [configuration du `package.json`](#configuration) de AVA. Par exemple, pour remplacer les presets, vous pouvez utiliser:
 
 ```json
 {
@@ -569,9 +710,9 @@ Vous pouvez personnaliser la façon dont AVA transpiles les fichiers de test gr�
 }
 ```
 
-Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de reporter la configuration de Babel dans votre [fichier `.babelrc` ou `package.json`](https://babeljs.io/docs/usage/babelrc/). De cette façon, vos fichiers de test seront transpilé en utilisant la même configuration que vos fichiers sources sans avoir à le répéter pour AVA :
+Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de reporter la configuration de Babel dans votre [fichier `.babelrc` ou `package.json`](https://babeljs.io/docs/usage/babelrc/). De cette façon, vos fichiers de test seront transpilés en utilisant la même configuration que vos fichiers sources sans avoir à le répéter pour AVA :
 
- ```json
+```json
 {
 	"babel": {
 		"presets": [
@@ -581,7 +722,7 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 		]
 	},
 	"ava": {
-		"babel": "inherit",
+		"babel": "inherit"
 	},
 }
 ```
@@ -594,11 +735,13 @@ Notez que AVA appliquera *toujours* [quelques plugins internes](docs/recipes/bab
 
 AVA contient les typages pour TypeScript. Vous devez configurer la transpilation vous-même. Lorsque vous définissez `module` à `commonjs` dans votre fichier `tsconfig.json`, TypeScript trouvera automatiquement les définitions de type pour AVA. Vous devez définir `target` à `es2015` pour utiliser les promesses et les fonctions async.
 
+Consultez la [recette TypeScript](docs/recipes/typescript.md) pour une explication plus détaillée.
+
 #### Transpilation des modules importés
 
 AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
 
-Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Exécutez AVA avec `--require babel-register` (consulter le [CLI](#cli)) ou [configurez le dans votre `package.json`](#configuration).
+Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter,  [configurez le dans votre `package.json`](#configuration).
 
 Vous pouvez également transpiler vos modules dans un processus séparé et référer les fichiers transpilés de vos tests plutôt que les sources.
 
@@ -662,7 +805,7 @@ test(t => {
 
 ### Prise en charge du Callback
 
-AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'utilisation de callback d'API avec le style node d'["erreur-en-premier"](http://thenodeway.io/posts/understanding-error-first-callbacks/). AVA considérera toute valeur truthy passée comme premier argument à `t.end` comme une erreur. Notez que `t.end` exige le "mode callback", qui peut être activé en utilisant le chainage `test.cb`.
+AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'utilisation de callback d'API avec le style node d'["erreur-en-premier"](http://thenodeway.io/posts/understanding-error-first-callbacks/). AVA considérera toute valeur truthy passée comme premier argument à `t.end` comme une erreur. Notez que `t.end` exige le "mode callback", qui peut être activé en utilisant le chaînage `test.cb`.
 
 ```js
 test.cb(t => {
@@ -670,22 +813,6 @@ test.cb(t => {
 	fs.readFile('data.txt', t.end);
 });
 ```
-
-### Sortie facultative au format TAP
-
-AVA peut générer une sortie au format TAP via l'option `--tap` pour utiliser un ["reporter TAP"](https://github.com/sindresorhus/awesome-tap#reporters).
-
-```console
-$ ava --tap | tap-nyan
-```
-
-<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
-
-### Nettoyage de la stack trace
-
-AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement.
-
-<img src="https://github.com/sindresorhus/ava/blob/master/media/stack-traces.png" width="300">
 
 ### Délai (timeout) global
 
@@ -709,6 +836,7 @@ $ ava --timeout=100 # 100 millisecondes
 ### `test.only([title], implementation)`
 ### `test.skip([title], implementation)`
 ### `test.todo(title)`
+### `test.failing([title], implementation)`
 ### `test.before([title], implementation)`
 ### `test.after([title], implementation)`
 ### `test.beforeEach([title], implementation)`
@@ -796,17 +924,46 @@ Affirme que `value` n'est pas deep equal à `expected`.
 
 Affirme que `function` lève une erreur, ou rejète `promise` avec une erreur.
 
-`error` peut-être un constructeur, une regex, un message d'erreur ou une fonction de validation.
+`error` peut-être un constructeur d'une erreur, un message d'erreur, une regex qui correspond à un message d'erreur ou une fonction de validation.
 
-Retourne l'erreur levée par `function` ou le motif du rejet de la `promise`
+Retourne l'erreur levée par `function` ou une promesse avec le motif de rejet de `promise`
+
+Exemple:
+
+```js
+const fn = () => {
+	throw new TypeError('🦄');
+};
+
+test('throws', t => {
+	const error = t.throws(() => {
+		fn();
+	}, TypeError);
+
+	t.is(error.message, '🦄');
+});
+```
+
+```js
+const promise = Promise.reject(new TypeError('🦄'));
+
+test('rejects', async t => {
+	const error = await t.throws(promise);
+	t.is(error.message, '🦄');
+});
+```
 
 ### `.notThrows(function|promise, [message])`
 
-Affirme que `function` ne lève pas `error` ou résout `promise`.
+Affirme que `function` ne lève pas `error` ou que `promise` ne rejette pas une erreur.
 
 ### `.regex(contents, regex, [message])`
 
 Affirme que `contents` correspond à `regex`.
+
+### `.notRegex(contents, regex, [message])`
+
+Affirme que `contents` ne correspond pas à `regex`.
 
 ### `.ifError(error, [message])`
 
@@ -875,19 +1032,15 @@ L'exécution des tests en simultané apporte quelques défis, faire de l'IO est 
 
 Habituellement, les tests en série créent juste des répertoires temporaires dans le répertoire de test en cours et les nettoient à la fin. Cela ne fonctionnera pas lorsque vous exécutez des tests en simultané, car les tests seront en conflit les uns avec les autres. La bonne façon de le faire, est d'utiliser un nouveau répertoire temporaire pour chaque test. Les modules [`tempfile`](https://github.com/sindresorhus/tempfile) et [`temp-write`](https://github.com/sindresorhus/temp-write) peuvent être utiles.
 
-### Débogage
-
-AVA exécute par défaut les tests en simultané, ce qui n'est pas optimal lorsque vous avez besoin de déboguer quelque chose. Pour cela, exécuter les tests en série avec l'option `--serial` :
-
-```console
-$ ava --serial
-```
-
 ### Couverture de code
 
 Vous ne pouvez pas utiliser [`istanbul`](https://github.com/gotwarlost/istanbul) pour la couverture de code car AVA [génère les fichiers de test](#isolement-du-processus). Vous pouvez utiliser [`nyc`](https://github.com/bcoe/nyc) à la place, c'est essentiellement `istanbul` avec en plus la prise en charge des sous-processus.
 
-Depuis la version `5.0.0`, il utilise les source maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
+Depuis la version `5.0.0`, il utilise les sources maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
+
+### Pièges classiques
+
+Nous avons une liste croissante de [pièges classiques](docs/common-pitfalls.md) que vous pouvez rencontrer lors de l'utilisation AVA. Si vous rencontrez des problèmes que vous jugez habituels, commentez les dans [cette issue](https://github.com/avajs/ava/issues/404).
 
 ## FAQ
 
@@ -899,13 +1052,9 @@ Tape et node-tap sont bons. AVA est fortement inspiré par leur syntaxe. Tous le
 
 Au contraire, AVA est très opiniâtre et exécute les tests en simultané, avec des processus distincts pour chaque fichier de test. Son "reporter" par défaut est agréable à regarder et pourtant AVA soutient encore la restitution de TAP à travers une option du CLI.
 
-### Comment puis-je utiliser des "reporters" personnalisés ?
-
-AVA prend en charge le format de TAP et est compatible avec tous les [reporters de TAP](https://github.com/sindresorhus/awesome-tap#reporters). Utilisez l'[option `--tap`](#sortie-facultative-au-format-tap) pour activer la restitution de TAP.
-
 ### Comment l'écrire et le prononcer ?
 
-AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### Que représente l'arrière plan de l'image ?
 
@@ -924,46 +1073,54 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Tests de navigateur](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
 - [Configuration de Babel](docs/recipes/babelrc.md)
+- [Tester les composants React](docs/recipes/react.md)
+- [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
+- [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
+- [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 
 ## Support
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Gitter chat](https://gitter.im/avajs/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 ## En relation
 
-- [sublime-ava](https://github.com/sindresorhus/sublime-ava) - Snippets pour les tests AVA
-- [atom-ava](https://github.com/sindresorhus/atom-ava) - Snippets pour les tests AVA
+- [sublime-ava](https://github.com/avajs/sublime-ava) - Snippets pour les tests AVA
+- [atom-ava](https://github.com/avajs/atom-ava) - Snippets pour les tests AVA
 - [vscode-ava](https://github.com/samverschueren/vscode-ava) - Snippets pour les tests AVA
-- [eslint-plugin-ava](https://github.com/sindresorhus/eslint-plugin-ava) - Règles de Lint pour les tests AVA
-- [gulp-ava](https://github.com/sindresorhus/gulp-ava) - Exécutez les tests avec gulp
-- [grunt-ava](https://github.com/sindresorhus/grunt-ava) - Exécutez les tests avec grunt
-- [fly-ava](https://github.com/pine613/fly-ava) - Exécutez les tests avec fly
+- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Règles de Lint pour les tests AVA
+- [gulp-ava](https://github.com/avajs/gulp-ava) - Exécutez les tests avec gulp
+- [grunt-ava](https://github.com/avajs/grunt-ava) - Exécutez les tests avec grunt
+- [fly-ava](https://github.com/pine/fly-ava) - Exécutez les tests avec fly
 - [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
 
-[Plus...](https://github.com/sindresorhus/awesome-ava#packages)
+[Plus...](https://github.com/avajs/awesome-ava#packages)
 
 ## Liens
 
 - [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
-- [La liste Awesome](https://github.com/sindresorhus/awesome-ava)
+- [La liste Awesome](https://github.com/avajs/awesome-ava)
+- [JavaScript Air podcast episode](http://jsair.io/ava)
 
 ## L'équipe
 
-[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net)
----|---|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net)
+[![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net) | [![Juan Soto](https://avatars.githubusercontent.com/u/8217766?s=130)](https://juansoto.me) | [![Jeroen Engels](https://avatars.githubusercontent.com/u/3869412?s=130)](https://github.com/jfmengels)
+---|---|---|---|---|---|---
+[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net) | [Juan Soto](http://juansoto.me) | [Jeroen Engels](https://github.com/jfmengels)
 
 ### Auparavant dans l'équipe
 
 - [Kevin Mårtensson](https://github.com/kevva)
 
+
 <div align="center">
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/sindresorhus/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<a href="https://ava.li">
+		<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	</a>
 	<br>
 	<br>
 </div>

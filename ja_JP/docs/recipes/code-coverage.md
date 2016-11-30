@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6)になります(このリンクをクリックして、`code-coverage.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6)になります(このリンクをクリックして、`code-coverage.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # コードカバレッジ
@@ -178,6 +178,6 @@ after_success:
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[isolated-env]: https://github.com/sindresorhus/ava#isolated-environment
+[isolated-env]: https://github.com/avajs/ava#isolated-environment
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc
