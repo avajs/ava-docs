@@ -1,11 +1,11 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...master#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...master#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
 ___
 # Режим наблюдения
 
-Translations: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
 
 В AVA включен интеллектуальный режим наблюдения. Режим наблюдения отслеживает все изменения в файлах и запускает необходимые тесты.
 
@@ -95,9 +95,9 @@ $ npm test -- --watch
 
 ## Помогите нам сделать режим наблюдения лучше
 
-Режим наблюдения является достаточно новым и может содержать ошибки, работать некорректно и так далее. Пожалуйста,  [сообщайте](https://github.com/sindresorhus/ava/issues) о любых проблемах, с которыми пришлось столкнуться. Спасибо!
+Режим наблюдения является достаточно новым и может содержать ошибки, работать некорректно и так далее. Пожалуйста,  [сообщайте](https://github.com/avajs/ava/issues) о любых проблемах, с которыми пришлось столкнуться. Спасибо!
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[`--require` CLI flag]: https://github.com/sindresorhus/ava#cli
-[`--source` CLI flag]: https://github.com/sindresorhus/ava#cli
+[`--require` CLI flag]: https://github.com/avajs/ava#cli
+[`--source` CLI flag]: https://github.com/avajs/ava#cli

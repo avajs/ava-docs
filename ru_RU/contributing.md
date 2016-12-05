@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md). Если при нажатии на [ссылку](https://github.com/sindresorhus/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-cc4aac3e9be04e0413c9520f223b493c), содержащую последние правки в master ветке AVA, Вы не можете найти файл `contributing.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-cc4aac3e9be04e0413c9520f223b493c), содержащую последние правки в master ветке AVA, Вы не можете найти файл `contributing.md`, то можете считать что перевод актуален.
 ___
 # Вклад в AVA
 
@@ -9,13 +9,13 @@ ___
 
 Пожалуйста обратите внимание, что этот проект выпущен с [Кодексом Поведения участника](code-of-conduct.md). Участвуя в этом проекте, Вы соглашаетесь с этими условиями.
 
-Переводы: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
+Переводы: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md)
 
 ## Как я могу помочь?
 
 ### Улучшить документацию
 
-Как пользователь AVA - Вы отлично подходите для помощи с улучшением документации. Исправить опечатки, поправить ошибки, улучшить объяснение, добавить новые примеры и т.д. Откройте вопрос для обсуждения вещей, которые могут быть улучшены. [Помогите перевести документацию.](https://github.com/sindresorhus/ava-docs) Все что угодно. Даже улучшить этот документ.
+Как пользователь AVA - Вы отлично подходите для помощи с улучшением документации. Исправить опечатки, поправить ошибки, улучшить объяснение, добавить новые примеры и т.д. Откройте вопрос для обсуждения вещей, которые могут быть улучшены. [Помогите перевести документацию.](https://github.com/avajs/ava-docs) Все что угодно. Даже улучшить этот документ.
 
 ### Улучшить вопросы
 
@@ -27,11 +27,11 @@ ___
 
 ### Общаться в нашем чате
 
-У нас есть [чат](https://gitter.im/sindresorhus/ava). Присоединяйтесь, общайтесь и помогайте другим.
+У нас есть [чат](https://gitter.im/avajs/ava). Присоединяйтесь, общайтесь и помогайте другим.
 
 ### Задайте вопрос
 
-- У нас есть трекер вопросов. Используйте наш [чат](https://gitter.im/sindresorhus/ava) или [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) для поддержки.
+- У нас есть трекер вопросов. Используйте наш [чат](https://gitter.im/avajs/ava) или [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) для поддержки.
 - Поищите интересующий Вас вопрос в трекере, перед тем, как открыть новый.
 - Удостоверьтесь, что Вы используете последнюю версию AVA.
 - Используйте понятный и информативный заголовок.

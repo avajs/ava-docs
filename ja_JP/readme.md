@@ -1,14 +1,14 @@
 ___
 **訳注**
 
-これは[readme.md](https://github.com/sindresorhus/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[readme.md](https://github.com/avajs/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
-# ![AVA](https://github.com/sindresorhus/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
 
 > 未来型のテストランナー
 
-[![Build Status: Linux](https://travis-ci.org/sindresorhus/ava.svg?branch=master)](https://travis-ci.org/sindresorhus/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/sindresorhus/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/sindresorhus/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/sindresorhus/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/sindresorhus/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/avajs/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/avajs/ava)
 
 JavaScript自体はシングルスレッドですが、Node.jsにおけるIOは、その非同期の性質によって並列で実行可能です。AVAは、この事が利点であり、テストを同時に実行することができ、特にIOが重いテストで効果があります。また、テストファイルは独立したプロセスで並列して実行することで、より良いパフォーマンスと各テストファイル毎に分離された環境にすることができます。PagresにおけるMochaからAVAへの[切り替え](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)によって、テストにかかる時間を31秒から11秒まで減らしました。並列実行するテストにすると、大域の状態や他のテストの状態から影響を受けないことを意味するようになる粒度が極小のテストを書くようになります。これはすごい事ですよね!
 
@@ -16,7 +16,7 @@ JavaScript自体はシングルスレッドですが、Node.jsにおけるIOは�
 
 アップデートの情報のために[AVAのTwitterアカウント](https://twitter.com/ava__js)をフォローしてください。
 
-翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/readme.md)
+翻訳: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md)
 
 
 ## 目次
@@ -96,7 +96,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
 
 #### 実行
 
@@ -355,7 +355,7 @@ test.only.serial(...);
 
 ### カスタムアサーションモジュール
 
-AVAのデフォルトに加えて、または代わりとしてどのようなアサーションモジュールを利用することも可能ですが、[今はまだ](https://github.com/sindresorhus/ava/issues/25)`.plan()`メソッドを使うことはできません。
+AVAのデフォルトに加えて、または代わりとしてどのようなアサーションモジュールを利用することも可能ですが、[今はまだ](https://github.com/avajs/ava/issues/25)`.plan()`メソッドを使うことはできません。
 
 ```js
 import assert from 'assert';
@@ -385,7 +385,7 @@ test('foo bar', t => {
 });
 ```
 
-[#111](https://github.com/sindresorhus/ava/issues/111)が、将来性のある拡張として、議論されています。
+[#111](https://github.com/avajs/ava/issues/111)が、将来性のある拡張として、議論されています。
 
 
 ### Promiseのサポート
@@ -466,13 +466,13 @@ AVAは`--tap`オプションの指定でどのような[TAPレポーター](http
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/sindresorhus/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
 
 ### 明快なスタックトレース
 
 エラーの箇所をより素早く見つけられるように、AVAはスタックトレースから自動的に無関係の行を取り除きます。
 
-<img src="https://github.com/sindresorhus/ava/raw/master/media/stack-traces.png" width="398">
+<img src="https://github.com/avajs/ava/raw/master/media/stack-traces.png" width="398">
 
 ## API
 
@@ -686,7 +686,7 @@ Mochaはデフォルトのインターフェース(多くの人々が利用し�
 
 ### 名前はどのように書いて、どう発音するのか?
 
-AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https://github.com/sindresorhus/ava/blob/master/media/pronunciation.m4a?raw=true)です。
+AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)です。
 
 ### ヘッダーの背景は何?
 
@@ -705,15 +705,15 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 ## サポート
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter chat](https://gitter.im/sindresorhus/ava)
+- [Gitter chat](https://gitter.im/avajs/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 
 ## 関連リンク
 
-- [gulp-ava](https://github.com/sindresorhus/gulp-ava) - gulpでテストを実行
-- [grunt-ava](https://github.com/sindresorhus/grunt-ava) - gruntでテストを実行
-- [fly-ava](https://github.com/pine613/fly-ava) - flyでテストを実行
+- [gulp-ava](https://github.com/avajs/gulp-ava) - gulpでテストを実行
+- [grunt-ava](https://github.com/avajs/grunt-ava) - gruntでテストを実行
+- [fly-ava](https://github.com/pine/fly-ava) - flyでテストを実行
 - [start-ava](https://github.com/start-runner/ava) - startでテストを実行
 
 ## リンク
@@ -734,7 +734,7 @@ AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https:/
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/sindresorhus/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
 	<br>
 	<br>
 </div>

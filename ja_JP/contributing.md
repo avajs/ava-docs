@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[contributing.md](https://github.com/sindresorhus/ava/blob/master/contributing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/sindresorhus/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-cc4aac3e9be04e0413c9520f223b493c)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[contributing.md](https://github.com/avajs/ava/blob/master/contributing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-cc4aac3e9be04e0413c9520f223b493c)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # AVAにコントリビュートするために
@@ -10,13 +10,13 @@ ___
 
 このプロジェクトは[コントリビューターの行動規範](code-of-conduct.md)に基づいてリリースされます。プロジェクトに参加することにより、この行動規範に従うことを同意することになります。
 
-翻訳: [Español](https://github.com/sindresorhus/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/sindresorhus/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/sindresorhus/ava-docs/blob/master/pt_BR/contributing.md)
+翻訳: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md)
 
 ## どうやってコントリビュートできますか？
 
 ### ドキュメントの改善
 
-AVAのユーザーとして、ドキュメントを改善することは完璧に私たちの手助けになります。タイポの修正、エラーの修正、より良い説明、より多くの例、など。改善できることについてissueを作成してください。[私たちのドキュメントを翻訳するのを手伝ってください。](https://github.com/sindresorhus/ava-docs)何でもいいです。このドキュメントの改善でも。
+AVAのユーザーとして、ドキュメントを改善することは完璧に私たちの手助けになります。タイポの修正、エラーの修正、より良い説明、より多くの例、など。改善できることについてissueを作成してください。[私たちのドキュメントを翻訳するのを手伝ってください。](https://github.com/avajs/ava-docs)何でもいいです。このドキュメントの改善でも。
 
 ### issueの改善
 
@@ -28,11 +28,11 @@ AVAのユーザーとして、ドキュメントを改善することは完璧�
 
 ### チャットで話しましょう
 
-[チャット](https://gitter.im/sindresorhus/ava)があります。参加して、話しかけて、みんなを手助けしてください。
+[チャット](https://gitter.im/avajs/ava)があります。参加して、話しかけて、みんなを手助けしてください。
 
 ### issueを作成
 
-- issueトラッカーはissueのためのものです。サポートが必要なら[chat](https://gitter.im/sindresorhus/ava)か[Stack Overflow](https://stackoverflow.com/questions/tagged/ava)を利用してください。
+- issueトラッカーはissueのためのものです。サポートが必要なら[chat](https://gitter.im/avajs/ava)か[Stack Overflow](https://stackoverflow.com/questions/tagged/ava)を利用してください。
 - issueを作成する前にissueトラッカーで検索してください。
 - 最新バージョンのAVAを使用しているか確認してください。
 - 明確で叙述的な見出しをつけてください。

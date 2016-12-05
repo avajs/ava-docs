@@ -1,12 +1,12 @@
 ___
 **备注**
 
-这是 [typescript.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/typescript.md) 的简体中文翻译。这个[链接](https://github.com/sindresorhus/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-60cce07a584082115d230f2e3d571ad6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`typescript.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-60cce07a584082115d230f2e3d571ad6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`typescript.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # TypeScript
 
-翻译：[Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/sindresorhus/ava-docs/blob/master/it_IT/docs/recipes/typescript.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/sindresorhus/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
+翻译：[Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
 
 AVA 捆绑了一个 TypeScript 定义文件，让开发人员可以了解如何用 TypeScript 写测试。
 

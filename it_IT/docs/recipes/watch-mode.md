@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [watch-mode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/watch-mode.md). Qui c'è il [link](https://github.com/sindresorhus/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `watch-mode.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Qui c'è il [link](https://github.com/avajs/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `watch-mode.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Watch mode
 
-Traduzioni: [Français](https://github.com/sindresorhus/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/sindresorhus/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
 
 AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai file ed esegue solamente i test che ne sono affetti.
 
@@ -119,10 +119,10 @@ $ npm test -- --watch --verbose
 
 ## Aiutaci a migliorare la modalità watch
 
-La modalità watch è una funzionalità relativamente nuova e ci potrebbero essere ancora alcuni difetti. Per favore [notifica](https://github.com/sindresorhus/ava/issues) qualsiasi problema che riscontri. Grazie!
+La modalità watch è una funzionalità relativamente nuova e ci potrebbero essere ancora alcuni difetti. Per favore [notifica](https://github.com/avajs/ava/issues) qualsiasi problema che riscontri. Grazie!
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[parametro CLI `--require`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli
-[parametro CLI `--source`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#cli
-[sezione `ava` del tuo file `package.json`]: https://github.com/sindresorhus/ava-docs/blob/master/it_IT/readme.md#configurazione
+[parametro CLI `--require`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#cli
+[parametro CLI `--source`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#cli
+[sezione `ava` del tuo file `package.json`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#configurazione
