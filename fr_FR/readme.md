@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/09bf88a1e0065de05ea67fa1add0581480eb842d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/410cb8d3b1bb70b48dd305b0bc69843579f9205d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -93,7 +93,7 @@ Votre `package.json` ressemblera alors à ceci :
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^0.15.0"
+    "ava": "^0.17.0"
   }
 }
 ```
@@ -158,18 +158,19 @@ $ ava --help
     ava [<file|directory|glob> ...]
 
   Options
-    --init             Add AVA to your project (Ajouter AVA à votre projet)
-    --fail-fast        Stop after first test failure (Arrêter dès qu'un test échoue)
-    --serial, -s       Run tests serially (Lancer les tests en série)
-    --tap, -t          Generate TAP output (Générer une sortie au format TAP)
-    --verbose, -v      Enable verbose output (Activer le mode verbose)
-    --no-cache         Disable the transpiler cache (Désactive le cache du transpileur)
-    --no-power-assert  Disable Power Assert (Désactive Power Assert)
-    --match, -m        Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
-    --watch, -w        Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
-    --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
-    --timeout, -T      Set global timeout (Définit un timeout global)
-    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
+    --init                  Add AVA to your project (Ajouter AVA à votre projet)
+    --fail-fast             Stop after first test failure (Arrêter dès qu'un test échoue)
+    --serial, -s            Run tests serially (Lancer les tests en série)
+    --tap, -- [ ]           Generate TAP output (Générer une sortie au format TAP)
+    --verbose, -v           Enable verbose output (Activer le mode verbose)
+    --no-cache              Disable the transpiler cache (Désactiver le cache du transpileur)
+    --no-power-assert       Disable Power Assert (Désactiver Power Assert)
+    --match, -m             Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
+    --watch, -w             Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
+    --source, -S            Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
+    --timeout, -T           Set global timeout (Définir un timeout global)
+    --concurrency, -c       Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
+    --update-snapshots, -u  Update all snapshots (Mettre à jour tous les snapshots)
 
   Examples (Exemples)
     ava
@@ -739,7 +740,7 @@ Consultez la [recette TypeScript](docs/recipes/typescript.md) pour une explicati
 
 #### Transpilation des modules importés
 
-AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
+AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter, ainsi que les helpers de test (les fichiers commençant par `_` ou dans le répertoire `helpers`) dans le répertoire de test. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
 
 Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter,  [configurez le dans votre `package.json`](#configuration).
 
@@ -969,6 +970,56 @@ Affirme que `contents` ne correspond pas à `regex`.
 
 Affirme que `error` est falsy.
 
+### `.snapshot(contents, [message])`
+
+Fait un instantané (snapshot) de `contents` sous le format d'une chaine.
+
+## Test d'instantané
+
+Le test d'instantané se présente comme une autre assertion et utilise [jest-snapshot](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) sous le capot.
+
+Lorsqu'il est utilisé avec React, il ressemble beaucoup à Jest :
+
+```js
+// votre composant
+const HelloWorld = () => <h1>Hello World...!</h1>;
+
+export default HelloWorld;
+```
+
+```js
+// votre test
+import test from 'ava';
+import render from 'react-test-renderer';
+
+import HelloWorld from './';
+
+test('HelloWorld component', t => {
+  const tree = render.create(<HelloWorld />).toJSON();
+  t.snapshot(tree);
+});
+```
+
+La première fois que vous exécuterez ce test, un fichier snapshot sera créé dans le dossier `__snapshots__` et ressemblera à ceci :
+
+```
+exports[`HelloWorld component 1`] = `
+<h1>
+  Hello World...!
+</h1>
+`;
+```
+
+Ces instantanés doivent être committés avec votre code de sorte que l'état actuel de l'application soit partagée avec tout le monde de l'équipe.
+
+Chaque fois que vous exécuterez ce test par la suite, il vérifiera si le rendu du composant a changé. Si c'est le cas, il fera échouer le test. Vous aurez alors le choix de vérifier votre code - et si la modification a été intentionnelle, vous pouvez utiliser l'indicateur `--update-snapshots` (ou `-u`) pour mettre à jour les instantanés dans leur nouvelle version.
+
+Cela pourrait ressembler à ceci :
+
+`$ ava --update-snapshots`
+
+Veuillez noter que les instantanés peuvent être utilisés pour bien plus de choses que des tests de composants - vous pouvez également tester toute autre structure (de données) que vous pouvez mettre sous forme de chaines.
+
 ## Assertions ignorées
 
 Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les assertions ignorées sont encore comptées, donc il n'y a pas besoin de changer le nombre d'assertion dans `plan`.
@@ -1102,6 +1153,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
 - [La liste Awesome](https://github.com/avajs/awesome-ava)
 - [JavaScript Air podcast episode](http://jsair.io/ava)
+- [AVA Casts](http://avacasts.com)
 
 ## L'équipe
 
