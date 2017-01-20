@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/5158ac8bb0d0a79acde12c1bf6dfc1bbf32fd71e...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/ad5122d507bfaa044fc3a2e51e467238e16dba11...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -19,18 +19,18 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
 
 ## Comportement par défaut du transpileur de AVA
 
-Par défaut, AVA transpile vos tests (et uniquement vos tests) en utilisant les presets de Babel [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) sur Node.js 4 ou [`node6`](https://github.com/salakar/babel-preset-node6) sur Node.js 6 et supérieur ainsi que [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/). C'est une bonne option pour des petits modules où vous ne souhaitez pas construire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
+Par défaut, AVA transpile vos tests et vos helpers en utilisant le preset de Babel [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). C'est une bonne option pour des petits modules où vous ne souhaitez pas construire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
 
 ## Personnaliser la manière dont AVA transpile vos tests
 
-Vous pouvez remplacer la configuration par défaut de Babel dans le `package.json` pour que AVA l'utilise pour la transpilation des tests. Par exemple, la configuration ci-dessous ajoute le plugin Babel `rewire` et les options pour utiliser uniquement le preset [`stage-3`](http://babeljs.io/docs/plugins/preset-stage-3/) (qui est un sous-ensemble de [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/)).
+Vous pouvez remplacer la configuration par défaut de Babel dans le `package.json` pour que AVA l'utilise pour la transpilation des tests. Par exemple, la configuration ci-dessous ajoute le plugin Babel `rewire` et ajoute le preset de Babel [`stage-3`](http://babeljs.io/docs/plugins/preset-stage-3/).
 
 ```json
 {
   "ava": {
     "babel": {
       "plugins": ["rewire"],
-      "presets": ["es2015-node4", "stage-3"]
+      "presets": ["@ava/stage-4", "stage-3"]
     }
   }
 }
@@ -48,7 +48,7 @@ Pour transpiler vos sources, vous aurez besoin de définir une [`config babel` ]
     "require": ["babel-register"]
   },
   "babel": {
-    "presets": ["es2015-node4"]
+    "presets": ["@ava/stage-4"]
   }
 }
 ```
@@ -68,12 +68,12 @@ Utilisez le raccourci `"inherit"` si vous voulez que vos tests soient transpilé
     "babel": "inherit"
   },
   "babel": {
-    "presets": ["es2015-node4", "react"]
+    "presets": ["@ava/stage-4", "react"]
   }
 }
 ```
 
-Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisant les presets [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) et [`react`](http://babeljs.io/docs/plugins/preset-react/).
+Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisant les presets [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/).
 
 ## Étendre la configuration de transpilation de vos sources
 
@@ -92,12 +92,12 @@ En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `ba
 		}
   },
   "babel": {
-    "presets": ["es2015-node4", "react"]
+    "presets": ["@ava/stage-4", "react"]
 	}
 }
 ```
 
-Dans l'exemple ci-dessus, les *sources* sont compilées en utilisant [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) et [`react`](http://babeljs.io/docs/plugins/preset-react/), les *tests* utilisent les mêmes plugins avec en plus des plugins spécifiés `custom`.
+Dans l'exemple ci-dessus, les *sources* sont compilées en utilisant [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/), les *tests* utilisent les mêmes plugins avec en plus des plugins spécifiés `custom`.
 
 ## Étendre un fichier de config alternatif
 
