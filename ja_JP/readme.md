@@ -10,7 +10,7 @@ ___
 
 [![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/igogxrcmhhm085co/branch/master?svg=true)](https://ci.appveyor.com/project/avajs/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_AVA_chat_%E2%86%92-00d06f.svg)](https://gitter.im/avajs/ava)
 
-JavaScript自体はシングルスレッドですが、Node.jsにおけるIOは、その非同期の性質によって並列で実行可能です。AVAは、この事が利点であり、テストを同時に実行することができ、特にIOが重いテストで効果があります。また、テストファイルは独立したプロセスで並列して実行することで、より良いパフォーマンスと各テストファイル毎に分離された環境にすることができます。PagresにおけるMochaからAVAへの[切り替え](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)によって、テストにかかる時間を31秒から11秒まで減らしました。並列実行するテストにすると、大域の状態や他のテストの状態から影響を受けないことを意味するようになる粒度が極小のテストを書くようになります。これはすごい事ですよね!
+JavaScript自体はシングルスレッドですが、Node.jsにおけるIOは、その非同期の性質によって並列で実行可能です。AVAは、この事が利点であり、テストを同時に実行することができ、特にIOが重いテストで効果があります。また、テストファイルは独立したプロセスで並列して実行することで、より良いパフォーマンスと各テストファイル毎に分離された環境にすることができます。PageresにおけるMochaからAVAへの[切り替え](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)によって、テストにかかる時間を31秒から11秒まで減らしました。並列実行するテストにすると、大域の状態や他のテストの状態から影響を受けないことを意味するようになる粒度が極小のテストを書くようになります。これはすごい事ですよね!
 
 *Issueやプルリクエストなどで貢献したい場合は、[コントリビューションガイド](contributing.md)を読んでください。
 
