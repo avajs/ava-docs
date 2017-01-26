@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/410cb8d3b1bb70b48dd305b0bc69843579f9205d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/872d2edb938ab1104b304f25aa586833b9875030...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -45,7 +45,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - Application de l'écriture des tests atomiques
 - Aucunes globales implicites
 - [Environnement isolé pour chaque fichier de test](#isolement-du-processus)
-- [Écriture de vos tests en ES2015](#prise-en-charge-de-es2015)
+- [Écriture de vos tests en ES2017](#prise-en-charge-de-es2017)
 - [Prise en charge des promesses](#prise-en-charge-des-promesses)
 - [Prise en charge des fonctions génératrices](#prise-en-charge-des-fonctions-génératrices)
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
@@ -79,7 +79,7 @@ $ ava --init
 
 Si vous préférez l'utilisation de npm :
 
-```
+```console
 $ npm install --global ava
 $ ava --init
 ```
@@ -114,8 +114,7 @@ Alternativement en utilisant npm :
 $ npm install --save-dev ava
 ```
 
-Vous devez configurer le script `test` dans votre `package.json` pour utiliser `ava`
-(Voir ci-dessus).
+Vous devez configurer le script `test` dans votre `package.json` pour utiliser `ava` (Voir ci-dessus).
 
 #### Créez votre fichier de test
 
@@ -161,7 +160,7 @@ $ ava --help
     --init                  Add AVA to your project (Ajouter AVA à votre projet)
     --fail-fast             Stop after first test failure (Arrêter dès qu'un test échoue)
     --serial, -s            Run tests serially (Lancer les tests en série)
-    --tap, -- [ ]           Generate TAP output (Générer une sortie au format TAP)
+    --tap, -t               Generate TAP output (Générer une sortie au format TAP)
     --verbose, -v           Enable verbose output (Activer le mode verbose)
     --no-cache              Disable the transpiler cache (Désactiver le cache du transpileur)
     --no-power-assert       Disable Power Assert (Désactiver Power Assert)
@@ -170,7 +169,7 @@ $ ava --help
     --source, -S            Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
     --timeout, -T           Set global timeout (Définir un timeout global)
     --concurrency, -c       Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
-    --update-snapshots, -u  Update all snapshots (Mettre à jour tous les snapshots)
+    --update-snapshots, -u  Update all snapshots (Mettre à jour les snapshots)
 
   Examples (Exemples)
     ava
@@ -271,7 +270,7 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
 
 Les arguments passés au CLI seront toujours prioritaires sur ceux de la configuration dans `package.json`.
 
-Voir la section [prise en charge de ES2015](#prise-en-charge-de-es2015) pour plus de détails sur l'option `babel`.
+Voir la section [prise en charge de ES2017](#prise-en-charge-de-es2017) pour plus de détails sur l'option `babel`.
 
 ## Documentation
 
@@ -279,7 +278,7 @@ Les tests sont exécutés simultanément. Vous pouvez spécifier des tests synch
 
 Nous recommandons *fortement* l'utilisation de [fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones). Elles rendent le code asynchrone concis et lisible, et elles retournent implicitement une promesse, donc vous n'avez pas à le faire.
 
-Si vous n'avez pas la possibilité d'utiliser des promesses ou des observables, vous pouvez activer le "mode callback" en définissant votre test avec `test.cb([title], fn)`. Les tests déclarés de cette manière **doivent** être terminés manuellement avec `t.end()`. Ce mode est principalement destiné pour tester les APIs de style callback.
+Si vous n'avez pas la possibilité d'utiliser des promesses ou des observables, vous pouvez activer le "mode callback" en définissant votre test avec `test.cb([title], fn)`. Les tests déclarés de cette manière **doivent** être terminés manuellement avec `t.end()`. Ce mode est principalement destiné pour tester les APIs de style callback. Cependant, nous vous recommandons vivement d'utiliser les API [promisifying](https://github.com/sindresorhus/pify) de style callback au lieu d'utiliser le "mode callback", car cela donne des tests plus corrects et plus lisibles.
 
 Vous devez définir tous les tests de manière synchrone. Ils ne peuvent pas être définis à l'intérieur de `setTimeout`, `setImmediate`, etc.
 
@@ -355,7 +354,7 @@ test(t => {
 	for (let i = 0; i < 3; i++) {
 		t.true(i < 3);
 	}
-}); // échec, 3 assertions de trop sont exécutées
+}); // Echec, 3 assertions de trop sont exécutées
 
 test(t => {
 	t.plan(1);
@@ -363,7 +362,7 @@ test(t => {
 	someAsyncFunction(() => {
 		t.pass();
 	});
-}); // échec, le test se termine de façon synchrone avant que l'assertion soit exécutée
+}); // Echec, le test se termine de façon synchrone avant que l'assertion soit exécutée
 ```
 
 ### Exécution des tests en série
@@ -459,12 +458,12 @@ test.only('boo s\'exécutera mais pas de manière exclusive', t => {
 	t.pass();
 });
 
-// ne s'exécutera pas, car n'a pas de titre
+// Ne s'exécutera pas, car n'a pas de titre
 test(function (t) {
 	t.fail();
 });
 
-// ne s'exécutera pas, car n'a pas de titre explicite
+// Ne s'exécutera pas, car n'a pas de titre explicite
 test(function foo(t) {
 	t.fail();
 });
@@ -519,35 +518,35 @@ Les hooks `before` s'exécutent avant les hooks `beforeEach`. Les hooks `afterEa
 
 ```js
 test.before(t => {
-	// cela s'exécute avant tous les tests
+	// Cela s'exécute avant tous les tests
 });
 
 test.before(t => {
-	// cela s'exécute après ce qui précède, mais avant les tests
+	// Cela s'exécute après ce qui précède, mais avant les tests
 });
 
 test.after('cleanup', t => {
-	// cela s'exécute après tous les tests
+	// Cela s'exécute après tous les tests
 });
 
 test.after.always('guaranteed cleanup', t => {
-	// cela s'exécutera toujours, indépendamment des erreurs précédentes
+	// Cela s'exécutera toujours, indépendamment des erreurs précédentes
 });
 
 test.beforeEach(t => {
-	// cela s'exécute avant chaque test
+	// Cela s'exécute avant chaque test
 });
 
 test.afterEach(t => {
-	// cela s'exécute après chaque test
+	// Cela s'exécute après chaque test
 });
 
 test.afterEach.always(t => {
-	// cela s'exécute après chaque test et autres hooks de test, même s'ils échouent
+	// Cela s'exécute après chaque test et autres hooks de test, même s'ils échouent
 });
 
 test(t => {
-	// test normal
+	// Test normal
 });
 ```
 
@@ -676,9 +675,9 @@ test(t => {
 });
 ```
 
-### Prise en charge de ES2015
+### Prise en charge de ES2017
 
-AVA est livré avec un support intégré pour ES2015 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2015. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec les presets [`es2015`](http://babeljs.io/docs/plugins/preset-es2015/) et [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/) ainsi que les plugins [`espower`](https://github.com/power-assert-js/babel-plugin-espower) et [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/).
+AVA est livré avec un support intégré pour ES2017 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2017. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec les presets [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`stage-2`](https://babeljs.io/docs/plugins/preset-stage-2/) ainsi que des [transformations personnalisées](https://github.com/avajs/babel-preset-transform-test-files) pour les fichier test et helper.
 
 La configuration de Babel correspondante à la configuration de AVA est la suivante :
 
@@ -687,10 +686,6 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
   "presets": [
     "es2015",
     "stage-2"
-  ],
-  "plugins": [
-    "espower",
-    "transform-runtime"
   ]
 }
 ```
@@ -699,15 +694,15 @@ Vous pouvez personnaliser la façon dont AVA transpile les fichiers de test grâ
 
 ```json
 {
-	"ava": {
-		 "babel": {
-			 "presets": [
-					"es2015",
-					"stage-0",
-					"react"
-			 ]
-		 }
-	},
+  "ava": {
+     "babel": {
+       "presets": [
+          "es2015",
+          "stage-0",
+          "react"
+       ]
+     }
+  }
 }
 ```
 
@@ -715,16 +710,16 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 
 ```json
 {
-	"babel": {
-		"presets": [
-			"es2015",
-			"stage-0",
-			"react"
-		]
-	},
-	"ava": {
-		"babel": "inherit"
-	},
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ]
+  },
+  "ava": {
+    "babel": "inherit"
+  }
 }
 ```
 
@@ -797,7 +792,7 @@ test(t => {
 	t.plan(3);
 	return Observable.of(1, 2, 3, 4, 5, 6)
 		.filter(n => {
-			// seulement les nombres pairs
+			// Seulement les nombres pairs
 			return n % 2 === 0;
 		})
 		.map(() => t.pass());
@@ -810,7 +805,7 @@ AVA prend en charge l'utilisation de `t.end` comme callback final lors de l'util
 
 ```js
 test.cb(t => {
-	// t.end vérifie automatiquement le premier argument pour l'erreur
+	// `t.end` vérifie automatiquement le premier argument pour l'erreur
 	fs.readFile('data.txt', t.end);
 });
 ```
@@ -823,7 +818,7 @@ AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arr
 
 Vous pouvez définir des délais qui soient lisibles :
 
-```
+```console
 $ ava --timeout=10s # 10 secondes
 $ ava --timeout=2m # 2 minutes
 $ ava --timeout=100 # 100 millisecondes
@@ -875,7 +870,7 @@ Les assertions sont incluses dans l'[objet d'exécution](#t) fourni à chaque im
 
 ```js
 test(t => {
-	t.truthy('unicorn'); // assertion
+	t.truthy('unicorn'); // Assertion
 });
 ```
 
@@ -981,14 +976,14 @@ Le test d'instantané se présente comme une autre assertion et utilise [jest-sn
 Lorsqu'il est utilisé avec React, il ressemble beaucoup à Jest :
 
 ```js
-// votre composant
+// Votre composant
 const HelloWorld = () => <h1>Hello World...!</h1>;
 
 export default HelloWorld;
 ```
 
 ```js
-// votre test
+// Votre test
 import test from 'ava';
 import render from 'react-test-renderer';
 
@@ -1016,7 +1011,9 @@ Chaque fois que vous exécuterez ce test par la suite, il vérifiera si le rendu
 
 Cela pourrait ressembler à ceci :
 
-`$ ava --update-snapshots`
+```console
+$ ava --update-snapshots
+```
 
 Veuillez noter que les instantanés peuvent être utilisés pour bien plus de choses que des tests de composants - vous pouvez également tester toute autre structure (de données) que vous pouvez mettre sous forme de chaines.
 
@@ -1027,7 +1024,7 @@ Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les ass
 ```js
 +test(t => {
 	t.plan(2);
-	t.skip.is(foo(), 5); // pas besoin de changer le nombre d'assertion dans `plan`.
+	t.skip.is(foo(), 5); // Pas besoin de changer le nombre d'assertion dans `plan`.
 	t.is(1, 1);
 });
 ```
@@ -1137,23 +1134,20 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 
 ## En relation
 
+- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Règles de Lint pour les tests AVA
 - [sublime-ava](https://github.com/avajs/sublime-ava) - Snippets pour les tests AVA
 - [atom-ava](https://github.com/avajs/atom-ava) - Snippets pour les tests AVA
 - [vscode-ava](https://github.com/samverschueren/vscode-ava) - Snippets pour les tests AVA
-- [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Règles de Lint pour les tests AVA
 - [gulp-ava](https://github.com/avajs/gulp-ava) - Exécutez les tests avec gulp
 - [grunt-ava](https://github.com/avajs/grunt-ava) - Exécutez les tests avec grunt
-- [fly-ava](https://github.com/pine/fly-ava) - Exécutez les tests avec fly
-- [start-ava](https://github.com/start-runner/ava) - Exécutez les tests avec start
-
-[Plus...](https://github.com/avajs/awesome-ava#packages)
+- [Plus…](https://github.com/avajs/awesome-ava#packages)
 
 ## Liens
 
 - [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
 - [La liste Awesome](https://github.com/avajs/awesome-ava)
-- [JavaScript Air podcast episode](http://jsair.io/ava)
 - [AVA Casts](http://avacasts.com)
+- [Plus…](https://github.com/avajs/awesome-ava)
 
 ## L'équipe
 

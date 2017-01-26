@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/c258d037b1deb9028b80bd710483cf2074df97cb...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/173da288adaba17bcc2ce88f76ddfcb8dfc1eb8f...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -87,6 +87,10 @@ La surveillance de dépendance fonctionne pour les modules exigés (require). Le
 ## Le mode watch et `.only`
 
 [`.only`] désactive l'algorithme de suivi des dépendances du mode watch. Lorsqu'une modification est effectuée, tous les tests avec `.only` seront ré-exécutés, indépendamment du fait que le test dépend du fichier modifié.
+
+## Mode watch et CI
+
+Si vous exécutez AVA dans votre CI avec le mode watch, l'exécution s'arrêtera avec une erreur (`Error : Watch mode is not available in CI, as it prevents AVA from terminating.`). AVA ne s'exécutera pas avec l'option `--watch` (`-w`) dans le CI, car les processus du CI doivent se terminer et avec l'option `--watch`, AVA ne se terminera jamais.
 
 ## Relancer manuellement tous les tests
 
