@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/173da288adaba17bcc2ce88f76ddfcb8dfc1eb8f...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/34bebc450d7ee6fef99684a5a7c0aea67695b772...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -72,11 +72,11 @@ Dans AVA, il y a un distinction entre les *fichiers source* et les *fichiers de 
 
 Par défaut AVA surveille les modifications des fichiers de test, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
-Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`. Ceci est la méthode recommandée, mais vous pouvez aussi utilisez [l'option `--source` du CLI].
+Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`.
 
 Vous pouvez spécifier des patterns pour rechercher des fichiers dans les dossiers qui sont normalement ignorés, par exemple, utilisez `node_modules/some-dependency/*.js` pour spécifier tous les fichiers `.js` dans `node_modules/some-dependency` comme une source, même si normalement tous les fichiers dans `node_modules` sont ignorés.  Notez que vous devez spécifier un répertoire exact : `{bower_components,node_modules}/**/*.js` ne fonctionnera pas.
 
-Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Si cela se produit, vous devrez utiliser l'option `--source`.
+Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Configurez des patterns pour les fichiers source afin d'éviter cela.
 
 ## La surveillance de dépendance
 
@@ -118,7 +118,6 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [Install Troubleshooting]: https://github.com/paulmillr/chokidar#install-troubleshooting
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[l'option `--source` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
 [`.only`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
 [section `ava` de votre `package.json`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration
 [vous les ajoutiez dans votre `package.json`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration

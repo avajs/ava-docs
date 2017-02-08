@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/872d2edb938ab1104b304f25aa586833b9875030...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/5c4c2707a95ff8b5027f84a2f323c6f3082e7213...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -19,6 +19,7 @@ Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à
 
 Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
+
 ## Contenus
 
 - [Utilisation](#utilisation)
@@ -29,6 +30,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Documentation](#documentation)
 - [API](#api)
 - [Assertions](#assertions)
+- [Test d'instantané](#test-dinstantané)
 - [Astuces](#astuces)
 - [FAQ](#faq)
 - [Recettes](#recettes)
@@ -37,6 +39,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Liens](#liens)
 - [L'équipe](#léquipe)
 
+
 ## Pourquoi AVA ?
 
 - Minimal et rapide
@@ -44,6 +47,8 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - Exécution des tests simultanément
 - Application de l'écriture des tests atomiques
 - Aucunes globales implicites
+- Inclus les définitions des types pour TypeScript & Flow
+- [Magic assert](#magic-assert)
 - [Environnement isolé pour chaque fichier de test](#isolement-du-processus)
 - [Écriture de vos tests en ES2017](#prise-en-charge-de-es2017)
 - [Prise en charge des promesses](#prise-en-charge-des-promesses)
@@ -52,8 +57,8 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
 - [Reporter de TAP](#reporter-de-tap)
-- [Nettoyage de la stack trace](#nettoyage-de-la-stack-trace)
 - [Migration automatique depuis un autre exécuteur de test](https://github.com/avajs/ava-docs/blob/master/fr_FR/related/ava-codemods/readme.md#migration-vers-ava)
+
 
 ## Syntaxe d'un Test
 
@@ -93,7 +98,7 @@ Votre `package.json` ressemblera alors à ceci :
     "test": "ava"
   },
   "devDependencies": {
-    "ava": "^0.17.0"
+    "ava": "^0.18.0"
   }
 }
 ```
@@ -164,9 +169,9 @@ $ ava --help
     --verbose, -v           Enable verbose output (Activer le mode verbose)
     --no-cache              Disable the transpiler cache (Désactiver le cache du transpileur)
     --no-power-assert       Disable Power Assert (Désactiver Power Assert)
+    --no-color              Disable color output (Désactiver l'affichage avec des couleurs)
     --match, -m             Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
     --watch, -w             Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
-    --source, -S            Pattern to match source files so tests can be re-run (Can be repeated) (Pattern pour rechercher les fichiers sources afin de re-exécuter les tests (peut être répété))
     --timeout, -T           Set global timeout (Définir un timeout global)
     --concurrency, -c       Maximum number of test files running at the same time (EXPERIMENTAL) (Nombre maximal des fichiers de test exécutés en même temps (EXPÉRIMENTAL))
     --update-snapshots, -u  Update all snapshots (Mettre à jour les snapshots)
@@ -230,11 +235,15 @@ $ ava --tap | tap-nyan
 
 Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
 
+### Magic assert
+
+AVA ajoute les extraits de code et les différences pour les valeurs réelles et attendues. Si les valeurs dans l'assertion sont des objets ou des tableaux, seule la différence est affichée, tout ce qui ne concerne pas le sujet est enlevé, pour se concentrer uniquement sur le problème. La différence est aussi mise en évidence ! Si vous comparez des strings, à la fois sur une ou plusieurs lignes, AVA affiche un autre type de sortie, mettant en évidence les caractères supplémentaires ou manquants.
+
+![](https://github.com/avajs/ava/blob/master/media/magic-assert-combined.png)
+
 ### Nettoyage de la stack trace
 
-AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement.
-
-<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
+AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement, comme présenté ci-dessous.
 
 
 ## Configuration
@@ -987,27 +996,31 @@ export default HelloWorld;
 import test from 'ava';
 import render from 'react-test-renderer';
 
-import HelloWorld from './';
+import HelloWorld from '.';
 
 test('HelloWorld component', t => {
-  const tree = render.create(<HelloWorld />).toJSON();
-  t.snapshot(tree);
+	const tree = render.create(<HelloWorld />).toJSON();
+	t.snapshot(tree);
 });
 ```
 
 La première fois que vous exécuterez ce test, un fichier snapshot sera créé dans le dossier `__snapshots__` et ressemblera à ceci :
 
-```
+```js
 exports[`HelloWorld component 1`] = `
 <h1>
-  Hello World...!
+	Hello World...!
 </h1>
 `;
 ```
 
 Ces instantanés doivent être committés avec votre code de sorte que l'état actuel de l'application soit partagée avec tout le monde de l'équipe.
 
-Chaque fois que vous exécuterez ce test par la suite, il vérifiera si le rendu du composant a changé. Si c'est le cas, il fera échouer le test. Vous aurez alors le choix de vérifier votre code - et si la modification a été intentionnelle, vous pouvez utiliser l'indicateur `--update-snapshots` (ou `-u`) pour mettre à jour les instantanés dans leur nouvelle version.
+Chaque fois que vous exécuterez ce test par la suite, il vérifiera si le rendu du composant a changé. Si c'est le cas, il fera échouer le test.
+
+<img src="https://github.com/avajs/ava/blob/master/media/snapshot-testing.png" width="814">
+
+Vous aurez alors le choix de vérifier votre code - et si la modification a été intentionnelle, vous pouvez utiliser l'indicateur `--update-snapshots` (ou `-u`) pour mettre à jour les instantanés dans leur nouvelle version.
 
 Cela pourrait ressembler à ceci :
 
