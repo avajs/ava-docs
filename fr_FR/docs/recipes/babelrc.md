@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/ad5122d507bfaa044fc3a2e51e467238e16dba11...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/8d6f9bc2e2ed02b39e32cdf2b952b680c3b19338...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -15,7 +15,6 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
  - [Transpilation des tests et des sources de la même manière](#transpilation-des-tests-et-des-sources-de-la-même-manière)
  - [Étendre la configuration de transpilation de vos sources](#Étendre-la-configuration-de-transpilation-de-vos-sources)
  - [Étendre un fichier de config alternatif (pas `.babelrc`)](#Étendre-un-fichier-de-config-alternatif)
- - [Notes](#notes)
 
 ## Comportement par défaut du transpileur de AVA
 
@@ -120,13 +119,3 @@ Si, pour une raison quelconque, votre config Babel n'est pas spécifiée dans l'
 ```
 
 Ci-dessus, on utilise `babel-test-config.json` comme config de transpilation pour les *sources* et comme config de base pour les *tests*. Pour les *tests*, on étend la config de base avec des plugins personnalisés et des presets spécifiés.
-
-## Notes
-
-AVA ajoute *toujours* quelques plugins Babel personnalisés lors de la transpilation de vos plugins. Ils proposent une variété de fonctions :
-
- * Active le support de `power-assert`.
- * Réécrit le chemin interne des dépendances de AVA comme `babel-runtime` (important si vous utilisez encore `npm@2`).
- * [`ava-throws-helper`](https://github.com/jamestalmage/babel-plugin-ava-throws-helper) aide AVA à [détecter et à signaler](https://github.com/avajs/ava/pull/742) une mauvaise utilisation de l'assertion `t.throws`.
- * Génère des metadata de test pour déterminer quels fichiers doivent être exécutés en premier (*à venir*).
- * Analyse statique de dépendance pour la précompilation (*à venir*).
