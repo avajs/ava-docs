@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/5c4c2707a95ff8b5027f84a2f323c6f3082e7213...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/767c3f8e2c5d66613ae7dc4ef781ce3407c0b39b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -919,11 +919,15 @@ Affirme que `value` n'est pas égal à `expected`.
 
 ### `.deepEqual(value, expected, [message])`
 
-Affirme que `value` est deep equal à `expected`.
+Affirme que `value` est deep equal à `expected`. Ceci est basé sur [`isEqual()` de Lodash'](https://lodash.com/docs/4.17.4#isEqual) :
+
+> Effectue une comparaison approfondie entre deux valeurs pour déterminer si elles sont équivalentes.
+>
+> *Remarque* : Cette méthode permet de comparer les tableaux, les tableaux bufférisés, les booléens, les objets de date, les objets error, les maps, les nombres, les objets `Object`, les regex, les sets, les strings, les symboles et les tableaux typés. Les objets `Object` sont comparés par leurs propres propriétés, non héritées, énumérables. Les fonctions et les nœuds DOM sont comparés par égalité stricte, c'est-à-dire `===`.
 
 ### `.notDeepEqual(value, expected, [message])`
 
-Affirme que `value` n'est pas deep equal à `expected`.
+Affirme que `value` n'est pas deep equal à `expected`. L'inverse de `.deepEqual()`.
 
 ### `.throws(function|promise, [error, [message]])`
 
