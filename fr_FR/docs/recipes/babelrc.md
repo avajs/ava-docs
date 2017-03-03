@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/8d6f9bc2e2ed02b39e32cdf2b952b680c3b19338...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/0464b14527a7a5be805a79eff7e5c862693663c0...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -74,6 +74,8 @@ Utilisez le raccourci `"inherit"` si vous voulez que vos tests soient transpilé
 
 Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisant les presets [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/).
 
+AVA recherche un fichier `.babelrc` uniquement dans le même répertoire que le fichier `package.json`. S'il n'est pas trouvé, il suppose que votre configuration Babel se trouve dans le fichier `package.json`.
+
 ## Étendre la configuration de transpilation de vos sources
 
 En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `babelrc` à `true`. Cela fusionnera les plugins spécifiés avec ceux de votre [`babelrc`](http://babeljs.io/docs/usage/babelrc/).
@@ -97,6 +99,8 @@ En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `ba
 ```
 
 Dans l'exemple ci-dessus, les *sources* sont compilées en utilisant [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/), les *tests* utilisent les mêmes plugins avec en plus des plugins spécifiés `custom`.
+
+AVA recherche un fichier `.babelrc` uniquement dans le même répertoire que le fichier `package.json`. S'il n'est pas trouvé, il suppose que votre configuration Babel se trouve dans le fichier `package.json`.
 
 ## Étendre un fichier de config alternatif
 
