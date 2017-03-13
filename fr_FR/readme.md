@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/767c3f8e2c5d66613ae7dc4ef781ce3407c0b39b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/a49f66b59f757f25e7a21b3770ba56bbe7f3b055...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -748,7 +748,7 @@ AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter
 
 Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter,  [configurez le dans votre `package.json`](#configuration).
 
-Vous pouvez également transpiler vos modules dans un processus séparé et référer les fichiers transpilés de vos tests plutôt que les sources.
+Vous pouvez également transpiler vos modules dans un processus séparé et référer les fichiers transpilés de vos tests plutôt que les sources. Voici un [exemple](docs/recipes/precompiling-with-webpack.md).
 
 ### Prise en charge des promesses
 
@@ -1142,6 +1142,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
 - [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
+- [Précompilation des fichiers sources avec webpack](docs/recipes/precompiling-with-webpack.md)
 
 ## Support
 
