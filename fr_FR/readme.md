@@ -583,6 +583,8 @@ Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste 
 
 Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorsqu’on sort du processus.
 
+#### Tester le contexte
+
 Les hooks `beforeEach` & `afterEach` peuvent partager le contexte avec le test :
 
 ```js

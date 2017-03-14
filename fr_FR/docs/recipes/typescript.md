@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/2a6c5a9fc042fe7f96a76ff4a012d77c67c43188...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/50ad21372c3c165192a8673007ede7098a01e988...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -11,7 +11,7 @@ AVA est livré avec un fichier de définition TypeScript. Cela permet aux dével
 
 ## Configuration
 
-Installez d'abord [TypeScript](https://github.com/Microsoft/TypeScript).
+Installez d'abord [TypeScript](https://github.com/Microsoft/TypeScript). (Si vous l'avez déjà installé, assurez-vous d'utiliser la version 2.1 ou supérieure).
 
 ```
 $ npm install --save-dev typescript
@@ -55,6 +55,35 @@ test(async (t) => {
 });
 ```
 
+## Travailler avec [`context`](https://github.com/avajs/ava-docs/tree/master/fr_FR#tester-le-contexte)
+
+Par défaut, le type de `t.context` sera [`any`](https://www.typescriptlang.org/docs/handbook/basic-types.html#any). AVA expose une interface `RegisterContextual<T>` que vous pouvez utiliser pour appliquer votre propre type à `t.context`. Cela peut vous aider à détecter des erreurs lors de la compilation :
+
+```ts
+import * as ava from 'ava';
+
+function contextualize<T>(getContext: () => T): ava.RegisterContextual<T> {
+    ava.test.beforeEach(t => {
+        Object.assign(t.context, getContext());
+    });
+
+    return ava.test;
+}
+
+const test = contextualize(() => ({ foo: 'bar' }));
+
+test.beforeEach(t => {
+    t.context.foo = 123; // erreur :  Type '123' n'est pas assignable au type 'string'
+});
+
+test.after.always.failing.cb.serial('Les chaînes très longues sont correctement typées', t => {
+    t.context.fooo = 'a value'; // erreur : La propriété 'fooo' n'existe pas sur le type '{ foo: string }'
+});
+
+test('un test normal', t => {
+    t.deepEqual(t.context.foo.map(c => c), ['b', 'a', 'r']); // erreur : La propriété 'map' n'existe pas sur le type 'string'
+});
+```
 
 ## Exécutez les tests
 
