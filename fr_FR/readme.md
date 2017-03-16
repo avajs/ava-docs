@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/a49f66b59f757f25e7a21b3770ba56bbe7f3b055...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/8dfa759288c55401d7c68e54feaee6b762b7291d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -1172,7 +1172,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 ## L'équipe
 
 [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vadimdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net) | [![Juan Soto](https://avatars.githubusercontent.com/u/8217766?s=130)](https://juansoto.me) | [![Jeroen Engels](https://avatars.githubusercontent.com/u/3869412?s=130)](https://github.com/jfmengels)
----|---|---|---|---|---|---
++---|---|---|---|---|---
 [Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vadimdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net) | [Juan Soto](http://juansoto.me) | [Jeroen Engels](https://github.com/jfmengels)
 
 ### Auparavant dans l'équipe
