@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/1ad347c53c4618bca7c9a01e637441aeb5db5168...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/bb5a0dee10020b93548a2fee90aac87e9e7534a0...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 ## Précompilation des fichiers sources avec webpack
 
@@ -21,7 +21,7 @@ module.exports = {
 		path: '_build',
 		filename: 'tests.js'
 	},
-	externals: nodeExternals,
+	externals: [nodeExternals()],
 	module: {
 		rules: [{
 				test: /\.(js|jsx)$/,
