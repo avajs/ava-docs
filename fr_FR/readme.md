@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/3a4553cf28607a7ee869b5906c69d3efcca4c638...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/f23c17d02b64ba985c2a2231c0687ba9f94815d8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -693,7 +693,7 @@ test(t => {
 
 ### Prise en charge de ES2017
 
-AVA est livré avec un support intégré pour ES2017 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2017. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec les presets [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`stage-2`](https://babeljs.io/docs/plugins/preset-stage-2/) ainsi que des [transformations personnalisées](https://github.com/avajs/babel-preset-transform-test-files) pour les fichier test et helper.
+AVA est livré avec un support intégré pour ES2017 via [Babel 6](https://babeljs.io). Il suffit d'écrire vos tests en ES2017. Aucune configuration supplémentaire n'est nécessaire. Vous pouvez utiliser n'importe quelle version de Babel dans votre projet. Nous utilisons notre propre bundle Babel avec notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) ainsi que des [transformations personnalisées](https://github.com/avajs/babel-preset-transform-test-files) pour les fichier test et helper.
 
 La configuration de Babel correspondante à la configuration de AVA est la suivante :
 
