@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/0464b14527a7a5be805a79eff7e5c862693663c0...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/ecdadfa9c2b5d5c40e4edd14df0319f222007c60...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -18,7 +18,7 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
 
 ## Comportement par défaut du transpileur de AVA
 
-Par défaut, AVA transpile vos tests et vos helpers en utilisant le preset de Babel [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). C'est une bonne option pour des petits modules où vous ne souhaitez pas construire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
+AVA vous permet d'utiliser certaines fonctionnalités JavaScript très utiles, tel que [`async`](https://github.com/avajs/ava#async-function-support). Pour que cela fonctionne sur les anciennes versions de Node.js, AVA transpile les fichiers de test et de helper en utilisant le preset Babel [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). C'est génial pour les projets où vous n'utilisez pas Babel dans votre source, mais où vous souhaitez utiliser les dernières fonctionnalités JavaScript pour vos tests.
 
 ## Personnaliser la manière dont AVA transpile vos tests
 
@@ -31,6 +31,24 @@ Vous pouvez remplacer la configuration par défaut de Babel dans le `package.jso
       "plugins": ["rewire"],
       "presets": ["@ava/stage-4", "stage-3"]
     }
+  }
+}
+```
+
+## Utiliser les Polyfills de Babel
+
+AVA vous permet d'écrire vos tests en utilisant la nouvelle syntaxe de JavaScript, même sur des versions de Node.js qui ne le supporteraient pas. Cependant, il n'ajoute, ni ne modifie les éléments intégrés dans votre environnement actuel. L'utilisation d'AVA ne fournira pas, par exemple, de fonctionnalités modernes telles que `Array.prototype.includes()` à un environnement inférieur à Node.js 4.
+
+En chargeant le [module Polyfill de Babel](https://babeljs.io/docs/usage/polyfill/) vous pouvez choisir ces fonctionnalités. Notez que cela modifiera l'environnement, ce qui peut influencer la façon dont votre programme se comportera.
+
+Vous pouvez activer `babel-polyfill` en l'ajoutant à l'option `require` de AVA :
+
+```json
+{
+  "ava": {
+    "require": [
+      "babel-polyfill"
+    ]
   }
 }
 ```
