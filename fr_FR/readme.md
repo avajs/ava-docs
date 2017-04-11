@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/22832473c4fcc92b51095c4378eb0b9734fb921d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/affbb457445c792e62ea3c954e1af7e03cf7a8ee...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -970,9 +970,25 @@ test('rejects', async t => {
 });
 ```
 
+Lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+
+```js
+test('rejects', async t => {
+	await t.throws(promise);
+});
+```
+
 ### `.notThrows(function|promise, [message])`
 
 Affirme que `function` ne lève pas `error` ou que `promise` ne rejette pas une erreur.
+
+Comme l'assertion `.throws()`, lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+
+```js
+test('rejects', async t => {
+	await t.notThrows(promise);
+});
+```
 
 ### `.regex(contents, regex, [message])`
 
