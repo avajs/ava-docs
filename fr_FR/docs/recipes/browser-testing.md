@@ -16,7 +16,7 @@ Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un envi
 
 > **❗️ Note importante**
 >
->`browser-env` ajoute des propriétés depuis l'espace nommé window de `jsdom` à l'espace nommé global de Node.js. Ceci est explicitement [recommandé](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) par `jsdom`. Veuillez lire la page du wiki (lien "recommandé") et vous assurer de comprendre les mises en garde. Si vous n'avez pas beaucoup de dépendances qui nécessitent également un environnement du navigateur, alors [`window`](https://github.com/lukechilds/window#universal-testing-pattern) peut être une meilleure solution.
+>`browser-env` ajoute des propriétés depuis l'espace nommé window de `jsdom` à l'espace nommé global de Node.js. Ceci est explicitement [déconseillé](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) par `jsdom`. Veuillez lire la page du wiki (lien "déconseillé") et vous assurer de comprendre les mises en garde. Si vous n'avez pas beaucoup de dépendances qui nécessitent également un environnement du navigateur, alors [`window`](https://github.com/lukechilds/window#universal-testing-pattern) peut être une meilleure solution.
 
 Installez [browser-env](https://github.com/lukechilds/browser-env).
 
