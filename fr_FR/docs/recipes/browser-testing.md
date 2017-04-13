@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/9a9ce50e13803fc3d53d88e24d896cade49562f4...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/c01ac05ef610c87f5c264b1a3eb80f89b4fc0832...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
@@ -13,6 +13,10 @@ Par exemple, c'est le cas de React, si vous voulez utiliser ReactDOM.render et s
 Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un environnement de navigateur maquetté.
 
 ## Installez browser-env
+
+> **❗️ Note importante**
+>
+>`browser-env` ajoute des propriétés depuis l'espace nommé window de `jsdom` à l'espace nommé global de Node.js. Ceci est explicitement [recommandé](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) par `jsdom`. Veuillez lire la page du wiki (lien "recommandé") et vous assurer de comprendre les mises en garde. Si vous n'avez pas beaucoup de dépendances qui nécessitent également un environnement du navigateur, alors [`window`](https://github.com/lukechilds/window#universal-testing-pattern) peut être une meilleure solution.
 
 Installez [browser-env](https://github.com/lukechilds/browser-env).
 
