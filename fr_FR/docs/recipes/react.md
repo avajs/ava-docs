@@ -148,7 +148,3 @@ Avec AVA, vous pouvez utiliser n'importe quelle bibliothèque d'assertion, et il
 
 - [`expect-jsx`](https://github.com/algolia/expect-jsx) ([Exemple](https://github.com/avajs/ava/issues/186#issuecomment-161317068))
 - [`unexpected-react`](https://github.com/bruderstein/unexpected-react) ([Exemple de projet](https://github.com/adriantoine/ava-unexpected-react-demo))
-
-## Référence
-
-- [Guide approfondi de configuration d'AVA avec couverture du code sur un projet React](https://github.com/kentcdodds/react-ava-workshop)
