@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/affbb457445c792e62ea3c954e1af7e03cf7a8ee...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/cf5c459679c23276e574a3bdc4fa7d6ed0903d8f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -208,6 +208,7 @@ $ node --inspect node_modules/ava/profile.js some/test/file.js
 
 - [Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [WebStorm](docs/recipes/debugging-with-webstorm.md)
+- [Visual Studio Code](docs/recipes/debugging-with-vscode.md)
 
 
 ## Reporters
@@ -637,8 +638,8 @@ function macro(t, input, expected) {
 	t.is(eval(input), expected);
 }
 
-test('2 + 2 === 4', macro, '2 + 2', 4);
-test('2 * 3 === 6', macro, '2 * 3', 6);
+test('2 + 2 = 4', macro, '2 + 2', 4);
+test('2 * 3 = 6', macro, '2 * 3', 6);
 ```
 
 Vous pouvez construire le titre du test par programmation en attachant une fonction `title` à la macro :
@@ -648,7 +649,7 @@ function macro(t, input, expected) {
 	t.is(eval(input), expected);
 }
 
-macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} === ${expected}`.trim();
+macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} = ${expected}`.trim();
 
 test(macro, '2 + 2', 4);
 test(macro, '2 * 3', 6);
@@ -919,15 +920,15 @@ Affirme que `value` est à `false`.
 
 ### `.is(value, expected, [message])`
 
-Affirme que `value` est égal à `expected`.
+Affirme que `value` est le même que `expected`. Ceci est basé sur [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
 
 ### `.not(value, expected, [message])`
 
-Affirme que `value` n'est pas égal à `expected`.
+Affirme que `value` n'est pas le même que `expected`. Ceci est basé sur [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
 
 ### `.deepEqual(value, expected, [message])`
 
-Affirme que `value` est deep equal à `expected`. Ceci est basé sur [`isEqual()` de Lodash'](https://lodash.com/docs/4.17.4#isEqual) :
+Affirme que `value` est profondément égale à `expected`. Ceci est basé sur [`isEqual()` de Lodash'](https://lodash.com/docs/4.17.4#isEqual) :
 
 > Effectue une comparaison approfondie entre deux valeurs pour déterminer si elles sont équivalentes.
 >
@@ -935,7 +936,7 @@ Affirme que `value` est deep equal à `expected`. Ceci est basé sur [`isEqual()
 
 ### `.notDeepEqual(value, expected, [message])`
 
-Affirme que `value` n'est pas deep equal à `expected`. L'inverse de `.deepEqual()`.
+Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `.deepEqual()`.
 
 ### `.throws(function|promise, [error, [message]])`
 
@@ -1167,6 +1168,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 - [Précompilation des fichiers sources avec webpack](docs/recipes/precompiling-with-webpack.md)
+- [Tests d'intégration isolés de MongoDB](docs/recipes/isolated-mongodb-integration-tests.md)
 
 ## Support
 
