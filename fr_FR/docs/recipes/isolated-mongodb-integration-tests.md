@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/cf5c459679c23276e574a3bdc4fa7d6ed0903d8f...master#diff-fa5b24a10aa6bb9abd440902e222e84c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/0b4707181cf03dae1934d35c77102ba8e2618a03...master#diff-fa5b24a10aa6bb9abd440902e222e84c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration d'AVA pour les tests d'intégration isolés de MongoDB
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md)
 
 Comment exécuter les bases de données MongoDB à usage unique dans vos tests AVA avec une isolation pour chaque test. Pour cela, on utilise `mongomem` qui est disponible sur [npm](https://www.npmjs.com/package/mongomem).
 
