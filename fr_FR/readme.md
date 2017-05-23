@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/cf5c459679c23276e574a3bdc4fa7d6ed0903d8f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/ff3bba95fa82b812328176bb490a252e11827a21...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -1164,6 +1164,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [TypeScript](docs/recipes/typescript.md)
 - [Configuration de Babel](docs/recipes/babelrc.md)
 - [Tester les composants React](docs/recipes/react.md)
+- [Tester les composants Vue.js](docs/recipes/vue.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
 - [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
