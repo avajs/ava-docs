@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/0b4707181cf03dae1934d35c77102ba8e2618a03...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/140c0e03c93bf5fcbda3d913bfca43e0217918b9...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 
@@ -33,6 +33,8 @@ Sauvez cette configuration après son ajout.
 
 > **Remarque :** Le fichier que vous voulez déboguer doit être ouvert et actif
 
-Définissez des points d'arrêt dans le code.
+> **Remarque :** Les points d'arrêt dans VSCode sont parfois un peu bogués (surtout avec du code async). `debugger;` fonctionne toujours bien.
+
+Définissez des points d'arrêt dans le code **ou** écrivez `debugger;` à l'endroit où il devrait s'arrêter.
 
 Appuyez sur le bouton `Debug` à côté de la liste des configurations en haut à gauche dans la vue `Debug`. Une fois que le point d'arrêt est atteint, vous pouvez évaluer les variables et suivre le code pas à pas.
