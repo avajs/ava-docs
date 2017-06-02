@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [001 - Improving language support.md](https://github.com/avajs/ava/blob/master/docs/specs/001 - Improving language support.md). Voici un [lien](https://github.com/avajs/ava/compare/a380fe4f5ffa1d334a2a3786215d3c1ff10a9898...master#diff-01b90728d033fffd4c5cdacef3735d16) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `001 - Improving language support.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [001 - Improving language support.md](https://github.com/avajs/ava/blob/master/docs/specs/001%20-%20Improving%20language%20support.md). Voici un [lien](https://github.com/avajs/ava/compare/8c6dbfdae30e0c476cd21ca54c4a3ccbd31f88fe...master#diff-01b90728d033fffd4c5cdacef3735d16) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `001 - Improving language support.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Amélioration du support de langages
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/specs/001 - Improving language support.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/specs/001%20-%20Improving%20language%20support.md)
 
 Une [RFC](http://blog.npmjs.org/post/153881413635/some-notes-on-rfcs) ([Définition de RFC sur Wikipédia](https://fr.wikipedia.org/wiki/Request_for_comments)) avec une proposition pour améliorer le support de AVA pour les projets Babel, React et TypeScript.
 
