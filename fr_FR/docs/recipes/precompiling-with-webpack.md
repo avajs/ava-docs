@@ -72,7 +72,7 @@ import fresh from '../_src';
 
 #### Fichier d'entrée unique
 
-Plusieurs fichiers de test peuvent être compilés dans un seul fichier. Cela peut permettre d'avoir la meilleure performance, mais ceci a un coût. Tous les tests seront dans le même fichier, ce qui peut rendre plus difficile la recherche du test qui a échoué, puisque AVA ne peut pas afficher le nom de fichier orignal du test. Vous perdez aussi l'[isolement du processus](https://github.com/avajs/ava#isolement-du-processus).
+Plusieurs fichiers de test peuvent être compilés dans un seul fichier. Cela peut permettre d'avoir la meilleure performance, mais ceci a un coût. Tous les tests seront dans le même fichier, ce qui peut rendre plus difficile la recherche du test qui a échoué, puisque AVA ne peut pas afficher le nom de fichier orignal du test. Vous perdez aussi l'[isolement du processus](https://github.com/avajs/ava-docs/tree/master/fr_FR#isolement-du-processus).
 
 ###### `webpack.config.js`
 
