@@ -233,7 +233,7 @@ AVA prend en charge le format de TAP et est compatible avec [tous les reporters 
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-reporter.png" width="398">
 
 Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](#scrutez-le-test).
 
@@ -1040,7 +1040,7 @@ Le premier dossier contient l'instantané réel et est requis pour les comparais
 
 AVA montrera pourquoi votre assertion d'instantané a échoué :
 
-<img src="media/snapshot-testing.png" width="1048">
+<img src="https://github.com/avajs/ava/blob/master/media/snapshot-testing.png" width="1048">
 
 Vous pouvez ensuite vérifier votre code. Si le changement etait intentionel, vous pouvez utiliser l'option `--update-snapshots` (ou `-u`) pour mettre à jour vos instantanés :
 
