@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/50ad21372c3c165192a8673007ede7098a01e988...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -32,9 +32,9 @@ Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord 
 
 ```json
 {
-  "scripts": {
-    "test": "tsc && ava"
-  }
+	"scripts": {
+		"test": "tsc && ava"
+	}
 }
 ```
 
@@ -46,12 +46,10 @@ Créez un fichier `test.ts`.
 ```ts
 import test from 'ava';
 
-async function fn() {
-    return Promise.resolve('foo');
-}
+const fn = async () => Promise.resolve('foo');
 
 test(async (t) => {
-    t.is(await fn(), 'foo');
+	t.is(await fn(), 'foo');
 });
 ```
 
@@ -63,25 +61,25 @@ Par défaut, le type de `t.context` sera [`any`](https://www.typescriptlang.org/
 import * as ava from 'ava';
 
 function contextualize<T>(getContext: () => T): ava.RegisterContextual<T> {
-    ava.test.beforeEach(t => {
-        Object.assign(t.context, getContext());
-    });
+	ava.test.beforeEach(t => {
+		Object.assign(t.context, getContext());
+	});
 
-    return ava.test;
+	return ava.test;
 }
 
 const test = contextualize(() => ({ foo: 'bar' }));
 
 test.beforeEach(t => {
-    t.context.foo = 123; // erreur :  Type '123' n'est pas assignable au type 'string'
+	t.context.foo = 123; // erreur :  Type '123' n'est pas assignable au type 'string'
 });
 
 test.after.always.failing.cb.serial('Les chaînes très longues sont correctement typées', t => {
-    t.context.fooo = 'a value'; // erreur : La propriété 'fooo' n'existe pas sur le type '{ foo: string }'
+	t.context.fooo = 'a value'; // erreur : La propriété 'fooo' n'existe pas sur le type '{ foo: string }'
 });
 
 test('un test normal', t => {
-    t.deepEqual(t.context.foo.map(c => c), ['b', 'a', 'r']); // erreur : La propriété 'map' n'existe pas sur le type 'string'
+	t.deepEqual(t.context.foo.map(c => c), ['b', 'a', 'r']); // erreur : La propriété 'map' n'existe pas sur le type 'string'
 });
 ```
 

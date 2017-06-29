@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/a539c7e1b409778da138754825275be7778b5f7a...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # JSPM et SystemJS pour ES2015
 
@@ -19,7 +19,7 @@ Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait.
 
 ```json
 {
-  "presets": ["es2015", "stage-2"]
+	"presets": ["es2015", "stage-2"]
 }
 ```
 
@@ -37,12 +37,12 @@ Vous devrez également mettre à jour votre config de AVA dans le package.json p
 
 ```json
 {
-  "ava": {
-    "require": [
-      "babel-register",
-      "ava-jspm-loader"
-    ]
-  }
+	"ava": {
+		"require": [
+			"babel-register",
+			"ava-jspm-loader"
+		]
+	}
 }
 ```
 
@@ -54,8 +54,8 @@ Remarquez que vous aurez besoin d'utiliser les chemins de `System.import` pour t
 
 ```js
 import test from 'ava';
-import main from 'app/main';  // indique à votre JSPM config "app/main.js"
-import BigNumber from 'bignumber.js';  // dans jspm_packages
+import main from 'app/main';  // Indique à votre JSPM config "app/main.js"
+import BigNumber from 'bignumber.js';  // Dans jspm_packages
 
 function fn() {
 	return Promise.resolve(new BigNumber('1234567890.123456789'));

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/c01ac05ef610c87f5c264b1a3eb80f89b4fc0832...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
@@ -52,11 +52,11 @@ Configurez le `require` de AVA avec le helper pour l'exiger avant chaque fichier
 
 ```json
 {
-  "ava": {
-    "require": [
-      "./test/helpers/setup-browser-env.js"
-    ]
-  }
+	"ava": {
+		"require": [
+			"./test/helpers/setup-browser-env.js"
+		]
+	}
 }
 ```
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/140c0e03c93bf5fcbda3d913bfca43e0217918b9...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 
@@ -17,13 +17,13 @@ Ajoutez à l'objet `configurations` ce qui suit :
 
 ```json
 {
-    "type": "node",
-    "request": "launch",
-    "name": "Run AVA test",
-    "program": "${workspaceRoot}/node_modules/ava/profile.js",
-    "args": [
-      "${file}"
-    ]
+	"type": "node",
+	"request": "launch",
+	"name": "Run AVA test",
+	"program": "${workspaceRoot}/node_modules/ava/profile.js",
+	"args": [
+	  "${file}"
+	]
 }
 ```
 

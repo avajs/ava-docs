@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/34bebc450d7ee6fef99684a5a7c0aea67695b772...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -21,9 +21,9 @@ Si vous l'avez configuré dans votre `package.json` de cette manière :
 
 ```json
 {
-  "scripts": {
-    "test": "ava"
-  }
+	"scripts": {
+		"test": "ava"
+	}
 }
 ```
 
@@ -37,10 +37,10 @@ Vous pouvez aussi mettre en place un script spécial :
 
 ```json
 {
-  "scripts": {
-    "test": "ava",
-    "watch:test": "ava --watch"
-  }
+	"scripts": {
+		"test": "ava",
+		"watch:test": "ava --watch"
+	}
 }
 ```
 
@@ -54,9 +54,9 @@ Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch
 
 ```json
 {
-  "ava": {
-    "watch": true
-  }
+	"ava": {
+		"watch": true
+	}
 }
 ```
 
@@ -70,7 +70,7 @@ AVA utilise [`chokidar`] pour surveiller les fichiers. Notez que même si vous v
 
 Dans AVA, il y a un distinction entre les *fichiers source* et les *fichiers de test*. Comme vous pouvez le devinez, les *fichiers de tests* contiennent vos tests. Les *fichiers sources* sont tous les autres fichiers que vous avez besoin pour que les tests s'exécutent, ce sont soit vos codes source ou soit vos fixtures.
 
-Par défaut AVA surveille les modifications des fichiers de test, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
+Par défaut AVA surveille les modifications des fichiers de test, des fichiers d'instantanés, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
 Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`.
 
@@ -95,6 +95,10 @@ Si vous exécutez AVA dans votre CI avec le mode watch, l'exécution s'arrêtera
 ## Relancer manuellement tous les tests
 
 Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la console, suivie par <kbd>Entrée</kbd>.
+
+## Mise à jour des instantanés
+
+Vous pouvez mettre à jour les instantanés défaillants en tapant <kbd>u</kbd> sur la console, suivi par <kbd>Entrée</kbd>.
 
 ## Débogage
 

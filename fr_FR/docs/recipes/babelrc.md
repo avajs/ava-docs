@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/ecdadfa9c2b5d5c40e4edd14df0319f222007c60...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -26,12 +26,12 @@ Vous pouvez remplacer la configuration par défaut de Babel dans le `package.jso
 
 ```json
 {
-  "ava": {
-    "babel": {
-      "plugins": ["rewire"],
-      "presets": ["@ava/stage-4", "stage-3"]
-    }
-  }
+	"ava": {
+		"babel": {
+			"plugins": ["rewire"],
+			"presets": ["@ava/stage-4", "stage-3"]
+		}
+	}
 }
 ```
 
@@ -45,11 +45,11 @@ Vous pouvez activer `babel-polyfill` en l'ajoutant à l'option `require` de AVA 
 
 ```json
 {
-  "ava": {
-    "require": [
-      "babel-polyfill"
-    ]
-  }
+	"ava": {
+		"require": [
+			"babel-polyfill"
+		]
+	}
 }
 ```
 
@@ -61,12 +61,12 @@ Pour transpiler vos sources, vous aurez besoin de définir une [`config babel` ]
 
 ```json
 {
-  "ava": {
-    "require": ["babel-register"]
-  },
-  "babel": {
-    "presets": ["@ava/stage-4"]
-  }
+	"ava": {
+		"require": ["babel-register"]
+	},
+	"babel": {
+		"presets": ["@ava/stage-4"]
+	}
 }
 ```
 
@@ -81,12 +81,15 @@ Utilisez le raccourci `"inherit"` si vous voulez que vos tests soient transpilé
 ```json
 {
 	"ava": {
-    "require": "babel-register",
-    "babel": "inherit"
-  },
-  "babel": {
-    "presets": ["@ava/stage-4", "react"]
-  }
+		"require": "babel-register",
+		"babel": "inherit"
+	},
+	"babel": {
+		"presets": [
+			"@ava/stage-4",
+			"react"
+		]
+	}
 }
 ```
 
@@ -103,15 +106,18 @@ En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `ba
 ```json
 {
 	"ava": {
-    "require": "babel-register",
+		"require": "babel-register",
 		"babel": {
 			"babelrc": true,
 			"plugins": ["custom-plugin-name"],
 			"presets": ["custom-preset"]
 		}
-  },
-  "babel": {
-    "presets": ["@ava/stage-4", "react"]
+	},
+	"babel": {
+		"presets": [
+			"@ava/stage-4",
+			"react"
+		]
 	}
 }
 ```
@@ -122,21 +128,20 @@ AVA recherche un fichier `.babelrc` uniquement dans le même répertoire que le 
 
 ## Étendre un fichier de config alternatif
 
-
 Si, pour une raison quelconque, votre config Babel n'est pas spécifiée dans l'un des emplacements par défaut ([`.babelrc` ou `package.json`](http://babeljs.io/docs/usage/babelrc/), vous pouvez définir l'option `extends` avec une config alternative que vous souhaitez utiliser pendant vos tests.
 
 `package.json`:
 
 ```json
 {
-  "ava": {
-    "require": "babel-register",
-    "babel": {
-      "extends": "./babel-test-config.json",
-      "plugins": ["custom-plugin-name"],
-      "presets": ["custom-preset"]
-    }
-  }
+	"ava": {
+		"require": "babel-register",
+		"babel": {
+			"extends": "./babel-test-config.json",
+			"plugins": ["custom-plugin-name"],
+			"presets": ["custom-preset"]
+		}
+	}
 }
 ```
 

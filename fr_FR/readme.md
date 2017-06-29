@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/ff3bba95fa82b812328176bb490a252e11827a21...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/8d09ba5cce7d4629582e62cea7cb9be6e2a30ead...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -11,7 +11,7 @@ ___
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
-![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
+![](https://github.com/avajs/ava/blob/master/media/mini-reporter.gif)
 
 *Lisez notre [guide de contribution](contributing.md) si vous souhaitez contribuer (issues/PRs/etc).*
 
@@ -93,13 +93,13 @@ Votre `package.json` ressemblera alors à ceci :
 
 ```json
 {
-  "name": "awesome-package",
-  "scripts": {
-    "test": "ava"
-  },
-  "devDependencies": {
-    "ava": "^0.18.0"
-  }
+	"name": "awesome-package",
+	"scripts": {
+		"test": "ava"
+	},
+	"devDependencies": {
+		"ava": "^0.19.0"
+	}
 }
 ```
 
@@ -217,13 +217,13 @@ $ node --inspect node_modules/ava/profile.js some/test/file.js
 
 Le mini-reporter est le reporter par défaut.
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif" width="460">
+<img src="https://github.com/avajs/ava/blob/master/media/mini-reporter.gif" width="460">
 
 ### Reporter verbose (verbeux)
 
 Utilisez l'option `--verbose` pour activer le reporter verbose. Il est toujours utilisé dans les environnements de CI, sauf si [`--tap`](#reporter-de-tap) est activé.
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150">
+<img src="https://github.com/avajs/ava/blob/master/media/verbose-reporter.png" width="420">
 
 ### Reporter de TAP
 
@@ -254,29 +254,29 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
 
 ```json
 {
-  "ava": {
-    "files": [
-      "my-test-folder/*.js",
-      "!**/not-this-file.js"
-    ],
-    "source": [
-      "**/*.{js,jsx}",
-      "!dist/**/*"
-    ],
-    "match": [
-      "*oo",
-      "!foo"
-    ],
-    "concurrency": 5,
-    "failFast": true,
-    "failWithoutAssertions": false,
-    "tap": true,
-    "powerAssert": false,
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  }
+	"ava": {
+		"files": [
+			"my-test-folder/*.js",
+			"!**/not-this-file.js"
+		],
+		"source": [
+			"**/*.{js,jsx}",
+			"!dist/**/*"
+		],
+		"match": [
+			"*oo",
+			"!foo"
+		],
+		"concurrency": 5,
+		"failFast": true,
+		"failWithoutAssertions": false,
+		"tap": true,
+		"powerAssert": false,
+		"require": [
+			"babel-register"
+		],
+		"babel": "inherit"
+	}
 }
 ```
 
@@ -701,10 +701,10 @@ La configuration de Babel correspondante à la configuration de AVA est la suiva
 
 ```json
 {
-  "presets": [
-    "es2015",
-    "stage-2"
-  ]
+	"presets": [
+		"@ava/stage-4",
+		"@ava/transform-test-files"
+	]
 }
 ```
 
@@ -712,15 +712,15 @@ Vous pouvez personnaliser la façon dont AVA transpile les fichiers de test grâ
 
 ```json
 {
-  "ava": {
-     "babel": {
-       "presets": [
-          "es2015",
-          "stage-0",
-          "react"
-       ]
-     }
-  }
+	"ava": {
+		 "babel": {
+			 "presets": [
+					"es2015",
+					"stage-0",
+					"react"
+			 ]
+		 }
+	}
 }
 ```
 
@@ -728,16 +728,16 @@ Vous pouvez également utiliser le mot-clé `"inherit"`. Cela permet à AVA de r
 
 ```json
 {
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0",
-      "react"
-    ]
-  },
-  "ava": {
-    "babel": "inherit"
-  }
+	"babel": {
+		"presets": [
+			"es2015",
+			"stage-0",
+			"react"
+		]
+	},
+	"ava": {
+		"babel": "inherit"
+	}
 }
 ```
 
@@ -872,7 +872,7 @@ Doit contenir le test réel.
 
 Type: `object`
 
-L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`.
+L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`. `t.title` retourne le titre du test.
 
 ###### `t.plan(count)`
 
@@ -928,11 +928,7 @@ Affirme que `value` n'est pas le même que `expected`. Ceci est basé sur [`Obje
 
 ### `.deepEqual(value, expected, [message])`
 
-Affirme que `value` est profondément égale à `expected`. Ceci est basé sur [`isEqual()` de Lodash'](https://lodash.com/docs/4.17.4#isEqual) :
-
-> Effectue une comparaison approfondie entre deux valeurs pour déterminer si elles sont équivalentes.
->
-> *Remarque* : Cette méthode permet de comparer les tableaux, les tableaux bufférisés, les booléens, les objets de date, les objets error, les maps, les nombres, les objets `Object`, les regex, les sets, les strings, les symboles et les tableaux typés. Les objets `Object` sont comparés par leurs propres propriétés, non héritées, énumérables. Les fonctions et les nœuds DOM sont comparés par égalité stricte, c'est-à-dire `===`.
+Affirme que `value` est profondément égale à `expected`. Consulter [Concordance](https://github.com/concordancejs/concordance) pour plus de détails. Cela fonctionne avec les [éléments de React et `react-test-renderer`](https://github.com/concordancejs/react).
 
 ### `.notDeepEqual(value, expected, [message])`
 
@@ -1004,14 +1000,13 @@ Affirme que `contents` ne correspond pas à `regex`.
 Affirme que `error` est falsy.
 
 ### `.snapshot(contents, [message])`
+### `.snapshot(expected, [options], [message])`
 
-Fait un instantané (snapshot) de `contents` sous le format d'une chaine.
+Compare la valeur `expected` avec avec un instantané enregistré auparavant. Les instantanés sont conservés pour chaque test, donc assurez-vous de donner à vos tests des titres uniques. Sinon, passez un objet `options` pour sélectionner un instantané spécifique, par exemple `{id: 'mon snapshot'}`.
 
 ## Test d'instantané
 
-Le test d'instantané se présente comme une autre assertion et utilise [jest-snapshot](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html) sous le capot.
-
-Lorsqu'il est utilisé avec React, il ressemble beaucoup à Jest :
+AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](#assertions). Vous pouvez faire un instantané de n'importe quelle valeur ainsi que des éléments de React :
 
 ```js
 // Votre composant
@@ -1024,40 +1019,34 @@ export default HelloWorld;
 // Votre test
 import test from 'ava';
 import render from 'react-test-renderer';
-
 import HelloWorld from '.';
 
 test('HelloWorld component', t => {
-	const tree = render.create(<HelloWorld />).toJSON();
+	const tree = render.create(<HelloWorld/>).toJSON();
 	t.snapshot(tree);
 });
 ```
 
-La première fois que vous exécuterez ce test, un fichier snapshot sera créé dans le dossier `__snapshots__` et ressemblera à ceci :
+[Essayez-le dans ce projet d'exemple.](https://github.com/avajs/ava-snapshot-example)
 
-```js
-exports[`HelloWorld component 1`] = `
-<h1>
-	Hello World...!
-</h1>
-`;
-```
+Les instantanés sont stockés aux côtés de vos fichiers de test. Si vos tests se trouvent dans un dossier `test` ou `tests`, les instantanés seront stockés dans un dossier `snapshots`. Si vos tests se trouvent dans un dossier `__tests__` alors ils seront stockés dans un dossier `__snapshots__`.
 
-Ces instantanés doivent être committés avec votre code de sorte que l'état actuel de l'application soit partagée avec tout le monde de l'équipe.
+Si nous avons un `~/project/test/main.js` qui contient des assertions d'instantané. AVA créera deux fichiers :
 
-Chaque fois que vous exécuterez ce test par la suite, il vérifiera si le rendu du composant a changé. Si c'est le cas, il fera échouer le test.
+* `~/project/test/snapshots/main.js.snap`
+* `~/project/test/snapshots/main.js.md`
 
-<img src="https://github.com/avajs/ava/blob/master/media/snapshot-testing.png" width="814">
+Le premier dossier contient l'instantané réel et est requis pour les comparaisons futures. Le deuxième fichier contient votre *rapport d'instantané*. Il est régénéré lorsque vous mettez à jour vos instantanés. Si vous le confiez au contrôle des sources, vous pouvez le comparer pour voir les modifications apportées à votre instantané.
 
-Vous aurez alors le choix de vérifier votre code - et si la modification a été intentionnelle, vous pouvez utiliser l'indicateur `--update-snapshots` (ou `-u`) pour mettre à jour les instantanés dans leur nouvelle version.
+AVA montrera pourquoi votre assertion d'instantané a échoué :
 
-Cela pourrait ressembler à ceci :
+<img src="media/snapshot-testing.png" width="1048">
+
+Vous pouvez ensuite vérifier votre code. Si le changement etait intentionel, vous pouvez utiliser l'option `--update-snapshots` (ou `-u`) pour mettre à jour vos instantanés :
 
 ```console
 $ ava --update-snapshots
 ```
-
-Veuillez noter que les instantanés peuvent être utilisés pour bien plus de choses que des tests de composants - vous pouvez également tester toute autre structure (de données) que vous pouvez mettre sous forme de chaines.
 
 ## Assertions ignorées
 
