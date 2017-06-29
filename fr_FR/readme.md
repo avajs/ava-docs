@@ -999,7 +999,7 @@ Affirme que `contents` ne correspond pas à `regex`.
 
 Affirme que `error` est falsy.
 
-### `.snapshot(contents, [message])`
+### `.snapshot(expected, [message])`
 ### `.snapshot(expected, [options], [message])`
 
 Compare la valeur `expected` avec avec un instantané enregistré auparavant. Les instantanés sont conservés pour chaque test, donc assurez-vous de donner à vos tests des titres uniques. Sinon, passez un objet `options` pour sélectionner un instantané spécifique, par exemple `{id: 'mon snapshot'}`.
@@ -1053,7 +1053,7 @@ $ ava --update-snapshots
 Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les assertions ignorées sont encore comptées, donc il n'y a pas besoin de changer le nombre d'assertion dans `plan`.
 
 ```js
-+test(t => {
+test(t => {
 	t.plan(2);
 	t.skip.is(foo(), 5); // Pas besoin de changer le nombre d'assertion dans `plan`.
 	t.is(1, 1);
@@ -1186,7 +1186,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 ## L'équipe
 
 [![Sindre Sorhus](https://avatars.githubusercontent.com/u/170270?s=130)](http://sindresorhus.com) | [![Vadim Demedes](https://avatars.githubusercontent.com/u/697676?s=130)](https://github.com/vadimdemedes) | [![James Talmage](https://avatars.githubusercontent.com/u/4082216?s=130)](https://github.com/jamestalmage) | [![Mark Wubben](https://avatars.githubusercontent.com/u/33538?s=130)](https://novemberborn.net) | [![Juan Soto](https://avatars.githubusercontent.com/u/8217766?s=130)](https://juansoto.me) | [![Jeroen Engels](https://avatars.githubusercontent.com/u/3869412?s=130)](https://github.com/jfmengels)
-+---|---|---|---|---|---
+---|---|---|---|---|---
 [Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vadimdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net) | [Juan Soto](http://juansoto.me) | [Jeroen Engels](https://github.com/jfmengels)
 
 ### Auparavant dans l'équipe
