@@ -567,7 +567,7 @@ AVA 通过 [Babel 6](https://babeljs.io) 内置支持 ES2015，只需要用 ES20
         "react"
       ]
     }
-  },
+  }
 }
 ```
 
@@ -583,8 +583,8 @@ AVA 通过 [Babel 6](https://babeljs.io) 内置支持 ES2015，只需要用 ES20
         ]
     },
     "ava": {
-        "babel": "inherit",
-    },
+        "babel": "inherit"
+    }
 }
 ```
 
