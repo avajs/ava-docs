@@ -19,8 +19,6 @@ Come utente di AVA tu sei il perfetto candidato per aiutarci a migliorare la nos
 
 Usa la [targhetta `docs`](https://github.com/avajs/ava/labels/docs) per trovare consigli su cosa vorremmo vedere documentato.
 
-Usa la [targhetta `docs`](https://github.com/sindresorhus/ava/labels/docs) per trovare consigli su cosa vorremmo vedere documentato.
-
 ### Migliora le issues
 
 Alcune issue vengono create senza tutte le informazioni importanti, oppure non sono riproducibili, o semplicemente non valide. Aiutaci a migliorarle per risolvere rapidamente e meglio. Occuparsi delle issues richiede molto tempo che potremmo invece spendere nel risolvere bug o per aggiungere nuove funzionalità.
@@ -74,3 +72,5 @@ Abbiamo una [chat](https://gitter.im/avajs/ava). Visita e dai un'occhiata, parla
 - Potremmo chiederti di fare dei cambiamenti alla tua pull request. Non c'è bisogno di aprire una nuova pull request, semplicemente [aggiorna quella già aperta](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md).
 
 Attenzione: quando fai modifiche al codice, ricorda che il mantra di AVA (preso da Python) è avere preferibilmente un unico modo di fare qualcosa. Ad esempio, una pull request per aggiungere un alias per una parte dell'API ([come questo](https://github.com/avajs/ava/pull/663))) sarà molto probabilmente rifiutata se non introduce qualche ulteriore beneficio.
+
+*Stai cercando un progetto open source a cui contribuire? Eccolo! AVA è un progetto con una comunità accogliente su Internet. Dai un'occhiata al blog post ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190) per avere un'idea di come iniziare e contribuire ad AVA!*
