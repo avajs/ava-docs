@@ -147,7 +147,3 @@ En AVA, puedes usar cualquier librería de aseveraciones, y ya hay unas cuentas 
 
 - [`expect-jsx`](https://github.com/algolia/expect-jsx) ([Ejemplo](https://github.com/avajs/ava/issues/186#issuecomment-161317068))
 - [`unexpected-react`](https://github.com/bruderstein/unexpected-react) ([Proyecto de muestra con un ejemplo de output](https://github.com/adriantoine/ava-unexpected-react-demo))
-
-## Referencias
-
-- [Guía a fondo sobre cómo configurar AVA con cobertura ("coverage") de código en un proyecto con React](https://github.com/kentcdodds/react-ava-workshop)

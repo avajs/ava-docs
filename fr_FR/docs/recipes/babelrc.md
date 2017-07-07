@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/5158ac8bb0d0a79acde12c1bf6dfc1bbf32fd71e...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -15,24 +15,41 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
  - [Transpilation des tests et des sources de la même manière](#transpilation-des-tests-et-des-sources-de-la-même-manière)
  - [Étendre la configuration de transpilation de vos sources](#Étendre-la-configuration-de-transpilation-de-vos-sources)
  - [Étendre un fichier de config alternatif (pas `.babelrc`)](#Étendre-un-fichier-de-config-alternatif)
- - [Notes](#notes)
 
 ## Comportement par défaut du transpileur de AVA
 
-Par défaut, AVA transpile vos tests (et uniquement vos tests) en utilisant les presets de Babel [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) sur Node.js 4 ou [`node6`](https://github.com/salakar/babel-preset-node6) sur Node.js 6 et supérieur ainsi que [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/). C'est une bonne option pour des petits modules où vous ne souhaitez pas construire une étape de build pour transpiler vos sources avant le déploiement dans `npm`.
+AVA vous permet d'utiliser certaines fonctionnalités JavaScript très utiles, tel que [`async`](https://github.com/avajs/ava#async-function-support). Pour que cela fonctionne sur les anciennes versions de Node.js, AVA transpile les fichiers de test et de helper en utilisant le preset Babel [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). C'est génial pour les projets où vous n'utilisez pas Babel dans votre source, mais où vous souhaitez utiliser les dernières fonctionnalités JavaScript pour vos tests.
 
 ## Personnaliser la manière dont AVA transpile vos tests
 
-Vous pouvez remplacer la configuration par défaut de Babel dans le `package.json` pour que AVA l'utilise pour la transpilation des tests. Par exemple, la configuration ci-dessous ajoute le plugin Babel `rewire` et les options pour utiliser uniquement le preset [`stage-3`](http://babeljs.io/docs/plugins/preset-stage-3/) (qui est un sous-ensemble de [`stage-2`](http://babeljs.io/docs/plugins/preset-stage-2/)).
+Vous pouvez remplacer la configuration par défaut de Babel dans le `package.json` pour que AVA l'utilise pour la transpilation des tests. Par exemple, la configuration ci-dessous ajoute le plugin Babel `rewire` et ajoute le preset de Babel [`stage-3`](http://babeljs.io/docs/plugins/preset-stage-3/).
 
 ```json
 {
-  "ava": {
-    "babel": {
-      "plugins": ["rewire"],
-      "presets": ["es2015-node4", "stage-3"]
-    }
-  }
+	"ava": {
+		"babel": {
+			"plugins": ["rewire"],
+			"presets": ["@ava/stage-4", "stage-3"]
+		}
+	}
+}
+```
+
+## Utiliser les Polyfills de Babel
+
+AVA vous permet d'écrire vos tests en utilisant la nouvelle syntaxe de JavaScript, même sur des versions de Node.js qui ne le supporteraient pas. Cependant, il n'ajoute, ni ne modifie les éléments intégrés dans votre environnement actuel. L'utilisation d'AVA ne fournira pas, par exemple, de fonctionnalités modernes telles que `Array.prototype.includes()` à un environnement inférieur à Node.js 4.
+
+En chargeant le [module Polyfill de Babel](https://babeljs.io/docs/usage/polyfill/) vous pouvez choisir ces fonctionnalités. Notez que cela modifiera l'environnement, ce qui peut influencer la façon dont votre programme se comportera.
+
+Vous pouvez activer `babel-polyfill` en l'ajoutant à l'option `require` de AVA :
+
+```json
+{
+	"ava": {
+		"require": [
+			"babel-polyfill"
+		]
+	}
 }
 ```
 
@@ -44,12 +61,12 @@ Pour transpiler vos sources, vous aurez besoin de définir une [`config babel` ]
 
 ```json
 {
-  "ava": {
-    "require": ["babel-register"]
-  },
-  "babel": {
-    "presets": ["es2015-node4"]
-  }
+	"ava": {
+		"require": ["babel-register"]
+	},
+	"babel": {
+		"presets": ["@ava/stage-4"]
+	}
 }
 ```
 
@@ -64,16 +81,21 @@ Utilisez le raccourci `"inherit"` si vous voulez que vos tests soient transpilé
 ```json
 {
 	"ava": {
-    "require": "babel-register",
-    "babel": "inherit"
-  },
-  "babel": {
-    "presets": ["es2015-node4", "react"]
-  }
+		"require": "babel-register",
+		"babel": "inherit"
+	},
+	"babel": {
+		"presets": [
+			"@ava/stage-4",
+			"react"
+		]
+	}
 }
 ```
 
-Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisant les presets [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) et [`react`](http://babeljs.io/docs/plugins/preset-react/).
+Dans l'exemple ci-dessus, les tests et les sources seront transpilés en utilisant les presets [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/).
+
+AVA recherche un fichier `.babelrc` uniquement dans le même répertoire que le fichier `package.json`. S'il n'est pas trouvé, il suppose que votre configuration Babel se trouve dans le fichier `package.json`.
 
 ## Étendre la configuration de transpilation de vos sources
 
@@ -84,23 +106,27 @@ En spécifiant la config Babel pour vos tests, vous pouvez définir l'option `ba
 ```json
 {
 	"ava": {
-    "require": "babel-register",
+		"require": "babel-register",
 		"babel": {
 			"babelrc": true,
 			"plugins": ["custom-plugin-name"],
 			"presets": ["custom-preset"]
 		}
-  },
-  "babel": {
-    "presets": ["es2015-node4", "react"]
+	},
+	"babel": {
+		"presets": [
+			"@ava/stage-4",
+			"react"
+		]
 	}
 }
 ```
 
-Dans l'exemple ci-dessus, les *sources* sont compilées en utilisant [`es2015-node4`](https://github.com/jbach/babel-preset-es2015-node4) et [`react`](http://babeljs.io/docs/plugins/preset-react/), les *tests* utilisent les mêmes plugins avec en plus des plugins spécifiés `custom`.
+Dans l'exemple ci-dessus, les *sources* sont compilées en utilisant [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) et [`react`](http://babeljs.io/docs/plugins/preset-react/), les *tests* utilisent les mêmes plugins avec en plus des plugins spécifiés `custom`.
+
+AVA recherche un fichier `.babelrc` uniquement dans le même répertoire que le fichier `package.json`. S'il n'est pas trouvé, il suppose que votre configuration Babel se trouve dans le fichier `package.json`.
 
 ## Étendre un fichier de config alternatif
-
 
 Si, pour une raison quelconque, votre config Babel n'est pas spécifiée dans l'un des emplacements par défaut ([`.babelrc` ou `package.json`](http://babeljs.io/docs/usage/babelrc/), vous pouvez définir l'option `extends` avec une config alternative que vous souhaitez utiliser pendant vos tests.
 
@@ -108,25 +134,15 @@ Si, pour une raison quelconque, votre config Babel n'est pas spécifiée dans l'
 
 ```json
 {
-  "ava": {
-    "require": "babel-register",
-    "babel": {
-      "extends": "./babel-test-config.json",
-      "plugins": ["custom-plugin-name"],
-      "presets": ["custom-preset"]
-    }
-  }
+	"ava": {
+		"require": "babel-register",
+		"babel": {
+			"extends": "./babel-test-config.json",
+			"plugins": ["custom-plugin-name"],
+			"presets": ["custom-preset"]
+		}
+	}
 }
 ```
 
 Ci-dessus, on utilise `babel-test-config.json` comme config de transpilation pour les *sources* et comme config de base pour les *tests*. Pour les *tests*, on étend la config de base avec des plugins personnalisés et des presets spécifiés.
-
-## Notes
-
-AVA ajoute *toujours* quelques plugins Babel personnalisés lors de la transpilation de vos plugins. Ils proposent une variété de fonctions :
-
- * Active le support de `power-assert`.
- * Réécrit le chemin interne des dépendances de AVA comme `babel-runtime` (important si vous utilisez encore `npm@2`).
- * [`ava-throws-helper`](https://github.com/jamestalmage/babel-plugin-ava-throws-helper) aide AVA à [détecter et à signaler](https://github.com/avajs/ava/pull/742) une mauvaise utilisation de l'assertion `t.throws`.
- * Génère des metadata de test pour déterminer quels fichiers doivent être exécutés en premier (*à venir*).
- * Analyse statique de dépendance pour la précompilation (*à venir*).
