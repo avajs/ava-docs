@@ -45,7 +45,7 @@ Questi file temporanei vengono solitamente rimossi dal sistema operativo, ma è 
 
 ```js
 test.after.always('cleanup', t => {
-	MongoDBServer.tearDown(); // Cleans up temporary file storage
+	MongoDBServer.tearDown(); // Ripulisce i file temporanei generati
 });
 ```
 
@@ -60,7 +60,7 @@ Se il server non dovesse partire, puoi impostare l'opzione `MongoDBServer.debug 
 ### Importare Mongoose
 
 ```js
-// `myTestCase.test.js` - (Your test case file)
+// `myTestCase.test.js` - (Il tuo file di test)
 import mongoose from 'mongoose';
 ```
 
@@ -93,6 +93,6 @@ test.beforeEach(async t => {
 
 test('my Mongoose model integration test', async t => {
 	const {db} = t.context;
-	// Now use the isolated DB instance in your test
+	// Addesso puoi usare un'istanza DB isolata nei tuoi test
 });
 ```
