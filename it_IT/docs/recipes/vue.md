@@ -42,7 +42,7 @@ hooks('vue').plugin('vue').push();
 hooks(['vue', 'js']).plugin('babel').push();
 ```
 
-Puoi trovare maggiori informazioni su come impostare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md).
+Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md).
 
 ## Snapshot test semplice
 
