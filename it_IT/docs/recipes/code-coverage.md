@@ -104,8 +104,6 @@ Per utilizzare l'hook `require` di Babel, aggiungi `babel-core/register` nella s
 ```
 
 
-*Nota*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di evitare di dover scrivere quel parametro ogni volta.
-
 ### Combinando tutto
 
 Combinando tutti i passaggi precedenti, il tuo `package.json` completo dovrebbe assomigliare al seguente:

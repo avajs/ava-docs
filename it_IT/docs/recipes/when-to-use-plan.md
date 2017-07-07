@@ -6,7 +6,7 @@ ___
 
 # Quando usare `t.plan()`
 
-Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
 
 Una delle differenze sostanziali tra AVA e [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) è il comportamento della funzione `t.plan()`. In AVA, `t.plan()` è solamente usato per verificare che il numero previsto di asserzioni sia rispettato, ma non termina automaticamente il test.
 
@@ -54,10 +54,6 @@ test(async t => {
 });
 ```
 
-## Buon uso di `t.plan()`
-
-Ci sono molti casi in cui vale la pena usare `t.plan()`.
-
 ### Promesse con un handler `.catch()`
 
 ```js
@@ -65,13 +61,23 @@ test(t => {
 	t.plan(2);
 
 	return shouldRejectWithFoo().catch(reason => {
-		t.is(reason.message, 'Hello') // Valuta t.throws() se sei solamente interessato al messaggio d'errore
+		t.is(reason.message, 'Hello');
 		t.is(reason.foo, 'bar');
 	});
 });
 ```
 
-In questo caso `t.plan()` è usato per assicurarsi che il codice all'interno del blocco `catch` sia eseguito. In molti casi, dovresti considerare l'uso dell'asserzione `t.throws()`, ma è considerato un uso accettabile di `t.plan()` poichè `t.throws()` ti permette solamente di verificare la proprietà `message` dell'errore.
+In questo caso `t.plan()` viene usato per assicurarsi che il codice nel blocco `catch` venga eseguito.
+
+Un'alternativa migliore può essere l'utilizzo di `t.throws()` e `async`/`await`, poichè il codice diventa più semplice da leggere e comprendere:
+
+```js
+test(async t => {
+	const reason = await t.throws(shouldRejectWithFoo());
+	t.is(reason.message, 'Hello');
+	t.is(reason.foo, 'bar');
+});
+```
 
 ### Assicurarsi che un blocco catch venga eseguito
 
@@ -82,13 +88,17 @@ test(t => {
 	try {
 		shouldThrow();
 	} catch (err) {
-		t.is(err.message, 'Hello') // Valuta t.throws() se sei solamente interessato al messaggio d'errore
+		t.is(err.message, 'Hello');
 		t.is(err.foo, 'bar');
 	}
 });
 ```
 
-Come già specificato nel blocco `try`/`catch` sopra, utilizzare l'asserzione `t.throws()` è generalmente una scelta migliore, anche se ti permette solamente di verificare la proprietà `message` dell'errore.
+Come già detto nellesempio precedente, è meglio utilizzare `t.throws()` con `async`/`await`.
+
+## Uso appropriato di `t.plan()`
+
+`t.plan()` aggiunge valore ai tuoi test nei casi seguenti.
 
 ### Assicurati che callback multiple vengano eseguite
 
