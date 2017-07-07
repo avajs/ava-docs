@@ -15,9 +15,9 @@ AVA usa [is-ci](https://github.com/watson/is-ci) per capise se è eseguito in un
 
 ## AVA ed il limite di client connessi
 
-Potresti utilizzare un servizio che permette un numero limitato di connessioni concorrenti. Ad esempio, molte aziende con prodotti Database-as-a-service offrono piani con un numero limitato di clienti connessi nello stesso momento. AVA può superare questi limiti poichè esegue processi multiple, ma questi servizi dovrebbero inviare un errore o incodare la richiesta in questi casi. Se il tuo servizio non si comporta in questo modo, i test potrebbero rimanere in sospeso.
+Potresti utilizzare un servizio che permette un numero limitato di connessioni concorrenti. Ad esempio, molte aziende con prodotti Database-as-a-service offrono piani con un numero limitato di client connessi nello stesso momento. AVA può superare questi limiti poichè esegue processi multiple, ma questi servizi dovrebbero inviare un errore o incodare la richiesta in questi casi. Se il tuo servizio non si comporta in questo modo, i test potrebbero rimanere in sospeso.
 
-Usa il flag `concurrency` per limitare il numero di processi da eseguire in AVA. Per esempio, se il piano del tuo servizio ti permette di eseguire 5 clienti alla volta, dovresti configurare AVA con `concurrency=5` o meno.
+Usa il flag `concurrency` per limitare il numero di processi da eseguire in AVA. Per esempio, se il piano del tuo servizio ti permette di eseguire 5 client alla volta, dovresti configurare AVA con `concurrency=5` o meno.
 
 ## Operazioni Asincrone
 
