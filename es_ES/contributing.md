@@ -74,3 +74,5 @@ Tenemos un [chat](https://gitter.im/avajs/ava). Visitanos y estate alerta, habla
 - Es posible que se le pida que haga cambios en su pull request. No es necesario solicitar otro pull request. [Únicamente actualice el que tiene.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
 
 Nota: mientras realices cambios de código, trata de recordar el mantra de AVA (robado a Python) de tener preferentemente una manera de hacer algo. Por ejemplo, una petición para agregar un alias a una parte de la API ([como aquí](https://github.com/avajs/ava/pull/663)) va a ser probablemente rechazada si no tiene algún otro beneficio substancial.
+
+*¿Buscas realizar tu primera contribución a un proyecto de código abierto? ¡No busques más! AVA posiblemente sea uno de los proyectos y comunidades más acogedores que hay. ¡Revisa el artículo ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190), que te guiará para empezar de la forma correcta y hacer que tu contribución sea parte de AVA!*

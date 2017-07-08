@@ -1,9 +1,8 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/7827fa17e0fdbbda60d4a0216aa2312fca5a2822...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-
 # Tester les composants React
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md)
@@ -14,13 +13,13 @@ La première étape est de configurer Babel pour transformer le code JSX des tes
 
 ```json
 {
-  "ava": {
-    "require": ["babel-register"],
-    "babel": "inherit"
-  },
-  "babel": {
-    "presets": ["react"]
-  }
+	"ava": {
+		"require": ["babel-register"],
+		"babel": "inherit"
+	},
+	"babel": {
+		"presets": ["react"]
+	}
 }
 ```
 
@@ -148,7 +147,3 @@ Avec AVA, vous pouvez utiliser n'importe quelle bibliothèque d'assertion, et il
 
 - [`expect-jsx`](https://github.com/algolia/expect-jsx) ([Exemple](https://github.com/avajs/ava/issues/186#issuecomment-161317068))
 - [`unexpected-react`](https://github.com/bruderstein/unexpected-react) ([Exemple de projet](https://github.com/adriantoine/ava-unexpected-react-demo))
-
-## Référence
-
-- [Guide approfondi de configuration d'AVA avec couverture du code sur un projet React](https://github.com/kentcdodds/react-ava-workshop)

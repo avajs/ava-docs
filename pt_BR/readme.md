@@ -1059,7 +1059,7 @@ AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/ava
 ---|---|---|---|---|---|---
 [Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net) | [Juan Soto](http://juansoto.me) | [Jeroen Engels](https://github.com/jfmengels)
 
-### Anterior
+### Precursor
 
 - [Kevin Mårtensson](https://github.com/kevva)
 

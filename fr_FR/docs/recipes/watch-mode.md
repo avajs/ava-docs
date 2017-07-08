@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/c258d037b1deb9028b80bd710483cf2074df97cb...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -21,9 +21,9 @@ Si vous l'avez configuré dans votre `package.json` de cette manière :
 
 ```json
 {
-  "scripts": {
-    "test": "ava"
-  }
+	"scripts": {
+		"test": "ava"
+	}
 }
 ```
 
@@ -37,10 +37,10 @@ Vous pouvez aussi mettre en place un script spécial :
 
 ```json
 {
-  "scripts": {
-    "test": "ava",
-    "watch:test": "ava --watch"
-  }
+	"scripts": {
+		"test": "ava",
+		"watch:test": "ava --watch"
+	}
 }
 ```
 
@@ -54,9 +54,9 @@ Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch
 
 ```json
 {
-  "ava": {
-    "watch": true
-  }
+	"ava": {
+		"watch": true
+	}
 }
 ```
 
@@ -70,13 +70,13 @@ AVA utilise [`chokidar`] pour surveiller les fichiers. Notez que même si vous v
 
 Dans AVA, il y a un distinction entre les *fichiers source* et les *fichiers de test*. Comme vous pouvez le devinez, les *fichiers de tests* contiennent vos tests. Les *fichiers sources* sont tous les autres fichiers que vous avez besoin pour que les tests s'exécutent, ce sont soit vos codes source ou soit vos fixtures.
 
-Par défaut AVA surveille les modifications des fichiers de test, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
+Par défaut AVA surveille les modifications des fichiers de test, des fichiers d'instantanés, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
-Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`. Ceci est la méthode recommandée, mais vous pouvez aussi utilisez [l'option `--source` du CLI].
+Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json`] en utilisant la clé `source`.
 
 Vous pouvez spécifier des patterns pour rechercher des fichiers dans les dossiers qui sont normalement ignorés, par exemple, utilisez `node_modules/some-dependency/*.js` pour spécifier tous les fichiers `.js` dans `node_modules/some-dependency` comme une source, même si normalement tous les fichiers dans `node_modules` sont ignorés.  Notez que vous devez spécifier un répertoire exact : `{bower_components,node_modules}/**/*.js` ne fonctionnera pas.
 
-Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Si cela se produit, vous devrez utiliser l'option `--source`.
+Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Configurez des patterns pour les fichiers source afin d'éviter cela.
 
 ## La surveillance de dépendance
 
@@ -88,9 +88,17 @@ La surveillance de dépendance fonctionne pour les modules exigés (require). Le
 
 [`.only`] désactive l'algorithme de suivi des dépendances du mode watch. Lorsqu'une modification est effectuée, tous les tests avec `.only` seront ré-exécutés, indépendamment du fait que le test dépend du fichier modifié.
 
+## Mode watch et CI
+
+Si vous exécutez AVA dans votre CI avec le mode watch, l'exécution s'arrêtera avec une erreur (`Error : Watch mode is not available in CI, as it prevents AVA from terminating.`). AVA ne s'exécutera pas avec l'option `--watch` (`-w`) dans le CI, car les processus du CI doivent se terminer et avec l'option `--watch`, AVA ne se terminera jamais.
+
 ## Relancer manuellement tous les tests
 
 Vous pouvez rapidement relancer tous les tests en tapant <kbd>r</kbd> sur la console, suivie par <kbd>Entrée</kbd>.
+
+## Mise à jour des instantanés
+
+Vous pouvez mettre à jour les instantanés défaillants en tapant <kbd>u</kbd> sur la console, suivi par <kbd>Entrée</kbd>.
 
 ## Débogage
 
@@ -114,7 +122,6 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [Install Troubleshooting]: https://github.com/paulmillr/chokidar#install-troubleshooting
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[l'option `--source` du CLI]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#cli
 [`.only`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
 [section `ava` de votre `package.json`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration
 [vous les ajoutiez dans votre `package.json`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration
