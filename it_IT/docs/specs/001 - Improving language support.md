@@ -41,37 +41,39 @@ Le altre trasformazioni che AVA utilizza, come `babel-plugin-espower` e `babel-p
 
 ### Progetti Babel
 
+La sezione precedente è basata sull'assunzione che AVA venga utilizzato su progetto JavaScript che non richiedano compilazione. Molti utenti però già utilizzano un flusso Bable già configurato e desiderano usare AVA senza precompilare i loro file sorgenti. Semplicemente, impostare `"babel": true` nella configurazione AVA abilita il supporto AVA per progetti Babel. I file di test e helper sono già compilati come descritto sopra, ma i file sorgenti verranno ora compilati automaticamente.
+AVA controlla per la presenza dei file `package.json` e `.babel.rc` nella cartella del progetto per determinare la configurazione Babel utilizzata per compilare i file sorgente (l'obiettivo è quello di estrarre un oggetto di configurazione Babel da questi due file). Questa descritta è una semplificazione del processo di gestione della configurazione Babel, dove si ricerca per i file di configurazione vicini ai file da compilare. Utilizzando questi due file AVA può creare una cache di compilazione senza caricare Babel ogni volta, e allo stesso tempo poter ricompilare i file sorgenti se qualcosa dovesse cambiare.
+La gestione di progetti Babel da parte di AVA può essere più precisa qualora si passi un oggetto di configurazione invece al valore `true` descritto sopra:
+* `compileSources: true | false`: stabilisce se compilare o meno i file sorgenti. Il valore predefinito è `true`.
+* `extensions: "js" | ["js", "jsx", ...]`: Specifica quali file sono consentiti. Può essere usato per estendere i tipi di file da caricare. Il valore predefinito è `"js"`.
+* `sourceOptions: {}`: permette di specificare [configurazioni Babel] precise per i file sorgenti. In questo contesto `babelrc: true` dichiara di unire la configurazione con le configurazioni trovate nei file `package.json` e `.babelrc` nel progetto. Il valore predefinito di `babelrc` è `true`.
+* `testOptions: {}`: permette di specificare [configurazioni Babel] per compilare i file helper e test. Quando questa configurazione viene specificata, la configurazione predefinita in AVA per Babel viene disabilitata e viene utilizzata questa. Come con `sourceOptions` anche in questo caso `babelrc` ha come valore predefinito `true`. Impostare il valore `presets: ["ava"]` se si vogliono utilizzare le trasformate Babel di AVA con questa configurazione.
+`sourceOptions` può essere usata per estendere una configurazione Babel condivisa così da poter caricare i file sorgenti nei test AVA. Ad esempio un utente potrebbe [dipendere da webpack per far funzionare la sintassi moduli ES2015 quando compilano, ma richiedere l'uso di `babel-plugin-transform-es2015-modules-commonjs` quando si usano i sorgenti nei test AVA][perchè avere configurazione sorgenti].
+Le opzioni `sourceOptions` e `testOptions` nella [configurazione Babel] potrebbero contenere valori `ignore` e `only`. In questo caso verranno usati per determinare se un file richiede la compilazione. Non vengono usati per la selezione dei file o per il watch mode.
 
-### Babel projects
-The above assumes AVA is used with regular JavaScript projects that do not require compilation. Many users though already have a Babel pipeline in place and wish to use AVA without having to precompile their source files.
-At its simplest, setting `"babel": true` in the AVA configuration enables AVA's support for Babel projects. Test and helper files are compiled as per the above, but source files are now automatically compiled as well.
-AVA looks at either the project's `package.json` or `.babelrc` files for the Babel options used to compile source files (ideally we can extract a proper Babel configuration object from these two locations). This is a simplification of Babel's actual configuration management, which searches for the options file that is closest to the file being compiled. Looking at these two specific files allows AVA to use cached compilation results without even having to load Babel, while still recompiling source files if options change.
-AVA's handling of Babel projects can be further configured by passing an options object instead of `true`:
-* `compileSources: true | false`: defaulting to `true`, determines whether sources are compiled.
-* `extensions: "js" | ["js", "jsx", ...]`: defaulting to `"js"`, specifies the allowed file extensions. This expands the default test file patterns.
-* `sourceOptions: {}`: specify the [Babel options] used to compile source files. In this context `babelrc: true` causes options to be merged with those found in either the project's `package.json` or `.babelrc` files. `babelrc` defaults to `true`.
-* `testOptions: {}`: specify the [Babel options] used to compile test and helper files. If provided this completely disables the default Babel configuration AVA uses to compile test and helper files. Like with `sourceOptions`, `babelrc` defaults to `true`. Set `presets: ["ava"]` to apply AVA's transforms.
-`sourceOptions` can be used to extend a shared Babel configuration so that the source files can be loaded in AVA tests. For instance users may [rely on webpack to resolve ES2015 module syntax at build time, but still need to apply `babel-plugin-transform-es2015-modules-commonjs` for sources to work in AVA][source options reason].
-`sourceOptions` and `testOptions`, being [Babel options], may specify `ignore` and `only` values. These are only used to determine whether the file needs compilation. They do not impact test file selection or source watching.
-## Compilation
-Based on this [proof of concept](https://github.com/avajs/ava/pull/1082) Babel compilation is moved into the test workers. If source files are to be compiled AVA will load its own require hook, rather than relying on `babel-core/register`.
-Babel options for test, helper and source files are prepared in the main process, and then shared with the workers. Caching hashes are derived from these configurations as well as other dependencies that might be involved.
-Workers hash the raw file contents and inspect a cache to see if a previously compiled result can be used. (Given that workers can run concurrently, care must be taken to ensure that they read complete cache entries. It's OK though if the same file is compiled more than once.)
-## TypeScript projects
-TypeScript support can be provided in much the same way as the advanced Babel support described above. Setting `"typescript": true` in the AVA config enables TypeScript support for `.ts` test and helper files, as well as sources. An options object can also be provided:
-* `compileSources: true | false`: defaulting to `true`, determines whether sources are compiled.
-* `extensions: "ts" | ["ts", "tsx", ...]`: defaulting to `"ts"`, specifies the allowed file extensions. This expands the default test file patterns.
-* `sourceOptions: {}`: specify the [TypeScript options] used to compile source files. The `extends` option defaults to the project's `tsconfig.json` file, if any. It must explicitly be set to `null` to avoid extending this file.
-* `testOptions: {}`: specify the [TypeScript options] used to compile test and helper files. Behaves the same as `sourceOptions`, there is no default configuration for test and helper files, unlike with Babel projects.
-For `sourceOptions` and `testOptions`, being [TypeScript options], `files`, `include` and `exclude` options do not impact test file selection or source watching.
-## Further implementation details
-Both Babel and TypeScript support can be provided through separate Node.js modules. They should implement the same interface, to make integration with AVA easier.
-AVA ships with Babel support, however a separate dependency needs to be installed to make TypeScript support work. A helpful error is logged if this dependency is missing while TypeScript support is enabled.
-AVA selects test files based on the combined `babel` and `typescript` configuration.
-Relative paths in `sourceOptions` and `testOptions` [must be resolved relative to the `package.json` file](https://github.com/avajs/ava/issues/707).
+## Compilazione
+
+Sulla base di questo [proof of concept](https://github.com/avajs/ava/pull/1082) la compilazione Babel viene spostata nel processo del test stesso. Se i file sorgenti devono essere compilati allora AVA caricherà i suoi hook *require* piuttosto che usare `babel-core/register`.
+Le opzioni Babel per i file di test, helper e sorgenti sono preparati nel processo principale e poi condivisi nei sotto processi. Dei valori hash verranno creati da queste configurazioni e salvati nella cache come succede per altre dipendenze utilizzate per i test. I sotto processi utilizzerà l'hash dei file per controllare la cache per usare valore precedentemente salvati. (Poichè i sotto processi vengono eseguiti in concorrenza, bisogna essere sicuri che possano leggere i valori completi nella cache e non parziali. Va bene se lo stesso file viene compilato più volte.)
+
+## Supporto per progetti TypeScript
+
+Il supporto per TypeScript può essere fornito più o meno nello stesso modo del supporto avanzato per Babel descritto sopra. Configurando `"typescript": true` nella configurazione AVA il supporto per TypeScript viene abilitato quindi l'estensione `.ts` funzionerà per i file di test, helper e file sorgente. Un oggetto di configurazione può essere utilizzato al posto di `true`:
+* `compileSources: true | false`: stabilisce se compilare o meno i file sorgenti. Il valore predefinito è `true`.
+* `extensions: "ts" | ["ts", "tsx", ...]`: Specifica quali file sono consentiti. Può essere usato per estendere i tipi di file da caricare. Il valore predefinito è `"ts"`.
+* `sourceOptions: {}`: permette di specificare [configurazioni TypeScript] precise per i file sorgenti. L'opzione `extends` ha come valore predefinito il file `tsconfig.json`, se viene trovato. È necessario configurarlo come `null` per evitare di estendere questo file.
+* `testOptions: {}`: permette di specificare [configurazioni TypeScript] per compilare i file helper e test. Il comportamento è lo stesso di `sourceOptions`, ma non esiste una configurazione predefinita per i file di test e helper in questo caso, al contrario dei progetti Babel.
+Le opzioni `sourceOptions` e `testOptions` nella [configurazione TypeScript] potrebbero contenere dei valori per `files`, `include` e `exclude`: questi valori non vengono utilizzati per selezionare i file o per il watch mode.
+
+## Per maggiori dettagli di implementazione
+
+Il supporto per Babel e TypeScript in AVA si possono utilizzare moduli Node.js distinti. L'interfaccia di questi moduli deve essere la stessa, così da semplificare l'integrazione con AVA.
+AVA offre il supporto per Babel in modo nativo, mentre è necessario installare dipendenze aggiuntive per attivare il supporto per TypeScript. Qualora il supporto per TypeScript venisse abilitato ma AVA non riesce a trovare le dipendenze richieste, verrà mostrato un errore con informazioni utili per correggere il problema.
+I file selezionati duranti l'esecuzione dei test sarà la combinazione delle configurazioni trovate in `babel` e `typescript`.
+I percorsi relativi dichiarati in `sourceOptions` e `testOptions` dovranno fare riferimento [al percorso originario del file `package.json`.](https://github.com/avajs/ava/issues/707).
 [1078]: https://github.com/avajs/ava/pull/1078
 [631 conclusione]: https://github.com/avajs/ava/issues/631#issuecomment-248659780
 [945]: https://github.com/avajs/ava/pull/945
-[Babel options]: https://babeljs.io/docs/usage/api/#options
-[source options reason]: https://github.com/avajs/ava/issues/1139#issuecomment-267969417
-[TypeScript options]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+[configurazione Babel]: https://babeljs.io/docs/usage/api/#options
+[perchè avere configurazione sorgenti]: https://github.com/avajs/ava/issues/1139#issuecomment-267969417
+[configurazione TypeScript]: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
