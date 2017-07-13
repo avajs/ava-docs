@@ -1,3 +1,8 @@
+___
+**Nota del traduttore**
+
+Questa è la traduzione del file [isolated-mongodb-integration-tests.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-fa5b24a10aa6bb9abd440902e222e84c) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `isolated-mongodb-integration-tests.md` nella lista dei file modificati, questa traduzione è aggiornata).
+___
 # Test di integrazione per MongoDB in isolamento
 
 Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)

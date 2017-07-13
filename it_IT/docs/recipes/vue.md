@@ -1,3 +1,8 @@
+___
+**Nota del traduttore**
+
+Questa è la traduzione del file [vue.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/vue.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-09533a825d46c23878919cd6e9bb1182) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `vue.md` nella lista dei file modificati, questa traduzione è aggiornata).
+___
 # Testare componenti Vue.js
 
 Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/vue.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/vue.md)

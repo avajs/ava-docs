@@ -1,3 +1,8 @@
+___
+**Nota del traduttore**
+
+Questa è la traduzione del file [debugging-with-vscode.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/debugging-with-vscode.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `debugging-with-vscode.md` nella lista dei file modificati, questa traduzione è aggiornata).
+___
 # Fare debugging dei test con Visual Studio Code
 
 Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-vscode.md)

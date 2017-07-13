@@ -1,3 +1,8 @@
+___
+**Nota del traduttore**
+
+Questa è la traduzione del file [debugging-with-webstorm.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-1fb9cdb432e04d416229256c338f1a06) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `debugging-with-webstorm.md` nella lista dei file modificati, questa traduzione è aggiornata).
+___
 # Fare debugging con WebStorm
 
 Traduzioni:

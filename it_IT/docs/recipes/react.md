@@ -1,3 +1,8 @@
+___
+**Nota del traduttore**
+
+Questa è la traduzione del file [react.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-2cb79c7fb78b66228297358846395c3a) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `react.md` nella lista dei file modificati, questa traduzione è aggiornata).
+___
 # Testare componenti React
 
 Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/react.md)
