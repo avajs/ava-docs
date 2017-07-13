@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/avajs/ava/compare/3201b1b4ff80ff75f0e1c288ca7da22f92c9b814...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Accordo di Condotta per il Collaboratore
 
