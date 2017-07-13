@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [precompiling-with-webpack.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/precompiling-with-webpack.md). Qui c'è il [link](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-b4c25a4a1412e9204ac923133f67814f) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `precompiling-with-webpack.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [precompiling-with-webpack.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/precompiling-with-webpack.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-b4c25a4a1412e9204ac923133f67814f) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `precompiling-with-webpack.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 ## Pre-compila i file sorgente con webpack
 
