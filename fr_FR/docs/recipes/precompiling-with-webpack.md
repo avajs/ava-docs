@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/212b5de5759fdb267d837620c3eec7e5695a23e1...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/465fcecc9ae0d3274d4d41d3baaca241d6a40130...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 ## Précompilation des fichiers sources avec webpack
 
@@ -229,7 +229,7 @@ npm scripts:
 		"precompile-src": "cross-env NODE_ENV=test babel src --out-dir _src",
 		"precompile-tests": "cross-env NODE_ENV=test webpack --config webpack.config.test.js",
 		"pretest": "npm run precompile-src && npm run precompile-tests",
-		"test": "cross-env NODE_ENV=test nyc --cache ava _build --concurrency 3"
+		"test": "cross-env NODE_ENV=test nyc --cache ava _build"
 	}
 }
 ```
