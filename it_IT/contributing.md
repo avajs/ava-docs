@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Qui c'è il [link](https://github.com/avajs/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `contributing.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `contributing.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Contribuire ad AVA
 
@@ -72,3 +72,5 @@ Abbiamo una [chat](https://gitter.im/avajs/ava). Visita e dai un'occhiata, parla
 - Potremmo chiederti di fare dei cambiamenti alla tua pull request. Non c'è bisogno di aprire una nuova pull request, semplicemente [aggiorna quella già aperta](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md).
 
 Attenzione: quando fai modifiche al codice, ricorda che il mantra di AVA (preso da Python) è avere preferibilmente un unico modo di fare qualcosa. Ad esempio, una pull request per aggiungere un alias per una parte dell'API ([come questo](https://github.com/avajs/ava/pull/663))) sarà molto probabilmente rifiutata se non introduce qualche ulteriore beneficio.
+
+*Stai cercando un progetto open source a cui contribuire? Eccolo! AVA è un progetto con una comunità accogliente su Internet. Dai un'occhiata al blog post ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190) per avere un'idea di come iniziare e contribuire ad AVA!*

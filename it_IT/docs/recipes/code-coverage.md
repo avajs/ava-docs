@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/avajs/ava/compare/195390ec1db90cf7d394407c846a69fbaa08806d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Code coverage
 
@@ -103,8 +103,6 @@ Per utilizzare l'hook `require` di Babel, aggiungi `babel-core/register` nella s
 }
 ```
 
-
-*Nota*: puoi anche impostare l'hook `require` dalla linea di comando: `ava --require=babel-core/register`. Ciononostante, la configurazione nel `package.json` permette di evitare di dover scrivere quel parametro ogni volta.
 
 ### Combinando tutto
 
