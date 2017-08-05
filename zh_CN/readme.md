@@ -522,6 +522,54 @@ test.only.serial(...);
 
 这意味着你可以在每个测试或钩子的末尾临时添加 `.skip` 或 `.only`，而不用做其他的修改。
 
+### 测试宏
+
+给到测试定义的额外参数会被传给测试的实现，这个特性可被用于创建可重用的测试宏。
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+test('2 + 2 = 4', macro, '2 + 2', 4);
+test('2 * 3 = 6', macro, '2 * 3', 6);
+```
+
+通过实现宏的 `title` 方法，能够动态的为测试添加标题：
+
+```js
+function macro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} = ${expected}`.trim();
+
+test(macro, '2 + 2', 4);
+test(macro, '2 * 3', 6);
+test('providedTitle', macro, '3 * 3', 9);
+```
+
+如果不设置标题，`providedTitle` 参数默认是空字符串。因此能够安全的进行字符串的连接操作，而不用担心在 `null` / `undefined` 上调用方法而导致报错。空字符串是假值，`if(providedTitle) {...}` 这样的条件判断是完全成立的。
+
+还可以向宏方法传入数组：
+
+```js
+const safeEval = require('safe-eval');
+
+function evalMacro(t, input, expected) {
+	t.is(eval(input), expected);
+}
+
+function safeEvalMacro(t, input, expected) {
+	t.is(safeEval(input), expected);
+}
+
+test([evalMacro, safeEvalMacro], '2 + 2', 4);
+test([evalMacro, safeEvalMacro], '2 * 3', 6);
+```
+
+我们鼓励用宏代替[此类](https://github.com/avajs/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9)测试生成代码。宏的设计初衷是静态分析你的代码，因此有着更好的效率、IDE 集成以及校验规则。
+
 ### 自定义断言
 
 你可以使用其他断言库来替代内置的断言库，当断言失败可以让其抛出异常。
