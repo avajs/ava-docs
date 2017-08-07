@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/465fcecc9ae0d3274d4d41d3baaca241d6a40130...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/14f7095d25abc5ffbff7efd7db962eaf5e86daab...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -879,6 +879,10 @@ Détermine le nombre d'assertion qu'il y a dans le test. Le test échouera si le
 ###### `t.end()`
 
 La fin du test. Fonctionne uniquement avec `test.cb()`.
+
+###### `t.log(message)`
+
+Publiez contextuellement un message de log à côté du résultat du test au lieu de le publier immédiatement dans le `stdout` comme `console.log`.
 
 ## Assertions
 

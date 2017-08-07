@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/ab314c4c28ad7d77af7d3ce4fc10ec41c726cd32...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/e28be05788b50b0ad81c889fa5fb6c4032c4201b...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester un endpoint
 
@@ -14,6 +14,7 @@ AVA n'a pas de méthodes internes pour tester les endpoints, mais nous pouvons l
 ```js
 function makeApp() {
 	const app = express();
+	app.use(bodyParser.json());
 	app.post('/signup', signupHandler);
 	return app;
 }
