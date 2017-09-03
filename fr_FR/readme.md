@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/57f50072ac37dcc62eeed391c547bf841efb6f85...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/69b6b627c3a10a1adc105af33df3cbcfcd97f72d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -282,7 +282,20 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
 
 Les arguments passés au CLI seront toujours prioritaires sur ceux de la configuration dans `package.json`.
 
-Voir la section [prise en charge de ES2017](#prise-en-charge-de-es2017) pour plus de détails sur l'option `babel`.
+### Options
+
+- `files` : les chemins des fichiers et des répertoires, ainsi que les modèles de glob (glob patterns) qui sélectionnent les fichiers AVA qui feront des tests. Seuls les fichiers avec une extension `.js` sont utilisés. Les fichiers préfixés avec un underscore sont ignorés. Tous les fichiers `.js` dans les répertoires sélectionnés sont exécutés
+- `source` : les fichiers, lorsqu'ils sont modifiés, provoquent la ré-exécution des tests lors du mode watch. Voir la [recette du mode watch pour plus de détails](docs/recipes/watch-mode.md#les-fichiers-sources-et-les-fichiers-de-test)
+- `match` : n'est généralement pas utile dans la configuration du `package.json`, mais est équivalent au [`--match` de la CLI](#exécution-de-tests-correspondants-à-des-titres)
+- `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue
+- `failWithoutAssertions` : si `false`, ne pas faire échouer un test s'il n'exécute pas des [assertions](#assertions)
+- `tap` : si `true`, active le [reporter de TAP](#reporter-de-tap)
+- `snapshotLocation` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
+- `powerAssert` : si `false`, désactive [power-assert](https://github.com/power-assert-js/power-assert) qui aide tout de même à fournir des messages d'erreur plus descriptifs
+- `require` : modules supplémentaires à intégrer avant que les tests ne soient exécutés. Les modules qui sont requis dans le [processus de travail](#isolement-du-processus)
+- `babel` : options spécifiques de Babel pour les fichiers de test. Consultez la [prise en charge de ES2017](#prise-en-charge-de-es2017) pour plus de détails
+
+Veuillez notez qu'en fournissant des fichiers à la CLI, cela écrase l'option `files`. Si vous avez configuré un glob pattern, par exemple `test/**/*.test.js`, vous devez peut-être le répéter lors de l'utilisation de la CLI : `ava 'test/integration/*.test.js'`.
 
 ## Documentation
 
@@ -938,7 +951,7 @@ Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `
 
 ### `.throws(function|promise, [error, [message]])`
 
-Affirme que `function` lève une erreur, ou rejète `promise` avec une erreur.
+Affirme que `function` lève une erreur, ou rejette `promise` avec une erreur.
 
 `error` peut-être un constructeur d'une erreur, un message d'erreur, une regex qui correspond à un message d'erreur ou une fonction de validation.
 
@@ -1044,11 +1057,25 @@ AVA montrera pourquoi votre assertion d'instantané a échoué :
 
 <img src="https://github.com/avajs/ava/blob/master/media/snapshot-testing.png" width="1048">
 
-Vous pouvez ensuite vérifier votre code. Si le changement etait intentionel, vous pouvez utiliser l'option `--update-snapshots` (ou `-u`) pour mettre à jour vos instantanés :
+Vous pouvez ensuite vérifier votre code. Si le changement était intentionnel, vous pouvez utiliser l'option `--update-snapshots` (ou `-u`) pour mettre à jour vos instantanés :
 
 ```console
 $ ava --update-snapshots
 ```
+
+Vous pouvez définir un emplacement fixe pour stocker les fichiers d'instantanés dans la configuration d'AVA [inclus dans le `package.json`](#configuration) :
+
+```json
+{
+	"ava": {
+		"snapshotLocation": "custom-directory"
+	}
+}
+```
+
+Les fichiers instantanés seront enregistrés dans une arborescence qui reflète celle de vos fichiers de test.
+
+Si vous utilisez AVA avec des fichiers de test précompilés, AVA essayera d'utiliser les source maps pour déterminer l'emplacement des fichiers d'origine. Les instantanés seront stockés à côté de ces fichiers, en suivant les mêmes règles que si AVA avait exécuté les fichiers originaux directement. C'est bien si vous écrivez vos tests en TypeScript (consultez notre [recette TypeScript](docs/recipes/typescript.md)).
 
 ## Assertions ignorées
 
