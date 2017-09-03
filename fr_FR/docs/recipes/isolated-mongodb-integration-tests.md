@@ -65,4 +65,4 @@ Si le serveur ne semble pas démarrer, vous pouvez définir l'option `MongoDBSer
 
 [Mongoose](http://mongoosejs.com) est un robuste Object-Document-Mapper (ODM) pour MongoDB. Reportez-vous à sa documentation pour débuter avec Mongoose.
 
-Pour utiliser efficacement Mongoose avec AVA, consultez les [documents d'intégration Mongoose](../endpoint-testing-with-mongoose.md).
+Pour utiliser efficacement Mongoose avec AVA, consultez les [documents d'intégration Mongoose](endpoint-testing-with-mongoose.md).
