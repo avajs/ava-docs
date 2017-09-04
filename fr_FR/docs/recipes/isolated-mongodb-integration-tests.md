@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/c9fe8dbf166d9d23e3575eb5780ccdffda984e90...master#diff-fa5b24a10aa6bb9abd440902e222e84c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/9c9dfefb548dc5b18b4d72b15ed18ef1e8084e9f...master#diff-fa5b24a10aa6bb9abd440902e222e84c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration d'AVA pour les tests d'intégration isolés de MongoDB
 
