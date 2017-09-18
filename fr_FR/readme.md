@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/9c9dfefb548dc5b18b4d72b15ed18ef1e8084e9f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/03149d79a67f52c4f580ef54da84856eb3dd3fd5...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -74,18 +74,18 @@ test(t => {
 
 ### Ajoutez AVA à votre projet
 
-Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`. [Yarn](https://yarnpkg.com/) permet actuellement d'améliorer la vitesse du processus d'installation par rapport à npm. Penser à [utiliser Yarn](https://yarnpkg.com/en/docs/install) si l'installation est trop lente pour vos exigences.
+Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`.
 
-
-```console
-$ yarn global add ava
-$ ava --init
-```
-
-Si vous préférez l'utilisation de npm :
 
 ```console
 $ npm install --global ava
+$ ava --init
+```
+
+Si vous préférez l'utilisation de Yarn :
+
+```console
+$ yarn global add ava
 $ ava --init
 ```
 
@@ -110,13 +110,13 @@ Tous les arguments passés après `--init` sont ajoutés comme config au `packag
 Vous pouvez également installer AVA directement :
 
 ```console
-$ yarn add --dev ava
+$ npm install --save-dev ava
 ```
 
-Alternativement en utilisant npm :
+Alternativement en utilisant Yarn :
 
 ```console
-$ npm install --save-dev ava
+$ yarn add --dev ava
 ```
 
 Vous devez configurer le script `test` dans votre `package.json` pour utiliser `ava` (Voir ci-dessus).
