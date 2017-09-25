@@ -1,14 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/14238788c421fdfcc8e1a67c4191fd4c6f3e2385...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
  Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/browser-testing.md)
 
-AVA ne supporte pas [encore](https://github.com/avajs/ava/issues/24) l'exécution de tests dans les navigateurs. Certaines bibliothèques exigent des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc).
-Par exemple, c'est le cas de React, si vous voulez utiliser ReactDOM.render et simuler les événements avec ReactTestUtils.
+AVA ne supporte pas [encore](https://github.com/avajs/ava/issues/24) l'exécution de tests dans les navigateurs. Cependant, les bibliothèques JavaScript nécessitant des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc) peuvent encore être testé avec AVA en maquettant ces globales.
 
 Cette recette fonctionne pour toutes les bibliothèques qui ont besoin d'un environnement de navigateur maquetté.
 
@@ -64,7 +63,7 @@ Configurez le `require` de AVA avec le helper pour l'exiger avant chaque fichier
 
 Écrivez vos tests et profitez d'un environnement de navigateur maquetté.
 
-`test/my.dom.test.js`:
+`test.js`:
 
 ```js
 import test from 'ava';
@@ -74,28 +73,5 @@ test('Insérer au DOM', t => {
 	document.body.appendChild(div);
 
 	t.is(document.querySelector('div'), div);
-});
-```
-
-`test/my.react.test.js`:
-
-```js
-import test from 'ava';
-import React from 'react';
-import {render} from 'react-dom';
-import {Simulate} from 'react-addons-test-utils';
-import sinon from 'sinon';
-import CustomInput from './components/custom-input.jsx';
-
-test('Input appelle onBlur', t => {
-	const onUserBlur = sinon.spy();
-	const input = render(
-		React.createElement(CustomInput, onUserBlur),
-		div
-	);
-
-	Simulate.blur(input);
-
-	t.true(onUserBlur.calledOnce);
 });
 ```
