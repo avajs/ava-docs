@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/03149d79a67f52c4f580ef54da84856eb3dd3fd5...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/42e7c74c46756c441fe33ecdcbb76ac210e422ea...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -1131,6 +1131,8 @@ t.true(a.test(b) || b === c)
 ## Isolement du processus
 
 Chaque fichier de test est exécuté dans un processus Node.js séparé. Cela apporte beaucoup d'avantages. Cela vous permet de changer l'état global ou de substituer un seul fichier de test, sans affecter les autres. C'est également bien pour des performances sur les processeurs multi-cœurs modernes, ce qui permet d'exécuter plusieurs fichiers de test en parallèle.
+
+AVA définira `process.env.NODE_ENV` à `test`, à moins que la variable d'environnement `NODE_ENV` ait été définie. Ceci est utile si le code que vous testez a des valeurs par défaut de test (par exemple lors de la sélection de la base de données à laquelle se connecter ou des options Babel spécifiques à l'environnement). Toutefois, il se peut que votre code ou ses dépendances se comportent différemment. Notez que `'NODE_ENV' dans process.env` sera toujours `true`.
 
 ## Astuces
 
