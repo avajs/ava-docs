@@ -1,7 +1,7 @@
 ﻿___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será porque la traducción está actualizada).
 ___
 # ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
 
@@ -159,7 +159,7 @@ Los argumentos pasados al CLI siempre tendrán prioridad sobre la configuración
 
 ## Documentación
 
-Los tests se ejecutan asincronamente y requieren devolver y soportar un objeto asíncrono (una promesa, u [observable](https://github.com/zenparsing/zen-observable)). Nosotros recomendamos *altamente* el uso de [funciones asícronas](#soporte-a-funciones-async); Hacen el código asíncrono, conciso y fácil de leer, y de forma implícita devuelven una promesa, por lo que no tiene que hacerla.
+Los tests se ejecutan asincronamente y requieren devolver y soportar un objeto asíncrono (una promesa, u [observable](https://github.com/zenparsing/zen-observable)). Nosotros recomendamos *altamente* el uso de [funciones asíncronas](#soporte-a-funciones-async). Hacen el código asíncrono, conciso y fácil de leer, y de forma implícita devuelven una promesa, por lo que no tiene que hacerla.
 
 Si usted no devuelve uno de los objetos soportados y asincrónicos mencionados anteriormente, la prueba se considerará síncrona y terminará inmediatamente.
 
@@ -199,7 +199,7 @@ test(function name(t) {
 
 ### Plan de aserción
 
-Un plan de aserción se puede utilizar para garantizar que un número determinado de afirmaciones se cumplen. El escenario más común es validar que el test no ha salido antes de ejecutar el número esperado de aserciones. También falla el test si se ejecutan demasiadas aserciones, puede ser útil si tiene aserciones dentro de callbacks o bucles. Tenga en cuenta que, a diferencia del nodo-tap y tape, AVA *no* terminará automaticamente un test cuando se alcance el final previsto de la aserción.
+Un plan de aserción se puede utilizar para garantizar que un número determinado de afirmaciones se cumplen. El escenario más común es validar que el test no ha salido antes de ejecutar el número esperado de aserciones. También falla el test si se ejecutan demasiadas aserciones, puede ser útil si tiene aserciones dentro de callbacks o bucles. Tenga en cuenta que, a diferencia del nodo-tap y tape, AVA *no* terminará automáticamente un test cuando se alcance el final previsto de la aserción.
 
 Esto terminará en un test ejecutado satisfactoriamente:
 
@@ -224,7 +224,7 @@ test.cb(t => {
 
 ### Serial-tests
 
-Mientras que la concurrencia es impresionante, hay algunas cosas que no se pueden hacer concurrentemente. En estos extraños casos, puede usar `test.serial`, lo que obligará a esos tests funcionar en serie antes de los concurrentes.
+Mientras que la concurrencia es impresionante, hay algunas cosas que no se pueden hacer concurrentemente. En estos extraños casos, puede usar `test.serial`, lo que obligará a esos tests a funcionar en serie antes de los concurrentes.
 
 ```js
 test.serial(t => {
@@ -259,7 +259,7 @@ test.skip('will not be run', t => {
 ### Before & after hooks
 
 Cuando se requiera empezar a preparar y/o abandonar, puede usar `test.before()` y `test.after()`,
-usandolo de la misma manera que `test()`. La función test permite el uso de `test.before()` y `test.after()`, siempre serán ejecutadas antes o despues de todos los tests. Puede usar incluso `test.beforeEach()` y `test.afterEach()` si necesita preparar algo antes y despues de cada test. Los hooks se ejecutan en serie en el archivo de test. Añada tantos como quiera. Opcionalmente puede especificar un título que se muestre en el error.
+usándolo de la misma manera que `test()`. La función test permite el uso de `test.before()` y `test.after()`, siempre serán ejecutadas antes o después de todos los tests. Puede usar incluso `test.beforeEach()` y `test.afterEach()` si necesita preparar algo antes y despues de cada test. Los hooks se ejecutan en serie en el archivo de test. Añada tantos como quiera. Opcionalmente puede especificar un título que se muestre en el error.
 
 Si necesita crear un estado global entre tests usando 'test.beforeEach()' y 'test.afterEach()' (como espiar 'console.log' [por ejemplo] (https://github.com/avajs/ava/issues/560)), necesitará asegurarse de que los tests se ejecutan en serie (mediante [test.serial](#serial-tests) o ['--serial'](#cli)).
 
@@ -344,7 +344,7 @@ test.serial.only(...);
 test.only.serial(...);
 ```
 
-Es especialmente util utilizar temporalmente `skip` o `only` en un test, sin perder la información y el comportamiento que los otros modificadores proporcionan.
+Es especialmente útil utilizar temporalmente `skip` u `only` en un test, sin perder la información y el comportamiento que los otros modificadores proporcionan.
 
 ### Módulo aserción customizado
 
@@ -421,7 +421,7 @@ AVA incluye typings para TypeScript. Tienes que configurar la transpilación por
 
 AVA actualmente sólo transpilará los tests que usted le pida que ejecute. *No transpilará módulos que ```importen``` de fuera del test.* Si bien hay razones válidas para adoptar este enfoque, puede que no sea lo que esperas!
 
-Como solución simple, puede utilizar [Babel's require hook](https://babeljs.io/docs/usage/require/) con el fin de hacer transpilación sobre la marcha de los módulos que se importan posteriormente. Por que AVA soporta la sintaxis de módulo de ES2015, se puede utilizar para importar el hook requerido en sí:
+Como una solución simple, puede utilizar [Babel's require hook](https://babeljs.io/docs/usage/require/) con el fin de hacer transpilación sobre la marcha de los módulos que se importan posteriormente. Debido a que AVA soporta la sintaxis de módulo de ES2015, se puede utilizar para importar el hook requerido en sí:
 
 ```js
 import test from 'ava';
