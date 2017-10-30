@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/37c9122c50722b06039f1cc2306a7c176fd3c786...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -19,6 +19,12 @@ Il y a plusieurs options pour configurer la façon dont AVA transpile vos tests 
 ## Comportement par défaut du transpileur de AVA
 
 AVA vous permet d'utiliser certaines fonctionnalités JavaScript très utiles, tel que [`async`](https://github.com/avajs/ava#async-function-support). Pour que cela fonctionne sur les anciennes versions de Node.js, AVA transpile les fichiers de test et de helper en utilisant le preset Babel [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). C'est génial pour les projets où vous n'utilisez pas Babel dans votre source, mais où vous souhaitez utiliser les dernières fonctionnalités JavaScript pour vos tests.
+
+### Utilisation des propriétés de reste/décomposition d'objet
+
+Depuis Node.js [8.3.0](https://github.com/nodejs/node/blob/v8.3.0/doc/changelogs/CHANGELOG_V8.md#8.3.0) les [propriétés de reste/décomposition d'objet](https://github.com/tc39/proposal-object-rest-spread) sont prises en charge directement. Cette nouvelle fonctionnalité du langage n'a cependant pas encore atteint le [niveau 4](http://2ality.com/2015/11/tc39-process.html#stage-4-finished), ce qui signifie qu'AVA ne le supportera pas par défaut. Cela dit, si vous utilisez Node.js 8.3.0 ou plus récent, AVA chargera le plugin [`syntax-object-rest-spread`](https://www.npmjs.com/package/babel-plugin-syntax-object-rest-spread) plugin à votre place. Cela signifie que vous *pouvez* utiliser les propriétés de reste/décomposition d'objet dans vos tests tant que vous ne visez pas les anciennes versions de Node.js.
+
+Notez que si vous personnalisez la configuration de Babel, vous devrez spécifier explicitement le plugin `syntax-object-rest-spread`.
 
 ## Personnaliser la manière dont AVA transpile vos tests
 

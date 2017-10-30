@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/68ce4b813afcf81f31e48212ab04cb6fcf224457...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/f98a8810de770c4d22d87302580eecc228c8d052...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -55,6 +55,23 @@ test(async (t) => {
 });
 ```
 
+## Travailler avec les [macros](https://github.com/avajs/ava-docs/tree/master/fr_FR#macros-de-test)
+
+Pour pouvoir attribuer la propriété `title` à une macro :
+
+```ts
+import test, { AssertContext, Macro } from 'ava';
+
+const macro: Macro<AssertContext> = (t, input, expected) => {
+	t.is(eval(input), expected);
+}
+
+macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} = ${expected}`.trim();
+
+test(macro, '2 + 2', 4);
+test(macro, '2 * 3', 6);
+test('providedTitle', macro, '3 * 3', 9);
+```
 
 ## Travailler avec [`context`](https://github.com/avajs/ava-docs/tree/master/fr_FR#tester-le-contexte)
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/16b7e538d2061dbab363087be4babd42e4549aec...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/b3c4090c83be2982cd3103ec3c1566a007a80c0d...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -69,7 +69,7 @@ Nous avons un [chat](https://gitter.im/avajs/ava). Venez, espionnez, parlez-nous
 - Faites un pull request depuis une [branche](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), pas depuis le master.
 - Utilisez un titre clair et descriptif pour le pull request et les commits.
 - Écrivez une description convaincante pour expliquer pourquoi nous devrions intégrer votre pull request. Il est de votre devoir de nous convaincre. Répondre à la question «pourquoi» est nécessaire et fournissez des cas d'utilisation.
-- Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)
 
 Remarque: lorsque vous modifiez du code, n'oubliez pas que la devise de AVA (volé à Python), c'est d'avoir une unique méthode pour faire quelque chose. Par exemple, une demande pour ajouter un alias à l'API ([comme ceci] (https://github.com/avajs/ava/pull/663)) sera probablement refusée s'il n'y a pas l'ajout d'un autre avantage important.
 
