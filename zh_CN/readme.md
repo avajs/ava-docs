@@ -22,10 +22,13 @@ ___
 
 - [用法](#用法)
 - [CLI 用法](#cli)
+- [调试](#调试)
+- [报告器](#报告器)
 - [配置](#配置)
 - [文档](#文档)
 - [API](#api)
 - [断言](#断言)
+- [测试快照](#测试快照)
 - [小贴士](#小贴士)
 - [FAQ](#faq)
 - [秘方](#秘方)
@@ -42,14 +45,16 @@ ___
 - 并发运行测试
 - 强制编写原子测试
 - 没有隐藏的全局变量
+- 包含 TypeScript 和 Flow 的类型定义
+- [Magic assert](#magic-assert)
 - [为每个测试文件隔离环境](#隔离进程)
-- [用 ES2015 编写测试](#支持-es2015)
+- [用 ES2017 编写测试](#支持-es2017)
 - [支持 Promise](#支持-promise)
 - [支持 Generator](#支持-generator)
 - [支持 Async](#支持-async)
 - [支持 Observable](#支持-observable)
 - [强化断言信息](#强化断言信息)
-- [可选的 TAP 输出显示](#可选的-tap-输出)
+- [可选的 TAP 输出显示](#TAP 报告器)
 - [简明的堆栈跟踪](#简明的堆栈跟踪)
 
 
@@ -75,6 +80,15 @@ $ npm install --global ava
 $ ava --init
 ```
 
+如果你偏好 Yarn 的话：
+
+```console
+$ yarn global add ava
+$ ava --init
+```
+
+你的 `package.json` 会看起来像这样：
+
 ```json
 {
     "name": "awesome-package",
@@ -82,7 +96,7 @@ $ ava --init
         "test": "ava"
     },
     "devDependencies": {
-        "ava": "^0.11.0"
+        "ava": "^0.20.0"
     }
 }
 ```
@@ -92,11 +106,18 @@ $ ava --init
 #### 手动安装
 
 你也可以直接安装 AVA：
+
 ```console
 $ npm install --save-dev ava
 ```
 
-你还需要配置 `test` 脚本在你的 `package.json`，值为 `ava`（参照上面的配置）。
+或者使用 Yarn ：
+
+```console
+$ yarn add --dev ava
+```
+
+你还需要在你的 `package.json` 中配置 `test` 脚本来使用 `ava`（参照前面）。
 
 ### 创建你的测试文件
 
@@ -116,8 +137,6 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
-
 ### 运行
 
 ```console
@@ -130,11 +149,9 @@ $ npm test
 $ npm test -- --watch
 ```
 
-AVA 来自一个非常聪明的观察模式。[可以在它的秘方中查看详情](docs/recipes/watch-mode.md)。
+AVA 拥有非常智能的观察模式。[可以在它的秘方中查看详情](docs/recipes/watch-mode.md)。
 
 ## CLI
-
-![](https://github.com/avajs/ava/blob/master/media/screenshot-mini-reporter.gif)
 
 ```console
 $ ava --help
@@ -143,16 +160,20 @@ $ ava --help
     ava [<file|directory|glob> ...]
 
   Options
-    --init           Add AVA to your project
-    --fail-fast      Stop after first test failure
-    --serial, -s     Run tests serially
-    --require, -r    Module to preload (Can be repeated)
-    --tap, -t        Generate TAP output
-    --verbose, -v    Enable verbose output
-    --no-cache       Disable the transpiler cache
-    --match, -m      Only run tests with matching title (Can be repeated)',
-    --watch, -w      Re-run tests when tests and source files change
-    --source, -S     Pattern to match source files so tests can be re-run (Can be repeated)
+    --init                  Add AVA to your project
+    --fail-fast             Stop after first test failure
+    --serial, -s            Run tests serially
+    --tap, -t               Generate TAP output
+    --verbose, -v           Enable verbose output
+    --no-cache              Disable the transpiler cache
+    --no-power-assert       Disable Power Assert
+    --color                 Force color output
+    --no-color              Disable color output
+    --match, -m             Only run tests with matching title (Can be repeated)
+    --watch, -w             Re-run tests when tests and source files change
+    --timeout, -T           Set global timeout
+    --concurrency, -c       Max number of test files running at the same time (Default: CPU cores)
+    --update-snapshots, -u  Update snapshots
 
   Examples
     ava
@@ -163,15 +184,64 @@ $ ava --help
     ava --init foo.js
 
   Default patterns when no arguments:
-  test.js test-*.js test/**/*.js
+  test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
-*注意，如果你本地安装的 AVA 可用的话 CLI 将会运行它，即使你的全局也安装了 AVA。*
+*注意：在本地和全局都安装了 AVA 的情况下，本地安装的将会被优先使用。*
 
-文件夹会被递归遍历，带上 `*.js` 参数的话全部文件都会被作为测试文件。名字为 `fixtures`，`helpers` 和 `node_modules` 的文件夹*总会*被忽略。所以把 helper 名字以 `_` 开头命名就可以一起放置在测试文件的目录下。
+文件夹会被递归遍历，所有 `*.js` 文件都会被作为测试文件。名字为 `fixtures`，`helpers` 和 `node_modules` 的文件夹*总会*被忽略。所以把 helper 名字以 `_` 开头命名就可以一起放置在测试文件的目录下。
 
 当使用 `npm test` 时你可以直接传参数 `npm test test2.js`，但标志需要像这样传递 `npm test -- --verbose`。
 
+
+## 调试
+
+AVA 在子进程中运行测试，因此为了调试测试，需要用如下方法：
+
+```
+$ node --inspect node_modules/ava/profile.js some/test/file.js
+```
+
+### 特定调试器的技巧
+
+
+- [Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
+- [WebStorm](docs/recipes/debugging-with-webstorm.md)
+- [Visual Studio Code](docs/recipes/debugging-with-vscode.md)
+
+## 报告器
+
+### 迷你报告器
+
+这是默认的报告器。
+
+<img src="media/mini-reporter.gif" width="460">
+
+### 详细报告器
+
+使用 `--verbose` 参数可以启用详细报告器。这在 CI 环境下始终会被启用，除非已经使用了 [TAP 报告器](#TAP 报告器)
+
+<img src="media/verbose-reporter.png" width="294">
+
+### TAP 报告器
+
+AVA 支持 TAP格式，并且与 [任何 TAP 报告器](https://github.com/sindresorhus/awesome-tap#reporters) 相兼容。使用 `--tap` 选项来启用 TAP 输出。
+
+```console
+$ ava --tap | tap-nyan
+```
+
+<img src="media/tap-reporter.png" width="420">
+
+注意 TAP 报告器在 [监视模式](docs/recipes/watch-mode.md) 下不可用。
+
+### Magic assert
+
+AVA 加入了代码摘录和干净的 diff 到实际和期望的值。如果断言中的值是 object 或者 array，那么只有 diff 会显示出来，去掉了干扰让人专注问题。同时 diff 是带语法高亮的！如果你正在比较两个 string ，不管是单行还是多行的，AVA 都使用另一种 diff 显示，来高亮出新增和删除的字符。
+
+### 干净的调用栈显示
+
+AVA 会自动去掉调用栈中不相关的行，让你能够更快地定位错误的根源。
 
 ## 配置
 
