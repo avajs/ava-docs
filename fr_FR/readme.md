@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/1cd3a04fbab2787a4f2dd4020529f8598ec31e51...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/cb1c3f70588cd660ae41b61e129c711e63d9e7f8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -290,7 +290,7 @@ Les arguments passés au CLI seront toujours prioritaires sur ceux de la configu
 - `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue
 - `failWithoutAssertions` : si `false`, ne pas faire échouer un test s'il n'exécute pas des [assertions](#assertions)
 - `tap` : si `true`, active le [reporter de TAP](#reporter-de-tap)
-- `snapshotLocation` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
+- `snapshotDir` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
 - `powerAssert` : si `false`, désactive [power-assert](https://github.com/power-assert-js/power-assert) qui aide tout de même à fournir des messages d'erreur plus descriptifs
 - `require` : modules supplémentaires à intégrer avant que les tests ne soient exécutés. Les modules qui sont requis dans le [processus de travail](#isolement-du-processus)
 - `babel` : options spécifiques de Babel pour les fichiers de test. Consultez la [prise en charge de ES2017](#prise-en-charge-de-es2017) pour plus de détails
@@ -1070,7 +1070,7 @@ Vous pouvez définir un emplacement fixe pour stocker les fichiers d'instantané
 ```json
 {
 	"ava": {
-		"snapshotLocation": "custom-directory"
+		"snapshotDir": "custom-directory"
 	}
 }
 ```
