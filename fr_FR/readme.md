@@ -1019,7 +1019,7 @@ Affirme que `error` est falsy.
 ### `.snapshot(expected, [message])`
 ### `.snapshot(expected, [options], [message])`
 
-Compare la valeur `expected` avec avec un instantané enregistré auparavant. Les instantanés sont conservés pour chaque test, donc assurez-vous de donner à vos tests des titres uniques. Sinon, passez un objet `options` pour sélectionner un instantané spécifique, par exemple `{id: 'mon snapshot'}`.
+Compare la valeur `expected` avec un instantané enregistré auparavant. Les instantanés sont conservés pour chaque test, donc assurez-vous de donner à vos tests des titres uniques. Sinon, passez un objet `options` pour sélectionner un instantané spécifique, par exemple `{id: 'mon snapshot'}`.
 
 ## Test d'instantané
 
