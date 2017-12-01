@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/b3c4090c83be2982cd3103ec3c1566a007a80c0d...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/4124d77b4391401db0b92a73c84cdea8326c209a...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -44,6 +44,8 @@ Les étiquettes [`help wanted`](https://github.com/avajs/ava/labels/help%20wante
 Vous trouverez peut-être une issue qui est attribuée, ou qui a l'[étiquette `assigned`](https://github.com/avajs/ava/labels/assigned). Veuillez vérifier avant de commencer sur cette issue parce que quelqu'un d'autre est probablement en train de travailler dessus.
 
 Nous aimerions corriger les [issues `priority`](https://github.com/avajs/ava/labels/priority) (prioritaires) en premier. Nous aimerions aussi voir des avancées sur les [issues `low-priority`](https://github.com/avajs/ava/labels/low%20priority) (de faible priorité). Les [issues `future`](https://github.com/avajs/ava/labels/future) sont celles que nous aimerions avoir, mais pas tout de suite. Veuillez vérifier avant de travailler sur celles-ci, car nous voulons peut-être pas pour l'instant assumer la charge de ces fonctionnalités.
+
+Si vous mettez à jour des dépendances, assurez-vous que vous utilisez npm@5.6.0 et faites un commit de la mise à jour du fichier `package-lock.json`.
 
 ### Promenez-vous sur notre chat
 
