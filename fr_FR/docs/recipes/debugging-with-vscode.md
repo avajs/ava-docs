@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/589489db04128f9287de44e600175b4af5a2f52d...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/4a13966449e5bb39f2d08dec254148f463f536ba...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 
@@ -19,7 +19,7 @@ Ajoutez à l'objet `configurations` ce qui suit :
 {
 	"type": "node",
 	"request": "launch",
-	"name": "Run AVA test",
+	"name": "Exécute les tests AVA",
 	"program": "${workspaceRoot}/node_modules/ava/profile.js",
 	"args": [
 	  "${file}"
@@ -38,3 +38,22 @@ Sauvez cette configuration après son ajout.
 Définissez des points d'arrêt dans le code **ou** écrivez `debugger;` à l'endroit où il devrait s'arrêter.
 
 Appuyez sur le bouton `Debug` à côté de la liste des configurations en haut à gauche dans la vue `Debug`. Une fois que le point d'arrêt est atteint, vous pouvez évaluer les variables et suivre le code pas à pas.
+
+## Débogage en série
+
+Par défaut, AVA exécute les tests simultanément. Cela peut compliquer le débogage. Ajoutez une configuration avec l'argument `--serial` afin qu'AVA n'exécute qu'un seul test à la fois :
+
+```json
+{
+	"type": "node",
+	"request": "launch",
+	"name": "Exécute les tests AVA en série",
+	"program": "${workspaceRoot}/node_modules/ava/profile.js",
+	"args": [
+	  "--serial",
+	  "${file}"
+	]
+}
+```
+
+*Notez que si vos tests ne sont pas correctement isolés, certains échecs sur un test peuvent ne pas apparaître lors de l'exécution des tests en série.*
