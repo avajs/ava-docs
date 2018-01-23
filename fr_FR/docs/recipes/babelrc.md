@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/37c9122c50722b06039f1cc2306a7c176fd3c786...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babelrc.md](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md). Voici un [lien](https://github.com/avajs/ava/compare/cd8c91b717c17821828596adad8fea879399a52d...master#diff-3834ea415f09859260d100d1ec24207b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babelrc.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -42,6 +42,8 @@ Vous pouvez remplacer la configuration par défaut de Babel dans le `package.jso
 ```
 
 ## Utiliser les Polyfills de Babel
+
+Notez que cela n'affecte que la façon dont AVA transpile vos tests. Si vous utilisez `babel-register`, vous devrez toujours ajouter une configuration Babel séparée comme expliqué [ici](#transpiling-sources).
 
 AVA vous permet d'écrire vos tests en utilisant la nouvelle syntaxe de JavaScript, même sur des versions de Node.js qui ne le supporteraient pas. Cependant, il n'ajoute, ni ne modifie les éléments intégrés dans votre environnement actuel. L'utilisation d'AVA ne fournira pas, par exemple, de fonctionnalités modernes telles que `Array.prototype.includes()` à un environnement inférieur à Node.js 4.
 
