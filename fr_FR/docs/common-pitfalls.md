@@ -80,6 +80,10 @@ test(t => {
 });
 ```
 
+### Les helpers de test ne sont pas compilés dans un dossier `test` nommé différemment de ceux par défaut
+
+C'est un [problème connu](https://github.com/avajs/ava/issues/1319). Vous devez mettre vos tests dans un dossier nommé `test` ou `__tests__`
+
 ---
 
 Votre problème n'est pas listé ici ? Soumettez un pull request ou commentez sur [cette issue](https://github.com/avajs/ava/issues/404).
