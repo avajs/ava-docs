@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/cb1c3f70588cd660ae41b61e129c711e63d9e7f8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/4f896c2832a186bf0c7f6b0f21b0e36b8e8fdcf2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -895,9 +895,9 @@ Détermine le nombre d'assertion qu'il y a dans le test. Le test échouera si le
 
 La fin du test. Fonctionne uniquement avec `test.cb()`.
 
-###### `t.log(message)`
+###### `t.log(...values)`
 
-Publiez contextuellement un message de log à côté du résultat du test au lieu de le publier immédiatement dans le `stdout` comme `console.log`.
+Publie les valeurs contextuelles à côté du résultat du test au lieu de les imprimer immédiatement dans `stdout`. Le comportement est un peu comme `console.log`, mais sans le support des jetons d'espace réservé.
 
 ## Assertions
 

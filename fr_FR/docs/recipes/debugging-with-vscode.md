@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/4a13966449e5bb39f2d08dec254148f463f536ba...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/bcb77fc46dbb77ddb14ac8eda8f2cc7e856c2416...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 
@@ -23,6 +23,9 @@ Ajoutez à l'objet `configurations` ce qui suit :
 	"program": "${workspaceRoot}/node_modules/ava/profile.js",
 	"args": [
 	  "${file}"
+	],
+	"skipFiles": [
+		"<node_internals>/**/*.js"
 	]
 }
 ```
@@ -52,6 +55,9 @@ Par défaut, AVA exécute les tests simultanément. Cela peut compliquer le déb
 	"args": [
 	  "--serial",
 	  "${file}"
+	],
+	"skipFiles": [
+		"<node_internals>/**/*.js"
 	]
 }
 ```
