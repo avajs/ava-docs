@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/1b00f42ed906d0e0eb913272970b6ee63db9dbbf...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/fe7a8a1c8c3b3bfe8271d9506f72eda139be99d3...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Quand utiliser `t.plan()` ?
 
@@ -18,7 +18,7 @@ Beaucoup d'utilisateurs venant de `tap`/`tape` sont habitués à utiliser `t.pla
 `t.plan()` est inutile dans la plupart des tests synchrones.
 
 ```js
-test(t => {
+test('simple sums', t => {
 	// MAUVAIS : Il n'y a pas de débranchement ici - t.plan() est inutile
 	t.plan(2);
 
@@ -32,7 +32,7 @@ test(t => {
 ### Les promesses qui sont censées se résoudre
 
 ```js
-test(t => {
+test('gives foo', t => {
 	t.plan(1);
 
 	return somePromise().then(result => {
@@ -48,7 +48,7 @@ A première vue, ce test semblent utiliser correctement `t.plan()` car un gestio
 2. Il serait préférable de profiter de `async`/`await`:
 
 ```js
-test(async t => {
+test('gives foo', async t => {
 	t.is(await somePromise(), 'foo');
 });
 ```
@@ -56,7 +56,7 @@ test(async t => {
 ### Les promesses avec un bloc `.catch()`
 
 ```js
-test(t => {
+test('rejects with foo', t => {
 	t.plan(2);
 
 	return shouldRejectWithFoo().catch(reason => {
@@ -70,7 +70,7 @@ Ici, l'utilisation de `t.plan ()` vise à garantir que le code à l'intérieur d
 Au lieu de cela, vous devriez profiter de `t.throws` et `async`/`await`, car cela conduit à rendre le code plus simple ce qui est plus facile à suivre :
 
 ```js
-test(async t => {
+test('rejects with foo', async t => {
 	const reason = await t.throws(shouldRejectWithFoo());
 	t.is(reason.message, 'Hello');
 	t.is(reason.foo, 'bar');
@@ -80,7 +80,7 @@ test(async t => {
 ### S'assurer qu'une implémentation catch s'exécute
 
 ```js
-test(t => {
+test('throws', t => {
 	t.plan(2);
 
 	try {
@@ -101,7 +101,7 @@ Comme indiqué dans l'exemple précédent, l'utilisation de l'assertion `t.throw
 ### S'assurer que plusieurs callbacks sont réellement appelés
 
 ```js
-test.cb(t => {
+test.cb('invokes callbacks', t => {
 	t.plan(2);
 
 	const callbackA = () => {
@@ -125,7 +125,7 @@ Dans la plupart des cas, c'est une mauvaise idée d'utiliser un débranchement c
 const testData = require('./fixtures/test-definitions.json');
 
 testData.forEach(testDefinition => {
-	test(t => {
+	test('foo ou bar', t => {
 		const result = functionUnderTest(testDefinition.input);
 
 		// testDefinition doit attendre `foo` ou `bar` mais pas les deux

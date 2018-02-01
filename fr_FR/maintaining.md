@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/0069a7ef4797a88149031124e7eade090a18ad4a...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/2e54c17b0090668c6dfac57cd35f5eacf92432fa...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 
@@ -23,6 +23,7 @@ Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 
 - Mettez à niveau les dépendances.
 - Assurez vous que [Travis CI](https://travis-ci.org/avajs/ava) et [AppVeyor](https://ci.appveyor.com/project/avajs/ava/branch/master) sont au vert.
+- Si [nécessaire](docs/support-statement.md), mettez à jour le champs `engines` dans `package.json`
 - Publiez une nouvelle version en utilisant [`np`](https://github.com/sindresorhus/np) avec un numéro de version qui respecte [semver](http://semver.org).
 - Écrivez une [note de version](https://github.com/avajs/ava/releases/new) en utilisant le même style que les notes précédentes.
 
@@ -42,7 +43,7 @@ Ajoutez des étiquettes lors du triage des issues :
 * `babel`: Utilisez-la lorsque l'issue est liée à notre infrastructure Babel
 * `blocked`: Utilisez-la quand l'issue est bloquée. Veuillez laisser un commentaire ou modifiez la description de l'issue pour expliquer ce qui bloque
 * `bug`: Utilisez-la pour les bugs de AVA
-* `DO NOT MERGE`: Utilisez-la pour les pull requests exploratoires que nous ne devons pas mergé
+* `DO NOT MERGE`: Utilisez-la pour les pull requests d'exploration que nous ne devons pas merger
 * `docs`: Utilisez-la pour suivre l'amélioration de la documentation
 * `enhancement`: Utilisez-la pour les demandes de fonctionnalités
 * `good for beginner`: Utilisez-la pour les issues qui sont bonnes pour les débutants
@@ -54,7 +55,7 @@ Veuillez notez la priorité avec les étiquettes suivantes :
 
 * `priority`: Issues à traiter le plus tôt possible
 * `low priority`: Issues que nous aimerions voir avancées
-* `future`: Issues où nous prévoyons leur traitement plus tard. Celles-ci sont des suggestions à long terme pour lesquelles nous n'accepterons probablement pas de PRs
+* `future`: Issues où nous prévoyons leur traitement plus tard. Celles-ci sont des suggestions à long terme pour lesquelles nous n'accepterons probablement pas de PR
 
 Utilisez l'étiquette `assigned` lorsque quelqu'un est en train de travailler sur l'issue, ainsi nous évitons du travail en double.
 
@@ -80,7 +81,7 @@ $ devtool node_modules/ava/profile.js <test-file>
 
 Une fois que la fenêtre Dev Tools est chargée, activez l'analyse de la mémoire ou du CPU, puis appuyez sur <kbd>Cmd</kbd> <kbd>R</kbd> pour relancer les tests.
 
-Dès que les tests sont terminés, arrêtez l'enregistrement et inspectez les résultats d'analyse'. Le flamegraph peut être affiché en choisissant `Chart` (graphique) dans la liste déroulante sur l'onglet `Profiles` (il y a d'autres vues `Tree (top down)` et `Heavy (bottom up)`).
+Dès que les tests sont terminés, arrêtez l'enregistrement et inspectez les résultats d'analyse. Le flamegraph peut être affiché en choisissant `Chart` (graphique) dans la liste déroulante sur l'onglet `Profiles` (il y a d'autres vues `Tree (top down)` et `Heavy (bottom up)`).
 
 Vous pouvez également consulter la page Settings (Paramètres) dans Dev Tools et activer une ou plusieurs options dans la section Profiling (Analyse).
 
