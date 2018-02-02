@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [support-statement.md](https://github.com/avajs/ava/blob/master/docs/support-statement.md). Voici un [lien](https://github.com/avajs/ava/compare/2e54c17b0090668c6dfac57cd35f5eacf92432fa...master#diff-37d8e3b2a468fc951f0ab91473264dd1) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `support-statement.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [support-statement.md](https://github.com/avajs/ava/blob/master/docs/support-statement.md). Voici un [lien](https://github.com/avajs/ava/compare/47b8b5657177197fac570c72a606cc3b754e0ff6...master#diff-37d8e3b2a468fc951f0ab91473264dd1) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `support-statement.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Les versions Node.js supportées
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/support-statement.md)
 
 AVA prend en charge la dernière version de toute version majeure [prise en charge par Node.js](https://github.com/nodejs/Release#release-schedule).
 
