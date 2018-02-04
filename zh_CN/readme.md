@@ -215,13 +215,13 @@ $ node --inspect node_modules/ava/profile.js some/test/file.js
 
 这是默认的报告器。
 
-<img src="media/mini-reporter.gif" width="460">
+<img src="https://github.com/avajs/ava/blob/master/media/mini-reporter.gif" width="460">
 
 ### 详细报告器
 
 使用 `--verbose` 参数可以启用详细报告器。这在 CI 环境下始终会被启用，除非已经使用了 [TAP 报告器](#TAP 报告器)
 
-<img src="media/verbose-reporter.png" width="294">
+<img src="https://github.com/avajs/ava/blob/master/media/verbose-reporter.png" width="294">
 
 ### TAP 报告器
 
@@ -231,7 +231,7 @@ AVA 支持 TAP格式，并且与 [任何 TAP 报告器](https://github.com/sindr
 $ ava --tap | tap-nyan
 ```
 
-<img src="media/tap-reporter.png" width="420">
+<img src="https://github.com/avajs/ava/blob/master/media/tap-reporter.png" width="420">
 
 注意 TAP 报告器在 [监视模式](docs/recipes/watch-mode.md) 下不可用。
 
