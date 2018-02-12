@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/632dc3e08147bb61aa1b2993ac5d1df0de377902...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/73e98f9db186ef53eb30ba992c86991a7619f534...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -856,6 +856,23 @@ test('unicorns sont truthy', t => {
 });
 ```
 
+Les assertions sont liées à leur test de sorte que vous puissiez les affecter à une variable ou les transmettre :
+
+```js
+test('unicorns are truthy', t => {
+	const truthy = t.thruthy;
+	truthy('unicorn');
+});
+```
+
+Les assertions peuvent être ignorées en ajoutant `.skip()` :
+
+```js
+test('unicorns are truthy', t => {
+	t.truthy.skip('unicorn');
+});
+```
+
 Si plusieurs échecs d'assertion se produisent à l'intérieur d'un seul test, AVA affichera uniquement le *premier*.
 
 ### `.pass([message])`
@@ -980,6 +997,8 @@ Affirme que `error` est falsy.
 
 Compare la valeur `expected` avec un instantané enregistré auparavant. Les instantanés sont conservés pour chaque test, donc assurez-vous de donner à vos tests des titres uniques. Sinon, passez un objet `options` pour sélectionner un instantané spécifique, par exemple `{id: 'mon snapshot'}`.
 
+Les assertions d'instantanés ne peuvent pas être ignorées (skip) lors de la mise à jour des instantanés.
+
 ## Test d'instantané
 
 AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](#assertions). Vous pouvez faire un instantané de n'importe quelle valeur ainsi que des éléments de React :
@@ -1045,7 +1064,7 @@ Toute assertion peut être ignorée en utilisant le modificateur `skip`. Les ass
 ```js
 test('passe une assertion', t => {
 	t.plan(2);
-	t.skip.is(foo(), 5); // Pas besoin de changer le nombre d'assertion dans `plan`.
+	t.is.skip(foo(), 5); // Pas besoin de changer le nombre d'assertion dans `plan`.
 	t.is(1, 1);
 });
 ```
@@ -1145,6 +1164,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [TypeScript](docs/recipes/typescript.md)
 - [Flow](docs/recipes/flow.md)
 - [Configuration de Babel][recette Babel]
+- [Utilisation des modules ES](docs/recipes/es-modules.md)
 - [Tester les composants React](docs/recipes/react.md)
 - [Tester les composants Vue.js](docs/recipes/vue.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
