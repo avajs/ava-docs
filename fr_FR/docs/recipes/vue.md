@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/b33cb1d533293c62f1244fb426e59d98de7890bc...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/a28c89617ee2e73c639080ed4c5dcbfb66db9dd0...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 > **Veuillez noter que cette recette n'a pas encore été mise à jour pour le support de Babel 7 dans AVA 1.0.**
 
@@ -22,6 +22,8 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/vu
 ## Configuration
 
 La première étape consiste à mettre en place un helper pour configurer l'environnement afin de transpiler les fichiers `.vue` et exécuter dans un navigateur comme environnement :
+
+`package.json`
 
 ```json
 {

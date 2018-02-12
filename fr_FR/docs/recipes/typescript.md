@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/f98a8810de770c4d22d87302580eecc228c8d052...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/bac3c1136346421a5dd19f3d18e8911b760f25ad...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,26 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-
-## Configuration
-
-Installez d'abord [TypeScript](https://github.com/Microsoft/TypeScript). (Si vous l'avez déjà installé, assurez-vous d'utiliser la version 2.1 ou supérieure).
-
-```
-$ npm install --save-dev typescript
-```
-
-Créez un fichier [`tsconfig.json`](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html). Ce fichier spécifie les options du compilateur nécessaires pour compiler le projet ou les fichiers de test.
-
-```json
-{
-	"compilerOptions": {
-		"module": "commonjs",
-		"target": "es2015",
-		"sourceMap": true
-	}
-}
-```
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 2.7.1.
 
 Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord le projet puis exécutera AVA.
 
@@ -40,8 +21,9 @@ Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord 
 }
 ```
 
+Make sure that AVA runs your built TypeScript files.
 
-## Ajoutez les tests
+## Ecriture des tests
 
 Créez un fichier `test.ts`.
 
@@ -55,47 +37,55 @@ test(async (t) => {
 });
 ```
 
-## Travailler avec les [macros](https://github.com/avajs/ava-docs/tree/master/fr_FR#macros-de-test)
+## Utilisation des [macros](https://github.com/avajs/ava-docs/tree/master/fr_FR#macros-de-test)
 
-Pour pouvoir attribuer la propriété `title` à une macro :
+Pour pouvoir attribuer la propriété `title` à une macro vous devez typer la fonction :
 
 ```ts
-import test, { AssertContext, Macro } from 'ava';
+import test, {Macro} from 'ava';
 
-const macro: Macro<AssertContext> = (t, input, expected) => {
+const macro: Macro = (t, input: string, expected: number) => {
 	t.is(eval(input), expected);
-}
-
-macro.title = (providedTitle, input, expected) => `${providedTitle} ${input} = ${expected}`.trim();
+};
+macro.title = (providedTitle: string, input: string, expected: number) => `${providedTitle} ${input} = ${expected}`.trim();
 
 test(macro, '2 + 2', 4);
 test(macro, '2 * 3', 6);
 test('providedTitle', macro, '3 * 3', 9);
 ```
 
-## Travailler avec [`context`](https://github.com/avajs/ava-docs/tree/master/fr_FR#tester-le-contexte)
-
-Par défaut, le type de `t.context` sera [`any`](https://www.typescriptlang.org/docs/handbook/basic-types.html#any). AVA expose une interface `RegisterContextual<T>` que vous pouvez utiliser pour appliquer votre propre type à `t.context`. Cela peut vous aider à détecter des erreurs lors de la compilation :
+Vous aurez besoin d'un type différent, si vous voulez que votre macro soit utilisée avec un test de callback :
 
 ```ts
-import * as ava from 'ava';
+import test, {CbMacro} from 'ava';
 
-function contextualize<T>(getContext: () => T): ava.RegisterContextual<T> {
-	ava.test.beforeEach(t => {
-		Object.assign(t.context, getContext());
-	});
+const macro: CbMacro = t => {
+	t.pass();
+	setTimeout(t.end, 100);
+};
 
-	return ava.test;
-}
+test.cb(macro);
+```
 
-const test = contextualize(() => ({ foo: 'bar' }));
+## Typing [`t.context`](https://github.com/avajs/ava#test-context)
+
+Par défaut, le type de `t.context` sera un objet vide (`{}`). AVA expose une interface `TestInterface<Context>` qui vous permet de l'utiliser pour appliquer votre propre type `t.context`. Cela peut vous aider à détecter les erreurs lors de la compilation :
+
+```ts
+import anyTest, {TestInterface} from 'ava';
+
+const test: TestInterface<{foo: string}> = anyTest;
 
 test.beforeEach(t => {
-	t.context.foo = 123; // erreur :  Type '123' n'est pas assignable au type 'string'
+	t.context = {foo: 'bar'};
 });
 
-test.after.always.failing.cb.serial('Les chaînes très longues sont correctement typées', t => {
-	t.context.fooo = 'a value'; // erreur : La propriété 'fooo' n'existe pas sur le type '{ foo: string }'
+test.beforeEach(t => {
+	t.context.foo = 123; // erreur : le type '123' n'est pas assignable au type 'string'
+});
+
+test.serial.cb.failing('Les chaînes très longues sont correctement typées', t => {
+	t.context.fooo = 'a value'; // erreur : la propriété 'fooo' n'existe pas sur le type ''
 });
 
 test('un test normal', t => {
@@ -103,9 +93,26 @@ test('un test normal', t => {
 });
 ```
 
+Vous pouvez également typer le contexte lors de la création de macros :
 
-## Exécutez les tests
+```ts
+import anyTest, {Macro, TestInterface} from 'ava';
+ 
+interface Context {
+	foo: string
+}
 
+const test: TestInterface<Context> = anyTest;
+
+const macro: Macro<Context> = (t, expected: string) => {
+	t.is(t.context.foo, expected);
+};
+
+test.beforeEach(t => {
+	t.context = {foo: 'bar'};
+});
+
+test('foo est bar', macro, 'bar');
 ```
-$ npm test
-```
+
+Notez que malgré le type de casting ci-dessus, lors de l'exécution, `t.context` est un objet vide à moins qu'il ne soit assigné.

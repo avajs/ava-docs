@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/b6fa8b93e0d39c2da4d0cf0e0a4471df8e0a99fa...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/632dc3e08147bb61aa1b2993ac5d1df0de377902...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![Dependency Status](https://dependencyci.com/github/avajs/ava/badge)](https://dependencyci.com/github/avajs/ava) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava) [![Mentionné dans Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava) [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -16,6 +16,8 @@ Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parall�
 *Lisez notre [guide de contribution](contributing.md) si vous souhaitez contribuer (issues/PRs/etc).*
 
 Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à jour.
+
+**Cette documentation couvre les versions bêta 1.0, qui utilisent Babel 7. La dernière version qui utilise Babel 6 est la [`v0.25.0`](https://github.com/avajs/ava/tree/v0.25.0).**
 
 Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
@@ -78,14 +80,14 @@ Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `
 
 
 ```console
-$ npm install --global ava
+$ npm install --global ava@next
 $ ava --init
 ```
 
 Si vous préférez l'utilisation de Yarn :
 
 ```console
-$ yarn global add ava
+$ yarn global add ava@next
 $ ava --init
 ```
 
@@ -98,7 +100,7 @@ Votre `package.json` ressemblera alors à ceci :
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^0.20.0"
+		"ava": "^1.0.0-beta.1"
 	}
 }
 ```
@@ -110,13 +112,13 @@ Tous les arguments passés après `--init` sont ajoutés comme config au `packag
 Vous pouvez également installer AVA directement :
 
 ```console
-$ npm install --save-dev ava
+$ npm install --save-dev ava@next
 ```
 
 Alternativement en utilisant Yarn :
 
 ```console
-$ yarn add --dev ava
+$ yarn add --dev ava@next
 ```
 
 Vous devez configurer le script `test` dans votre `package.json` pour utiliser `ava` (Voir ci-dessus).
@@ -390,6 +392,8 @@ test.serial('passe en série', t => {
 
 Notez que cela ne s'applique qu'aux tests dans un fichier de test. AVA exécutera toujours plusieurs fichiers de tests en même temps, sauf si vous passez l'[option `--serial` au CLI](#cli).
 
+Vous pouvez utiliser le modificateur `.serial` avec tous les tests, les hooks et même avec `.todo()`, mais il n'est disponible que sur la fonction `test`.
+
 ### Exécution de tests spécifiques
 
 Lors du développement, il peut être utile d'exécuter seulement quelques tests spécifiques. Ceci peut être effectué en utilisant `.only`.
@@ -403,6 +407,8 @@ test.only('sera exécuté', t => {
 	t.pass();
 });
 ```
+
+Vous pouvez utiliser le modificateur `.only` avec tous les tests. Il ne peut pas être utilisé avec des hooks ou `.todo ()`.
 
 *Remarque :* Le modificateur `.only` s'applique au fichier de test où il est défini, donc, si vous exécutez plusieurs fichiers de test, les tests dans les autres fichiers seront encore exécutés. Si vous souhaitez exécuter uniquement le test `test.only`, fournissez juste ce fichier de test à AVA.
 
@@ -490,7 +496,7 @@ test.skip('ne sera pas exécuté', t => {
 });
 ```
 
-Vous devez spécifier la fonction d'implémentation.
+Vous devez spécifier la fonction d'implémentation. Vous pouvez utiliser le modificateur `.skip` avec tous les tests et les hooks, mais pas avec `.todo()`. Vous ne pouvez pas appliquer d'autres modificateurs à `.skip`.
 
 ### Les tests fictifs ("todo")
 
@@ -498,6 +504,12 @@ Vous pouvez utiliser le modificateur `.todo` lorsque vous avez l'intention d'éc
 
 ```js
 test.todo('il faudra penser à écrire cela plus tard');
+```
+
+Vous pouvez signaler que vous devez écrire un test en série :
+
+```js
+test.serial.todo('penser à l''écrire plus tard');
 ```
 
 ### Test défaillant
@@ -517,17 +529,15 @@ test.failing('démontrer un bogue', t => {
 
 AVA vous permet d'enregistrer des hooks qui sont exécutés avant et après vos tests. Cela vous permet d'exécuter le code de configuration et/ou de dé-configuration.
 
-`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes ou si tous les tests ont été ignorés, ils sont donc idéals pour des tâches de nettoyage. Il y a cependant deux exceptions à cela. Si vous utilisez `--fail-fast`, AVA arrêtera le test dès qu'un test échoue, et il n'exécutera pas de hooks, y compris les hooks `.always()`. Les exceptions non interceptées planteront vos tests, empêchant éventuellement les hooks `.always ()` de s'exécuter.
+`test.before()` enregistre un hook qui sera exécuté avant le premier test dans votre fichier de test. De même, `test.after()` enregistre un hook qui sera exécuté après le dernier test. Utilisez `test.after.always()` pour enregistrer un hook qui s'exécutera **toujours**, une fois que vos tests et autres hooks sont terminés. Les hooks `.always()` s'exécutent indépendamment des erreurs précédentes, ils sont donc idéals pour des tâches de nettoyage. Notez cependant que les exceptions non interceptées, les rejets non traités et les timeouts planteront vos tests, empêchant éventuellement les hooks `.always ()` de s'exécuter.
 
-`test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test. Utilisez `test.afterEach.always()` pour enregistrer un hook qui est appelé après, même si un autre hook de test ou le test lui-même échouent. Les hooks `.always()` sont idéals pour les tâches de nettoyage.
+`test.beforeEach()` enregistre un hook qui sera exécuté avant chaque test dans votre fichier de test. De même, `test.afterEach()` enregistre un hook qui sera exécuté après chaque test. Utilisez `test.afterEach.always()` pour enregistrer un hook qui est appelé après, même si un autre hook de test ou le test lui-même échouent.
 
-Si un test est ignoré avec le modificateur `.skip`, les hooks respectifs `.beforeEach()` et `.afterEach()` ne sont pas exécutés. De même, si tous les tests dans un fichier de test sont ignorés, les hooks `.before()` et `.after()` pour le fichier ne sont pas exécutés. Les hooks modifiés avec `.always()` seront toujours exécutés, même si tous les tests sont ignorés.
+Si un test est ignoré avec le modificateur `.skip`, les hooks respectifs `.beforeEach()`, `.afterEach()` et `.afterEach.always()` ne sont pas exécutés. De même, si tous les tests dans un fichier de test sont ignorés, les hooks `.before()`, `.after()` et `.after.always()` pour le fichier ne sont pas exécutés.
 
-**Remarque** : Si l'option `--fail-fast` est spécifiée, AVA s'arrêtera après le premier test en échec et le hook `.always` **ne** s'exécutera **pas**.
+Comme `test()`, ces méthodes prennent comme arguments un titre facultatif et une implémentation d'une fonction. Le titre est affiché si votre hook ne parvient pas à s'exécuter. L'implémentation est appelé avec un [objet d'exécution](#t). Vous pouvez utiliser des assertions dans vos hooks. Vous pouvez également passer une [fonction macro](#test-macros) et des arguments supplémentaires.
 
-Comme `test()`, ces méthodes prennent comme arguments un titre facultatif et une fonction callback. Le titre est affiché si votre hook ne parvient pas à s'exécuter. Le callback est appelé avec un [objet d'exécution](#t).
-
-Les hooks `before` s'exécutent avant les hooks `beforeEach`. Les hooks `afterEach` s'exécutent avant les hooks `after`. Au sein de leur catégorie, les hooks s'exécutent dans l'ordre où ils ont été définis.
+Les hooks `before` s'exécutent avant les hooks `beforeEach`. Les hooks `afterEach` s'exécutent avant les hooks `after`. Au sein de leur catégorie, les hooks s'exécutent dans l'ordre où ils ont été définis. Par défaut, les hooks s'exécutent simultanément, mais vous pouvez utiliser `test.serial` pour s'assurer qu'un seul hook s'exécute à la fois. Contrairement aux tests, les hooks en série *ne* sont *pas* lancés avant les autres hooks :
 
 ```js
 test.before(t => {
@@ -535,7 +545,15 @@ test.before(t => {
 });
 
 test.before(t => {
-	// Cela s'exécute après ce qui précède, mais avant les tests
+	// Cela s'exécute simultanément avec ce qui précède
+});
+
+test.serial.before(t => {
+	// Cela s'exécute après ce qui précède
+});
+
+test.serial.before(t => {
+	// Cela s'exécute aussi après ce qui précède, et avant les tests
 });
 
 test.after('cleanup', t => {
@@ -563,7 +581,7 @@ test('titre', t => {
 });
 ```
 
-Les hooks peuvent être synchrones ou asynchrones, comme les tests. Pour rendre un hook asynchrone, retournez une promesse ou un observable, utilisez une fonction async, ou activez le mode callback via `test.cb.before()`, `test.cb.beforeEach()` etc.
+Les hooks peuvent être synchrones ou asynchrones, comme les tests. Pour rendre un hook asynchrone, retournez une promesse ou un observable, utilisez une fonction async, ou activez le mode callback via `test.before.cb()`, `test.beforeEach.cb()` etc.
 
 ```js
 test.before(async t => {
@@ -574,7 +592,7 @@ test.after(t => {
 	return new Promise(/* ... */);
 });
 
-test.cb.beforeEach(t => {
+test.beforeEach.cb(t => {
 	setTimeout(t.end);
 });
 
@@ -583,13 +601,13 @@ test.afterEach.cb(t => {
 });
 ```
 
-Gardez à l'esprit que les hooks `beforeEach` et `afterEach` s'exécutent juste avant et après un test qui s’exécute, et que par défaut les tests s'exécutent simultanément. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/avajs/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests sont [exécutés en série](#exécution-des-tests-en-série).
+Gardez à l'esprit que les hooks `.beforeEach()` et `.afterEach()` s'exécutent juste avant et après un test qui s’exécute, et que par défaut les tests s'exécutent simultanément. Cele signifie que plusieurs hooks `.beforeEach()` peuvent s'exécuter simultanément. L'utilisation de `test.serial.beforeEach()` ne change pas ça. Si vous avez besoin de mettre en place un état global pour chaque test ([par exemple](https://github.com/avajs/ava/issues/560) en espionnant `console.log`), vous devez vous assurer que les tests eux-mêmes sont [exécutés en série](#exécution-des-tests-en-série).
 
-Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `after`, puisqu'on l'appelle seulement lorsqu’on sort du processus.
+Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus. Vous n'avez pas besoin de nettoyer l'état global dans le hook `.after()`, puisqu'on l'appelle seulement lorsqu’on sort du processus.
 
 #### Tester le contexte
 
-Les hooks `beforeEach` & `afterEach` peuvent partager le contexte avec le test :
+Les hooks `.beforeEach()` & `.afterEach()` peuvent partager le contexte avec le test :
 
 ```js
 test.beforeEach(t => {
@@ -613,20 +631,7 @@ test('le contexte est unicorn', t => {
 });
 ```
 
-Le partage du contexte *n'est pas* pour les hooks `before` et `after`.
-
-### Chaînage des modificateurs de test
-
-Vous pouvez utiliser les modificateurs `.serial`, `.only` et `.skip` dans n'importe quel ordre, avec `test`, `before`, `after`, `beforeEach` et `afterEach`. Par exemple :
-
-```js
-test.before.skip(...);
-test.skip.after(...);
-test.serial.only(...);
-test.only.serial(...);
-```
-
-Cela signifie que vous pouvez ajouter temporairement `.skip` ou `.only` à la fin d'un test ou sur la définition d'un hook sans apporter d'autres modifications.
+Le partage du contexte *n'est pas* pour les hooks `.before()` et `.after()`.
 
 ### Macros de test
 
@@ -787,9 +792,7 @@ test.cb('data.txt peut être lu', t => {
 
 ### Délai (timeout) global
 
-Un délai (timeout) global peut être défini via l'option `--timeout`.
-Le délai de AVA se comporte différemment des autres frameworks de test.
-AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arrêter, si aucun nouveau résultat de test est reçu dans le délai imparti.
+Un délai (timeout) global peut être défini via l'option `--timeout`. Le délai de AVA se comporte différemment des autres frameworks de test. AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arrêter, si aucun nouveau résultat de test est reçu dans le délai imparti. Cela peut être utilisé pour gérer les tests bloqués.
 
 Vous pouvez définir des délais qui soient lisibles :
 
@@ -829,7 +832,7 @@ Doit contenir le test réel.
 
 Type: `object`
 
-L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `beforeEach`. `t.title` retourne le titre du test.
+L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `.beforeEach()`. `t.title` retourne le titre du test.
 
 ###### `t.plan(count)`
 
@@ -1140,6 +1143,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Quand utiliser `t.plan()` ?](docs/recipes/when-to-use-plan.md)
 - [Tests de navigateur](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
+- [Flow](docs/recipes/flow.md)
 - [Configuration de Babel][recette Babel]
 - [Tester les composants React](docs/recipes/react.md)
 - [Tester les composants Vue.js](docs/recipes/vue.md)
@@ -1167,20 +1171,23 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 
 ## Liens
 
-- [Acheter des stickers AVA](https://www.stickermule.com/user/1070705604/stickers)
+- [Stickers AVA, t-shirts, etc](https://www.redbubble.com/people/sindresorhus/works/30330590-ava-logo)
 - [La liste Awesome](https://github.com/avajs/awesome-ava)
 - [AVA Casts](http://avacasts.com)
 - [Plus…](https://github.com/avajs/awesome-ava)
 
 ## L'équipe
 
-[![Sindre Sorhus](https://github.com/sindresorhus.png?size=100)](https://github.com/sindresorhus) | [![Vadim Demedes](https://github.com/vadimdemedes.png?size=100)](https://github.com/vadimdemedes) | [![James Talmage](https://github.com/jamestalmage.png?size=100)](https://github.com/jamestalmage) | [![Mark Wubben](https://github.com/novemberborn.png?size=100)](https://github.com/novemberborn) | [![Juan Soto](https://github.com/sotojuan.png?size=100)](https://github.com/sotojuan) | [![Jeroen Engels](https://github.com/jfmengels.png?size=100)](https://github.com/jfmengels)
----|---|---|---|---|---
-[Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vadimdemedes) | [James Talmage](https://github.com/jamestalmage) | [Mark Wubben](https://novemberborn.net) | [Juan Soto](http://juansoto.me) | [Jeroen Engels](https://github.com/jfmengels)
+[![Mark Wubben](https://github.com/novemberborn.png?size=100)](https://github.com/novemberborn) | [![Sindre Sorhus](https://github.com/sindresorhus.png?size=100)](https://github.com/sindresorhus) | [![Vadim Demedes](https://github.com/vadimdemedes.png?size=100)](https://github.com/vadimdemedes)
+---|---|---
+[Mark Wubben](https://novemberborn.net) | [Sindre Sorhus](http://sindresorhus.com) | [Vadim Demedes](https://github.com/vadimdemedes)
 
-### Auparavant dans l'équipe
+###### Auparavant dans l'équipe
 
 - [Kevin Mårtensson](https://github.com/kevva)
+- [James Talmage](https://github.com/jamestalmage)
+- [Juan Soto](https://github.com/sotojuan)
+- [Jeroen Engels](https://github.com/jfmengels)
 
 
 <div align="center">
@@ -1194,4 +1201,4 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 	<br>
 </div>
 
-[Babel recipe]: docs/recipes/babel.md
+[recette Babel]: docs/recipes/babel.md
