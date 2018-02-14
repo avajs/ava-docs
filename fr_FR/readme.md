@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/ae50a1357ec1e4163e95e803bc2dee799f28c659...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/3c13c339576349bbb238fa69b27429cdd281c2dc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -915,13 +915,20 @@ Affirme que `value` est profondément égale à `expected`. Consulter [Concordan
 
 Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `.deepEqual()`.
 
-### `.throws(function|promise, [error, [message]])`
+### `.throws(thrower, [expected, [message]])`
 
-Affirme que `function` lève une erreur, rejette `promise` avec une erreur, ou que `function` retourne une `promise` rejetée.
+Affirme qu'une erreur est levée. `thrower` peut être une fonction qui devrait lever une erreur ou retourner une promesse qui devrait être rejetée ou un observable qui devrait être une erreur. Alternativement une promesse ou un observable peuvent être passés directement.
 
-`error` peut-être un constructeur d'une erreur, un message d'erreur, une regex qui correspond à un message d'erreur ou une fonction de validation.
+La valeur levée *doit* être une erreur. Elle est retournée afin que vous puissiez lancer d'autres assertions.
 
-Retourne l'erreur levée par `function` ou une promesse avec le motif de rejet de `promise`
+`expected` peut être un constructeur, auquel cas l'erreur levée doit être une instance du constructeur. Cela peut être une chaîne, qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message. Vous pouvez également spécifier un objet de correspondance (matcher) avec une ou plusieurs des propriétés suivantes :
+
+* `instanceOf`: un constructeur, l'erreur levée doit être une "instance de"
+* `is`: l'erreur levée doit être strictement égale à `expected.is`
+* `message`: soit une chaîne qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message
+* `name`: la valeur `.name` attendue de l'erreur levée
+
+`expected` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
 
 Exemple:
 
@@ -948,7 +955,7 @@ test('rejects', async t => {
 });
 ```
 
-Lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+Lorsque vous testez un observable ou une promesse, vous devez attendre l'assertion pour terminer :
 
 ```js
 test('rejects', async t => {
@@ -960,19 +967,17 @@ Lors du test d'une fonction asynchrone, vous devez également attendre que l'ass
 
 ```js
 test('throws', async t => {
-	const error = await t.throws(async () => {
+	await t.throws(async () => {
 		throw new TypeError('🦄');
-	}, TypeError);
-
-	t.is(error.message, '🦄');
+	}, {instanceOf: TypeError, message: '🦄'});
 });
 ```
 
-### `.notThrows(function|promise, [message])`
+### `.notThrows(nonThrower, [message])`
 
-Affirme que `function` ne lève pas `error`, que `promise` ne rejette pas une erreur ou que `function` renvoie une promesse qui n'est pas rejetée avec une erreur.
+Affirme qu'aucune erreur est levée. `thrower` peut être une fonction qui ne devrait pas lever une erreur ou retourner une promesse qui devrait être résolue ou un observable qui devrait se terminer. Alternativement une promesse ou un observable peuvent être passés directement.
 
-Comme l'assertion `.throws()`, lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+Comme l'assertion `.throws()`, lorsque vous testez une promesse ou un observable, vous devez attendre l'assertion pour terminer :
 
 ```js
 test('resolves', async t => {
@@ -1166,6 +1171,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Flow](docs/recipes/flow.md)
 - [Configuration de Babel][recette Babel]
 - [Utilisation des modules ES](docs/recipes/es-modules.md)
+- [Passer des arguments à vos fichiers de test](docs/recipes/passing-arguments-to-your-test-files.md)
 - [Tester les composants React](docs/recipes/react.md)
 - [Tester les composants Vue.js](docs/recipes/vue.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
