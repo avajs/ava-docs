@@ -9,7 +9,7 @@ ___
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md)
 
-Ce plugin est intégré dans [XO](https://github.com/sindresorhus/xo). Pas besoin de faire quoi que ce soit si vous utilisez XO.
+Ce plugin est intégré dans [XO](https://github.com/xojs/xo). Pas besoin de faire quoi que ce soit si vous utilisez XO.
 
 
 ## L'installation
