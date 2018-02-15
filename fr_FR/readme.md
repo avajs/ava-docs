@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/3c13c339576349bbb238fa69b27429cdd281c2dc...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/349648a772f6f1e1aced9b511f68a540033db77e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -607,7 +607,7 @@ Rappelez-vous que AVA exécute chaque fichier de test dans son propre processus.
 
 #### Tester le contexte
 
-Les hooks `.beforeEach()` & `.afterEach()` peuvent partager le contexte avec le test :
+Les hooks peuvent partager le contexte avec le test :
 
 ```js
 test.beforeEach(t => {
@@ -619,10 +619,14 @@ test('les données du contexte sont foo', t => {
 });
 ```
 
-Le contexte n'est pas partagé entre les tests, cela vous permet donc de configurer les données sans incidence sur les autres tests ou les tests précédents. Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
+Le contexte créé dans les hooks `.before()` est [cloné](https://www.npmjs.com/package/lodash.clone) avant d'être passé aux hooks `.beforeEach()` et / ou aux tests. Les hooks `.after()` et `.after.always()` recoive la valeur originale du contexte.
+
+Pour les hooks `.beforeEach()`, `.afterEach()` et `.afterEach.always()` le contexte *n'est pas* partagé entre les différents tests, cela vous permet de configurer des données afin qu'elles ne fuient pas vers d'autres tests.
+
+Par défaut `t.context` est un objet, mais vous pouvez directement le réassigné :
 
 ```js
-test.beforeEach(t => {
+test.before(t => {
 	t.context = 'unicorn';
 });
 
@@ -630,8 +634,6 @@ test('le contexte est unicorn', t => {
 	t.is(t.context, 'unicorn');
 });
 ```
-
-Le partage du contexte *n'est pas* pour les hooks `.before()` et `.after()`.
 
 ### Macros de test
 
@@ -832,7 +834,7 @@ Doit contenir le test réel.
 
 Type: `object`
 
-L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis le hook `.beforeEach()`. `t.title` retourne le titre du test.
+L'objet d'exécution d'un test particulier. Chaque implémentation de test reçoit un objet différent. Il contient les [assertions](#assertions) ainsi que les méthodes `.plan(count)` et `.end()`. `t.context` peut contenir un état partagé depuis les hooks. `t.title` retourne le titre du test.
 
 ###### `t.plan(count)`
 
