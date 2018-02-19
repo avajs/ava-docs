@@ -71,7 +71,7 @@ Tenemos un [chat](https://gitter.im/avajs/ava). Visitanos y estate alerta, habla
 - Haga el pull request de una [rama con el asunto](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), no master.
 - Utilice un título claro y descriptivo para la solicitud de pull request y commits.
 - Escriba una descripción convincente de por qué debemos incluir su pull request. Es su trabajo el convencernos. Responder a "por qué" es necesario y proporcionar casos de uso.
-- Es posible que se le pida que haga cambios en su pull request. No es necesario solicitar otro pull request. [Únicamente actualice el que tiene.](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- Es posible que se le pida que haga cambios en su pull request. No es necesario solicitar otro pull request. [Únicamente actualice el que tiene.](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)
 
 Nota: mientras realices cambios de código, trata de recordar el mantra de AVA (robado a Python) de tener preferentemente una manera de hacer algo. Por ejemplo, una petición para agregar un alias a una parte de la API ([como aquí](https://github.com/avajs/ava/pull/663)) va a ser probablemente rechazada si no tiene algún otro beneficio substancial.
 

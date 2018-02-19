@@ -49,4 +49,4 @@ ___
 - 在一个[主题分支](https://github.com/dchelimsky/rspec/wiki/Topic-Branches) 中提交 pull request 而不是 master 分支。
 - 为 pull request 和 commit 使用一个清晰和描述性强的标题。
 - 写一个让人信服的描述来说明为什么我们要接受你的 pull request。说服我们是你的工作，需要回答“为什么”并提供用例。
-- 你可能被要求修改你的 pull request，但绝对没有必要去新开一个 pull request，[只需要更新原来那个就可以了。](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- 你可能被要求修改你的 pull request，但绝对没有必要去新开一个 pull request，[只需要更新原来那个就可以了。](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)

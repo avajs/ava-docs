@@ -50,4 +50,4 @@ AVAのユーザーとして、ドキュメントを改善することは完璧�
 - masterからではなく[トピックブランチ](https://github.com/dchelimsky/rspec/wiki/Topic-Branches)からプルリクエストを作成してください。
 - プルリクエストとコミットには明確で叙述的な見出しを使用してください。
 - なぜプルリクエストを確認すべきなのか納得のいく理由を書いてください。私たちを納得させるのはあなたの役目です。"なぜ"それが必要なのかと、使用例を見せてください。
-- あなたのプルリクエストに対して変更を求めることもあると思います。その場合新たに他のプルリクエストを作る必要は全くありません。[すでに存在するプルリクエストを更新してください。](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
+- あなたのプルリクエストに対して変更を求めることもあると思います。その場合新たに他のプルリクエストを作る必要は全くありません。[すでに存在するプルリクエストを更新してください。](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)
