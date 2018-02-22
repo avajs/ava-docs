@@ -24,7 +24,7 @@ npm install @babel/preset-env --save-dev
 
 ```json
 {
-	"presets": ["es2015", "stage-2"]
+	"presets": ["env"]
 }
 ```
 
@@ -38,13 +38,16 @@ Vous aurez besoin d'installer le [chargeur JSPM de AVA](https://github.com/skorl
 $ npm install --save-dev ava-jspm-loader
 ```
 
-Vous devrez également mettre à jour votre config de AVA dans le package.json pour utiliser le chargeur JSPM.
+Vous devrez également mettre à jour votre config de AVA dans le package.json pour utiliser le chargeur JSPM. A partir de Babel 7, vous devez installer[@babel-register](https://www.npmjs.com/package/@babel/register).
 
+```
+npm install @babel/register --save-dev
+```
 ```json
 {
 	"ava": {
 		"require": [
-			"babel-register",
+			"@babel/register",
 			"ava-jspm-loader"
 		]
 	}
