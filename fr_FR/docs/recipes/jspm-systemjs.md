@@ -54,7 +54,7 @@ npm install @babel/register --save-dev
 }
 ```
 
-REMARQUE : Si vous utilisez async/await dans votre code source (pas dans votre code de test), vous aurez besoin d'installer `babel-polyfill` depuis npm et l'ajoutez à votre tableau `require`.
+REMARQUE : Si vous utilisez async/await dans votre code source (pas dans votre code de test), vous aurez besoin d'installer [@babel/polyfill](https://www.npmjs.com/package/@babel/polyfill) et l'ajoutez à votre tableau `require`.
 
 ### Exemple de fichier de test
 
