@@ -16,7 +16,7 @@ Cette recette a été testée uniquement avec JSPM v0.17.0-beta.22, mais ceci de
 
 ### Babel
 
-Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction. Vous aurez besoin d'installer le [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env) comme une dépendance de dev.
+Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction. À partir de babel 7, @babel/ preset-env transformera le code comme babel-preset-esXXXX le faisait précédemment.
 
 ```
 npm install @babel/preset-env --save-dev
