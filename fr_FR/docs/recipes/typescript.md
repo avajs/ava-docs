@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/bac3c1136346421a5dd19f3d18e8911b760f25ad...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/e9d417fb51423fd990768717ef94734f9e6caaca...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 2.7.1.
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 2.7.2.
 
 Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord le projet puis exécutera AVA.
 
@@ -74,7 +74,7 @@ Par défaut, le type de `t.context` sera un objet vide (`{}`). AVA expose une in
 ```ts
 import anyTest, {TestInterface} from 'ava';
 
-const test: TestInterface<{foo: string}> = anyTest;
+const test = anyTest as TestInterface<{foo: string}>;
 
 test.beforeEach(t => {
 	t.context = {foo: 'bar'};
@@ -102,7 +102,7 @@ interface Context {
 	foo: string
 }
 
-const test: TestInterface<Context> = anyTest;
+const test = anyTest as TestInterface<Context>;
 
 const macro: Macro<Context> = (t, expected: string) => {
 	t.is(t.context.foo, expected);

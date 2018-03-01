@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/4124d77b4391401db0b92a73c84cdea8326c209a...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Voici un [lien](https://github.com/avajs/ava/compare/c833d552b4804391c9562dcad757a5dfe6cab957...master#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -49,11 +49,11 @@ Si vous mettez à jour des dépendances, assurez-vous que vous utilisez npm@5.6.
 
 ### Promenez-vous sur notre chat
 
-Nous avons un [chat](https://gitter.im/avajs/ava). Venez, espionnez, parlez-nous et aidez les autres.
+Nous avons un [chat](https://spectrum.chat/ava). Venez, espionnez, parlez-nous et aidez les autres.
 
 ## Soumettez une issue
 
-- Les issues sont pour les problèmes. Utilisez notre [chat](https://gitter.im/avajs/ava) ou [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) pour le support.
+- Les issues sont pour les problèmes. Utilisez notre [chat](https://spectrum.chat/ava) ou [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) pour le support.
 - Cherchez l'erreur dans les issues existantes avant d'en ouvrir une.
 - Assurez-vous d'utiliser la dernière version de AVA.
 - Utilisez un titre clair et descriptif (en anglais).

@@ -1,13 +1,14 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/349648a772f6f1e1aced9b511f68a540033db77e...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d3bade8cd7fac004c1c6d2eff9b3f498257baa60...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/avajs/ava) [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
+[![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
 
@@ -76,19 +77,18 @@ test('les tableaux sont égaux', t => {
 
 ### Ajoutez AVA à votre projet
 
-Installez globalement AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`.
-
+Installez AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`.
 
 ```console
-$ npm install --global ava@next
-$ ava --init
+$ npm install ava@next --save-dev
+$ npx ava --init
 ```
 
-Si vous préférez l'utilisation de Yarn :
+Si vous préférez l'utilisation de [Yarn](https://yarnpkg.com/en/) :
 
 ```console
-$ yarn global add ava@next
-$ ava --init
+$ yarn add --dev ava@next
+$ yarn run ava --init
 ```
 
 Votre `package.json` ressemblera alors à ceci :
@@ -100,28 +100,12 @@ Votre `package.json` ressemblera alors à ceci :
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^1.0.0-beta.1"
+		"ava": "^1.0.0-beta.3"
 	}
 }
 ```
 
-Tous les arguments passés après `--init` sont ajoutés comme config au `package.json`.
-
-#### Installation manuelle
-
-Vous pouvez également installer AVA directement :
-
-```console
-$ npm install --save-dev ava@next
-```
-
-Alternativement en utilisant Yarn :
-
-```console
-$ yarn add --dev ava@next
-```
-
-Vous devez configurer le script `test` dans votre `package.json` pour utiliser `ava` (Voir ci-dessus).
+L'exécution de `npx` nécessite [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) ou plus. Sinon, vous devrez configurer manuellement le script `test` dans votre `package.json` pour utiliser `ava` (voir ci-dessus).
 
 #### Créez votre fichier de test
 
@@ -995,10 +979,6 @@ Affirme que `contents` correspond à `regex`.
 
 Affirme que `contents` ne correspond pas à `regex`.
 
-### `.ifError(error, [message])`
-
-Affirme que `error` est falsy.
-
 ### `.snapshot(expected, [message])`
 ### `.snapshot(expected, [options], [message])`
 
@@ -1185,7 +1165,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 ## Support
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
-- [Gitter chat](https://gitter.im/avajs/ava)
+- [Spectrum](https://spectrum.chat/ava)
 - [Twitter](https://twitter.com/ava__js)
 
 ## En relation
