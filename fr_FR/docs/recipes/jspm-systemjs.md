@@ -40,9 +40,6 @@ $ npm install --save-dev ava-jspm-loader
 
 Vous devrez également mettre à jour votre config de AVA dans le package.json pour utiliser le chargeur JSPM. A partir de Babel 7, vous devez installer[@babel-register](https://www.npmjs.com/package/@babel/register).
 
-```
-$ npm install @babel/register --save-dev
-```
 ```json
 {
 	"ava": {
