@@ -15,7 +15,7 @@ Cette recette a été testée uniquement avec JSPM v0.17.0-beta.22, mais ceci de
 
 ### Babel
 
-Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction. À partir de babel 7, @babel/ preset-env transformera le code comme babel-preset-esXXXX le faisait précédemment.
+Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction.
 
 ```
 $ npm install --save-dev @babel/preset-env
@@ -27,17 +27,16 @@ $ npm install --save-dev @babel/preset-env
 }
 ```
 
-Vous pouvez trouver plus d'informations sur la mise en place de Babel avec AVA dans la [recette babelrc](babelrc.md).
+Vous pouvez trouver plus d'informations sur la mise en place de Babel avec AVA dans la [recette Babel](babel.md).
 
 ### Helper de chargement de JSPM
 
-Vous aurez besoin d'installer le [chargeur JSPM de AVA](https://github.com/skorlir/ava-jspm-loader) comme une dépendance de dev.
+Vous aurez besoin d'installer le [chargeur JSPM de AVA](https://github.com/skorlir/ava-jspm-loader) comme une dépendance de dev. Vous aurez besoin d'installer [`@babel/register`](https://www.npmjs.com/package/@babel/register).
 
 ```
-$ npm install --save-dev ava-jspm-loader
+$ npm install --save-dev ava-jspm-loader @babel/register
 ```
-
-Vous devrez également mettre à jour votre config de AVA dans le package.json pour utiliser le chargeur JSPM. A partir de Babel 7, vous devez installer[@babel-register](https://www.npmjs.com/package/@babel/register).
+Vous devrez également mettre à jour votre config de AVA dans le package.json pour utiliser le chargeur JSPM.
 
 ```json
 {
