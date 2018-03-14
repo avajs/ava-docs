@@ -1,33 +1,31 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/b33cb1d533293c62f1244fb426e59d98de7890bc...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/a36422ce26626e1d40261f921ac652f4ef8713cd...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-> **Veuillez noter que cette recette n'a pas encore été mise à jour pour le support de Babel 7 dans AVA 1.0.**
-
----
-
 # Tester les composants React
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md)
 
 ## Installer Babel
 
-La première étape est de configurer Babel pour transformer le code JSX des tests, pour cela, ajoutez une section AVA à votre fichier package.json :
+AVA étend automatiquement votre configuration Babel actuelle (au niveau du projet). Vous devriez être en mesure d'utiliser React dans vos fichiers de test sans aucune configuration supplémentaire.
+
+Cependant, si vous voulez le configurer explicitement, ajoutez le preset aux options de test dans le pipeline Babel d'AVA en modifiant votre `package.json` :
 
 ```json
 {
 	"ava": {
-		"require": ["babel-register"],
-		"babel": "inherit"
-	},
-	"babel": {
-		"presets": ["react"]
+		"babel": {
+			"testOptions": {
+				"presets": ["@babel/preset-react"]
+			}
+		}
 	}
 }
 ```
 
-Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans la [recette sur babelrc](/fr_FR/docs/recipes/babelrc.md).
+Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans la [recette Babel](/fr_FR/docs/recipes/babel.md).
 
 ## Utiliser [Enzyme](https://github.com/airbnb/enzyme)
 

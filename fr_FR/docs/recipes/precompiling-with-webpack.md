@@ -1,12 +1,8 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/b33cb1d533293c62f1244fb426e59d98de7890bc...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [precompiling-with-webpack.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/04d88b5da3b7d07959553ee9fb88faae7f284874...master#diff-b4c25a4a1412e9204ac923133f67814f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `precompiling-with-webpack.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-> **Veuillez noter que cette recette n'a pas encore été mise à jour pour le support de Babel 7 dans AVA 1.0.**
-
----
-
 ## Précompilation des fichiers sources avec webpack
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/precompiling-with-webpack.md)
@@ -50,11 +46,11 @@ module.exports = {
 
 Les points importants sont `target: 'node'`, qui ne tient pas compte des `require`s spécifiques de Node.js (par exemple `fs`, `path`, etc...) et `externals: nodeModules` qui empêche webpack d'empaqueter les modules externes de Node.js qui pourraient être gênants.
 
-Vous pouvez maintenant exécuter `$ ava _build/test.js` pour lancer les tests contenus dans ce fichier généré.
+Vous pouvez maintenant exécuter `$ npx ava _build/test.js` pour lancer les tests contenus dans ce fichier généré.
 
 ### Plusieurs fichiers de test
 
-Les choses sont un peu plus compliquées avec plusieurs fichiers de test. Nous recommandons [l'utilisation de babel-register](babelrc.md) tant que cela ne pénalise pas trop les performances.
+Les choses sont un peu plus compliquées avec plusieurs fichiers de test. Nous recommandons [l'utilisation de `@babel/register`](babel.md#compiler-les-sources) tant que cela ne pénalise pas trop les performances.
 
 Les approches possibles sont :
 
