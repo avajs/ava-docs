@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d3bade8cd7fac004c1c6d2eff9b3f498257baa60...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/3311d69d3541e4cf145e6dc2eea0dd752695d0ba...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -77,18 +77,10 @@ test('les tableaux sont égaux', t => {
 
 ### Ajoutez AVA à votre projet
 
-Installez AVA et lancez le avec `--init` pour ajouter AVA à votre `package.json`.
+Pour installer et configurer AVA, exécutez :
 
 ```console
-$ npm install ava@next --save-dev
-$ npx ava --init
-```
-
-Si vous préférez l'utilisation de [Yarn](https://yarnpkg.com/en/) :
-
-```console
-$ yarn add --dev ava@next
-$ yarn run ava --init
+$ npx @ava/init --next
 ```
 
 Votre `package.json` ressemblera alors à ceci :
@@ -105,7 +97,17 @@ Votre `package.json` ressemblera alors à ceci :
 }
 ```
 
-L'exécution de `npx` nécessite [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) ou plus. Sinon, vous devrez configurer manuellement le script `test` dans votre `package.json` pour utiliser `ava` (voir ci-dessus).
+L'initialisation fonctionne avec npm et Yarn, mais en exécutant `npx` qui a besoin de [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) ou plus pour l'installer. Sinon, vous devez installer manuellement `ava` et configurer le script `test` dans votre `package.json` comme ci-dessus :
+
+```console
+$ npm install --save-dev ava@next
+```
+
+Ou si vous préférez utiliser Yarn :
+
+```console
+$ yarn add --dev ava@next
+```
 
 #### Créez votre fichier de test
 

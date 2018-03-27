@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-webstorm.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Voici un [lien](https://github.com/avajs/ava/compare/d8c21a6b8102bcc11daacba2ea6af6f9b9713959...master#diff-1fb9cdb432e04d416229256c338f1a06) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-webstorm.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-webstorm.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Voici un [lien](https://github.com/avajs/ava/compare/3311d69d3541e4cf145e6dc2eea0dd752695d0ba...master#diff-1fb9cdb432e04d416229256c338f1a06) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-webstorm.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec WebStorm
 
@@ -24,7 +24,7 @@ Sauvez la configuration.
 
 ## Installation en utilisant npm
 
-Exécutez `ava --init` dans le répertoire de votre projet pour ajouter AVA à votre `package.json`.
+Exécutez `npx @ava/init` dans le répertoire de votre projet pour ajouter AVA à votre `package.json`.
 
 Votre `package.json` ressemblera à quelque chose comme cela :
 
