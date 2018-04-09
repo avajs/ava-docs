@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [support-statement.md](https://github.com/avajs/ava/blob/master/docs/support-statement.md). Voici un [lien](https://github.com/avajs/ava/compare/47b8b5657177197fac570c72a606cc3b754e0ff6...master#diff-37d8e3b2a468fc951f0ab91473264dd1) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `support-statement.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [support-statement.md](https://github.com/avajs/ava/blob/master/docs/support-statement.md). Voici un [lien](https://github.com/avajs/ava/compare/e196257f7900681a5185f0c39d30d9c4b970f191...master#diff-37d8e3b2a468fc951f0ab91473264dd1) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `support-statement.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Les versions Node.js supportées
 
@@ -18,3 +18,5 @@ Nous abandonnerons le support des versions Node.js impaires (par exemple `7` ou`
 Nous essayons d'éviter la suppression *accidentelle* du support des versions de Node.js qui ne sont pas les dernières. Si une telle rupture se produit, nous acceptons les pull requests pour restaurer les fonctionnalités. Nous pourrions décider de désapprouver la version AVA incriminée et augmenter à la place le numéro de version majeur de AVA.
 
 Nous pouvons explicitement abandonner la prise en charge des versions non récentes de Node.js. Si cela se produit, nous augmenterons la version majeure de AVA. Cela peut être dû à l'adoption d'API rétroportées ou la disponibilité de nouvelles versions V8 dans les versions ultérieures de Node.js, soit dans AVA lui-même ou l'une de nos dépendances.
+
+Nous pouvons abandonner le support pour une version de Node.js, dans une pré-version-pour-une-version-majeure, si cette nouvelle version de AVA est supposée devenir stable autour ou après la date de fin de vie de la version Node.js en question.
