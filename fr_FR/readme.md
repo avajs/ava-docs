@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/a5100889cbb5eb45c1910f6df054fc05296f6126...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/43313990a87fb5fa3690656af607cd069fbe171d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -80,7 +80,7 @@ test('les tableaux sont égaux', t => {
 Pour installer et configurer AVA, exécutez :
 
 ```console
-$ npx @ava/init --next
+$ npx create-ava --next
 ```
 
 Votre `package.json` ressemblera alors à ceci :
@@ -92,7 +92,7 @@ Votre `package.json` ressemblera alors à ceci :
 		"test": "ava"
 	},
 	"devDependencies": {
-		"ava": "^1.0.0-beta.3"
+		"ava": "1.0.0-beta.4"
 	}
 }
 ```
@@ -100,13 +100,13 @@ Votre `package.json` ressemblera alors à ceci :
 L'initialisation fonctionne avec npm et Yarn, mais en exécutant `npx` qui a besoin de [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) ou plus pour l'installer. Sinon, vous devez installer manuellement `ava` et configurer le script `test` dans votre `package.json` comme ci-dessus :
 
 ```console
-$ npm install --save-dev ava@next
+$ npm install --save-dev --save-exact ava@next
 ```
 
 Ou si vous préférez utiliser Yarn :
 
 ```console
-$ yarn add --dev ava@next
+$ yarn add ava@next --dev --exact
 ```
 
 #### Créez votre fichier de test
@@ -154,7 +154,6 @@ $ ava --help
     ava [<file|directory|glob> ...]
 
   Options
-    --init                  Add AVA to your project (Ajouter AVA à votre projet)
     --watch, -w             Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
     --match, -m             Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
     --update-snapshots, -u  Update all snapshots (Mettre à jour les snapshots)
@@ -173,7 +172,6 @@ $ ava --help
     ava test.js test2.js
     ava test-*.js
     ava test
-    ava --init
 
   Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments) :
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
@@ -851,7 +849,7 @@ Les assertions sont liées à leur test de sorte que vous puissiez les affecter 
 
 ```js
 test('unicorns are truthy', t => {
-	const truthy = t.thruthy;
+	const truthy = t.truthy;
 	truthy('unicorn');
 });
 ```
@@ -1209,7 +1207,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 	<br>
 	<br>
 	<a href="https://ava.li">
-		<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+		<img src="https://github.com/avajs/ava/blob/master/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>
 	<br>

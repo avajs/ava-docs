@@ -1,12 +1,8 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/a28c89617ee2e73c639080ed4c5dcbfb66db9dd0...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/6bba766241e20873406f844f34df56a1c0c894df...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-> **Veuillez noter que cette recette n'a pas encore été mise à jour pour le support de Babel 7 dans AVA 1.0.**
-
----
-
 # Tester les composants Vue.js
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md)
@@ -28,7 +24,6 @@ La première étape consiste à mettre en place un helper pour configurer l'envi
 ```json
 {
 	"ava": {
-		"babel": "inherit",
 		"require": [
 			"./test/helpers/setup.js"
 		]
@@ -53,7 +48,7 @@ hooks('vue').plugin('vue').push();
 hooks(['vue', 'js']).plugin('babel').push();
 ```
 
-Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans la [recette babelrc](babelrc.md).
+Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans la [recette Babel](babel.md).
 
 ## Exemple de test instantané
 
