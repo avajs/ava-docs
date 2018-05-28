@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/43313990a87fb5fa3690656af607cd069fbe171d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/2167c575c925d104dc5ecab3d45143a328e9f33a...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -163,7 +163,6 @@ $ ava --help
     --concurrency, -c       Max number of test files running at the same time (Default: CPU cores) (Nombre max de fichiers de test exécutés en même temps (Par défaut : coeurs CPU))
     --verbose, -v           Enable verbose output (Activer le mode verbose)
     --tap, -t               Generate TAP output (Générer une sortie au format TAP)
-    --no-cache              Disable the transpiler cache (Désactiver le cache du transpileur)
     --color                 Force color output (Force l'affichage avec des couleurs)
     --no-color              Disable color output (Désactiver l'affichage avec des couleurs)
 
@@ -250,7 +249,7 @@ Pour ignorer un fichier ou un répertoire, préfixer le chemin avec un `!` (poin
 			"!mon-repertoire-test/exclus-ce-repertoire/**/*.js",
 			"!**/exclus-ce-fichier.js"
 		],
-		"source": [
+		"sources": [
 			"**/*.{js,jsx}",
 			"!dist/**/*"
 		],
@@ -258,6 +257,7 @@ Pour ignorer un fichier ou un répertoire, préfixer le chemin avec un `!` (poin
 			"*oo",
 			"!foo"
 		],
+		"cache": true,
 		"concurrency": 5,
 		"failFast": true,
 		"failWithoutAssertions": false,
@@ -282,6 +282,7 @@ Les arguments passés au CLI seront toujours prioritaires sur ceux de la configu
 - `files` : les chemins des fichiers et des répertoires, ainsi que les modèles de glob (glob patterns) qui sélectionnent les fichiers AVA qui feront des tests. Seuls les fichiers avec une extension `.js` sont utilisés. Les fichiers préfixés avec un underscore sont ignorés. Tous les fichiers `.js` dans les répertoires sélectionnés sont exécutés
 - `source` : les fichiers, lorsqu'ils sont modifiés, provoquent la ré-exécution des tests lors du mode watch. Voir la [recette du mode watch pour plus de détails](docs/recipes/watch-mode.md#les-fichiers-sources-et-les-fichiers-de-test)
 - `match` : n'est généralement pas utile dans la configuration du `package.json`, mais est équivalent au [`--match` de la CLI](#exécution-de-tests-correspondants-à-des-titres)
+- `cache` : met en cache les fichiers de test compilé et les helpers sous `node_modules/.cache/ava`. Si la valeur est à `false`, les fichiers sont à la place mis en cache dans un répertoire temporaire
 - `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue
 - `failWithoutAssertions` : si `false`, ne pas faire échouer un test s'il n'exécute pas des [assertions](#assertions)
 - `tap` : si `true`, active le [reporter de TAP](#reporter-de-tap)
@@ -1134,7 +1135,7 @@ Au contraire, AVA est très opiniâtre et exécute les tests en simultané, avec
 
 ### Comment l'écrire et le prononcer ?
 
-AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, pas Ava ni ava. Prononcez [/ˈeɪvə/ ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
 
 ### Que représente l'arrière plan de l'image ?
 

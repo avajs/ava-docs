@@ -1,19 +1,17 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/84a884ed89277329724f1675a459b7f045bdec75...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/a5de3691e76a2a999ac3392830d1e26d279d60ab...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md)
 
-AVA utilise [Babel 7](https://babeljs.io) donc vous pouvez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). Nous utilisons également un [second preset](https://github.com/avajs/babel-preset-transform-test-files) pour activer [une amélioration des messages d'assertion](../../readme.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
+AVA utilise [Babel 7](https://babeljs.io) donc vous pouvez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). Nous utilisons également un [second preset, `@ava/transform-test-files`](https://github.com/avajs/babel-preset-transform-test-files) pour activer [une amélioration des messages d'assertion](../../readme.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
 
-Par défaut, notre pipeline Babel est appliqué aux fichiers de test et de helper se terminant par `.js`. Si votre projet utilise Babel, nous compilerons automatiquement ces fichiers en utilisant la configuration Babel de votre projet.
+Par défaut, notre pipeline Babel est appliqué aux fichiers de test et de helper se terminant par `.js`. Si votre projet utilise Babel, nous compilerons automatiquement ces fichiers en utilisant la configuration Babel de votre projet. Le preset `@ava/transform-helper-files` est appliqué en premier et le preset `@ava/stage-4` en dernier.
 
 Si vous utilisez Babel pour vos fichiers sources, vous devez également [configurer la compilation du source](#compiler-les-sources).
-
-AVA ne recherche que les fichiers de configuration Babel dans le répertoire de votre projet. C'est-à-dire, les fichiers `.babelrc` ou `.babelrc.js` à côté de votre fichier `package.json`, ou le fichier `package.json` lui-même.
 
 ## Personnaliser la manière dont AVA compile votre fichier de test
 
@@ -33,6 +31,16 @@ Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA po
 ```
 
 Toutes les options de `.babelrc` sont autorisées dans l'objet `testOptions`.
+
+## Réinitialiser le cache de AVA
+
+AVA met en cache les fichiers de test compilé et les helpers. Il recompile automatiquement ces fichiers lorsque vous les modifiez, cependant, il ne peut pas détecter ni les mises à jour de vos presets et plugins Babel, ni les modifications de vos fichiers de configuration Babel.
+
+Au lieu de cela, exécutez ce qui suit pour réinitialiser le cache AVA lorsque vous modifiez la configuration ou mettez à jour les plugins ou les presets :
+
+```console
+$ npx ava --reset-cache
+```
 
 ## Faire ignorer à AVA les options de Babel de votre projet
 
@@ -69,6 +77,8 @@ Vous pouvez désactiver le preset stage-4 de AVA :
 ```
 
 Veuillez noter que cela *n'empêche pas* AVA de compiler vos fichiers de test en utilisant Babel.
+
+Vous **devez** désactiver le preset en le configurant dans `testOptions`. AVA appliquera toujours le preset si vous le configurez dans d'autres fichiers (par exemple un fichier `.babelrc`). C'est [en raison d'une issue de Babel](https://github.com/babel/babel/issues/7920).
 
 ## Préserver la syntaxe du module ES
 
