@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/a36422ce26626e1d40261f921ac652f4ef8713cd...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/16f474242880ea325fea792dbd11ae43bbe17c06...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants React
 
@@ -11,7 +11,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/re
 
 AVA étend automatiquement votre configuration Babel actuelle (au niveau du projet). Vous devriez être en mesure d'utiliser React dans vos fichiers de test sans aucune configuration supplémentaire.
 
-Cependant, si vous voulez le configurer explicitement, ajoutez le preset aux options de test dans le pipeline Babel d'AVA en modifiant votre `package.json` :
+Cependant, si vous voulez le configurer explicitement, ajoutez le preset aux options de test dans le pipeline Babel d'AVA en modifiant votre `package.json` ou votre fichier `ava.config.js` :
 
 ```json
 {

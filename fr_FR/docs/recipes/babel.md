@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/a5de3691e76a2a999ac3392830d1e26d279d60ab...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/16f474242880ea325fea792dbd11ae43bbe17c06...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -15,7 +15,7 @@ Si vous utilisez Babel pour vos fichiers sources, vous devez également [configu
 
 ## Personnaliser la manière dont AVA compile votre fichier de test
 
-Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA pour la compilation de fichiers de test dans `package.json`. Par exemple, la configuration ci-dessous ajoute la prise en charge de la syntaxe JSX et des fonctionnalités du stage 3 :
+Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA pour la compilation de fichiers de test dans `package.json` ou `ava.config.js`. Par exemple, la configuration ci-dessous ajoute la prise en charge de la syntaxe JSX et des fonctionnalités du stage 3 :
 
 ```json
 {
@@ -41,6 +41,25 @@ Au lieu de cela, exécutez ce qui suit pour réinitialiser le cache AVA lorsque 
 ```console
 $ npx ava --reset-cache
 ```
+
+## Ajouter des extensions supplémentaires
+
+Vous pouvez configurer AVA pour reconnaître les extensions de fichiers supplémentaires et compiler ces fichiers de test et d'aide en utilisant Babel :
+
+```json
+{
+	"ava": {
+		"babel": {
+			"extensions": [
+				"js",
+				"jsx"
+			]
+		}
+	}
+}
+```
+
+Consultez aussi l'[option `extensions`](../../readme.md#options) de AVA.
 
 ## Faire ignorer à AVA les options de Babel de votre projet
 
