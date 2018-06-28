@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [use-true-false.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-true-false.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-ddb8eec6553e62e35444366d67672f38) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-true-false.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [use-true-false.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-true-false.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/e196c7a2bd7ed2a52366ede4c1bc57505949cdd1...master#diff-ddb8eec6553e62e35444366d67672f38) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-true-false.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que `t.true()`/`t.false()` sont utilisés à la place de `t.truthy()`/`t.falsy()`
 
@@ -19,7 +19,7 @@ import ava from 'ava';
 test(t => {
 	t.truthy(value < 2);
 	t.truthy(value === 1);
-	t.falsy([1, 2, 3].indexOf(value) === -1);
+	t.truthy([1, 2, 3].includes(value));
 	t.falsy(!value);
 	t.truthy(!!value);
 	t.truthy(Array.isArray(value));
@@ -34,7 +34,7 @@ import ava from 'ava';
 test(t => {
 	t.true(value < 2);
 	t.true(value === 1);
-	t.false([1, 2, 3].indexOf(value) === -1);
+	t.true([1, 2, 3].includes(value));
 	t.false(!value);
 	t.true(!!value);
 	t.true(Array.isArray(value));

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/6d3bde6e111171941d03a9da2668bd6fd4219fb3...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/e196c7a2bd7ed2a52366ede4c1bc57505949cdd1...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -121,14 +121,6 @@ Consulter les [docs ESLint](http://eslint.org/docs/user-guide/configuring#extend
 **Remarque** : Cette config activera aussi correctement les [options du parser](http://eslint.org/docs/user-guide/configuring#specifying-parser-options) et de l'[environnement](http://eslint.org/docs/user-guide/configuring#specifying-environments).
 
 
-## Auteurs
-
-- [L'équipe AVA](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#léquipe)
-- [Jeroen Engels](https://github.com/jfmengels)
-- [Takuto Wada](https://github.com/twada)
-- [Contributeurs...](https://github.com/avajs/eslint-plugin-ava/graphs/contributors)
-
-
 ## Licence
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT
