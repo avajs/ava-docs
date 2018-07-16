@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/e196c7a2bd7ed2a52366ede4c1bc57505949cdd1...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/0134e94e5450341a88654d9fdcc1d0fb3833b34d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -45,6 +45,7 @@ Configurez le dans le `package.json`.
 			"ava/no-duplicate-modifiers": "error",
 			"ava/no-identical-title": "error",
 			"ava/no-ignored-test-files": "error",
+			"ava/no-import-test-files": "error",
 			"ava/no-invalid-end": "error",
 			"ava/no-nested-tests": "error",
 			"ava/no-only-test": "error",
@@ -79,6 +80,7 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [no-duplicate-modifiers](docs/rules/no-duplicate-modifiers.md) - S'assurer qu'aucun test n'a de modificateur en doublon.
 - [no-identical-title](docs/rules/no-identical-title.md) - S'assurer que chaque test a un titre différent.
 - [no-ignored-test-files](docs/rules/no-ignored-test-files.md) - S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés.
+- [no-import-test-files](docs/rules/no-import-test-files.md) - S'assurer qu'aucun fichier de test n'est importé de n'importe où.
 - [no-invalid-end](docs/rules/no-invalid-end.md) - S'assurer que `t.end()` est seulement appelé dans `test.cb()`.
 - [no-nested-tests](docs/rules/no-nested-tests.md) - S'assurer qu'aucun test soit imbriqué.
 - [no-only-test](docs/rules/no-only-test.md) - S'assurer qu'aucun `test.only()` soit présent.

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/179f26ad1acbb56f10c18042f73903aec4af54e8...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d5dd981d0283303ad6cee62b14a59318d2316c85...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -55,7 +55,6 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Environnement isolé pour chaque fichier de test](#isolement-du-processus)
 - [Écriture de vos tests en utilisant la dernière syntaxe de JavaScript](#prise-en-charge-de-la-dernière-syntaxe-de-javascript)
 - [Prise en charge des promesses](#prise-en-charge-des-promesses)
-- [Prise en charge des fonctions génératrices](#prise-en-charge-des-fonctions-génératrices)
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
@@ -767,17 +766,6 @@ test('se résout avec unicorn', t => {
 });
 ```
 
-### Prise en charge des fonctions génératrices
-
-AVA est livré avec un support intégré pour les [fonctions génératrices](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/function*).
-
-```js
-test(function * (t) {
-	const value = yield generatorFn();
-	t.true(value);
-});
-```
-
 ### Prise en charge des fonctions asynchrones
 
 AVA est livré avec un support pour les [fonctions asynchrones](https://tc39.github.io/ecmascript-asyncawait/) *(async/await)*.
@@ -951,7 +939,7 @@ Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `
 
 ### `.throws(thrower, [expected, [message]])`
 
-Affirme qu'une erreur est levée. `thrower` peut être une fonction qui devrait lever une erreur ou retourner une promesse qui devrait être rejetée ou un observable qui devrait être une erreur. Alternativement une promesse ou un observable peuvent être passés directement.
+Affirme qu'une erreur est levée. `thrower` peut être une fonction qui devrait lever une erreur ou retourner une promesse qui devrait être rejetée. Alternativement une promesse peut être passée directement.
 
 La valeur levée *doit* être une erreur. Elle est retournée afin que vous puissiez lancer d'autres assertions.
 
@@ -990,7 +978,7 @@ test('rejects', async t => {
 });
 ```
 
-Lorsque vous testez un observable ou une promesse, vous devez attendre l'assertion pour terminer :
+Lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
 
 ```js
 test('rejects', async t => {
@@ -1010,9 +998,9 @@ test('throws', async t => {
 
 ### `.notThrows(nonThrower, [message])`
 
-Affirme qu'aucune erreur est levée. `thrower` peut être une fonction qui ne devrait pas lever une erreur ou retourner une promesse qui devrait être résolue ou un observable qui devrait se terminer. Alternativement une promesse ou un observable peuvent être passés directement.
+Affirme qu'aucune erreur est levée. `thrower` peut être une fonction qui ne devrait pas lever une erreur ou retourner une promesse qui devrait être résolue. Alternativement une promesse peut être passée directement.
 
-Comme l'assertion `.throws()`, lorsque vous testez une promesse ou un observable, vous devez attendre l'assertion pour terminer :
+Comme l'assertion `.throws()`, lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
 
 ```js
 test('resolves', async t => {
