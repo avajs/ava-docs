@@ -76,7 +76,7 @@ $ npm install --global ava
 $ ava --init
 ```
 
-Your `package.json` will then look like this:
+O seu `package.json` então vai ficar assim:
 
 ```json
 {
@@ -139,25 +139,25 @@ AVA vem com um modo inteligente de observação. [Saiba mais na receita](docs/re
 ```console
 $ ava --help
 
-  Usage
-    ava [<file|directory|glob> ...]
+  Uso
+    ava [<arquivo|diretório|glob> ...]
 
-  Options
-    --init             Add AVA to your project
-    --fail-fast        Stop after first test failure
-    --serial, -s       Run tests serially
-    --require, -r      Module to preload (Can be repeated)
-    --tap, -t          Generate TAP output
-    --verbose, -v      Enable verbose output
-    --no-cache         Disable the transpiler cache
-    --no-power-assert  Disable Power Assert
-    --match, -m        Only run tests with matching title (Can be repeated)
-    --watch, -w        Re-run tests when tests and source files change
-    --source, -S       Pattern to match source files so tests can be re-run (Can be repeated)
-    --timeout, -T      Set global timeout
-    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL)
+  Opções
+    --init             Adiciona o AVA ao seu projeto
+    --fail-fast        Para depois da primeira falha em um teste
+    --serial, -s       Roda os testes em série
+    --require, -r      Módulo para pré-carregar (pode conter repetidos)
+    --tap, -t          Gera uma saída TAP
+    --verbose, -v      Habilita a saída verborrágica
+    --no-cache         Desabilita o cache do transpiler
+    --no-power-assert  Desabilita o Power Assert
+    --match, -m        Somente roda testes com que batam com o título informado (pode conter repetidos)
+    --watch, -w        Roda novamente os testes quando os testes e os arquivos código-fonte mudarem
+    --source, -S       Padrão para procurar nomes de arquivo, para que os testes possam ser rodados novamente (pode conter repetidos)
+    --timeout, -T      Define um timeout global
+    --concurrency, -c  Número máximo de arquivos-teste rodando ao mesmo tempo (EXPERIMENTAL)
 
-  Examples
+  Exemplos
     ava
     ava test.js test2.js
     ava test-*.js
@@ -165,7 +165,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments:
+  Padrões de arquivo pré-definidos, quando executado sem argumetos:
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
@@ -179,19 +179,19 @@ Ao utilizar `npm test`, você pode passar argumentos posicionais diretamente `np
 
 ### Mini-reporter
 
-The mini-reporter is the default reporter.
+O mini-reporter é o reporter padrão.
 
 <img src="media/screenshot-mini-reporter.gif" width="460">
 
 ### Verbose reporter
 
-Use the `--verbose` flag to enable the verbose reporter. This is always used in CI environments unless the [TAP reporter](#tap-reporter) is enabled.
+Use a flag `--verbose` para ativar o reporter verborrágico. Ele é sempre usado em ambientes CI, exceto se o [TAP reporter](#tap-reporter) estiver ativo.
 
 <img src="media/screenshot.png" width="150">
 
 ### TAP reporter
 
-AVA supports the TAP format and thus is compatible with [any TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Use the `--tap` flag to enable TAP output.
+AVA suporta o padrão TAP, e, portanto, é compatível com [qualquer TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Use a flag `--tap` para habilitar a saída TAP.
 
 ```console
 $ ava --tap | tap-nyan
@@ -199,11 +199,11 @@ $ ava --tap | tap-nyan
 
 <img src="media/tap-output.png" width="398">
 
-Please note that the TAP reporter is unavailable when using [watch mode](#watch-it).
+Por-favor, note que o TAP reporter não está disponível no modo observador [watch mode](#watch-it).
 
-### Clean stack traces
+### Stack traces limpos
 
-AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster.
+AVA remove automaticamente linhas não relacionadas nos stack traces, permitindo que você encontre o código fonte de um erro muito mais rápido.
 
 <img src="media/stack-traces.png" width="300">
 
