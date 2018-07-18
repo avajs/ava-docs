@@ -137,27 +137,28 @@ AVA vem com um modo inteligente de observação. [Saiba mais na receita](docs/re
 ## CLI
 
 ```console
+
 $ ava --help
 
-  Uso
-    ava [<arquivo|diretório|glob> ...]
+  Usage (Uso)
+    ava [<file|directory|glob> ...]
 
-  Opções
-    --init             Adiciona o AVA ao seu projeto
-    --fail-fast        Para depois da primeira falha em um teste
-    --serial, -s       Roda os testes em série
-    --require, -r      Módulo para pré-carregar (pode conter repetidos)
-    --tap, -t          Gera uma saída TAP
-    --verbose, -v      Habilita a saída verborrágica
-    --no-cache         Desabilita o cache do transpiler
-    --no-power-assert  Desabilita o Power Assert
-    --match, -m        Somente roda testes com que batam com o título informado (pode conter repetidos)
-    --watch, -w        Roda novamente os testes quando os testes e os arquivos código-fonte mudarem
-    --source, -S       Padrão para procurar nomes de arquivo, para que os testes possam ser rodados novamente (pode conter repetidos)
-    --timeout, -T      Define um timeout global
-    --concurrency, -c  Número máximo de arquivos-teste rodando ao mesmo tempo (EXPERIMENTAL)
+  Options (Opções)
+    --init             Add AVA to your project (Adiciona o AVA ao seu projeto)
+    --fail-fast        Stop after first test failure (Para depois da primeira falha em um teste)
+    --serial, -s       Run tests serially (Roda os testes em série)
+    --require, -r      Module to preload (Can be repeated) (Módulo para pré-carregar (pode ser repetido))
+    --tap, -t          Generate TAP output (Gera uma saída TAP)
+    --verbose, -v      Enable verbose output (Habilita a saída verborrágica)
+    --no-cache         Disable the transpiler cache (Desabilita o cache do transpiler)
+    --no-power-assert  Disable Power Assert (Desabilita o Power Assert)
+    --match, -m        Only run tests with matching title (Can be repeated) (Somente roda testes que casem com o título informado (pode ser repetido))
+    --watch, -w        Re-run tests when tests and source files change (Re-roda os testes quando os testes e os arquivos código-fonte mudarem)
+    --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Padrão para casar com nomes de arquivo, para que os testes possam ser rodados novamente (pode ser repetido))
+    --timeout, -T      Set global timeout (Define um timeout global)
+    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Número máximo de arquivos-teste rodando ao mesmo tempo (EXPERIMENTAL))
 
-  Exemplos
+  Examples (Exemplos)
     ava
     ava test.js test2.js
     ava test-*.js
@@ -165,7 +166,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Padrões de arquivo pré-definidos, quando executado sem argumetos:
+  Default patterns when no arguments (Padrões pré-definidos, quando sem argumentos):
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
@@ -461,7 +462,7 @@ test.todo('vou pensar em escrever isto mais tarde');
 
 Você pode usar o modificador `.failing` para documentar problemas com o seu código que precisam ser corrigidos. Testes falhos são executados da mesma forma que testes normais, mas espera-se que eles falhem e eles não vão quebrar o seu build quando isso acontecer. Se um teste marcado como falho inesperadamente passar, isso vai ser reportado como um erro e, com isso, falhar o build com uma mensagem providencial instruindo você a remover o modificador `.failing`.
 
-Isso permite que você faça o merge de testes `.failing` antes que uma correção seja implementada sem quebrar o CI. Esta é uma ótima maneira de reconhecer aquelas PRs com bons relatórios de bug com um crédito de commit, mesmo que o relatador seja, com efeito, incapaz de corrigir o problema.
+Isso permite que você faça o merge de testes `.failing` antes que uma correção seja implementada, sem quebrar o CI. Esta é uma ótima maneira de reconhecer PRs com bons relatórios de bug com um crédito de commit, mesmo que o relatador seja, com efeito, incapaz de corrigir o problema.
 
 ```js
 // Veja: github.com/user/repo/issues/1234
