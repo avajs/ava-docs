@@ -457,16 +457,16 @@ Você pode usar o modificador `.todo` quando você está planejando escrever um 
 test.todo('vou pensar em escrever isto mais tarde');
 ```
 
-### Failing tests
+### Testes falhos
 
-You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+Você pode usar o modificador `.failing` para documentar problemas com o seu código que precisam ser corrigidos. Testes falhos são executados da mesma forma que testes normais, mas espera-se que eles falhem e eles não vão quebrar o seu build quando isso acontecer. Se um teste marcado como falho inesperadamente passar, isso vai ser reportado como um erro e, com isso, falhar o build com uma mensagem providencial instruindo você a remover o modificador `.failing`.
 
-This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+Isso permite que você faça o merge de testes `.failing` antes que uma correção seja implementada sem quebrar o CI. Esta é uma ótima maneira de reconhecer aquelas PRs com bons relatórios de bug com um crédito de commit, mesmo que o relatador seja, com efeito, incapaz de corrigir o problema.
 
 ```js
-// See: github.com/user/repo/issues/1234
-test.failing('demonstrate some bug', t => {
-	t.fail(); // test will count as passed
+// Veja: github.com/user/repo/issues/1234
+test.failing('demonstra a existência de um bug', t => {
+	t.fail(); // este teste vai passar
 });
 ```
 
@@ -581,9 +581,9 @@ test.only.serial(...);
 
 Isso significa que você pode temporariamente adicionar `.skip` ou` .only` no final de um teste ou definição de hook sem ter que fazer qualquer outra alteração.
 
-### Test macros
+### Rotinas de teste
 
-Additional arguments passed to the test declaration will be passed to the test implementation. This is useful for creating reusable test macros.
+Argumentos adicionais passados para a declaração do teste serão repassados para a implementação do teste. Isto é útil para criar rotinas de teste reutilizáveis.
 
 ```js
 function macro(t, input, expected) {
@@ -594,7 +594,7 @@ test('2 + 2 === 4', macro, '2 + 2', 4);
 test('2 * 3 === 6', macro, '2 * 3', 6);
 ```
 
-You can build the test title programmatically by attaching a `title` function to the macro:
+Você pode construir o título do teste programaticamente ao associar uma função `title` à rotina:
 
 ```js
 function macro(t, input, expected) {
@@ -608,9 +608,9 @@ test(macro, '2 * 3', 6);
 test('providedTitle', macro, '3 * 3', 9);
 ```
 
-The `providedTitle` argument defaults to an empty string if the user does not supply a string title. This allows for easy concatenation without having to worry about `null` / `undefined`. It is worth remembering that the empty string is considered a falsy value, so you can still use `if(providedTitle) {...}`.
+O argumento `providedTitle`, por padrão, é uma string vazia se o usuário não definir nehuma string para o título. Isso permite a fácil concatenação, sem ter que se preocupar com `null` ou `undefined`. Vale lembrar que uma string vazia é considerada um valor falsy, então você ainda pode usar `if(providedTitle) {...}`.
 
-You can also pass arrays of macro functions:
+Você também pode passar vetores de funções de rotina:
 
 ```js
 const safeEval = require('safe-eval');
@@ -627,7 +627,8 @@ test([evalMacro, safeEvalMacro], '2 + 2', 4);
 test([evalMacro, safeEvalMacro], '2 * 3', 6);
 ```
 
-We encourage you to use macros instead of building your own test generators ([here is an example](https://github.com/avajs/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) of code that should be replaced with a macro). Macros are designed to perform static analysis of your code, which can lead to better performance, IDE integration, and linter rules.
+Nós recomendamos que você utilize rotinas ao invés de construir seus próprios geradores de teste ([veja um exemplo](https://github.com/avajs/ava-codemods/blob/47073b5b58aa6f3fb24f98757be5d3f56218d160/test/ok-to-truthy.js#L7-L9) de código que deve ser substituído por uma rotina). Rotinas foram pensadas para fazer análise estática do seu código, o que pode 
+desencadear melhor performance, integrações com IDEs e regras para linters.
 
 ### Asserções personalizadas
 
