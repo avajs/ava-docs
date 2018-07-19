@@ -144,19 +144,19 @@ $ ava --help
     ava [<file|directory|glob> ...]
 
   Options (Opções)
-    --init             Add AVA to your project (Adiciona o AVA ao seu projeto)
-    --fail-fast        Stop after first test failure (Para depois da primeira falha em um teste)
-    --serial, -s       Run tests serially (Roda os testes em série)
+    --init             Add AVA to your project (Adicione o AVA ao seu projeto)
+    --fail-fast        Stop after first test failure (Pare depois da primeira falha em um teste)
+    --serial, -s       Run tests serially (Rode os testes em série)
     --require, -r      Module to preload (Can be repeated) (Módulo para pré-carregar (pode ser repetido))
-    --tap, -t          Generate TAP output (Gera uma saída TAP)
-    --verbose, -v      Enable verbose output (Habilita a saída verborrágica)
-    --no-cache         Disable the transpiler cache (Desabilita o cache do transpiler)
-    --no-power-assert  Disable Power Assert (Desabilita o Power Assert)
-    --match, -m        Only run tests with matching title (Can be repeated) (Somente roda testes que casem com o título informado (pode ser repetido))
-    --watch, -w        Re-run tests when tests and source files change (Re-roda os testes quando os testes e os arquivos código-fonte mudarem)
+    --tap, -t          Generate TAP output (Gere uma saída TAP)
+    --verbose, -v      Enable verbose output (Habilite a saída verborrágica)
+    --no-cache         Disable the transpiler cache (Desabilite o cache do transpiler)
+    --no-power-assert  Disable Power Assert (Desabilite o Power Assert)
+    --match, -m        Only run tests with matching title (Can be repeated) (Apenas rode testes com o mesmo título informado (pode ser repetido))
+    --watch, -w        Re-run tests when tests and source files change (Refaça os testes quando os testes e os arquivos código-fonte mudarem)
     --source, -S       Pattern to match source files so tests can be re-run (Can be repeated) (Padrão para casar com nomes de arquivo, para que os testes possam ser rodados novamente (pode ser repetido))
-    --timeout, -T      Set global timeout (Define um timeout global)
-    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Número máximo de arquivos-teste rodando ao mesmo tempo (EXPERIMENTAL))
+    --timeout, -T      Set global timeout (Defina um timeout global)
+    --concurrency, -c  Maximum number of test files running at the same time (EXPERIMENTAL) (Número máximo de arquivos-teste para rodar ao mesmo tempo (EXPERIMENTAL))
 
   Examples (Exemplos)
     ava
@@ -166,7 +166,7 @@ $ ava --help
     ava --init
     ava --init foo.js
 
-  Default patterns when no arguments (Padrões pré-definidos, quando sem argumentos):
+  Default patterns when no arguments (Padrões pré-definidos quando não há argumentos):
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
