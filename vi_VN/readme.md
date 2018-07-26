@@ -1,7 +1,7 @@
 ___
 **Lưu ý của người phiên dịch**
 
-Đây là bản dịch của file [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Đây là [liên kết](https://github.com/avajs/ava/compare/d5dd981d0283303ad6cee62b14a59318d2316c85...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) để thấy sự khác biệt với nhánh chính của AVA (Nếu bạn nhấp vào liên kết mà không thấy có sự thay đổi đối với tệp `readme.md` thì có nghĩa là bản dịch đã được cập nhật).
+Đây là bản dịch của file [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Đây là [liên kết]() để thấy sự khác biệt với nhánh chính của AVA (Nếu bạn nhấp vào liên kết mà không thấy có sự thay đổi đối với file `readme.md` thì có nghĩa là bản dịch đã được cập nhật).
 ___
 # [![AVA](media/header.png)](https://ava.li)
 
@@ -14,56 +14,56 @@ Mặc dù JavaScript là một ngôn ngữ đơn luồng, nhưng IO trong Node.j
 
 ![](https://github.com/avajs/ava/blob/master/media/mini-reporter.gif)
 
-*Read our [contributing guide](contributing.md) if you're looking to contribute (issues/PRs/etc).*
+*Đọc [hướng dẫn đóng góp](contributing.md) nếu bạn muốn đóng góp (issues/PRs/.v.v).*
 
-Follow the [AVA Twitter account](https://twitter.com/ava__js) for updates.
+Theo dõi [Tài khoản Twitter của AVA](https://twitter.com/ava__js) để biết các cập nhật mới.
 
-**This documentation covers the 1.0 beta releases, which use Babel 7. The last release that uses Babel 6 is [`v0.25.0`](https://github.com/avajs/ava/tree/v0.25.0).**
+**Tài liệu này thể theo phiên bản 1.0 beta, sử dụng Babel 7. Phiên bản mới nhất sử dụng Babel 6 là [`v0.25.0`](https://github.com/avajs/ava/tree/v0.25.0).**
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+Các bản dịch [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md), [Tiếng việt](https://github.com/avajs/ava-docs/blob/master/vi_VN/readme.md)
 
 
-## Contents
+## Nội dung
 
-- [Usage](#usage)
-- [CLI Usage](#cli)
-- [Debugging](#debugging)
-- [Reporters](#reporters)
-- [Configuration](#configuration)
-- [Documentation](#documentation)
+- [Cách sử dụng](#cách-sử-dụng)
+- [Cách sử dụng CLI](#cli)
+- [Kiểm lỗi](#kiểm-lỗi)
+- [Báo cáo](#báo-cáo)
+- [Cấu hình](#cấu-hình)
+- [Tài liệu](#tài-liệu)
 - [API](#api)
-- [Assertions](#assertions)
-- [Snapshot testing](#snapshot-testing)
-- [Tips](#tips)
+- [Xác nhận giá trị](#xác-nhận-giá-trị)
+- [Test với snapshot](#test-với-snapshot)
+- [Các mẹo](#các-mẹo)
 - [FAQ](#faq)
-- [Recipes](#recipes)
-- [Support](#support)
-- [Related](#related)
-- [Links](#links)
-- [Team](#team)
+- [Các công thức](#các-công-thức)
+- [Hỗ trợ](#hỗ-trợ)
+- [Có liên quan](#có-liên-quan)
+- [Các liên kết](#các-liên-kết)
+- [Nhóm phát triển](#nhóm-phát-triển)
 
 
-## Why AVA?
+## Tại sao dùng AVA?
 
-- Minimal and fast
-- Simple test syntax
-- Runs tests concurrently
-- Enforces writing atomic tests
-- No implicit globals
-- Includes TypeScript & Flow type definitions
-- [Magic assert](#magic-assert)
-- [Isolated environment for each test file](#process-isolation)
-- [Write your tests using the latest JavaScript syntax](#latest-javascript-support)
-- [Promise support](#promise-support)
-- [Async function support](#async-function-support)
-- [Observable support](#observable-support)
-- [Enhanced assertion messages](#enhanced-assertion-messages)
-- [Automatic parallel test runs in CI](#parallel-runs-in-ci)
+- Nhỏ gọn và nhanh chóng
+- Cú pháp để test đơn giản
+- Chạy test đồng thời
+- Ép buộc viết test chi tiết
+- Không có giá trị toàn cục hiện hữu 
+- Bao gồm các định nghĩa kiểu TypeScript & Flow
+- [Cú pháp test thần kì](#cú-pháp-test-thần-kì)
+- [Môi trường riêng biệt cho mỗi file test](#môi-trường-riêng-biệt-cho-mỗi-file-test)
+- [Viết test sử dụng cú pháp Javascript mới nhất](#latest-javascript-support)
+- [Hỗ trợ Promise](#promise-support)
+- [Hỗ trợ hàm bất đồng bộ](#async-function-support)
+- [Hỗ trợ Observable](#observable-support)
+- [Cải thiện thông báo test](#enhanced-assertion-messages)
+- [Test chạy song song và tự động trên CI](#parallel-runs-in-ci)
 - [TAP reporter](#tap-reporter)
-- [Automatic migration from other test runners](https://github.com/avajs/ava-codemods#migrating-to-ava)
+- [Tự động chuyển đổi từ các test runner khác](https://github.com/avajs/ava-codemods#migrating-to-ava)
 
 
-## Test syntax
+## Cú pháp test
 
 ```js
 import test from 'ava';
@@ -73,17 +73,17 @@ test('arrays are equal', t => {
 });
 ```
 
-## Usage
+## Cách sử dụng
 
-### Add AVA to your project
+### Thêm AVA vào dự án của bạn
 
-To install and set up AVA, run:
+Để cài đặt AVA, thực thi lệnh:
 
 ```console
 $ npx create-ava --next
 ```
 
-Your `package.json` will then look like this:
+File `package.json` sau đó sẽ như thế này:
 
 ```json
 {
@@ -97,21 +97,21 @@ Your `package.json` will then look like this:
 }
 ```
 
-Initialization will work with npm and Yarn, but running `npx` requires [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) or greater to be installed. Otherwise, you'll have to manually install `ava` and configure the `test` script in your `package.json` as per above:
+Việc khởi tạo sẽ hoạt động với npm và Yarn, nhưng để chạy 'npx' bạn cần có  [`npm@5.2.0`](https://github.com/npm/npm/releases/tag/v5.2.0) hoặc phiên bản mới hơn. Nếu không, bạn sẽ phải tự cài đặt `ava` và cấu hình `test` script trong `package.json` như bên trên:
 
 ```console
 $ npm install --save-dev --save-exact ava@next
 ```
 
-Or if you prefer using Yarn:
+Hoặc nếu bạn thích dùng Yarn:
 
 ```console
 $ yarn add ava@next --dev --exact
 ```
 
-### Create your test file
+### Tạo file test của bạn
 
-Create a file named `test.js` in the project root directory:
+Tạo một file có tên `test.js` trong thư mục gốc của dự án với nội dung như sau:
 
 ```js
 import test from 'ava';
@@ -127,94 +127,94 @@ test('bar', async t => {
 });
 ```
 
-### Run it
+### Chạy test
 
 ```console
 $ npm test
 ```
 
-### Watch it
+### Theo dõi test
 
 ```console
 $ npm test -- --watch
 ```
 
-AVA comes with an intelligent watch mode. [Learn more in its recipe](docs/recipes/watch-mode.md).
+AVA đi kèm với chế độ theo dõi thông minh. [Xem thêm tại công thức](docs/recipes/watch-mode.md).
 
-### Supported Node.js versions
+### Các phiên bản Node.js được hỗ trợ
 
-AVA supports the latest release of any major version that [is supported by Node.js itself](https://github.com/nodejs/Release#release-schedule). Read more in our [support statement](docs/support-statement.md).
+AVA hỗ trợ các bản release mới nhất của bất kì phiên bản chính nào [được hỗ trợ bởi chính Node.js](https://github.com/nodejs/Release#release-schedule). Đọc thêm tại [các sự hỗ trợ](docs/support-statement.md) của chúng tôi.
 
 ## CLI
 
 ```console
 $ ava --help
 
-  Usage
+  Cách dùng
     ava [<file|directory|glob> ...]
 
-  Options
-    --watch, -w             Re-run tests when tests and source files change
-    --match, -m             Only run tests with matching title (Can be repeated)
-    --update-snapshots, -u  Update snapshots
-    --fail-fast             Stop after first test failure
-    --timeout, -T           Set global timeout
-    --serial, -s            Run tests serially
-    --concurrency, -c       Max number of test files running at the same time (Default: CPU cores)
-    --verbose, -v           Enable verbose output
-    --tap, -t               Generate TAP output
-    --color                 Force color output
-    --no-color              Disable color output
+  Các tùy chọn
+    --watch, -w             Chạy lại test khi test và file test có sự thay đổi
+    --match, -m             Chỉ chạy tets với các tiêu đề phù hợp (Có thể lặp lại)
+    --update-snapshots, -u  Cập nhật snapshots
+    --fail-fast             Dừng ngay khi test đầu tiên thất bại
+    --timeout, -T           Thiết lập thời gian timeout toàn cục
+    --serial, -s            Chạy các test theo từng kỳ
+    --concurrency, -c       Số test tối đa cùng chạy ở một thời điểm (Mặc định: Số nhân của CPU)
+    --verbose, -v           Hiển thị chi tiết các output
+    --tap, -t               Tạo TAP output
+    --color                 Màu của output
+    --no-color              Vô hiệu hóa màu cho output
 
-  Examples
+  Ví dụ
     ava
     ava test.js test2.js
     ava test-*.js
     ava test
 
-  Default patterns when no arguments:
+  Khuôn mẫu mặc định khi không có tham số:
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
-*Note that the CLI will use your local install of AVA when available, even when run globally.*
+*Lưu ý rằng CLI sẽ sử dụng cài đặt cục bộ của AVA khi có thể, ngay cả khi bạn chạy lệnh toàn cục.*
 
-Directories are recursed, with all `*.js` files being treated as test files. Directories named `fixtures`, `helpers` and `node_modules` are *always* ignored. So are files starting with `_` which allows you to place helpers in the same directory as your test files.
+Các thư mục được đệ quy, tất cả các file có đuôi `*.js` sẽ được xem như là file test. Các thư mục có tên `fixtures`, `helpers` và `node_modules` sẽ *luôn* bị bỏ qua. Các file có tên bắt đầu bằng `_` sẽ cho phép bạn đặt những code hữu ích trong cùng thư mục với file test của bạn.
 
-When using `npm test`, you can pass positional arguments directly `npm test test2.js`, but flags needs to be passed like `npm test -- --verbose`.
+Khi sử dụng lệnh `npm test`, bạn có thể truyền vào trực tiếp các tham số để chỉ rõ file cần test `npm test test2.js`, nhưng các tham số nên được truyền vào như thế như sau `npm test -- --verbose`.
 
 
-## Debugging
+## Kiểm lỗi
 
-AVA runs tests in child processes, so to debug tests, you need to do this workaround:
+AVA chạy các test trong các process con, do đó, để kiểm lỗi, bạn cần thực hiện giải pháp sau:
 
 ```console
 $ node --inspect node_modules/ava/profile.js some/test/file.js
 ```
 
-### Debugger-specific tips
+### Các mẹo riêng để gỡ lỗi
 
 - [Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [WebStorm](docs/recipes/debugging-with-webstorm.md)
 - [Visual Studio Code](docs/recipes/debugging-with-vscode.md)
 
 
-## Reporters
+## Báo cáo
 
-### Mini-reporter
+### Báo cáo mini
 
-The mini-reporter is the default reporter.
+Báo cáo mini là báo cáo mặc định.
 
 <img src="media/mini-reporter.gif" width="460">
 
-### Verbose reporter
+### Báo cáo chi tiết
 
-Use the `--verbose` flag to enable the verbose reporter. This is always used in CI environments unless the [TAP reporter](#tap-reporter) is enabled.
+Dùng tham số `--verbose` để kích hoạt báo cáo chi tiết. Báo cáo chi tiết sẽ luôn được dùng trong môi trường CI, trừ khi [Báo cáo TAP](#tap-reporter) đã được kích hoạt.
 
 <img src="media/verbose-reporter.png" width="294">
 
-### TAP reporter
+### Báo cáo TAP
 
-AVA supports the TAP format and thus is compatible with [any TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Use the `--tap` flag to enable TAP output.
+AVA hỗ trợ định dạng TAP và do đó tương thích với [Bất kì báo cáo TAP nào khác](https://github.com/sindresorhus/awesome-tap#reporters). Sử dụng tham số `--tap` để bật báo cáo TAP.
 
 ```console
 $ ava --tap | tap-nyan
@@ -222,24 +222,24 @@ $ ava --tap | tap-nyan
 
 <img src="media/tap-reporter.png" width="420">
 
-Please note that the TAP reporter is unavailable when using [watch mode](#watch-it).
+Lưu ý rằng báo cáo TAP sẽ không khả dụng khi sử dụng [Theo dõi test](#theo-dõi-test).
 
-### Magic assert
+### Cú pháp test thần kì
 
-AVA adds code excerpts and clean diffs for actual and expected values. If values in the assertion are objects or arrays, only a diff is displayed, to remove the noise and focus on the problem. The diff is syntax-highlighted too! If you are comparing strings, both single and multi line, AVA displays a different kind of output, highlighting the added or missing characters.
+AVA thêm vào các trích đoạn code và các sự khác biệt rõ ràng cho từng giá trị thực tế và giá trị mong muốn. Nếu giá trị của cú pháp test có dạng đối tượng hoặc chuỗi, sẽ chỉ có một sự khác biệt được hiển thị, để loại bỏ đi các khác biệt nhiễu và tập trung vào vấn đề. Các sự khác biệt này cũng được làm nổi bật cú pháp! Nếu bạn đang so sánh chuỗi, cả trên 1 dòng và nhiều dòng, AVA sẽ hiển thị một loại output khác, AVA sẽ làm nổi bật các kí tự được thêm vào hoặc bị loại bỏ đi.
 
 ![](media/magic-assert-combined.png)
 
-### Clean stack traces
+### Dọn dẹp stack traces
 
-AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster, as seen above.
+AVA sẽ tự động xóa đi các dòng không liên quan trong stack traces, cho phép bạn tìm ra nguồn gốc của lỗi nhanh hơn rất nhiều, như đã thấy ở trên.
 
 
-## Configuration
+## Cấu hình
 
-All of the CLI options can be configured in the `ava` section of either your `package.json` or an `ava.config.js` file. This allows you to modify the default behavior of the `ava` command, so you don't have to repeatedly type the same options on the command prompt.
+Tất cả các tùy chọn của CLI đều có thể được cấu hình trong phần `ava` của file `package.json` hoặc `ava.config.js`. Điều này cho phép bạn thay đổi hành vi mặc định của lệnh `ava`, do đó bạn không phải gõ lặp đi lặp lại nhiều lần các tùy chọn.
 
-To ignore a file or directory, prefix the pattern with an `!` (exclamation mark).
+Để bỏ qua một file hoặc một thư mục, hãy thêm tiền tố vào pattern bằng dấu `!` (Dấu chấm than).
 
 ```json
 {
@@ -276,34 +276,34 @@ To ignore a file or directory, prefix the pattern with an `!` (exclamation mark)
 }
 ```
 
-Arguments passed to the CLI will always take precedence over the configuration in `package.json`.
+Các tham số được truyền vào CLI sẽ luôn được ưu tiên hơn các tham số đã cấu hình trong file `package.json`.
 
-### Options
+### Các tùy chọn
 
-- `files`: file & directory paths and glob patterns that select which files AVA will run tests from. Files with an underscore prefix are ignored. All matched files in selected directories are run. By default only selects files with `js` extensions, even if the glob pattern matches other files. Specify `extensions` and `babel.extensions` to allow other file extensions
-- `source`: files that, when changed, cause tests to be re-run in watch mode. See the [watch mode recipe for details](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md#source-files-and-test-files)
-- `match`: not typically useful in the `package.json` configuration, but equivalent to [specifying `--match` on the CLI](#running-tests-with-matching-titles)
-- `cache`: cache compiled test and helper files under `node_modules/.cache/ava`. If `false`, files are cached in a temporary directory instead
-- `failFast`: stop running further tests once a test fails
-- `failWithoutAssertions`: if `false`, does not fail a test if it doesn't run [assertions](#assertions)
-- `tap`: if `true`, enables the [TAP reporter](#tap-reporter)
-- `snapshotDir`: specifies a fixed location for storing snapshot files. Use this if your snapshots are ending up in the wrong location
-- `compileEnhancements`: if `false`, disables [power-assert](https://github.com/power-assert-js/power-assert) — which otherwise helps provide more descriptive error messages — and detection of improper use of the `t.throws()` assertion
-- `extensions`: extensions of test files that are not precompiled using AVA's Babel presets. Note that files are still compiled to enable power-assert and other features, so you may also need to set `compileEnhancements` to `false` if your files are not valid JavaScript. Setting this overrides the default `"js"` value, so make sure to include that extension in the list, as long as it's not included in `babel.extensions`
-- `require`: extra modules to require before tests are run. Modules are required in the [worker processes](#process-isolation)
-- `babel`: test file specific Babel options. See our [Babel recipe] for more details
-- `babel.extensions`: extensions of test files that will be precompiled using AVA's Babel presets. Setting this overrides the default `"js"` value, so make sure to include that extension in the list
+- `files`: đường dẫn của file, thư mục và các pattern toàn cục nhằm xác định các file test mà AVA sẽ thực thi. Files với tiền tố là dấu gạch dưới sẽ bị bỏ qua. Tất cả các file trong thư mục đã được chọn đều sẽ được thực thi. Mặc định, AVA chỉ chọn các file có đuôi mở rộng là `js`, ngay cả khi pattern toàn cục khớp với các file khác. Chỉ định `extensions` và `babel.extensions` để cho phép file với đuôi mở rộng khác.
+- `source`: các tệp mà khi có sự thay đổi, sẽ làm cho các test chạy lại trong chế độ theo dõi. Xem [các công thức để biết thêm chi tiết](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md#source-files-and-test-files)
+- `match`: không hữu ích lắm trong việc cấu hình file  `package.json`, nhưng tương đương với [chỉ định `--mactch` trong CLI](#thực-thi-test-với-các-tiêu-đề-trùng-khớp)
+- `cache`: cache biên dịch các file test và file hỗ trợ bằng `node_modules/.cache/ava`. Nếu giá trị là `false`, các file sẽ được lưu trong thư mục tạm thời
+- `failFast`: ngừng thực thi test khi có một test chạy không thành công
+- `failWithoutAssertions`: nếu giá trị là `false`, không tính một file test là thất bại nếu như nó chưa được chạy [Xác nhận giá trị](#xác-nhận-giá-trị)
+- `tap`: nếu giá trị là `true`, kích hoạt [Báo cáo TAP](#báo-cáo-tap)
+- `snapshotDir`: chỉ đị vị trí cố định để lưu các file snapshot. Sử dụng chức năng này nếu các file snapshot của bạn nằm sai vị trí
+- `compileEnhancements`: nếu giá trị là `false`, vô hiệu hóa [power-assert](https://github.com/power-assert-js/power-assert) — giúp cung cấp thêm các thông báo mô tả lỗi — và phát hiện việc sử dụng `t.throws()` không đúng cách
+- `extensions`: phần mở rộng của các file test không được biên dịch trước sử dụng các thiết lập sẵn của Babel trong AVA. Lưu ý rằng các file vẫn được biên dịch để kích hoạt power-assert và cách tính năng khác, vì vậy bạn có thể cần phải thiết lập `compileEnhancements` thành `false` nếu các file của bạn không đúng định dạng Javascript. Thiết lập này sẽ được ghi đè lên giá trị `"js"` mặc định, vì vậy hãy đảm bảo rằng bạn đã thêm phần mở rộng đó vào danh sách, miễn là nó không nằm trong `babel.extensions`
+- `require`: các module bổ sung cần thiết trước khi chạy test. Các module cần thiế trong [worker processes](#process-isolation)
+- `babel`: các tùy chọn cài đặt Babel cụ thể của file test. Xem [Công thức Babel] của chúng tôi để có thêm chi tiết
+- `babel.extensions`: các phần mở rộng của các file test sẽ được biên dịch trước bằng các thiết lập Babel của AVA. Giá trị này sẽ được ghi đè lên giá trị `"js"` mặc định, vì vậy hãy đảm bảo rằng bạn đã thêm phần mở rộng đó trong danh sách
 
-Note that providing files on the CLI overrides the `files` option. If you've configured a glob pattern, for instance `test/**/*.test.js`, you may want to repeat it when using the CLI: `ava 'test/integration/*.test.js'`.
+Lưu ý rằng việc cung cấp các file trên CLI sẽ ghi đè lên tùy chọn `files`. Nếu bạn đã cấu hình một pattern toàn cục, ví dụ `test/**/*.test.js`, bạn có lẽ sẽ muốn lặp lại nó khi sử dụng CLI: `ava 'test/integration/*.test.js'`.
 
-### Using `ava.config.js`
+### Sử dụng `ava.config.js`
 
-To use an `ava.config.js` file:
+Để sử dụng file cấu hình `ava.config.js`:
 
- 1. It must be in the same directory as your `package.json`
- 2. Your `package.json` must not contain an `ava` property (or, if it does, it must be an empty object)
+ 1. Nó phải nằm trong cùng thư mục với file `package.json` của bạn
+ 2. File `package.json` của bạn không được chứa thuộc tính `ava` (hoặc nếu có, nó phải là một đối tượng trống)
 
-The config file must have a default export, using ES modules. It can either be a plain object or a factory function which returns a plain object:
+File cấu hình phải có một export mặc định, sử dụng các module ES. Nó có thể là một đối tượng đơn giản, hoặc một hàm factory nào đó trả về một đối tượng đơn giản:
 
 ```js
 export default {
@@ -319,7 +319,7 @@ export default function factory() {
 };
 ```
 
-The factory function is called with an object containing a `projectDir` property, which you could use to change the returned configuration:
+Hàm factory được gọi với một đối tượng chứa thuộc tính `projectDir`, thứ mà bạn có thể sử dụng để thay đổi cấu hình trả về:
 
 ```js
 export default ({projectDir}) => {
@@ -335,25 +335,25 @@ export default ({projectDir}) => {
 };
 ```
 
-Note that the final configuration must not be a promise.
+Lưu ý rằng cấu hình cuối cùng không được là một promise.
 
-## Documentation
+## Tài liệu
 
-Tests are run concurrently. You can specify synchronous and asynchronous tests. Tests are considered synchronous unless you return a promise or [observable](https://github.com/zenparsing/zen-observable).
+Các test được thực hiện đồng thời. Bạn có thể chỉ định các test chạy đồng bộ và không động bộ. Các test được con là đồng bộ, trừ khi bạn trả về một Promise hoặc  [observable](https://github.com/zenparsing/zen-observable).
 
-We *highly* recommend the use of [async functions](#async-function-support). They make asynchronous code concise and readable, and they implicitly return a promise so you don't have to.
+Chúng tôi *khuyến khích* sử dụng [async-functions](#hỗ-trợ-async-function). Chúng giúp cho code không đồng bộ súc tích và có thể đọc được, và chúng cũng ngầm trả về một promise thay bạn.
 
-If you're unable to use promises or observables, you may enable "callback mode" by defining your test with `test.cb([title], fn)`. Tests declared this way **must** be manually ended with `t.end()`. This mode is mainly intended for testing callback-style APIs. However, we would strongly recommend [promisifying](https://github.com/sindresorhus/pify) callback-style APIs instead of using "callback mode", as this results in more correct and readable tests.
+Nếu bạn không thể sử dụng promises hay observables, bạn nên kích hoạt "callback mode" bằng cách định nghĩa các test của mình với `test.cb([title], fn)`. Các test được khai bao theo cách này **phải** được kết thúc một cách thủ công với `t.end()`. Chế độ này chủ yếu được dùng để test các callback-style APIs. Tuy nhiên, chúng tôi đặc biệt khuyến khích bạn dùng [promisifying](https://github.com/sindresorhus/pify) callback-style APIs thay vì sử dụng "callback mode", vì nó giúp test chạy chính xác và dễ đọc hơn.
 
-You must define all tests synchronously. They can't be defined inside `setTimeout`, `setImmediate`, etc.
+Bạn phải định nghĩa tất cả các test một cách đồng bộ. Chúng không thể được định nghĩa bên trong `setTimeout`, `setImmediate`, v.v.
 
-AVA tries to run test files with their current working directory set to the directory that contains your `package.json` file.
+AVA sẽ cố gắng chạy các file test với thư mục làm việc hiện tại của chúng có chứa file `package.json`.
 
-### Creating tests
+### Tạo các test
 
-To create a test you call the `test` function you imported from AVA. Provide the required title and implementation function. Titles must be unique within each test file. The function will be called when your test is run. It's passed an [execution object](#t) as its first argument.
+Để tạo một test bạn phải gọi hàm `test` bạn đã import vào từ AVA. Cung cấp tiêu đề yêu cầu và hàm chức năng cho nó. Hàm chức năng sẽ được gọi khi bạn chạy test của mình. Nó sẽ truyền vào [execution object](#t) là đối số đầu tiên của nó.
 
-**Note:** In order for the [enhanced assertion messages](#enhanced-assertion-messages) to behave correctly, the first argument **must** be named `t`.
+**Lưu ý:** Để [các thông báo xác nhận nâng cao](#thông-báo-xác-nhận-nâng-cao) hoạt động chính xác, đối số đầu tiên **phải** được đặt tên là `t`.
 
 ```js
 import test from 'ava';
@@ -363,15 +363,15 @@ test('my passing test', t => {
 });
 ```
 
-### Assertion planning
+### Lập kế hoạch xác nhận
 
-Assertion plans ensure tests only pass when a specific number of assertions have been executed. They'll help you catch cases where tests exit too early. They'll also cause tests to fail if too many assertions are executed, which can be useful if you have assertions inside callbacks or loops.
+Các kế hoạch xác nhận phải đảm bảo rằng các test chỉ thành công khi một một số nhất định các kiểm thử giá trị đã được thực thi. Chúng sẽ giúp bạn nắm bắt các trường hợp test kết thúc quá sớm. Chúng cũng sẽ làm cho test thất bại nếu có quá nhiều kiểm thử giá trị được thực thi, điều này sẽ hữu ích nếu bạn có các xác nhận bên trong các callback hoặc các vòng lặp.
 
-If you do not specify an assertion plan, your test will still fail if no assertions are executed. Set the `failWithoutAssertions` option to `false` in AVA's [`package.json` configuration](#configuration) to disable this behavior.
+Nếu bạn không chỉ định rõ ràng một kế hoạch xác nhận, test của bạn vẫn sẽ thất bại nếu không có bất cứ xác nhận nào được thực thi. Thiết lập tùy chọn `failWithoutAssertions` thành `false` trong AVA's [Cấu hình `package.json`](#cấu-hình) để vô hiệu hóa hành vi này.
 
-Note that, unlike [`tap`](https://www.npmjs.com/package/tap) and [`tape`](https://www.npmjs.com/package/tape), AVA does *not* automatically end a test when the planned assertion count is reached.
+Lưu ý rằng, không giống như [`tap`](https://www.npmjs.com/package/tap) và [`tape`](https://www.npmjs.com/package/tape), AVA *không* tự động kết thúc một test khi đã đạt được số kế hoạch xác nhận dự kiến.
 
-These examples will result in a passed test:
+Các ví dụ sau đây sẽ có kết quả là một test đã thành công:
 
 ```js
 test('resolves with 3', t => {
@@ -392,7 +392,7 @@ test.cb('invokes callback', t => {
 });
 ```
 
-These won't:
+Những ví dụ này thì không:
 
 ```js
 test('loops twice', t => {
@@ -401,7 +401,7 @@ test('loops twice', t => {
 	for (let i = 0; i < 3; i++) {
 		t.true(i < 3);
 	}
-}); // Fails, 3 assertions are executed which is too many
+}); // Thất bại, 3 kiểm thử đã được thực thi, được xem là quá nhiều
 
 test('invokes callback synchronously', t => {
 	t.plan(1);
@@ -409,12 +409,12 @@ test('invokes callback synchronously', t => {
 	someAsyncFunction(() => {
 		t.pass();
 	});
-}); // Fails, the test ends synchronously before the assertion is executed
+}); // Thất bại, test kết thúc một cách đồng bộ trước khi kiểm thử được thực thi
 ```
 
-### Running tests serially
+### Thực thi các test theo từng kỳ
 
-Tests are run concurrently by default, however, sometimes you have to write tests that cannot run concurrently. In these rare cases you can use the `.serial` modifier. It will force those tests to run serially *before* the concurrent ones.
+Theo mặc định, các test được chạy đồng thời, tuy nhiên, đôi khi bạn phải viết các test không thể chạy đồng thời. Trong các trường hợp hiếm hoi này, bạn có thể dùng  `.serial`. Nó sẽ ép buộc các bài kiểm tra đó chạy ngay lập tức *trước* các test chạy đồng thời.
 
 ```js
 test.serial('passes serially', t => {
@@ -422,13 +422,13 @@ test.serial('passes serially', t => {
 });
 ```
 
-Note that this only applies to tests within a particular test file. AVA will still run multiple tests files at the same time unless you pass the [`--serial` CLI flag](#cli).
+Lưu ý rằng điều này chỉ áp dụng cho các test trong một file test nhất định. AVA vẫn sẽ chạy nhiều file test cùng lúc trừ khi bạn truyền vào tham số [`--serial` CLI flag](#cli).
 
-You can use the `.serial` modifier with all tests, hooks and even `.todo()`, but it's only available on the `test` function.
+Bạn có thể sử dụng `.serial` với tất cả các test, hook hoặc tập chí `.todo()`, nhưng nó chỉ có sẵn trên hàm `test`.
 
-### Running specific tests
+### Thực thi một test cụ thể
 
-During development it can be helpful to only run a few specific tests. This can be accomplished using the `.only` modifier:
+Trong quá trình phát triển, đôi khi chỉ chạy một vài test cụ thể lại hữu ích. Điều này có thể được thực hiện bằng cách dùng `.only`:
 
 ```js
 test('will not be run', t => {
@@ -440,59 +440,59 @@ test.only('will be run', t => {
 });
 ```
 
-You can use the `.only` modifier with all tests. It cannot be used with hooks or `.todo()`.
+Bạn có thể sử dụng `.only` với tất cả các test. Nó không thể được dùng với các hook hoặc `.todo()`.
 
-*Note:* The `.only` modifier applies to the test file it's defined in, so if you run multiple test files, tests in other files will still run. If you want to only run the `test.only` test, provide just that test file to AVA.
+*Lưu ý:* `.only` chỉ áp dụng cho tệp đã được xác định, vì vậy nếu bạn chạy nhiều test cùng lúc, các test ở các file khác vẫn sẽ chạy. Nếu bạn chỉ muốn thực thi một test `test.only`, chỉ cần cung cấp file test đó cho AVA.
 
-### Running tests with matching titles
+### Thực thi test với các tiêu đề trùng khớp
 
-The `--match` flag allows you to run just the tests that have a matching title. This is achieved with simple wildcard patterns. Patterns are case insensitive. See [`matcher`](https://github.com/sindresorhus/matcher) for more details.
+Tham số `--match` cho phép bạn chạy các test có tiêu đề trùng khớp, Điều này có thể thực hiện bằng cách sử dụng một wildcard patterns đơn giản. Các patterns không phân biệt chữ hoa thường. Xem [`matcher`](https://github.com/sindresorhus/matcher) để có thêm thông tin.
 
-Match titles ending with `foo`:
+Các tiêu đề trùng khớp kết thúc với `foo`:
 
 ```console
 $ ava --match='*foo'
 ```
 
-Match titles starting with `foo`:
+Các tiêu đề trùng khớp bắt đầu với `foo`:
 
 ```console
 $ ava --match='foo*'
 ```
 
-Match titles containing `foo`:
+Các tiêu đề trùng khớp có chứa `foo`:
 
 ```console
 $ ava --match='*foo*'
 ```
 
-Match titles that are *exactly* `foo` (albeit case insensitively):
+Các tiêu đề trùng khớp là `foo` (mặc dù không phân biệt chữ hoa thường):
 
 ```console
 $ ava --match='foo'
 ```
 
-Match titles not containing `foo`:
+Các tiêu đề trùng khớp không có chứa `foo`:
 
 ```console
 $ ava --match='!*foo*'
 ```
 
-Match titles starting with `foo` and ending with `bar`:
+Các tiêu đề trùng khớp bắt đầu với `foo` và kết thúc với `bar`:
 
 ```console
 $ ava --match='foo*bar'
 ```
 
-Match titles starting with `foo` or ending with `bar`:
+Các tiêu đề trùng khớp bắt đầu với `foo` hoặc kết thúc với `bar`:
 
 ```console
 $ ava --match='foo*' --match='*bar'
 ```
 
-Note that a match pattern takes precedence over the `.only` modifier. Only tests with an explicit title are matched. Tests without titles or whose title is derived from the implementation function will be skipped when `--match` is used.
+Lưu ý rằng một pattern đối sánh được ưu tiên hơn `.only`. Chỉ các test có tiêu đề rõ ràng mới được đối sánh. Các test không có tiêu đề hoặc có tiêu đề bắt nguồn từ hàm thực thi sẽ bị bỏ qua khi `--match` được sử dụng.
 
-Here's what happens when you run AVA with a match pattern of `*oo*` and the following tests:
+Đây là những gì sẽ xảy ra nếu bạn chạy AVA với một pattern của `*oo*` và các test:
 
 ```js
 test('foo will run', t => {
@@ -507,20 +507,20 @@ test.only('boo will run but not exclusively', t => {
 	t.pass();
 });
 
-// Won't run, no title
+// Không chạy, không có tiêu đề
 test(function (t) {
 	t.fail();
 });
 
-// Won't run, no explicit title
+// Không chạy, không có tiêu đề rõ ràng
 test(function foo(t) {
 	t.fail();
 });
 ```
 
-### Skipping tests
+### Bỏ qua test
 
-Sometimes failing tests can be hard to fix. You can tell AVA to skip these tests using the `.skip` modifier. They'll still be shown in the output (as having been skipped) but are never run.
+Đôi khi việc kiểm tra thất bại khó thể khó khắc phục. Bạn có thể yêu cầu AVA bỏ qua các test này bằng cách sử dụng `.skip`. Chúng sẽ vẫn được hiển thị trong output (là đã bị bỏ qua) nhưng không bao giờ thực thi.
 
 ```js
 test.skip('will not be run', t => {
@@ -528,92 +528,92 @@ test.skip('will not be run', t => {
 });
 ```
 
-You must specify the implementation function. You can use the `.skip` modifier with all tests and hooks, but not with `.todo()`. You can not apply further modifiers to `.skip`.
+Bạn phải chỉ định hàm thực thi. Bạn có thể sử dụng `.skip` cho tất cả các test và hook, nhưng không thể dùng với `.todo()`. Bạn không thể áp dụng các modifiers khác với `.skip`
 
 ### Test placeholders ("todo")
 
-You can use the `.todo` modifier when you're planning to write a test. Like skipped tests these placeholders are shown in the output. They only require a title; you cannot specify the implementation function.
+Bạn có thể dùng `.todo` khi bạn định viết một test. Như khi các test được bỏ qua, các placeholders này sẽ được hiển thị trong output. Chúng chỉ cần có một tiêu đề; bạn không thể chỉ định hàm thực thi.
 
 ```js
 test.todo('will think about writing this later');
 ```
 
-You can signal that you need to write a serial test:
+Bạn có thể báo hiệu rằng bạn cần phải viết một test nối tiếp:
 
 ```js
 test.serial.todo('will think about writing this later');
 ```
 
-### Failing tests
+### Test thất bại
 
-You can use the `.failing` modifier to document issues with your code that need to be fixed. Failing tests are run just like normal ones, but they are expected to fail, and will not break your build when they do. If a test marked as failing actually passes, it will be reported as an error and fail the build with a helpful message instructing you to remove the `.failing` modifier.
+Bạn có thể dùng modifier `.failing` để ghi lại các vấn đề với code của bạn mà bạn sẽ cần phải chỉnh sửa. Test thất bại được thực thi giống như các test thông thường, và sẽ không phá vỡ build của bạn khi chúng thực hiện. Nếu một test được đánh dấu là không thực sự thành công, nó sẽ được báo cáo như là một lỗi và làm thất bại build với một thông báo hướng dẫn hứu ích giúp bạn loại bỏ modifier `.failing`.
 
-This allows you to merge `.failing` tests before a fix is implemented without breaking CI. This is a great way to recognize good bug report PR's with a commit credit, even if the reporter is unable to actually fix the problem.
+Điều này cho phép bạn kết hợp các test  `.failing` trước khi một bản sửa lỗi được thêm vào mà không phá vỡ CI. Đây là một cách tuyệt vời để nhận ra các báo cáo lỗi tốt của các PR với một commit tin cậy, ngay cả khi người báo cáo không thể thực sự khắc phục vấn đề.
 
 ```js
-// See: github.com/user/repo/issues/1234
+// Xem: github.com/user/repo/issues/1234
 test.failing('demonstrate some bug', t => {
-	t.fail(); // Test will count as passed
+	t.fail(); // Test sẽ được tính là thành công
 });
 ```
 
-### Before & after hooks
+### Các hook trước và sau
 
-AVA lets you register hooks that are run before and after your tests. This allows you to run setup and/or teardown code.
+AVA cho phép bạn đăng ký các hook được chạy trước vào sau test. Điều này cho phép bạn setup và/hoặc teardown code.
 
-`test.before()` registers a hook to be run before the first test in your test file. Similarly `test.after()` registers a hook to be run after the last test. Use `test.after.always()` to register a hook that will **always** run once your tests and other hooks complete. `.always()` hooks run regardless of whether there were earlier failures, so they are ideal for cleanup tasks. Note however that uncaught exceptions, unhandled rejections or timeouts will crash your tests, possibly preventing `.always()` hooks from running.
+`test.before()` đăng ký một hook sẽ được chạy trước test đầu tiên trong file test của bạn. Tương tự `test.after()` đăng ký một hook sẽ chạy sau test cuối cùng. Sử dụng `test.after.always ()` để đăng ký mộc hook sẽ **luôn luôn** chạy sau khi test của bạn và các hook hoàn thành. Hook `.always()` sẽ chạy bất kể có lỗi trước đó hay không, vì vậy chúng rất lý tưởng cho các nhiệm vụ dọn dẹp. Tuy nhiên, lưu ý rằng các trường hợp ngoại lệ chưa được thực hiện, các rejection hoặc timeout sẽ phá hỏng test của bạn, thậm chí có thể ngăn cản hook `.always()` thực thi.
 
-`test.beforeEach()` registers a hook to be run before each test in your test file. Similarly `test.afterEach()` a hook to be run after each test. Use `test.afterEach.always()` to register an after hook that is called even if other test hooks, or the test itself, fail.
+`test.beforeEach()` đăng ký một hook sẽ chạy trước mỗi test trong file test của bạn. Tương tự `test.afterEach()` sẽ đăng ký một hook sẽ chạy sau mỗi test. Sử dụng `test.afterEach.always()` để đăng ký một hook sẽ được gọi ngay cả khi các hook hoặc bản thân test đó thất bại.
 
-If a test is skipped with the `.skip` modifier, the respective `.beforeEach()`, `.afterEach()` and `.afterEach.always()` hooks are not run. Likewise, if all tests in a test file are skipped `.before()`, `.after()` and `.after.always()` hooks for the file are not run.
+Nếu một test bị bỏ qua với `.skip`, các hook  `.beforeEach()`, `.afterEach()` và `.afterEach.always()` sẽ không được thực thi. Tương tự vậy, nếu tất cả test trong một file bị bỏ qua thì các hook `.before()`, `.after()` và `.after.always()` sẽ không được thực thi.
 
-Like `test()` these methods take an optional title and an implementation function. The title is shown if your hook fails to execute. The implementation is called with an [execution object](#t). You can use assertions in your hooks. You can also pass a [macro function](#test-macros) and additional arguments.
+Giống như `test()`, các phương thức này nhận vào một tiêu đề và một hàm thực thi. Tiêu đề sẽ được hiển thị nếu hook của bạn không thực thi được. Hàm thực thi sẽ được gọi với  một [execution object](#t). Bạn có thể sử dụng các xác nhận giá trị trong các hook của mình. Bạn cũng có thể truyền vào một [hàm macro](#test-macros) và các đối số bổ sung.
 
-`.before()` hooks execute before `.beforeEach()` hooks. `.afterEach()` hooks execute before `.after()` hooks. Within their category the hooks execute in the order they were defined. By default hooks execute concurrently, but you can use `test.serial` to ensure only that single hook is run at a time. Unlike with tests, serial hooks are *not* run before other hooks:
+Các hook `.before()` thực thi trước các hook `.beforeEach()`. Các hook `.afterEach()` thực thi trước các hook `.after()`. Các hook sẽ thực thi theo thứ tự chúng được định nghĩa, nhưng bạn có thể dùng `test.serial` để đảm bảo rằng chỉ có một hook chạy ở một thời điểm. Không giống như test, các hook tuần tự *không* chạy trước các hook khác:
 
 ```js
 test.before(t => {
-	// This runs before all tests
+	// Lệnh ở đây sẽ chạy trước tất cả các test
 });
 
 test.before(t => {
-	// This runs concurrently with the above
+	// Lệnh ở đây sẽ chạy đồng thời với lệnh bên trên
 });
 
 test.serial.before(t => {
-	// This runs after the above
+	// Lệnh ở đây sẽ chạy sau lệnh ở trên
 });
 
 test.serial.before(t => {
-	// This too runs after the above, and before tests
+	// Lệnh ở đây cũng vậy, sẽ chạy sau các lệnh ở trên, và trước các test
 });
 
 test.after('cleanup', t => {
-	// This runs after all tests
+	// Lệnh ở đây chạy sau tất cả các test
 });
 
 test.after.always('guaranteed cleanup', t => {
-	// This will always run, regardless of earlier failures
+	// Lệnh ở đây sẽ luôn chạy, bất kể các lỗi trước đó
 });
 
 test.beforeEach(t => {
-	// This runs before each test
+	// Lệnh ở đây sẽ chạy trước mỗi test
 });
 
 test.afterEach(t => {
-	// This runs after each test
+	// Lệnh ở đây sẽ chạy sau mỗi test
 });
 
 test.afterEach.always(t => {
-	// This runs after each test and other test hooks, even if they failed
+	// Lệnh ở đây chạy sau mỗi test và các hook khác, ngay cả khi chúng thất bại
 });
 
 test('title', t => {
-	// Regular test
+	// Test thông thường
 });
 ```
 
-Hooks can be synchronous or asynchronous, just like tests. To make a hook asynchronous return a promise or observable, use an async function, or enable callback mode via `test.before.cb()`, `test.beforeEach.cb()` etc.
+Hook có thể đồng bộ hoặc bất đồng bộ giống như test. Để làm cho một hook bất đồng bộ trả về một promise hoặc observable, sử dụng một hàm async, hoặc kích hoạt chế độ callback bằng `test.before.cb()`, `test.beforeEach.cb()` .v.v
 
 ```js
 test.before(async t => {
@@ -633,9 +633,9 @@ test.afterEach.cb(t => {
 });
 ```
 
-Keep in mind that the `.beforeEach()` and `.afterEach()` hooks run just before and after a test is run, and that by default tests run concurrently. This means each multiple `.beforeEach()` hooks may run concurrently. Using `test.serial.beforeEach()` does not change this. If you need to set up global state for each test (like spying on `console.log` [for example](https://github.com/avajs/ava/issues/560)), you'll need to make sure the tests themselves are [run serially](#running-tests-serially).
+Hãy nhớ rằng các hook `.beforeEach()` à `.afterEach()` chạy ngay trước vào sau khi test được thực thi, và theo mặc định các test được chạy đồng thời. Điều này có nghĩa là  mỗi hook `.beforeEach()` có thể chạy đồng thời. Sử dụng `test.serial.beforeEach()` không thay đổi điều này. Nếu bạn cần thiết lập trạng thái toàn cục cho mỗi test (Như theo dõi `console.log` [ví dụ](https://github.com/avajs/ava/issues/560)), bạn sẽ cần phải đảm bảo rằng bản thân các test phải [chạy theo từng kỳ](#thực-thi-các-test-theo-từng-kỳ).
 
-Remember that AVA runs each test file in its own process. You may not have to clean up global state in a `.after()`-hook since that's only called right before the process exits.
+Hãy nhớ rằng AVA chạy mỗi file test trong tiến trình của chính nó. Bạn có thể sẽ không cần phải dọn dẹp lại trạng thái toàn cục của test với hook `.after()` vì nó chỉ được gọi ngay khi tiến trình kết thúc.
 
 #### Test context
 
