@@ -6,7 +6,7 @@ Các bản dịch: [Español](https://github.com/avajs/ava-docs/blob/master/es_E
 
 Vì lợi ích của việc phát triển một môi trường cởi mở và thân thiện, chúng tôi, những người đóng góp và duy trì dự án xin cam kết rằng tất cả mọi người tham gia vào dự án và cộng đồng của chúng tôi sẽ không bị quấy rối về: tuổi tác, kích thước cơ thể, sự khiếm khuyết, dân tộc, nhận dạng và biểu hiện giới tính, kinh nghiệm làm việc, quốc tịch, ngoại hình, chủng tộc, tôn giáo và xu hướng tình dục.
 
-## Tiêu chuẩn của chúng tôi 
+## Tiêu chuẩn của chúng tôi
 
 Ví dụ về hành vi góp phần tạo nên một môi trường tích cực bao gồm:
 

@@ -29,7 +29,7 @@ Chúng tôi luôn mong chờ thêm nhiều ý kiến trên những cuộc thảo
 Bạn có thể sử dụng các nhãn issue để tìm kiếm những issue mà bạn có thể giúp đỡ:
 
 * [`babel` issues](https://github.com/avajs/ava/labels/babel) liên quan đến cơ sở hạ tầng Babel của chúng tôi
-* [`blocked` issues](https://github.com/avajs/ava/labels/blocked) cần giúp đỡ để gỡ bỏ những vấn đề đang dậm chân tại chỗ
+* [`blocked` issues](https://github.com/avajs/ava/labels/blocked) cần giúp đỡ để gỡ bỏ những vấn đề đang bị cản trở
 * [`bug` issues](https://github.com/avajs/ava/labels/bug) là những lỗi chúng tôi muốn sửa
 * [`enhancement` issues](https://github.com/avajs/ava/labels/enhancement) là các tính năng chúng tôi đang muốn thêm vào
 * [`performance` issues](https://github.com/avajs/ava/labels/performance) theo dõi các ý tưởng về cách cải thiện hiệu suất của AVA
@@ -62,7 +62,7 @@ Chúng tôi có một [nơi tán gẫu](https://spectrum.chat/ava). Hãy vào đ
 - Đối với những công việc đầy tham vọng, bạn nên cố gắng thực hiện công việc của mình trước cộng đồng càng sớm càng tốt. Mở một pull request ngay sau khi bạn đã thực hiện công việc tối thiểu để chứng minh lý tưởng của bạn. Ở giai đoạn đầu này, đừng lo lắng về việc làm mọi thứ hoàn hảo, hoặc hoàn thành chúng 100%. Thêm tiền tố [WIP] vào tiêu đề và mô tả những gì bạn vẫn cần phải làm. Điều này cho phép những người đánh giá biết rằng không nên xem chi tiết hoặc chỉ ra các cải tiến mà vốn dĩ bạn đã biết mình cần phải thực hiện.
 - Những tính năng mới phải đi kèm với test và tài liệu.
 - Đừng thêm vào các thay đổi không liên quan.
-- Lint và kiểm tra trước khi đăng một pull request bằng cách chạy lệnh `$ npm test`.
+- Kiểm tra lỗi code và chạy testing trước khi đăng một pull request bằng cách chạy lệnh `$ npm test`.
 - Thực hiện yêu cầu pull request từ [nhánh của chủ đề](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), không phải master.
 - Sử dụng tiêu đề và mô tả rõ ràng cho các pull request và commit.
 - Viết một mô tả có tính thuyết phục về lý do tại sao chúng tôi nên chấp nhận pull request của bạn. Đó là công việc của bạn để thuyết phục chúng tôi. Trả lời "tại sao" nó cần thiết và cung cấp các trường hợp sử dụng cụ thể.
