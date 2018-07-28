@@ -1202,9 +1202,9 @@ Bạn không thể dùng [`istanbul`](https://github.com/gotwarlost/istanbul) đ
 
 Kể từ phiên bản `5.0.0`, AVA sẽ sử dụng các source map để báo cáo coverage cho code của bạn, bất kể sự transpile. Hãy đảm bảo rằng code mà bạn đang test có bao gồm inline source map hơạc tham chiếu đến một file source map. Nếu bạn dùng `babel-register` bạn có thể đặt tùy chọn `sourceMaps` trong cấu hình Babel của bạn thành `inline`.
 
-### Những cạm bẫy phổ biến
+### Những sai lầm phổ biến
 
-Chúng tôi có một danh sách ngày càng tăng về [các cạm bẫy phổ biến](docs/common-pitfalls.md) mà bạn có thể gặp phải khi sử dụng AVA. Nếu bạn gặp phải bất kì vấn đề nào bạn nghĩ là phổ biến, hãy bình luận trong [issue này](https://github.com/avajs/ava/issues/404).
+Chúng tôi có một danh sách ngày càng tăng về [các sai lầm phổ biến](docs/common-pitfalls.md) mà bạn có thể gặp phải khi sử dụng AVA. Nếu bạn gặp phải bất kì vấn đề nào bạn nghĩ là phổ biến, hãy bình luận trong [issue này](https://github.com/avajs/ava/issues/404).
 
 ## FAQ
 
