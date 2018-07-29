@@ -18,7 +18,7 @@ Có thể bạn đang sử dụng một service có sự hạn chế, chỉ cho 
 
 Theo mặc định, AVA sẽ sử dụng số process theo số [nhân vật lý](https://superuser.com/questions/1105654/logical-vs-physical-cpu-performance) trên thiết bị của bạn. Số process được giới hạn là 2 trong môi trường CI.
 
-Sử dụng tham số `concurrency` để giới hạn số lượng các process chạy. Ví dụ, nếu service của bạn chỉ cho phép 5 client, bạn nên chạy AVA với `concurrency=5` hoặc ít hơn.
+Sử dụng cờ `concurrency` để giới hạn số lượng các process chạy. Ví dụ, nếu service của bạn chỉ cho phép 5 client, bạn nên chạy AVA với `concurrency=5` hoặc ít hơn.
 
 ## Các thao tác không đồng bộ
 

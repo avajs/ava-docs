@@ -180,7 +180,7 @@ $ ava --help
 
 Các thư mục được đệ quy, tất cả các file có đuôi `*.js` sẽ được xem như là file test. Các thư mục có tên `fixtures`, `helpers` và `node_modules` sẽ *luôn* bị bỏ qua. Các file có tên bắt đầu bằng `_` sẽ cho phép bạn đặt những helper code trong cùng thư mục với file test của bạn.
 
-Khi sử dụng lệnh `npm test`, bạn có thể truyền vào trực tiếp các tham số để chỉ rõ file cần test `npm test test2.js`, nhưng các tham số nên được truyền vào như sau `npm test -- --verbose`.
+Khi sử dụng lệnh `npm test`, bạn có thể truyền vào trực tiếp các tham số để chỉ rõ file cần test `npm test test2.js`, nhưng các cờ nên được truyền vào như sau `npm test -- --verbose`.
 
 
 ## Kiểm lỗi
@@ -208,13 +208,13 @@ Báo cáo mini là báo cáo mặc định.
 
 ### Báo cáo chi tiết
 
-Dùng tham số `--verbose` để kích hoạt báo cáo chi tiết. Báo cáo chi tiết sẽ luôn được dùng trong môi trường CI, trừ khi [Báo cáo TAP](#tap-reporter) đã được kích hoạt.
+Dùng cờ `--verbose` để kích hoạt báo cáo chi tiết. Báo cáo chi tiết sẽ luôn được dùng trong môi trường CI, trừ khi [Báo cáo TAP](#tap-reporter) đã được kích hoạt.
 
 <img src="media/verbose-reporter.png" width="294">
 
 ### Báo cáo TAP
 
-AVA hỗ trợ định dạng TAP và do đó tương thích với [Bất kì báo cáo TAP nào khác](https://github.com/sindresorhus/awesome-tap#reporters). Sử dụng tham số `--tap` để bật báo cáo TAP.
+AVA hỗ trợ định dạng TAP và do đó tương thích với [Bất kì báo cáo TAP nào khác](https://github.com/sindresorhus/awesome-tap#reporters). Sử dụng cờ `--tap` để bật báo cáo TAP.
 
 ```console
 $ ava --tap | tap-nyan
@@ -422,7 +422,7 @@ test.serial('passes serially', t => {
 });
 ```
 
-Lưu ý rằng điều này chỉ áp dụng cho các test trong một file test nhất định. AVA vẫn sẽ chạy nhiều file test cùng lúc trừ khi bạn truyền vào tham số [`--serial` CLI flag](#cli).
+Lưu ý rằng điều này chỉ áp dụng cho các test trong một file test nhất định. AVA vẫn sẽ chạy nhiều file test cùng lúc trừ khi bạn truyền vào cờ [`--serial` CLI flag](#cli).
 
 Bạn có thể sử dụng `.serial` với tất cả các test, hook hoặc tập chí `.todo()`, nhưng nó chỉ có sẵn trên hàm `test`.
 
@@ -446,7 +446,7 @@ Bạn có thể sử dụng `.only` với tất cả các test. Nó không thể
 
 ### Thực thi test với các tiêu đề trùng khớp
 
-Tham số `--match` cho phép bạn chạy các test có tiêu đề trùng khớp, Điều này có thể thực hiện bằng cách sử dụng một wildcard patterns đơn giản. Các pattern không phân biệt chữ hoa thường. Xem [`matcher`](https://github.com/sindresorhus/matcher) để có thêm thông tin.
+Cờ `--match` cho phép bạn chạy các test có tiêu đề trùng khớp, Điều này có thể thực hiện bằng cách sử dụng một wildcard patterns đơn giản. Các pattern không phân biệt chữ hoa thường. Xem [`matcher`](https://github.com/sindresorhus/matcher) để có thêm thông tin.
 
 Các tiêu đề kết thúc với `foo`:
 
@@ -1111,7 +1111,7 @@ AVA sẽ hiển thị lý do tại sao xác nhận snapshot thất bại:
 
 <img src="media/snapshot-testing.png" width="1048">
 
-Sau đó, bạn có thể kiểm tra code của mình, Nếu thay đổi là cố ý, bạn có thể dùng tham số `--update-snapshots` (hoặc `-u`) để cập nhật các snapshot:
+Sau đó, bạn có thể kiểm tra code của mình, Nếu thay đổi là cố ý, bạn có thể dùng cờ `--update-snapshots` (hoặc `-u`) để cập nhật các snapshot:
 
 ```console
 $ ava --update-snapshots
@@ -1214,7 +1214,7 @@ Mocha yêu cầu bạn phải sử dụng các cấu hình toàn cục như `des
 
 Tape và tap cũng khá là tốt. AVA được lấy cảm hứng từ cú pháp của chúng. Chúng cũng thực hiện các bài kiểm tra một cách tuần tự. Nhưng đầu ra mặc định [TAP](https://testanything.org) của chúng lại không thân thiện với người dùng, do vậy bạn luôn phải sử dụng các tap reporter khác.
 
-Ngược lại, AVA được đánh giá cao và nó chạy các test một cách đồng thời, với một process độc lập cho mỗi file test. Reporter mặc định của AVA rất dễ đọc và không dừng lại ở đó AVA còn hỗ trợ TAP output thông qua tham số CLI.
+Ngược lại, AVA được đánh giá cao và nó chạy các test một cách đồng thời, với một process độc lập cho mỗi file test. Reporter mặc định của AVA rất dễ đọc và không dừng lại ở đó AVA còn hỗ trợ TAP output thông qua cờ CLI.
 
 ### Tên project được viết và đọc như thế nào?
 
