@@ -150,29 +150,29 @@ AVA hỗ trợ các bản release mới nhất của bất kì phiên bản chí
 ```console
 $ ava --help
 
-  Cách dùng
+  Usage (Cách dùng)
     ava [<file|directory|glob> ...]
 
-  Các tùy chọn
-    --watch, -w             Chạy lại test khi test và file test có sự thay đổi
-    --match, -m             Chỉ chạy test với các tiêu đề phù hợp (Có thể lặp lại)
-    --update-snapshots, -u  Cập nhật các snapshot
-    --fail-fast             Dừng ngay khi test đầu tiên thất bại
-    --timeout, -T           Thiết lập thời gian timeout toàn cục
-    --serial, -s            Chạy các test theo từng kỳ
-    --concurrency, -c       Số test tối đa cùng chạy ở một thời điểm (Mặc định: Số nhân của CPU)
-    --verbose, -v           Hiển thị chi tiết các output
-    --tap, -t               Tạo TAP output
-    --color                 Màu của output
-    --no-color              Vô hiệu hóa màu cho output
+  Options (Các tùy chọn)
+    --watch, -w             Re-run tests when tests and source files change (Chạy lại test khi test và file test có sự thay đổi)
+    --match, -m             Only run tests with matching title (Can be repeated) (Chỉ chạy test với các tiêu đề phù hợp (Có thể lặp lại))
+    --update-snapshots, -u  Update all snapshots (Cập nhật các snapshot)
+    --fail-fast             Stop after first test failure (Dừng ngay khi test đầu tiên thất bại)
+    --timeout, -T           Set global timeout (Thiết lập thời gian timeout toàn cục)
+    --serial, -s            Run tests serially (Chạy các test theo từng kỳ)
+    --concurrency, -c       Max number of test files running at the same time (Default: CPU cores) (Số test tối đa cùng chạy ở một thời điểm (Mặc định: Số nhân của CPU))
+    --verbose, -v           Enable verbose output (Hiển thị output chi tiết)
+    --tap, -t               Generate TAP output (Tạo TAP output)
+    --color                 Force color output (Màu của output)
+    --no-color              Disable color output (Vô hiệu hóa màu cho output)
 
-  Ví dụ
+  Examples (Ví dụ)
     ava
     ava test.js test2.js
     ava test-*.js
     ava test
 
-  Pattern mặc định khi không có tham số:
+  Default patterns when no arguments (Pattern mặc định khi không có tham số):
   test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
 ```
 
