@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/16f474242880ea325fea792dbd11ae43bbe17c06...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/23b45326217c1be7a7e6d250f1d1f094c1f8a8bd...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -117,6 +117,8 @@ Par défaut, le preset stage-4 de AVA convertira la syntaxe du module ES en Comm
 }
 ```
 
+Vous *devez* configurer le preset dans `testOptions` afin de préserver la syntaxe du module ES. AVA appliquera toujours le preset si vous le configurez dans d’autres fichiers (par exemple un fichier `.babelrc`). C'est [en raison d'une issue de Babel](https://github.com/babel/babel/issues/7920).
+
 Vous devrez utiliser le module [`esm`](https://github.com/standard-things/esm) pour que AVA puisse toujours charger vos fichiers de test. [Consultez notre recette pour plus de détails](./es-modules.md).
 
 ## Désactiver le pipeline Babel d'AVA
@@ -176,7 +178,7 @@ Vous devrez installer vous-même `@babel/register`.
 // test/_register.js:
 require('@babel/register')({
 	// Ces patterns sont relatifs au répertoire du projet (où se trouve le fichier `package.json`):
-	ignore: ['test/*']
+	ignore: ['node_modules/*', 'test/*']
 });
 ```
 

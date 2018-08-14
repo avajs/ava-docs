@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d5dd981d0283303ad6cee62b14a59318d2316c85...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/0ea713c24437803fd4a9ff728702b82bd696637b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -58,6 +58,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Prise en charge des fonctions asynchrones](#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](#prise-en-charge-de-observable)
 - [Messages d'assertions améliorés](#messages-dassertions-améliorés)
+- [Test automatiquement en parallèle dans CI](#exécution-en-parallèle-dans-ci)
 - [Reporter de TAP](#reporter-de-tap)
 - [Migration automatique depuis un autre exécuteur de test](https://github.com/avajs/ava-docs/blob/master/fr_FR/related/ava-codemods/readme.md#migration-vers-ava)
 
@@ -261,6 +262,7 @@ Pour ignorer un fichier ou un répertoire, préfixer le chemin avec un `!` (poin
 		"failFast": true,
 		"failWithoutAssertions": false,
 		"tap": true,
+		"verbose": true,
 		"compileEnhancements": false,
 		"require": [
 			"@babel/register"
@@ -286,6 +288,7 @@ Les arguments passés au CLI seront toujours prioritaires sur ceux de la configu
 - `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue
 - `failWithoutAssertions` : si `false`, ne pas faire échouer un test s'il n'exécute pas des [assertions](#assertions)
 - `tap` : si `true`, active le [reporter de TAP](#reporter-de-tap)
+- `verbose`: si `true`, active la sortie verbeuse
 - `snapshotDir` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
 - `compileEnhancements` : si `false`, désactive [power-assert](https://github.com/power-assert-js/power-assert) qui aide tout de même à fournir des messages d'erreur plus descriptifs — et la détection d'une mauvaise utilisation de l'assertion `t.throws()`
 - `extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Notez que les fichiers sont toujours compilés pour activer power-assert et d'autres fonctionnalités, donc vous devrez peut-être aussi définir `compileEnhancements` à `false` si vos fichiers ne sont pas valides JavaScript. La définition de ce paramètre remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste, si celle-ci n'est pas incluse dans `babel.extensions`
@@ -824,6 +827,10 @@ $ ava --timeout=2m # 2 minutes
 $ ava --timeout=100 # 100 millisecondes
 ```
 
+### Exécution en parallèle dans CI
+
+AVA détecte automatiquement si votre environnement CI prend en charge les builds en parallèle. Chaque build exécutera un sous-ensemble de tous les fichiers de test, tout en veillant à ce que tous les tests soient exécutés. Consultez le package [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) pour visualiser la liste des environnements CI pris en charge.
+
 ## API
 
 ### `test([title], implementation)`
@@ -937,11 +944,9 @@ Affirme que `value` est profondément égale à `expected`. Consulter [Concordan
 
 Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `.deepEqual()`.
 
-### `.throws(thrower, [expected, [message]])`
+### `.throws(fn, [expected, [message]])`
 
-Affirme qu'une erreur est levée. `thrower` peut être une fonction qui devrait lever une erreur ou retourner une promesse qui devrait être rejetée. Alternativement une promesse peut être passée directement.
-
-La valeur levée *doit* être une erreur. Elle est retournée afin que vous puissiez lancer d'autres assertions.
+Affirme qu'une erreur est levée. `fn` doit être une fonction qui devrait lever une erreur. La valeur levée *doit* être une erreur. Elle est retournée afin que vous puissiez lancer d'autres assertions.
 
 `expected` peut être un constructeur, auquel cas l'erreur levée doit être une instance du constructeur. Cela peut être une chaîne, qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message. Vous pouvez également spécifier un objet de correspondance (matcher) avec une ou plusieurs des propriétés suivantes :
 
@@ -969,42 +974,54 @@ test('throws', t => {
 });
 ```
 
-```js
-const promise = Promise.reject(new TypeError('🦄'));
+### `.throwsAsync(thrower, [expected, [message]])`
 
-test('rejects', async t => {
-	const error = await t.throws(promise);
-	t.is(error.message, '🦄');
-});
-```
+Affirme qu'une erreur est levée. `thrower` peut être une fonction async qui devrait lever une erreur ou une promesse qui devrait échouée. Cette affirmation doit être attendue (await).
 
-Lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+La valeur levée *doit* être une erreur. Elle est renvoyée afin que vous puissiez exécuter d'autres assertions.
 
-```js
-test('rejects', async t => {
-	await t.throws(promise);
-});
-```
+`expected` peut être un constructeur, auquel cas l'erreur levée doit être une instance du constructeur. Cela peut être une chaîne, qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message. Vous pouvez également spécifier un objet de correspondance (matcher) avec une ou plusieurs des propriétés suivantes :
 
-Lors du test d'une fonction asynchrone, vous devez également attendre que l'assertion soit terminée :
+* `instanceOf` : un constructeur, l'erreur levée doit être une "instance de"
+* `is` : l'erreur levée doit être strictement égale à `expected.is`
+* `message` : soit une chaîne qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message
+* `name` : la valeur `.name` attendue de l'erreur levée
+* `code` : la valeur `.code` attendue de l'erreur levée
+
+`expected` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
+
+Exemple:
 
 ```js
 test('throws', async t => {
-	await t.throws(async () => {
+	await t.throwsAsync(async () => {
 		throw new TypeError('🦄');
 	}, {instanceOf: TypeError, message: '🦄'});
 });
 ```
 
-### `.notThrows(nonThrower, [message])`
+```js
+const promise = Promise.reject(new TypeError('🦄'));
 
-Affirme qu'aucune erreur est levée. `thrower` peut être une fonction qui ne devrait pas lever une erreur ou retourner une promesse qui devrait être résolue. Alternativement une promesse peut être passée directement.
+test('rejects', async t => {
+	const error = await t.throwsAsync(promise);
+	t.is(error.message, '🦄');
+});
+```
 
-Comme l'assertion `.throws()`, lorsque vous testez une promesse, vous devez attendre l'assertion pour terminer :
+### `.notThrows(fn, [message])`
+
+Affirme qu'aucune erreur n'est levée. `fn` doit être une fonction qui ne doit pas être levée.
+
+### `.notThrowsAsync(nonThrower, [message])`
+
+Affirme qu'aucune erreur n'est levée. `nonThrower` peut être une fonction async qui ne devrait pas lever une erreur ou une promesse qui devrait être résolue.
+
+Comme l'assertion `.throwsAsync()`, vous devez attendre que l'assertion se termine :
 
 ```js
 test('resolves', async t => {
-	await t.notThrows(promise);
+	await t.notThrowsAsync(promise);
 });
 ```
 

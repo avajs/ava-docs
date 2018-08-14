@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/fe7a8a1c8c3b3bfe8271d9506f72eda139be99d3...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/7babf6be0fa5b25d31e4987d09b039834c61dea2...master#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Quand utiliser `t.plan()` ?
 
@@ -67,11 +67,11 @@ test('rejects with foo', t => {
 ```
 
 Ici, l'utilisation de `t.plan ()` vise à garantir que le code à l'intérieur du bloc `catch` soit exécuté.
-Au lieu de cela, vous devriez profiter de `t.throws` et `async`/`await`, car cela conduit à rendre le code plus simple ce qui est plus facile à suivre :
+Au lieu de cela, vous devriez profiter de `t.throwsAsync` et `async`/`await`, car cela conduit à rendre le code plus simple ce qui est plus facile à suivre :
 
 ```js
 test('rejects with foo', async t => {
-	const reason = await t.throws(shouldRejectWithFoo());
+	const reason = await t.throwsAsync(shouldRejectWithFoo());
 	t.is(reason.message, 'Hello');
 	t.is(reason.foo, 'bar');
 });
@@ -124,7 +124,7 @@ Dans la plupart des cas, c'est une mauvaise idée d'utiliser un débranchement c
 ```js
 const testData = require('./fixtures/test-definitions.json');
 
-testData.forEach(testDefinition => {
+for (const testDefinition of testData) {
 	test('foo ou bar', t => {
 		const result = functionUnderTest(testDefinition.input);
 
@@ -139,7 +139,7 @@ testData.forEach(testDefinition => {
 			t.is(result.bar, testDefinition.foo);
 		}
 	});
-});
+}
 ```
 
 ## Conclusion

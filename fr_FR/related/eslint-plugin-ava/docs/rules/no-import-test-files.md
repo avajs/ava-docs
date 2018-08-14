@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/fb3ac90912cea33a8259b2828e06fc05797b983b...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/1785f9b3b9d1b1b395fffb9565db4b37fb0fa33e...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun fichier de test n'est importé de n'importe où
 
@@ -66,7 +66,7 @@ import utils from '../utils/index.js';
 
 Cette règle prend en charge les options suivantes :
 
-`files`: Un tableau de strings représentant les fichiers glob que nous allons utiliser pour trouver des fichiers de test. Remplace la valeur par défaut et la configuration trouvée dans le fichier de package.json.
+`files`: Un tableau de strings représentant les fichiers glob que nous allons utiliser pour trouver des fichiers de test. Remplace la valeur par défaut et la configuration trouvée dans les fichiers `package.json` ou `ava.config.js`.
 
 Vous pouvez définir les options comme ceci :
 
