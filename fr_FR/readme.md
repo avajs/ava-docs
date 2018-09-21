@@ -165,6 +165,7 @@ $ ava --help
     --tap, -t               Generate TAP output (Générer une sortie au format TAP)
     --color                 Force color output (Force l'affichage avec des couleurs)
     --no-color              Disable color output (Désactiver l'affichage avec des couleurs)
+    --reset-cache           Reset AVA's compilation cache and exit (Réinitialise le cache de compilation d'AVA et sort)
 
   Examples (Exemples)
     ava
@@ -338,6 +339,10 @@ export default ({projectDir}) => {
 ```
 
 Notez que la config finale ne doit pas être une promesse.
+
+### Réinitialisation du cache de AVA
+
+AVA détectera automatiquement les modifications apportées aux fichiers de test et d’aide et les recompilera. Cependant, AVA ne parvient pas à détecter les modifications apportées à vos plugins et presets Babel. Si vous mettez à jour votre configuration Babel, vous pouvez lancer AVA avec le flag `--reset-cache` pour réinitialiser le cache AVA. S'il est défini, tous les fichiers du répertoire `node_modules/.cache/ava` sont supprimés. Exécutez AVA normalement pour appliquer votre nouvelle configuration Babel.
 
 ## Documentation
 

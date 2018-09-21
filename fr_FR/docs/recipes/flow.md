@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/fl
 
 AVA est livré avec un fichier de définition de Flow. Cela permet aux développeurs de tirer parti de Flow pour l'écriture de test.
 
-Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.78.0.
+Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.80.0.
 
 Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit :
 

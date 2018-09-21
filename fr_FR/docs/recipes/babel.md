@@ -97,7 +97,7 @@ Vous pouvez désactiver le preset stage-4 de AVA :
 
 Veuillez noter que cela *n'empêche pas* AVA de compiler vos fichiers de test en utilisant Babel.
 
-Vous **devez** désactiver le preset en le configurant dans `testOptions`. AVA appliquera toujours le preset si vous le configurez dans d'autres fichiers (par exemple un fichier `.babelrc`). C'est [en raison d'une issue de Babel](https://github.com/babel/babel/issues/7920).
+Si vous le souhaitez, vous pouvez désactiver le preset dans la configuration de Babel de votre projet.
 
 ## Préserver la syntaxe du module ES
 
