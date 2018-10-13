@@ -787,7 +787,7 @@ Concurrencia no es paralelismo. Permite paralelismo. [Aprende más.](http://stac
 	<br>
 	<br>
 	<br>
-	<img src="https://cdn.rawgit.com/avajs/ava/fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
+	<img src="https://cdn.jsdelivr.net/gh/avajs/ava@fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
 	<br>
 	<br>
 </div>
