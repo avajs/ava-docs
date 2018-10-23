@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/6fb0964941b66ce1cc613c62d0b74c3301398d95...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/1cc1bd5331cfeb3695736f1f7ab22de11f58312b...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,11 +9,13 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 3.0.1.
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 3.1.3.
 
 ## Configuration de AVA pour compiler des fichiers TypeScript à la volée
 
-Vous pouvez configurer AVA pour reconnaître les fichiers TypeScript. Ensuite, avec `ts-node` installé, vous pouvez les compiler à la volée :
+Vous pouvez configurer AVA pour reconnaître les fichiers TypeScript. Ensuite, avec `ts-node` installé, vous pouvez les compiler à la volée.
+
+**`package.json` :**
 
 ```json
 {
@@ -54,7 +56,7 @@ import test from 'ava';
 
 const fn = async () => Promise.resolve('foo');
 
-test(async (t) => {
+test(async t => {
 	t.is(await fn(), 'foo');
 });
 ```
@@ -138,3 +140,36 @@ test('foo est bar', macro, 'bar');
 ```
 
 Notez que malgré le type de casting ci-dessus, lors de l'exécution, `t.context` est un objet vide à moins qu'il ne soit assigné.
+
+## Typage des assertions `throws`
+
+Les assertions `t.throws()` et `t.throwsAsync()` sont typées pour toujours retourner une Error. Vous pouvez personnaliser la classe d'erreur à l'aide de génériques :
+
+```ts
+import test from 'ava';
+
+class CustomError extends Error {
+	parent: Error
+
+	constructor(parent) {
+		super(parent.message);
+		this.parent = parent;
+	}
+}
+
+function myFunc() {
+	throw new CustomError(new TypeError('🙈'));
+};
+
+test('throws', t => {
+	const err = t.throws<CustomError>(myFunc);
+	t.is(err.parent.name, 'TypeError');
+});
+
+test('throwsAsync', async t => {
+	const err = await t.throwsAsync<CustomError>(async () => myFunc());
+	t.is(err.parent.name, 'TypeError');
+});
+```
+
+Remarquez que, malgré le typage, l’assertion retourne `undefined` si elle échoue. Le typage des assertions retournant `Error | undefined` ne semblait pas être le choix pragmatique.

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/16f474242880ea325fea792dbd11ae43bbe17c06...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/626bd067e8b66aa8dabf62adcf17f07363d5a02b...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # JSPM et SystemJS pour ES2015
 
@@ -37,6 +37,8 @@ Vous aurez besoin d'installer le [chargeur JSPM de AVA](https://github.com/skorl
 $ npm install --save-dev ava-jspm-loader @babel/register
 ```
 Vous devrez également mettre à jour votre config de AVA dans `package.json` ou `ava.config.js` pour utiliser le chargeur JSPM.
+
+**`package.json` :**
 
 ```json
 {

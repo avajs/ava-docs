@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/0ea713c24437803fd4a9ff728702b82bd696637b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/6ab6d35d9b8c4652a672b804016aa22c9e4f5983...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
 > Lanceur de test futuriste
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://coveralls.io/repos/github/avajs/ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/ava?branch=master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
+[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Build status: Windows](https://ci.appveyor.com/api/projects/status/e7v91mu2m5x48ehx/branch/master?svg=true)](https://ci.appveyor.com/project/ava/ava/branch/master) [![Coverage Status](https://codecov.io/gh/avajs/ava/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/ava/branch/master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
 [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
 
 Même si JavaScript est mono-thread, l'IO dans Node.js peut se lancer en parallèle en raison de sa nature asynchrone. AVA profite de cela et exécute vos tests en même temps, ce qui est particulièrement avantageux pour les tests lourds d'IO. De plus, les fichiers de test sont exécutés en parallèle comme des processus séparés, cela vous donne encore de meilleures performances et un environnement isolé pour chaque fichier de test. Le [passage](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) de Mocha à AVA dans Pageres a diminué la durée des tests de 31 à 11 secondes. Comme les tests sont exécutés simultanément, cela vous oblige à écrire des tests [atomiques](https://fr.wikipedia.org/wiki/Atomicit%C3%A9_%28informatique%29), ce qui signifie que les tests ne dépendent pas de l'état global ou de l'état des autres tests, ce qui est une bonne chose !
@@ -242,6 +242,8 @@ Toutes les options du CLI peuvent être configurés dans la section `ava` de vot
 
 Pour ignorer un fichier ou un répertoire, préfixer le chemin avec un `!` (point d'exclamation).
 
+**`package.json` :**
+
 ```json
 {
 	"ava": {
@@ -342,7 +344,7 @@ Notez que la config finale ne doit pas être une promesse.
 
 ### Réinitialisation du cache de AVA
 
-AVA détectera automatiquement les modifications apportées aux fichiers de test et d’aide et les recompilera. Cependant, AVA ne parvient pas à détecter les modifications apportées à vos plugins et presets Babel. Si vous mettez à jour votre configuration Babel, vous pouvez lancer AVA avec le flag `--reset-cache` pour réinitialiser le cache AVA. S'il est défini, tous les fichiers du répertoire `node_modules/.cache/ava` sont supprimés. Exécutez AVA normalement pour appliquer votre nouvelle configuration Babel.
+AVA met en cache les fichiers de test compilés et les helpers. Il recompile automatiquement ces fichiers lorsque vous les modifiez. AVA fait de son mieux pour détecter les modifications apportées à vos fichiers de configuration, plugins et preset Babel. Toutefois, s'il semble que votre dernière configuration Babel ne soit pas appliquée, vous pouvez exécuter AVA avec l'option `--reset-cache` pour réinitialiser le cache d'AVA. S'il est défini, tous les fichiers du répertoire `node_modules/.cache/ava` sont supprimés. Exécutez AVA normalement pour appliquer votre nouvelle configuration Babel.
 
 ## Documentation
 
@@ -1089,7 +1091,9 @@ Vous pouvez ensuite vérifier votre code. Si le changement était intentionnel, 
 $ ava --update-snapshots
 ```
 
-Vous pouvez définir un emplacement fixe pour stocker les fichiers d'instantanés dans la configuration d'AVA [inclus dans le `package.json`](#configuration) :
+Vous pouvez définir un emplacement fixe pour stocker les fichiers d'instantanés dans la configuration d'AVA [inclus dans le `package.json`](#configuration).
+
+**`package.json` :**
 
 ```json
 {
@@ -1172,7 +1176,7 @@ Habituellement, les tests en série créent juste des répertoires temporaires d
 
 Vous ne pouvez pas utiliser [`istanbul`](https://github.com/gotwarlost/istanbul) pour la couverture de code car AVA [génère les fichiers de test](#isolement-du-processus). Vous pouvez utiliser [`nyc`](https://github.com/bcoe/nyc) à la place, c'est essentiellement `istanbul` avec en plus la prise en charge des sous-processus.
 
-Depuis la version `5.0.0`, il utilise les sources maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `babel-register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
+Depuis la version `5.0.0`, il utilise les sources maps pour faire le rapport de votre couverture de code, indépendamment de la transpilation. Assurez-vous, que le code que vous testez, comprend une source map ou les références d'un fichier source map. Si vous utilisez `@babel/register` vous pouvez définir l'option `sourceMaps` dans votre configuration Babel à `inline`.
 
 ### Pièges classiques
 
@@ -1220,6 +1224,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 - [Précompilation des fichiers sources avec webpack](docs/recipes/precompiling-with-webpack.md)
 - [Tests d'intégration isolés de MongoDB](docs/recipes/isolated-mongodb-integration-tests.md)
+- [Test d'applications Web à l'aide de Puppeteer](docs/recipes/puppeteer.md)
 
 ## Support
 

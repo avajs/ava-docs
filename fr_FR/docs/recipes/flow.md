@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/6fb0964941b66ce1cc613c62d0b74c3301398d95...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/1cc1bd5331cfeb3695736f1f7ab22de11f58312b...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
@@ -9,16 +9,20 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/fl
 
 AVA est livré avec un fichier de définition de Flow. Cela permet aux développeurs de tirer parti de Flow pour l'écriture de test.
 
-Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.80.0.
+Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.83.0.
 
-Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit :
+Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit.
+
+**`package.json` :**
 
 ```json
 {
 	"ava": {
 		"babel": {
 			"testOptions": {
-				"plugins": ["@babel/plugin-transform-flow-strip-types"]
+				"plugins": [
+					"@babel/plugin-transform-flow-strip-types"
+				]
 			}
 		}
 	}
@@ -71,3 +75,37 @@ test('an actual test', t => {
 ```
 
 Notez que, malgré le type de casting ci-dessus, lors de l'exécution, `t.context` est un objet vide à moins qu'il ne soit assigné.
+
+## Typage des assertions `throws`
+
+Les assertions `t.throws()` et `t.throwsAsync()` sont typées pour toujours retourner une Error. Vous pouvez personnaliser la classe d'erreur à l'aide de génériques :
+
+```js
+// @flow
+import test from 'ava';
+
+class CustomError extends Error {
+	parent: Error;
+
+	constructor(parent) {
+		super(parent.message);
+		this.parent = parent;
+	}
+}
+
+function myFunc() {
+	throw new CustomError(new TypeError('🙈'));
+};
+
+test('throws', t => {
+	const err = t.throws<CustomError>(myFunc);
+	t.is(err.parent.name, 'TypeError');
+});
+
+test('throwsAsync', async t => {
+	const err = await t.throwsAsync<CustomError>(async () => myFunc());
+	t.is(err.parent.name, 'TypeError');
+});
+```
+
+Remarquez que, malgré le typage, l’assertion retourne `undefined` si elle échoue. Le typage des assertions retournant `Error | undefined` ne semblait pas être le choix pragmatique.

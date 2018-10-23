@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/6bba766241e20873406f844f34df56a1c0c894df...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/626bd067e8b66aa8dabf62adcf17f07363d5a02b...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants Vue.js
 
@@ -17,9 +17,9 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/vu
 
 ## Configuration
 
-La première étape consiste à mettre en place un helper pour configurer l'environnement afin de transpiler les fichiers `.vue` et exécuter dans un navigateur comme environnement :
+La première étape consiste à mettre en place un helper pour configurer l'environnement afin de transpiler les fichiers `.vue` et exécuter dans un navigateur comme environnement.
 
-`package.json`
+**`package.json` :**
 
 ```json
 {
