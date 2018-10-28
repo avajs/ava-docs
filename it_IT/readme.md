@@ -34,6 +34,10 @@ Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Consigli](#consigli)
 - [Domande frequenti](#domande-frequenti)
 - [Ricette](#ricette)
+- [Supporto](#Supporto)
+- [Guarda anche](#Guarda-anche)
+- [Link](#Link)
+- [Autori](#Creato-da)
 
 
 ## Perchè AVA?
@@ -1146,13 +1150,17 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 
 ## Ricette
 
+- [Test setup](https://github.com/avajs/ava/blob/master/docs/recipes/test-setup.md)
 - [Code coverage](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/code-coverage.md)
 - [Watch Mode](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md)
 - [Test di Endpoint](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/endpoint-testing.md)
 - [Quando usare `t.plan()`](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md)
 - [Browser testing](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md)
 - [TypeScript](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md)
+- [Flow](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md)
 - [Configurare Babel](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md)
+- [Uso dei moduli ES](https://github.com/avajs/ava/blob/master/docs/recipes/es-modules.md)
+- [Come passare gli argomenti dentro i tuoi test](https://github.com/avajs/ava/blob/master/docs/recipes/passing-arguments-to-your-test-files.md)
 - [Testare componenti React](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/react.md)
 - [Testare componenti Vue.js](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/vue.md)
 - [JSPM and SystemJS](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/jspm-systemjs.md)
@@ -1161,6 +1169,7 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 - [Fare il debugging di test con Visual Studio Code](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-vscode.md)
 - [Precompilare file sorgente con webpack](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/precompiling-with-webpack.md)
 - [Test di integrazione con MongoDB in isolamento](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
+- [Testare app del web using Puppeteer](https://github.com/avajs/ava/blob/master/docs/recipes/puppeteer.md)
 
 ## Supporto
 
@@ -1184,6 +1193,7 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 - [Compra adesivi di AVA](https://www.stickermule.com/user/1070705604/stickers)
 - [Lista fantastica dedicata ad AVA](https://github.com/avajs/awesome-ava)
 - [AVA Casts](http://avacasts.com)
+- [Vedi qui per altri moduli e link](https://github.com/avajs/awesome-ava)
 
 ## Creato da
 
