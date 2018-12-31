@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/626bd067e8b66aa8dabf62adcf17f07363d5a02b...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/a82fee56ffefb3fd433664f236150f62c55feeb5...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -124,5 +124,5 @@ Le mode watch est relativement jeune et il peut y avoir des petites erreurs. Veu
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [Install Troubleshooting]: https://github.com/paulmillr/chokidar#install-troubleshooting
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[`.only`]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#exécution-de-tests-spécifiques
-[config]: https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration
+[`.only`]: ../01-writing-tests.md#exécution-de-tests-spécifiques
+[config]: ../06-configuration.md

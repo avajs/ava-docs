@@ -1,15 +1,23 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/fe7a8a1c8c3b3bfe8271d9506f72eda139be99d3...master#diff-7eb46230db3eba276054b9adbc6c82ca) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/a82fee56ffefb3fd433664f236150f62c55feeb5...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md)
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/08-common-pitfalls.md)
 
 ## Plugin ESLint
 
 Si vous utilisez [ESLint](http://eslint.org/), vous pouvez installer [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Il vous aidera à utiliser correctement AVA et ainsi vous évitera certains pièges classiques.
+
+#### Transpilation des modules importés
+
+AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter, ainsi que les helpers de test (les fichiers commençant par `_` ou dans le répertoire `helpers`) dans le répertoire de test. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
+
+Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter, [configurez le dans votre `package.json`](./06-configuration.md).
+
+Vous pouvez également transpiler vos modules dans un processus séparé et référer les fichiers transpilés de vos tests plutôt que les sources.
 
 ## AVA dans Docker
 
@@ -46,7 +54,7 @@ test('fetches foo', async t => {
 });
 ```
 
-Si l'on utilise des callbacks, veuillez utilisez [`test.cb`](https://github.com/avajs/ava#callback-support):
+Si l'on utilise des callbacks, veuillez utilisez [`test.cb`](./01-writing-tests.md#prise-en-charge-du-callback):
 
 ```js
 test.cb('fetches foo', t => {

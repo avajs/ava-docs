@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/1cc1bd5331cfeb3695736f1f7ab22de11f58312b...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/84d8fff84cbf01a994a8f2ce520a2742dc79b14f...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/fl
 
 AVA est livré avec un fichier de définition de Flow. Cela permet aux développeurs de tirer parti de Flow pour l'écriture de test.
 
-Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.83.0.
+Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Notez que la définition de AVA a été testée avec la version 0.89.0.
 
 Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit.
 
@@ -46,7 +46,7 @@ test(async (t) => {
 });
 ```
 
-## Typage de [`t.context`](https://github.com/avajs/ava#test-context)
+## Typage de [`t.context`](../01-writing-tests.md#tester-le-contexte)
 
 Par défaut, le type de `t.context` sera un objet vide (`{}`). AVA expose une interface `TestInterface<Context>` qui vous permet de l'utiliser pour appliquer votre propre type `t.context`. Cela peut vous aider à détecter les erreurs lors de la compilation :
 

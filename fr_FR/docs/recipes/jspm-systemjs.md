@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/626bd067e8b66aa8dabf62adcf17f07363d5a02b...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [jspm-systemjs.md](https://github.com/avajs/ava/blob/master/docs/recipes/jspm-systemjs.md). Voici un [lien](https://github.com/avajs/ava/compare/a82fee56ffefb3fd433664f236150f62c55feeb5...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `jspm-systemjs.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # JSPM et SystemJS pour ES2015
 
@@ -15,7 +15,7 @@ Cette recette a été testée uniquement avec JSPM v0.17.0-beta.22, mais ceci de
 
 ### Babel
 
-Configurez votre .babelrc pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction.
+Configurez les options de Babel pour travailler avec AVA, si ce n'est pas déjà fait. REMARQUE : Vous pouvez garder une configuration supplémentaire dans vos fichiers de configuration de JSPM pour remplacer ces paramètres pendant le regroupement et la construction.
 
 ```
 $ npm install --save-dev @babel/preset-env

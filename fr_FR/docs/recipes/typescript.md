@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/1cc1bd5331cfeb3695736f1f7ab22de11f58312b...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/84d8fff84cbf01a994a8f2ce520a2742dc79b14f...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 3.1.3.
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Notez que la définition de AVA a été testée avec la version 3.2.2.
 
 ## Configuration de AVA pour compiler des fichiers TypeScript à la volée
 
@@ -61,17 +61,29 @@ test(async t => {
 });
 ```
 
-## Utilisation des [macros](https://github.com/avajs/ava-docs/tree/master/fr_FR#macros-de-test)
+## Utilisation des [macros](../01-writing-tests.md#réutilisation-de-test-logique-à-travers-des-macros)
+
+Les macros peuvent recevoir des arguments supplémentaires. AVA peut déduire ceux-ci pour garantir que vous utilisez la macro correctement :
+
+```ts
+import test, {ExecutionContext} from 'ava';
+
+const hasLength = (t: ExecutionContext, input: string, expected: number) => {
+	t.is(input.length, expected);
+};
+
+test('bar fait 3 de long', hasLength, 'bar', 3);
+```
 
 Pour pouvoir attribuer la propriété `title` à une macro vous devez typer la fonction :
 
 ```ts
 import test, {Macro} from 'ava';
 
-const macro: Macro = (t, input: string, expected: number) => {
+const macro: Macro<[string, number]> = (t, input, expected) => {
 	t.is(eval(input), expected);
 };
-macro.title = (providedTitle: string, input: string, expected: number) => `${providedTitle} ${input} = ${expected}`.trim();
+macro.title = (providedTitle = '', input, expected) => `${providedTitle} ${input} = ${expected}`.trim();
 
 test(macro, '2 + 2', 4);
 test(macro, '2 * 3', 6);
@@ -83,7 +95,7 @@ Vous aurez besoin d'un type différent, si vous voulez que votre macro soit util
 ```ts
 import test, {CbMacro} from 'ava';
 
-const macro: CbMacro = t => {
+const macro: CbMacro<[]> = t => {
 	t.pass();
 	setTimeout(t.end, 100);
 };
@@ -91,7 +103,7 @@ const macro: CbMacro = t => {
 test.cb(macro);
 ```
 
-## Typing [`t.context`](https://github.com/avajs/ava#test-context)
+## Typing [`t.context`](../01-writing-tests.md#tester-le-contexte)
 
 Par défaut, le type de `t.context` sera un objet vide (`{}`). AVA expose une interface `TestInterface<Context>` qui vous permet de l'utiliser pour appliquer votre propre type `t.context`. Cela peut vous aider à détecter les erreurs lors de la compilation :
 
@@ -128,7 +140,7 @@ interface Context {
 
 const test = anyTest as TestInterface<Context>;
 
-const macro: Macro<Context> = (t, expected: string) => {
+const macro: Macro<[string], Context> = (t, expected: string) => {
 	t.is(t.context.foo, expected);
 };
 

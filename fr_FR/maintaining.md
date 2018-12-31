@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/2e54c17b0090668c6dfac57cd35f5eacf92432fa...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/afe028a0a05c8b8bb0b33e12b557ff455e47355d...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 
@@ -22,7 +22,7 @@ Lisez et adhérez au [Code de Conduite](code-of-conduct.md).
 ## Procédure de version
 
 - Mettez à niveau les dépendances.
-- Assurez vous que [Travis CI](https://travis-ci.org/avajs/ava) et [AppVeyor](https://ci.appveyor.com/project/avajs/ava/branch/master) sont au vert.
+- Assurez vous que [Travis CI](https://travis-ci.org/avajs/ava) soit au vert.
 - Si [nécessaire](docs/support-statement.md), mettez à jour le champs `engines` dans `package.json`
 - Publiez une nouvelle version en utilisant [`np`](https://github.com/sindresorhus/np) avec un numéro de version qui respecte [semver](http://semver.org).
 - Écrivez une [note de version](https://github.com/avajs/ava/releases/new) en utilisant le même style que les notes précédentes.
