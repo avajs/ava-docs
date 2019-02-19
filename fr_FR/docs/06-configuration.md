@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/eed2e7a9bc7a8bcdd6917206e6685feeda325e14...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/7d10446e91706e65e5fc6b6286b2279c29ef9615...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/06-configuration.md)
 
 Toutes les [options du CLI](./05-command-line.md) peuvent être configurés dans la section `ava` de votre `package.json` ou dans un fichier `ava.config.js`. Cela vous permet de modifier le comportement par défaut de la commande `ava`, ainsi vous n'avez plus besoin à chaque fois de taper les mêmes options sur l'invite de commande.
 
@@ -63,7 +65,7 @@ Les arguments passés au CLI seront toujours prioritaires sur les options du CLI
 - `compileEnhancements` : si `false`, désactive [power-assert](https://github.com/power-assert-js/power-assert) qui aide tout de même à fournir des messages d'erreur plus descriptifs — et la détection d'une mauvaise utilisation de l'assertion `t.throws()`
 - `extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Notez que les fichiers sont toujours compilés pour activer power-assert et d'autres fonctionnalités, donc vous devrez peut-être aussi définir `compileEnhancements` à `false` si vos fichiers ne sont pas valides JavaScript. La définition de ce paramètre remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste, si celle-ci n'est pas incluse dans `babel.extensions`
 - `require` : modules supplémentaires à intégrer avant que les tests ne soient exécutés. Les modules qui sont requis dans le [processus de travail](./01-writing-tests.md#isolement-du-processus)
-- `babel` : options spécifiques de Babel pour les fichiers de test. Consultez notre [recette Babel] pour plus de détails
+- `babel` : options spécifiques de Babel pour les fichiers de test. Consultez notre [recette Babel](./recipes/babel.md#configuration-de-babel) pour plus de détails
 - `babel.extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Ce réglage remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste
 
 Veuillez notez qu'en fournissant des fichiers à la CLI, cela écrase l'option `files`. Si vous avez configuré un glob pattern, par exemple `test/**/*.test.js`, vous devez peut-être le répéter lors de l'utilisation de la CLI : `ava 'test/integration/*.test.js'`.

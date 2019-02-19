@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/a82fee56ffefb3fd433664f236150f62c55feeb5...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/c3bcbf2a568c12017fe0da041dc247a226019001...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -211,5 +211,31 @@ Maintenant, au lieu d'exiger `@babel/register`, demandez à la place `test/_regi
 
 Notez que le chargement de `@babel/register` dans chaque processus de travail a un coût de performance non trivial. Si vous avez beaucoup de fichiers de test, vous pouvez envisager d'utiliser une étape de compilation pour compiler vos sources *avant* d'exécuter vos tests. Ce n'est pas idéal, car cela complique l'utilisation du mode watch de AVA, donc nous recommandons d'utiliser `@babel/register` jusqu'à ce que la pénalité de performance devienne trop grande. La mise en place d'une étape de précompilation est en dehors du périmètre de ce document, mais nous vous recommandons de consulter l'un des nombreux [systèmes de build qui prennent en charge Babel](http://babeljs.io/docs/setup/). Il y a une [issue](https://github.com/avajs/ava/issues/577) pour discuter des possibilités pour rendre cette expérience meilleure.
 
+## Alias de webpack
+
+Les [alias de webpack](https://webpack.js.org/configuration/resolve/#resolve-alias) peuvent être utilisés pour fournir un raccourci vers des chemins profondément imbriqués ou peu pratiques. Si vous utilisez déjà des alias dans vos fichiers source, assurez vous de pouvoir utiliser les mêmes alias dans vos fichiers de test.
+
+Installez `babel-plugin-webpack-alias-7` comme dépendance de développement. Puis ajoutez le plugin à la config Babel de AVA :
+
+`package.json`:
+
+```json
+{
+	"ava": {
+		"babel": {
+			"testOptions": {
+				"plugins": [
+					[
+						"babel-plugin-webpack-alias-7",
+						{
+							"config": "./path/to/webpack.config.test.js"
+						}
+					]
+				]
+			}
+		}
+	}
+}
+```
 
 [options de Babel]: https://babeljs.io/docs/en/options

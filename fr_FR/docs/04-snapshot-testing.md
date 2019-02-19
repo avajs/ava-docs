@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/1ba31d8f3e1b6aa645f10ee5fc5b8c84a366c40d...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Test d'instantané
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md)
 
 AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur ainsi que des éléments de React :
 

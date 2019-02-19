@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/1ba31d8f3e1b6aa645f10ee5fc5b8c84a366c40d...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/bccd297f38c9f4cf6dbb16dffa7ee8753dbbd12f...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Ecriture des tests
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md)
 
 Les tests sont exécutés simultanément. Vous pouvez spécifier des tests synchrones et asynchrones. Les tests sont considérés synchrones sauf si vous retournez une promesse, un [observable](https://github.com/zenparsing/zen-observable) ou vous le déclarez dans un calback de test.
 
@@ -268,6 +270,16 @@ test.before(t => {
 test('le contexte est unicorn', t => {
 	t.is(t.context, 'unicorn');
 });
+```
+
+## Récupération des métadonnées de test
+
+Les fichiers helper peuvent déterminer le nom du fichier de test en cours en lisant `test.meta.file`. Ceci élimine le besoin de passer `__filename` depuis le test aux helpers.
+
+```js
+import test from 'ava';
+
+console.log('Test en cours d\'exécution : ', test.meta.file);
 ```
 
 ## Réutilisation de test logique à travers des macros

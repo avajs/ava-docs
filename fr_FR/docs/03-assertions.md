@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/1ba31d8f3e1b6aa645f10ee5fc5b8c84a366c40d...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Assertions
+
+Traductions : [English](https://github.com/avajs/ava/blob/master/docs/03-assertions.md)
 
 Les assertions sont incluses dans l'[objet d'exécution](./02-execution-context.md) fourni à chaque implémentation de test :
 
