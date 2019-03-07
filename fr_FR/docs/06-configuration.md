@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/7d10446e91706e65e5fc6b6286b2279c29ef9615...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/1e3b072ab7aee9ce78d8faa774287902792fab90...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
@@ -67,6 +67,7 @@ Les arguments passés au CLI seront toujours prioritaires sur les options du CLI
 - `require` : modules supplémentaires à intégrer avant que les tests ne soient exécutés. Les modules qui sont requis dans le [processus de travail](./01-writing-tests.md#isolement-du-processus)
 - `babel` : options spécifiques de Babel pour les fichiers de test. Consultez notre [recette Babel](./recipes/babel.md#configuration-de-babel) pour plus de détails
 - `babel.extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Ce réglage remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste
+- `timeout` : Les timeouts dans AVA se comportent différemment de ceux des autres frameworks de test. AVA réinitialise une minuterie après chaque test, forçant l'arrêt des tests si aucun nouveau résultat de test n'a été reçu dans le délai imparti. Ceci peut être utilisé pour gérer des tests bloqués. Consultez notre [documentation sur le timeout](./07-test-timeouts.md) pour plus d'options.
 
 Veuillez notez qu'en fournissant des fichiers à la CLI, cela écrase l'option `files`. Si vous avez configuré un glob pattern, par exemple `test/**/*.test.js`, vous devez peut-être le répéter lors de l'utilisation de la CLI : `ava 'test/integration/*.test.js'`.
 
@@ -74,8 +75,9 @@ Veuillez notez qu'en fournissant des fichiers à la CLI, cela écrase l'option `
 
 Pour utiliser un fichier `ava.config.js` :
 
- 1. Il doit être dans le même répertoire que votre `package.json`
- 2. Votre `package.json` ne doit pas contenir la propriété `ava` (ou si c'est le cas, il doit s'agir d'un objet vide)
+1. Il doit être dans le même répertoire que votre `package.json`
+2. Votre `package.json` ne doit pas contenir la propriété `ava` (ou si c'est le cas, il doit s'agir d'un objet vide)
+3. Vous devez utiliser `export default`, bien que [`require()`](https://nodejs.org/api/modules.html#modules_require_id) soit disponible pour charger les modules non-ES
 
 Le fichier config doit avoir un export default, en utilisant des modules ES. Il peut s'agir d'un objet simple ou d'une fonction factory qui renvoie un objet brut :
 

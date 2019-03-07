@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/2e72fe7cf19a25f4d789356b9f38502ffb0091ba...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d97f11ddbbf824fd72165266770b9ae046e62324...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -189,7 +189,7 @@ Au contraire, AVA est très opiniâtre et exécute les tests en simultané, avec
 
 ### Comment l'écrire et le prononcer ?
 
-AVA, pas Ava ni ava. Prononcez [/ˈeɪvə/ ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/`](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true) : eil (ort**eil**, or**eil**ler) V (**v**ie, a**v**oir) A (m**a**tin, **a**voir).
 
 ### Que représente l'arrière plan de l'image ?
 
