@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/1e3b072ab7aee9ce78d8faa774287902792fab90...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/94064702837583f1cd3920142c5d0ce50e71e255...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
@@ -62,8 +62,8 @@ Les arguments passés au CLI seront toujours prioritaires sur les options du CLI
 - `tap` : si `true`, active le [reporter de TAP](./05-command-line.md#reporter-de-tap)
 - `verbose`: si `true`, active la sortie verbeuse
 - `snapshotDir` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
-- `compileEnhancements` : si `false`, désactive [power-assert](https://github.com/power-assert-js/power-assert) qui aide tout de même à fournir des messages d'erreur plus descriptifs — et la détection d'une mauvaise utilisation de l'assertion `t.throws()`
-- `extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Notez que les fichiers sont toujours compilés pour activer power-assert et d'autres fonctionnalités, donc vous devrez peut-être aussi définir `compileEnhancements` à `false` si vos fichiers ne sont pas valides JavaScript. La définition de ce paramètre remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste, si celle-ci n'est pas incluse dans `babel.extensions`
+- `compileEnhancements` : si `false`, désactive [`power-assert`](./03-assertions.md#messages-dassertions-améliorés) qui aide tout de même à fournir des messages d'erreur plus descriptifs — et la détection d'une mauvaise utilisation de l'assertion `t.throws()`
+- `extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Notez que les fichiers sont toujours compilés pour activer `power-assert` et d'autres fonctionnalités, donc vous devrez peut-être aussi définir `compileEnhancements` à `false` si vos fichiers ne sont pas valides JavaScript. La définition de ce paramètre remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste, si celle-ci n'est pas incluse dans `babel.extensions`
 - `require` : modules supplémentaires à intégrer avant que les tests ne soient exécutés. Les modules qui sont requis dans le [processus de travail](./01-writing-tests.md#isolement-du-processus)
 - `babel` : options spécifiques de Babel pour les fichiers de test. Consultez notre [recette Babel](./recipes/babel.md#configuration-de-babel) pour plus de détails
 - `babel.extensions` : les extensions de fichiers de test qui seront précompilées à l'aide des presets Babel de AVA. Ce réglage remplace la valeur par défaut `"js"`, alors assurez-vous d'inclure cette extension dans la liste

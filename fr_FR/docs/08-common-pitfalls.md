@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/94064702837583f1cd3920142c5d0ce50e71e255...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
@@ -80,11 +80,11 @@ AVA [ne peut pas tracer les exceptions non interceptées](https://github.com/ava
 
 ### Pourquoi les messages d'assertion améliorés ne s'affichent pas ?
 
-Assurez-vous que le premier paramètre passé dans votre test est nommé `t`. C'est une exigence de [`power-assert`](https://github.com/power-assert-js/power-assert), la bibliothèque qui fournit les messages améliorés.
+Assurez-vous que le premier paramètre passé dans votre test est nommé `t`. C'est une exigence de [`power-assert`](https://github.com/power-assert-js/power-assert), la bibliothèque qui fournit les [messages améliorés](./03-assertions.md#messages-dassertions-améliorés).
 
 ```js
 test('un est un', t => {
-	t.is(1, 1);
+	t.assert(1 === 1);
 });
 ```
 

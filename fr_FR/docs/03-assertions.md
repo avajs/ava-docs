@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/94064702837583f1cd3920142c5d0ce50e71e255...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Assertions
 
@@ -89,7 +89,7 @@ test('passe une assertion', t => {
 
 ## Messages d'assertions améliorés
 
-AVA est livré avec l'intégration de [`power-assert`](https://github.com/power-assert-js/power-assert), cela vous donne des messages d'assertion plus clairs. Il lit votre test et tente de déduire plus d'informations à partir du code.
+AVA est livré avec l'intégration de [`power-assert`](https://github.com/power-assert-js/power-assert), cela vous donne des messages d'assertion plus clairs.
 
 Prenons cet exemple, en utilisant la [bibliothèque `assert`](https://nodejs.org/api/assert.html) standard  de Node.
 
@@ -106,7 +106,7 @@ Si vous collez ceci dans un REPL de Node, il retournera :
 AssertionError: false == true
 ```
 
-Cependant dans AVA, ce test  :
+Cependant avec l'assertion `assert` de AVA, ce test  :
 
 ```js
 test('assertions améliorées', t => {
@@ -120,10 +120,34 @@ test('assertions améliorées', t => {
 Affichera :
 
 ```
-t.true(a.test(b) || b === c)
-       |      |     |     |
-       |      "bar" "bar" "baz"
-       false
+6:   const c = 'baz';
+7:   t.assert(a.test(b) || b === c);
+8: });
+
+Value is not truthy:
+
+false
+
+a.test(b) || b === c
+=> false
+
+b === c
+=> false
+
+c
+=> 'baz'
+
+b
+=> 'bar'
+
+a.test(b)
+=> false
+
+b
+=> 'bar'
+
+a
+=> /foo/
 ```
 
 ## Personnaliser les assertions
@@ -151,6 +175,10 @@ L'assertion passe.
 ### `.fail([message])`
 
 L'assertion échoue.
+
+### `.assert(value, [message])`
+
+Affirme que `value` est truthy. C'est [`power-assert`](#messages-dassertions-améliorés) qui est activé.
 
 ### `.truthy(value, [message])`
 

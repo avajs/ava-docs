@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [07-test-timeouts.md](https://github.com/avajs/ava/blob/master/docs/07-test-timeouts.md). Voici un [lien](https://github.com/avajs/ava/compare/b65c6d7da8ba3c7274f36dbcbcff26485f27d36f...master#diff-ee554218ce48f7ac6fbeab40ba17919f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `07-test-timeouts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [07-test-timeouts.md](https://github.com/avajs/ava/blob/master/docs/07-test-timeouts.md). Voici un [lien](https://github.com/avajs/ava/compare/99a10a16a3e3037326c91fb23c2a052acd3abef9...master#diff-ee554218ce48f7ac6fbeab40ba17919f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `07-test-timeouts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Timeouts des tests
 
@@ -9,9 +9,9 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/07-test-ti
 
 Le délai de AVA se comporte différemment des autres frameworks de test. AVA réinitialise un minuteur après chaque test, cela oblige les tests à s'arrêter, si aucun nouveau résultat de test est reçu dans le délai imparti. Cela peut être utilisé pour gérer les tests bloqués.
 
-Vous pouvez configurer un délai (timeout) via l'[option en ligne de commande](./05-command-line.md) `--timeout` ou dans la [configuration](./06-configuration.md).
+*Il n'y a pas de timeout par défaut.*
 
-Vous pouvez définir des délais qui soient lisibles :
+Vous pouvez configurer un délai (timeout) via l'[option en ligne de commande](./05-command-line.md) `--timeout` ou dans la [configuration](./06-configuration.md). Ils peuvent être définis de manière qu'ils soient lisibles :
 
 ```console
 npx ava --timeout=10s # 10 secondes
