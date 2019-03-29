@@ -73,7 +73,7 @@ Sinon, vous pouvez installer manuellement `ava` :
 npm install --save-dev ava
 ```
 
-N'oubliez pas de configurer le script `test` dans votre` package.json` comme indiqué ci-dessus.
+N'oubliez pas de configurer le script `test` dans votre `package.json` comme indiqué ci-dessus.
 
 ### Créez votre fichier de test
 
