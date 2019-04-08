@@ -7,7 +7,8 @@ ___
 
 > Футуристичный инструмент для тестирования
 
-[![Build Status: Linux](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava) [![Coverage Status](https://coveralls.io/repos/avajs/ava/badge.svg?branch=master&service=github)](https://coveralls.io/github/avajs/ava?branch=master) [![Gitter](https://badges.gitter.im/join-chat.svg)](https://gitter.im/avajs/ava)
+[![Build Status](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava)  [![Coverage Status](https://codecov.io/gh/avajs/ava/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/ava/branch/master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
+[![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
 
 Даже с учетом того, что JavaScript выполняется в одном потоке, IO в Node.js могут происходить параллельно в связи с природой самого Node.js. AVA в полной мере пользуется этим преимуществом и запускает Ваши тесты одновременно, что особенно важно при серьезных IO в тестах. Кроме того, тестовые файлы запускаются параллельно в разных процессах, предоставляя большую производительность и изолированное окружение для каждого тестового файла. [Переход](https://github.com/sindresorhus/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0) с Mocha на AVA в Pageres улучшил время тестирования с 31 секунды до 11 секунд. Возможность запускать тесты одновременно, заставляет Вас писать тесты, в которых нет необходимости зависеть от глобального состояния или состояний других тестов, что поистине круто!
 
