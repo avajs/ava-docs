@@ -1,13 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/0154a7f4fc3502aa0ca49bbbd0d1cab259291685...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/c633cf08891abaf7649d490642eef38b8150bfe0...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md)
 
-AVA est livré avec un fichier de définition de Flow. Ainsi, les développeurs peuvent utiliser Flow pour écrire des tests.
+Jusqu'à la version [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) AVA était livré avec un fichier de définition de Flow. Cela permettait aux développeurs d'exploiter Flow pour écrire des tests.
+
+**Nous avons besoin d’aide pour la publication des définitions de types en dehors de AVA. Si vous souhaitez aider, veuillez nous rejoindre dans https://github.com/avajs/flow-typed/issues/1 .**
 
 Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Remarque : la définition de AVA a été testée avec la version 0.95.1.
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/d97f11ddbbf824fd72165266770b9ae046e62324...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/3a4afc6cf35aeffb6b019c6b75fa9b8e071bb53d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
 
@@ -132,7 +132,7 @@ AVA utilise [Babel 7](https://babeljs.io) donc vous pouvez utiliser la dernière
 
 Nous visons la prise en charge de toutes les [propositions de syntaxe terminées](https://github.com/tc39/proposals/blob/master/finished-proposals.md), ainsi que toute la syntaxe de la version JavaScript ratifiée (par exemple ES2017). Consultez notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) pour les propositions actuellement supportées.
 
-Veuillez noter que nous n'ajoutons pas ou ne modifions pas les built-ins. Par exemple, si vous utilisez [`Object.entries()`](https://github.com/tc39/proposal-object-values-entries) dans vos tests, ils planteront dans Node.js 6 car il n'implémente pas cette méthode.
+Veuillez noter que nous n'ajoutons pas ou ne modifions pas les built-ins. Par exemple, si vous utilisez [`Object.fromEntries()`](https://github.com/tc39/proposal-object-from-entries) dans vos tests, ils planteront dans Node.js 10 car il n'implémente pas cette méthode.
 
 Vous pouvez désactiver cette prise en charge de la syntaxe ou personnaliser le pipeline Babel de AVA. Consultez notre [recette Babel] pour plus de détails.
 

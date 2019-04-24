@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-webstorm.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Voici un [lien](https://github.com/avajs/ava/compare/3311d69d3541e4cf145e6dc2eea0dd752695d0ba...master#diff-1fb9cdb432e04d416229256c338f1a06) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-webstorm.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-webstorm.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Voici un [lien](https://github.com/avajs/ava/compare/3a4afc6cf35aeffb6b019c6b75fa9b8e071bb53d...master#diff-1fb9cdb432e04d416229256c338f1a06) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-webstorm.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec WebStorm
 
@@ -18,7 +18,7 @@ Dans le champ `JavaScript file`, renseignez le chemin vers AVA dans le répertoi
 
 Dans `Application parameters` passez les options du CLI que vous utilisez et les fichiers de test que vous souhaitez déboguer, par exemple `--verbose test.js`.
 
-Dans `Node parameters`, pour Node.js 7+, passez l'option `--inspect-brk` pour activer l'inspecteur de Node. Pour les versions antérieures utilisez `--debug-brk`.
+Dans `Node parameters`, passez l'option `--inspect-brk` pour activer l'inspecteur de Node.
 
 Sauvez la configuration.
 
@@ -49,7 +49,7 @@ Utilisez les paramètres de configurations suivants :
 
 Votre IDE exécutera alors `npm run test` et donc appellera `node_modules/.bin/ava` et la configuration AVA que vous avez spécifiée dans votre package.json.
 
-Dans `Node parameters`, pour Node.js 7+ passez `--inspect-brk` ou `--debug-brk` pour les versions antérieures.
+Dans `Node parameters`, passez `--inspect-brk`.
 
 N'oubliez pas de sélectionner un interpréteur Node.js.
 
