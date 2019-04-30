@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/6a6706ee890c1c0794095d64f69aa71cc3b83b74...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/ed2c1dccddd96c199b22aa8e96d1b7f28599e02d...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md)
 
-Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`. Vous pouvez le remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans les fichiers `package.json` ou `ava.config.js`](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md#configuration).
+Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`. Vous pouvez le remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans les fichiers `package.json` ou `ava.config.js`](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md).
 
 Cette règle vérifira que les fichiers qui créent des tests sont dans les fichiers recherchés et non dans des dossiers ignorés. Il examinera ç partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
 

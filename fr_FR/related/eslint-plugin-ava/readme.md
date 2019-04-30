@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/0134e94e5450341a88654d9fdcc1d0fb3833b34d...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a4890396bcd2a42f918d853d91c711a3be73faf2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -31,7 +31,7 @@ Configurez le dans le `package.json`.
 			"es6": true
 		},
 		"parserOptions": {
-			"ecmaVersion": 2018,
+			"ecmaVersion": 2019,
 			"sourceType": "module"
 		},
 		"plugins": [
@@ -39,7 +39,10 @@ Configurez le dans le `package.json`.
 		],
 		"rules": {
 			"ava/assertion-arguments": "error",
-			"ava/max-asserts": ["off", 5],
+			"ava/max-asserts": [
+				"off",
+				5
+			],
 			"ava/no-async-fn-without-await": "error",
 			"ava/no-cb-test": "off",
 			"ava/no-duplicate-modifiers": "error",
@@ -58,7 +61,10 @@ Configurez le dans le `package.json`.
 			"ava/prefer-async-await": "error",
 			"ava/prefer-power-assert": "off",
 			"ava/test-ended": "error",
-			"ava/test-title": ["error", "if-multiple"],
+			"ava/test-title": [
+				"error",
+				"if-multiple"
+			],
 			"ava/use-t-well": "error",
 			"ava/use-t": "error",
 			"ava/use-test": "error",
@@ -110,9 +116,6 @@ Activez la dans votre `package.json` avec l'option `extends` :
 {
 	"name": "my-awesome-project",
 	"eslintConfig": {
-		"plugins": [
-			"ava"
-		],
 		"extends": "plugin:ava/recommended"
 	}
 }
