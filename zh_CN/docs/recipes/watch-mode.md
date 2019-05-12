@@ -97,7 +97,7 @@ $ npm test -- --watch
 
 ## 帮助我们改善观察模式
 
-观察模式比较新并且现在处于初期阶段，请[报告](https://github.com/avajs/ava/issues) 任何你遇到问题，谢谢！
+观察模式比较新并且现在处于初期阶段，请 [报告](https://github.com/avajs/ava/issues) 任何你遇到问题，谢谢！
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
