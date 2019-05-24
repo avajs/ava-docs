@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a4890396bcd2a42f918d853d91c711a3be73faf2...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/809f8c2153bcb2cad8e900a02d0634e46c2bca00...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -11,6 +11,8 @@ Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/r
 
 Ce plugin est intégré dans [XO](https://github.com/xojs/xo). Pas besoin de faire quoi que ce soit si vous utilisez XO.
 
+
+[**Proposez ou contribuez à une nouvelle règle ➡**](https://github.com/avajs/eslint-plugin-ava/blob/master/.github/contributing.md)
 
 ## L'installation
 
@@ -61,10 +63,7 @@ Configurez le dans le `package.json`.
 			"ava/prefer-async-await": "error",
 			"ava/prefer-power-assert": "off",
 			"ava/test-ended": "error",
-			"ava/test-title": [
-				"error",
-				"if-multiple"
-			],
+			"ava/test-title": "error",
 			"ava/use-t-well": "error",
 			"ava/use-t": "error",
 			"ava/use-test": "error",
@@ -100,7 +99,7 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [prefer-power-assert](docs/rules/prefer-power-assert.md) - Autoriser uniquement l'utilisation des assertions qui n'ont pas d'alternatives dans [power-assert](https://github.com/power-assert-js/power-assert).
 - [test-ended](docs/rules/test-ended.md) - S'assurer que les tests de callback soient explicitement terminés.
 - [test-title](docs/rules/test-title.md) - S'assurer que les tests ont un titre.
-- [use-t-well](docs/rules/use-t-well.md) - Empêcher une mauvaise utilisation de `t`.
+- [use-t-well](docs/rules/use-t-well.md) - Empêcher une mauvaise utilisation de `t`. *(correction partielle)*
 - [use-t](docs/rules/use-t.md) - S'assurer que les fonctions de test utilisent `t` comme paramètre.
 - [use-test](docs/rules/use-test.md) - S'assurer que AVA est importé avec la variable nommée `test`.
 - [use-true-false](docs/rules/use-true-false.md) - S'assurer que `t.true()`/`t.false()` sont utilisés à la place de `t.truthy()`/`t.falsy()`.

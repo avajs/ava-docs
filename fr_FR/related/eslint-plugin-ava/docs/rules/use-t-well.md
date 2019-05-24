@@ -1,13 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [use-t-well.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t-well.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/0ded4b5c3cd09504e846309760566c9499a24196...master#diff-732d970806d109613f5519b63e9056d8) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t-well.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [use-t-well.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t-well.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/809f8c2153bcb2cad8e900a02d0634e46c2bca00...master#diff-732d970806d109613f5519b63e9056d8) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t-well.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Empêcher une mauvaise utilisation de `t`
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t-well.md)
 
 Empêche l'utilisation de méthodes d'assertion inconnues et empêche d'accèder à des méthodes différentes des assertions et de `context`, ainsi que certaines utilisations incorrectes connues de `t`.
+
+Cette règle est réparable de façon partielle. Elle remplacera `falsey` mal orthographié par `falsy`.
 
 
 ## Échoue

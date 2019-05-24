@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/c3bcbf2a568c12017fe0da041dc247a226019001...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/2762d3cba162b0a416983b7cfbbb54b7c7fe27b3...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -195,7 +195,7 @@ require('@babel/register')({
 });
 ```
 
-Maintenant, au lieu d'exiger `@babel/register`, demandez à la place `test/_register`.
+Maintenant, au lieu d'exiger `@babel/register`, demandez à la place `./test/_register`.
 
 **`package.json` :**
 
@@ -203,7 +203,7 @@ Maintenant, au lieu d'exiger `@babel/register`, demandez à la place `test/_regi
 {
 	"ava": {
 		"require": [
-			"test/_register.js"
+			"./test/_register.js"
 		]
 	}
 }

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/94064702837583f1cd3920142c5d0ce50e71e255...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
@@ -13,7 +13,7 @@ Si vous utilisez [ESLint](http://eslint.org/), vous pouvez installer [eslint-plu
 
 #### Transpilation des modules importés
 
-AVA transpile actuellement seulement les tests que vous lui demandez d'exécuter, ainsi que les helpers de test (les fichiers commençant par `_` ou dans le répertoire `helpers`) dans le répertoire de test. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
+AVA transpile actuellement seulement les fichier de test et helper. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
 
 Si vous utilisez Babel, vous pouvez utiliser le [hook require](https://babeljs.io/docs/usage/require/) pour transpiler à la volée des modules importés. Pour l'ajouter, [configurez le dans votre `package.json`](./06-configuration.md).
 
@@ -87,10 +87,6 @@ test('un est un', t => {
 	t.assert(1 === 1);
 });
 ```
-
-### Les helpers de test ne sont pas compilés dans un dossier `test` nommé différemment de ceux par défaut
-
-C'est un [problème connu](https://github.com/avajs/ava/issues/1319). Vous devez mettre vos tests dans un dossier nommé `test` ou `__tests__`
 
 ---
 

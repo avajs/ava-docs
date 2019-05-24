@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/c633cf08891abaf7649d490642eef38b8150bfe0...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/5bae97c49203990b89d91fe9587ea81702694eda...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
@@ -41,10 +41,10 @@ Créez un fichier `test.js`.
 // @flow
 import test from 'ava';
 
-const fn = async () => Promise.resolve('foo');
+const getFoo = () => 'foo';
 
-test(async (t) => {
-	t.is(await fn(), 'foo');
+test('check getFoo', t => {
+	t.is(getFoo(), 'foo');
 });
 ```
 

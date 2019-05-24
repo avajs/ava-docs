@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/08e99e516e13af75d3ebe70f12194a89b610217c...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
@@ -11,7 +11,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/05-command
 $ npx ava --help
 
   Usage
-    ava [<file|directory|glob> ...]
+    ava [<file> ...]
 
   Options
     --watch, -w             Re-run tests when tests and source files change (Re-exécute les tests quand les tests et les fichiers sources ont changé)
@@ -33,13 +33,23 @@ $ npx ava --help
     ava test-*.js
     ava test
 
-  Default patterns when no arguments (Les patterns par défaut quand il n'y a pas d'arguments) :
-  test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js
+  The above relies on your shell expanding the glob patterns. (Ce qui précède dépend de votre shell pour étendre les patterns globaux.)
+  Without arguments, AVA uses the following patterns: (Sans arguments, AVA utilise les patterns suivants :)
+    **/test.js **/test-*.js **/*.spec.js **/*.test.js **/test/**/*.js **/__tests__/**/*.js
 ```
 
 *Notez que le CLI utilisera votre installation locale de AVA lorsqu'il est disponible, même lorsqu'il est exécuté de manière globale.*
 
-Les répertoires sont récursifs, où tous les fichiers `*.js` sont traités comme des fichiers de test. Les répertoires nommés `fixtures`, `helpers` et `node_modules` sont *toujours* ignorés. C'est aussi le cas pour les fichiers commençant par `_`, cela vous permet de placer des helpers dans le même répertoire que vos fichiers de test.
+AVA recherche les fichiers de tests en utilisant les patterns suivants :
+
+* `**/test.js`
+* `**/test-*.js`
+* `**/*.spec.js`
+* `**/*.test.js`
+* `**/test/**/*.js`
+* `**/__tests__/**/*.js`
+
+Les fichiers à l'intérieur de `node_modules` sont *toujours* ignorés. Idem pour les fichiers commençant par `_`, ils sont traités comme des helpers.
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
 

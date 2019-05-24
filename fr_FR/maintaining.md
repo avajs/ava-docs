@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/afe028a0a05c8b8bb0b33e12b557ff455e47355d...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/master/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/8a3f6cad1de3a892940f51474a33b5e2544c7745...master#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance [![Dependency Status](https://david-dm.org/avajs/ava.svg)](https://david-dm.org/avajs/ava) [![devDependency Status](https://david-dm.org/avajs/ava/dev-status.svg)](https://david-dm.org/avajs/ava#info=devDependencies)
 
@@ -61,22 +61,16 @@ Utilisez l'étiquette `assigned` lorsque quelqu'un est en train de travailler su
 
 ## Analyse de l'exécution
 
-Vous devez d'abord installer globalement [`iron-node`](https://github.com/s-a/iron-node) et / ou [`devtool`](https://github.com/Jam3/devtool) :
+Vous devez d'abord installer globalement [`iron-node`](https://github.com/s-a/iron-node) :
 
 ```
-$ npm install --global iron-node devtool
+$ npm install --global iron-node
 ```
 
 A la racine du projet qui utilise AVA, exécutez :
 
 ```
 $ iron-node node_modules/ava/profile.js <test-file>
-```
-
-Ou :
-
-```
-$ devtool node_modules/ava/profile.js <test-file>
 ```
 
 Une fois que la fenêtre Dev Tools est chargée, activez l'analyse de la mémoire ou du CPU, puis appuyez sur <kbd>Cmd</kbd> <kbd>R</kbd> pour relancer les tests.
@@ -87,7 +81,6 @@ Vous pouvez également consulter la page Settings (Paramètres) dans Dev Tools e
 
 ##### Ressources utiles
 
- - [Une introduction pour déboguer Node.js avec `devtool`](http://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools).
  - [Une vidéo d'introduction sur l'analyse d'exécution du CPU et de la mémoire avec Chrome DevTools](https://www.youtube.com/watch?v=KKwmdTByxLk).
 
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/c3bcbf2a568c12017fe0da041dc247a226019001...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants Vue.js
 
@@ -28,14 +28,14 @@ La première étape consiste à mettre en place un helper pour configurer l'envi
 {
 	"ava": {
 		"require": [
-			"./test/helpers/setup.js"
+			"./test/_setup.js"
 		]
 	}
 }
 ```
 
 ```js
-// ./test/helpers/setup.js
+// ./test/_setup.js
 
 // Configuration de l'environnement navigateur
 require('browser-env')();

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/626bd067e8b66aa8dabf62adcf17f07363d5a02b...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
@@ -27,9 +27,9 @@ $ npm install --save-dev browser-env
 
 ## Configuration de browser-env
 
-Créez un fichier helper et placez le dans le répertoire `test/helpers`. Cela permet de garantir que AVA ne le traitera pas comme un fichier de test.
+Créez un fichier helper, préfixez le avec un underscore. Cela permet de garantir que AVA ne le traitera pas comme un fichier de test.
 
-`test/helpers/setup-browser-env.js`:
+`test/_setup-browser-env.js`:
 
 ```js
 import browserEnv from 'browser-env';
@@ -63,7 +63,7 @@ Configurez le `require` de AVA avec le helper pour l'exiger avant chaque fichier
 {
 	"ava": {
 		"require": [
-			"./test/helpers/setup-browser-env.js"
+			"./test/_setup-browser-env.js"
 		]
 	}
 }
