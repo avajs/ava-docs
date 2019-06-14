@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/809f8c2153bcb2cad8e900a02d0634e46c2bca00...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c165ac23173b23f65a8dbcef5969e0f9d9feef03...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -62,10 +62,12 @@ Configurez le dans le `package.json`.
 			"ava/no-unknown-modifiers": "error",
 			"ava/prefer-async-await": "error",
 			"ava/prefer-power-assert": "off",
+			"ava/prefer-t-regex": "error",
 			"ava/test-ended": "error",
 			"ava/test-title": "error",
-			"ava/use-t-well": "error",
+			"ava/test-title-format": "off",
 			"ava/use-t": "error",
+			"ava/use-t-well": "error",
 			"ava/use-test": "error",
 			"ava/use-true-false": "error"
 		}
@@ -97,10 +99,12 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [no-unknown-modifiers](docs/rules/no-unknown-modifiers.md) - Empêcher l'utilisation de modificateurs de test inconnus.
 - [prefer-async-await](docs/rules/prefer-async-await.md) - Préférer l'utilisation de async/await au lieu de retourner une Promesse.
 - [prefer-power-assert](docs/rules/prefer-power-assert.md) - Autoriser uniquement l'utilisation des assertions qui n'ont pas d'alternatives dans [power-assert](https://github.com/power-assert-js/power-assert).
+- [prefer-t-regex](docs/rules/prefer-t-regex.md) - Préférer l'utilisation de `t.regex()` au lieu de tests d'expressions régulières. *(réparable)*
 - [test-ended](docs/rules/test-ended.md) - S'assurer que les tests de callback soient explicitement terminés.
 - [test-title](docs/rules/test-title.md) - S'assurer que les tests ont un titre.
-- [use-t-well](docs/rules/use-t-well.md) - Empêcher une mauvaise utilisation de `t`. *(correction partielle)*
+- [test-title-format](docs/rules/test-title-format.md) - S'assurer que les titres des tests ont un certain format.
 - [use-t](docs/rules/use-t.md) - S'assurer que les fonctions de test utilisent `t` comme paramètre.
+- [use-t-well](docs/rules/use-t-well.md) - Empêcher une mauvaise utilisation de `t`. *(correction partielle)*
 - [use-test](docs/rules/use-test.md) - S'assurer que AVA est importé avec la variable nommée `test`.
 - [use-true-false](docs/rules/use-true-false.md) - S'assurer que `t.true()`/`t.false()` sont utilisés à la place de `t.truthy()`/`t.falsy()`.
 

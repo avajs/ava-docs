@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/08e99e516e13af75d3ebe70f12194a89b610217c...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/486acaf41aa632a2672722f62bc4edfa55a2931c...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
@@ -18,7 +18,7 @@ $ npx ava --help
     --match, -m             Only run tests with matching title (Can be repeated) (Exécute seulement les tests qui correspondent au titre (peut être répété))
     --update-snapshots, -u  Update all snapshots (Mettre à jour les snapshots)
     --fail-fast             Stop after first test failure (Arrêter dès qu'un test échoue)
-    --timeout, -T           Set global timeout (Définir un timeout global)
+    --timeout, -T           Set global timeout (milliseconds or human-readable, e.g. 10s, 2m) (Définir un timeout global (millisecondes ou lisible par l'homme, exemple 10s, 2m))
     --serial, -s            Run tests serially (Lancer les tests en série)
     --concurrency, -c       Max number of test files running at the same time (Default: CPU cores) (Nombre max de fichiers de test exécutés en même temps (Par défaut : coeurs CPU))
     --verbose, -v           Enable verbose output (Activer le mode verbose)
@@ -35,7 +35,7 @@ $ npx ava --help
 
   The above relies on your shell expanding the glob patterns. (Ce qui précède dépend de votre shell pour étendre les patterns globaux.)
   Without arguments, AVA uses the following patterns: (Sans arguments, AVA utilise les patterns suivants :)
-    **/test.js **/test-*.js **/*.spec.js **/*.test.js **/test/**/*.js **/__tests__/**/*.js
+    **/test.js **/test-*.js **/*.spec.js **/*.test.js **/test/**/*.js **/tests/**/*.js **/__tests__/**/*.js
 ```
 
 *Notez que le CLI utilisera votre installation locale de AVA lorsqu'il est disponible, même lorsqu'il est exécuté de manière globale.*
@@ -47,6 +47,7 @@ AVA recherche les fichiers de tests en utilisant les patterns suivants :
 * `**/*.spec.js`
 * `**/*.test.js`
 * `**/test/**/*.js`
+* `**/tests/**/*.js`
 * `**/__tests__/**/*.js`
 
 Les fichiers à l'intérieur de `node_modules` sont *toujours* ignorés. Idem pour les fichiers commençant par `_`, ils sont traités comme des helpers.

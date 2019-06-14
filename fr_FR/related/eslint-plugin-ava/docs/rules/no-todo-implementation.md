@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-todo-implementation.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-todo-implementation.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/ed2c1dccddd96c199b22aa8e96d1b7f28599e02d...master#diff-88dccb24456c40d7bcaf1c8e7517dcd3) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-todo-implementation.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-todo-implementation.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-todo-implementation.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/5bdf745701159cd82d4bc125c1e685524b5066b6...master#diff-88dccb24456c40d7bcaf1c8e7517dcd3) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-todo-implementation.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que `test.todo()` n'a pas une fonction d'implémentation
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-todo-implementation.md)
 
-[`test.todo()`](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/01-writing-tests.md#les-tests-fictifs-todo) est destiné aux futurs tests. Il n’est pas destiné à recevoir une fonction pour implémenter le test qu'on lui donne, AVA lancera une erreur. Si vous avez ajouté une implémentation, vous vouliez sans doute supprimer le modificateur `todo`.
+[`test.todo()`](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/01-writing-tests.md#les-tests-fictifs-todo) est destiné aux futurs tests. Il n’est pas destiné à recevoir une fonction pour implémenter le test qu'on lui donne, AVA lancera une erreur. Si vous avez ajouté une implémentation, vous vouliez sans doute supprimer le modificateur `.todo`.
 
 
 ## Échoue

@@ -1,49 +1,28 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/ed2c1dccddd96c199b22aa8e96d1b7f28599e02d...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/428d70dd772487e8ffa22921f9baf2712d5458a7...master#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md)
 
-Lors de la recherche des tests, AVA ignore les fichiers contenus dans `node_modules` ou dans les dossiers nommés `fixtures` ou `helpers`. Par défaut, il va chercher dans `test.js test-*.js test/**/*.js **/__tests__/**/*.js **/*.test.js`. Vous pouvez le remplacer en spécifiant un chemin lors du lancement de AVA ou dans la [configuration de AVA dans les fichiers `package.json` ou `ava.config.js`](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md).
+Cette règle vérifiera que les fichiers qui créent des tests sont traités comme des fichiers de test par AVA. Il examinera à partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
 
-Cette règle vérifira que les fichiers qui créent des tests sont dans les fichiers recherchés et non dans des dossiers ignorés. Il examinera ç partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
-
-Notez que cette règle ne pourra pas vous avertir correctement si vous utilisez AVA en spécifiant les fichiers dans la ligne de commande ( `ava "lib/**/*.test.js"` ). Préférez la configuration AVA comme décrite dans le lien ci-dessus.
 
 ## Échoue
 
 ```js
-// Fichier : test/foo/fixtures/bar.js
-// Invalide car dans le répertoire `fixtures`
+// Fichier : test/_helper.js
+// Invalide car c'est un helper
 import test from 'ava';
 
 test('foo', t => {
 	t.pass();
 });
 
-// Fichier : test/foo/helpers/bar.js
-// Invalide car dans le répertoire `helpers`
-import test from 'ava';
-
-test('foo', t => {
-	t.pass();
-});
-
-// Fichier : lib/foo.test.js
-// Invalide car il n'est pas dans les fichiers recherchés
-import test from 'ava';
-
-test('foo', t => {
-	t.pass();
-});
-
-// Fichier : test.js
-// avec { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
-// soit dans `package.json` sous la 'clef ava' ou dans les options de règle
-// Invalide car il n'est pas dans les fichiers recherchés
+// Fichier : lib/foo.js
+// Invalide car ce n'est pas un fichier de test
 import test from 'ava';
 
 test('foo', t => {
@@ -55,30 +34,7 @@ test('foo', t => {
 ## Passe
 
 ```js
-// Fichier : test/foo/not-fixtures/bar.js
-import test from 'ava';
-
-test('foo', t => {
-	t.pass();
-});
-
-// Fichier : test/foo/not-helpers/bar.js
-import test from 'ava';
-
-test('foo', t => {
-	t.pass();
-});
-
-// Fichier : test.js
-import test from 'ava';
-
-test('foo', t => {
-	t.pass();
-});
-
-// Fichier : lib/foo.test.js
-// avec { "files": ["lib/**/*.test.js", "utils/**/*.test.js"] }
-// soit dans `package.json` sous la 'clef ava' ou dans les options de règle
+// Fichier : test/foo.js
 import test from 'ava';
 
 test('foo', t => {
@@ -90,9 +46,14 @@ test('foo', t => {
 
 Cette règle prend en charge les options suivantes :
 
-`files`: Un tableau de strings représentant les fichiers glob que nous allons utiliser pour trouver des fichiers de test. Remplace la valeur par défaut et la configuration trouvée dans les fichiers `package.json` ou `ava.config.js`.
+* `extensions` : un tableau des extensions des fichiers reconnus par AVA en tant que fichiers tests ou helpers. Remplace *les deux configurations* `babel.extensions` *et* `extensions` utilisées par AVA.
+* `files` : un tableau de glob patterns pour sélectionner les fichiers de test. Remplace la configuration `files` utilisées par AVA.
+* `helpers` : un tableau de glob patterns pour sélectionner les fichiers de helper. Remplace la configuration `helpers` utilisées par AVA.
+* `sources` : un tableau de glob patterns pour sélectionner les fichiers, lorsqu'ils sont modifiés, provoquent la ré-exécution des tests lors du mode watch. Remplace la configuration `sources` utilisées par AVA.
 
-Vous pouvez définir les options comme ceci :
+Consultez aussi la [configuration de AVA](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md#options).
+
+Vous pouvez définir l'option de cette manière :
 
 ```js
 "ava/no-ignored-test-files": ["error", {"files": ["lib/**/*.test.js", "utils/**/*.test.js"]}]

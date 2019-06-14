@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/5f4c96f9037d6317d5cf6d63fa07800a5ac4739f...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/a53ea157367c9cec91184cfbb226487c81229513...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
@@ -35,6 +35,9 @@ Pour ignorer les fichiers, préfixer le pattern avec un `!` (point d'exclamation
 		"concurrency": 5,
 		"failFast": true,
 		"failWithoutAssertions": false,
+		"environmentVariables": {
+			"MY_ENVIRONMENT_VARIABLE": "some value"
+		},
 		"tap": true,
 		"verbose": true,
 		"compileEnhancements": false,
@@ -62,6 +65,7 @@ Les arguments passés au CLI seront toujours prioritaires sur les options du CLI
 - `cache` : met en cache les fichiers de test compilé et les helpers sous `node_modules/.cache/ava`. Si la valeur est à `false`, les fichiers sont à la place mis en cache dans un répertoire temporaire
 - `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue
 - `failWithoutAssertions` : si `false`, ne pas faire échouer un test s'il n'exécute pas des [assertions](./03-assertions.md)
+- `environmentVariables`: spécifie les variables d'environnement à mettre à la disposition des tests. Les variables d'environnement définies ici remplacent celles de `process.env`
 - `tap` : si `true`, active le [reporter de TAP](./05-command-line.md#reporter-de-tap)
 - `verbose`: si `true`, active la sortie verbeuse
 - `snapshotDir` : indique l'endroit fixe pour le stockage des fichiers instantanés. Utilisez ceci si vos instantanés se positionnent à un mauvais endroit
@@ -115,3 +119,21 @@ export default ({projectDir}) => {
 ```
 
 Notez que la config finale ne doit pas être une promesse.
+
+## Profondeur d'affichage d'un objet
+
+Par défaut, AVA affiche les objets imbriqués avec une profondeur de `3`. Toutefois, lors du débogage de tests avec des objets imbriqués plus profondément, il peut être utile d’afficher plus de détails. Cela peut être fait en définissant [`util.inspect.defaultOptions.depth`](https://nodejs.org/api/util.html#util_util_inspect_defaultoptions) avec la profondeur souhaitée, avant l'exécution du test :
+
+```js
+import util from 'util';
+
+import test from 'ava';
+
+util.inspect.defaultOptions.depth = 5;  // Augmente la profondeur d'affichade de AVA
+
+test('Mon test', t => {
+	t.deepEqual(someDeeplyNestedObject, theExpectedValue);
+});
+```
+
+AVA a une profondeur minimale de `3`.
