@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/a53ea157367c9cec91184cfbb226487c81229513...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/2dae2bfaf4b4ae53700fa439f34923b5a2c35a83...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/06-configuration.md)
 
-Toutes les [options du CLI](./05-command-line.md) peuvent être configurés dans la section `ava` de votre `package.json` ou dans un fichier `ava.config.js`. Cela vous permet de modifier le comportement par défaut de la commande `ava`, ainsi vous n'avez plus besoin à chaque fois de taper les mêmes options sur l'invite de commande.
+Toutes les [options du CLI][CLI] peuvent être configurés dans la section `ava` de votre `package.json` ou dans un fichier `ava.config.js`. Cela vous permet de modifier le comportement par défaut de la commande `ava`, ainsi vous n'avez plus besoin à chaque fois de taper les mêmes options sur l'invite de commande.
 
 Pour ignorer les fichiers, préfixer le pattern avec un `!` (point d'exclamation).
 
@@ -120,6 +120,35 @@ export default ({projectDir}) => {
 
 Notez que la config finale ne doit pas être une promesse.
 
+## Fichiers de configuration alternatifs
+
+La [CLI] vous permet d'indiquer un fichier de configuration spécifique, en utilisant le flag `--config`. Ce fichier est traité comme un fichier `ava.config.js`. Lorsque le flag `--config` est défini, le fichier fourni remplacera toute la configuration des fichiers `package.json` et `ava.config.js`. La configuration n'est pas fusionnée.
+
+Le fichier de configuration *doit* être dans le même répertoire que le fichier `package.json`.
+
+Vous pouvez l'utiliser pour personnaliser la configuration d'un test spécifique. Par exemple, vous pouvez exécuter des tests unitaires séparément des tests d'intégration :
+
+`ava.config.js`:
+
+```js
+export default {
+	files: ['unit-tests/**/*']
+};
+```
+
+`integration-tests.config.js`:
+
+```js
+import baseConfig from './ava.config.js';
+
+export default {
+	...baseConfig,
+	files: ['integration-tests/**/*']
+};
+```
+
+Vous pouvez maintenant exécuter vos tests unitaires via `npx ava` et les tests d'intégration via `npx ava --config integration-tests.config.js`.
+
 ## Profondeur d'affichage d'un objet
 
 Par défaut, AVA affiche les objets imbriqués avec une profondeur de `3`. Toutefois, lors du débogage de tests avec des objets imbriqués plus profondément, il peut être utile d’afficher plus de détails. Cela peut être fait en définissant [`util.inspect.defaultOptions.depth`](https://nodejs.org/api/util.html#util_util_inspect_defaultoptions) avec la profondeur souhaitée, avant l'exécution du test :
@@ -137,3 +166,5 @@ test('Mon test', t => {
 ```
 
 AVA a une profondeur minimale de `3`.
+
+[CLI]: ./05-command-line.md

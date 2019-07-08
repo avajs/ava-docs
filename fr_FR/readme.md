@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/13a89e1643822af17d858784f48b902521ad85b7...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/533ee4bc54cbcd1c2b6ab5c67f3ec8a699965269...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # <img src="https://github.com/avajs/ava/blob/master/media/header.png" title="AVA" alt="AVA logo" width="530">
 
@@ -27,7 +27,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - Exécution des tests simultanément
 - Application de l'écriture des tests atomiques
 - Aucunes globales implicites
-- Inclus les définitions des types pour TypeScript & Flow
+- Inclus les définitions des types pour TypeScript
 - [Magic assert](#magic-assert)
 - [Environnement isolé pour chaque fichier de test](./docs/01-writing-tests.md#isolement-du-processus)
 - [Écriture de vos tests en utilisant la dernière syntaxe de JavaScript](#prise-en-charge-de-la-dernière-syntaxe-de-javascript)
@@ -173,6 +173,7 @@ Nous avons une liste croissante de [pièges classiques](docs/08-common-pitfalls.
 - [Tester les composants Vue.js](docs/recipes/vue.md)
 - [JSPM et SystemJS](docs/recipes/jspm-systemjs.md)
 - [Débogage des tests avec Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
+- [Débogage des tests avec VSCode](docs/recipes/debugging-with-vscode.md)
 - [Débogage des tests avec WebStorm](docs/recipes/debugging-with-webstorm.md)
 - [Tests d'intégration isolés de MongoDB](docs/recipes/isolated-mongodb-integration-tests.md)
 - [Test d'applications Web à l'aide de Puppeteer](docs/recipes/puppeteer.md)

@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a1846615ec4d8b7586b55a4faa2cf538d9e7b080...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7224360c0e43ee84039885bb52b3cc6a79d21163...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que les titres de test ont un certain format
+
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md)
 
 Cette règle est utile lorsque vous souhaitez vous assurer que tous les titres de test correspondent à un format commun pour améliorer la lisibilité lorsque les tests échouent.
 

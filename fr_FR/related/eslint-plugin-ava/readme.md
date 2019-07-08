@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c165ac23173b23f65a8dbcef5969e0f9d9feef03...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/ff4f7606134ee167d0330284d59110033b3287b9...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -41,6 +41,7 @@ Configurez le dans le `package.json`.
 		],
 		"rules": {
 			"ava/assertion-arguments": "error",
+			"ava/hooks-order": "error",
 			"ava/max-asserts": [
 				"off",
 				5
@@ -51,6 +52,8 @@ Configurez le dans le `package.json`.
 			"ava/no-identical-title": "error",
 			"ava/no-ignored-test-files": "error",
 			"ava/no-import-test-files": "error",
+			"ava/no-incorrect-deep-equal": "error",
+			"ava/no-inline-assertions": "error",
 			"ava/no-invalid-end": "error",
 			"ava/no-nested-tests": "error",
 			"ava/no-only-test": "error",
@@ -81,6 +84,7 @@ Configurez le dans le `package.json`.
 Les règles s'activeront uniquement dans les fichiers de test.
 
 - [assertion-arguments](docs/rules/assertion-arguments.md) - Imposer le passage d'arguments corrects aux assertions.
+- [hooks-order](docs/rules/hooks-order.md) - Imposer l'ordre des hooks de test. *(réparable)*
 - [max-asserts](docs/rules/max-asserts.md) - Limiter le nombre d'assertions dans un test.
 - [no-async-fn-without-await](docs/rules/no-async-fn-without-await.md) - S'assurer que les tests async utilisent `await`.
 - [no-cb-test](docs/rules/no-cb-test.md) - S'assurer qu'aucun `test.cb()` n'est utilisé.
@@ -88,6 +92,8 @@ Les règles s'activeront uniquement dans les fichiers de test.
 - [no-identical-title](docs/rules/no-identical-title.md) - S'assurer que chaque test a un titre différent.
 - [no-ignored-test-files](docs/rules/no-ignored-test-files.md) - S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés.
 - [no-import-test-files](docs/rules/no-import-test-files.md) - S'assurer qu'aucun fichier de test n'est importé de n'importe où.
+- [no-incorrect-deep-equal](docs/rules/no-incorrect-deep-equal.md) - Éviter d'utiliser `deepEqual` avec des primitives. *(réparable)*
+- [no-inline-assertions](docs/rules/no-inline-assertions.md) - S'assurer que les assertions ne sont pas appelées depuis des fonctions fléchées sur une ligne. *(réparable)*
 - [no-invalid-end](docs/rules/no-invalid-end.md) - S'assurer que `t.end()` est seulement appelé dans `test.cb()`.
 - [no-nested-tests](docs/rules/no-nested-tests.md) - S'assurer qu'aucun test soit imbriqué.
 - [no-only-test](docs/rules/no-only-test.md) - S'assurer qu'aucun `test.only()` soit présent.
