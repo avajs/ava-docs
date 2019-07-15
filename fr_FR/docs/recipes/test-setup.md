@@ -79,12 +79,12 @@ test.beforeEach(t => {
 	};
 });
 
-test("authentification avec des informations d'identification valides", async t => {
+test('authentification avec des informations d\'identification valides', async t => {
 	const isValid = t.context.authenticator.authenticate(t.context.credentials);
 	t.true(await isValid);
 });
 
-test("authentification avec un nom d'utilisateur invalide", async t => {
+test('authentification avec un nom d\'utilisateur invalide', async t => {
 	t.context.credentials.username = 'bad_username';
 	const isValid = t.context.authenticator.authenticate(t.context.credentials);
 	t.false(await isValid);
@@ -107,13 +107,13 @@ function setup({username = 'admin', password = 's3cr3t'} = {}) {
 	};
 }
 
-test("authentification avec des informations d'identification valides", async t => {
+test('authentification avec des informations d\'identification valides', async t => {
 	const {authenticator, credentials} = setup();
 	const isValid = authenticator.authenticate(credentials);
 	t.true(await isValid);
 });
 
-test("authentification avec un nom d'utilisateur invalide", async t => {
+test('authentification avec un nom d\'utilisateur invalide', async t => {
 	const {authenticator, credentials} = setup({username: 'bad_username'});
 	const isValid = authenticator.authenticate(credentials);
 	t.false(await isValid);
