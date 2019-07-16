@@ -10,17 +10,17 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/03-asserti
 Les assertions sont incluses dans l'[objet d'exécution](./02-execution-context.md) fourni à chaque implémentation de test :
 
 ```js
-test('unicorn est truthy', t => {
-	t.truthy('unicorn'); // Assertion
+test('les licornes sont truthy (vraies)', t => {
+	t.truthy('licornes'); // Assertion
 });
 ```
 
 Les assertions sont liées à leur test de sorte que vous puissiez les affecter à une variable ou les transmettre :
 
 ```js
-test('unicorns sont truthy', t => {
+test('les licornes sont truthy (vraies)', t => {
 	const truthy = t.truthy;
-	truthy('unicorn');
+	truthy('licornes');
 });
 ```
 

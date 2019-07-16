@@ -146,7 +146,7 @@ test.todo('il faudra penser à écrire cela plus tard');
 Vous pouvez signaler que vous devez écrire un test en série :
 
 ```js
-test.serial.todo('penser à l''écrire plus tard');
+test.serial.todo('penser à l\'écrire plus tard');
 ```
 
 ## Test défaillant
