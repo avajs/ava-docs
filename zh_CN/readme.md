@@ -45,28 +45,14 @@ ___
 - 强制编写原子测试
 - 没有隐藏的全局变量
 - 包含 TypeScript 和 Flow 的类型定义
-- [Magic assert](#magic-assert)
-- [为每个测试文件隔离环境](#隔离进程)
-- [用 ES2017 编写测试](#支持-es2017)
-- [支持 Promise](#支持-promise)
-- [支持 Generator](#支持-generator)
-- [支持 Async](#支持-async)
-- [支持 Observable](#支持-observable)
-- [强化断言信息](#强化断言信息)
-- [可选的 TAP 输出显示](#TAP 报告器)
-- [简明的堆栈跟踪](#简明的堆栈跟踪)
-
-
-## 测试语法
-
-```js
-import test from 'ava';
-
-test(t => {
-    t.deepEqual([1, 2], [1, 2]);
-});
-```
-
+- Magic assert
+- 为每个测试文件隔离环境
+- 用 ES2017 编写测试
+- 支持 Promise
+- 支持 Generator
+- 支持 Async
+- 强化断言信息
+- 可选的 TAP 输出显示
 
 ## 用法
 
