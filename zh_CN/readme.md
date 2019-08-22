@@ -21,20 +21,20 @@ Read our [contributing guide](contributing.md) if you're looking to contribute (
 Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
 
 
-## Why AVA?
+## 为什么选择 AVA？
 
 - Minimal and fast
-- Simple test syntax
+- 简单的测试语法
 - Runs tests concurrently
 - Enforces writing atomic tests
-- No implicit globals
+- 没有隐式的全局变量
 - Includes TypeScript definitions
 - [Magic assert](#magic-assert)
 - [Isolated environment for each test file](./docs/01-writing-tests.md#process-isolation)
-- [Write your tests using the latest JavaScript syntax](#latest-javascript-support)
-- [Promise support](./docs/01-writing-tests.md#promise-support)
-- [Async function support](./docs/01-writing-tests.md#async-function-support)
-- [Observable support](./docs/01-writing-tests.md#observable-support)
+- [使用最新的 JavaScript 语法编写你的测试](#latest-javascript-support)
+- [支持 Promise](./docs/01-writing-tests.md#promise-support)
+- [支持 Async 函数](./docs/01-writing-tests.md#async-function-support)
+- [支持 Observable](./docs/01-writing-tests.md#observable-support)
 - [Enhanced assertion messages](./docs/03-assertions.md#enhanced-assertion-messages)
 - [Automatic parallel test runs in CI](#parallel-runs-in-ci)
 - [TAP reporter](./docs/05-command-line.md#tap-reporter)
@@ -42,13 +42,13 @@ Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 
 ## Usage
 
-To install and set up AVA, run:
+要安装并配置 AVA，运行：
 
 ```console
 npm init ava
 ```
 
-Your `package.json` will then look like this (exact version notwithstanding):
+你的 `package.json` 看起来将会像这样 (exact version notwithstanding)：
 
 ```json
 {
@@ -62,13 +62,13 @@ Your `package.json` will then look like this (exact version notwithstanding):
 }
 ```
 
-Or if you prefer using Yarn:
+或者如果你偏好使用 Yarn：
 
 ```console
 yarn add ava --dev
 ```
 
-Alternatively you can install `ava` manually:
+相应的你也可以手动安装 `ava`：
 
 ```console
 npm install --save-dev ava
@@ -76,7 +76,7 @@ npm install --save-dev ava
 
 Don't forget to configure the `test` script in your `package.json` as per above.
 
-### Create your test file
+### 创建你的测试文件
 
 Create a file named `test.js` in the project root directory:
 
@@ -93,7 +93,7 @@ test('bar', async t => {
 });
 ```
 
-### Running your tests
+### 运行你的测试
 
 ```console
 npm test
@@ -111,7 +111,7 @@ Run with the `--watch` flag to enable AVA's [watch mode](docs/recipes/watch-mode
 npx ava --watch
 ```
 
-## Supported Node.js versions
+## 所支持的 Node.js 版本
 
 AVA supports the latest release of any major version that [is supported by Node.js itself](https://github.com/nodejs/Release#release-schedule). Read more in our [support statement](docs/support-statement.md).
 
@@ -127,7 +127,7 @@ AVA adds code excerpts and clean diffs for actual and expected values. If values
 
 AVA automatically removes unrelated lines in stack traces, allowing you to find the source of an error much faster, as seen above.
 
-### Latest JavaScript support
+### 最新的 JavaScript 支持
 
 AVA uses [Babel 7](https://babeljs.io) so you can use the latest JavaScript syntax in your tests. There is no extra setup required. You don't need to be using Babel in your own project for this to work either.
 
@@ -141,7 +141,7 @@ You can disable this syntax support, or otherwise customize AVA's Babel pipeline
 
 AVA automatically detects whether your CI environment supports parallel builds. Each build will run a subset of all test files, while still making sure all tests get executed. See the [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) package for a list of supported CI environments.
 
-## Documentation
+## 文档
 
 Please see the [files in the `docs` directory](./docs):
 
@@ -201,7 +201,7 @@ It's the [Andromeda galaxy](https://simple.wikipedia.org/wiki/Andromeda_galaxy).
 
 [Concurrency is not parallelism. It enables parallelism.](https://stackoverflow.com/q/1050222)
 
-## Support
+## 支持
 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/ava)
 - [Spectrum](https://spectrum.chat/ava)
@@ -217,14 +217,14 @@ It's the [Andromeda galaxy](https://simple.wikipedia.org/wiki/Andromeda_galaxy).
 - [grunt-ava](https://github.com/avajs/grunt-ava) - Run tests with grunt
 - [More…](https://github.com/avajs/awesome-ava#packages)
 
-## Links
+## 链接
 
 - [AVA stickers, t-shirts, etc](https://www.redbubble.com/people/sindresorhus/works/30330590-ava-logo)
 - [Awesome list](https://github.com/avajs/awesome-ava)
 - [AVA Casts](http://avacasts.com)
 - [More…](https://github.com/avajs/awesome-ava)
 
-## Team
+## 团队
 
 [![Mark Wubben](https://github.com/novemberborn.png?size=100)](https://github.com/novemberborn) | [![Sindre Sorhus](https://github.com/sindresorhus.png?size=100)](https://github.com/sindresorhus) | [![Vadim Demedes](https://github.com/vadimdemedes.png?size=100)](https://github.com/vadimdemedes)
 ---|---|---
