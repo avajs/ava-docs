@@ -25,10 +25,10 @@ Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 
 - Minimal and fast
 - 简单的测试语法
-- Runs tests concurrently
-- Enforces writing atomic tests
+- 并行地运行测试
+- 强制编写原子性的测试
 - 没有隐式的全局变量
-- Includes TypeScript definitions
+- 包含 TypeScript 的类型定义
 - [Magic assert](#magic-assert)
 - [Isolated environment for each test file](./docs/01-writing-tests.md#process-isolation)
 - [使用最新的 JavaScript 语法编写你的测试](#latest-javascript-support)
@@ -36,7 +36,7 @@ Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [支持 Async 函数](./docs/01-writing-tests.md#async-function-support)
 - [支持 Observable](./docs/01-writing-tests.md#observable-support)
 - [Enhanced assertion messages](./docs/03-assertions.md#enhanced-assertion-messages)
-- [Automatic parallel test runs in CI](#parallel-runs-in-ci)
+- [在 CI 上自动的并发运行测试](#parallel-runs-in-ci)
 - [TAP reporter](./docs/05-command-line.md#tap-reporter)
 
 
@@ -78,7 +78,7 @@ Don't forget to configure the `test` script in your `package.json` as per above.
 
 ### 创建你的测试文件
 
-Create a file named `test.js` in the project root directory:
+在项目根目录创建 `test.js` 文件：
 
 ```js
 import test from 'ava';
@@ -99,7 +99,7 @@ test('bar', async t => {
 npm test
 ```
 
-Or with `npx`:
+或者使用 `npx`:
 
 ```console
 npx ava
@@ -129,29 +129,30 @@ AVA automatically removes unrelated lines in stack traces, allowing you to find 
 
 ### 最新的 JavaScript 支持
 
-AVA uses [Babel 7](https://babeljs.io) so you can use the latest JavaScript syntax in your tests. There is no extra setup required. You don't need to be using Babel in your own project for this to work either.
+AVA 使用了 [Babel 7](https://babeljs.io)，所以你可以在你的测试中使用最新的 JavaScript 语法。无需额外的配置。你并不需要在为此你自己的项目中使用 Babel。
 
 We aim to support all [finished syntax proposals](https://github.com/tc39/proposals/blob/master/finished-proposals.md), as well as all syntax from ratified JavaScript versions (e.g. ES2017). See our [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) preset for the currently supported proposals.
 
 Please note that we do not add or modify built-ins. For example, if you use [`Object.fromEntries()`](https://github.com/tc39/proposal-object-from-entries) in your tests, they will crash in Node.js 10 which does not implement this method.
 
-You can disable this syntax support, or otherwise customize AVA's Babel pipeline. See our [Babel recipe] for more details.
+你可以禁用这个语法支持，或者自定义 AVA 的 Babel pipeline。请查阅我们的 [Babel recipe] 了解更多信息。
 
 ### Parallel runs in CI
 
-AVA automatically detects whether your CI environment supports parallel builds. Each build will run a subset of all test files, while still making sure all tests get executed. See the [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) package for a list of supported CI environments.
+AVA 会自动检查你的 CI 环境是否支持并行构建。Each build will run a subset of all test files, while still making sure all tests get executed. See the [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) package for a list of supported CI environments.
+
 
 ## 文档
 
-Please see the [files in the `docs` directory](./docs):
+请翻阅 [files in the `docs` directory](./docs):
 
-* [Writing tests](./docs/01-writing-tests.md)
+* [编写测试](./docs/01-writing-tests.md)
 * [Execution context](./docs/02-execution-context.md)
-* [Assertions](./docs/03-assertions.md)
-* [Snapshot testing](./docs/04-snapshot-testing.md)
+* [断言](./docs/03-assertions.md)
+* [Snapshot 测试](./docs/04-snapshot-testing.md)
 * [Command line (CLI)](./docs/05-command-line.md)
-* [Configuration](./docs/06-configuration.md)
-* [Test timeouts](./docs/07-test-timeouts.md)
+* [配置](./docs/06-configuration.md)
+* [测试超时](./docs/07-test-timeouts.md)
 
 ### Common pitfalls
 
@@ -160,19 +161,19 @@ We have a growing list of [common pitfalls](docs/08-common-pitfalls.md) you may 
 ### Recipes
 
 - [Test setup](docs/recipes/test-setup.md)
-- [Code coverage](docs/recipes/code-coverage.md)
-- [Watch mode](docs/recipes/watch-mode.md)
-- [Endpoint testing](docs/recipes/endpoint-testing.md)
-- [When to use `t.plan()`](docs/recipes/when-to-use-plan.md)
-- [Browser testing](docs/recipes/browser-testing.md)
+- [代码覆盖率](docs/recipes/code-coverage.md)
+- [Watch 模式](docs/recipes/watch-mode.md)
+- [Endpoint 测试](docs/recipes/endpoint-testing.md)
+- [何时使用 `t.plan()`](docs/recipes/when-to-use-plan.md)
+- [浏览器测试](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
 - [Flow](docs/recipes/flow.md)
-- [Configuring Babel][Babel recipe]
-- [Using ES modules](docs/recipes/es-modules.md)
+- [配置 Babel][Babel recipe]
+- [使用 ES modules](docs/recipes/es-modules.md)
 - [Passing arguments to your test files](docs/recipes/passing-arguments-to-your-test-files.md)
-- [Testing React components](docs/recipes/react.md)
-- [Testing Vue.js components](docs/recipes/vue.md)
-- [JSPM and SystemJS](docs/recipes/jspm-systemjs.md)
+- [测试 React 组件](docs/recipes/react.md)
+- [测试 Vue.js 组件](docs/recipes/vue.md)
+- [JSPM 和 SystemJS](docs/recipes/jspm-systemjs.md)
 - [Debugging tests with Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
 - [Debugging tests with VSCode](docs/recipes/debugging-with-vscode.md)
 - [Debugging tests with WebStorm](docs/recipes/debugging-with-webstorm.md)
@@ -181,7 +182,7 @@ We have a growing list of [common pitfalls](docs/08-common-pitfalls.md) you may 
 
 ## FAQ
 
-### Why not `mocha`, `tape`, `tap`?
+### 为什么不选择 `mocha`, `tape`, `tap`?
 
 Mocha requires you to use implicit globals like `describe` and `it` with the default interface (which most people use). It's not very opinionated and executes tests serially without process isolation, making it slow.
 
@@ -189,11 +190,11 @@ Tape and tap are pretty good. AVA is highly inspired by their syntax. They too e
 
 In contrast AVA is highly opinionated and runs tests concurrently, with a separate process for each test file. Its default reporter is easy on the eyes and yet AVA still supports TAP output through a CLI flag.
 
-### How is the name written and pronounced?
+### 名字如何拼写的发音?
 
-AVA, not Ava or ava. Pronounced [`/ˈeɪvə/`](media/pronunciation.m4a?raw=true): Ay (f**a**ce, m**a**de) V (**v**ie, ha**v**e) A (comm**a**, **a**go)
+AVA, 不是 Ava 或 ava. 读作 [`/ˈeɪvə/`](media/pronunciation.m4a?raw=true): Ay (f**a**ce, m**a**de) V (**v**ie, ha**v**e) A (comm**a**, **a**go)
 
-### What is the header background?
+### 头部的背景图是什么?
 
 It's the [Andromeda galaxy](https://simple.wikipedia.org/wiki/Andromeda_galaxy).
 
@@ -207,7 +208,7 @@ It's the [Andromeda galaxy](https://simple.wikipedia.org/wiki/Andromeda_galaxy).
 - [Spectrum](https://spectrum.chat/ava)
 - [Twitter](https://twitter.com/ava__js)
 
-## Related
+## 相关
 
 - [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava) - Lint rules for AVA tests
 - [sublime-ava](https://github.com/avajs/sublime-ava) - Snippets for AVA tests
