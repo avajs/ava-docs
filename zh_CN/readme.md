@@ -9,11 +9,11 @@ ___
 [![Build Status](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava)  [![Coverage Status](https://codecov.io/gh/avajs/ava/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/ava/branch/master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
 [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
 
-Testing can be a drag. AVA helps you get it done. AVA is a test runner for Node.js with a concise API, detailed error output, embrace of new language features and process isolation that let you write tests more effectively. So you can ship more awesome code. 🚀
+测试可能是一个累赘。但 AVA 可以帮助你完成它。AVA 是一个基于 Node.js 的的测试运行工具，通过提供简洁的 API，详尽的错误输出，拥抱新的语言特性和进程隔离的特性让你更高效地编写测试。所以你可以产出更多更好的代码。🚀
 
-Follow the [AVA Twitter account](https://twitter.com/ava__js) for updates.
+关注 [AVA 的 Twitter 账号](https://twitter.com/ava__js) 以获取更新。
 
-Read our [contributing guide](contributing.md) if you're looking to contribute (issues / PRs / etc).
+如果你想参与贡献（issues / PRs 等），请翻阅我们的 [贡献指南](contributing.md)
 
 ![](media/mini-reporter.gif)
 
@@ -23,7 +23,7 @@ Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 
 ## 为什么选择 AVA？
 
-- Minimal and fast
+- 轻量且高效
 - 简单的测试语法
 - 并行地运行测试
 - 强制编写原子性的测试
@@ -74,7 +74,7 @@ yarn add ava --dev
 npm install --save-dev ava
 ```
 
-Don't forget to configure the `test` script in your `package.json` as per above.
+别忘记参照下文在你的 `package.json` 配置 `test` 要运行的脚本。
 
 ### 创建你的测试文件
 
@@ -105,7 +105,7 @@ npm test
 npx ava
 ```
 
-Run with the `--watch` flag to enable AVA's [watch mode](docs/recipes/watch-mode.md):
+通过 `--watch` flag 运行以启用 AVA 的 [watch 模式](docs/recipes/watch-mode.md)：
 
 ```console
 npx ava --watch
@@ -133,13 +133,13 @@ AVA 使用了 [Babel 7](https://babeljs.io)，所以你可以在你的测试中�
 
 We aim to support all [finished syntax proposals](https://github.com/tc39/proposals/blob/master/finished-proposals.md), as well as all syntax from ratified JavaScript versions (e.g. ES2017). See our [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) preset for the currently supported proposals.
 
-Please note that we do not add or modify built-ins. For example, if you use [`Object.fromEntries()`](https://github.com/tc39/proposal-object-from-entries) in your tests, they will crash in Node.js 10 which does not implement this method.
+请注意我们没有修改或添加任何内建的方法，如果你在你的测试中使用 [`Object.fromEntries()`](https://github.com/tc39/proposal-object-from-entries)，由于 Node.js 10 不支持这个方法，这将会在 Node.js 10 下会崩溃。
 
 你可以禁用这个语法支持，或者自定义 AVA 的 Babel pipeline。请查阅我们的 [Babel recipe] 了解更多信息。
 
-### Parallel runs in CI
+### CI 并行构建
 
-AVA 会自动检查你的 CI 环境是否支持并行构建。Each build will run a subset of all test files, while still making sure all tests get executed. See the [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) package for a list of supported CI environments.
+AVA 会自动检查你的 CI 环境是否支持并行构建。Each build will run a subset of all test files, while still making sure all tests get executed. 请翻阅 [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) 包以获得所支持的 CI 环境列表。
 
 
 ## 文档
@@ -170,15 +170,15 @@ We have a growing list of [common pitfalls](docs/08-common-pitfalls.md) you may 
 - [Flow](docs/recipes/flow.md)
 - [配置 Babel][Babel recipe]
 - [使用 ES modules](docs/recipes/es-modules.md)
-- [Passing arguments to your test files](docs/recipes/passing-arguments-to-your-test-files.md)
+- [向你的测试文件传递参数](docs/recipes/passing-arguments-to-your-test-files.md)
 - [测试 React 组件](docs/recipes/react.md)
 - [测试 Vue.js 组件](docs/recipes/vue.md)
 - [JSPM 和 SystemJS](docs/recipes/jspm-systemjs.md)
-- [Debugging tests with Chrome DevTools](docs/recipes/debugging-with-chrome-devtools.md)
-- [Debugging tests with VSCode](docs/recipes/debugging-with-vscode.md)
-- [Debugging tests with WebStorm](docs/recipes/debugging-with-webstorm.md)
-- [Isolated MongoDB integration tests](docs/recipes/isolated-mongodb-integration-tests.md)
-- [Testing web apps using Puppeteer](docs/recipes/puppeteer.md)
+- [使用 Chrome DevTools 调试测试](docs/recipes/debugging-with-chrome-devtools.md)
+- [使用 VSCode 调试测试](docs/recipes/debugging-with-vscode.md)
+- [使用 WebStorm 调试测试](docs/recipes/debugging-with-webstorm.md)
+- [隔离的 MongoDB 集成测试](docs/recipes/isolated-mongodb-integration-tests.md)
+- [使用 Puppeteer 测试 web 应用](docs/recipes/puppeteer.md)
 
 ## FAQ
 
@@ -190,7 +190,7 @@ Tape and tap are pretty good. AVA is highly inspired by their syntax. They too e
 
 In contrast AVA is highly opinionated and runs tests concurrently, with a separate process for each test file. Its default reporter is easy on the eyes and yet AVA still supports TAP output through a CLI flag.
 
-### 名字如何拼写的发音?
+### 名字如何拼写和发音?
 
 AVA, 不是 Ava 或 ava. 读作 [`/ˈeɪvə/`](media/pronunciation.m4a?raw=true): Ay (f**a**ce, m**a**de) V (**v**ie, ha**v**e) A (comm**a**, **a**go)
 
