@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/bccd297f38c9f4cf6dbb16dffa7ee8753dbbd12f...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/7b54317b5cf2d4a849fe784a1b946f5c2159be8e...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Ecriture des tests
 

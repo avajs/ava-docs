@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/2762d3cba162b0a416983b7cfbbb54b7c7fe27b3...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/master/docs/recipes/babel.md). Voici un [lien](https://github.com/avajs/ava/compare/1bcaaa4e6eca3cb9a31b7e4c7ce0a4ba40611e7d...master#diff-dc9bcfba97caa3c85c58f839ac3f6d37) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `babel.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de Babel
 
@@ -139,6 +139,56 @@ Vous pouvez désactiver complètement l'utilisation de Babel par AVA.
 	"ava": {
 		"babel": false,
 		"compileEnhancements": false
+	}
+}
+```
+
+## Fonctionnalité expérimentale : pas de Babel hors de la boîte
+
+Une future version de AVA n’utilisera pas Babel hors de la boîte. Vous pouvez choisir cette fonctionnalité. **Cette fonctionnalité peut être modifiée ou supprimée à tout moment** :
+
+**`package.json`:**
+
+```js
+{
+	"ava": {
+		"nonSemVerExperiments": {
+			"noBabelOutOfTheBox": true
+		}
+	}
+}
+```
+
+Cela désactive le pipeline Babel de AVA, bien que vous puissiez toujours l’activer en le configurant comme décrit ci-dessus.
+
+`compileEnhancements` ne peut plus être configuré sur la configuration AVA de niveau supérieur. Il doit plutôt être configuré dans la configuration `babel` de AVA. La valeur par défaut est `true`.
+
+**`package.json` :**
+
+```json
+{
+	"ava": {
+		"nonSemVerExperiments": {
+			"noBabelOutOfTheBox": true
+		},
+		"babel": {
+			"compileEnhancements": false
+		}
+	}
+}
+```
+
+Vous pouvez désactiver la compilation sans amélioration de vos fichiers de test en définissant `testOptions` sur `false`.
+
+```json
+{
+	"ava": {
+		"nonSemVerExperiments": {
+			"noBabelOutOfTheBox": true
+		},
+		"babel": {
+			"testOptions": false
+		}
 	}
 }
 ```

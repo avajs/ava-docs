@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/428d70dd772487e8ffa22921f9baf2712d5458a7...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c5994700e90e5fef78c1bf50991bb84a92d202b4...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun fichier de test n'est importé de n'importe où
 
@@ -54,5 +54,5 @@ Consultez aussi la [configuration de AVA](https://github.com/avajs/ava-docs/blob
 Vous pouvez définir l'option de cette manière :
 
 ```js
-"ava/no-ignored-test-files": ["error", {"files": ["lib/**/*.test.js", "utils/**/*.test.js"]}]
+"ava/no-import-test-files": ["error", {"files": ["lib/**/*.test.js", "utils/**/*.test.js"]}]
 ```

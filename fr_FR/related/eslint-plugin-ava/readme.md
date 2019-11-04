@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/ff4f7606134ee167d0330284d59110033b3287b9...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/6bce418d601e16afc57822f3c2e1a0f805b4bee5...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
@@ -33,7 +33,7 @@ Configurez le dans le `package.json`.
 			"es6": true
 		},
 		"parserOptions": {
-			"ecmaVersion": 2019,
+			"ecmaVersion": 2020,
 			"sourceType": "module"
 		},
 		"plugins": [
@@ -133,8 +133,3 @@ Activez la dans votre `package.json` avec l'option `extends` :
 Consulter les [docs ESLint](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) pour plus d'informations sur l'extension des fichier de config.
 
 **Remarque** : Cette config activera aussi correctement les [options du parser](http://eslint.org/docs/user-guide/configuring#specifying-parser-options) et de l'[environnement](http://eslint.org/docs/user-guide/configuring#specifying-environments).
-
-
-## Licence
-
-MIT

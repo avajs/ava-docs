@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/533ee4bc54cbcd1c2b6ab5c67f3ec8a699965269...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/4c890d9ae260b03d3240db7fed5367d238b6ca8f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # <img src="https://github.com/avajs/ava/blob/master/media/header.png" title="AVA" alt="AVA logo" width="530">
 
@@ -221,6 +221,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 - [Stickers AVA, t-shirts, etc](https://www.redbubble.com/people/sindresorhus/works/30330590-ava-logo)
 - [La liste Awesome](https://github.com/avajs/awesome-ava)
 - [AVA Casts](http://avacasts.com)
+- [Vous aimez AVA ? Faites un don ici !](https://opencollective.com/ava)
 - [Plus…](https://github.com/avajs/awesome-ava)
 
 ## L'équipe

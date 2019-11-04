@@ -1,17 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/49b202fb5c376e71c1400f6c35043280cf417140...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/08-common-pitfalls.md)
 
-## Plugin ESLint
-
 Si vous utilisez [ESLint](http://eslint.org/), vous pouvez installer [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Il vous aidera à utiliser correctement AVA et ainsi vous évitera certains pièges classiques.
 
-#### Transpilation des modules importés
+## Transpilation des modules importés
 
 AVA transpile actuellement seulement les fichier de test et helper. *Il ne transpilera pas les modules importés (```import```) depuis le fichier de test.* Cela peut ne pas être ce que vous attendez, mais il y a des solutions de contournement.
 
@@ -74,17 +72,75 @@ test('fetches foo', async t => {
 });
 ```
 
-### Affectation des exceptions non interceptées par les tests
+## Affectation des exceptions non interceptées par les tests
 
 AVA [ne peut pas tracer les exceptions non interceptées](https://github.com/avajs/ava/issues/214) par le retour du test qui les déclenche. Les fonctions de prise de callback peuvent conduire à des exceptions non interceptées qui peuvent ensuite être difficiles à déboguer. Utilisez la transformation d'un callback en promesse et l'utilisation de `async`/`await`, comme dans l'exemple ci-dessus. Cela devrait permettre à AVA d'attraper l'exception et de l'attribuer au test correctement.
 
-### Pourquoi les messages d'assertion améliorés ne s'affichent pas ?
+## Pourquoi les messages d'assertion améliorés ne s'affichent pas ?
 
 Assurez-vous que le premier paramètre passé dans votre test est nommé `t`. C'est une exigence de [`power-assert`](https://github.com/power-assert-js/power-assert), la bibliothèque qui fournit les [messages améliorés](./03-assertions.md#messages-dassertions-améliorés).
 
 ```js
 test('un est un', t => {
 	t.assert(1 === 1);
+});
+```
+
+## Partage de variables entre tests asynchrones
+
+Par défaut, AVA exécute les tests simultanément. Cela peut poser problème si vos tests sont asynchrones et partagent des variables.
+
+Prenons cet exemple bidon :
+
+```js
+import test from 'ava';
+
+let count = 0;
+const incr = async () => {
+	await true;
+	count = count + 1;
+};
+
+test.beforeEach('réinitialise le compteur', () => {
+	count = 0;
+});
+
+test('incrémente une fois', async t => {
+	await incr();
+	t.is(count, 1);
+});
+
+test('incrémente deux fois', async t => {
+	await incr();
+	await incr();
+	t.is(count, 2);
+});
+```
+
+Les tests simultanés permettent aux tests asynchrones de s'exécuter plus rapidement, mais s'ils reposent sur un état partagé, cela peut entraîner des échecs de test inattendus. Si l'état partagé ne peut pas être évité, vous pouvez exécuter vos tests en série :
+
+```js
+import test from 'ava';
+
+let count = 0;
+const incr = async () => {
+	await true;
+	count = count + 1;
+};
+
+test.beforeEach('réinitialise le compteur', () => {
+	count = 0;
+});
+
+test.serial('incrémente une fois', async t => {
+	await incr();
+	t.is(count, 1);
+});
+
+test.serial('incrémente deux fois', async t => {
+	await incr();
+	await incr();
+	t.is(count, 2);
 });
 ```
 

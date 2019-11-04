@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/2dae2bfaf4b4ae53700fa439f34923b5a2c35a83...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/master/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/4fdb02dd66b56f0204e09a7970416d5075f49a3f...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
@@ -166,5 +166,29 @@ test('Mon test', t => {
 ```
 
 AVA a une profondeur minimale de `3`.
+
+## Expérimentations
+
+De temps en temps, AVA implémentera des fonctionnalités expérimentales. Celles-ci peuvent changer ou être supprimées à tout moment, pas seulement lorsqu'une nouvelle version majeure est disponible. Vous pouvez choisir une telle fonctionnalité en l'activant dans la configuration `nonSemVerExperiments`.
+
+`ava.config.js` :
+```js
+export default {
+	nonSemVerExperiments: {
+		feature: true
+	}
+};
+```
+
+Vous pouvez choisir la nouvelle assertion `t.try ()` en spécifiant `tryAssertion` :
+
+`ava.config.js` :
+```js
+export default {
+	nonSemVerExperiments: {
+		tryAssertion: true
+	}
+};
+```
 
 [CLI]: ./05-command-line.md

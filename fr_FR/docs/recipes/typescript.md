@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/2daf6a9ba143cfdc684afae354b0b6baac1e733e...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/7c535b2fe8b33611cf5f280148d47c474c53ed30...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,13 +9,13 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Remarque : la définition de AVA a été testée avec la version 3.5.1.
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Remarque : la définition de AVA a été testée avec la version 3.6.3.
 
 ## Configuration de AVA pour compiler des fichiers TypeScript à la volée
 
 Vous pouvez configurer AVA pour reconnaître les fichiers TypeScript. Ensuite, avec `ts-node` installé, vous pouvez les compiler à la volée.
 
-**`package.json` :**
+`package.json` :
 
 ```json
 {
@@ -33,6 +33,49 @@ Vous pouvez configurer AVA pour reconnaître les fichiers TypeScript. Ensuite, a
 
 Il est intéressant de noter qu'avec cette configuration, les tests échoueront s'il y a des erreurs de construction du TypeScript. Si vous voulez tester en ignorant ces erreurs, vous pouvez utiliser `ts-node/register/transpile-only` à la place de `ts-node/register`.
 
+### Utilisation du mapping de chemin de module
+
+`ts-node` [ne prend pas en charge le mapping de chemin de module](https://github.com/TypeStrong/ts-node/issues/138), cependant, vous pouvez utiliser [`tsconfig-paths`](https://github.com/dividab/tsconfig-paths#readme).
+
+Une fois installé, ajoutez l'entrée `tsconfig-paths/register` à la section `require` de la config AVA :
+
+`package.json`:
+
+```json
+{
+	"ava": {
+		"compileEnhancements": false,
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register",
+			"tsconfig-paths/register"
+		]
+	}
+}
+```
+
+Ensuite, vous pouvez commencer à utiliser les alias de module :
+
+`tsconfig.json`:
+```json
+{
+	"baseUrl": ".",
+	"paths": {
+		"@helpers/*": ["helpers/*"]
+	}
+}
+```
+
+Test :
+
+```ts
+import myHelper from '@helpers/myHelper';
+
+// Reste du fichier
+```
+
 ## Compilation des fichiers TypeScript avant d'exécuter AVA
 
 Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord le projet puis exécutera AVA.
@@ -45,7 +88,7 @@ Ajoutez un script `test` dans le fichier `package.json`. Cela compilera d'abord 
 }
 ```
 
-Make sure that AVA runs your built TypeScript files.
+Assurez-vous qu'AVA exécute vos fichiers TypeScript créés.
 
 ## Ecriture des tests
 
