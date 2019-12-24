@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [endpoint-testing-with-mongoose.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing-with-mongoose.md). Voici un [lien](https://github.com/avajs/ava/compare/b00782457410704d4515975691ffd7ed71c07f17...master#diff-0d4979fa38dcd3f583de1cad2529b9c4) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing-with-mongoose.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [endpoint-testing-with-mongoose.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing-with-mongoose.md). Voici un [lien](https://github.com/avajs/ava/compare/6b5a71356a2839c8b39ee89763527589957ef44e...master#diff-0d4979fa38dcd3f583de1cad2529b9c4) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing-with-mongoose.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester un endpoint avec Mongoose
 
@@ -45,7 +45,7 @@ Incluez d'abord les bibliothèques dont vous avez besoin :
 // Bibliothèques utiles pour les tests
 import test from 'ava'
 import request from 'supertest'
-import MongodbMemoryServer from 'mongodb-memory-server'
+import {MongoMemoryServer} from 'mongodb-memory-server'
 import mongoose from 'mongoose'
 
 // Votre serveur et vos modèles
@@ -57,7 +57,7 @@ Ensuite lancez l'instance MongoDB en mémoire et connectez-vous à Mongoose :
 
 ```js
 // Démarre l'instance MongoDB
-const mongod = new MongodbMemoryServer()
+const mongod = new MongoMemoryServer()
 
 // Créer la connexion à Mongoose avant d'exécuter les tests
 test.before(async () => {

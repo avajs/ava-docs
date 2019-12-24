@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/67e4deac2857503e5fac7d38da2d23014eb29724...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/641c52f2ce7c043c434bdb079b8857e4acc942a9...master#diff-aee54ab6a703c02779edb3ebbb35e96f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester un endpoint
 
@@ -22,7 +22,7 @@ const app = require('../app');
 
 test.before(async t => {
 	t.context.server = http.createServer(app);
-	t.context.baseURL = await listen(t.context.server);
+	t.context.baseUrl = await listen(t.context.server);
 });
 
 test.after.always(t => {
@@ -30,7 +30,7 @@ test.after.always(t => {
 });
 
 test.serial('get /user', async t => {
-	const res = await got('/user', { baseURL: t.context.baseURL, json: true });
+	const res = await got('/user', { baseUrl: t.context.baseUrl, json: true });
 	t.is(res.body.email, 'ava@rocks.com');
 });
 ```

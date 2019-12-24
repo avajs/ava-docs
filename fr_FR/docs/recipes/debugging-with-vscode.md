@@ -1,46 +1,49 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/0a5fe429ca37c025a15c5af919827436cc413abc...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/4953457277a355e231beaa11431eb58a209ae7fc...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/debugging-with-vscode.md)
 
-## Installation
+**Cette recette décrit la nouvelle commande `inspect` dans la prochaine version de AVA 3. Consultez à la place la documentation de [AVA 2](https://github.com/avajs/ava-docs/blob/abdd141b225a15b504c31741c61e081026991e35/fr_FR/docs/recipes/debugging-with-vscode.md).**
 
-Dans la barre latérale, cliquez sur `Debug`.
+Vous pouvez déboguer vos tests en utilisant [Visual Studio Code](https://code.visualstudio.com/).
 
-Ajoutez une nouvelle configuration dans le menu déroulant à côté du bouton vert `Debug` : `Add configuration`. Cela ouvrira `launch.json` avec toutes les configurations de débogage.
+## Création d'une configuration de lancement
 
-Ajoutez à l'objet `configurations` ce qui suit :
+1. Ouvrez un espace de travail pour votre projet.
+1. Dans la barre latérale, cliquez sur le bouton *Debug*.
+1. Créez un fichier `launch.json`.
+1. Sélectionnez l'environnement Node.js.
+1. Ajoutez ce qui suit à l'objet `configurations` :
 
-```json
-{
-	"type": "node",
-	"request": "launch",
-	"name": "Exécute les tests AVA",
-	"program": "${workspaceFolder}/node_modules/ava/profile.js",
-	"args": [
-	  "${file}"
-	],
-	"skipFiles": [
-		"<node_internals>/**/*.js"
-	]
-}
-```
+  ```json
+  {
+    "type": "node",
+    "request": "launch",
+    "name": "Déboguer le fichier de test AVA",
+    "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ava",
+    "runtimeArgs": [
+      "debug",
+      "--break",
+      "${file}"
+    ],
+    "port": 9229,
+    "outputCapture": "std",
+    "skipFiles": [
+      "<node_internals>/**/*.js"
+    ]
+  }
+  ```
+1. Enregistrez vos modifications dans le fichier `launch.json`.
 
-Sauvez cette configuration après son ajout.
+## Utilisation du débogueur
 
-## Débogage
+Ouvrez le ou les fichiers que vous souhaitez déboguer. Vous pouvez définir des points d'arrêt ou utiliser le mot clé `debugger`.
 
-> **Remarque :** Le fichier que vous voulez déboguer doit être ouvert et actif
-
-> **Remarque :** Les points d'arrêt dans VSCode sont parfois un peu bogués (surtout avec du code async). `debugger;` fonctionne toujours bien.
-
-Définissez des points d'arrêt dans le code **ou** écrivez `debugger;` à l'endroit où il devrait s'arrêter.
-
-Appuyez sur le bouton `Debug` à côté de la liste des configurations en haut à gauche dans la vue `Debug`. Une fois que le point d'arrêt est atteint, vous pouvez évaluer les variables et suivre le code pas à pas.
+Maintenant, *avec un fichier de test ouvert*, à partir du menu *Debug* exécutez la configuration *Déboguer le fichier de test AVA*.
 
 ## Débogage en série
 
@@ -48,17 +51,21 @@ Par défaut, AVA exécute les tests simultanément. Cela peut compliquer le déb
 
 ```json
 {
-	"type": "node",
-	"request": "launch",
-	"name": "Exécute les tests AVA en série",
-	"program": "${workspaceFolder}/node_modules/ava/profile.js",
-	"args": [
-	  "${file}",
-	  "--serial"
-	],
-	"skipFiles": [
-		"<node_internals>/**/*.js"
-	]
+  "type": "node",
+  "request": "launch",
+  "name": "Déboguer le fichier de test AVA",
+  "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ava",
+  "runtimeArgs": [
+    "debug",
+    "--break",
+    "--serial",
+    "${file}"
+  ],
+  "port": 9229,
+  "outputCapture": "std",
+  "skipFiles": [
+    "<node_internals>/**/*.js"
+  ]
 }
 ```
 

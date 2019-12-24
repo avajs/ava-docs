@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/7c535b2fe8b33611cf5f280148d47c474c53ed30...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Voici un [lien](https://github.com/avajs/ava/compare/cdb5019b16a797558416bce01a4cd76102267eeb...master#diff-60cce07a584082115d230f2e3d571ad6) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `typescript.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # TypeScript
 
@@ -9,7 +9,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/ty
 
 AVA est livré avec un fichier de définition TypeScript. Cela permet aux développeurs de profiter de TypeScript pour écrire des tests.
 
-Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Remarque : la définition de AVA a été testée avec la version 3.6.3.
+Ce guide suppose que vous avez déjà configuré TypeScript pour votre projet. Remarque : la définition de AVA a été testée avec la version 3.7.4.
 
 ## Configuration de AVA pour compiler des fichiers TypeScript à la volée
 
