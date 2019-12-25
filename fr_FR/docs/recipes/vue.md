@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants Vue.js
 
@@ -53,7 +53,7 @@ hooks(['vue', 'js']).exclude(({filename}) => filename.match(/\/node_modules\//))
 
 **Remarque :** Si vous utilisez _babel-plugin-webpack-alias-7_, vous devez aussi exclure votre fichier webpack, par exemple `filename.includes(/\/node_modules\//) || filename.includes('webpack.config.test.js')`
 
-Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans la [recette Babel](babel.md).
+Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA dans [`@ava/babel`](https://github.com/avajs/babel).
 
 ## Exemple de test instantané
 

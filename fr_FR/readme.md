@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/4c890d9ae260b03d3240db7fed5367d238b6ca8f...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # <img src="https://github.com/avajs/ava/blob/master/media/header.png" title="AVA" alt="AVA logo" width="530">
 
@@ -30,7 +30,7 @@ Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - Inclus les définitions des types pour TypeScript
 - [Magic assert](#magic-assert)
 - [Environnement isolé pour chaque fichier de test](./docs/01-writing-tests.md#isolement-du-processus)
-- [Écriture de vos tests en utilisant la dernière syntaxe de JavaScript](#prise-en-charge-de-la-dernière-syntaxe-de-javascript)
+- [Écriture de vos tests en utilisant la dernière syntaxe de JavaScript](https://github.com/avajs/babel)
 - [Prise en charge des promesses](./docs/01-writing-tests.md#prise-en-charge-des-promesses)
 - [Prise en charge des fonctions asynchrones](./docs/01-writing-tests.md#prise-en-charge-des-fonctions-asynchrones)
 - [Prise en charge d'Observable](./docs/01-writing-tests.md#prise-en-charge-de-observable)
@@ -126,16 +126,6 @@ AVA ajoute les extraits de code et les différences pour les valeurs réelles et
 
 AVA supprime automatiquement les lignes sans rapport dans la stack trace, cela permet de trouver la source d'une erreur plus rapidement, comme présenté ci-dessous.
 
-### Prise en charge de la dernière syntaxe de Javascript
-
-AVA utilise [Babel 7](https://babeljs.io) donc vous pouvez utiliser la dernière syntaxe JavaScript dans vos tests. Il n'y a pas d'installation supplémentaire requise. Vous n'avez pas non plus besoin d'utiliser Babel dans votre propre projet pour que cela fonctionne.
-
-Nous visons la prise en charge de toutes les [propositions de syntaxe terminées](https://github.com/tc39/proposals/blob/master/finished-proposals.md), ainsi que toute la syntaxe de la version JavaScript ratifiée (par exemple ES2017). Consultez notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4) pour les propositions actuellement supportées.
-
-Veuillez noter que nous n'ajoutons pas ou ne modifions pas les built-ins. Par exemple, si vous utilisez [`Object.fromEntries()`](https://github.com/tc39/proposal-object-from-entries) dans vos tests, ils planteront dans Node.js 10 car il n'implémente pas cette méthode.
-
-Vous pouvez désactiver cette prise en charge de la syntaxe ou personnaliser le pipeline Babel de AVA. Consultez notre [recette Babel] pour plus de détails.
-
 ### Exécution en parallèle dans CI
 
 AVA détecte automatiquement si votre environnement CI prend en charge les builds en parallèle. Chaque build exécutera un sous-ensemble de tous les fichiers de test, tout en veillant à ce que tous les tests soient exécutés. Consultez le package [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars) pour visualiser la liste des environnements CI pris en charge.
@@ -166,7 +156,7 @@ Nous avons une liste croissante de [pièges classiques](docs/08-common-pitfalls.
 - [Tests de navigateur](docs/recipes/browser-testing.md)
 - [TypeScript](docs/recipes/typescript.md)
 - [Flow](docs/recipes/flow.md)
-- [Configuration de Babel][recette Babel]
+- [Configuration de Babel](https://github.com/avajs/babel)
 - [Utilisation des modules ES](docs/recipes/es-modules.md)
 - [Passer des arguments à vos fichiers de test](docs/recipes/passing-arguments-to-your-test-files.md)
 - [Tester les composants React](docs/recipes/react.md)
@@ -248,5 +238,3 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 	<br>
 	<br>
 </div>
-
-[recette Babel]: docs/recipes/babel.md

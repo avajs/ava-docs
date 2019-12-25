@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/5bae97c49203990b89d91fe9587ea81702694eda...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
@@ -13,7 +13,7 @@ Jusqu'à la version [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) AV
 
 Ce guide suppose que vous avez déjà configuré Flow pour votre projet. Remarque : la définition de AVA a été testée avec la version 0.95.1.
 
-Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit.
+Nous vous recommandons d'utiliser le [support de Babel](https://github.com/avajs/babel) de AVA pour supprimer les annotations et les déclarations de type Flow. AVA applique automatiquement la configuration Babel de votre projet, donc tout peut fonctionner sans changements. Sinon, installez [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) et personnalisez la configuration de AVA dans le fichier `package.json` (ou le fichier `ava.config.js`) comme suit.
 
 **`package.json` :**
 
@@ -31,7 +31,7 @@ Nous vous recommandons d'utiliser le pipeline Babel intégré de AVA pour suppri
 }
 ```
 
-Consultez notre [documentation Babel](babel.md) pour plus de détails.
+Consultez notre [`@ava/babel`](https://github.com/avajs/babel) pour plus de détails.
 
 ## Ecritures des tests
 

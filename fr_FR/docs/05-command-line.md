@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/4953457277a355e231beaa11431eb58a209ae7fc...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
@@ -159,7 +159,13 @@ test(function foo(t) {
 
 ## Réinitialisation du cache de AVA
 
-AVA met en cache les fichiers de test compilés et les helpers. Il recompile automatiquement ces fichiers lorsque vous les modifiez. AVA fait de son mieux pour détecter les modifications apportées à vos fichiers de configuration, plugins et preset Babel. Toutefois, s'il semble que votre dernière configuration Babel ne soit pas appliquée, vous pouvez exécuter AVA avec l'option `--reset-cache` pour réinitialiser le cache d'AVA. S'il est défini, tous les fichiers du répertoire `node_modules/.cache/ava` sont supprimés. Exécutez AVA normalement pour appliquer votre nouvelle configuration Babel.
+AVA peut mettre en cache certains fichiers, en particulier lorsque vous utilisez notre fournisseur [`@ava/babel`](https://github.com/avajs/babel). S'il semble que vos derniers changements ne sont pas pris en compte par AVA, vous pouvez réinitialiser le cache en exécutant :
+
+```console
+npx ava reset-cache
+```
+
+Cela supprime tous les fichiers du répertoire `node_modules/.cache/ava`.
 
 ## Reporters
 
