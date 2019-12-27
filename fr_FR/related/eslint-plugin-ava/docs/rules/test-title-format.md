@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7224360c0e43ee84039885bb52b3cc6a79d21163...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/5b349014a2f763ca1e439ab282f06fae14b2e9e5...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que les titres de test ont un certain format
 
@@ -15,16 +15,18 @@ Par exemple, des titres comme `'Should throw when invalid.'`, `'Should fail when
 ## Échoue
 
 ```js
-/* eslint ava/test-title: ["error", {format: "^Devrait"}] */
+/* eslint ava/test-title-format: ["error", {format: "^Devrait"}] */
 import test from 'ava';
+
 test('Ne commence pas par `Devrait`', t => {
 	t.pass();
 });
 ```
 
 ```js
-/* eslint ava/test-title: ["error", {format: "\\.$"}] */
+/* eslint ava/test-title-format: ["error", {format: "\\.$"}] */
 import test from 'ava';
+
 test('Ne se termine pas par un point', t => {
 	t.pass();
 });
@@ -34,19 +36,22 @@ test('Ne se termine pas par un point', t => {
 ## Passe
 
 ```js
-/* eslint ava/test-title: ["error", {format: "^Devrait"}] */
+/* eslint ava/test-title-format: ["error", {format: "^Devrait"}] */
 import test from 'ava';
+
 test('Devrait passer les tests', t => {
 	t.pass();
 });
+
 test('Devrait se comporter comme prévu', t => {
 	t.pass();
 });
 ```
 
 ```js
-/* eslint ava/test-title: ["error", {format: "\\.$"}] */
+/* eslint ava/test-title-format: ["error", {format: "\\.$"}] */
 import test from 'ava';
+
 test('Se termine par un point.', t => {
 	t.pass();
 });

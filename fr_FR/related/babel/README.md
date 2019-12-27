@@ -1,9 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/8c241bca4be0e326d3454b066d740bfa8a30147b...master#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/4121c2de763501670e2b9efda2be314848602b51...master#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # @ava/babel
+
+Traductions : [English](https://github.com/avajs/babel/blob/master/README.md)
 
 Ajoutez la prise en charge de [Babel 7](https://babeljs.io) à [AVA](https://avajs.dev) afin que vous puissiez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset [`@ava/stage-4`](https://github.com/avajs/babel-preset-stage-4). Nous utilisons également un [second preset, `@ava/transform-test-files`](https://github.com/avajs/babel-preset-transform-test-files) pour activer [une amélioration des messages d'assertion](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/03-assertions.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
 
@@ -112,7 +114,7 @@ Vous pouvez désactiver le preset stage-4 de AVA.
 		"babel": {
 			"testOptions": {
 				"presets": [
-					["module:ava/stage-4", false]
+					["module:@ava/babel/stage-4", false]
 				]
 			}
 		}
@@ -136,7 +138,7 @@ Par défaut, le preset stage-4 de AVA convertira la syntaxe du module ES en Comm
 		"babel": {
 			"testOptions": {
 				"presets": [
-					["module:ava/stage-4", {"modules": false}]
+					["module:@ava/babel/stage-4", {"modules": false}]
 				]
 			}
 		}
