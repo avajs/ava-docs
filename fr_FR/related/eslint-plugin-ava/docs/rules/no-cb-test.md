@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-cb-test.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-cb-test.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-53d512160f47892d199cb93040332ff7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-cb-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-cb-test.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-cb-test.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-53d512160f47892d199cb93040332ff7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-cb-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun `test.cb()` n'est utilisé
 
@@ -13,7 +13,7 @@ Interdit l'utilisation de `test.cb()`. Nous recommandons plutôt l'utilisation d
 ## Échoue
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test.cb('quelques tests', t => {
 	t.pass();
@@ -25,7 +25,7 @@ test.cb('quelques tests', t => {
 ## Passe
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('quelques tests', async t => {
 	t.pass();

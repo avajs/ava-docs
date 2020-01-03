@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [use-t-well.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t-well.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/5bdf745701159cd82d4bc125c1e685524b5066b6...master#diff-732d970806d109613f5519b63e9056d8) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t-well.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [use-t-well.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t-well.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-732d970806d109613f5519b63e9056d8) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t-well.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Empêcher une mauvaise utilisation de `t`
 
@@ -15,7 +15,7 @@ Cette règle est réparable de façon partielle. Elle remplacera `.falsey` mal o
 ## Échoue
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('main', t => {
 	t(value); // `t` n'est pas une fonction
@@ -32,7 +32,7 @@ test('main', t => {
 ## Passe
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('main', t => {
 	t.deepEqual(value, [2]);

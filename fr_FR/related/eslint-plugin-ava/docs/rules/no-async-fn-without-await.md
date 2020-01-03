@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-async-fn-without-await.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-async-fn-without-await.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/a443d7a9c94165f42749938e6b491a7c10749b6c...master#diff-ba145accc88fcda06145597bb3b1d565) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-async-fn-without-await.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-async-fn-without-await.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-async-fn-without-await.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-ba145accc88fcda06145597bb3b1d565) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-async-fn-without-await.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que les tests async utilisent `await`
 
@@ -17,7 +17,7 @@ Cette règle signale une erreur quand il trouve un test async qui n'utilise pas 
 ## Échoue
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test(async t => {
 	return foo().then(res => {
@@ -30,7 +30,7 @@ test(async t => {
 ## Passe
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test(async t => {
 	t.is(await foo(), 1);

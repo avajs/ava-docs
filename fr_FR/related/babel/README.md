@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/4121c2de763501670e2b9efda2be314848602b51...master#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/a1be27b7e01c719517e8d8d302d8eed4243172f5...master#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # @ava/babel
 
@@ -53,6 +53,22 @@ Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA po
 ```
 
 Toutes les [options de Babel] sont autorisées dans l'objet `testOptions`.
+
+## Compiler des fichiers supplémentaires
+
+Par défaut, seuls les fichiers de test sont compilés. Vous pouvez compiler des fichiers supplémentaires en tant que tests en fournissant des glob patterns :
+
+**`package.sjon`:**
+
+```json
+{
+	"ava": {
+		"babel": {
+			"compileAsTests": ["test/helpers/**/*"]
+		}
+	}
+}
+```
 
 ## Réinitialiser le cache de AVA
 

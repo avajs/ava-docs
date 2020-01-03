@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [puppeteer.md](https://github.com/avajs/ava/blob/master/docs/recipes/puppeteer.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-b813a3ab6d7f84d0c4210e7cb047c774) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `puppeteer.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [puppeteer.md](https://github.com/avajs/ava/blob/master/docs/recipes/puppeteer.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-b813a3ab6d7f84d0c4210e7cb047c774) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `puppeteer.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Test d'applications Web à l'aide de Puppeteer
 
@@ -18,7 +18,7 @@ La première étape consiste à configurer un helper pour configurer l'environne
 `./test/_withPage.js`
 
 ```js
-import puppeteer from 'puppeteer';
+const puppeteer = require('puppeteer');
 
 export default async function withPage(t, run) {
 	const browser = await puppeteer.launch();
@@ -37,8 +37,8 @@ export default async function withPage(t, run) {
 `./test/main.js`
 
 ```js
-import test from 'ava';
-import withPage from './_withPage';
+const test = require('ava');
+const withPage = require('./_withPage');
 
 const url = 'https://google.com';
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-only-test.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-only-test.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/5bdf745701159cd82d4bc125c1e685524b5066b6...master#diff-b7318d07931729c026fb1f61e9734468) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-only-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-only-test.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-only-test.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-b7318d07931729c026fb1f61e9734468) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-only-test.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun `test.only()` soit présent
 
@@ -15,7 +15,7 @@ Cette règle est réparable. Cela supprimera le modificateur de test `.only`.
 ## Échoue
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test.only('test 1', t => {
 	t.pass();
@@ -31,7 +31,7 @@ test('test 2', t => {
 ## Passe
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('test 1', t => {
 	t.pass();

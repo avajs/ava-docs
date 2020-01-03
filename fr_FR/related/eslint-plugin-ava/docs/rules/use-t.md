@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [use-t.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c3d99fb076f5e579ba00f18fbedb92aeaf9df732...master#diff-17ed83dfe5d8198bdea74504bceedceb) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [use-t.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/use-t.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-17ed83dfe5d8198bdea74504bceedceb) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `use-t.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que les fonctions de test utilisent `t` comme paramètre
 
@@ -12,7 +12,7 @@ La convention veut que le paramètre dans la fonction de test de AVA soit nommé
 ### Échoue
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test(foo => { // Nom incorrect
 	t.pass();
@@ -30,7 +30,7 @@ test((bar, t) => { // trop d'arguments
 ### Passe
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test(() => {
 	// ...

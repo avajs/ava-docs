@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants React
 
@@ -44,9 +44,9 @@ $ npm install --save-dev enzyme react-addons-test-utils react-dom
 Ensuite vous pouvez utiliser Enzyme directement :
 
 ```js
-import test from 'ava';
-import React from 'react';
-import {shallow} from 'enzyme';
+const test = require('ava');
+const React = require('react');
+const {shallow} = require('enzyme');
 
 const Foo = ({children}) =>
 	<div className="Foo">
@@ -96,9 +96,9 @@ $ npm install --save-dev jsx-test-helpers
 Exemple d'utilisation :
 
 ```js
-import test from 'ava';
-import React from 'react';
-import {renderJSX, JSX} from 'jsx-test-helpers';
+const test = require('ava');
+const React = require('react');
+const {renderJSX, JSX} = require('jsx-test-helpers');
 
 const Foo = ({children}) =>
 	<div className="Foo">

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
@@ -87,7 +87,7 @@ Par défaut, AVA exécute les tests simultanément. Cela peut poser problème si
 Prenons cet exemple bidon :
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 let count = 0;
 const incr = async () => {
@@ -114,7 +114,7 @@ test('incrémente deux fois', async t => {
 Les tests simultanés permettent aux tests asynchrones de s'exécuter plus rapidement, mais s'ils reposent sur un état partagé, cela peut entraîner des échecs de test inattendus. Si l'état partagé ne peut pas être évité, vous pouvez exécuter vos tests en série :
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 let count = 0;
 const incr = async () => {

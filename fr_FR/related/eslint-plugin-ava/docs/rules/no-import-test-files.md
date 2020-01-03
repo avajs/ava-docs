@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/c5994700e90e5fef78c1bf50991bb84a92d202b4...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun fichier de test n'est importé de n'importe où
 
@@ -15,13 +15,13 @@ Cette règle vérifiera que vous n'importez aucun fichier de test. Il considère
 ```js
 // Fichier : src/index.js
 // Invalide car *.test.js est considéré comme un fichier de test.
-import tests from './index.test.js';
+const tests = require('./index.test.js');
 ```
 
 ```js
 // Fichier : src/index.js
 // Invalide car n'importe quel fichier dans __tests__ est considéré comme un fichier de test
-import tests from './__tests__/index.js';
+const tests = require('./__tests__/index.js');
 
 test('foo', t => {
 	t.pass();
@@ -33,13 +33,13 @@ test('foo', t => {
 
 ```js
 // Fichier : src/index.js
-import sinon from 'sinon';
+const sinon = require('sinon');
 
 ```
 
 ```js
 // Fichier : src/index.js
-import utils from './utils';
+const utils = require('./utils');
 ```
 
 ## Options

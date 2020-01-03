@@ -1,30 +1,31 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/83b43a58593ea3a4e1fd271099184963ccdb7d4c...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/05-command-line.md)
 
 ```console
-$ npx ava --help
-ava <files>
-ava debug <file>
+ava [<pattern>...]
+ava debug [<pattern>...]
 ava reset-cache
 
 Commands: (Commandes:)
-  ava              Run tests (Exécute les tests)                       [default]
-  ava debug        Activate Node.js inspector and run the test file
-                   (Active l'inspecteur Node.js et exécute le fichier de test)
-  ava reset-cache  Reset AVA's compilation cache and exit
-                   (Réinitialise le cache de compilation d'AVA et sort)
+  ava [<pattern>...]       Run tests (Exécute les tests)               [default]
+  ava debug [<pattern>...] Activate Node.js inspector and run the test file
+                           (Active l'inspecteur Node.js et exécute le fichier
+                           de test)
+  ava reset-cache          Reset AVA's compilation cache and exit
+                           (Réinitialise le cache de compilation d'AVA et sort)
 
 Positionals: (Positionnels:)
-  files  Paths to individual test files. Leave empty if you want AVA to search
-         for files instead.                                             [string]
-         (Chemins d'accès aux fichiers de test individuels. Laissez
-         vide si vous voulez qu'AVA recherche les fichiers à la place.)
+  pattern  Glob patterns to select what test files to run. Leave empty if you
+           want AVA to run all test files instead                       [string]
+           (Glob patterns pour sélectionner les fichiers de test à exécuter.
+           Laissez vide si vous voulez que AVA exécute tous les fichiers de
+           test à la place)
 
 Options
   --version               Show version number (Affiche n° de version)  [boolean]
@@ -57,10 +58,8 @@ Options
   --update-snapshots, -u  Update snapshots (Met à jour les snapshots)  [boolean]
   --verbose, -v           Enable verbose output                        [boolean]
                           (Active le mode verbose)
-  --watch, -w             Re-run tests when tests and source files change
-                                                                       [boolean]
-                          (Re-exécute les tests quand les tests et les
-                          fichiers sources ont changé)
+  --watch, -w             Re-run tests when files change               [boolean]
+                          (Re-exécute les tests quand les fichiers ont changé)
 
 Examples:
   ava
@@ -71,7 +70,9 @@ Examples:
 
 AVA recherche les fichiers de tests en utilisant les patterns suivants :
 
-* `**/test.js`
+* `test.js`
+* `src/test.js`
+* `source/test.js`
 * `**/test-*.js`
 * `**/*.spec.js`
 * `**/*.test.js`
@@ -79,7 +80,20 @@ AVA recherche les fichiers de tests en utilisant les patterns suivants :
 * `**/tests/**/*.js`
 * `**/__tests__/**/*.js`
 
-Les fichiers à l'intérieur de `node_modules` sont *toujours* ignorés. Idem pour les fichiers commençant par `_`, ils sont traités comme des helpers.
+Les fichiers à l'intérieur de `node_modules` sont *toujours* ignorés. Idem pour les fichiers commençant par `_` ou à l'intérieur de répertoires commençant par un seul `_`. De plus, les fichiers correspondant à ces patterns sont ignorés par défaut, sauf si différents patterns sont configurés :
+
+* `**/__tests__/**/__helper__/**/*`
+* `**/__tests__/**/__helpers__/**/*`
+* `**/__tests__/**/__fixture__/**/*`
+* `**/__tests__/**/__fixtures__/**/*`
+* `**/test/**/helper/**/*`
+* `**/test/**/helpers/**/*`
+* `**/test/**/fixture/**/*`
+* `**/test/**/fixtures/**/*`
+* `**/tests/**/helper/**/*`
+* `**/tests/**/helpers/**/*`
+* `**/tests/**/fixture/**/*`
+* `**/tests/**/fixtures/**/*`
 
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
 

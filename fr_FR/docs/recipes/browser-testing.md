@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/91b76414ad14ed8a4b512b9f549e6be01199ac06...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-9d3d394077fa7f97cbbb0fefc098ac60) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `browser-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de AVA pour des tests de navigateur
 
@@ -32,22 +32,22 @@ Créez un fichier helper, préfixez le avec un underscore. Cela permet de garant
 `test/_setup-browser-env.js`:
 
 ```js
-import browserEnv from 'browser-env';
+const browserEnv = require('browser-env');
 browserEnv();
 ```
 
 Par défaut, `browser-env` ajoutera les variables globales du navigateur à la portée globale de Node.js : la création d'un environnement complet d'un navigateur. Cela permet d'avoir une bonne compatibilité avec la plupart des bibliothèques front-end, cependant, ce n'est généralement pas une bonne idée de créer beaucoup de variables globales si vous ne devez pas les utiliser. Si vous savez exactement quelles globales vous avez besoin, vous pouvez leur passer un tableau.
 
 ```js
-import browserEnv from 'browser-env';
+const browserEnv = require('browser-env');
 browserEnv(['window', 'document', 'navigator']);
 ```
 
 Vous pouvez exposer plus de variables globales en les affectant à l'objet `global`. Par exemple, jQuery est généralement disponible via la variable `$` :
 
 ```js
-import browserEnv from 'browser-env';
-import jQuery from 'jquery';
+const browserEnv = require('browser-env');
+const jQuery = require('jquery');
 
 browserEnv();
 global.$ = jQuery(window);
@@ -76,7 +76,7 @@ Configurez le `require` de AVA avec le helper pour l'exiger avant chaque fichier
 `test.js`:
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('Insérer au DOM', t => {
 	const div = document.createElement('div');

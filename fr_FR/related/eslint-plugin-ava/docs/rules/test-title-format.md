@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/5b349014a2f763ca1e439ab282f06fae14b2e9e5...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [test-title-format.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/test-title-format.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-b476dae00d584a873f775b322bcc81e7) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-title-format.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer que les titres de test ont un certain format
 
@@ -16,7 +16,7 @@ Par exemple, des titres comme `'Should throw when invalid.'`, `'Should fail when
 
 ```js
 /* eslint ava/test-title-format: ["error", {format: "^Devrait"}] */
-import test from 'ava';
+const test = require('ava');
 
 test('Ne commence pas par `Devrait`', t => {
 	t.pass();
@@ -25,7 +25,7 @@ test('Ne commence pas par `Devrait`', t => {
 
 ```js
 /* eslint ava/test-title-format: ["error", {format: "\\.$"}] */
-import test from 'ava';
+const test = require('ava');
 
 test('Ne se termine pas par un point', t => {
 	t.pass();
@@ -37,7 +37,7 @@ test('Ne se termine pas par un point', t => {
 
 ```js
 /* eslint ava/test-title-format: ["error", {format: "^Devrait"}] */
-import test from 'ava';
+const test = require('ava');
 
 test('Devrait passer les tests', t => {
 	t.pass();
@@ -50,7 +50,7 @@ test('Devrait se comporter comme prévu', t => {
 
 ```js
 /* eslint ava/test-title-format: ["error", {format: "\\.$"}] */
-import test from 'ava';
+const test = require('ava');
 
 test('Se termine par un point.', t => {
 	t.pass();

@@ -1,11 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/4f4dfc7534c9b2b35e20ec04e2c3d084556baa00...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/9deaa41319979e7a2f4c6239ab3c2cd0eb5cd824...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
 Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
+
+**Ceci documente la prochaine version de AVA 3. Consultez plutôt la documentation [AVA 2](https://github.com/avajs/ava-docs/blob/9476dfc031350e4f3e549b6f0f5ad445d622e36d/fr_FR/docs/recipes/watch-mode.md).**
 
 AVA est livré avec un mode watch intelligent. Il surveille les fichiers modifiés et exécute seulement les tests qui sont impactés.
 
@@ -68,15 +70,13 @@ Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du mod
 
 AVA utilise [`chokidar`] pour surveiller les fichiers. Notez que même si vous voyez des avertissements lors de l'installation sur les dépendances optionnelles, il fonctionnera correctement. Veuillez vous référer à la section *[Install Troubleshooting]* de la documentation de `chokidar` pour savoir comment résoudre les problèmes d'installation avec chokidar.
 
-## Les fichiers sources et les fichiers de test
+## Ignorer les modifications
 
-Dans AVA, il y a un distinction entre les *fichiers source* et les *fichiers de test*. Comme vous pouvez le devinez, les *fichiers de tests* contiennent vos tests. Les *fichiers sources* sont tous les autres fichiers que vous avez besoin pour que les tests s'exécutent, ce sont soit vos codes source ou soit vos fixtures.
+Par défaut AVA surveille les modifications de tous les fichiers, à l'exception de ceux avec une extension `.snap.md`, `ava.config.js` et des fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
-Par défaut AVA surveille les modifications des fichiers de test, des fichiers d'instantanés, du `package.json`, et des autres fichiers `.js`. Il ignore les fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
+Vous pouvez configurer des patterns supplémentaires pour ignorer des fichiers dans la [section `ava` de votre `package.json` ou le fichier `ava.config.js`][config] en utilisant la clé `ignoredByWatcher`.
 
-Vous pouvez configurer des patterns pour les fichiers source dans la [section `ava` de votre `package.json` ou le fichier `ava.config.js`][config] en utilisant la clé `sources`.
-
-Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. Configurez des patterns pour les fichiers source afin d'éviter cela.
+Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. La configuration de patterns supplémentaires pour ignorer permet d'éviter cela.
 
 ## La surveillance de dépendance
 

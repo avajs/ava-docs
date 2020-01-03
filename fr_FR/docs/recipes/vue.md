@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/master/docs/recipes/vue.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-09533a825d46c23878919cd6e9bb1182) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `vue.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants Vue.js
 
@@ -58,9 +58,9 @@ Vous pouvez trouver plus d'informations sur la configuration de Babel avec AVA d
 ## Exemple de test instantané
 
 ```js
-import test from 'ava';
-import Vue from 'vue';
-import Component from 'component.vue';
+const test = require('ava');
+const Vue = require('vue');
+const Component = require('component.vue');
 
 test('renders', t => {
 	const vm = new Vue(Component).$mount();

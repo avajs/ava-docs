@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Assertions
 
@@ -159,7 +159,7 @@ Cela ne vous donnera pas une aussi bonne expérience que celle obtenue avec les 
 Vous devrez configurer AVA pour que les tests n'échouent pas si aucune assertion n'est exécutée, car AVA ne peut pas dire si les assertions personnalisées passent. Définissez l'option `failWithoutAssertions` à `false` dans la [configuration de AVA dans le `package.json`](./06-configuration.md).
 
 ```js
-import assert from 'assert';
+const assert = require('assert');
 
 test('assertion personnalisée', t => {
 	assert(true);

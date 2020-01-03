@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/f4b2d196e813cf3549e19703e5a79ebc988fb8ca...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Test d'instantané
 
@@ -18,9 +18,9 @@ export default HelloWorld;
 
 ```js
 // Votre test
-import test from 'ava';
-import render from 'react-test-renderer';
-import HelloWorld from '.';
+const test = require('ava');
+const render = require('react-test-renderer');
+const HelloWorld = require('.');
 
 test('HelloWorld component', t => {
 	const tree = render.create(<HelloWorld/>).toJSON();

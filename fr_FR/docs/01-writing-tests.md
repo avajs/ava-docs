@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Ecriture des tests
 
@@ -26,7 +26,7 @@ Pour déclarer un test, vous appelez la fonction `test` que vous importez de AVA
 **Remarque :** Pour que les [messages d'assertion améliorés](./03-assertions.md#enhanced-assertion-messages) se comportent correctement, le premier argument **doit** être nommé `t`.
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 test('mon test qui passe', t => {
 	t.pass();
@@ -277,7 +277,7 @@ test('le contexte est unicorn', t => {
 Les fichiers helper peuvent déterminer le nom du fichier de test en cours en lisant `test.meta.file`. Ceci élimine le besoin de passer `__filename` depuis le test aux helpers.
 
 ```js
-import test from 'ava';
+const test = require('ava');
 
 console.log('Test en cours d\'exécution : ', test.meta.file);
 ```
