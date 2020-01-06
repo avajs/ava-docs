@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/blob/master/docs/03-assertions.md). Voici un [lien](https://github.com/avajs/ava/compare/7f99aef61f3aed2389ca9407115ad4c9aecada92...master#diff-35a3a6b97b8ddb82e64de6c59a97bf4d) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `03-assertions.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Assertions
 
@@ -212,21 +212,21 @@ Affirme que `value` est profondément égale à `expected`. Consulter [Concordan
 
 Affirme que `value` n'est pas profondément égale à `expected`. L'inverse de `.deepEqual()`.
 
-### `.throws(fn, [expected, [message]])`
+### `.throws(fn, [expectation, [message]])`
 
 Affirme qu'une erreur est levée. `fn` doit être une fonction qui devrait lever une erreur. La valeur levée *doit* être une erreur. Elle est retournée afin que vous puissiez lancer d'autres assertions.
 
-`expected` peut être un constructeur, auquel cas l'erreur levée doit être une instance du constructeur. Cela peut être une chaîne, qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message. Vous pouvez également spécifier un objet de correspondance (matcher) avec une ou plusieurs des propriétés suivantes :
+`expectation` peut être un objet avec une ou plusieurs des propriétés suivantes :
 
 * `instanceOf` : un constructeur, l'erreur levée doit être une "instance de"
-* `is` : l'erreur levée doit être strictement égale à `expected.is`
+* `is` : l'erreur levée doit être strictement égale à `expectation.is`
 * `message` : soit une chaîne qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message
 * `name` : la valeur `.name` attendue de l'erreur levée
 * `code` : la valeur `.code` attendue de l'erreur levée
 
-`expected` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
+`expectation` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
 
-Exemple:
+Exemple :
 
 ```js
 const fn = () => {
@@ -236,27 +236,27 @@ const fn = () => {
 test('throws', t => {
 	const error = t.throws(() => {
 		fn();
-	}, TypeError);
+	}, {instanceOf: TypeError});
 
 	t.is(error.message, '🦄');
 });
 ```
 
-### `.throwsAsync(thrower, [expected, [message]])`
+### `.throwsAsync(thrower, [expectation, [message]])`
 
 Affirme qu'une erreur est levée. `thrower` peut être une fonction async qui devrait lever une erreur ou une promesse qui devrait échouée. Cette affirmation doit être attendue (await).
 
 La valeur levée *doit* être une erreur. Elle est renvoyée afin que vous puissiez exécuter d'autres assertions.
 
-`expected` peut être un constructeur, auquel cas l'erreur levée doit être une instance du constructeur. Cela peut être une chaîne, qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message. Vous pouvez également spécifier un objet de correspondance (matcher) avec une ou plusieurs des propriétés suivantes :
+`expectation` peut être un objet avec une ou plusieurs des propriétés suivantes :
 
 * `instanceOf` : un constructeur, l'erreur levée doit être une "instance de"
-* `is` : l'erreur levée doit être strictement égale à `expected.is`
+* `is` : l'erreur levée doit être strictement égale à `expectation.is`
 * `message` : soit une chaîne qui est comparée au message de l'erreur levée, ou une expression régulière qui correspond à ce message
 * `name` : la valeur `.name` attendue de l'erreur levée
 * `code` : la valeur `.code` attendue de l'erreur levée
 
-`expected` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
+`expectation` n'a pas besoin d'être précisé. Si vous n'en avez pas besoin mais que vous voulez définir un message d'assertion, vous devez spécifier `null`.
 
 Exemple:
 

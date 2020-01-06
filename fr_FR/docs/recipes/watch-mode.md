@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/9deaa41319979e7a2f4c6239ab3c2cd0eb5cd824...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
@@ -52,7 +52,7 @@ Et l'utiliser ainsi :
 $ npm run watch:test
 ```
 
-Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en définissant la clé `watch` dans la [section `ava` de votre `package.json` ou le fichier `ava.config.js`][config].
+Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en définissant la clé `watch` dans la [section `ava` de votre `package.json` ou le fichier `ava.config.*`][config].
 
 **`package.json` :**
 
@@ -72,9 +72,9 @@ AVA utilise [`chokidar`] pour surveiller les fichiers. Notez que même si vous v
 
 ## Ignorer les modifications
 
-Par défaut AVA surveille les modifications de tous les fichiers, à l'exception de ceux avec une extension `.snap.md`, `ava.config.js` et des fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
+Par défaut AVA surveille les modifications de tous les fichiers, à l'exception de ceux avec une extension `.snap.md`, `ava.config.*` et des fichiers dans [certains répertoires](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) qui ont été fournis par le package [`ignore-by-default`].
 
-Vous pouvez configurer des patterns supplémentaires pour ignorer des fichiers dans la [section `ava` de votre `package.json` ou le fichier `ava.config.js`][config] en utilisant la clé `ignoredByWatcher`.
+Vous pouvez configurer des patterns supplémentaires pour ignorer des fichiers dans la [section `ava` de votre `package.json` ou le fichier `ava.config.*`][config] en utilisant la clé `ignoredByWatcher`.
 
 Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le mode watch pour re-exécuter vos tests. La configuration de patterns supplémentaires pour ignorer permet d'éviter cela.
 
@@ -82,7 +82,7 @@ Si vos tests écrivent quelque chose sur le disque, ils peuvent déclencher le m
 
 AVA surveille les fichiers source qui dépendent de vos fichiers de tests. Si vous modifiez une telle dépendance, seul le fichier de test qui en dépend pourra être ré-exécuter. AVA ré-exécutera tous les tests s'il n'arrive pas à déterminer quel est le fichier de test qui dépend du fichier source.
 
-La surveillance de dépendance fonctionne pour les modules exigés (require). Les extensions et transpileurs personnalisés sont pris en charge, à condition que [vous les ajoutiez dans votre `package.json` ou le fichier `ava.config.js`][config] au lieu de le faire à l'intérieur de votre fichier de test. Les fichiers accessibles à l'aide du module `fs` ne sont pas surveillés.
+La surveillance de dépendance fonctionne pour les modules exigés (require). Les extensions et transpileurs personnalisés sont pris en charge, à condition que [vous les ajoutiez dans votre `package.json` ou le fichier `ava.config.*`][config] au lieu de le faire à l'intérieur de votre fichier de test. Les fichiers accessibles à l'aide du module `fs` ne sont pas surveillés.
 
 ## Le mode watch et `.only`
 

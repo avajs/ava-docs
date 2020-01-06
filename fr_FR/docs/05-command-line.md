@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/83b43a58593ea3a4e1fd271099184963ccdb7d4c...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
@@ -31,11 +31,11 @@ Options
   --version               Show version number (Affiche n° de version)  [boolean]
   --color                 Force color output                           [boolean]
                           (Force la sortie en couleur)
-  --config                JavaScript file for AVA to read its config from,
-                          instead of using package.json or ava.config.js files
-                          (Le fichier JavaScript permettant à AVA de lire sa
-                          configuration, à la place des fichiers package.json ou
-                          ava.config.js)
+  --config                Specific JavaScript file for AVA to read its config
+                          from, instead of using package.json or ava.config.*
+                          files (Fichier JavaScript spécifique pour AVA pour lire
+                          sa configuration, au lieu d'utiliser des fichiers
+                          package.json ou ava.config.*)
   --help                  Show help (Affiche l'aide)                   [boolean]
   --concurrency, -c       Max number of test files running at the same time
                           (Default: CPU cores)                          [number]
