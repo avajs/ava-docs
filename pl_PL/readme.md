@@ -184,7 +184,7 @@ Jest to [galaktyka Andromeda](https://simple.wikipedia.org/wiki/Andromeda_galaxy
 
 ### Jaka jest różnica między współbieżnością a równoległością?
 
-[współbieżność nie jest równoległością. Umożliwia równoległość.](https://stackoverflow.com/q/1050222)
+[Współbieżność nie jest równoległością. Umożliwia równoległość.](https://stackoverflow.com/q/1050222)
 
 ## Wsparcie
 
