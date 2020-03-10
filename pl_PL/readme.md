@@ -26,7 +26,7 @@ Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - [Magic assert](#magic-assert)
 - [Izolowane środowisko dla każdego pliku testowego](./docs/01-writing-tests.md#process-isolation)
 - [Napisz swoje testy przy użyciu najnowszej składni JavaScript](https://github.com/avajs/babel)
-- [Obietnica wsparcia](./docs/01-writing-tests.md#promise-support)
+- [Wsparcie promise](./docs/01-writing-tests.md#promise-support)
 - [Wsparcie funkcji asynchronicznych](./docs/01-writing-tests.md#async-function-support)
 - [Wsparcie Observable](./docs/01-writing-tests.md#observable-support)
 - [Ulepszone komunikaty assertion](./docs/03-assertions.md#enhanced-assertion-messages)
