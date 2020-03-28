@@ -1,8 +1,8 @@
-# Execution Context (`t` argument)
+# Kontekst wykonania (`t` argument)
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/02-execution-context.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/02-execution-context.md)
 
-Each test or hook is called with an execution context. By convention it's named `t`.
+Każdy test lub hook jest wywoływany z kontekstem wykonania. Zgodnie z konwencją jest nazywany `t`.
 
 ```js
 const test = require('ava');
@@ -12,28 +12,28 @@ test('my passing test', t => {
 });
 ```
 
-Each test or hook receives a different object. It contains the [assertions](./03-assertions.md) as well as the methods and properties listed below.
+Każdy test lub hook otrzymuje inny obiekt. Zawiera [asercje](./03-assertions.md), a także metody i właściwości wymienione poniżej.
 
 ## `t.title`
 
-The test title.
+Tytuł testu.
 
 ## `t.context`
 
-Contains shared state from hooks.
+Zawiera stan współdzielony z hooks.
 
 ## `t.plan(count)`
 
-Plan how many assertion there are in the test. The test will fail if the actual assertion count doesn't match the number of planned assertions. See [assertion planning](./03-assertions.md#assertion-planning).
+Zaplanuj, ile asercji jest w teście. Test zakończy się niepowodzeniem, jeśli faktyczna liczba asercji nie będzie zgodna z liczbą planowanych asercji. Zobacz [planowanie asercji](./03-assertions.md#assertion-planning).
 
 ## `t.end()`
 
-End the test. Only works with `test.cb()`.
+Zakończ test. Działa tylko z `test.cb()`.
 
 ## `t.log(...values)`
 
-Log values contextually alongside the test result instead of immediately printing them to `stdout`. Behaves somewhat like `console.log`, but without support for placeholder tokens.
+Rejestruj wartości kontekstowo obok wyniku testu zamiast natychmiast je drukować do `stdout`. Zachowuje się trochę jak `console.log`, ale bez obsługi tokenów zastępczych.
 
 ## `t.timeout(ms)`
 
-Set a timeout for the test, in milliseconds. The test will fail if this timeout is exceeded. The timeout is reset each time an assertion is made.
+Ustaw limit czasu testu w milisekundach. Test zakończy się niepowodzeniem, jeśli ten limit czasu zostanie przekroczony. Limit czasu jest resetowany przy każdej asercji.
