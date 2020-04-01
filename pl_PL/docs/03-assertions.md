@@ -1,8 +1,8 @@
-# Assertions
+# Asercje
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/03-assertions.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/03-assertions.md)
 
-Assertions are mixed into the [execution object](./02-execution-context.md) provided to each test implementation:
+Asercje są mieszane w [obiekcie wykonawczym](./02-execution-context.md) dostarczonym do każdej implementacji testowej:
 
 ```js
 test('unicorns are truthy', t => {
@@ -10,7 +10,7 @@ test('unicorns are truthy', t => {
 });
 ```
 
-Assertions are bound to their test so you can assign them to a variable or pass them around:
+Asercje są powiązane z ich testem, dzięki czemu można przypisać je do zmiennej lub przekazać:
 
 ```js
 test('unicorns are truthy', t => {
@@ -19,17 +19,17 @@ test('unicorns are truthy', t => {
 });
 ```
 
-If multiple assertion failures are encountered within a single test, AVA will only display the *first* one.
+Jeśli w jednym teście napotkamy wiele błędów asercji, AVA wyświetli tylko *pierwszy* z nich.
 
-## Assertion planning
+## Planowanie asercji
 
-Assertion plans ensure tests only pass when a specific number of assertions have been executed. They'll help you catch cases where tests exit too early. They'll also cause tests to fail if too many assertions are executed, which can be useful if you have assertions inside callbacks or loops.
+Plany asercji gwarantują, że testy zakończą się pomyślnie tylko wtedy, gdy wykonano określoną liczbę asercji. Pomogą ci wychwycić przypadki, w których testy kończą się zbyt wcześnie. Powodują również, że testy zakończą się niepowodzeniem, jeśli wykonanych zostanie zbyt wiele asercji, co może być przydatne, jeśli masz asercje w wywołaniach zwrotnych lub pętlach.
 
-If you do not specify an assertion plan, your test will still fail if no assertions are executed. Set the `failWithoutAssertions` option to `false` in AVA's [`package.json` configuration](./06-configuration.md) to disable this behavior.
+Jeśli nie określisz planu asercji, test nadal zakończy się niepowodzeniem, jeśli nie zostaną wykonane żadne asercje. Ustaw `failWithoutAssertions` opcje na `false` w AVA'owej [`package.json` konfiguracji](./06-configuration.md) aby wyłączyć to zachowanie.
 
-Note that, unlike [`tap`](https://www.npmjs.com/package/tap) and [`tape`](https://www.npmjs.com/package/tape), AVA does *not* automatically end a test when the planned assertion count is reached.
+Zauważ, że w przeciwieństwie do [`tap`](https://www.npmjs.com/package/tap) oraz [`tape`](https://www.npmjs.com/package/tape), AVA *nie* kończy automatycznie testu po osiągnięciu planowanej liczby asercji.
 
-These examples will result in a passed test:
+Poniższe przykłady zakończą się pozytywnym testem:
 
 ```js
 test('resolves with 3', t => {
@@ -50,7 +50,7 @@ test.cb('invokes callback', t => {
 });
 ```
 
-These won't:
+Natomiast te nie:
 
 ```js
 test('loops twice', t => {
@@ -70,9 +70,9 @@ test('invokes callback synchronously', t => {
 }); // Fails, the test ends synchronously before the assertion is executed
 ```
 
-## Skipping assertions
+## Pomijanie asercji
 
-Any assertion can be skipped using the `skip` modifier. Skipped assertions are still counted, so there is no need to change your planned assertion count.
+Każdą asercję można pominąć za pomocą modyfikatora `skip`. Pominięte asercje są nadal liczone, więc nie ma potrzeby zmiany planowanej liczby asercji.
 
 ```js
 test('skip assertion', t => {
@@ -82,11 +82,11 @@ test('skip assertion', t => {
 });
 ```
 
-## Enhanced assertion messages
+## Wzmocnione komunikaty asercji
 
-Enabling [Babel](./recipes/babel.md) will also enable [`power-assert`](https://github.com/power-assert-js/power-assert), giving you more descriptive assertion messages.
+Włączając [Babel](./recipes/babel.md) włączy również [`power-assert`](https://github.com/power-assert-js/power-assert), co daje bardziej opisowe komunikaty asercji.
 
-Let's take this example, using Node's standard [`assert` library](https://nodejs.org/api/assert.html):
+Weźmy ten przykład, używając standardowej bibiloteki Node'a [`assert`](https://nodejs.org/api/assert.html):
 
 ```js
 const a = /foo/;
@@ -95,13 +95,13 @@ const c = 'baz';
 require('assert').ok(a.test(b) || b === c);
 ```
 
-If you paste that into a Node REPL it'll return:
+Jeśli wkleisz to do Node REPL, zwróci:
 
 ```
 AssertionError: false == true
 ```
 
-With AVA's `assert` assertion however, this test:
+Z AVA'ową asercją `assert` jednakże, ten test:
 
 ```js
 test('enhanced assertions', t => {
@@ -112,14 +112,14 @@ test('enhanced assertions', t => {
 });
 ```
 
-Will output:
+Pokaże:
 
 ```
 6:   const c = 'baz';
 7:   t.assert(a.test(b) || b === c);
 8: });
 
-Value is not truthy:
+Wartosc nie jest prawdziwa:
 
 false
 
@@ -145,13 +145,13 @@ a
 => /foo/
 ```
 
-## Custom assertions
+## Niestandardowe asercje
 
-You can use any assertion library instead of or in addition to the built-in one, provided it throws exceptions when the assertion fails.
+Możesz użyć dowolnej biblioteki asercji zamiast lub oprócz wbudowanej, pod warunkiem, że zgłasza wyjątki w przypadku niepowodzenia asercji.
 
-This won't give you as nice an experience as you'd get with the [built-in assertions](#built-in-assertions) though, and you won't be able to use the [assertion planning](#assertion-planning) ([see #25](https://github.com/avajs/ava/issues/25)).
+Nie zapewni to tak przyjemnego wrażenia, jak w przypadku [wbudowanych asercji](#built-in-assertions) jednak nie będziesz mógł użyć [planowania asercji](#planowanie asercji) ([zobacz #25](https://github.com/avajs/ava/issues/25)).
 
-You'll have to configure AVA to not fail tests if no assertions are executed, because AVA can't tell if custom assertions pass. Set the `failWithoutAssertions` option to `false` in AVA's [`package.json` configuration](./06-configuration.md).
+Będziesz musiał skonfigurować AVA, aby testy nie zakończyły się niepowodzeniem, jeśli nie zostaną wykonane żadne asercje, ponieważ AVA nie może stwierdzić, czy asercje niestandardowe przejdą. Ustaw `failWithoutAssertions` opcję na `false` w AVA'owej [`package.json` konfiguracji](./06-configuration.md).
 
 ```js
 const assert = require('assert');
@@ -161,67 +161,67 @@ test('custom assertion', t => {
 });
 ```
 
-## Built-in assertions
+## Wbudowane asercje
 
 ### `.pass(message?)`
 
-Passing assertion.
+Przekazywanie asercji.
 
 ### `.fail(message?)`
 
-Failing assertion.
+Nieudana asercja.
 
 ### `.assert(value, message?)`
 
-Asserts that `value` is truthy. This is [`power-assert`](#enhanced-assertion-messages) enabled.
+Zapewnia, że `value` jest prawdziwe. To jest [`power-assert`](#enhanced-assertion-messages) włączone.
 
 ### `.truthy(value, message?)`
 
-Assert that `value` is truthy.
+Zapewnia, że `value` jest prawdziwe.
 
 ### `.falsy(value, message?)`
 
-Assert that `value` is falsy.
+Zapewnia, że `value` jest fałszywe.
 
 ### `.true(value, message?)`
 
-Assert that `value` is `true`.
+Zapewnia, że `value` jest `true`.
 
 ### `.false(value, message?)`
 
-Assert that `value` is `false`.
+Zapewnia, że `value` jest `false`.
 
 ### `.is(value, expected, message?)`
 
-Assert that `value` is the same as `expected`. This is based on [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
+Zapewnia, że `value` jest takie samo jak `expected`. Jest to oparte na [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
 
 ### `.not(value, expected, message?)`
 
-Assert that `value` is not the same as `expected`. This is based on [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
+Zapewnia, że `value` nie jest takie samo jak `expected`. Jeset to oparte na [`Object.is()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
 
 ### `.deepEqual(value, expected, message?)`
 
-Assert that `value` is deeply equal to `expected`. See [Concordance](https://github.com/concordancejs/concordance) for details. Works with [React elements and `react-test-renderer`](https://github.com/concordancejs/react).
+Zapewnia, że `value` jest głęboko równe `expected`. Zobacz [Concordance](https://github.com/concordancejs/concordance) po więcej szczegółów. Działa z [elementami React oraz `react-test-renderer`](https://github.com/concordancejs/react).
 
 ### `.notDeepEqual(value, expected, message?)`
 
-Assert that `value` is not deeply equal to `expected`. The inverse of `.deepEqual()`.
+Zapewnia, że `value` nie jest głęboko równe `expected`. Odwrotność `.deepEqual()`.
 
 ### `.throws(fn, expectation?, message?)`
 
-Assert that an error is thrown. `fn` must be a function which should throw. The thrown value *must* be an error. It is returned so you can run more assertions against it.
+Zapewnia, że błąd jest rzucony. `fn` musi być funkcją, która powinna rzucić. Wyrzucona wartość *musi* być błędem. Jest zwracana, aby można było uruchomić więcej asercji przeciwko temu.
 
-`expectation` can be an object with one or more of the following properties:
+`expectation` może być obiektem o jednej lub więcej z następujących właściwości:
 
-* `instanceOf`: a constructor, the thrown error must be an instance of
-* `is`: the thrown error must be strictly equal to `expectation.is`
-* `message`: either a string, which is compared against the thrown error's message, or a regular expression, which is matched against this message
-* `name`: the expected `.name` value of the thrown error
-* `code`: the expected `.code` value of the thrown error
+* `instanceOf`: konstruktor, zgłoszony błąd musi być instancją klasy
+* `is`: wyrzucony błąd musi być ściśle równy `expectation.is`
+* `message`: albo ciąg znaków, który jest porównywany z komunikatem o błędzie wyrzuconym, albo wyrażenie regularne, które jest dopasowane do tego komunikatu
+* `name`: oczekiwana wartość `.name` wyrzuconego błędu
+* `code`: oczekiwana wartość `.code` wyrzuconego błędu
 
-`expectation` does not need to be specified. If you don't need it but do want to set an assertion message you have to specify `null`.
+`expectation` nie trzeba określać. Jeśli nie potrzebujesz, ale chcesz ustawić komunikat potwierdzający, musisz określić `null`.
 
-Example:
+Przykład:
 
 ```js
 const fn = () => {
@@ -239,21 +239,21 @@ test('throws', t => {
 
 ### `.throwsAsync(thrower, expectation?, message?)`
 
-Assert that an error is thrown. `thrower` can be an async function which should throw, or a promise that should reject. This assertion must be awaited.
+Zapewnia, że zgłaszany jest błąd. `thrower` może być funkcją asynchroniczną, która powinna zostać rzucona, lub obietnicą (promise), która powinna odrzucić. Asercja powinna być awaited.
 
-The thrown value *must* be an error. It is returned so you can run more assertions against it.
+Wyrzucona wartość *musi* być błędem. Jest zwracana, aby można było uruchomić więcej asercji przeciwko temu.
 
-`expectation` can be an object with one or more of the following properties:
+`expectation` może być obiektem o jednej lub więcej z następujących właściwości:
 
-* `instanceOf`: a constructor, the thrown error must be an instance of
-* `is`: the thrown error must be strictly equal to `expectation.is`
-* `message`: either a string, which is compared against the thrown error's message, or a regular expression, which is matched against this message
-* `name`: the expected `.name` value of the thrown error
-* `code`: the expected `.code` value of the thrown error
+* `instanceOf`: konstruktor, zgłoszony błąd musi być instancją klasy
+* `is`: wyrzucony błąd musi być ściśle równy `expectation.is`
+* `message`: albo ciąg znaków, który jest porównywany z komunikatem o błędzie wyrzuconym, albo wyrażenie regularne, które jest dopasowane do tego komunikatu
+* `name`: oczekiwana wartość `.name` wyrzuconego błędu
+* `code`: oczekiwana wartość `.code` wyrzuconego błędu
 
-`expectation` does not need to be specified. If you don't need it but do want to set an assertion message you have to specify `null`.
+`expectation` nie trzeba określać. Jeśli nie potrzebujesz, ale chcesz ustawić komunikat potwierdzający, musisz określić `null`.
 
-Example:
+Przykład:
 
 ```js
 test('throws', async t => {
@@ -274,13 +274,13 @@ test('rejects', async t => {
 
 ### `.notThrows(fn, message?)`
 
-Assert that no error is thrown. `fn` must be a function which shouldn't throw.
+Zapewnia, że błąd nie jest zgłaszany. `fn` musi być funkcją, która nie powinna rzucać.
 
 ### `.notThrowsAsync(nonThrower, message?)`
 
-Assert that no error is thrown. `nonThrower` can be an async function which shouldn't throw, or a promise that should resolve.
+Zapewnia, że błąd nie jest zgłaszany. `nonThrower` może być funkcją asynchroniczną, której nie należy rzucać, lub obietnicą (promise), która powinna zostać rozwiązana.
 
-Like the `.throwsAsync()` assertion, you must wait for the assertion to complete:
+Tak jak asercja `.throwsAsync()`, musisz poczekać na zakończenie asercji:
 
 ```js
 test('resolves', async t => {
@@ -290,36 +290,36 @@ test('resolves', async t => {
 
 ### `.regex(contents, regex, message?)`
 
-Assert that `contents` matches `regex`.
+Zapewnia, że `contents` pasuje do `regex`.
 
 ### `.notRegex(contents, regex, message?)`
 
-Assert that `contents` does not match `regex`.
+Zapewnia, że `contents` nie pasuje do `regex`.
 
 ### `.snapshot(expected, message?)`
 ### `.snapshot(expected, options?, message?)`
 
-Compares the `expected` value with a previously recorded snapshot. Snapshots are stored for each test, so ensure you give your tests unique titles. Alternatively pass an `options` object to select a specific snapshot, for instance `{id: 'my snapshot'}`.
+Porównuje wartość `expected` z uprzednio zarejestrowanym snapshotem. Snapshoty są przechowywane dla każdego testu, więc upewnij się, że nadajesz swoim testom unikalne tytuły. Alternatywnie przekazaż obiekt `options` do wybrania określonego snapshota, na przykład `{id: 'my snapshot'}`.
 
-Snapshot assertions cannot be skipped when snapshots are being updated.
+Snapshot asercji nie można pominąć, gdy snapshoty są aktualizowane.
 
 ### `.try(title?, implementation | macro | macro[], ...args?)`
 
-`.try()` allows you to *try* assertions without causing the test to fail.
+`.try()` pozwala ci *spróbować* asercji bez powodowania niepowodzenia testu.
 
-The implementation function behaves the same as any other test function. You can even use macros. The first title argument is always optional. Additional arguments are passed to the implemetation or macro function.
+Funkcja implementacji zachowuje się tak samo jak każda inna funkcja testowa. Możesz nawet używać makr. Pierwszy argument tytułu jest zawsze opcjonalny. Dodatkowe argumenty są przekazywane do funkcji implementacji lub makra.
 
-`.try()` is an asynchronous function. You must `await` it. The result object has `commit()` and `discard()` methods. You must decide whether to commit or discard the result. If you commit a failed result, your test will fail.
+`.try()` jest funkcją asynchroniczną. Musisz `await`. Wynikowy obiekt ma metody `commit()` oraz `discard()`. Musisz zdecydować, czy zatwierdzić, czy odrzucić wynik. Jeśli commitujesz nieudany wynik, test się nie powiedzie.
 
-You can check whether the attempt passed using the `passed` property. Any assertion errors are available through the `errors` property. The attempt title is available through the `title` property.
+Możesz sprawdzić, czy próba się powiodła za pomocą właściwości `passed`. Wszelkie błędy asercji są dostępne za pośrednictwem właściwości `errors`. Tytuł próby jest dostępny za pośrednictwem właściwości `title`.
 
-Logs from `t.log()` are available through the `logs` property. You can choose to retain these logs as part of your test by passing `{retainLogs: true}` to the `commit()` and `discard()` methods.
+Logi z `t.log()` są dostępne poprzez właściwość `logs`. Możesz wybrać przechowywanie tych logów w ramach testu, przekazując `{retainLogs: true}` do metod `commit()` i `discard()`.
 
-The implementation function receives its own [execution context](./02-execution-context.md), just like a test function. You must be careful to only perform assertions using the attempt's execution context. At least one assertion must pass for your attempt to pass.
+Funkcja implementacji otrzymuje własny [kontekst wykonania](./02-execution-context.md), podobnie jak funkcja testowa. Trzeba uważać, aby wykonywać asercje tylko w kontekście wykonania próby. Przynajmniej jedna asercja musi zostać potwierdzona dla twojej próby przejścia.
 
-You may run multiple attempts concurrently, within a single test. However you can't use snapshots when you do so.
+Możesz uruchomić wiele prób jednocześnie, w ramach jednego testu. Nie można jednak używać snapshotów.
 
-Example:
+Przykład:
 
 ```js
 const twoRandomIntegers = () => {
