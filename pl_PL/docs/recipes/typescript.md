@@ -1,22 +1,22 @@
 # TypeScript
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/typescript.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/typescript.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/typescript.md)
 
-AVA comes bundled with a TypeScript definition file. This allows developers to leverage TypeScript for writing tests.
+AVA jest dostarczany w pakiecie z plikiem definicji TypeScript. Dzięki temu programiści mogą wykorzystywać TypeScript do pisania testów.
 
-Out of the box AVA does not load TypeScript test files, however. Rudimentary support is available via the [`@ava/typescript`] package. You can also use AVA with [`ts-node`]. Read on for details.
+Jednak po wyjęciu z pudełka AVA nie ładuje plików testowych TypeScript. Podstawowe wsparcie jest dostępne za pośrednictwem pakietu [`@ava/typescript`]. Możesz także użyć AVA z [`ts-node`]. Czytaj dalej, aby poznać szczegóły.
 
-This guide assumes you've already set up TypeScript for your project. Note that AVA's definition has been tested with version 3.7.5.
+W tym przewodniku założono, że już skonfigurowałeś TypeScript dla swojego projektu. Należy pamiętać, że definicja AVA została przetestowana z wersją 3.7.5.
 
-## Enabling AVA's TypeScript support
+## Włączanie obsługi TypeScript w AVA
 
-Currently, AVA's TypeScript support is designed to work for projects that precompile TypeScript. Please see [`@ava/typescript`] for setup instructions.
+Obecnie obsługa TypeScript AVA jest przeznaczona do pracy w projektach, które prekompilują TypeScript. Proszę zobaczyć [`@ava/typescript`] po instrukcje konfiguracji.
 
-Read on until the end to learn how to use [`ts-node`] with AVA.
+Czytaj dalej do końca, aby dowiedzieć się, jak używać [`ts-node`] z AVA.
 
-## Writing tests
+## Pisanie testów
 
-Create a `test.ts` file.
+Stwórz plik `test.ts`.
 
 ```ts
 import test from 'ava';
@@ -28,9 +28,9 @@ test('fn() returns foo', t => {
 });
 ```
 
-## Using [macros](../01-writing-tests.md#reusing-test-logic-through-macros)
+## Używanie [macros](../01-writing-tests.md#reusing-test-logic-through-macros)
 
-Macros can receive additional arguments. AVA can infer these to ensure you're using the macro correctly:
+Makra mogą otrzymywać dodatkowe argumenty. AVA może wywnioskować te, aby upewnić się, że używasz makra poprawnie:
 
 ```ts
 import test, {ExecutionContext} from 'ava';
@@ -42,7 +42,7 @@ const hasLength = (t: ExecutionContext, input: string, expected: number) => {
 test('bar has length 3', hasLength, 'bar', 3);
 ```
 
-In order to be able to assign the `title` property to a macro you need to type the function:
+Aby móc przypisać właściwość `title` do makra musisz wpisać funkcję:
 
 ```ts
 import test, {Macro} from 'ava';
@@ -57,7 +57,7 @@ test(macro, '2 * 3', 6);
 test('providedTitle', macro, '3 * 3', 9);
 ```
 
-You'll need a different type if you're expecting your macro to be used with a callback test:
+Będziesz potrzebować innego typu, jeśli spodziewasz się, że twoje makro będzie używane z testem oddzwonienia:
 
 ```ts
 import test, {CbMacro} from 'ava';
@@ -72,7 +72,7 @@ test.cb(macro);
 
 ## Typing [`t.context`](../01-writing-tests.md#test-context)
 
-By default, the type of `t.context` will be the empty object (`{}`). AVA exposes an interface `TestInterface<Context>` which you can use to apply your own type to `t.context`. This can help you catch errors at compile-time:
+Domyślnie typ `t.context` będzie pustym obiektem (`{}`). AVA ujawnia interfejs `TestInterface<Context>` do którego możesz zastosować własny typ `t.context`. Może to pomóc w wykrywaniu błędów w czasie kompilacji:
 
 ```ts
 import anyTest, {TestInterface} from 'ava';
@@ -96,7 +96,7 @@ test('an actual test', t => {
 });
 ```
 
-You can also type the context when creating macros:
+Możesz także wpisać kontekst podczas tworzenia makr:
 
 ```ts
 import anyTest, {Macro, TestInterface} from 'ava';
@@ -118,11 +118,11 @@ test.beforeEach(t => {
 test('foo is bar', macro, 'bar');
 ```
 
-Note that, despite the type cast above, when executing `t.context` is an empty object unless it's assigned.
+Zauważ, że pomimo wykonania powyższego typu, podczas wykonywania `t.context` jest pustym obiektem, chyba że jest przypisany.
 
 ## Typing `throws` assertions
 
-The `t.throws()` and `t.throwsAsync()` assertions are typed to always return an Error. You can customize the error class using generics:
+`t.throws()` i `t.throwsAsync()` asercje są typowane, aby zawsze zwracać błąd. Możesz dostosować klasę błędów za pomocą ogólnych:
 
 ```ts
 import test from 'ava';
@@ -151,11 +151,11 @@ test('throwsAsync', async t => {
 });
 ```
 
-Note that, despite the typing, the assertion returns `undefined` if it fails. Typing the assertions as returning `Error | undefined` didn't seem like the pragmatic choice.
+Zauważ, że pomimo typowania, asercja wraca `undefined` jeśli to zawiedzie. Typowanie asercji jako zwracających `Error | undefined` nie wydawało się pragmatycznym wyborem.
 
-## On the fly compilation using `ts-node`
+## Kompilacja w locie za pomocą `ts-node`
 
-If [`@ava/typescript`] doesn't do the trick you can use [`ts-node`]. Make sure it's installed and then configure AVA to recognize TypeScript files and register [`ts-node`]:
+Jeśli [`@ava/typescript`] nie robi sztuczki, możesz użyć [`ts-node`]. Upewnij się, że jest zainstalowany, a następnie skonfiguruj AVA do rozpoznawania plików TypeScript i rejestracji [`ts-node`]:
 
 `package.json`:
 
@@ -172,13 +172,13 @@ If [`@ava/typescript`] doesn't do the trick you can use [`ts-node`]. Make sure i
 }
 ```
 
-It's worth noting that with this configuration tests will fail if there are TypeScript build errors. If you want to test while ignoring these errors you can use `ts-node/register/transpile-only` instead of `ts-node/register`.
+Warto zauważyć, że przy tej konfiguracji testy zakończą się niepowodzeniem, jeśli wystąpią błędy kompilacji TypeScript. Jeśli chcesz przetestować, ignorując te błędy, możesz użyć `ts-node/register/transpile-only` zamiast `ts-node/register`.
 
-### Using module path mapping
+### Korzystanie z mapowania ścieżek modułów
 
-`ts-node` [does not support module path mapping](https://github.com/TypeStrong/ts-node/issues/138), however you can use [`tsconfig-paths`](https://github.com/dividab/tsconfig-paths#readme).
+`ts-node` [nie obsługuje mapowania ścieżek modułów](https://github.com/TypeStrong/ts-node/issues/138), jednak możesz użyć [`tsconfig-paths`](https://github.com/dividab/tsconfig-paths#readme).
 
-Once installed, add the `tsconfig-paths/register` entry to the `require` section of AVA's config:
+Po zainstalowaniu dodaj `tsconfig-paths/register` wejście do sekcji `require` configa AVA:
 
 `package.json`:
 
@@ -196,7 +196,7 @@ Once installed, add the `tsconfig-paths/register` entry to the `require` section
 }
 ```
 
-Then you can start using module aliases:
+Następnie możesz zacząć używać aliasów modułów:
 
 `tsconfig.json`:
 ```json
