@@ -1,8 +1,8 @@
-# Snapshot testing
+# Testowanie snapshotów
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/04-snapshot-testing.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/04-snapshot-testing.md)
 
-AVA supports snapshot testing, [as introduced by Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), through its [Assertions](./03-assertions.md) interface. You can snapshot any value as well as React elements:
+AVA wspiera testowanie snapshotów (migawek), [zgodnie z wprowadzeniem od Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), poprzez interfejs [Asercji](./03-assertions.md). Możesz wykonać snapshot dowolnej wartości, a także elementów React:
 
 ```js
 // Your component
@@ -23,28 +23,28 @@ test('HelloWorld component', t => {
 });
 ```
 
-[Try it out in this example project.](https://github.com/avajs/ava-snapshot-example)
+[Wypróbuj w tym przykładowym projekcie.](https://github.com/avajs/ava-snapshot-example)
 
-Snapshots are stored alongside your test files. If your tests are in a `test` or `tests` folder the snapshots will be stored in a `snapshots` folder. If your tests are in a `__tests__` folder then they they'll be stored in a `__snapshots__` folder.
+Snapshoty są przechowywane obok plików testowych. Jeśli twoje testy są w `test` lub folderze `tests`, snapshoty będą przechowywane w folderze `snapshots`. Jeśli twoje testy są w folderze `__tests__`, wtedy będą przechowywane w folderze `__snapshots__`.
 
-Say you have `~/project/test/main.js` which contains snapshot assertions. AVA will create two files:
+Powiedz, że masz `~/project/test/main.js` który zawiera snapshoty asercji. AVA utworzy dwa pliki:
 
 * `~/project/test/snapshots/main.js.snap`
 * `~/project/test/snapshots/main.js.md`
 
-The first file contains the actual snapshot and is required for future comparisons. The second file contains your *snapshot report*. It's regenerated when you update your snapshots. If you commit it to source control you can diff it to see the changes to your snapshot.
+Pierwszy plik zawiera rzeczywistą migawkę i jest wymagany do przyszłych porównań. Drugi plik zawiera twój *raport migawki*. Jest regenerowany po zaktualizowaniu migawek. Jeśli przekażesz go do kontroli źródła, możesz skorzystać z diff, aby zobaczyć zmiany w migawce.
 
-AVA will show why your snapshot assertion failed:
+AVA pokaże, dlaczego asercja migawki nie powiodła się:
 
 <img src="../media/snapshot-testing.png" width="1048">
 
-You can then check your code. If the change was intentional you can use the `--update-snapshots` (or `-u`) flag to update the snapshots:
+Następnie możesz sprawdzić swój kod. Jeśli zmiana była zamierzona, możesz użyć `--update-snapshots` (lub `-u`) flagi, aby zaktualizować migawki:
 
 ```console
 $ ava --update-snapshots
 ```
 
-You can specify a fixed location for storing the snapshot files in AVA's [`package.json` configuration](./06-configuration.md):
+Możesz określić stałą lokalizację przechowywania plików migawek w AVA [konfiguracja `package.json`](./06-configuration.md):
 
 **`package.json`:**
 
@@ -56,6 +56,6 @@ You can specify a fixed location for storing the snapshot files in AVA's [`packa
 }
 ```
 
-The snapshot files will be saved in a directory structure that mirrors that of your test files.
+Pliki migawek zostaną zapisane w strukturze katalogów, która odzwierciedla strukturę plików testowych.
 
-If you are running AVA against precompiled test files, AVA will try and use source maps to determine the location of the original files. Snapshots will be stored next to these files, following the same rules as if AVA had executed the original files directly. This is great if you're writing your tests in TypeScript (see our [TypeScript recipe](./recipes/typescript.md)).
+Jeśli używasz AVA dla wstępnie skompilowanych plików testowych, AVA spróbuje użyć map źródłowych, aby ustalić lokalizację oryginalnych plików. Migawki będą przechowywane obok tych plików, zgodnie z tymi samymi regułami, jak gdyby AVA wykonał bezpośrednio oryginalne pliki. Jest to świetne, jeśli piszesz testy w TypeScript (zobacz naszą [formułę TypeScript](./recipes/typescript.md)).
