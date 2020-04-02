@@ -1,6 +1,6 @@
 # CLI
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/05-command-line.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/05-command-line.md)
 
 ```console
 ava [<pattern>...]
@@ -44,9 +44,9 @@ Examples:
   ava test.js
 ```
 
-*Note that the CLI will use your local install of AVA when available, even when run globally.*
+*Pamiętaj, że CLI użyje lokalnej instalacji AVA, jeśli jest dostępna, nawet jeśli działa globalnie.*
 
-AVA searches for test files using the following patterns:
+AVA wyszukuje pliki testowe przy użyciu następujących wzorców:
 
 * `test.js`
 * `src/test.js`
@@ -58,7 +58,7 @@ AVA searches for test files using the following patterns:
 * `**/tests/**/*.js`
 * `**/__tests__/**/*.js`
 
-Files inside `node_modules` are *always* ignored. So are files starting with `_` or inside of directories that start with a single `_`. Additionally, files matching these patterns are ignored by default, unless different patterns are configured:
+	Pliki w środku `node_modules` są *zawsze* ignorowane. Pliki zaczynają się od `_` lub w katalogach zaczynających się od jednego `_`. Ponadto pliki pasujące do tych wzorców są domyślnie ignorowane, chyba że skonfigurowane zostaną różne wzorce:
 
 * `**/__tests__/**/__helper__/**/*`
 * `**/__tests__/**/__helpers__/**/*`
@@ -73,57 +73,57 @@ Files inside `node_modules` are *always* ignored. So are files starting with `_`
 * `**/tests/**/fixture/**/*`
 * `**/tests/**/fixtures/**/*`
 
-When using `npm test`, you can pass positional arguments directly `npm test test2.js`, but flags needs to be passed like `npm test -- --verbose`.
+Podczas używania `npm test`, możesz przekazać argumenty pozycyjne bezpośrednio `npm test test2.js`, ale flagi muszą być przekazywane jako `npm test -- --verbose`.
 
-## Running tests with matching titles
+## Przeprowadzanie testów z dopasowywaniem tytułów
 
-The `--match` flag allows you to run just the tests that have a matching title. This is achieved with simple wildcard patterns. Patterns are case insensitive. See [`matcher`](https://github.com/sindresorhus/matcher) for more details.
+Flaga `--match` pozwala uruchomić tylko testy o pasującym tytule. Osiąga się to za pomocą prostych wzorów wieloznacznych. Wzory nie uwzględniają wielkości liter. Zobacz [`matcher`](https://github.com/sindresorhus/matcher) po więcej szczegółów.
 
-Match titles ending with `foo`:
+Dopasowanie tytułów kończących się na `foo`:
 
 ```console
 npx ava --match='*foo'
 ```
 
-Match titles starting with `foo`:
+Dopasowanie tytułów zaczynających się na `foo`:
 
 ```console
 npx ava --match='foo*'
 ```
 
-Match titles containing `foo`:
+Dopasowanie tytułów zawierających `foo`:
 
 ```console
 npx ava --match='*foo*'
 ```
 
-Match titles that are *exactly* `foo` (albeit case insensitively):
+Dopasuj tytuły, które są *dokładnie* `foo` (choć wielkość liter jest nieistotna):
 
 ```console
 npx ava --match='foo'
 ```
 
-Match titles not containing `foo`:
+Dopasuj tytuły niezawierające `foo`:
 
 ```console
 npx ava --match='!*foo*'
 ```
 
-Match titles starting with `foo` and ending with `bar`:
+Dopasuj tytuły zaczynające się od `foo` i kończące z `bar`:
 
 ```console
 npx ava --match='foo*bar'
 ```
 
-Match titles starting with `foo` or ending with `bar`:
+Dopasuj tytuły zaczynające się od `foo` lub kończące się z `bar`:
 
 ```console
 npx ava --match='foo*' --match='*bar'
 ```
 
-Note that a match pattern takes precedence over the `.only` modifier. Only tests with an explicit title are matched. Tests without titles or whose title is derived from the implementation function will be skipped when `--match` is used.
+Zauważ, że wzorzec dopasowania ma pierwszeństwo przed modyfikatorem `.only`. Dopasowywane są tylko testy z wyraźnym tytułem. Testy bez tytułów lub których tytuł pochodzi od funkcji implementacji zostaną pominięte, gdy `--match` jest używane.
 
-Here's what happens when you run AVA with a match pattern of `*oo*` and the following tests:
+Oto, co się stanie, gdy uruchomisz AVA z wzorcem dopasowania `*oo*` oraz następujące testy:
 
 ```js
 test('foo will run', t => {
@@ -149,29 +149,29 @@ test(function foo(t) {
 });
 ```
 
-## Resetting AVA's cache
+## Resetowanie cache AVA
 
-AVA may cache certain files, especially when you use our [`@ava/babel`](https://github.com/avajs/babel) provider. If it seems like your latest changes aren't being picked up by AVA you can reset the cache by running:
+AVA może buforować niektóre pliki, szczególnie gdy korzystasz z naszego [`@ava/babel`](https://github.com/avajs/babel) provider. Jeśli wygląda na to, że AVA nie odbiera Twoich najnowszych zmian, możesz zresetować cache, uruchamiając:
 
 ```console
 npx ava reset-cache
 ```
 
-This deletes all files in the `node_modules/.cache/ava` directory.
+Spowoduje to usunięcie wszystkich plików w katalogu `node_modules/.cache/ava`.
 
-## Reporters
+## Zgłaszanie raportów
 
-By default AVA uses a minimal reporter:
+Domyślnie AVA używa minimalnego reportera:
 
 <img src="../media/mini-reporter.gif" width="460">
 
-Use the `--verbose` flag to enable the verbose reporter. This is always used in CI environments unless the [TAP reporter](#tap-reporter) is enabled.
+Użycie flagi `--verbose` aby włączyć pełny reporter. Jest to zawsze używane w środowiskach CI, chyba że [TAP reporter](#tap-reporter) jest włączony.
 
 <img src="../media/verbose-reporter.png" width="294">
 
 ### TAP reporter
 
-AVA supports the TAP format and thus is compatible with [any TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Use the `--tap` flag to enable TAP output.
+AVA obsługuje format TAP, a zatem jest kompatybilny z [dowolnym TAP reporterem](https://github.com/sindresorhus/awesome-tap#reporters). Użyj flagi `--tap` aby włączyć output TAP.
 
 ```console
 $ npx ava --tap | npx tap-nyan
@@ -179,18 +179,18 @@ $ npx ava --tap | npx tap-nyan
 
 <img src="../media/tap-reporter.png" width="420">
 
-Please note that the TAP reporter is unavailable when using [watch mode](./recipes/watch-mode.md).
+Należy pamiętać, że reporter TAP jest niedostępny podczas korzystania z [trybu watch](./recipes/watch-mode.md).
 
-## Node arguments
+## Argumenty Node
 
-The `--node-arguments` argument may be used to specify additional arguments for launching worker processes. These are combined with the `nodeArguments` configuration and any arguments passed to the `node` binary when starting AVA.
+Argument `--node-arguments` może być użyty do podania dodatkowych argumentów do uruchomienia procesów roboczych. Są one połączone z configuracją `nodeArguments` oraz wszelkie argumenty przekazane do binarki `node` binary podczas uruchamiania AVA.
 
-**Only pass trusted values.**
+**Przekaż tylko zaufane wartości.**
 
-Specify the arguments as a single string:
+Podaj argumenty jako pojedynczy ciąg:
 
 ```console
 npx ava --node-arguments="--throw-deprecation --zero-fill-buffers"
 ```
 
-**Only pass trusted values.**
+**Przekaż tylko zaufane wartości.**
