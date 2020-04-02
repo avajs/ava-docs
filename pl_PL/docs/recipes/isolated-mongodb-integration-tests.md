@@ -1,26 +1,26 @@
-# Isolated MongoDB integration tests
+# Izolowane testy integracyjne MongoDB
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
 
-> How to run disposable MongoDB databases in your AVA tests with per-test isolation.
+> Jak uruchamiać jednorazowe bazy danych MongoDB w testach AVA z izolacją na test.
 
-This uses [`MongoMem`](https://github.com/CImrie/mongomem), which allows you to quickly run a temporary MongoDB server locally. It uses temporary file storage which is destroyed when the server stops.
+To używa [`MongoMem`](https://github.com/CImrie/mongomem), co pozwala szybko uruchomić lokalnie tymczasowy serwer MongoDB. Wykorzystuje tymczasowe miejsce do przechowywania plików, które jest niszczone po zatrzymaniu serwera.
 
 
-## Install MongoDB in-memory Server (MongoMem)
+## Zainstaluj MongoDB in-memory Server (MongoMem)
 
-In the root directory of your app, run:
+W katalogu głównym aplikacji uruchom:
 
 ```console
 $ npm install --save-dev mongomem
 ```
 
 
-## Using MongoMem
+## Używanie MongoMem
 
-In your test file, import the module, and run the server.
+W pliku testowym zaimportuj moduł i uruchom serwer.
 
-**Make sure to run the server at the start of your file, outside of any test cases.**
+**Pamiętaj, aby uruchomić serwer na początku pliku, poza przypadkami testowymi.**
 
 ```js
 const test = require('ava');
@@ -39,11 +39,11 @@ test('some feature', async t => {
 ```
 
 
-## Cleaning Up
+## Sprzątanie
 
-After you have run your tests, you should include a `test.after.always()` method to clean up the MongoDB server. This will remove any temporary files the server used while running.
+Po uruchomieniu testów należy dołączyć metodę `test.after.always()` aby wyczyścić serwer MongoDB. Spowoduje to usunięcie plików tymczasowych używanych przez serwer podczas działania.
 
-This is normally cleaned up by your operating system, but it is good practise to do it manually.
+Jest to zwykle usuwane przez system operacyjny, ale dobrą praktyką jest robienie tego ręcznie.
 
 ```js
 test.after.always('cleanup', t => {
@@ -52,12 +52,12 @@ test.after.always('cleanup', t => {
 ```
 
 
-## Debugging
+## Debugowanie
 
-If the server does not seem to start, you can set the `MongoDBServer.debug = true;` option before you call `MongoDBServer.start()`. This will allow the MongoDB server to print connection or file permission errors when it's starting. It checks and picks an available port to run the server on, so errors are likely to be related to file permissions.
+Jeśli serwer się nie uruchamia, możesz ustawić opcję `MongoDBServer.debug = true;` zanim wywołasz `MongoDBServer.start()`. Umożliwi to serwerowi MongoDB drukowanie błędów połączenia lub uprawnień do plików podczas uruchamiania. Sprawdza i wybiera dostępny port do uruchomienia serwera, więc błędy mogą być związane z uprawnieniami do plików.
 
-## Extra: Setup and use in Mongoose
+## Dodatkowo: Konfiguracja i użycie w Mongoose
 
-[Mongoose](http://mongoosejs.com) is a robust Object-Document-Mapper (ODM) for MongoDB. Refer to its documentation to get started with Mongoose.
+[Mongoose](http://mongoosejs.com) to solidny Object-Document-Mapper (ODM) dla MongoDB. Zapoznaj się z jego dokumentacją, aby rozpocząć korzystanie z Mongoose.
 
-To use Mongoose effectively with AVA, check out the [Mongoose integration docs](endpoint-testing-with-mongoose.md).
+Aby skutecznie używać Mongoose z AVA, sprawdź [Dokumentacja integracji Mongoose](endpoint-testing-with-mongoose.md).
