@@ -1,26 +1,26 @@
-# Common Pitfalls
+# Typowe pułapki
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/08-common-pitfalls.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/08-common-pitfalls.md)
 
-If you use [ESLint](http://eslint.org/), you can install [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). It will help you use AVA correctly and avoid some common pitfalls.
+Jeśli używasz [ESLint](http://eslint.org/), możesz zainstalować [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Pomoże Ci to poprawnie używać AVA i uniknąć typowych pułapek.
 
-## AVA in Docker
+## AVA w Docker
 
-If you run AVA in Docker as part of your CI, you need to fix the appropriate environment variables. Specifically, adding `-e CI=true` in the `docker exec` command. See [#751](https://github.com/avajs/ava/issues/751).
+Jeśli uruchamiasz AVA w Docker jako część CI, musisz naprawić odpowiednie zmienne środowiskowe. W szczególności dodanie `-e CI=true` w poleceniu `docker exec`. Zobacz [#751](https://github.com/avajs/ava/issues/751).
 
-AVA uses [is-ci](https://github.com/watson/is-ci) to decide if it's in a CI environment or not using [these variables](https://github.com/watson/ci-info/blob/master/index.js).
+AVA używa [is-ci](https://github.com/watson/is-ci) aby zdecydować, czy jest w środowisku CI, czy nie używa [tych zmiennych](https://github.com/watson/ci-info/blob/master/index.js).
 
-## AVA and connected client limits
+## AVA i powiązane limity klientów
 
-You may be using a service that only allows a limited number of concurrent connections. For example, many database-as-a-service businesses offer a free plan with a limit on how many clients can be using it at the same time. AVA can hit those limits as it runs multiple processes, but well-written services should emit an error or throttle in those cases. If the one you're using doesn't, the tests will hang.
+Być może korzystasz z usługi, która umożliwia ograniczoną liczbę równoczesnych połączeń. Na przykład wiele firm korzystających z bazy danych jako usługi oferuje bezpłatny plan z ograniczeniem liczby klientów, którzy mogą z niego korzystać jednocześnie. AVA może przekroczyć te limity, ponieważ uruchamia wiele procesów, ale dobrze napisane usługi powinny w takich przypadkach emitować błąd lub przepustnicę. Jeśli ten, którego używasz - nie, testy się zawieszą.
 
-By default, AVA will use as many processes as there are [logical cores](https://superuser.com/questions/1105654/logical-vs-physical-cpu-performance) on your machine. This is capped at two in a CI environment.
+Domyślnie AVA wykorzystuje tyle procesów, ile jest [rdzeni logicznych](https://superuser.com/questions/1105654/logical-vs-physical-cpu-performance) na twojej maszynie. Jest to ograniczone do dwóch w środowisku CI.
 
-Use the `concurrency` flag to limit the number of processes ran. For example, if your service plan allows 5 clients, you should run AVA with `concurrency=5` or less.
+Użyj flagi `concurrency` aby ograniczyć liczbę uruchomionych procesów. Na przykład, jeśli Twój plan usług dopuszcza 5 klientów, powinieneś uruchomić AVA z `concurrency=5` lub mniejszą.
 
-## Asynchronous operations
+## Operacje asynchroniczne
 
-You may be running an asynchronous operation inside a test and wondering why it's not finishing. If your asynchronous operation uses promises, you should return the promise:
+Być może uruchamiasz operację asynchroniczną w teście i zastanawiasz się, dlaczego się nie kończy. Jeśli operacja asynchroniczna korzysta z obietnic, powinieneś zwrócić obietnicę (promise):
 
 ```js
 test('fetches foo', t => {
@@ -30,7 +30,7 @@ test('fetches foo', t => {
 });
 ```
 
-Better yet, use `async` / `await`:
+Jeszcze lepiej, użyj `async` / `await`:
 
 ```js
 test('fetches foo', async t => {
@@ -39,7 +39,7 @@ test('fetches foo', async t => {
 });
 ```
 
-If you're using callbacks, use [`test.cb`](./01-writing-tests.md#callback-support):
+Jeśli używasz callbacków, użyj [`test.cb`](./01-writing-tests.md#callback-support):
 
 ```js
 test.cb('fetches foo', t => {
@@ -50,7 +50,7 @@ test.cb('fetches foo', t => {
 });
 ```
 
-Alternatively, promisify the callback function using something like [`pify`](https://github.com/sindresorhus/pify):
+Alternatywnie, możesz promisify funkcję callback używając czegoś takiego, jak [`pify`](https://github.com/sindresorhus/pify):
 
 ```js
 test('fetches foo', async t => {
@@ -59,13 +59,13 @@ test('fetches foo', async t => {
 });
 ```
 
-## Attributing uncaught exceptions to tests
+## Przypisywanie niewyłapanych wyjątków do testów
 
-AVA [can't trace uncaught exceptions](https://github.com/avajs/ava/issues/214) back to the test that triggered them. Callback-taking functions may lead to uncaught exceptions that can then be hard to debug. Consider promisifying and using `async`/`await`, as in the above example. This should allow AVA to catch the exception and attribute it to the correct test.
+AVA [nie może wyśledzić niewyłapanych wyjątków](https://github.com/avajs/ava/issues/214) z powrotem do testu, który je uruchomił. Funkcje callback mogą prowadzić do nieprzechwyconych wyjątków, które mogą być trudne do debugowania. Rozważ promisifying i wykorzystanie `async`/`await`, jak w powyższym przykładzie. Powinno to pozwolić AVA na wychwycenie wyjątku i przypisanie go do poprawnego testu.
 
-## Why are the enhanced assertion messages not shown?
+## Dlaczego komunikaty o wzmocnionej asercji nie są wyświetlane?
 
-Ensure that the first parameter passed into your test is named `t`. This is a requirement of [`power-assert`](https://github.com/power-assert-js/power-assert), the library that provides the [enhanced messages](./03-assertions.md#enhanced-assertion-messages).
+Upewnij się, że pierwszy parametr przekazany do testu ma nazwę `t`. Jest to wymóg [`power-assert`](https://github.com/power-assert-js/power-assert), biblioteka udostępniająca [wzmocnione wiadomości](./03-assertions.md#enhanced-assertion-messages).
 
 ```js
 test('one is one', t => {
@@ -73,13 +73,13 @@ test('one is one', t => {
 });
 ```
 
-Also make sure to enable [Babel](./recipes/babel.md).
+Upewnij się również, aby włączyć [Babel](./recipes/babel.md).
 
-## Sharing variables between asynchronous tests
+## Udostępnianie zmiennych między testami asynchronicznymi
 
-By default AVA executes tests concurrently. This can cause problems if your tests are asynchronous and share variables.
+Domyślnie AVA wykonuje testy jednocześnie. Może to powodować problemy, jeśli testy są asynchroniczne i współużytkują zmienne.
 
-Take this contrived example:
+Weź ten wymyślony przykład:
 
 ```js
 const test = require('ava');
@@ -106,7 +106,7 @@ test('increment twice', async t => {
 });
 ```
 
-Concurrent tests allow for asynchronous tests to execute more quickly, but if they rely on shared state you this may lead to unexpected test failures. If the shared state cannot be avoided, you can execute your tests serially:
+Współbieżne testy pozwalają na szybsze wykonywanie testów asynchronicznych, ale jeśli polegają one na stanie współużytkowanym, może to prowadzić do nieoczekiwanych niepowodzeń testów. Jeśli nie można uniknąć stanu wspólnego, możesz wykonać testy szeregowo:
 
 ```js
 const test = require('ava');
@@ -135,4 +135,4 @@ test.serial('increment twice', async t => {
 
 ---
 
-Is your problem not listed here? Submit a pull request or comment on [this issue](https://github.com/avajs/ava/issues/404).
+Twojego problemu nie ma na liście? Prześlij pull request lub skomentuj [to issue](https://github.com/avajs/ava/issues/404).
