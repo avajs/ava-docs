@@ -1,14 +1,13 @@
 # Flow
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/flow.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/flow.md)
 
-Until [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) AVA came bundled with a Flow definition file. This allows developers to leverage Flow for writing tests.
+Dopiero [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) do AVA dołączono plik definicji przepływu. Umożliwia to programistom wykorzystanie Flow do pisania testów.
 
-**We need some help publishing the type definitions outside of AVA. Please join us in https://github.com/avajs/flow-typed/issues/1 if you'd like to help out.**
+**Potrzebujemy pomocy w opublikowaniu definicji typów poza AVA. Dołącz do nas https://github.com/avajs/flow-typed/issues/1 jeśli chcesz pomóc.**
 
-This guide assumes you've already set up Flow for your project. Note that AVA's definition as been tested with version 0.95.1.
-
-We recommend you use AVA's [Babel support](https://github.com/avajs/babel) to strip Flow type annotations and declarations. AVA automatically applies your project's Babel configuration, so everything may just work without changes. Alternatively install [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) and customize AVA's configuration in the `package.json` file (or the `ava.config.*` file) as follows.
+W tym przewodniku założono, że skonfigurowałeś już Flow dla swojego projektu. Zauważ, że definicja AVA została przetestowana z wersją 0.95.1.
+Zalecamy użycie AVA'owej [obsługi Babel](https://github.com/avajs/babel) do usuwania adnotacji i deklaracji typu Flow. AVA automatycznie stosuje konfigurację Babel twojego projektu, więc wszystko może działać bez zmian. Alternatywnie zainstaluj [`@babel/plugin-transform-flow-strip-types`](https://www.npmjs.com/package/@babel/plugin-transform-flow-strip-types) i dostosuj konfigurację AVA w pliku `package.json` (lub pliku `ava.config.*`) następująco.
 
 **`package.json`:**
 
@@ -26,11 +25,11 @@ We recommend you use AVA's [Babel support](https://github.com/avajs/babel) to st
 }
 ```
 
-See our [`@ava/babel`](https://github.com/avajs/babel) for more details.
+Zobacz nasz [`@ava/babel`](https://github.com/avajs/babel) po więcej szczegółów.
 
-## Writing tests
+## Pisanie testów
 
-Create a `test.js` file.
+Stwórz plik `test.js`.
 
 ```js
 // @flow
@@ -45,7 +44,7 @@ test('check getFoo', t => {
 
 ## Typing [`t.context`](../01-writing-tests.md#test-context)
 
-By default, the type of `t.context` will be the empty object (`{}`). AVA exposes an interface `TestInterface<Context>` which you can use to apply your own type to `t.context`. This can help you catch errors at compile-time:
+Domyślnie typ `t.context` będzie pustym obiektem (`{}`). AVA ujawnia interfejs `TestInterface<Context>` do którego możesz zastosować własny typ `t.context`. Może to pomóc w wykrywaniu błędów w czasie kompilacji:
 
 ```js
 // @flow
@@ -71,11 +70,11 @@ test('an actual test', t => {
 });
 ```
 
-Note that, despite the type cast above, when executing `t.context` is an empty object unless it's assigned.
+Zauważ, że pomimo wykonania powyższego typu, podczas wykonywania `t.context` jest pustym obiektem, chyba że jest przypisany.
 
 ## Typing `throws` assertions
 
-The `t.throws()` and `t.throwsAsync()` assertions are typed to always return an Error. You can customize the error class using generics:
+`t.throws()` oraz `t.throwsAsync()` asercje są typowane, aby zawsze zwracać błąd. Możesz dostosować klasę błędów używając generics:
 
 ```js
 // @flow
@@ -105,4 +104,4 @@ test('throwsAsync', async t => {
 });
 ```
 
-Note that, despite the typing, the assertion returns `undefined` if it fails. Typing the assertions as returning `Error | undefined` didn't seem like the pragmatic choice.
+Zauważ, że pomimo pisania, asercja wraca `undefined` jeśli zawiedzie. Wpisywanie asercji jako powracających `Error | undefined` nie wydawało się pragmatycznym wyborem.
