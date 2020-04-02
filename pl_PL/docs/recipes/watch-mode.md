@@ -1,18 +1,19 @@
-# Watch mode
+# Tryb watch
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
 
-AVA comes with an intelligent watch mode. It watches for files to change and runs just those tests that are affected.
+AVA jest wyposażony w inteligentny tryb watch. Sprawdza, czy pliki się zmieniają i uruchamia tylko te testy, których to dotyczy.
 
-## Running tests with watch mode enabled
 
-You can enable watch mode using the `--watch` or `-w` flags. If you have installed AVA globally:
+## Uruchamianie testów z włączonym trybem watch
+
+Możesz włączyć tryb watch za pomocą flag `--watch` lub `-w`. Jeśli zainstalowałeś AVA globalnie:
 
 ```console
 $ ava --watch
 ```
 
-If you've configured it in your `package.json` like this:
+Jeśli skonfigurowałeś to w swoim `package.json` w ten sposób:
 
 ```json
 {
@@ -22,13 +23,13 @@ If you've configured it in your `package.json` like this:
 }
 ```
 
-You can run:
+Możesz uruchomić:
 
 ```console
 $ npm test -- --watch
 ```
 
-You could also set up a special script:
+Możesz także skonfigurować specjalny skrypt:
 
 ```json
 {
@@ -39,13 +40,13 @@ You could also set up a special script:
 }
 ```
 
-And then use:
+I wtedy użyć:
 
 ```console
 $ npm run watch:test
 ```
 
-Finally you could configure AVA to *always* run in watch mode by setting the `watch` key in the [`ava` section of your `package.json`, or `ava.config.*` file][config].
+Na koniec możesz skonfigurować AVA, aby *zawsze* działał w trybie watch, ustawiając klucz `watch` w [`ava` sekcji twojego `package.json`, lub pliku `ava.config.*`][config].
 
 **`package.json`:**
 
@@ -57,60 +58,60 @@ Finally you could configure AVA to *always* run in watch mode by setting the `wa
 }
 ```
 
-Please note that the TAP reporter is unavailable when using watch mode.
+Pamiętaj, że reporter TAP jest niedostępny podczas korzystania z trybu watch.
 
-## Requirements
+## Wymagania
 
-AVA uses [`chokidar`] as the file watcher. Note that even if you see warnings about optional dependencies failing during install, it will still work fine. Please refer to the *[Install Troubleshooting]* section of `chokidar` documentation for how to resolve the installation problems with chokidar.
+AVA używa [`chokidar`] jako pliku watcher. Pamiętaj, że nawet jeśli zobaczysz ostrzeżenia o niepowodzeniu opcjonalnych zależności podczas instalacji, nadal będzie działać poprawnie. Proszę odnieść się do sekcji *[Install Troubleshooting]* z dokumentacji `chokidar` po to jak rozwiązać problemy z instalacją chokidar.
 
-## Ignoring changes
+## Ignorowanie zmian
 
-By default AVA watches for changes to all files, except for those with a `.snap.md` extension, `ava.config.*` and files in [certain directories](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) as provided by the [`ignore-by-default`] package.
+Domyślnie AVA sprawdza zmiany we wszystkich plikach, z wyjątkiem tych z rozszerzeniem `.snap.md`, `ava.config.*` i plików w [niektórych katalogach](https://github.com/novemberborn/ignore-by-default/blob/master/index.js) zgodnie z pakietem [`ignore-by-default`].
 
-You can configure additional patterns for files to ignore in the [`ava` section of your `package.json`, or `ava.config.*` file][config], using the `ignoredByWatcher` key.
+Możesz skonfigurować dodatkowe wzorce, aby pliki były ignorowane w pliku [`ava` sekcji twojego `package.json`, lub pliku `ava.config.*`][config], używając klucza `ignoredByWatcher`.
 
-If your tests write to disk they may trigger the watcher to rerun your tests. Configuring additional ignore patterns helps avoid this.
+Jeśli testy zapisują się na dysku, mogą spowodować, że watcher uruchomi ponownie testy. Konfigurowanie dodatkowych wzorców ignorowania pomaga tego uniknąć.
 
-## Dependency tracking
+## Śledzenie zależności
 
-AVA tracks which source files your test files depend on. If you change such a dependency only the test file that depends on it will be rerun. AVA will rerun all tests if it cannot determine which test file depends on the changed source file.
+AVA śledzi, od których plików źródłowych zależą twoje pliki testowe. Jeśli zmienisz taką zależność, zostanie ponownie uruchomiony tylko plik testowy, który jest od niej zależny. AVA uruchomi ponownie wszystkie testy, jeśli nie będzie w stanie ustalić, który plik testowy zależy od zmienionego pliku źródłowego.
 
-Dependency tracking works for required modules. Custom extensions and transpilers are supported, provided you [added them in your `package.json` or `ava.config.*` file][config], and not from inside your test file. Files accessed using the `fs` module are not tracked.
+Śledzenie zależności działa dla wymaganych modułów. Niestandardowe rozszerzenia i transpilery są obsługiwane, pod warunkiem [dodania ich do twojego pliku `package.json` lub `ava.config.*`][config], a nie z pliku testowego. Pliki dostępne za pomocą modułu `fs` nie są śledzone.
 
-## Watch mode and the `.only` modifier
+## Tryb watch i modyfikator `.only`
 
-The [`.only` modifier] disables watch mode's dependency tracking algorithm. When a change is made, all `.only` tests will be rerun, regardless of whether the test depends on the changed file.
+[Modyfikator `.only`] wyłącza algorytm śledzenia zależności trybu watch. Po wprowadzeniu zmiany wszystkie testy `.only` zostaną ponownie uruchomione, niezależnie od tego, czy test zależy od zmienionego pliku.
 
-## Watch mode and CI
+## Tryb watch oraz CI
 
-If you run AVA in your CI with watch mode, the execution will exit with an error (`Error : Watch mode is not available in CI, as it prevents AVA from terminating.`). AVA will not run with the `--watch` (`-w`) option in CI, because CI processes should terminate, and with the `--watch` option, AVA will never terminate.
+Jeśli uruchomisz AVA w CI z trybem watch, wykonanie zakończy się z błędem (`Error : Watch mode is not available in CI, as it prevents AVA from terminating.`). AVA nie będzie działać z opcją `--watch` (`-w`) w CI, ponieważ procesy CI powinny zostać zakończone, wraz z opcją `--watch`, AVA nigdy się nie zakończy.
 
-## Manually rerunning all tests
+## Ręcznie uruchom ponownie wszystkie testy
 
-You can quickly rerun all tests by typing <kbd>r</kbd> on the console, followed by <kbd>Enter</kbd>.
+Możesz szybko ponownie uruchomić wszystkie testy, wpisując <kbd>r</kbd> w konsoli, a następnie <kbd>Enter</kbd>.
 
-## Updating snapshots
+## Aktualizacja snapshotów
 
-You can update failing snapshots by typing <kbd>u</kbd> on the console, followed by <kbd>Enter</kbd>.
+Możesz zaktualizować nieudane migawki, wpisując <kbd>u</kbd> na konsoli, a następnie <kbd>Enter</kbd>.
 
-## Debugging
+## Debugowanie
 
-Sometimes watch mode does something surprising like rerunning all tests when you thought only a single test would be run. To see its reasoning you can enable a debug mode. This will work best with the verbose reporter:
+Czasami tryb oglądania robi coś zaskakującego, jak ponowne uruchamianie wszystkich testów, gdy wydaje się, że zostanie uruchomiony tylko jeden test. Aby zobaczyć jego uzasadnienie, możesz włączyć tryb debugowania. Działa to najlepiej z pełnym reporterem:
 
 ```console
 $ DEBUG=ava:watcher npm test -- --watch --verbose
 ```
 
-On Windows use:
+W systemie Windows użyj:
 
 ```console
 $ set DEBUG=ava:watcher
 $ npm test -- --watch --verbose
 ```
 
-## Help us make watch mode better
+## Pomóż nam ulepszyć tryb watch
 
-Watch mode is relatively new and there might be some rough edges. Please [report](https://github.com/avajs/ava/issues) any issues you encounter. Thanks!
+Tryb watch jest stosunkowo nowy i mogą występować pewne nierówne krawędzie. Proszę [zgłosić](https://github.com/avajs/ava/issues) wszelkie napotkane problemy. Dzięki!
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [Install Troubleshooting]: https://github.com/paulmillr/chokidar#install-troubleshooting
