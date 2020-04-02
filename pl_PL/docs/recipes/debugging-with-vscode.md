@@ -1,16 +1,16 @@
-# Debugging tests with Visual Studio Code
+# Debugowanie testów z Visual Studio Code
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-vscode.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-vscode.md)
 
-You can debug your tests using [Visual Studio Code](https://code.visualstudio.com/).
+Możesz debugować swoje testy za pomocą [Visual Studio Code](https://code.visualstudio.com/).
 
-## Creating a launch configuration
+## Tworzenie konfiguracji uruchamiania
 
-1. Open a workspace for your project.
-1. In the sidebar click the *Debug* handle.
-1. Create a `launch.json` file.
-1. Select the Node.js environment.
-1. Add following to the `configurations` array and save changes:
+1. Otwórz obszar roboczy dla swojego projektu.
+1. Na pasku bocznym kliknij uchwyt *Debug*.
+1. Utwórz plik `launch.json`.
+1. Wybierz środowisko Node.js.
+1. Dodaj następujące do tablicy `configurations` i zapisz zmiany:
 
   ```json
   {
@@ -31,17 +31,17 @@ You can debug your tests using [Visual Studio Code](https://code.visualstudio.co
   }
   ```
 
-## Using the debugger
+## Używanie debuggera
 
-Open the file(s) you want to debug. You can set breakpoints or use the `debugger` keyword.
+Otwórz plik(i), które chcesz debugować. Możesz ustawić punkty przerwania (breakpoints) lub użyć słowa kluczowego `debugger`.
 
-Now, *with a test file open*, from the *Debug* menu run the *Debug AVA test file* configuration.
+Teraz, *z otwartym plikiem testowym*, z menu *Debug* uruchom konfigurację *Debug AVA test file*.
 
-## Debugging precompiled tests
+## Debugowanie wstępnie skompilowanych testów
 
-If you compile your test files into a different directory, and run the tests *from* that directory, the above configuration won't work.
+Jeśli skompilujesz swoje pliki testowe w innym katalogu i uruchom testy *z* tego katalogu, powyższa konfiguracja nie będzie działać.
 
-Assuming the names of your test files are unique you could try the following configuration instead. This assumes the compile output is written to the `build` directory. Adjust as appropriate:
+Zakładając, że nazwy plików testowych są unikalne, możesz zamiast tego wypróbować następującą konfigurację. Zakłada się, że dane wyjściowe kompilacji są zapisywane w katalogu `build`. Dostosuj odpowiednio:
 
 
 ```json
@@ -63,9 +63,9 @@ Assuming the names of your test files are unique you could try the following con
 }
 ```
 
-## Serial debugging
+## Seryjne debugowanie
 
-By default AVA runs tests concurrently. This may complicate debugging. Add a configuration with the `--serial` argument so AVA runs only one test at a time:
+Domyślnie AVA uruchamia testy jednocześnie. Może to skomplikować debugowanie. Dodaj konfigurację za pomocą argumentu `--serial` więc AVA uruchamia tylko jeden test na raz:
 
 ```json
 {
@@ -87,4 +87,4 @@ By default AVA runs tests concurrently. This may complicate debugging. Add a con
 }
 ```
 
-*Note that, if your tests aren't properly isolated, certain test failures may not appear when running the tests serially.*
+*Zauważ, że jeśli twoje testy nie są odpowiednio izolowane, niektóre niepowodzenia testów mogą nie pojawić się podczas ich seryjnego uruchamiania.*
