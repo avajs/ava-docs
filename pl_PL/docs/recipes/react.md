@@ -1,12 +1,12 @@
-# Testing React components
+# Testowanie składników React
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md)
 
-## Setting up Babel
+## Konfigurowanie Babel
 
-When you [enable Babel](https://github.com/avajs/babel), AVA will automatically extend your regular (project-level) Babel configuration. You should be able to use React in your test files without any additional configuration.
+Gdy [włączysz Babel](https://github.com/avajs/babel), AVA automatycznie przedłuży twoją regularną konfigurację Babel (na poziomie projektu). Powinieneś móc używać React w plikach testowych bez dodatkowej konfiguracji.
 
-However if you want to set it up explicitly, add the preset to the test options in AVA's Babel pipeline by modifying your `package.json` or `ava.config.*` file.
+Jeśli jednak chcesz to ustawić jawnie, dodaj ustawienie wstępne do opcji testowych w potoku Babel AVA, modyfikując `package.json` lub plik `ava.config.*`.
 
 **`package.json`:**
 
@@ -22,21 +22,21 @@ However if you want to set it up explicitly, add the preset to the test options 
 }
 ```
 
-You can find more information in [`@ava/babel`](https://github.com/avajs/babel).
+Możesz znaleźć więcej informacji w [`@ava/babel`](https://github.com/avajs/babel).
 
-## Using [Enzyme](https://github.com/airbnb/enzyme)
+## Używanie [Enzyme](https://github.com/airbnb/enzyme)
 
-Let's first see how to use AVA with one of the most popular React testing libraries: [Enzyme](https://github.com/airbnb/enzyme).
+Zobaczmy najpierw, jak używać AVA z jedną z najpopularniejszych bibliotek testowych React: [Enzyme](https://github.com/airbnb/enzyme).
 
-If you intend to only use [shallow component rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering), you don't need any extra setup.
+Jeśli zamierzasz używać tylko [płytkiego renderowania komponentów](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering), nie potrzebujesz żadnej dodatkowej konfiguracji.
 
-First install [Enzyme required packages](https://github.com/airbnb/enzyme/#installation):
+Najpierw zainstaluj [wymagane pakiety Enzyme](https://github.com/airbnb/enzyme/#installation):
 
 ```console
 $ npm install --save-dev enzyme react-addons-test-utils react-dom
 ```
 
-Then you can use Enzyme straight away:
+Następnie możesz od razu użyć Enzyme:
 
 ```js
 const test = require('ava');
@@ -74,21 +74,21 @@ test('renders children when passed in', t => {
 });
 ```
 
-Enzyme also has a `mount` and `render` helper to test in an actual browser environment. If you want to use these helpers, you will have to setup a browser environment. Check out the [browser testing recipe](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md) on how to do so.
+Enzyme także ma `mount` i `render` helper testować w rzeczywistym środowisku przeglądarki. Jeśli chcesz skorzystać z tych pomocników, musisz skonfigurować środowisko przeglądarki. Sprawdź [formuła na testowanie w przeglądarce](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md) jak to zrobić.
 
-To see an example of AVA working together with Enzyme set up for browser testing, have a look at [this sample project](https://github.com/adriantoine/ava-enzyme-demo).
+Aby zobaczyć przykład współpracy AVA z Enzyme skonfigurowanym do testowania w przeglądarce, spójrz na [ten przykładowy projekt](https://github.com/adriantoine/ava-enzyme-demo).
 
-This is a basic example on how to integrate Enzyme with AVA. For more information about using Enzyme for unit testing React component, have a look at [Enzyme's documentation](http://airbnb.io/enzyme/).
+Jest to podstawowy przykład integracji enzymu z AVA. Aby uzyskać więcej informacji na temat używania Enzymu do testowania jednostkowego składnika React, zajrzyj do [dokumentacji Enzyme](http://airbnb.io/enzyme/).
 
-## Using JSX helpers
+## Używanie JSX helpers
 
-Another approach to testing React component is to use the [`react-element-to-jsx-string`](https://github.com/algolia/react-element-to-jsx-string) package to compare DOM trees as strings. [`jsx-test-helpers`](https://github.com/MoOx/jsx-test-helpers) is a nice library handling [shallow component rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) and converting JSX to string in order to test React components using AVA assertions.
+Innym podejściem do testowania komponentu React jest użycie pakietu [`react-element-to-jsx-string`](https://github.com/algolia/react-element-to-jsx-string) aby porównać drzewa DOM jako ciągi znaków. [`jsx-test-helpers`](https://github.com/MoOx/jsx-test-helpers) to niezła obsługa biblioteki [renderowania płytkich komponentów](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) i konwertowania JSX na łańcuch w celu przetestowania komponentów React przy użyciu asercji AVA.
 
 ```console
 $ npm install --save-dev jsx-test-helpers
 ```
 
-Usage example:
+Przykład użycia:
 
 ```js
 const test = require('ava');
@@ -134,15 +134,15 @@ test('renders children when passed in', t => {
 });
 ```
 
-Note that you have to use variables like `actual` and `expected` because [`power-assert` doesn't handle JSX correctly](https://github.com/power-assert-js/power-assert/issues/34).
+Zauważ, że musisz użyć zmiennych takich jak `actual` i `expected` ponieważ [`power-assert` nie obsługuje poprawnie JSX](https://github.com/power-assert-js/power-assert/issues/34).
 
-This is a basic example on how to use `jsx-test-helpers` with AVA. To see a more advanced usage of this library, have a look at [this annotated test file](https://github.com/MoOx/jsx-test-helpers/blob/master/src/__tests__/index.js).
+To jest podstawowy przykład użycia `jsx-test-helpers` z AVA. Aby zobaczyć bardziej zaawansowane wykorzystanie tej biblioteki, spójrz na [ten testowy plik z adnotacjami](https://github.com/MoOx/jsx-test-helpers/blob/master/src/__tests__/index.js).
 
-[This sample project](https://github.com/MoOx/jsx-test-helpers) shows a basic and minimal setup of AVA with `jsx-test-helpers`.
+[Ten przykładowy projekt](https://github.com/MoOx/jsx-test-helpers) pokazuje podstawową i minimalną konfigurację AVA z `jsx-test-helpers`.
 
-## Using other assertion libraries
+## Korzystanie z innych bibliotek asercji
 
-In AVA, you can use any assertion library, and there are already a few out there to test React components. Here is a list of assertion libraries working well with AVA:
+W AVA możesz użyć dowolnej biblioteki asercji, a jest już kilka takich, które testują komponenty React. Oto lista bibliotek asercji dobrze współpracujących z AVA:
 
-- [`expect-jsx`](https://github.com/algolia/expect-jsx) ([Example](https://github.com/avajs/ava/issues/186#issuecomment-161317068))
-- [`unexpected-react`](https://github.com/bruderstein/unexpected-react) ([Sample project with an output example](https://github.com/adriantoine/ava-unexpected-react-demo))
+- [`expect-jsx`](https://github.com/algolia/expect-jsx) ([Przykład](https://github.com/avajs/ava/issues/186#issuecomment-161317068))
+- [`unexpected-react`](https://github.com/bruderstein/unexpected-react) ([Przykładowy projekt z przykładem wyjścia](https://github.com/adriantoine/ava-unexpected-react-demo))
