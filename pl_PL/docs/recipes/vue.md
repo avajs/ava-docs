@@ -1,8 +1,8 @@
-# Testing Vue.js components
+# Testowanie komponentów Vue.js
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/vue.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/vue.md)
 
-## Dependencies
+## Zależności
 
 - [Require extension hooks](https://github.com/jackmellis/require-extension-hooks):
 	- `npm i --save-dev require-extension-hooks require-extension-hooks-vue require-extension-hooks-babel@beta`
@@ -10,12 +10,12 @@ Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/do
 - [jsdom-global](https://github.com/rstacruz/jsdom-global/blob/master/README.md)
 	- `npm i --save-dev jsdom jsdom-global`
 
-- Optional: [babel-plugin-webpack-alias-7](https://github.com/shortminds/babel-plugin-webpack-alias-7) if you want to use [webpack aliases](https://webpack.js.org/configuration/resolve/#resolve-alias) or use them in your source files
+- Opcjonalne: [babel-plugin-webpack-alias-7](https://github.com/shortminds/babel-plugin-webpack-alias-7) jeśli chcesz użyć [webpack aliases](https://webpack.js.org/configuration/resolve/#resolve-alias) lub użyć ich w swoich plikach źródłowych
 	- `npm i --save-dev babel-plugin-webpack-alias-7`
 
-## Setup
+## Ustawienie
 
-The first step is setting up a helper to configure the environment to transpile `.vue` files and run in a browser like environment.
+Pierwszym krokiem jest skonfigurowanie pomocnika do skonfigurowania środowiska do transponowania plików `.vue` i uruchomienia w środowisku przypominającym przeglądarkę.
 
 **`package.json`:**
 
@@ -51,11 +51,11 @@ hooks('vue').plugin('vue').push();
 hooks(['vue', 'js']).exclude(({filename}) => filename.match(/\/node_modules\//)).plugin('babel').push();
 ```
 
-**Note:** If you are using _babel-plugin-webpack-alias-7_, you must also exclude your webpack file - e.g. `filename.includes(/\/node_modules\//) || filename.includes('webpack.config.test.js')`
+**Uwaga:** Jeśli używasz _babel-plugin-webpack-alias-7_, musisz również wykluczyć swój plik webpack - np. `filename.includes(/\/node_modules\//) || filename.includes('webpack.config.test.js')`
 
-You can find more information about setting up Babel with AVA in [`@ava/babel`](https://github.com/avajs/babel).
+Więcej informacji na temat konfigurowania Babel z AVA znajdziesz w [`@ava/babel`](https://github.com/avajs/babel).
 
-## Sample snapshot test
+## Przykładowy test migawki
 
 ```js
 const test = require('ava');
@@ -71,9 +71,9 @@ test('renders', t => {
 });
 ```
 
-## Coverage reporting
+## Raportowanie pokrycia
 
-Follow the [coverage reporting recipe](code-coverage.md), additionally adding the `.vue` extension to the `nyc` config to instrument `.vue` files.
+Postępuj zgodnie z [przepisem raportowania zasięgu](code-coverage.md), dodatkowo dodając rozszerzenie `.vue` do `nyc` configa dla plików `.vue`.
 
 ```json
 {
