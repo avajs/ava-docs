@@ -1,28 +1,28 @@
-# Setting up AVA with Selenium WebDriverJS
+# Konfigurowanie AVA za pomocą Selenium WebDriverJS
 
-This recipe shows you how to use the Selenium WebDriverJS (official JavaScript implementation) with AVA to test web apps.
+Ten przepis pokazuje, jak używać Selenium WebDriverJS (oficjalna implementacja JavaScript) z AVA do testowania aplikacji internetowych.
 
-## Setup
+## Ustawienie
 
-This recipe uses the following packages:
+Ten przepis wykorzystuje następujące pakiety:
 
 1. [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)
 2. [chromedriver](https://www.npmjs.com/package/chromedriver)
 
-Install them with:
+Zainstaluj je za pomocą:
 
 ```console
 $ npm install selenium-webdriver chromedriver
 ```
 
-As part of this recipe, we will use Selenium to verify web searches on [Bing](https://www.bing.com) and [Google](https://www.google.com).
+W ramach tego przepisu użyjemy Selenium do weryfikacji wyszukiwań w Internecie [Bing](https://www.bing.com) i [Google](https://www.google.com).
 
-Create the following files:
+Utwórz następujące pliki:
 
 - `./test/bingtest.js`
 - `./test/googletest.js`
 
-In both files, let's first include the packages:
+W obu plikach najpierw dołączmy pakiety:
 
 ```js
 const test = require('ava');
@@ -31,7 +31,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 require('chromedriver');
 ```
 
-In the `bingtest.js` file, add the following code, which tests whether searching for `webdriver` on Bing, returns results.
+W pliku `bingtest.js`, dodaj następujący kod, który sprawdza, czy szukasz `webdriver` w Bing, zwracając wyniki.
 
 ```js
 test('Bing Search', async t => {
@@ -45,9 +45,9 @@ test('Bing Search', async t => {
 });
 ```
 
-In the `googletest.js` file, instead of a single test, lets add two tests, one each for the terms 'webdriver' and 'avajs'.
+W pliku `googletest.js`, zamiast jednego testu, dodajmy dwa testy, każdy dla warunków 'webdriver' i 'avajs'.
 
-Since we would like to initialize the webdriver before each test, we use the [`beforeEach` and `afterEach`](../01-writing-tests.md#before--after-hooks) hooks to setup and teardown the driver respectively. Using these hooks, helps reduce the amount of code we would write in each `test()`.
+Ponieważ chcielibyśmy zainicjować webdriver przed każdym testem, używamy hooków [`beforeEach` and `afterEach`](../01-writing-tests.md#before--after-hooks) aby odpowiednio skonfigurować i usunąć sterownik. Korzystanie z tych hooków pomaga zmniejszyć ilość kodu, który napisalibyśmy w każdym z nich `test()`.
 
 ```js
 test.beforeEach(async t => {
@@ -60,7 +60,7 @@ test.afterEach('cleanup', async t => {
 });
 ```
 
-Now lets add the test code:
+Teraz dodajmy kod testowy:
 
 ```js
 async function searchGoogle(driver, keyword) {
@@ -81,7 +81,7 @@ test('Google Search for webdriver', async t => {
 });
 ```
 
-You're now ready to run the tests. The output should look something like this:
+Jesteś teraz gotowy do uruchomienia testów. Dane wyjściowe powinny wyglądać mniej więcej tak:
 
 ```console
 npx ava
