@@ -1,16 +1,16 @@
-# Test setup
+# Konfiguracja testowa
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/test-setup.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/test-setup.md)
 
-Tests can be set up using the `beforeEach()` hook. Often though you could use a plain setup function instead. This recipe helps you decide what's best for your use case.
+Testy można skonfigurować za pomocą hooka `beforeEach()`. Często można zamiast tego użyć zwykłej funkcji konfiguracji. Ten przepis pomaga zdecydować, co najlepiej pasuje do Twojego przypadku użycia.
 
-# The `beforeEach()` hook versus setup functions
+# Hook `beforeEach()` versus funkcje konfiguracji
 
-The `beforeEach()` hook has some downsides. For example, you cannot turn it off for specific tests, nor can you apply it to specific tests. As an alternative, you can use simple functions. This allows you to use multiple setup functions for different setup requirements and call different parts of setup from different tests. You can even have setup functions with parameters so tests can customize their own setup.
+Hook `beforeEach()` ma pewne wady. Na przykład nie można go wyłączyć dla określonych testów ani nie można zastosować do określonych testów. Alternatywnie możesz użyć prostych funkcji. Umożliwia to korzystanie z wielu funkcji konfiguracji dla różnych wymagań konfiguracji i wywoływanie różnych części konfiguracji z różnych testów. Możesz nawet mieć funkcje konfiguracji z parametrami, aby testy mogły dostosować własną konfigurację.
 
-Let's say you have a function that interacts with the file system. Perhaps you run a few tests using `mock-fs`, and then a few that use the real file system and a temporary directory. Or you have a setup function that you run with valid data for some tests and invalid data for other tests, all within the same test file.
+Załóżmy, że masz funkcję współdziałającą z systemem plików. Być może uruchamiasz kilka testów przy użyciu `mock-fs`, a następnie kilka, które korzystają z prawdziwego systemu plików i katalogu tymczasowego. Lub masz funkcję instalacyjną uruchamianą z poprawnymi danymi dla niektórych testów i niepoprawnymi danymi dla innych testów, wszystkie w tym samym pliku testowym.
 
-You could do all these things using plain setup functions, but there are tradeoffs:
+Możesz zrobić wszystkie te rzeczy za pomocą zwykłych funkcji konfiguracji, ale są pewne kompromisy:
 
 |`beforeEach()`| Setup functions
 |---|---
@@ -20,9 +20,9 @@ You could do all these things using plain setup functions, but there are tradeof
 | ✅ &nbsp; failure has friendly output| ⛔️ &nbsp; errors are attributed to the test
 | ✅ &nbsp; corresponding `afterEach` and `afterEach.always` for cleanup| ⛔️ &nbsp; cannot easily clean up
 
-## Complex test setup
+## Kompleksowa konfiguracja testu
 
-In this example, we have both a `beforeEach()` hook, and then more modifications within each test.
+W tym przykładzie mamy oba hooki `beforeEach()`, a następnie kolejne modyfikacje w ramach każdego testu.
 
 ```js
 test.beforeEach(t => {
@@ -44,7 +44,7 @@ test('second scenario', t => {
 });
 ```
 
-If too many variables need changing for each test, consider omitting the `beforeEach()` hook and performing setup steps within the tests themselves.
+Jeśli dla każdego testu trzeba zmienić zbyt wiele zmiennych, rozważ pominięcie opcji hook `beforeEach()` i przeprowadzanie kroków konfiguracji w ramach samych testów.
 
 ```js
 test('first scenario', t => {
@@ -64,7 +64,7 @@ test('second scenario', t => {
 });
 ```
 
-## A practical example
+## Praktyczny przykład
 
 ```js
 test.beforeEach(t => {
@@ -92,7 +92,7 @@ test('authenticating with an invalid password', async t => {
 });
 ```
 
-The same tests, now using setup functions, would look like the following.
+Te same testy, teraz korzystające z funkcji instalacyjnych, wyglądałyby następująco.
 
 ```js
 function setup({username = 'admin', password = 's3cr3t'} = {}) {
@@ -121,9 +121,9 @@ test('authenticating with an invalid password', async t => {
 });
 ```
 
-## Combining hooks and setup functions
+## Łączenie hooków i funkcji konfiguracji
 
-Of course `beforeEach()` and plain setup functions can be used together:
+Oczywiście `beforeEach()` i funkcje zwykłej konfiguracji mogą być używane razem:
 
 ```js
 test.beforeEach(t => {
