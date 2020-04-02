@@ -1,31 +1,31 @@
-# Debugging tests with WebStorm
+# Debugowanie testów z WebStorm
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-webstorm.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-webstorm.md)
 
-**This recipe is outdated.**
+**Ten przepis jest nieaktualny.**
 
 ---
 
-Starting with version 2016.2, [WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs (IntelliJ IDEA Ultimate, PHPStorm, PyCharm Professional, and RubyMine with installed Node.js plugin) allow you to debug AVA tests.
+Począwszy od wersji 2016.2, [WebStorm](https://www.jetbrains.com/webstorm/) i innych IDE od JetBrains (IntelliJ IDEA Ultimate, PHPStorm, PyCharm Professional, i RubyMine z zainstalowaną wtyczką Node.js) pozwalają debugować testy AVA.
 
 
-## Setup using Node.js
+## Skonfiguruj za pomocą Node.js
 
-Add a new *Node.js Run/Debug configuration*: select `Edit Configurations...` from the dropdown list on the top right, then click `+` and select *Node.js*.
+Dodaj nowe *Node.js Run/Debug configuration*: wybierz `Edit Configurations...` z listy rozwijanej w prawym górnym rogu, a następnie kliknij `+` i wybierz *Node.js*.
 
-In the `JavaScript file` field specify the path to AVA in the project's `node_modules` folder: `node_modules/.bin/ava` on macOS and Linux or `node_modules/.bin/ava.cmd` on Windows.
+W polu `JavaScript file` podaj ścieżkę do AVA w folderze projektu `node_modules`: `node_modules/.bin/ava` na macOS i Linux lub `node_modules/.bin/ava.cmd` na Windows.
 
-In the `Application parameters` pass the CLI flags you're using and the test files you would like to debug, for example `--verbose test.js`.
+W `Application parameters` przekaż na przykład flagi CLI i pliki testowe, które chcesz debugować, na przykład `--verbose test.js`.
 
-In the `Node parameters`, pass the `--inspect-brk` flag to enable the Node inspector.
+W `Node parameters`, przekaż flagę `--inspect-brk` aby włączyć inspektora Node'a.
 
-Save the configuration.
+Zapisz konfigurację.
 
-## Setup using npm
+## Skonfiguruj za pomocą npm
 
-Execute `npx @ava/init` in your project directory to add AVA to your `package.json`.
+Wykonaj `npx @ava/init` w katalogu projektu, aby dodać AVA do swojego `package.json`.
 
-Your `package.json` will look something like this:
+Twój `package.json` powinien wyglądać mniej więcej tak:
 
 ```json
 {
@@ -39,23 +39,23 @@ Your `package.json` will look something like this:
 }
 ```
 
-Add a new *npm Run/Debug configuration*: select `Edit Configurations...` from the dropdown list on the top right, then click `+` and select *npm*.
+Dodaj nowe *npm Run/Debug configuration*: wybierz `Edit Configurations...` z listy rozwijanej w prawym górnym rogu, a następnie kliknij `+` i wybierz *npm*.
 
-Use the following configuration parameters:
+Użyj następujących parametrów konfiguracyjnych:
 
-- `package.json`: Path to your project's `package.json` file
+- `package.json`: Ścieżka do pliku twojego projektu `package.json`
 - `Command`: `test`
 
-Your IDE will then execute `npm run test` and thus call `node_modules/.bin/ava` and the AVA-configuration you have specified in your package.json.
+Twoje IDE następnie wykona `npm run test` i w ten sposób wywoła `node_modules/.bin/ava` oraz konfigurację AVA, którą określiłeś w swoim package.json.
 
-In the `Node parameters`, pass `--inspect-brk`.
+W `Node parameters`, przekaż `--inspect-brk`.
 
-Don't forget to select a Node.js interpreter.
+Nie zapomnij wybrać interpretera Node.js.
 
-Save the configuration.
+Zapisz konfigurację.
 
 ## Debug
 
-Set breakpoints in the code.
+Ustaw breakpointy w kodzie.
 
-Hit the green `Debug` button next to the list of configurations on the top right. The *Debug tool window* will appear. Once the breakpoint is hit, you can evaluate variables and step through the code. When debugging multiple test files, you can switch between the processes using the dropdown in the Frames pane.
+Kliknij zielony przycisk `Debug` obok listy konfiguracji w prawym górnym rogu. *Debug tool window* pojawi się. Po osiągnięciu punktu przerwania możesz ocenić zmienne i przejść przez kod. Podczas debugowania wielu plików testowych można przełączać się między procesami za pomocą menu rozwijanego w panelu Ramki.
