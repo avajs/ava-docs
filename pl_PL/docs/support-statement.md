@@ -1,19 +1,19 @@
-# Supported Node.js versions
+# Obsługiwane wersje Node.js
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/support-statement.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/support-statement.md)
 
-AVA supports the latest release of any major version that [is supported by Node.js itself](https://github.com/nodejs/Release#release-schedule).
+AVA obsługuje najnowszą wersję dowolnej głównej wersji, która [jest obsługiwana przez sam Node.js](https://github.com/nodejs/Release#release-schedule).
 
-*Support* here means that we run our test suite under the given Node.js versions and will accept pull requests to fix any bugs (provided they're not known bugs in Node.js itself that will be fixed imminently). Consequently, *dropping support* means we'll remove those Node.js versions from our test matrix and will no longer accept specific pull requests to fix bugs under those versions.
+*Obsługiwanie* oznacza tutaj, że uruchamiamy nasz pakiet testowy w podanych wersjach Node.js i przyjmujemy pull request, aby naprawić wszelkie błędy (pod warunkiem, że nie są to znane błędy w samym Node.js, które zostaną natychmiast naprawione). w konsekwencji, *porzucenie wsparcia* oznacza, że usuniemy te wersje Node.js z naszej matrycy testowej i nie będziemy już akceptować określonych pull requestów w celu naprawy błędów w tych wersjach.
 
-When we drop support for an LTS-covered major version we will bump AVA's major version number.
+Kiedy rezygnujemy z obsługi wersji głównej objętej LTS, podbijamy główny numer wersji AVA.
 
-We will drop support for odd-numbered Node.js versions (e.g. `11` or `13`) *without* bumping AVA's major version number.
+Zrezygnujemy z obsługi wersji Node.js o nieparzystych numerach (np. `11` lub `13`) *bez* podbijania głównego numeru wersji AVA.
 
-We try to avoid *accidentally* dropping support for non-latest Node.js releases. If such breakage does occur we'll accept pull requests to restore functionality. We might decide to deprecate the offending AVA release and bump AVA's major version number instead.
+Staramy się unikać *przypadkowego* porzucania obsługi nieaktualnych wersji Node.js. Jeśli takie uszkodzenie wystąpi, zaakceptujemy pull request w celu przywrócenia funkcjonalności. Możemy zdecydować się na wycofanie szkodliwej wersji AVA i zamiast tego podbić główny numer wersji AVA.
 
-Whenever we bump AVA's major version number, we *will* explicitly drop support for non-latest Node.js releases. This ensures we can rely on backported APIs or the availability of newer V8 releases in later Node.js versions, either in AVA itself or one of our dependencies.
+Za każdym razem, gdy podbijamy główny numer wersji AVA, *robimy* jawne porzucenie obsługi najnowszych wersji Node.js. To gwarantuje, że możemy polegać na cofniętych interfejsach API lub dostępności nowszych wersji V8 w późniejszych wersjach Node.js, w samym AVA lub w jednej z naszych zależności.
 
-We may drop support for a Node.js version, in a major-version-bumping-pre-release, if that new AVA version is expected to become stable around or after the end-of-life date of the Node.js version in question.
+Możemy zrezygnować z obsługi wersji Node.js w wersji przedpremierowej wersji głównej, jeśli oczekuje się, że nowa wersja AVA ustabilizuje się w okolicach daty zakończenia wersji Node.js lub później pytanie.
 
-Experimental features opted into through the `nonSemVerExperiments` configuration may be changed or removed at any time.
+Eksperymentalne funkcje włączone w konfiguracji `nonSemVerExperiments` mogą zostać zmienione lub usunięte w dowolnym momencie.
