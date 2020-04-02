@@ -1,40 +1,40 @@
-# Endpoint testing with Mongoose
+# Testowanie endpoint z Mongoose
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/endpoint-testing-with-mongoose.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/endpoint-testing-with-mongoose.md)
 
-This recipe shows you how to test your endpoints with AVA and Mongoose, assuming you use Express as your framework.
+Ten przepis pokazuje, jak przetestować punkty końcowe za pomocą AVA i Mongoose, zakładając, że używasz Express jako swojej struktury.
 
-## Setup
+## Ustawienie
 
-This recipe uses the following libraries:
+Ten przepis wykorzystuje następujące biblioteki:
 
 1. [`mongodb-memory-server`](https://github.com/nodkz/mongodb-memory-server) (A MongoDB in-memory Server)
 2. [SuperTest](https://github.com/visionmedia/supertest) (An endpoint testing library)
 3. [Mongoose](http://mongoosejs.com)
 
-Install the first two libraries by running the following code:
+Zainstaluj dwie pierwsze biblioteki, uruchamiając następujący kod:
 
 ```console
 $ npm install --save-dev mongodb-memory-server supertest
 ```
 
-You should have Mongoose installed already. If not, run the following code to install it:
+Powinieneś już mieć zainstalowaną Mongoose. Jeśli nie, uruchom następujący kod, aby go zainstalować:
 
-(Note: You need at least Mongoose v4.11.3)
+(Uwaga: Potrzebujesz przynajmniej Mongoose v4.11.3)
 
 ```console
 $ npm install mongoose
 ```
 
-## Prerequisites
+## Wymagania wstępne
 
-You'll need a server file and a Mongoose model. See the [`server.js`](https://github.com/zellwk/ava-mdb-test/blob/master/server.js) and [`models/User.js`](https://github.com/zellwk/ava-mdb-test/blob/master/models/User.js) examples.
+Potrzebujesz pliku serwera i modelu Mongoose. Zobacz przykłady [`server.js`](https://github.com/zellwk/ava-mdb-test/blob/master/server.js) i [`models/User.js`](https://github.com/zellwk/ava-mdb-test/blob/master/models/User.js).
 
-Note that `server.js` does not start the app. Instead this must be done by SuperTest, so that the app endpoints can be tested. If you're using Express for your application, make sure you have a startup file that imports `app` and calls `app.listen()`.
+Zauważ że `server.js` nie uruchamia aplikacji. Zamiast tego musi to zrobić SuperTest, aby punkty końcowe aplikacji mogły zostać przetestowane. Jeśli używasz Express dla swojej aplikacji, upewnij się, że masz plik startowy, który się importuje `app` i wywołuje `app.listen()`.
 
-## Your test file
+## Twój plik testu
 
-First, include the libraries you need:
+Najpierw dołącz potrzebne biblioteki:
 
 ```js
 // Libraries required for testing
@@ -48,7 +48,7 @@ const app = require('../server');
 const User = require('../models/User');
 ```
 
-Next start the in-memory MongoDB instance and connect to Mongoose:
+Następnie uruchom instancję in-memory MongoDB i połącz się z Mongoose:
 
 ```js
 // Start MongoDB instance
@@ -61,9 +61,9 @@ test.before(async () => {
 });
 ```
 
-When you run your first test, MongoDB downloads the latest MongoDB binaries. The download is ~70MB so this may take a minute.
+Po uruchomieniu pierwszego testu MongoDB pobiera najnowsze pliki binarne MongoDB. Pobieranie jest ~70MB więc może to chwilę potrwać.
 
-You'll want to populate your database with dummy data. Here's an example:
+Będziesz chciał zapełnić bazę danych danymi zastępczymi. Oto przykład:
 
 ```js
 test.beforeEach(async () => {
@@ -75,13 +75,13 @@ test.beforeEach(async () => {
 });
 ```
 
-Dummy data should be cleared after each test:
+Dane fikcyjne powinny być usuwane po każdym teście:
 
 ```js
 test.afterEach.always(() => User.remove());
 ```
 
-Now you can use SuperTest to send off a request for your app endpoint. Use AVA for your assertions:
+Teraz możesz użyć SuperTestu, aby wysłać żądanie dotyczące punktu końcowego aplikacji. Użyj AVA dla swoich asercji:
 
 ```js
 // Note that the tests are run serially. See below as to why.
@@ -113,7 +113,7 @@ test.serial('litmus create user', async t => {
 });
 ```
 
-Finally disconnect from and stop MongoDB when all tests are done:
+Na koniec odłącz i zatrzymaj MongoDB po zakończeniu wszystkich testów:
 
 ```js
 test.after.always(async () => {
@@ -123,14 +123,14 @@ test.after.always(async () => {
 
 ```
 
-And you're done!
+I skończyłeś!
 
-## Reusing the configuration across files
+## Ponowne użycie konfiguracji w plikach
 
-You may choose to extract the code for the `test.before`, `test.beforeEach`, `test.afterEach.always` and `test.after.always` hooks into a separate file. Have a look at https://github.com/zellwk/ava-mdb-test for an example.
+Możesz wyodrębnić kod dla hook'ów `test.before`, `test.beforeEach`, `test.afterEach.always` i `test.after.always` do osobnego pliku. Spójrz na https://github.com/zellwk/ava-mdb-test po przykład.
 
-## Using `test.serial` instead of `test`
+## Używanie `test.serial` zamiast `test`
 
-Your tests likely change the database. Using `test()` means they run concurrently, which may cause one test to affect another. Instead if you use `test.serial()` then the tests will run one at a time. You can then clean up your database between test runs, making the tests more predictable.
+Twoje testy prawdopodobnie zmienią bazę danych. Używając `test()` oznacza, że działają równolegle, co może spowodować, że jeden test wpłynie na inny. Zamiast tego, jeśli używasz `test.serial()` wtedy testy będą uruchamiane pojedynczo. Następnie możesz wyczyścić bazę danych między uruchomieniami testowymi, dzięki czemu testy są bardziej przewidywalne.
 
-You could run tests concurrently if you create separate Mongoose connections for each test. This is harder to set up, though. More information can be found [here](https://github.com/nodkz/mongodb-memory-server#several-mongoose-connections-simultaneously).
+Możesz uruchomić testy jednocześnie, jeśli utworzysz osobne połączenia Mongoose dla każdego testu. Jest to jednak trudniejsze do skonfigurowania. Więcej informacji można znaleźć [tutaj](https://github.com/nodkz/mongodb-memory-server#several-mongoose-connections-simultaneously).
