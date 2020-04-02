@@ -1,14 +1,14 @@
-# Testing web apps using Puppeteer
+# Testowanie aplikacji internetowych za pomocą Puppeteer
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/puppeteer.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/puppeteer.md)
 
-## Dependencies
+## Zależności
 
 - [Puppeteer](https://github.com/GoogleChrome/puppeteer): `npm install --save-dev puppeteer`
 
-## Setup
+## Ustawienie
 
-The first step is setting up a helper to configure the environment:
+Pierwszym krokiem jest skonfigurowanie pomocnika do skonfigurowania środowiska:
 
 `./test/_withPage.js`
 
@@ -27,7 +27,7 @@ export default async function withPage(t, run) {
 }
 ```
 
-## Usage example
+## Przykład użycia
 
 `./test/main.js`
 
