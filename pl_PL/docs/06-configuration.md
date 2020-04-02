@@ -1,10 +1,10 @@
-# Configuration
+# Konfiguracja
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md)
 
-All of the [CLI options][CLI] can be configured in the `ava` section of either your `package.json` file, or an `ava.config.*` file. This allows you to modify the default behavior of the `ava` command, so you don't have to repeatedly type the same options on the command prompt.
+Wszystkie [opcje CLI][CLI] można skonfigurować w sekcji `ava` któregoś z twoich plików `package.json`, lub w pliku `ava.config.*`. Pozwala to zmodyfikować domyślne zachowanie polecenia `ava`, więc nie musisz wielokrotnie wpisywać tych samych opcji w wierszu polecenia.
 
-To ignore files, prefix the pattern with an `!` (exclamation mark).
+Aby zignorować pliki, poprzedź wzorzec znakiem `!` (wykrzyknik).
 
 **`package.json`:**
 
@@ -38,48 +38,48 @@ To ignore files, prefix the pattern with an `!` (exclamation mark).
 }
 ```
 
-Arguments passed to the CLI will always take precedence over the CLI options configured in `package.json`.
+Argumenty przekazywane do interfejsu CLI zawsze będą miały pierwszeństwo przed opcjami CLI skonfigurowanymi w `package.json`.
 
-## Options
+## Opcje
 
-- `files`: an array of glob patterns to select test files. Files with an underscore prefix are ignored. By default only selects files with `cjs`, `mjs` & `js` extensions, even if the pattern matches other files. Specify `extensions` to allow other file extensions
-- `ignoredByWatcher`: an array of glob patterns to match files that, even if changed, are ignored by the watcher. See the [watch mode recipe for details](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
-- `match`: not typically useful in the `package.json` configuration, but equivalent to [specifying `--match` on the CLI](./05-command-line.md#running-tests-with-matching-titles)
-- `cache`: cache compiled files under `node_modules/.cache/ava`. If `false`, files are cached in a temporary directory instead
-- `failFast`: stop running further tests once a test fails
-- `failWithoutAssertions`: if `false`, does not fail a test if it doesn't run [assertions](./03-assertions.md)
-- `environmentVariables`: specifies environment variables to be made available to the tests. The environment variables defined here override the ones from `process.env`
-- `tap`: if `true`, enables the [TAP reporter](./05-command-line.md#tap-reporter)
-- `verbose`: if `true`, enables verbose output
-- `snapshotDir`: specifies a fixed location for storing snapshot files. Use this if your snapshots are ending up in the wrong location
-- `extensions`: extensions of test files. Setting this overrides the default `["cjs", "mjs", "js"]` value, so make sure to include those extensions in the list
-- `require`: extra modules to require before tests are run. Modules are required in the [worker processes](./01-writing-tests.md#process-isolation)
-- `timeout`: Timeouts in AVA behave differently than in other test frameworks. AVA resets a timer after each test, forcing tests to quit if no new test results were received within the specified timeout. This can be used to handle stalled tests. See our [timeout documentation](./07-test-timeouts.md) for more options.
-- `nodeArguments`: Configure Node.js arguments used to launch worker processes.
+- `files`: tablica wzorców globalnych do wybierania plików testowych. Pliki z prefiksem podkreślenia są ignorowane. Domyślnie wybiera tylko pliki z rozszerzeniami `cjs`, `mjs` & `js`, nawet jeśli wzór pasuje do innych plików. Sprecyzuj `extensions` aby zezwolić na inne rozszerzenia plików
+- `ignoredByWatcher`: tablica wzorców globu pasujących do plików, które nawet jeśli zostaną zmienione, są ignorowane przez obserwatora. Zobacz [przepis trybu watch, aby poznać szczegóły](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
+- `match`: zwykle nie jest użyteczne w konfiguracji `package.json`, ale jest równoważne z [określaniem `--match` w CLI](./05-command-line.md#running-tests-with-matching-titles)
+- `cache`: cache kompiluje pliki pod `node_modules/.cache/ava`. Jeśli `false`, zamiast tego pliki są buforowane w katalogu tymczasowym
+- `failFast`: przestań uruchamiać kolejne testy, gdy test się nie powiedzie
+- `failWithoutAssertions`: jeśli `false`, nie zawiedzie testu, jeśli nie uruchomi się [asercje](./03-assertions.md)
+- `environmentVariables`: określa zmienne środowiskowe, które zostaną udostępnione testom. Zdefiniowane tutaj zmienne środowiskowe zastępują te z `process.env`
+- `tap`: jeśli `true`, umożliwia [TAP reporter](./05-command-line.md#tap-reporter)
+- `verbose`: jeśli `true`, umożliwia verbose output
+- `snapshotDir`: określa stałą lokalizację przechowywania plików migawek. Użyj tego, jeśli twoje migawki kończą się w złym miejscu
+- `extensions`: rozszerzenia plików testowych. Ustawienie to zastępuje wartość domyślną `["cjs", "mjs", "js"]`, więc pamiętaj, aby uwzględnić te rozszerzenia na liście
+- `require`: dodatkowe moduły wymagane przed uruchomieniem testów. Moduły są wymagane w [procesach roboczych](./01-writing-tests.md#process-isolation)
+- `timeout`: Limity czasu w AVA zachowują się inaczej niż w innych ramach testowych. AVA resetuje licznik czasu po każdym teście, zmuszając testy do zakończenia, jeśli nie otrzymano nowych wyników testu w określonym czasie. Można to wykorzystać do obsługi zablokowanych testów. Zobacz naszą [dokumentację timeouts](./07-test-timeouts.md) for more options.
+- `nodeArguments`: Skonfiguruj argumenty Node.js używane do uruchamiania procesów roboczych.
 
-Note that providing files on the CLI overrides the `files` option.
+Pamiętaj, że udostępnianie plików w interfejsie CLI zastępuje tę opcję `files`.
 
-Provide the `babel` option (and install [`@ava/babel`](https://github.com/avajs/babel) as an additional dependency) to enable Babel compilation.
+Podaj opcję `babel` (i zainstaluj [`@ava/babel`](https://github.com/avajs/babel) jako dodatkową zależność), aby włączyć kompilację Babel.
 
-Provide the `typescript` option (and install [`@ava/typescript`](https://github.com/avajs/typescript) as an additional dependency) to enable (rudimentary) TypeScript support.
+Podaj opcję `typescript` (i zainstaluj[`@ava/typescript`](https://github.com/avajs/typescript) jako dodatkowa zależność), aby włączyć (podstawową) obsługę TypeScript.
 
-## Using `ava.config.*` files
+## Używanie plików `ava.config.*`
 
-Rather than specifying the configuration in the `package.json` file you can use `ava.config.js` or `ava.config.cjs` files.
+Zamiast określać konfigurację w pliku `package.json` możesz użyć plików `ava.config.js` lub `ava.config.cjs`.
 
-To use these files:
+Aby użyć tych plików:
 
-1. They must be in the same directory as your `package.json`
-2. Your `package.json` must not contain an `ava` property (or, if it does, it must be an empty object)
-3. You must not both have an `ava.config.js` *and* an `ava.config.cjs` file
+1. Muszą znajdować się w tym samym katalogu co twój `package.json`
+2. Twój `package.json` nie może zawierać właściwości `ava` (lub jeśli tak, musi to być pusty obiekt)
+3. Nie możesz mieć obu `ava.config.js` *oraz* pliku `ava.config.cjs`
 
-AVA recognizes `ava.config.mjs` files but refuses to load them.
+AVA rozpoznaje pliki `ava.config.mjs` ale odmawia ich załadowania.
 
 ### `ava.config.js`
 
-For `ava.config.js` files you must use `export default`. You cannot use ["module scope"](https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_the_module_scope). You cannot import dependencies.
+Dla plików `ava.config.js` musisz użyć `export default`. Nie możnesz użyć ["zakresu modułu"](https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_the_module_scope). Nie możesz importować zależności.
 
-The default export can either be a plain object or a factory function which returns a plain object:
+Domyślnym eksportem może być zwykły obiekt lub fabryczna funkcja, która zwraca zwykły obiekt:
 
 ```js
 export default {
@@ -95,7 +95,7 @@ export default function factory() {
 };
 ```
 
-The factory function is called with an object containing a `projectDir` property, which you could use to change the returned configuration:
+Funkcja fabryczna jest wywoływana z obiektem zawierającym właściwość `projectDir`, którego możesz użyć do zmiany zwróconej konfiguracji:
 
 ```js
 export default ({projectDir}) => {
@@ -111,13 +111,13 @@ export default ({projectDir}) => {
 };
 ```
 
-Note that the final configuration must not be a promise.
+Pamiętaj, że ostateczna konfiguracja nie może być obietnicą (promise).
 
 ### `ava.config.cjs`
 
-For `ava.config.cjs` files you must assign `module.exports`. ["Module scope"](https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_the_module_scope) is available. You can `require()` dependencies.
+Dla plików `ava.config.cjs` musisz przypisać `module.exports`. ["Zakres modułu"](https://nodejs.org/docs/latest-v12.x/api/modules.html#modules_the_module_scope) jest dostępny. Możesz `require()` zależności.
 
-The module export can either be a plain object or a factory function which returns a plain object:
+Eksport modułu może być zwykłym obiektem lub funkcją fabryczną, która zwraca zwykły obiekt:
 
 ```js
 module.exports = {
@@ -133,7 +133,7 @@ module.exports = () => {
 };
 ```
 
-The factory function is called with an object containing a `projectDir` property, which you could use to change the returned configuration:
+Funkcja fabryczna jest wywoływana z obiektem zawierającym właściwość `projectDir`, której możesz użyć do zmiany zwróconej konfiguracji:
 
 ```js
 module.exports = ({projectDir}) => {
@@ -149,17 +149,17 @@ module.exports = ({projectDir}) => {
 };
 ```
 
-Note that the final configuration must not be a promise.
+Pamiętaj, że ostateczna konfiguracja nie może być promise.
 
-## Alternative configuration files
+## Alternatywne pliki konfiguracyjne
 
-The [CLI] lets you specify a specific configuration file, using the `--config` flag. This file must have either a `.js` or `.cjs` extension and is processed like an `ava.config.js` or `ava.config.cjs` file would be.
+[CLI] pozwala określić konkretny plik konfiguracyjny za pomocą flagi `--config`. Ten plik musi mieć albo `.js` lub rozszerzenie `.cjs` i jest przetwarzany jak `ava.config.js` lub plik `ava.config.cjs` byłby.
 
-When the `--config` flag is set, the provided file will override all configuration from the `package.json` and `ava.config.js` or `ava.config.cjs` files. The configuration is not merged.
+Kiedy flaga `--config` jest ustawiona, podany plik zastąpi całą konfigurację z `package.json` i `ava.config.js` lub plików `ava.config.cjs`. Konfiguracja nie jest mergowana.
 
-The configuration file *must* be in the same directory as the `package.json` file.
+Plik konfiguracyjny *musi* znajdować się w tym samym katalogu, co plik `package.json`.
 
-You can use this to customize configuration for a specific test run. For instance, you may want to run unit tests separately from integration tests:
+Możesz użyć tego do dostosowania konfiguracji dla konkretnego uruchomienia testowego. Na przykład możesz chcieć uruchomić testy jednostkowe oddzielnie od testów integracyjnych:
 
 `ava.config.cjs`:
 
@@ -180,11 +180,11 @@ module.exports = {
 };
 ```
 
-You can now run your unit tests through `npx ava` and the integration tests through `npx ava --config integration-tests.config.cjs`.
+Możesz teraz przeprowadzić testy jednostkowe `npx ava` i testy integracyjne poprzez `npx ava --config integration-tests.config.cjs`.
 
-## Object printing depth
+## Głębokość drukowania obiektu
 
-By default, AVA prints nested objects to a depth of `3`. However, when debugging tests with deeply nested objects, it can be useful to print with more detail. This can be done by setting [`util.inspect.defaultOptions.depth`](https://nodejs.org/api/util.html#util_util_inspect_defaultoptions) to the desired depth, before the test is executed:
+Domyślnie AVA drukuje zagnieżdżone obiekty na głębokości `3`. Jednak podczas debugowania testów z głęboko zagnieżdżonymi obiektami przydatne może być drukowanie z większą ilością szczegółów. Można to zrobić przez ustawienie [`util.inspect.defaultOptions.depth`](https://nodejs.org/api/util.html#util_util_inspect_defaultoptions) na żądaną głębokość przed wykonaniem testu:
 
 ```js
 const util = require('util');
@@ -198,11 +198,11 @@ test('My test', t => {
 });
 ```
 
-AVA has a minimum depth of `3`.
+AVA ma minimalną głębokość `3`.
 
-## Experiments
+## Eksperymenty
 
-From time to time, AVA will implement experimental features. These may change or be removed at any time, not just when there's a new major version. You can opt in to such a feature by enabling it in the `nonSemVerExperiments` configuration.
+Od czasu do czasu AVA będzie wdrażać funkcje eksperymentalne. Mogą one ulec zmianie lub zostać usunięte w dowolnym momencie, nie tylko wtedy, gdy pojawi się nowa wersja główna. Możesz włączyć taką funkcję, włączając ją w konfiguracji `nonSemVerExperiments`.
 
 `ava.config.js`:
 ```js
@@ -213,8 +213,8 @@ export default {
 };
 ```
 
-## Node arguments
+## Argumenty Node
 
-The `nodeArguments` configuration may be used to specify additional arguments for launching worker processes. These are combined with `--node-arguments` passed on the CLI and any arguments passed to the `node` binary when starting AVA.
+Konfiguracja `nodeArguments` może być użyta do podania dodatkowych argumentów do uruchomienia procesów roboczych. Są one połączone z `--node-arguments` przekazanych do CLI i wszelkimi argumentami przekazanymi do binarki `node` podczas uruchamiania AVA.
 
 [CLI]: ./05-command-line.md
