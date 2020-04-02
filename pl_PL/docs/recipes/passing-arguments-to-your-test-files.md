@@ -1,4 +1,4 @@
-# Przekazywanie argumentów do plików testowyc
+# Przekazywanie argumentów do plików testowych
 
 Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/passing-arguments-to-your-test-files.md)
 
