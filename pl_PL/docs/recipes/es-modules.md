@@ -1,14 +1,14 @@
-# Using ES modules in AVA
+# Korzystanie z modułów ES w AVA
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/es-modules.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/es-modules.md)
 
-As of Node.js 13, [ECMAScript Modules](https://nodejs.org/docs/latest/api/esm.html#esm_introduction) are natively supported in Node.js itself. AVA 3.3 supports ESM test files, however support is incomplete. The [ESM support project](https://github.com/orgs/avajs/projects/2) tracks our progress.
+Od Node.js 13, [ECMAScript Modules](https://nodejs.org/docs/latest/api/esm.html#esm_introduction) są natywnie obsługiwane w samym Node.js. AVA 3.3 obsługuje pliki testowe ESM, jednak obsługa jest niepełna. [Projekt wsparcia ESM](https://github.com/orgs/avajs/projects/2) śledzi nasze postępy.
 
-ESM support in Node.js is experimental, though enabled by default in Node.js 13. *You will see messages like `ExperimentalWarning: The ESM module loader is experimental` in AVA's output. These are emitted by Node.js, not AVA.*
+Obsługa ESM w Node.js jest eksperymentalna, choć domyślnie włączona w Node.js 13. *Zobaczysz takie komunikaty `ExperimentalWarning: The ESM module loader is experimental` w output'cie AVA. Są one emitowane przez Node.js, a nie AVA.*
 
-## Enabling experimental ESM support in Node.js 12
+## Włączanie eksperymentalnej obsługi ESM w Node.js 12
 
-In Node.js 12 you need to enable ESM support. You can do so via AVA by configuring `nodeArguments` in your `package.json` or `ava.config.*` file:
+W Node.js 12 musisz włączyć obsługę ESM. Możesz to zrobić za pomocą AVA, konfigurując `nodeArguments` w twoim `package.json` lub pliku `ava.config.*`:
 
 **`package.json`:**
 
@@ -22,25 +22,25 @@ In Node.js 12 you need to enable ESM support. You can do so via AVA by configuri
 }
 ```
 
-Or on the command line:
+Lub w wierszu poleceń:
 
 ```console
 npx ava --node-arguments '--experimental-modules' test.mjs
 ```
 
-## Using the `esm` package
+## Używanie pakietu `esm`
 
-If you want to use the ESM syntax, without relying on Node.js' implementation, your best bet is to use the [`esm`](https://github.com/standard-things/esm) package. Make sure to use the `.js` extension and *do not* set `"type": "module"` in `package.json`.
+Jeśli chcesz korzystać ze składni ESM, bez polegania na implementacji Node.js, najlepszym rozwiązaniem jest użycie pakietu [`esm`](https://github.com/standard-things/esm). Pamiętaj, aby użyć rozszerzenia `.js` i *nie* ustawić `"type": "module"` w `package.json`.
 
-Here's how you get it working with AVA.
+Oto, jak możesz pracować z AVA.
 
-First, install `esm`:
+Najpierw zainstaluj `esm`:
 
 ```
 $ npm install esm
 ```
 
-Configure it in your `package.json` or `ava.config.*` file, and add it to AVA's `"require"` option as well. Make sure to add it as the first item.
+Skonfiguruj go w swoim pliku `package.json` lub `ava.config.*`, i dodaj go do opcji AVA `"require"` tak właśnie. Pamiętaj, aby dodać go jako pierwszy element.
 
 **`package.json`:**
 
@@ -54,7 +54,7 @@ Configure it in your `package.json` or `ava.config.*` file, and add it to AVA's 
 }
 ```
 
-You can now use native ES modules with AVA:
+Możesz teraz używać natywnych modułów ES z AVA:
 
 ```js
 // sum.js
