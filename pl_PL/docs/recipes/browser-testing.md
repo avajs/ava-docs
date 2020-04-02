@@ -1,28 +1,28 @@
-# Setting up AVA for browser testing
+# Konfigurowanie AVA do testowania w przeglądarce
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/browser-testing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/browser-testing.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/browser-testing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/browser-testing.md)
 
-AVA does not support running tests in browsers [yet](https://github.com/avajs/ava/issues/24). However JavaScript libraries that require browser specific globals (`window`, `document`, `navigator`, etc) can still be tested with AVA by mocking these globals.
+AVA nie obsługuje uruchamiania testów w przeglądarkach [jeszcze](https://github.com/avajs/ava/issues/24). Jednak biblioteki JavaScript wymagające specyficznych globalów dla przeglądarki (`window`, `document`, `navigator`, etc) nadal można przetestować za pomocą AVA, mockując te globale.
 
-This recipe works for any library that needs a mocked browser environment.
+Ten przepis działa na każdą bibliotekę, która potrzebuje zmockowanego środowiska przeglądarki.
 
-## Install browser-env
+## Zainstaluj browser-env
 
-> **❗️ Important note**
+> **❗️ Ważna uwaga**
 >
->`browser-env` adds properties from the `jsdom` window namespace to the Node.js global namespace. This is explicitly [recommended against](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) by `jsdom`. Please read through the linked wiki page and make sure you understand the caveats. If you don't have lots of dependencies that also require a browser environment then [`window`](https://github.com/lukechilds/window#universal-testing-pattern) may be a better solution.
+>`browser-env` dodaje właściwości z okna `jsdom` przestrzeni nazw do globalnej przestrzeni nazw Node.js. Jest to wyraźnie [zalecane przeciwko](https://github.com/tmpvar/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global) od `jsdom`. Przeczytaj podlinkowaną stronę wiki i upewnij się, że rozumiesz ostrzeżenia. Jeśli nie masz wielu zależności, które również wymagają środowiska przeglądarki, to [`window`](https://github.com/lukechilds/window#universal-testing-pattern) może być lepszym rozwiązaniem.
 
-Install [browser-env](https://github.com/lukechilds/browser-env).
+Instalacja [browser-env](https://github.com/lukechilds/browser-env).
 
-> Simulates a global browser environment using jsdom.
+> Symuluje globalne środowisko przeglądarki przy użyciu jsdom.
 
 ```
 $ npm install --save-dev browser-env
 ```
 
-## Setup browser-env
+## Ustaw browser-env
 
-Create a helper file, prefixed with an underscore. This ensures AVA does not treat it as a test.
+Utwórz plik pomocniczy, poprzedzony znakiem podkreślenia. Dzięki temu AVA nie traktuje tego jako testu.
 
 `test/_setup-browser-env.js`:
 
@@ -31,14 +31,14 @@ const browserEnv = require('browser-env');
 browserEnv();
 ```
 
-By default, `browser-env` will add all global browser variables to the Node.js global scope, creating a full browser environment. This should have good compatibility with most front-end libraries, however, it's generally not a good idea to create lots of global variables if you don't need to. If you know exactly which browser globals you need, you can pass an array of them.
+Domyślnie, `browser-env` doda wszystkie globalne zmienne przeglądarki do globalnego zasięgu Node.js, tworząc pełne środowisko przeglądarki. Powinno to mieć dobrą zgodność z większością bibliotek front-end, jednak generalnie nie jest dobrym pomysłem tworzenie wielu zmiennych globalnych, jeśli nie jest to konieczne. Jeśli wiesz dokładnie, jakich globałów przeglądarki potrzebujesz, możesz przekazać ich tablicę.
 
 ```js
 const browserEnv = require('browser-env');
 browserEnv(['window', 'document', 'navigator']);
 ```
 
-You can expose more global variables by assigning them to the `global` object. For instance, jQuery is typically available through the `$` variable:
+Możesz ujawnić więcej zmiennych globalnych, przypisując je do obiektu `global`. Na przykład jQuery jest zazwyczaj dostępny za pośrednictwem zmiennej `$`:
 
 ```js
 const browserEnv = require('browser-env');
@@ -48,9 +48,9 @@ browserEnv();
 global.$ = jQuery(window);
 ```
 
-## Configure tests to use browser-env
+## Skonfiguruj testy do użycia browser-env
 
-Configure AVA to `require` the helper before every test file.
+Skonfiguruj AVA do `require` helpera przed każdym plikiem testowym.
 
 **`package.json`:**
 
@@ -66,7 +66,7 @@ Configure AVA to `require` the helper before every test file.
 
 ## Enjoy!
 
-Write your tests and enjoy a mocked browser environment.
+Napisz swoje testy i ciesz się zmockowanym środowiskiem przeglądarki.
 
 `test.js`:
 
