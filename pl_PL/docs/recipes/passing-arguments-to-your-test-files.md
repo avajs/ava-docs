@@ -1,8 +1,8 @@
-# Passing arguments to your test files
+# Przekazywanie argumentów do plików testowyc
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/passing-arguments-to-your-test-files.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/passing-arguments-to-your-test-files.md)
 
-You can pass command line arguments to your test files. Use the `--` argument terminator to separate AVA's arguments from your own:
+Możesz przekazać argumenty wiersza poleceń do plików testowych. Użyj argumentu `--` terminatora aby oddzielić argumenty AVA od własnych:
 
 ```js
 // test.js
@@ -17,7 +17,7 @@ test('argv', t => {
 $ npx ava -- --hello world
 ```
 
-You need two `--` argument terminators if you're invoking AVA through an `npm test` script:
+Potrzebujesz dwóch `--` argumentów terminatorów jeśli wywołujesz AVA za pomocą skryptu `npm test`:
 
 ```json
 {
