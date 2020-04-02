@@ -1,16 +1,16 @@
-# When to use `t.plan()`
+# Kiedy użyć `t.plan()`
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
 
-One major difference between AVA and [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) is the behavior of `t.plan()`. In AVA, `t.plan()` is only used to assert that the expected number of assertions are called; it does not auto-end the test.
+Jedna główna różnica między AVA a [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) to zachowanie `t.plan()`. W AVA, `t.plan()` służy tylko do zapewnienia, że wywoływana jest oczekiwana liczba asercji; nie kończy automatycznie testu.
 
-## Poor uses of `t.plan()`
+## Słabe zastosowania `t.plan()`
 
-Many users transitioning from `tap`/`tape` are accustomed to using `t.plan()` prolifically in every test. However, in AVA, we don't consider that to be a "best practice". Instead, we believe `t.plan()` should only be used in situations where it provides some value.
+Wielu użytkowników przechodzi z `tap`/`tape` są przyzwyczajeni do korzystania `t.plan()` często w każdym teście. Jednak w AVA nie uważamy tego za "najlepszą praktykę". Zamiast tego wierzymy że `t.plan()` powinien być stosowany tylko w sytuacjach, w których zapewnia pewną wartość.
 
-### Sync tests with no branching
+### Testy synchronizacji bez rozgałęzień
 
-`t.plan()` is unnecessary in most sync tests.
+`t.plan()` jest niepotrzebny w większości testów synchronizacji.
 
 ```js
 test('simple sums', t => {
@@ -22,9 +22,9 @@ test('simple sums', t => {
 });
 ```
 
-`t.plan()` does not provide any value here, and creates an extra chore if you ever decide to add or remove assertions.
+`t.plan()` nie zapewnia tutaj żadnej wartości i stwarza dodatkowe obowiązki, jeśli kiedykolwiek zdecydujesz się dodać lub usunąć asercje.
 
-### Promises that are expected to resolve
+### Obietnice (promises), które powinny zostać spełnione
 
 ```js
 test('gives foo', t => {
@@ -36,11 +36,11 @@ test('gives foo', t => {
 });
 ```
 
-At a glance, this tests appears to make good use of `t.plan()` since an async promise handler is involved. However there are several problems with the test:
+Na pierwszy rzut oka wydaje się, że testy te dobrze wykorzystują `t.plan()` ponieważ zaangażowana jest obsługa asynchronicznych obietnic. Istnieje jednak kilka problemów z testem:
 
-1. `t.plan()` is presumably used here to protect against the possibility that `somePromise()` might be rejected; But returning a rejected promise would fail the test anyways.
+1. `t.plan()` jest prawdopodobnie używany tutaj w celu ochrony przed taką możliwością `somePromise()` może zostać odrzucone; Ale odesłanie odrzuconej obietnicy i tak nie powiedzie się.
 
-2. It would be better to take advantage of `async`/`await`:
+2. Lepiej byłoby skorzystać z `async`/`await`
 
 ```js
 test('gives foo', async t => {
@@ -48,7 +48,7 @@ test('gives foo', async t => {
 });
 ```
 
-### Promises with a `.catch()` block
+### Promises z blokiem `.catch()`
 
 ```js
 test('rejects with foo', t => {
@@ -61,8 +61,8 @@ test('rejects with foo', t => {
 });
 ```
 
-Here, the use of `t.plan()` seeks to ensure that the code inside the `catch` block is executed.
-Instead, you should take advantage of `t.throwsAsync` and `async`/`await`, as this leads to flatter code that is easier to reason about:
+Tutaj użycie `t.plan()` stara się zapewnić wykonanie kodu w bloku 'catch'.
+Zamiast tego powinieneś skorzystać `t.throwsAsync` i `async`/`await`, ponieważ prowadzi to do bardziej płaskiego kodu, który łatwiej jest zrozumieć:
 
 ```js
 test('rejects with foo', async t => {
@@ -72,7 +72,7 @@ test('rejects with foo', async t => {
 });
 ```
 
-### Ensuring a catch statement happens
+### Zapewnienie, że nastąpi zdarzenie catch
 
 ```js
 test('throws', t => {
@@ -87,13 +87,13 @@ test('throws', t => {
 });
 ```
 
-As stated in the previous example, using the `t.throws()` assertion with `async`/`await` is a better choice.
+Jak stwierdzono w poprzednim przykładzie, używając asercji `t.throws()` z `async`/`await` jest lepszym wyborem.
 
-## Good uses of `t.plan()`
+## Dobre wykorzystanie `t.plan()`
 
-`t.plan()` provides value in the following cases.
+`t.plan()` zapewnia wartość w następujących przypadkach.
 
-### Ensuring multiple callbacks are actually called
+### Zapewnienie faktycznego wywoływania wielu callbacków
 
 ```js
 test.cb('invokes callbacks', t => {
@@ -110,11 +110,11 @@ test.cb('invokes callbacks', t => {
 });
 ```
 
-The above ensures `callbackB` is called first (and only once), followed by `callbackA`. Any other combination would not satisfy the plan.
+Powyższe zapewnia że `callbackB` wywołuje się pierwszy (i tylko raz)), śledzony przez `callbackA`. Żadna inna kombinacja nie spełnia planu.
 
-### Tests with branching statements
+### Testy z instrukcjami rozgałęziającymi
 
-In most cases, it's a bad idea to use any complex branching inside your tests. A notable exception is for tests that are auto-generated (perhaps from a JSON document). Below `t.plan()` is used to ensure the correctness of the JSON input:
+W większości przypadków używanie złożonych rozgałęzień w testach jest złym pomysłem. Godnym uwagi wyjątkiem są testy generowane automatycznie (być może z dokumentu JSON). Poniżej `t.plan ()` służy do zapewnienia poprawności wejścia JSON:
 
 ```js
 const testData = require('./fixtures/test-definitions.json');
@@ -137,6 +137,6 @@ for (const testDefinition of testData) {
 }
 ```
 
-## Conclusion
+## Wniosek
 
-`t.plan()` has plenty of valid uses, but it should not be used indiscriminately. A good rule of thumb is to use it any time your *test* does not have straightforward, easily reasoned about, code flow. Tests with assertions inside callbacks, `if`/`then` statements, `for`/`while` loops, and (in some cases) `try`/`catch` blocks, are all good candidates for `t.plan()`.
+`t.plan()` ma wiele uzasadnionych zastosowań, ale nie należy ich używać bez rozróżnienia. Dobrą zasadą jest używanie go za każdym razem, gdy *test* nie ma prostego, łatwego do uzasadnienia przepływu kodu. Testy z asercjami wewnątrz wywołań zwrotnych, deklaracje `if`/`then`, pętle `for`/`while`, i (w niektórych przypadkach) bloki `try`/`catch`, są dobrymi kandydatami na `t.plan()`.
