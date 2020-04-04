@@ -9,7 +9,7 @@ ___
 
 Należy pamiętać, że ten projekt został opublikowany z [Code of conduct](code-of-conduct.md). Uczestnicząc w tym projekcie, zgadzasz się przestrzegać jego warunków.
 
-Tłumaczenia : [English](https://github.com/avajs/ava/blob/master/contributing.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/contributing.md)
+Tłumaczenia: [English](https://github.com/avajs/ava/blob/master/contributing.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/contributing.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/contributing.md)
 
 ## Jak mogę pomóc?
 
