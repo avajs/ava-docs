@@ -62,7 +62,7 @@ Mamy [chat](https://spectrum.chat/ava). Przyjdź, szpieguj, porozmawiaj z nami i
 - Nowym funkcjom muszą towarzyszyć testy i dokumentacja (w języku angielskim).
 - Nie dodawaj zmian niezwiązanych z pull requestem.
 - Sprawdź (Lint) i przetestuj przed wysłaniem pull requestem, uruchamiając `$ npm test`.
-- Złóż pull request [branche](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), nie dla mastera.
+- Wyślij pull request [branche](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), nie na mastera.
 - Użyj jasnego i opisowego tytułu dla pull request i zatwierdzeń.
 - Napisz atrakcyjny opis, aby wyjaśnić, dlaczego powinniśmy zintegrować Twój pull request. Twoim zadaniem jest nas przekonać. Odpowiedź na pytanie „dlaczego” jest konieczne i podaj przypadki użycia.
 - Możemy poprosić Cię o zmianę pull request. Nie jest konieczne otwieranie kolejnego żądania ściągnięcia. [Po prostu zaktualizuj ten, który już istnieje.](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)
