@@ -17,7 +17,7 @@ Tłumaczenia: [English](https://github.com/avajs/ava/blob/master/contributing.md
 
 Jako użytkownik AVA jesteś idealnym kandydatem, aby pomóc nam ulepszyć naszą dokumentację: poprawki literówek, poprawki błędów, lepsze wyjaśnienia, więcej przykładów itp. Otwarte problemy dotyczące rzeczy, które można poprawić. [Pomóż przetłumaczyć nasze dokumenty.](https://github.com/avajs/ava-docs) Cokolwiek, nawet ulepszenia wprowadzone w tym dokumencie.
 
-Użyj [etykiety `docs`](https://github.com/avajs/ava/labels/docs) aby znaleźć sugestie dotyczące tego, co chcielibyśmy zobaczyć więcej w dokumentacji.
+Użyj [etykiety `docs`](https://github.com/avajs/ava/labels/docs) aby znaleźć sugestie dotyczące tego, czego chcielibyśmy zobaczyć więcej w dokumentacji.
 
 ### Popraw problemy
 
@@ -76,4 +76,4 @@ Uwaga: przy modyfikowaniu kodu pamiętaj, że motto AVA (skradzione z Pythona) t
 
 *Czy chcesz wnieść swój pierwszy wkład w projekt typu open source? Nie szukaj dalej! AVA może być jednym z najbardziej przyjaznych projektów i społeczności. Przeczytaj post na blogu ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190) aby zacząć poprawnie i zrobić swój pierwszy udział w AVA !*
 
-//Ten dokument tłumaczony został z języka francuskiego
+//Ten dokument został przetłumaczony z języka francuskiego
