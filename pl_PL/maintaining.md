@@ -32,7 +32,7 @@ Mówiąc o, używanie nowszych funkcji TypeScript można uznać za przełomową 
 ## Pull requests
 
 * Nowe featury powinny pochodzić z testów i dokumentacji.
-* Upewnij się, że [wytyczne współtworzenia](.github/CONTRIBUTING.md) są odhaczone.
+* Upewnij się, że [wytyczne współtworzenia](https://github.com/mbiesiad/ava-docs/blob/pl_PL/pl_PL/contributing.md) są odhaczone.
 * Squash commits gdy mergowanie.
 
 ## Eksperymenty
