@@ -7,7 +7,7 @@ Testowanie może być trudne. AVA pomaga je zrobić. AVA jest programem uruchami
 
 Obserwuj [konto AVA na Twitter](https://twitter.com/ava__js) dla aktualizacji.
 
-Przeczytaj nasz [contributing guide](.github/CONTRIBUTING.md) jeśli chcesz pomóc (issues / PRs / etc).
+Przeczytaj nasz [contributing guide](https://github.com/mbiesiad/ava-docs/blob/pl_PL/pl_PL/contributing.md) jeśli chcesz pomóc (issues / PRs / etc).
 
 ![](https://github.com/avajs/ava/blob/master/media/mini-reporter.gif)
 
@@ -24,12 +24,12 @@ Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/rea
 - Żadnych niejawnych globalów
 - Zawiera definicje TypeScript
 - [Magic assert](#magic-assert)
-- [Izolowane środowisko dla każdego pliku testowego](./docs/01-writing-tests.md#process-isolation)
+- [Izolowane środowisko dla każdego pliku testowego](./docs/01-writing-tests.md#proces-izolacji)
 - [Napisz swoje testy przy użyciu najnowszej składni JavaScript](https://github.com/avajs/babel)
-- [Wsparcie promise](./docs/01-writing-tests.md#promise-support)
-- [Wsparcie funkcji asynchronicznych](./docs/01-writing-tests.md#async-function-support)
-- [Wsparcie Observable](./docs/01-writing-tests.md#observable-support)
-- [Ulepszone komunikaty assertion](./docs/03-assertions.md#enhanced-assertion-messages)
+- [Wsparcie promise](./docs/01-writing-tests.md#wsparcie-promise)
+- [Wsparcie funkcji asynchronicznych](./docs/01-writing-tests.md#wsparcie-funkcji-async)
+- [Wsparcie Observable](./docs/01-writing-tests.md#wsparcie-observable)
+- [Ulepszone komunikaty assertion](./docs/03-assertions.md#wzmocnione-komunikaty-asercji)
 - [Uruchamiany automatyczny test równoległy CI](#równoległe-działanie-w-ci)
 - [TAP reporter](./docs/05-command-line.md#tap-reporter)
 
