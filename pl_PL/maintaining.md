@@ -2,7 +2,7 @@
 
 ## Postępowanie
 
-**Bądź miły dla wszystkich.** Przeczytaj i przestrzegaj [Kodeksu postępowania](.github/CODE_OF_CONDUCT.md).
+**Bądź miły dla wszystkich.** Przeczytaj i przestrzegaj [Kodeksu postępowania](https://github.com/mbiesiad/ava-docs/blob/pl_PL/pl_PL/code-of-conduct.md).
 
 ## Testowanie
 
