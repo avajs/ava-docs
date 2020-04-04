@@ -1,7 +1,7 @@
 ___
 **Notatka tłumacza**
 
-To jest tłumaczenie pliku [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Oto [link](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-cc4aac3e9be04e0413c9520f223b493c) do różnic w stosunku do AVA master (jeśli klikniesz na link, nie możesz znaleźć pliku `contributing.md` spośród zmodyfikowanych plików można zatem wywnioskować, że tłumaczenie jest aktualne).
+To jest tłumaczenie pliku [contributing.md](https://github.com/avajs/ava/blob/master/.github/CONTRIBUTING.md). Oto [link](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...master#diff-cc4aac3e9be04e0413c9520f223b493c) do różnic w stosunku do AVA master (jeśli klikniesz na link, nie możesz znaleźć pliku `contributing.md` spośród zmodyfikowanych plików można zatem wywnioskować, że tłumaczenie jest aktualne).
 ___
 # Wspieraj AVA
 
