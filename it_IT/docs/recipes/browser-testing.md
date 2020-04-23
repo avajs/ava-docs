@@ -28,7 +28,7 @@ $ npm install --save-dev browser-env
 
 ## Configurare browser-env
 
-Creare un file helper e salvarlo nella cartella `test/helper`. Questo assicura che AVA non lo consideri un file di test.
+Creare un file helper e salvarlo nella cartella `test/helpers`. Questo assicura che AVA non lo consideri un file di test.
 
 `test/helpers/setup-browser-env.js`:
 
