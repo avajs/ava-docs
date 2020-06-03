@@ -529,7 +529,7 @@ test(t => {
 });
 ```
 
-钩子可以同步或异步，就像测试一样。让钩子异步返回一个 promise 或 observable，使用一个 async 函数，或者通过 `test.cb.before()`，`test.cb.beforeEach()` 等来启用 callback 模式。
+钩子可以同步或异步，就像测试一样。让钩子异步返回一个 promise 或 observable，使用一个 async 函数，或者通过 `test.before.cb()`，`test.beforeEach.cb()` 等来启用 callback 模式。
 
 ```js
 test.before(async t => {
@@ -540,7 +540,7 @@ test.after(t => {
     return new Promise(/* ... */);
 });
 
-test.cb.beforeEach(t => {
+test.beforeEach.cb(t => {
     setTimeout(t.end);
 });
 
