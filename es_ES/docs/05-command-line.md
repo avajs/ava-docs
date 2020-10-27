@@ -70,7 +70,7 @@ Los archivos dentro de `node_modules` son *siempre* ignorados. También lo son l
 * `**/tests/**/fixture/**/*`
 * `**/tests/**/fixtures/**/*`
 
-Cuando usas `npm test`, puedes pasar argumentos posicionales directamente` npm test test2.js`, pero los banderas deben pasarse como `npm test - --verbose`.
+Cuando usas `npm test`, puedes pasar argumentos posicionales directamente` npm test test2.js`, pero las banderas deben pasarse como `npm test - --verbose`.
 
 ## Ejecución de pruebas con títulos que tienen coincidencias
 
@@ -120,7 +120,7 @@ npx ava --match='foo*' --match='*bar'
 
 Ten en cuenta que un patrón de coincidencias tiene prioridad sobre el modificador `.only`. Solo se comparan las pruebas con un título explícito. Las pruebas sin títulos o cuyo título se deriva de la función de implementación se omitirán cuando se usa `--match`.
 
-Esto es lo que sucede cuando ejecuta AVA con un patrón de coincidencia de `*oo*` y las siguientes pruebas:
+Esto es lo que sucede cuando se ejecuta AVA con un patrón de coincidencia de `*oo*` y las siguientes pruebas:
 
 ```js
 test('foo se ejecutara', t => {
@@ -146,19 +146,19 @@ test(function foo(t) {
 });
 ```
 
-## Running tests at specific line numbers
+## Ejecutar pruebas usando números de línea específicos
 
-AVA lets you run tests exclusively by referring to their line numbers. Target a single line, a range of lines or both. You can select any line number of a test.
+AVA permite ejecutar pruebas exclusivamente haciendo referencia a sus números de línea. Apuntando a una sola línea, un rango de líneas o ambas. Puedes seleccionar cualquier número de línea de una prueba.
 
-The format is a comma-separated list of `[X|Y-Z]` where `X`, `Y` and `Z` are integers between `1` and the last line number of the file.
+El formato es una lista separada por comas de "[X | Y-Z]" donde "X", "Y" y "Z" son números enteros entre "1" y el último número de línea del archivo.
 
-This feature is only available from the command line. It won't work if you use tools like `ts-node/register` or `@babel/register`, and it does not currently work with `@ava/babel` and `@ava/typescript`.
+Esta función solo está disponible desde la línea de comandos. No funcionará si usa herramientas como `ts-node / register` o` @ babel / register`, y actualmente no funciona con `@ ava / babel` y` @ ava / typescript`.
 
-### Running a single test
+### Ejecutar una unica prueba
 
-To only run a particular test in a file, append the line number of the test to the path or pattern passed to AVA.
+Para ejecutar solo una prueba en particular en un archivo, agregue el número de línea de la prueba a la ruta o patrón pasado a AVA.
 
-Given the following test file:
+Dado el siguiente archivo de prueba:
 
 `test.js`
 
@@ -172,63 +172,64 @@ Given the following test file:
 7: });
 ```
 
-Running `npx ava test.js:2` for would run the `unicorn` test. In fact you could use any line number between `1` and `3`.
+Ejecutar `npx ava test.js:2` ejecutaría la prueba `unicorn`. De hecho, podría utilizar cualquier número de línea entre "1" y "3".
 
-### Running multiple tests
+### Ejecutando múltiples pruebas
 
-To run multiple tests, either target them one by one or select a range of line numbers. As line numbers are given per file, you can run multiple files with different line numbers for each file. If the same file is provided multiple times, line numbers are merged and only run once.
+Para ejecutar varias pruebas, debes especificarlas una por una o para que seleccione un rango de números de línea. Como los números de línea se dan por archivo, puedes ejecutar varios archivos con diferentes números de línea para cada archivo. Si se proporciona el mismo archivo varias veces, los números de línea se combinan y solo se ejecutan una vez.
 
-### Examples
+### Ejemplos
 
-Single line numbers:
+Numeros de linea unicos
 
 ```console
 npx ava test.js:2,9
 ```
 
-Range:
+Rangos:
 
 ```console
 npx ava test.js:4-7
 ```
 
-Mix of single line number and range:
+Mezcla de rangos y número de línea única:
 
 ```console
 npx ava test.js:4,9-12
 ```
 
-Different files:
+Diferentes archivos:
 
 ```console
 npx ava test.js:3 test2.js:4,7-9
 ```
 
-When running a file with and without line numbers, line numbers take precedence.
+Cuando se ejecuta un archivo con y sin números de línea, los números de línea tienen prioridad.
 
-## Resetting AVA's cache
+## Restableciendo la caché de AVA
 
-AVA may cache certain files, especially when you use our [`@ava/babel`](https://github.com/avajs/babel) provider. If it seems like your latest changes aren't being picked up by AVA you can reset the cache by running:
-
+AVA suele almacenar en caché ciertos archivos, especialmente cuando usa [`@ava/babel`] (https://github.com/avajs/babel). 
+Si parece que los últimos cambios no están siendo recogidos por AVA, puedes restablecer la caché ejecutando:
 ```console
 npx ava reset-cache
 ```
 
-This deletes all files in the `node_modules/.cache/ava` directory.
+Esto borra todos los archivos del directorio `node_modules/.cache/ava`.
 
-## Reporters
+## Reportes
 
-By default AVA uses a minimal reporter:
+Por defecto, AVA usa un reporte mínimo:
 
 <img src="../media/mini-reporter.gif" width="460">
 
-Use the `--verbose` flag to enable the verbose reporter. This is always used in CI environments unless the [TAP reporter](#tap-reporter) is enabled.
+Utilice la bandera `--verbose` para habilitar el reporte detallado. 
+Esto siempre se usa en entornos de CI a menos que el [TAP del reporte] (#tap-reporter) esté habilitado.
 
 <img src="../media/verbose-reporter.png" width="294">
 
-### TAP reporter
+### TAP reportes
 
-AVA supports the TAP format and thus is compatible with [any TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Use the `--tap` flag to enable TAP output.
+AVA soporta formato TAP, por lo cual es compatible con cualquier [TAP reporter](https://github.com/sindresorhus/awesome-tap#reporters). Usa el flag `--tap` para habilitar una salida en modo TAP.
 
 ```console
 $ npx ava --tap | npx tap-nyan
@@ -236,18 +237,19 @@ $ npx ava --tap | npx tap-nyan
 
 <img src="../media/tap-reporter.png" width="420">
 
-Please note that the TAP reporter is unavailable when using [watch mode](./recipes/watch-mode.md).
+Por favor, ten en cuenta que TAP reporter no esta disponible cuando usas el modo [watch](./recipes/watch-mode.md).
 
 ## Node arguments
 
-The `--node-arguments` argument may be used to specify additional arguments for launching worker processes. These are combined with the `nodeArguments` configuration and any arguments passed to the `node` binary when starting AVA.
+El argumento `--node-arguments` puede usarse para especificar argumentos adicionales para iniciar procesos de trabajo. 
+Estos se combinan con la configuración de `nodeArguments` y cualquier argumento pasado al binario de`node` al iniciar AVA.
 
-**Only pass trusted values.**
+** Solo transfiera valores confiables. **
 
-Specify the arguments as a single string:
+Especifique los argumentos como una sola cadena:
 
 ```console
 npx ava --node-arguments="--throw-deprecation --zero-fill-buffers"
 ```
 
-**Only pass trusted values.**
+** Solo transfiera valores confiables. **
