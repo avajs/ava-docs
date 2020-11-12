@@ -3,7 +3,7 @@ ___
 
 이 문서는 [readme.md](https://github.com/avajs/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/avajs/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
-# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://ava.li)
+# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://avajs.dev)
 
 > 미래적인 테스트 러너
 
@@ -964,7 +964,7 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 	<br>
 	<br>
 	<br>
-	<a href="https://ava.li">
+	<a href="https://avajs.dev">
 		<img src="https://cdn.jsdelivr.net/gh/avajs/ava@fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>

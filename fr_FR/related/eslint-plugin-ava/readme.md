@@ -5,7 +5,7 @@ C'est la traduction du fichier [readme.md](https://github.com/avajs/eslint-plugi
 ___
 # eslint-plugin-ava [![Build Status](https://travis-ci.org/avajs/eslint-plugin-ava.svg?branch=master)](https://travis-ci.org/avajs/eslint-plugin-ava) [![Coverage Status](https://coveralls.io/repos/github/avajs/eslint-plugin-ava/badge.svg?branch=master)](https://coveralls.io/github/avajs/eslint-plugin-ava?branch=master)
 
-> Règles ESLint pour [AVA](https://ava.li)
+> Règles ESLint pour [AVA](https://avajs.dev)
 
 Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/readme.md)
 

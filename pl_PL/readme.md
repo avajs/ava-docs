@@ -227,7 +227,7 @@ Jest to [galaktyka Andromeda](https://simple.wikipedia.org/wiki/Andromeda_galaxy
 	<br>
 	<br>
 	<br>
-	<a href="https://ava.li">
+	<a href="https://avajs.dev">
 		<img src="https://github.com/avajs/ava/blob/master/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>

@@ -4,7 +4,7 @@ ___
 Esta é a tradução de [readme.md](https://github.com/avajs/ava/blob/master/readme.md). [Este link](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
-# [![AVA](https://raw.githubusercontent.com/avajs/ava/master/media/header.png)](https://ava.li)
+# [![AVA](https://raw.githubusercontent.com/avajs/ava/master/media/header.png)](https://avajs.dev)
 
 > Executor de testes futurista
 
@@ -1067,7 +1067,7 @@ AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/ava
 	<br>
 	<br>
 	<br>
-	<a href="https://ava.li">
+	<a href="https://avajs.dev">
 		<img src="https://cdn.jsdelivr.net/gh/avajs/ava@fe1cea1ca3d2c8518c0cc39ec8be592beab90558/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>

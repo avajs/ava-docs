@@ -7,7 +7,7 @@ ___
 
 Traductions : [English](https://github.com/avajs/ava-codemods/blob/master/readme.md)
 
-> Codemods pour [AVA](https://ava.li) qui simplifie la mise à jours des versions plus récentes et la migration vers AVA
+> Codemods pour [AVA](https://avajs.dev) qui simplifie la mise à jours des versions plus récentes et la migration vers AVA
 
 <img src="https://github.com/avajs/ava-codemods/blob/master/screenshot.gif" width="440" align="right">
 
