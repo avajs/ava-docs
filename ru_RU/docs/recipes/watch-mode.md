@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...master#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...master#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
 ___
 # Режим наблюдения
 

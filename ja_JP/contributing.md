@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[contributing.md](https://github.com/avajs/ava/blob/master/contributing.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-cc4aac3e9be04e0413c9520f223b493c)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-cc4aac3e9be04e0413c9520f223b493c)になります(このリンクをクリックして、`contributing.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # AVAにコントリビュートするために

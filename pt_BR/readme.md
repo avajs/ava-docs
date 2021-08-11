@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/avajs/ava/blob/master/readme.md). [Este link](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/avajs/ava/blob/main/readme.md). [Este link](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # [![AVA](https://raw.githubusercontent.com/avajs/ava/master/media/header.png)](https://avajs.dev)
@@ -1004,7 +1004,7 @@ Em contrapartida, AVA é altamente opinativo e executa testes simultaneamente co
 
 ### Como o nome é escrito e pronunciado?
 
-AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true).
 
 ### O que é o plano de fundo do cabeçalho?
 

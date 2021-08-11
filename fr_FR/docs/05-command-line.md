@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/master/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/main/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/05-command-line.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/05-command-line.md)
 
 ```console
 ava [<pattern>...]
@@ -185,11 +185,11 @@ Cela supprime tous les fichiers du répertoire `node_modules/.cache/ava`.
 
 Par défaut, Ava utilise le mini reporter :
 
-<img src="https://github.com/avajs/ava/blob/master/media/mini-reporter.gif" width="460">
+<img src="https://github.com/avajs/ava/raw/main/media/mini-reporter.gif" width="460">
 
 Utilisez l'option `--verbose` pour activer le reporter verbose. Il est toujours utilisé dans les environnements de CI, sauf si [`--tap`](#reporter-de-tap) est activé.
 
-<img src="https://github.com/avajs/ava/blob/master/media/verbose-reporter.png" width="294">
+<img src="https://github.com/avajs/ava/raw/main/media/verbose-reporter.png" width="294">
 
 ### Reporter de TAP
 
@@ -199,6 +199,6 @@ AVA prend en charge le format de TAP et est compatible avec [tous les reporters 
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-reporter.png" width="420">
+<img src="https://github.com/avajs/ava/raw/main/media/tap-reporter.png" width="420">
 
 Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](./recipes/watch-mode.md).

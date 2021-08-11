@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [02-execution-context.md](https://github.com/avajs/ava/blob/master/docs/02-execution-context.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-fdc3f6412c8049ee065ab49994dc0879) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `02-execution-context.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [02-execution-context.md](https://github.com/avajs/ava/blob/main/docs/02-execution-context.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-fdc3f6412c8049ee065ab49994dc0879) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `02-execution-context.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contexte d'exécution (argument `t`)
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/02-execution-context.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/02-execution-context.md)
 
 Chaque test ou hook est appelé avec un contexte d'exécution. Par convention, il s'appelle `t`.
 

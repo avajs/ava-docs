@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [code-coverage.md](https://github.com/avajs/ava/blob/main/docs/recipes/code-coverage.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-coverage.md`, то можете считать что перевод актуален.
 ___
 # Покрытие кода
 

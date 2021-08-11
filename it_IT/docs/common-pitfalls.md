@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [common-pitfalls.md](https://github.com/avajs/ava/blob/master/docs/common-pitfalls.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-7eb46230db3eba276054b9adbc6c82ca) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `common-pitfalls.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [common-pitfalls.md](https://github.com/avajs/ava/blob/main/docs/common-pitfalls.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-7eb46230db3eba276054b9adbc6c82ca) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `common-pitfalls.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Errori comuni
 

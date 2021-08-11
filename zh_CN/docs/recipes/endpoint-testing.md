@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-aee54ab6a703c02779edb3ebbb35e96f) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`endpoint-testing.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [endpoint-testing.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-aee54ab6a703c02779edb3ebbb35e96f) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`endpoint-testing.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 端点测试

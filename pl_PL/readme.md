@@ -1,4 +1,4 @@
-# <img src="https://github.com/avajs/ava/blob/master/media/header.png" title="AVA" alt="AVA logo" width="530">
+# <img src="https://github.com/avajs/ava/raw/main/media/header.png" title="AVA" alt="AVA logo" width="530">
 
 [![Build Status](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava)  [![Coverage Status](https://codecov.io/gh/avajs/ava/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/ava/branch/master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
 [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
@@ -9,7 +9,7 @@ Obserwuj [konto AVA na Twitter](https://twitter.com/ava__js) dla aktualizacji.
 
 Przeczytaj nasz [contributing guide](https://github.com/mbiesiad/ava-docs/blob/pl_PL/pl_PL/contributing.md) jeśli chcesz pomóc (issues / PRs / etc).
 
-![](https://github.com/avajs/ava/blob/master/media/mini-reporter.gif)
+![](https://github.com/avajs/ava/raw/main/media/mini-reporter.gif)
 
 
 Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
@@ -115,7 +115,7 @@ AVA obsługuje najnowszą wersję dowolnej głównej wersji, która [jest obsłu
 
 AVA dodaje fragmenty kodu i czyści różnice dla wartości rzeczywistych i oczekiwanych. Jeśli wartości w asercji są obiektami lub tablicami, wyświetlana jest tylko różnica, aby usunąć szum i skupić się na problemie. Różnica jest również wyróżniona w składni! Jeśli porównujesz ciągi znaków, zarówno jedno jak i wieloliniowe, AVA wyświetla inny rodzaj danych wyjściowych, podkreślając dodane lub brakujące znaki.
 
-![](https://github.com/avajs/ava/blob/master/media/magic-assert-combined.png)
+![](https://github.com/avajs/ava/raw/main/media/magic-assert-combined.png)
 
 ### Czyszczenie śladów stosu
 
@@ -228,7 +228,7 @@ Jest to [galaktyka Andromeda](https://simple.wikipedia.org/wiki/Andromeda_galaxy
 	<br>
 	<br>
 	<a href="https://avajs.dev">
-		<img src="https://github.com/avajs/ava/blob/master/media/logo.svg" width="200" alt="AVA">
+		<img src="https://github.com/avajs/ava/raw/main/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>
 	<br>

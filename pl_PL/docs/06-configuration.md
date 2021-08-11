@@ -43,7 +43,7 @@ Argumenty przekazywane do interfejsu CLI zawsze będą miały pierwszeństwo prz
 ## Opcje
 
 - `files`: tablica wzorców globalnych do wybierania plików testowych. Pliki z prefiksem podkreślenia są ignorowane. Domyślnie wybiera tylko pliki z rozszerzeniami `cjs`, `mjs` & `js`, nawet jeśli wzór pasuje do innych plików. Sprecyzuj `extensions` aby zezwolić na inne rozszerzenia plików
-- `ignoredByWatcher`: tablica wzorców globu pasujących do plików, które nawet jeśli zostaną zmienione, są ignorowane przez obserwatora. Zobacz [przepis trybu watch, aby poznać szczegóły](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
+- `ignoredByWatcher`: tablica wzorców globu pasujących do plików, które nawet jeśli zostaną zmienione, są ignorowane przez obserwatora. Zobacz [przepis trybu watch, aby poznać szczegóły](https://github.com/avajs/ava/raw/main/docs/recipes/watch-mode.md)
 - `match`: zwykle nie jest użyteczne w konfiguracji `package.json`, ale jest równoważne z [określaniem `--match` w CLI](./05-command-line.md#running-tests-with-matching-titles)
 - `cache`: cache kompiluje pliki pod `node_modules/.cache/ava`. Jeśli `false`, zamiast tego pliki są buforowane w katalogu tymczasowym
 - `failFast`: przestań uruchamiać kolejne testy, gdy test się nie powiedzie

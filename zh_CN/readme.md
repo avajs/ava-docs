@@ -1,10 +1,10 @@
 ___
 **备注**
 
-这是 [readme.md](https://github.com/avajs/ava/blob/master/readme.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到 `readme.md` 发生变化，那就意味着这份翻译文档是最新的）。
+这是 [readme.md](https://github.com/avajs/ava/blob/main/readme.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到 `readme.md` 发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
-# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
 
 > 未来的测试运行器
 
@@ -54,7 +54,7 @@ ___
 - [支持 Async](#支持-async)
 - [支持 Observable](#支持-observable)
 - [强化断言信息](#强化断言信息)
-- [可选的 TAP 输出显示](#TAP 报告器)
+- [可选的 TAP 输出显示](#TAP报告器)
 - [简明的堆栈跟踪](#简明的堆栈跟踪)
 
 
@@ -215,23 +215,23 @@ $ node --inspect node_modules/ava/profile.js some/test/file.js
 
 这是默认的报告器。
 
-<img src="https://github.com/avajs/ava/blob/master/media/mini-reporter.gif" width="460">
+<img src="https://github.com/avajs/ava/raw/main/media/mini-reporter.gif" width="460">
 
 ### 详细报告器
 
-使用 `--verbose` 参数可以启用详细报告器。这在 CI 环境下始终会被启用，除非已经使用了 [TAP 报告器](#TAP 报告器)
+使用 `--verbose` 参数可以启用详细报告器。这在 CI 环境下始终会被启用，除非已经使用了 [TAP 报告器](#TAP报告器)
 
-<img src="https://github.com/avajs/ava/blob/master/media/verbose-reporter.png" width="294">
+<img src="https://github.com/avajs/ava/raw/main/media/verbose-reporter.png" width="294">
 
-### TAP 报告器
+### TAP报告器
 
-AVA 支持 TAP格式，并且与 [任何 TAP 报告器](https://github.com/sindresorhus/awesome-tap#reporters) 相兼容。使用 `--tap` 选项来启用 TAP 输出。
+AVA 支持 TAP 格式，并且与 [任何 TAP 报告器](https://github.com/sindresorhus/awesome-tap#reporters) 相兼容。使用 `--tap` 选项来启用 TAP 输出。
 
 ```console
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-reporter.png" width="420">
+<img src="https://github.com/avajs/ava/raw/main/media/tap-reporter.png" width="420">
 
 注意 TAP 报告器在 [监视模式](docs/recipes/watch-mode.md) 下不可用。
 
@@ -797,13 +797,13 @@ AVA 可以通过 `--tap` 选项来生成 TAP 的输出，可以选择任意的 [
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/tap-output.png" width="398">
 
 ### 简明的堆栈跟踪
 
 AVA 会在堆栈跟踪信息里面自动移除不相关的行，让你更快地找到错误的原因。
 
-<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/stack-traces.png" width="300">
 
 ## API
 
@@ -1014,7 +1014,7 @@ AVA 支持 TAP 格式，所以它兼容任何 [TAP 报告](https://github.com/si
 
 ### 项目名字要怎么写才是正确的？如何发音？
 
-AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)。
+AVA，不是 Ava，也不是 ava，发音 [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true)。
 
 ### 项目背景图片是什么意思？
 

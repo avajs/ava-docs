@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # [![AVA](https://github.com/avajs/ava/raw/master/media/header.png)](https://avajs.dev)
 
@@ -1138,7 +1138,7 @@ AVA supporta il formato TAP ed è quindi compatibile con ogni [TAP reporter](htt
 
 ### Come si scrive e pronuncia AVA?
 
-AVA, no Ava o ava. Si pronuncia [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, no Ava o ava. Si pronuncia [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true).
 
 ### Cos'è lo sfondo del logo in cima?
 
@@ -1150,17 +1150,17 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 
 ## Ricette
 
-- [Test setup](https://github.com/avajs/ava/blob/master/docs/recipes/test-setup.md)
+- [Test setup](https://github.com/avajs/ava/raw/main/docs/recipes/test-setup.md)
 - [Code coverage](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/code-coverage.md)
 - [Watch Mode](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md)
 - [Test di Endpoint](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/endpoint-testing.md)
 - [Quando usare `t.plan()`](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md)
 - [Browser testing](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md)
 - [TypeScript](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md)
-- [Flow](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md)
+- [Flow](https://github.com/avajs/ava/raw/main/docs/recipes/flow.md)
 - [Configurare Babel](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md)
-- [Uso dei moduli ES](https://github.com/avajs/ava/blob/master/docs/recipes/es-modules.md)
-- [Come passare gli argomenti dentro i tuoi test](https://github.com/avajs/ava/blob/master/docs/recipes/passing-arguments-to-your-test-files.md)
+- [Uso dei moduli ES](https://github.com/avajs/ava/raw/main/docs/recipes/es-modules.md)
+- [Come passare gli argomenti dentro i tuoi test](https://github.com/avajs/ava/raw/main/docs/recipes/passing-arguments-to-your-test-files.md)
 - [Testare componenti React](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/react.md)
 - [Testare componenti Vue.js](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/vue.md)
 - [JSPM and SystemJS](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/jspm-systemjs.md)
@@ -1169,7 +1169,7 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 - [Fare il debugging di test con Visual Studio Code](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-vscode.md)
 - [Precompilare file sorgente con webpack](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/precompiling-with-webpack.md)
 - [Test di integrazione con MongoDB in isolamento](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
-- [Testare app del web using Puppeteer](https://github.com/avajs/ava/blob/master/docs/recipes/puppeteer.md)
+- [Testare app del web using Puppeteer](https://github.com/avajs/ava/raw/main/docs/recipes/puppeteer.md)
 
 ## Supporto
 

@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-aee54ab6a703c02779edb3ebbb35e96f), содержащую последние правки в master ветке AVA, Вы не можете найти файл `endpoint-testing.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [endpoint-testing.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-aee54ab6a703c02779edb3ebbb35e96f), содержащую последние правки в master ветке AVA, Вы не можете найти файл `endpoint-testing.md`, то можете считать что перевод актуален.
 ___
 # Тестирование HTTP серверов
 

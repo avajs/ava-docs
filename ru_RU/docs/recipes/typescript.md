@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [typescript.md](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-60cce07a584082115d230f2e3d571ad6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `typescript.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [typescript.md](https://github.com/avajs/ava/blob/main/docs/recipes/typescript.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-60cce07a584082115d230f2e3d571ad6), содержащую последние правки в master ветке AVA, Вы не можете найти файл `typescript.md`, то можете считать что перевод актуален.
 ___
 # TypeScript
 

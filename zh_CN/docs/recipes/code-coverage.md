@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [code-coverage.md](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [code-coverage.md](https://github.com/avajs/ava/blob/main/docs/recipes/code-coverage.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 代码覆盖率

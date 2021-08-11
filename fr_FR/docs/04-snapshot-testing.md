@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/main/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Test d'instantané
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/04-snapshot-testing.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/04-snapshot-testing.md)
 
 AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur ainsi que des éléments de React :
 
@@ -41,7 +41,7 @@ Le premier dossier contient l'instantané réel et est requis pour les comparais
 
 AVA montrera pourquoi votre assertion d'instantané a échoué :
 
-<img src="https://github.com/avajs/ava/blob/master/media/snapshot-testing.png" width="1048">
+<img src="https://github.com/avajs/ava/raw/main/media/snapshot-testing.png" width="1048">
 
 Vous pouvez ensuite vérifier votre code. Si le changement était intentionnel, vous pouvez utiliser l'option `--update-snapshots` (ou `-u`) pour mettre à jour vos instantanés :
 

@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [flow.md](https://github.com/avajs/ava/blob/main/docs/recipes/flow.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-d7e81d64f6d02f405e93d77a24b6a4af) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `flow.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Flow
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/flow.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/flow.md)
 
 Jusqu'à la version [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) AVA était livré avec un fichier de définition de Flow. Cela permettait aux développeurs d'exploiter Flow pour écrire des tests.
 

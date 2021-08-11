@@ -1,7 +1,7 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-of-conduct.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-of-conduct.md`, será por que la traducción está actualizada).
 ___
 # Código de Conducta para Contribuyentes
 

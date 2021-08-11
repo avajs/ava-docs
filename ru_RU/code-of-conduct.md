@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-of-conduct.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-of-conduct.md`, то можете считать что перевод актуален.
 ___
 # Кодекс Поведения участника
 

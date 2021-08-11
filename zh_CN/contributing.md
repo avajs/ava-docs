@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`contributing.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-cc4aac3e9be04e0413c9520f223b493c) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`contributing.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 # 向 AVA 贡献
 

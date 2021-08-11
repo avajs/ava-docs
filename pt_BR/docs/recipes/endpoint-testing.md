@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). [Este link](https://github.com/avajs/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `endpoint-testing.md`, então a tradução está atualizada.
+Esta é a tradução de [endpoint-testing.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing.md). [Este link](https://github.com/avajs/ava/compare/0e6db13a918f0116927299271d91fff590328cb9...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `endpoint-testing.md`, então a tradução está atualizada.
 ___
 
 # Teste de Endpoint

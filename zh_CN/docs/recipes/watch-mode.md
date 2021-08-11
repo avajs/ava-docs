@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/82c02bce80696547db0387dec243ddb470c8bce7...master#diff-92da4f3d087d796fdf4a45be88586b62) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`watch-mode.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/82c02bce80696547db0387dec243ddb470c8bce7...master#diff-92da4f3d087d796fdf4a45be88586b62) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`watch-mode.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 观察模式

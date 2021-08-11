@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...master#diff-0c25d982e94d600cb6b8e438a0e67169), содержащую последние правки в master ветке AVA, Вы не можете найти файл `when-to-use-plan.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...master#diff-0c25d982e94d600cb6b8e438a0e67169), содержащую последние правки в master ветке AVA, Вы не можете найти файл `when-to-use-plan.md`, то можете считать что перевод актуален.
 ___
 # Когда применять `t.plan()`
 

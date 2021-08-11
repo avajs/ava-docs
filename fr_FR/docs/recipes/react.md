@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/master/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/main/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester les composants React
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md)
 
 ## Installer Babel
 

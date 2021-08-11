@@ -1,10 +1,10 @@
 ___
 **訳注**
 
-これは[readme.md](https://github.com/avajs/ava/blob/master/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[readme.md](https://github.com/avajs/ava/blob/main/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
-# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
 
 > 未来型のテストランナー
 
@@ -96,7 +96,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/raw/a45cdb9eb7e04097952b3a88b504e12d8885fbd3/media/screenshot.png" width="150" align="right">
 
 #### 実行
 
@@ -466,7 +466,7 @@ AVAは`--tap`オプションの指定でどのような[TAPレポーター](http
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/tap-output.png" width="398">
 
 ### 明快なスタックトレース
 
@@ -686,7 +686,7 @@ Mochaはデフォルトのインターフェース(多くの人々が利用し�
 
 ### 名前はどのように書いて、どう発音するのか?
 
-AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)です。
+AVAで、Avaやavaではありません。発音は[`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true)です。
 
 ### ヘッダーの背景は何?
 

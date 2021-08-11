@@ -1,9 +1,9 @@
 ___
 **역자주**
 
-이 문서는 [readme.md](https://github.com/avajs/ava/blob/master/readme.md)의 한국어 번역입니다. [이곳](https://github.com/avajs/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
+이 문서는 [readme.md](https://github.com/avajs/ava/blob/main/readme.md)의 한국어 번역입니다. [이곳](https://github.com/avajs/ava/compare/71404c23302d825095659c70cb9a1b08251697ad...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)에서 AVA의 master 브랜치와 이 문서의 차이를 확인할 수 있습니다. (만약 차이가 없다면 문서가 최신 버전임을 의미합니다)
 ___
-# [![AVA](https://github.com/avajs/ava/blob/master/media/header.png)](https://avajs.dev)
+# [![AVA](https://github.com/avajs/ava/raw/main/media/header.png)](https://avajs.dev)
 
 > 미래적인 테스트 러너
 
@@ -11,7 +11,7 @@ ___
 
 비록 JavaScript가 싱글-스레드 기반으로 작동할지라도, Node.js에서의 입출력은 비동기 생태계를 통해 병렬 처리가 가능합니다. AVA는 무거운 입출력 작업에 특히 유용한 이 장점을 적극적으로 활용하여 테스트를 동시에 처리합니다. 또한, 테스트 파일들은 분리된 프로세스처럼 병렬로 실행되므로 더 좋은 성능과 각 테스트 파일에 대한 고립된 환경을 제공합니다. Mocha에서 AVA로 [이전](https://github.com/avajs/pageres/commit/663be15acb3dd2eb0f71b1956ef28c2cd3fdeed0)한 Pageres는 테스트 시간을 31초에서 11초로 줄였습니다. 테스트를 동시에 실행하는 능력을 갖추는 것은 더 작은 테스트를 작성하도록 유도합니다. 이 말은 테스트가 더 이상 전역 상태나 다른 테스트의 상태에 의존하지 않는다는 것입니다. 정말 대단하지 않나요?
 
-*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](https://github.com/avajs/ava/blob/master/contributing.md)를 확인하세요.*
+*기여하는 방법에 대해 찾아보고 있다면 (이슈/PR/etc), 우리의 [기여 가이드](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md)를 확인하세요.*
 
 [AVA 트위터 계정](https://twitter.com/ava__js)을 팔로우하면 업데이트에 대한 소식을 받아볼 수 있습니다.
 
@@ -114,7 +114,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/raw/a45cdb9eb7e04097952b3a88b504e12d8885fbd3/media/screenshot.png" width="150" align="right">
 
 ### 실행하기
 
@@ -128,7 +128,7 @@ $ npm test
 $ npm test -- --watch
 ```
 
-AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md).
+AVA는 지능형 감시 모드와 함께 제공됩니다. [이 레시피에 대해 자세히 알아보기](https://github.com/avajs/ava/raw/main/docs/recipes/watch-mode.md).
 
 ## CLI 사용법
 
@@ -584,9 +584,9 @@ AVA의 [`package.json` 구성](#구성)에서 `babel` 옵션을 통해 AVA 테�
 	},
 }
 ```
-더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)를 참고하세요.
+더 많은 예시와 자세한 구성 옵션에 대한 설명은 AVA의 [`.babelrc` 레시피](https://github.com/avajs/ava/raw/main/docs/recipes/babelrc.md)를 참고하세요.
 
-참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
+참고로 AVA는 구성에 상관없이 *언제나* [내부적으로 몇 가지 플러그인](https://github.com/avajs/ava/raw/main/docs/recipes/babelrc.md#notes)을 적용합니다. 하지만 실제 코드에 영향을 줄 가능성은 적습니다.
 
 ### TypeScript 지원
 
@@ -677,7 +677,7 @@ AVA는 `--tap` 옵션과 [TAP 리포터](https://github.com/sindresorhus/awesome
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/tap-output.png" width="398">
 
 참고로 TAP 리포터는 [감시 모드](#감시-모드로-실행하기)를 사용할 땐 사용할 수 없습니다.
 
@@ -905,7 +905,7 @@ AVA는 TAP 포맷을 지원하며 따라서 모든 [TAP 리포터](https://githu
 
 ### 이 프로젝트 이름은 어떻게 쓰고 발음이 어떻게 되나요?
 
-AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true)로 발음됩니다.
+AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true)로 발음됩니다.
 
 ### 헤더의 배경은 무엇인가요?
 
@@ -917,13 +917,13 @@ AVA입니다. Ava나 ava가 아닙니다. [`/ˈeɪvə/` ay-və](https://github.c
 
 ## 레시피
 
-- [코드 커버리지](https://github.com/avajs/ava/blob/master/docs/recipes/code-coverage.md)
-- [감시 모드](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md)
-- [엔드 포인트 테스팅](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md)
-- [`t.plan()`를 언제 사용할까](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md)
+- [코드 커버리지](https://github.com/avajs/ava/raw/main/docs/recipes/code-coverage.md)
+- [감시 모드](https://github.com/avajs/ava/raw/main/docs/recipes/watch-mode.md)
+- [엔드 포인트 테스팅](https://github.com/avajs/ava/raw/main/docs/recipes/endpoint-testing.md)
+- [`t.plan()`를 언제 사용할까](https://github.com/avajs/ava/raw/main/docs/recipes/when-to-use-plan.md)
 - [브라우저 테스팅](docs/recipes/browser-testing.md)
-- [TypeScript](https://github.com/avajs/ava/blob/master/docs/recipes/typescript.md)
-- [Babel 구성](https://github.com/avajs/ava/blob/master/docs/recipes/babelrc.md)
+- [TypeScript](https://github.com/avajs/ava/raw/main/docs/recipes/typescript.md)
+- [Babel 구성](https://github.com/avajs/ava/raw/main/docs/recipes/babelrc.md)
 
 ## 지원
 
