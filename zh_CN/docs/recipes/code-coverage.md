@@ -1,12 +1,12 @@
 ___
 **备注**
 
-这是 [code-coverage.md](https://github.com/avajs/ava/blob/main/docs/recipes/code-coverage.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...master#diff-b3aa0c81a407f54f636a1cf5a619a4a6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [code-coverage.md](https://github.com/avajs/ava/blob/main/docs/recipes/code-coverage.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/1868204c1901f45b4f66a520ef6486fdd71fe1d2...main#diff-b3aa0c81a407f54f636a1cf5a619a4a6) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`code-coverage.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 代码覆盖率
 
-翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/code-coverage.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/code-coverage.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/code-coverage.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/code-coverage.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/code-coverage.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/code-coverage.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/code-coverage.md)
 
 
 因为 AVA[重新处理了测试文件][process-isolation]，所以你不能使用 [`istanbul`] 来做代码覆盖率，但你可以使用 [`nyc`] 来完成，它是支持子进程的 [`istanbul`]。
@@ -183,6 +183,6 @@ after_success:
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[process-isolation]: https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md#隔离进程
+[process-isolation]: https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md#隔离进程
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc

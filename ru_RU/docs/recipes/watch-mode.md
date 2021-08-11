@@ -1,11 +1,11 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...master#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d74335e8d841e31f288930ddd3eb27210d63bec5...main#diff-92da4f3d087d796fdf4a45be88586b62), содержащую последние правки в master ветке AVA, Вы не можете найти файл `watch-mode.md`, то можете считать что перевод актуален.
 ___
 # Режим наблюдения
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Translations: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/watch-mode.md)
 
 В AVA включен интеллектуальный режим наблюдения. Режим наблюдения отслеживает все изменения в файлах и запускает необходимые тесты.
 

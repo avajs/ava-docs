@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [prefer-async-await.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/prefer-async-await.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-7d767b0886e0705701069153a1c4015b) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `prefer-async-await.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [prefer-async-await.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/prefer-async-await.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...main#diff-7d767b0886e0705701069153a1c4015b) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `prefer-async-await.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Préférer l'utilisation de async/await au lieu de retourner une Promesse
 

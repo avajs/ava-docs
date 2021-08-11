@@ -1,12 +1,12 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [001 - Improving language support.md](https://github.com/avajs/ava/blob/main/docs/specs/001%20-%20Improving%20language%20support.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-01b90728d033fffd4c5cdacef3735d16) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `001 - Improving language support.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [001 - Improving language support.md](https://github.com/avajs/ava/blob/main/docs/specs/001%20-%20Improving%20language%20support.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-01b90728d033fffd4c5cdacef3735d16) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `001 - Improving language support.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Migliorare il supporto ad altri linguaggi
 
-Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/specs/001%20-%20Improving%20language%20support.md),
- [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/specs/001%20-%20Improving%20language%20support.md),
+Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/specs/001%20-%20Improving%20language%20support.md),
+ [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/specs/001%20-%20Improving%20language%20support.md),
 
 Questo è un [RFC] per proporre un miglioramento del supporto per Babel, React e TypeScript in AVA.
 

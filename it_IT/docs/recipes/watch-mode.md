@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `watch-mode.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `watch-mode.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Watch mode
 
-Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md)
+Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/watch-mode.md)
 
 AVA integra un sistema intelligente di watch. Supervisiona le modifiche ai file ed esegue solamente i test che ne sono affetti.
 
@@ -127,6 +127,6 @@ La modalità watch è una funzionalità relativamente nuova e ci potrebbero esse
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [Problemi di installazione]: https://github.com/paulmillr/chokidar#install-troubleshooting
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[modificatore `.only`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#eseguire-test-specifici
-[aggiunti nel file `package.json`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#configurazione
-[sezione `ava` del tuo file `package.json`]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#configurazione
+[modificatore `.only`]: https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#eseguire-test-specifici
+[aggiunti nel file `package.json`]: https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#configurazione
+[sezione `ava` del tuo file `package.json`]: https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#configurazione

@@ -1,12 +1,12 @@
 ___
 **备注**
 
-这是 [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...master#diff-0c25d982e94d600cb6b8e438a0e67169) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`when-to-use-plan.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/89767ec3b6174e59d37faaadb50cfa3c0d58bda6...main#diff-0c25d982e94d600cb6b8e438a0e67169) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`when-to-use-plan.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 什么时候使用`t.plan()`
 
-翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/when-to-use-plan.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/when-to-use-plan.md),  [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/when-to-use-plan.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/when-to-use-plan.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/when-to-use-plan.md)
 
 AVA 和 [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) 的一个主要不同是`t.plan()`的行为。在 AVA 中`t.plan()`只是用来断言期望的断言数是否正确，并不会自动结束测试。
 

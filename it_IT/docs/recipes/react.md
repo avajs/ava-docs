@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [react.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-2cb79c7fb78b66228297358846395c3a) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `react.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [react.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/react.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-2cb79c7fb78b66228297358846395c3a) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `react.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Testare componenti React
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/react.md)
+Translations: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/react.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/react.md)
 
 ## Configurare Babel
 
@@ -23,7 +23,7 @@ Il primo passo per configurare Babel per transpilare codice JSX nei test aggiung
 }
 ```
 
-Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md).
+Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/babelrc.md).
 
 ## Usare [Enzyme](https://github.com/airbnb/enzyme)
 
@@ -74,7 +74,7 @@ test('renders children when passed in', t => {
 });
 ```
 
-Enzyme ha anche degli helper `mount` e `render` per fare testing in un ambiente browser reale. Se vuoi utilizzare questi helpers avrai bisogno di configurare un ambiente di testing per AVA. Fai riferimento alla ricetta [browser testing](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md) su come fare.
+Enzyme ha anche degli helper `mount` e `render` per fare testing in un ambiente browser reale. Se vuoi utilizzare questi helpers avrai bisogno di configurare un ambiente di testing per AVA. Fai riferimento alla ricetta [browser testing](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/browser-testing.md) su come fare.
 
 Per vedere un esempio di AVA e Enzyme configurati in un ambiente browser di testing, guarda questo [progetto di esempio](https://github.com/adriantoine/ava-enzyme-demo).
 

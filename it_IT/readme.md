@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `readme.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # [![AVA](https://github.com/avajs/ava/raw/master/media/header.png)](https://avajs.dev)
 
@@ -17,7 +17,7 @@ Nonostante Javascript si possa eseguire in un singolo thread, le operazioni di I
 
 Segui l'[account Twitter di AVA](https://twitter.com/ava__js) per le ultime notizie.
 
-Translations: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+Translations: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/main/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md)
 
 
 ## Indice dei contenuti
@@ -207,9 +207,9 @@ $ node --inspect node_modules/ava/profile.js some/test/file.js
 
 ### Consigli specifici per il debugging
 
-- [Chrome DevTools](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-chrome-devtools.md)
-- [WebStorm](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-webstorm.md)
-- [Visual Studio Code](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-vscode.md)
+- [Chrome DevTools](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-chrome-devtools.md)
+- [WebStorm](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-webstorm.md)
+- [Visual Studio Code](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-vscode.md)
 
 ## Reporters
 
@@ -749,7 +749,7 @@ Da notare che AVA applicherà *sempre* i plugin [`espower`] (https://github.com/
 
 AVA include i typings per TypeScript. La configurazione del transpiler dovrà però essere fatta manualmente. Quando imposterai nel file `tsconfig.json` `module` su `commonjs`, TypeScript troverà automaticamente la definizione dei tipi per AVA. Dovrai impostare `target` su `es2015` per poter utilizzare le promesse e le funzioni asincrone.
 
-Per maggiori informazioni vedi la ricetta AVA per [TypeScript](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md).
+Per maggiori informazioni vedi la ricetta AVA per [TypeScript](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/typescript.md).
 
 ### Usare il transpiler per i moduli importati
 
@@ -757,7 +757,7 @@ AVA al momento utilizza il transpiler solamente per i test che richiedi di esegu
 
 Come soluzione alternativa, utilizzando Babel, si può utilizzare il suo [require hook](https://babeljs.io/docs/usage/require/) per i moduli importati sul momento. Per aggiungerlo [configura l'impostazione nel tuo `package.json`](#configurazione).
 
-Puoi anche utilizzare il transpiler per i tuoi moduli in un processo separato e utilizzare i file prodotti invece dei sorgenti nei tuoi test. Per un esempio vedi [qui](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/precompiling-with-webpack.md).
+Puoi anche utilizzare il transpiler per i tuoi moduli in un processo separato e utilizzare i file prodotti invece dei sorgenti nei tuoi test. Per un esempio vedi [qui](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/precompiling-with-webpack.md).
 
 ### Supporto per Promesse
 
@@ -1120,7 +1120,7 @@ Dalla versione `5.0.0` utilizza anche le source maps per la rappresentazione del
 
 ### Errori comuni
 
-Abbiamo raccolto una lista comprensiva di [errori comuni](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/common-pitfalls.md) che puoi incontrare nell'uso di AVA. Se dovessi incontrare qualsiasi problema e pensi che questo sia piuttosto comune, lascia un commento su questa [issue](https://github.com/avajs/ava/issues/404).
+Abbiamo raccolto una lista comprensiva di [errori comuni](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/common-pitfalls.md) che puoi incontrare nell'uso di AVA. Se dovessi incontrare qualsiasi problema e pensi che questo sia piuttosto comune, lascia un commento su questa [issue](https://github.com/avajs/ava/issues/404).
 
 ## Domande frequenti
 
@@ -1151,24 +1151,24 @@ La [galassia di Andromeda](https://it.wikipedia.org/wiki/Galassia_di_Andromeda).
 ## Ricette
 
 - [Test setup](https://github.com/avajs/ava/raw/main/docs/recipes/test-setup.md)
-- [Code coverage](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/code-coverage.md)
-- [Watch Mode](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md)
-- [Test di Endpoint](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/endpoint-testing.md)
-- [Quando usare `t.plan()`](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md)
-- [Browser testing](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/browser-testing.md)
-- [TypeScript](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/typescript.md)
+- [Code coverage](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/code-coverage.md)
+- [Watch Mode](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/watch-mode.md)
+- [Test di Endpoint](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/endpoint-testing.md)
+- [Quando usare `t.plan()`](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/when-to-use-plan.md)
+- [Browser testing](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/browser-testing.md)
+- [TypeScript](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/typescript.md)
 - [Flow](https://github.com/avajs/ava/raw/main/docs/recipes/flow.md)
-- [Configurare Babel](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md)
+- [Configurare Babel](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/babelrc.md)
 - [Uso dei moduli ES](https://github.com/avajs/ava/raw/main/docs/recipes/es-modules.md)
 - [Come passare gli argomenti dentro i tuoi test](https://github.com/avajs/ava/raw/main/docs/recipes/passing-arguments-to-your-test-files.md)
-- [Testare componenti React](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/react.md)
-- [Testare componenti Vue.js](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/vue.md)
-- [JSPM and SystemJS](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/jspm-systemjs.md)
-- [Fare il debugging di test con Chrome DevTools](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-chrome-devtools.md)
-- [Fare il debugging di test con WebStorm](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-webstorm.md)
-- [Fare il debugging di test con Visual Studio Code](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-vscode.md)
-- [Precompilare file sorgente con webpack](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/precompiling-with-webpack.md)
-- [Test di integrazione con MongoDB in isolamento](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
+- [Testare componenti React](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/react.md)
+- [Testare componenti Vue.js](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/vue.md)
+- [JSPM and SystemJS](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/jspm-systemjs.md)
+- [Fare il debugging di test con Chrome DevTools](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-chrome-devtools.md)
+- [Fare il debugging di test con WebStorm](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-webstorm.md)
+- [Fare il debugging di test con Visual Studio Code](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-vscode.md)
+- [Precompilare file sorgente con webpack](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/precompiling-with-webpack.md)
+- [Test di integrazione con MongoDB in isolamento](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
 - [Testare app del web using Puppeteer](https://github.com/avajs/ava/raw/main/docs/recipes/puppeteer.md)
 
 ## Supporto

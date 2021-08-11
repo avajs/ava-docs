@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/main/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/4953457277a355e231beaa11431eb58a209ae7fc...master#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/avajs/ava/blob/main/docs/recipes/debugging-with-vscode.md). Voici un [lien](https://github.com/avajs/ava/compare/4953457277a355e231beaa11431eb58a209ae7fc...main#diff-a3927068f3a0ffbbdf1b02fbd401b146) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `debugging-with-vscode.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Débogage des tests avec Visual Studio Code
 

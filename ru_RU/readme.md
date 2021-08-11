@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d5274c060ab785ca5823bf15e6c07ac2a2f7230b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/d5274c060ab785ca5823bf15e6c07ac2a2f7230b...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9), содержащую последние правки в master ветке AVA, Вы не можете найти файл `readme.md`, то можете считать что перевод актуален.
 ___
 # ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
 
@@ -16,7 +16,7 @@ ___
 
 Подпишитесь на [Твиттер аккаунт AVA](https://twitter.com/ava__js) для отслеживания обновлений.
 
-Переводы: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md)
+Переводы: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md)
 
 
 ## Содержание

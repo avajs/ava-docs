@@ -1,6 +1,6 @@
 # Kontekst wykonania (`t` argument)
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/02-execution-context.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/02-execution-context.md)
 
 Każdy test lub hook jest wywoływany z kontekstem wykonania. Zgodnie z konwencją jest nazywany `t`.
 

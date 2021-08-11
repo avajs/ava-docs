@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[readme.md](https://github.com/avajs/ava/blob/main/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[readme.md](https://github.com/avajs/ava/blob/main/readme.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9)になります(このリンクをクリックして、`readme.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
@@ -16,7 +16,7 @@ JavaScript自体はシングルスレッドですが、Node.jsにおけるIOは�
 
 アップデートの情報のために[AVAのTwitterアカウント](https://twitter.com/ava__js)をフォローしてください。
 
-翻訳: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md)
+翻訳: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md)
 
 
 ## 目次

@@ -1,11 +1,11 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...master#diff-0c25d982e94d600cb6b8e438a0e67169), содержащую последние правки в master ветке AVA, Вы не можете найти файл `when-to-use-plan.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...main#diff-0c25d982e94d600cb6b8e438a0e67169), содержащую последние правки в master ветке AVA, Вы не можете найти файл `when-to-use-plan.md`, то можете считать что перевод актуален.
 ___
 # Когда применять `t.plan()`
 
-Переводы: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
+Переводы: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/recipes/when-to-use-plan.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/when-to-use-plan.md)
 
 Одна большая разница между AVA и [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) это поведение `t.plan()`. В AVA, `t.plan()` используется для того, чтобы убедиться, что будет выполнено ожидаемое число assert'ов без автоматического завершения теста.
 

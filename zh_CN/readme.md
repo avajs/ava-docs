@@ -1,7 +1,7 @@
 ___
 **备注**
 
-这是 [readme.md](https://github.com/avajs/ava/blob/main/readme.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到 `readme.md` 发生变化，那就意味着这份翻译文档是最新的）。
+这是 [readme.md](https://github.com/avajs/ava/blob/main/readme.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/67bf0472133041f59ef469f737b696de05ae316b...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到 `readme.md` 发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
@@ -16,7 +16,7 @@ ___
 
 关注 [AVA 的 Twitter 账号](https://twitter.com/ava__js) 以获取最新信息。
 
-翻译：[Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+翻译：[Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md)
 
 ## 目录
 

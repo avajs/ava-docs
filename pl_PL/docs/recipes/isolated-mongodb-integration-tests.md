@@ -1,6 +1,6 @@
 # Izolowane testy integracyjne MongoDB
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
 
 > Jak uruchamiać jednorazowe bazy danych MongoDB w testach AVA z izolacją na test.
 

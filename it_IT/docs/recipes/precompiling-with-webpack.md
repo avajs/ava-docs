@@ -1,14 +1,14 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [precompiling-with-webpack.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/precompiling-with-webpack.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-b4c25a4a1412e9204ac923133f67814f) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `precompiling-with-webpack.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [precompiling-with-webpack.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/precompiling-with-webpack.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-b4c25a4a1412e9204ac923133f67814f) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `precompiling-with-webpack.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 ## Pre-compila i file sorgente con webpack
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/precompiling-with-webpack.md),
- [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/precompiling-with-webpack.md).
+Translations: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/precompiling-with-webpack.md),
+ [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/precompiling-with-webpack.md).
 
-Il file [readme](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#usare-il-transpiler-per-i-moduli-importati) dice che sia possibile transpilare i moduli importati come alternativa alla compilazione a runtime, ma non spiega come farlo. Questa ricetta spiega diversi approcci per uware webpack v2. Vengono discussi diversi approcci al problema in quanto ciascun approccio ha i suoi pro ed i suoi contro. Dovrai scegliere l'approccio che meglio di presta al tuo caso. Per maggior informazioni vedi la discussione originale sul problema [qui](https://github.com/avajs/ava/pull/1385).
+Il file [readme](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#usare-il-transpiler-per-i-moduli-importati) dice che sia possibile transpilare i moduli importati come alternativa alla compilazione a runtime, ma non spiega come farlo. Questa ricetta spiega diversi approcci per uware webpack v2. Vengono discussi diversi approcci al problema in quanto ciascun approccio ha i suoi pro ed i suoi contro. Dovrai scegliere l'approccio che meglio di presta al tuo caso. Per maggior informazioni vedi la discussione originale sul problema [qui](https://github.com/avajs/ava/pull/1385).
 
 - [File di test singolo](#file-di-test-singolo)
 
@@ -52,7 +52,7 @@ Ora puoi eseguire `$ ava _build/test.js` per eseguire i test inclusi nell'output
 
 ### File di test multipli
 
-Per questo scenario le cose sono un po' più complicate. Noi raccomandiamo l'uso di [babel-register](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md) almeno fino a quando non ci sono grandi problemi di performance.
+Per questo scenario le cose sono un po' più complicate. Noi raccomandiamo l'uso di [babel-register](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/babelrc.md) almeno fino a quando non ci sono grandi problemi di performance.
 
 I possibili approcci in questo caso sono:
 
@@ -78,7 +78,7 @@ import fresh from '../_src';
 
 ### Usare un singolo entry file
 
-Si possono compilare più file di test in un singolo file. Questo approccio ha le performance migliori anche se ha alcuni svantaggi. Tutti i test saranno infatti inclusi in un unico file, quindi potrebbe essere più complicato sapere quale file di test è fallito, poichè AVA non potrà più mostrare le informazioni sul file di test originario. Un altro svantaggio riguarda la perdita dell'[isolamento dei processi](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#isolamento-de-processi).
+Si possono compilare più file di test in un singolo file. Questo approccio ha le performance migliori anche se ha alcuni svantaggi. Tutti i test saranno infatti inclusi in un unico file, quindi potrebbe essere più complicato sapere quale file di test è fallito, poichè AVA non potrà più mostrare le informazioni sul file di test originario. Un altro svantaggio riguarda la perdita dell'[isolamento dei processi](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#isolamento-de-processi).
 
 ###### `webpack.config.js`
 

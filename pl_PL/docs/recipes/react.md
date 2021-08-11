@@ -1,6 +1,6 @@
 # Testowanie składników React
 
-Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/react.md)
 
 ## Konfigurowanie Babel
 

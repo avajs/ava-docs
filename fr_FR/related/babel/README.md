@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/578822a18c88dd95439eb0634b009ef6026f671a...master#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/578822a18c88dd95439eb0634b009ef6026f671a...main#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # @ava/babel
 
 Traductions : [English](https://github.com/avajs/babel/blob/master/README.md)
 
-Ajoutez la prise en charge de [Babel 7](https://babeljs.io) à [AVA](https://avajs.dev) afin que vous puissiez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset `@ava/babel/stage-4`. Nous utilisons également un second preset, `@ava/babel/transform-test-files` pour activer [une amélioration des messages d'assertion](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/03-assertions.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
+Ajoutez la prise en charge de [Babel 7](https://babeljs.io) à [AVA](https://avajs.dev) afin que vous puissiez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset `@ava/babel/stage-4`. Nous utilisons également un second preset, `@ava/babel/transform-test-files` pour activer [une amélioration des messages d'assertion](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/03-assertions.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
 
 Par défaut, notre pipeline Babel est appliqué aux fichiers de test et de helper se terminant par `.cjs` and `.js`. Si votre projet utilise Babel, nous compilerons automatiquement ces fichiers en utilisant la configuration Babel de votre projet. Le preset `@ava/babel/transform-helper-files` est appliqué en premier et le preset `@ava/babel/stage-4` en dernier.
 
@@ -97,7 +97,7 @@ Vous pouvez configurer AVA pour reconnaître les extensions de fichiers supplém
 }
 ```
 
-Consultez aussi l'[option `extensions`](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/06-configuration.md#options).
+Consultez aussi l'[option `extensions`](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/06-configuration.md#options).
 
 ## Faire en sorte qu'AVA ignore les options Babel de votre projet
 
@@ -162,7 +162,7 @@ Par défaut, le preset stage-4 de AVA convertira la syntaxe du module ES en Comm
 }
 ```
 
-Vous devrez utiliser le module [`esm`](https://github.com/standard-things/esm) pour que AVA puisse toujours charger vos fichiers de test. [Consultez notre recette pour plus de détails](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/es-modules.md).
+Vous devrez utiliser le module [`esm`](https://github.com/standard-things/esm) pour que AVA puisse toujours charger vos fichiers de test. [Consultez notre recette pour plus de détails](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/es-modules.md).
 
 ## Désactiver les améliorations
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [new-rule.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/new-rule.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/4846440797d9c8b84ed0e1a373e934d8736d3739...master#diff-064bdc96ec67d46e25fa387f8421f8ca) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `new-rule.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [new-rule.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/new-rule.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/4846440797d9c8b84ed0e1a373e934d8736d3739...main#diff-064bdc96ec67d46e25fa387f8421f8ca) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `new-rule.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Création d'une nouvelle règle
 

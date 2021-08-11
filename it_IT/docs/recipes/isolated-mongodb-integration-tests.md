@@ -1,12 +1,12 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [isolated-mongodb-integration-tests.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-fa5b24a10aa6bb9abd440902e222e84c) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `isolated-mongodb-integration-tests.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [isolated-mongodb-integration-tests.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/isolated-mongodb-integration-tests.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-fa5b24a10aa6bb9abd440902e222e84c) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `isolated-mongodb-integration-tests.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Test di integrazione per MongoDB in isolamento
 
-Translations: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
-[Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
+Translations: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/isolated-mongodb-integration-tests.md)
+[Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/isolated-mongodb-integration-tests.md)
 
 > Configurazione di un database MongoDB per i tuoi test AVA con isolamento per singolo test file
 

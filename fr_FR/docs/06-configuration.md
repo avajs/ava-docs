@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/main/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...master#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [06-configuration.md](https://github.com/avajs/ava/blob/main/docs/06-configuration.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...main#diff-e314afbd72d4daaedf4d543da317ad58) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `06-configuration.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration
 
@@ -46,7 +46,7 @@ Les arguments passés au CLI seront toujours prioritaires sur les options du CLI
 ## Options
 
 - `files` : un tableau de glob patterns pour sélectionner les fichiers de test. Les fichiers préfixés avec un underscore sont ignorés. Par défaut, seuls les fichiers avec l'extensions `cjs`, `mjs` & `js` sont sélectionnés, même si le pattern correspond à d'autres fichiers. Spécifiez `extensions` pour accepter d'autres extensions de fichier
-- `ignoredByWatcher` : un tableau glob patterns pour faire correspondre les fichiers qui, même modifiés, sont ignorés par l'observateur. Voir la [recette du mode watch pour plus de détails](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md)
+- `ignoredByWatcher` : un tableau glob patterns pour faire correspondre les fichiers qui, même modifiés, sont ignorés par l'observateur. Voir la [recette du mode watch pour plus de détails](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/watch-mode.md)
 - `match` : n'est généralement pas utile dans la configuration du `package.json`, mais est équivalent au [`--match` de la CLI](./05-command-line.md#exécution-de-tests-correspondants-à-des-titres)
 - `cache` : met en cache les fichiers compilé sous `node_modules/.cache/ava`. Si la valeur est à `false`, les fichiers sont à la place mis en cache dans un répertoire temporaire
 - `failFast` : arrête d'exécuter d'autres tests dès qu'un test échoue

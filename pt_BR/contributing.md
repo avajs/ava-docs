@@ -10,7 +10,7 @@ ___
 
 Por favor, note que este projecto é lançado com um [Código de Conduta do Contribuidor](code-of-conduct.md). Ao participar neste projecto, você concorda em cumprir seus termos.
 
-Traduções: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md)
+Traduções: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/contributing.md)
 
 ## Como posso contribuir?
 

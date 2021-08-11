@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [07-test-timeouts.md](https://github.com/avajs/ava/blob/main/docs/07-test-timeouts.md). Voici un [lien](https://github.com/avajs/ava/compare/f2172526ae03490a548f6ef30a81c8212c280c58...master#diff-ee554218ce48f7ac6fbeab40ba17919f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `07-test-timeouts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [07-test-timeouts.md](https://github.com/avajs/ava/blob/main/docs/07-test-timeouts.md). Voici un [lien](https://github.com/avajs/ava/compare/f2172526ae03490a548f6ef30a81c8212c280c58...main#diff-ee554218ce48f7ac6fbeab40ba17919f) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `07-test-timeouts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Timeouts des tests
 

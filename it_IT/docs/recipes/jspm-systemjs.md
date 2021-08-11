@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [jspm-systemjs.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/jspm-systemjs.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-e1128fe3361ff27e14e2ebec6c6ff362) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `jspm-systemjs.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [jspm-systemjs.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/jspm-systemjs.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-e1128fe3361ff27e14e2ebec6c6ff362) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `jspm-systemjs.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # JSPM e SystemJS per ES2015
 
-Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/jspm-systemjs.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/jspm-systemjs.md)
+Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/jspm-systemjs.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/jspm-systemjs.md)
 
 Per usare AVA con JSPM si richiede l'utilizzo di un loader speciale per far funzionare correttamente l'istruzione `import` dei pacchetti JSPM. Lo scopo del loader è quello di permettere di eseguire i test senza pre-compilare il tuo progetto JSPM.
 
@@ -23,7 +23,7 @@ Configura il file `.babelrc` per eseguire AVA se non l'hai ancora fatto. Puoi av
 }
 ```
 
-Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md).
+Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/babelrc.md).
 
 ### Helper JSPM Loader
 

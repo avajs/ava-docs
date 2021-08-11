@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-coverage.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/code-coverage.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-coverage.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Code coverage
 
-Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/code-coverage.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/code-coverage.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/code-coverage.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/code-coverage.md), [Portugués](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/code-coverage.md)
 
 Poichè AVA [usa processi isolati](processi-isolati), non si può usare ['istanbul'] per la code coverage; invece, si può usare ['nyc'] che è in pratica ['istanbul'] con il supporto per i sub-processi.
 
@@ -178,6 +178,6 @@ La tua code coverage apparirà su coveralls non appena Travis completerà l'esec
 [coveralls.io]: https://coveralls.io
 [`coveralls`]:  https://github.com/nickmerwin/node-coveralls
 [`cross-env`]:  https://github.com/kentcdodds/cross-env
-[processi-isolati]: https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md#isolamento-dei-processi
+[processi-isolati]: https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md#isolamento-dei-processi
 [`istanbul`]:   https://github.com/gotwarlost/istanbul
 [`nyc`]:        https://github.com/bcoe/nyc

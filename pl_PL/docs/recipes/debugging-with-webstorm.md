@@ -1,6 +1,6 @@
 # Debugowanie testów z WebStorm
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-webstorm.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/debugging-with-webstorm.md)
 
 **Ten przepis jest nieaktualny.**
 
