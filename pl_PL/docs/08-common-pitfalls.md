@@ -1,6 +1,6 @@
 # Typowe pułapki
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/08-common-pitfalls.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/08-common-pitfalls.md)
 
 Jeśli używasz [ESLint](http://eslint.org/), możesz zainstalować [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Pomoże Ci to poprawnie używać AVA i uniknąć typowych pułapek.
 

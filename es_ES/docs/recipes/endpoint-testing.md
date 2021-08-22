@@ -1,11 +1,11 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [endpoint-testing.md](https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-aee54ab6a703c02779edb3ebbb35e96f) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `endpoint-testing.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [endpoint-testing.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...main#diff-aee54ab6a703c02779edb3ebbb35e96f) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `endpoint-testing.md`, será por que la traducción está actualizada).
 ___
 # Testando un Endpoint
 
-Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/endpoint-testing.md), [Français](endpoint-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/endpoint-testing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/endpoint-testing.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/endpoint-testing.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/endpoint-testing.md), [Français](endpoint-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/recipes/endpoint-testing.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/endpoint-testing.md), [Portugués](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/endpoint-testing.md)
 
 AVA no trae un método integrado para testar endpoints, pero puedes usar cualquier biblioteca de aserción para ello. Vamos a usar [`supertest-as-promised`](https://github.com/WhoopInc/supertest-as-promised).
 

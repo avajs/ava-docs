@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [hooks-order.md.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/hooks-order.md.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...master#diff-12864ccea1129a0091d7a534c26e113a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `hooks-order.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [hooks-order.md.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/hooks-order.md.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...main#diff-12864ccea1129a0091d7a534c26e113a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `hooks-order.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Imposer l'ordre des hooks de test
 

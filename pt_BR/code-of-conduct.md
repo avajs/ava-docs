@@ -1,12 +1,12 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). [Este link](https://github.com/avajs/ava/compare/d72723b9154f992b62b1e995bd7756cb93e7674c...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `code-of-conduct.md`, então a tradução está atualizada.
+Esta é a tradução de [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). [Este link](https://github.com/avajs/ava/compare/d72723b9154f992b62b1e995bd7756cb93e7674c...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `code-of-conduct.md`, então a tradução está atualizada.
 ___
 
 # Código de Conduta do Contribuidor
 
-Traduções: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md)
+Traduções: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/code-of-conduct.md)
 
 Como contribuidores e mantenedores deste projeto, e no interesse da fomentar uma
 comunidade aberta e acolhedora, nós nos comprometemos a respeitar todas as

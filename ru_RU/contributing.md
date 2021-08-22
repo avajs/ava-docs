@@ -1,7 +1,7 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-cc4aac3e9be04e0413c9520f223b493c), содержащую последние правки в master ветке AVA, Вы не можете найти файл `contributing.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...main#diff-cc4aac3e9be04e0413c9520f223b493c), содержащую последние правки в master ветке AVA, Вы не можете найти файл `contributing.md`, то можете считать что перевод актуален.
 ___
 # Вклад в AVA
 
@@ -9,7 +9,7 @@ ___
 
 Пожалуйста обратите внимание, что этот проект выпущен с [Кодексом Поведения участника](code-of-conduct.md). Участвуя в этом проекте, Вы соглашаетесь с этими условиями.
 
-Переводы: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md)
+Переводы: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/contributing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/contributing.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/contributing.md)
 
 ## Как я могу помочь?
 

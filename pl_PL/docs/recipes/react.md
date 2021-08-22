@@ -1,6 +1,6 @@
 # Testowanie składników React
 
-Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md)
+Tłumaczenia: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/react.md)
 
 ## Konfigurowanie Babel
 
@@ -74,7 +74,7 @@ test('renders children when passed in', t => {
 });
 ```
 
-Enzyme także ma `mount` i `render` helper testować w rzeczywistym środowisku przeglądarki. Jeśli chcesz skorzystać z tych pomocników, musisz skonfigurować środowisko przeglądarki. Sprawdź [formuła na testowanie w przeglądarce](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md) jak to zrobić.
+Enzyme także ma `mount` i `render` helper testować w rzeczywistym środowisku przeglądarki. Jeśli chcesz skorzystać z tych pomocników, musisz skonfigurować środowisko przeglądarki. Sprawdź [formuła na testowanie w przeglądarce](https://github.com/avajs/ava/raw/main/docs/recipes/browser-testing.md) jak to zrobić.
 
 Aby zobaczyć przykład współpracy AVA z Enzyme skonfigurowanym do testowania w przeglądarce, spójrz na [ten przykładowy projekt](https://github.com/adriantoine/ava-enzyme-demo).
 

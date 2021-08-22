@@ -1,12 +1,12 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). [Este link](https://github.com/avajs/ava/compare/049090008933a880dc896179aa851b885baf6058...master#diff-0c25d982e94d600cb6b8e438a0e67169) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `when-to-use-plan.md`, então a tradução está atualizada.
+Esta é a tradução de [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). [Este link](https://github.com/avajs/ava/compare/049090008933a880dc896179aa851b885baf6058...main#diff-0c25d982e94d600cb6b8e438a0e67169) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `when-to-use-plan.md`, então a tradução está atualizada.
 ___
 
 # Quando usar `t.plan()`
 
-Traduções: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
+Traduções: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/when-to-use-plan.md)
 
 Uma diferença importante entre AVA e [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) é o comportamento de `t.plan()`. No AVA, `t.plan()` só é usado para afirmar que o número esperado de asserções é chamado; e não auto-encerra o teste.
 

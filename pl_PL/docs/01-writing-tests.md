@@ -1,6 +1,6 @@
 # Pisanie testów
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/01-writing-tests.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/01-writing-tests.md)
 
 Testy są uruchamiane jednocześnie. Możesz określić testy synchroniczne i asynchroniczne. Testy są uważane za synchroniczne, chyba że zwrócisz promise [observable](https://github.com/zenparsing/zen-observable), lub zadeklaruj jako test callback.
 

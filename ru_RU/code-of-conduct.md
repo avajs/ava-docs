@@ -1,11 +1,11 @@
 ___
 **Примечание от переводчика**
 
-Здесь содержится перевод файла [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-of-conduct.md`, то можете считать что перевод актуален.
+Здесь содержится перевод файла [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). Если при нажатии на [ссылку](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...main#diff-d3030a18b089fdb1fbfabf6e75e4aef0), содержащую последние правки в master ветке AVA, Вы не можете найти файл `code-of-conduct.md`, то можете считать что перевод актуален.
 ___
 # Кодекс Поведения участника
 
-Переводы: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Переводы: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/code-of-conduct.md)
 
 Как участники и сопровождающие этот проект, в интересах содействия
 открытому и дружелюбному сообществу, мы обязуемся уважать всех людей, которые

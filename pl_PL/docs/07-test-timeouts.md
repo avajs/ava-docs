@@ -1,6 +1,6 @@
 # Test timeoutów
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/07-test-timeouts.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/07-test-timeouts.md)
 
 Limity czasu w AVA zachowują się inaczej niż w innych frameworkach testowych. AVA resetuje licznik czasu po każdym teście, zmuszając testy do zakończenia, jeśli nie otrzymano nowych wyników testu w określonym czasie. Można to wykorzystać do obsługi zablokowanych testów.
 

@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [vue.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/vue.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-09533a825d46c23878919cd6e9bb1182) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `vue.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [vue.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/vue.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-09533a825d46c23878919cd6e9bb1182) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `vue.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Testare componenti Vue.js
 
-Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/vue.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/vue.md)
+Traduzioni: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/vue.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/vue.md)
 
 ## Dipendenze
 
@@ -47,7 +47,7 @@ hooks('vue').plugin('vue').push();
 hooks(['vue', 'js']).plugin('babel').push();
 ```
 
-Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/babelrc.md).
+Puoi trovare maggiori informazioni su come configurare Babel con AVA nella ricetta [babelrc](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/babelrc.md).
 
 ## Snapshot test semplice
 
@@ -68,7 +68,7 @@ test('renders', t => {
 ## Report di code coverage
 
 Come primo passo segui la ricetta [code coverage]
-Follow the [coverage reporting recipe](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/code-coverage.md), poi aggiungi l'estensione `.vue` alla configurazione di `nyc` per instrumentare i file `.vue`.
+Follow the [coverage reporting recipe](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/code-coverage.md), poi aggiungi l'estensione `.vue` alla configurazione di `nyc` per instrumentare i file `.vue`.
 
 ```json
 {

@@ -1,11 +1,11 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [react.md](https://github.com/avajs/ava/blob/master/react.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...master#diff-60cce07a584082115d230f2e3d571ad6) a las diferencias con la rama master de AVA (Si al hacer click en el enlace no se encuentran modificaciones en el archivo `react.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [react.md](https://github.com/avajs/ava/raw/main/react.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/8e2f3dca177a4283ad882596d3c1425cabb998ef...main#diff-60cce07a584082115d230f2e3d571ad6) a las diferencias con la rama master de AVA (Si al hacer click en el enlace no se encuentran modificaciones en el archivo `react.md`, será por que la traducción está actualizada).
 ___
 # Testeando componentes de React
 
-Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/react.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/react.md)
 
 ## Configurando Babel
 
@@ -75,7 +75,7 @@ test('renderiza los hijos que se le pasen', t => {
 });
 ```
 
-Enzyme también tiene un helper `mount` y un `render` para testear en un entorno real de navegador. Si quieres usar esos helpers, tendrás que configurar un entorno de navegador. Échale un vistazo a la [receta de cómo hacer tests en un navegador](https://github.com/avajs/ava/blob/master/docs/recipes/browser-testing.md) para ver cómo hacerlo.
+Enzyme también tiene un helper `mount` y un `render` para testear en un entorno real de navegador. Si quieres usar esos helpers, tendrás que configurar un entorno de navegador. Échale un vistazo a la [receta de cómo hacer tests en un navegador](https://github.com/avajs/ava/raw/main/docs/recipes/browser-testing.md) para ver cómo hacerlo.
 
 Para ver un ejemplo de uso de AVA junto con Enzyme configurado para tests en navegador, échale un vistazo a este [proyecto de ejemplo](https://github.com/adriantoine/ava-enzyme-demo).
 

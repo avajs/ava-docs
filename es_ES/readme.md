@@ -1,9 +1,9 @@
 ﻿___
 **Nota del traductor**
 
-Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será porque la traducción está actualizada).
+Esta es la traducción del archivo [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/f77ded959a0e7de6e9bf65d8c2fd6625bc59ba47...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `readme.md`, será porque la traducción está actualizada).
 ___
-# ![AVA](https://github.com/avajs/ava/blob/master/media/header.png)
+# ![AVA](https://github.com/avajs/ava/raw/main/media/header.png)
 
 > Test runner futurista
 
@@ -15,7 +15,7 @@ A pesar de que JavaScript se ejecuta en un solo hilo, IO en Node.js puede ejecut
 
 Siga la [cuenta de Twitter de AVA](https://twitter.com/ava__js) para actualizaciones.
 
-Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [Portugués](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md)
 
 
 ## Tabla de contenidos
@@ -96,7 +96,7 @@ test('bar', async t => {
 });
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/screenshot.png" width="150" align="right">
+<img src="https://github.com/avajs/ava/raw/a45cdb9eb7e04097952b3a88b504e12d8885fbd3/media/screenshot.png" width="150" align="right">
 
 #### Ejecutar el test
 
@@ -513,13 +513,13 @@ AVA puede generar una salida TAP a través de la opción `--tap` para su uso con
 $ ava --tap | tap-nyan
 ```
 
-<img src="https://github.com/avajs/ava/blob/master/media/tap-output.png" width="398">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/tap-output.png" width="398">
 
 ### Trazas de pila limpias
 
 AVA elimina automáticamente líneas sin relación de la pila, lo que le permite encontrar la fuente de un error mucho más rápido.
 
-<img src="https://github.com/avajs/ava/blob/master/media/stack-traces.png" width="300">
+<img src="https://github.com/avajs/ava/raw/f62c13762d57b164a6c68175e57ec13e5e5241ac/media/stack-traces.png" width="300">
 
 
 ## API
@@ -733,7 +733,7 @@ Use la [opción `--tap`](#salida-tap-opcional) con cualquier [TAP reporter](http
 
 ### ¿Cómo es el nombre escrito y pronunciado?
 
-AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, no Ava o ava. Pronunciado [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true).
 
 ### ¿Cuál es el fondo de la cabecera?
 

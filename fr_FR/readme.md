@@ -1,9 +1,9 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/master/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [readme.md](https://github.com/avajs/ava/blob/main/readme.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `readme.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# <img src="https://github.com/avajs/ava/blob/master/media/header.png" title="AVA" alt="AVA logo" width="530">
+# <img src="https://github.com/avajs/ava/raw/main/media/header.png" title="AVA" alt="AVA logo" width="530">
 
 [![Build Status](https://travis-ci.org/avajs/ava.svg?branch=master)](https://travis-ci.org/avajs/ava)  [![Coverage Status](https://codecov.io/gh/avajs/ava/branch/master/graph/badge.svg)](https://codecov.io/gh/avajs/ava/branch/master) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/ava)
 [![Mentioned in Awesome Node.js](https://awesome.re/mentioned-badge.svg)](https://github.com/sindresorhus/awesome-nodejs)
@@ -14,10 +14,10 @@ Suivez le [compte Twitter de AVA](https://twitter.com/ava__js) pour les mises à
 
 Lisez notre [guide de contribution](contributing.md) si vous souhaitez contribuer (issues / PRs / etc).
 
-![](https://github.com/avajs/ava/blob/master/media/mini-reporter.gif)
+![](https://github.com/avajs/ava/raw/main/media/mini-reporter.gif)
 
 
-Traductions : [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+Traductions : [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/main/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md)
 
 
 ## Pourquoi AVA ?
@@ -120,7 +120,7 @@ AVA prend en charge la dernière version de toute version majeure [prise en char
 
 AVA ajoute les extraits de code et les différences pour les valeurs réelles et attendues. Si les valeurs dans l'assertion sont des objets ou des tableaux, seule la différence est affichée, tout ce qui ne concerne pas le sujet est enlevé, pour se concentrer uniquement sur le problème. La différence est aussi mise en évidence ! Si vous comparez des strings, à la fois sur une ou plusieurs lignes, AVA affiche un autre type de sortie, mettant en évidence les caractères supplémentaires ou manquants.
 
-![](https://github.com/avajs/ava/blob/master/media/magic-assert-combined.png)
+![](https://github.com/avajs/ava/raw/main/media/magic-assert-combined.png)
 
 ### Nettoyage de la stack trace
 
@@ -180,7 +180,7 @@ Au contraire, AVA est très opiniâtre et exécute les tests en simultané, avec
 
 ### Comment l'écrire et le prononcer ?
 
-AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/`](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true) : eil (ort**eil**, or**eil**ler) V (**v**ie, a**v**oir) A (m**a**tin, **a**voir).
+AVA, pas Ava ni ava. Prononcez [`/ˈeɪvə/`](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true) : eil (ort**eil**, or**eil**ler) V (**v**ie, a**v**oir) A (m**a**tin, **a**voir).
 
 ### Que représente l'arrière plan de l'image ?
 
@@ -233,7 +233,7 @@ C'est la [galaxie d'Andromède.](https://simple.wikipedia.org/wiki/Andromeda_gal
 	<br>
 	<br>
 	<a href="https://avajs.dev">
-		<img src="https://github.com/avajs/ava/blob/master/media/logo.svg" width="200" alt="AVA">
+		<img src="https://github.com/avajs/ava/raw/main/media/logo.svg" width="200" alt="AVA">
 	</a>
 	<br>
 	<br>

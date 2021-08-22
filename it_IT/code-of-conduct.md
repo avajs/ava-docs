@@ -1,11 +1,11 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [code-of-conduct.md](https://github.com/sindresorhus/ava/blob/master/code-of-conduct.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-d3030a18b089fdb1fbfabf6e75e4aef0) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `code-of-conduct.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Accordo di Condotta per il Collaboratore
 
-Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/code-of-conduct.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/code-of-conduct.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/code-of-conduct.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/code-of-conduct.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/code-of-conduct.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/code-of-conduct.md)
 
 ## La nostra promessa
 

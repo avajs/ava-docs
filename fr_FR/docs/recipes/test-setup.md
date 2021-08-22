@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [test-setup.md](https://github.com/avajs/ava/blob/master/docs/recipes/es-modules.md). Voici un [lien](https://github.com/avajs/ava/compare/0948d87a79ac6f91afa5766a45dee212e511b6f9...master#diff-68fa5258df1d0b29e70b94f0d08b9f28) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-setup.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [test-setup.md](https://github.com/avajs/ava/blob/main/docs/recipes/es-modules.md). Voici un [lien](https://github.com/avajs/ava/compare/0948d87a79ac6f91afa5766a45dee212e511b6f9...main#diff-68fa5258df1d0b29e70b94f0d08b9f28) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-setup.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de test
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/recipes/test-setup.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/test-setup.md)
 
 Les tests peuvent être mis en place en utilisant le hook `beforeEach()`. Souvent, vous pouvez utiliser  à la place une simple fonction de configuration. Cette recette peut vous aider pour décider ce qui convient le mieux à votre cas d'utilisation.
 

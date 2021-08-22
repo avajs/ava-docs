@@ -1,7 +1,7 @@
 ___
 **訳注**
 
-これは[code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0)になります(このリンクをクリックして、`code-of-conduct.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
+これは[code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md)の日本語訳です。こちらがAVAのmasterブランチとの差分の[リンク](https://github.com/avajs/ava/compare/93af8d8d2cb48fe0d2c4ede3c92964a295f60cb6...main#diff-d3030a18b089fdb1fbfabf6e75e4aef0)になります(このリンクをクリックして、`code-of-conduct.md`に変更点が見当たらなければ、この翻訳が最新であることを意味します)。
 ___
 
 # コントリビューターの行動規範

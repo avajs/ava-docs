@@ -1,7 +1,7 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [contributing.md](https://github.com/avajs/ava/blob/master/contributing.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `contributing.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-0730bb7c2e8f9ea2438b52e419dd86c9) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `contributing.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Contribuire ad AVA
 
@@ -9,7 +9,7 @@ ___
 
 Considera che questo progetto utilizza un [Codice di Condotta per i Collaboratori](code-of-conduct.md). Partecipando al progetto accetti i suoi termini e condizioni.
 
-Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/contributing.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/contributing.md)
+Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/contributing.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/contributing.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/contributing.md), [Portugués](https://github.com/avajs/ava-docs/blob/main/pt_BR/contributing.md)
 
 ## Come posso contribuire?
 

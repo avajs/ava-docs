@@ -1,13 +1,13 @@
 ___
 **Nota del traduttore**
 
-Questa è la traduzione del file [debugging-with-webstorm.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...master#diff-1fb9cdb432e04d416229256c338f1a06) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `debugging-with-webstorm.md` nella lista dei file modificati, questa traduzione è aggiornata).
+Questa è la traduzione del file [debugging-with-webstorm.md](https://github.com/sindresorhus/ava/blob/master/docs/recipes/debugging-with-webstorm.md). Qui c'è il [link](https://github.com/avajs/ava/compare/c09462c3e515c41da8177a3d9ba5fb0f19759653...main#diff-1fb9cdb432e04d416229256c338f1a06) dove si confrontano le differenze tra commit di riferimento di questa traduzione e l'ultimo commit di AVA sul branch master (Se si clicca sul link, e non si vede il file `debugging-with-webstorm.md` nella lista dei file modificati, questa traduzione è aggiornata).
 ___
 # Fare debugging con WebStorm
 
 Traduzioni:
-[Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/debugging-with-webstorm.md),
-[Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/debugging-with-webstorm.md)
+[Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/debugging-with-webstorm.md),
+[Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/debugging-with-webstorm.md)
 
 Dalla versione 2016.2, [WebStorm](https://www.jetbrains.com/webstorm/) e altri IDE JetBrains (IntelliJ IDEA Ultimate, PHPStorm, PyCharm Professional, e RubyMine con il plugin Node.js installato) ti permettono di fare debugging dei test AVA.
 

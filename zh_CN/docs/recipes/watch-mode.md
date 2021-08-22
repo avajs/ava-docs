@@ -1,12 +1,12 @@
 ___
 **备注**
 
-这是 [watch-mode.md](https://github.com/avajs/ava/blob/master/docs/recipes/watch-mode.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/82c02bce80696547db0387dec243ddb470c8bce7...master#diff-92da4f3d087d796fdf4a45be88586b62) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`watch-mode.md`发生变化，那就意味着这份翻译文档是最新的）。
+这是 [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md) 的简体中文翻译。这个[链接](https://github.com/avajs/ava/compare/82c02bce80696547db0387dec243ddb470c8bce7...main#diff-92da4f3d087d796fdf4a45be88586b62) 用来查看本翻译与 AVA 的 master 分支是否有差别（如果你没有看到`watch-mode.md`发生变化，那就意味着这份翻译文档是最新的）。
 ___
 
 # 观察模式
 
-翻译：[Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/docs/recipes/watch-mode.md)
+翻译：[Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/watch-mode.md)
 
 
 AVA 自带了一个聪明的观察模式，它会观察那些改变了的文件并运行受到改变影响的测试。
@@ -101,5 +101,5 @@ $ npm test -- --watch
 
 [`chokidar`]: https://github.com/paulmillr/chokidar
 [`ignore-by-default`]: https://github.com/novemberborn/ignore-by-default
-[`--require` CLI 标志]: https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md#cli
-[`--source` CLI 标志]: https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md#cli
+[`--require` CLI 标志]: https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md#cli
+[`--source` CLI 标志]: https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md#cli

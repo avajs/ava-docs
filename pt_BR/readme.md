@@ -1,7 +1,7 @@
 ___
 **Nota do tradutor**
 
-Esta é a tradução de [readme.md](https://github.com/avajs/ava/blob/master/readme.md). [Este link](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
+Esta é a tradução de [readme.md](https://github.com/avajs/ava/blob/main/readme.md). [Este link](https://github.com/avajs/ava/compare/24a38acc5b1b3e3deb77af54d90dda4677bd7749...master) compara a versão em que se baseou esta tradução com a última versão disponível no branch `master` do AVA. Se não houver mudanças em `readme.md`, então a tradução está atualizada.
 ___
 
 # [![AVA](https://raw.githubusercontent.com/avajs/ava/master/media/header.png)](https://avajs.dev)
@@ -18,7 +18,7 @@ Apesar de o JavaScript ser single-threaded, as IO no Node.js podem acontecer em 
 
 Siga o [AVA no Twitter](https://twitter.com/ava__js) para atualizações.
 
-Traduções: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/master/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/master/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/master/zh_CN/readme.md)
+Traduções: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/readme.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/readme.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/readme.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/readme.md), [한국어](https://github.com/avajs/ava-docs/blob/main/ko_KR/readme.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/readme.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/readme.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/readme.md)
 
 
 ## Índice
@@ -1004,7 +1004,7 @@ Em contrapartida, AVA é altamente opinativo e executa testes simultaneamente co
 
 ### Como o nome é escrito e pronunciado?
 
-AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/blob/master/media/pronunciation.m4a?raw=true).
+AVA, não Ava nem ava. Pronuncia-se [`/ˈeɪvə/` ay-və](https://github.com/avajs/ava/raw/main/media/pronunciation.m4a?raw=true).
 
 ### O que é o plano de fundo do cabeçalho?
 

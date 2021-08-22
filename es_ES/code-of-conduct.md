@@ -1,11 +1,11 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [code-of-conduct.md](https://github.com/avajs/ava/blob/master/code-of-conduct.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...master#diff-d3030a18b089fdb1fbfabf6e75e4aef0) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-of-conduct.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [code-of-conduct.md](https://github.com/avajs/ava/blob/main/.github/CODE_OF_CONDUCT.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/4111f9483f2ff6a158b603735a712eee3ab074c4...main#diff-d3030a18b089fdb1fbfabf6e75e4aef0) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `code-of-conduct.md`, será por que la traducción está actualizada).
 ___
 # Código de Conducta para Contribuyentes
 
-Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/code-of-conduct.md), [Portugués](https://github.com/avajs/ava-docs/blob/master/pt_BR/code-of-conduct.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/code-of-conduct.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/code-of-conduct.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/code-of-conduct.md), [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/code-of-conduct.md), [Portugués](https://github.com/avajs/ava-docs/blob/main/pt_BR/code-of-conduct.md)
 
 Como contribuyentes y administradores de este proyecto, y en el interés de fomentar una comunidad abierta y acogedora, nos comprometemos a respetar a todas las personas que colaboran reportando errores, solicitando nuevas funcionalidades, actualizando documentación, generando *pull requests*, entre otras actividades.
 

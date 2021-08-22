@@ -1,6 +1,6 @@
 # Konfiguracja testowa
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/test-setup.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/test-setup.md)
 
 Testy można skonfigurować za pomocą hooka `beforeEach()`. Często można zamiast tego użyć zwykłej funkcji konfiguracji. Ten przepis pomaga zdecydować, co najlepiej pasuje do Twojego przypadku użycia.
 

@@ -1,6 +1,6 @@
 # Testowanie snapshotów
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/04-snapshot-testing.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/04-snapshot-testing.md)
 
 AVA wspiera testowanie snapshotów (migawek), [zgodnie z wprowadzeniem od Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), poprzez interfejs [Asercji](./03-assertions.md). Możesz wykonać snapshot dowolnej wartości, a także elementów React:
 

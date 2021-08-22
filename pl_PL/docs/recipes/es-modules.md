@@ -1,6 +1,6 @@
 # Korzystanie z modułów ES w AVA
 
-Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/es-modules.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/es-modules.md)
 
 Od Node.js 13, [ECMAScript Modules](https://nodejs.org/docs/latest/api/esm.html#esm_introduction) są natywnie obsługiwane w samym Node.js. AVA 3.3 obsługuje pliki testowe ESM, jednak obsługa jest niepełna. [Projekt wsparcia ESM](https://github.com/orgs/avajs/projects/2) śledzi nasze postępy.
 

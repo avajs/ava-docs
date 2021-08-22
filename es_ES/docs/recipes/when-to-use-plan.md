@@ -1,12 +1,12 @@
 ___
 **Nota del traductor**
 
-Esta es la traducción del archivo [when-to-use-plan.md](https://github.com/avajs/ava/blob/master/docs/recipes/when-to-use-plan.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...master#diff-0c25d982e94d600cb6b8e438a0e67169) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `when-to-use-plan.md`, será por que la traducción está actualizada).
+Esta es la traducción del archivo [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Aquí hay un [enlace](https://github.com/avajs/ava/compare/559dda50034dadffecde624e505ed0282ddf2fd2...main#diff-0c25d982e94d600cb6b8e438a0e67169) a las diferencias con la rama master de AVA (Si al hacer clic en el enlace no se encuentran modificaciones en el archivo `when-to-use-plan.md`, será por que la traducción está actualizada).
 ___
 # Cuándo utilizar `t.plan()`
 
-Traducciones: [Español](https://github.com/avajs/ava-docs/blob/master/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/master/it_IT/recipes/when-to-use-plan.md),
-[日本語](https://github.com/avajs/ava-docs/blob/master/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/master/pt_BR/docs/recipes/when-to-use-plan.md)
+Traducciones: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/when-to-use-plan.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/when-to-use-plan.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/recipes/when-to-use-plan.md),
+[日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/when-to-use-plan.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/when-to-use-plan.md)
 
 Una gran diferencia entre AVA y [`tap`](https://github.com/tapjs/node-tap)/[`tape`](https://github.com/substack/tape) es el comportamiento de 't.plan()'. En AVA, 't.plan()' se utiliza para afirmar que el número esperado de aserciones son llamadas; esto no auto termina el test.
 

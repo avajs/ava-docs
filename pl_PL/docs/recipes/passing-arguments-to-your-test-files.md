@@ -1,6 +1,6 @@
 # Przekazywanie argumentów do plików testowych
 
-Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/passing-arguments-to-your-test-files.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/passing-arguments-to-your-test-files.md)
 
 Możesz przekazać argumenty wiersza poleceń do plików testowych. Użyj argumentu `--` terminatora aby oddzielić argumenty AVA od własnych:
 

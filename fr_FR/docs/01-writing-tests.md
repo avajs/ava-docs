@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...master#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/ava/blob/main/docs/01-writing-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-78477dfeef8b2282ba186c90de932951) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `01-writing-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Ecriture des tests
 
-Traductions : [English](https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md)
+Traductions : [English](https://github.com/avajs/ava/raw/main/docs/01-writing-tests.md)
 
 Les tests sont exécutés simultanément. Vous pouvez spécifier des tests synchrones et asynchrones. Les tests sont considérés synchrones sauf si vous retournez une promesse, un [observable](https://github.com/zenparsing/zen-observable) ou vous le déclarez dans un calback de test.
 

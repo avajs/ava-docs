@@ -1,6 +1,6 @@
 # Flow
 
-Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/recipes/flow.md)
+Tłumaczenie: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/flow.md)
 
 Dopiero [1.4.1](https://github.com/avajs/ava/releases/tag/v1.4.1) do AVA dołączono plik definicji przepływu. Umożliwia to programistom wykorzystanie Flow do pisania testów.
 

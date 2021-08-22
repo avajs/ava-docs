@@ -1,6 +1,6 @@
 # Obsługiwane wersje Node.js
 
-Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/master/fr_FR/docs/support-statement.md)
+Tłumaczenia: [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/support-statement.md)
 
 AVA obsługuje najnowszą wersję dowolnej głównej wersji, która [jest obsługiwana przez sam Node.js](https://github.com/nodejs/Release#release-schedule).
 
