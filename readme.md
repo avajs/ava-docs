@@ -1,5 +1,6 @@
 # Localized [AVA](https://avajs.dev) docs
 
+- [German] (de_DE/readme.md) *(by [@dmm1](https://github.com/dmm1))*
 - [Español](es_ES/readme.md) *(by [@AlbertoFuente](https://github.com/AlbertoFuente))*
 - [Français](fr_FR/readme.md) *(by [@forresst](https://github.com/forresst))*
 - [Italiano](it_IT/readme.md) *(by [@dej611](https://github.com/dej611))*
