@@ -82,3 +82,42 @@ test('bar', async t => {
 	t.is(await bar, 'bar');
 });
 ```
+
+### Deine Tests ausführen
+
+```console
+npm test
+```
+
+oder mit `npx`:
+
+```console
+npx ava
+```
+
+Führe mit der `--watch` Option aus, um AVA's [watch mode](docs/recipes/watch-mode.md) zu benutzen:
+
+```console
+npx ava --watch
+```
+
+## Unterstützte Node.js Versionen
+
+AVA unterstützt die neueste Version jeder Hauptversion, die [von Node.js selbst unterstützt wird](https://github.com/nodejs/Release#release-schedule). Lesen Sie mehr in unserer [support-Anweisung](docs/support-statement.md).
+
+## Highlights
+
+### Magie
+
+AVA fügt Codeauszüge und saubere Diffs für tatsächliche und erwartete Werte hinzu. Wenn es sich bei den Werten in der Assertion um Objekte oder Arrays handelt, wird nur ein Diff angezeigt, um das Rauschen zu entfernen und sich auf das Problem zu konzentrieren. Das Diff ist auch Syntax-hervorgehoben! Wenn Sie sowohl einzeilige als auch mehrzeilige Zeichenfolgen vergleichen, zeigt AVA eine andere Art der Ausgabe an und hebt die hinzugefügten oder fehlenden Zeichen hervor.
+
+![](media/magic-assert-combined.png)
+
+### Saubere Stack-Traces
+
+AVA entfernt automatisch nicht verwandte Zeilen in Stack-Traces, sodass Sie die Fehlerquelle viel schneller finden können, wie oben gezeigt.
+
+### Parallele Läufe in CI
+
+AVA erkennt automatisch, ob Ihre CI-Umgebung parallele Builds unterstützt. Jeder Build führt eine Teilmenge aller Testdateien aus und stellt gleichzeitig sicher, dass alle Tests ausgeführt werden. Eine Liste der unterstützten CI-Umgebungen finden Sie im Paket [`ci-parallel-vars`](https://www.npmjs.com/package/ci-parallel-vars).
+
