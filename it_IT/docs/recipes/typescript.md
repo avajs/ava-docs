@@ -7,7 +7,7 @@ ___
 
 Traduzioni: [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/typescript.md), [Français](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/recipes/typescript.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/typescript.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/typescript.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/typescript.md)
 
-AVA è dotato nativamente con un file definitione TypeScript. Questo permette agli sviluppatori di utilizzare TypeScript per scrivere i test.
+AVA è dotato nativamente con un file definizione TypeScript. Questo permette agli sviluppatori di utilizzare TypeScript per scrivere i test.
 
 ## Configurazione
 
