@@ -1,14 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...main#diff-552c4066c39e7065f2f0ada5a41d9268) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-import-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/no-import-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/dee1802d39e22aec0915d5067062356f5abfbd84...main#diff-c26e96c5421817d5241b2075b652d8eb666e5a2ec15aeca3f3090b8e2d877c94) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-import-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun fichier de test n'est importé de n'importe où
 
-Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-import-test-files.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/no-import-test-files.md)
 
 Cette règle vérifiera que vous n'importez aucun fichier de test. Il considèrera la racine du projet avec le dossier le plus proche contenant un fichier `package.json` et ne fera rien s'il ne peut pas en trouver un. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
-
 
 ## Échoue
 
@@ -27,7 +26,6 @@ test('foo', t => {
 	t.pass();
 });
 ```
-
 
 ## Passe
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md). Voici un [lien](https://github.com/avajs/ava/compare/b4ea43529a6d058a96055735cfa6e7056c009112...main#diff-cc4aac3e9be04e0413c9520f223b493c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [contributing.md](https://github.com/avajs/ava/blob/main/.github/CONTRIBUTING.md). Voici un [lien](https://github.com/avajs/ava/compare/711bcf268cb40ec21b967bef4d0927f9de1a71ac...main#diff-98e64bc1cd2db9333c6effe87bbe0d6dfe8714aba4c6bde45aa037fe0796e44c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `contributing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Contribuer à AVA
 
@@ -17,7 +17,7 @@ Traductions : [English](https://github.com/avajs/ava/blob/main/.github/CONTRIBUT
 
 En tant qu'utilisateur de AVA, vous êtes le candidat idéal pour nous aider à améliorer notre documentation : corrections de typo, corrections d'erreur, de meilleures explications, plus d'exemples, etc. Ouvrez des issues pour des choses qui pourraient être améliorées. [Aidez à traduire nos docs.](https://github.com/avajs/ava-docs) N'importe quoi. Même les améliorations apportées à ce document.
 
-Utilisez l'[étiquette `docs`](https://github.com/avajs/ava/labels/docs) pour trouver des suggestions, sur ce que nous aimerions voir en plus dans la documentation.
+Utilisez l'[étiquette `scope:documentation`](https://github.com/avajs/ava/labels/scope%3Adocumentation) pour trouver des suggestions, sur ce que nous aimerions voir en plus dans la documentation.
 
 ### Améliorez les issues
 
@@ -25,11 +25,11 @@ Certaines issues sont créées avec des informations manquantes, non reproductib
 
 ### Faites-nous un retour sur les issues
 
-Nous sommes toujours intéressés par d'autres avis dans les discussions des issues. C'est une bonne occasion d'influencer l'orientation future de l'AVA.
+Nous sommes toujours intéressés par d'autres avis dans les discussions des issues. C'est une bonne occasion d'influencer l'orientation future de AVA.
 
-L'[étiquette `question`](https://github.com/avajs/ava/labels/question) est le bon endroit pour trouver des discussions en cours.
+Les étiquettes [`needs triage`](https://github.com/avajs/ava/labels/needs%20triage) et [`question`](https://github.com/avajs/ava/labels/question) sont les bons endroits pour trouver des discussions en cours.
 
-### Écrivez du code
+### Aidez-nous
 
 Vous pouvez utiliser les étiquettes pour découvrir les issues où vous pourriez aider :
 
@@ -40,38 +40,38 @@ Vous pouvez utiliser les étiquettes pour découvrir les issues où vous pourrie
 
 Les étiquettes [`help wanted`](https://github.com/avajs/ava/labels/help%20wanted) (aide demandée) et [`good for beginner`](https://github.com/avajs/ava/labels/good%20for%20beginner) (bon pour les débutants) sont particulièrement utiles.
 
-Vous trouverez peut-être une issue qui est attribuée, ou qui a l'[étiquette `assigned`](https://github.com/avajs/ava/labels/assigned). Veuillez vérifier avant de commencer sur cette issue parce que quelqu'un d'autre est probablement en train de travailler dessus.
+Vous trouverez peut-être une issue qui est attribuée. Veuillez vérifier avant de commencer sur cette issue parce que quelqu'un d'autre est probablement en train de travailler dessus.
 
 Nous aimerions corriger les [issues `priority`](https://github.com/avajs/ava/labels/priority) (prioritaires) en premier. Nous aimerions aussi voir des avancées sur les [issues `low-priority`](https://github.com/avajs/ava/labels/low%20priority) (de faible priorité). Les [issues `future`](https://github.com/avajs/ava/labels/future) sont celles que nous aimerions avoir, mais pas tout de suite. Veuillez vérifier avant de travailler sur celles-ci, car nous voulons peut-être pas pour l'instant assumer la charge de ces fonctionnalités.
 
-Si vous mettez à jour des dépendances, assurez-vous que vous utilisez npm@5.6.0 et faites un commit de la mise à jour du fichier `package-lock.json`.
+Vous trouverez ci-dessous des conseils pour contribuer au code.
 
-### Promenez-vous sur notre chat
+### Promenez-vous et discutez
 
-Nous avons un [chat](https://spectrum.chat/ava). Venez, espionnez, parlez-nous et aidez les autres.
+Nous utilisons [GitHub Discussions] (https://github.com/avajs/ava/discussions). Allez-y pour observer, nous parler et aider les autres.
 
-## Soumettez une issue
+## Contribuer au code
 
-- Les issues sont pour les problèmes. Utilisez notre [chat](https://spectrum.chat/ava) ou [Stack Overflow](https://stackoverflow.com/questions/tagged/ava) pour le support.
-- Cherchez l'erreur dans les issues existantes avant d'en ouvrir une.
-- Assurez-vous d'utiliser la dernière version de AVA.
-- Utilisez un titre clair et descriptif (en anglais).
-- Donnez le maximum d'informations possibles : étapes pour reproduire le problème, message d'erreur, la version de Node.js, le système d'exploitation, etc (en anglais).
-- Plus vous passerez du temps pour rédiger votre issue, plus vite nous la traiterons.
-- [La meilleure façon de reporter une issue, c'est de le prouver par un test qui échoue.](https://twitter.com/sindresorhus/status/579306280495357953)
+Lorsque vous trouvez une issue sur laquelle vous aimeriez travailler, laissez un commentaire pour que les autres soient au courant. Nous vous affecterons alors l'issue.
 
-## Soumettez un pull request
+Bien sûr, vous pouvez travailler sur des choses qui n'ont pas encore d'issue. Cependant, si vous comptez fournir un effort important, il est préférable d'en discuter avant.
 
-- Les changements non triviaux doivent d'abord être débattus dans une issue : pour éviter de faire un travail inutile.
-- Pour des tâches importantes, nous vous conseillons dès que possible de présenter votre travail à la communauté pour avoir son avis. Ouvrez un pull request, dès que vous avez fait le minimum nécessaire, pour démontrer votre idée. À ce stade précoce, ne vous inquiétez pas si les choses ne sont pas parfaites ou 100% terminées. Ajoutez un préfixe [WIP] dans le titre et décrivez ce que vous avez encore besoin de faire. Cela permet à ceux qui l'examine de ne pas chercher la petite bête ou de signaler des améliorations dont vous savez déjà que vous devez les faire.
-- Les nouvelles fonctionnalités doivent être accompagnées avec des tests et de la documentation (en anglais).
-- N'ajoutez pas des changements qui ne sont pas en rapport avec le pull request.
-- Vérifiez (Lint) et testez avant de soumettre un pull request en exécutant `$ npm test`.
-- Faites un pull request depuis une [branche](https://github.com/dchelimsky/rspec/wiki/Topic-Branches), pas depuis le master.
-- Utilisez un titre clair et descriptif pour le pull request et les commits.
-- Écrivez une description convaincante pour expliquer pourquoi nous devrions intégrer votre pull request. Il est de votre devoir de nous convaincre. Répondre à la question «pourquoi» est nécessaire et fournissez des cas d'utilisation.
-- Nous pouvons vous demander de changer votre pull request. Il n'est pas utile d'ouvrir un autre pull request. [Mettez juste à jour celui qui existe déjà.](https://github.com/RichardLitt/knowledge/blob/master/github/amending-a-commit-guide.md)
+Lorsque vous êtes prêt à recevoir des commentaires sur votre travail, ouvrez une [draft pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests). Ce n'est pas grave si le travail n'est pas encore terminé, mais faites-nous savoir ce qu'il reste à faire. Les relecteurs sauront ainsi qu'il ne faut pas pinailler sur les petits détails ou signaler les améliorations que vous savez déjà devoir apporter.
 
-Remarque: lorsque vous modifiez du code, n'oubliez pas que la devise de AVA (volé à Python), c'est d'avoir une unique méthode pour faire quelque chose. Par exemple, une demande pour ajouter un alias à l'API ([comme ceci](https://github.com/avajs/ava/pull/663)) sera probablement refusée s'il n'y a pas l'ajout d'un autre avantage important.
+La relecture de pull request importantes peut prendre beaucoup de temps. Un temps qui n'est pas toujours disponible. Les demandes plus petites peuvent être traitées plus rapidement. Si vous introduisez une nouvelle fonctionnalité, réfléchissez à la manière dont elle pourrait être décomposée. Il n'y a pas de mal à introduire des fonctionnalités comme [expérimentales](https://github.com/avajs/ava/blob/main/docs/06-configuration.md#experiments). Celles-ci nécessitent moins de documentation et de couverture de test.
 
-*Vous cherchez à faire votre première contribution à un projet open-source ? Cherchez pas plus loin ! AVA peut être l'un des projets et l'une des communautés les plus accueillants. Lisez l'article de blog ["Making your first contribution"](https://medium.com/@vadimdemedes/making-your-first-contribution-de6576ddb190) pour démarrer correctement et faire votre première participation pour AVA !*
+Essayez d'éviter d'apporter des modifications de ruptures (breaking changes). Celles-ci sont plus longues à livrer. Au lieu de cela, faites en sorte que le nouveau comportement soit expérimental. De cette façon, votre fonctionnalité peut être livrée, et vous pouvez l'utiliser, selon son propre échéancier.
+
+Les fonctionnalités non expérimentales doivent être accompagnées de tests et de documentation.
+
+N'incluez pas de modifications sans rapport avec la fonctionnalité dans votre pull request. Assurez-vous que les tests passent sur votre machine en exécutant npm test. Vous pouvez également lancer des fichiers de test spécifiques en utilisant `npx tap test-tap/{file}.js` or `npx test-ava test/{file}.js`.
+
+Lorsque vous faites une pull request, veuillez utiliser un titre clair et descriptif. Soyez précis sur ce qui a été modifié et pourquoi.
+
+Assurez-vous que la case *Allow edits from maintainers* est cochée. De cette façon, nous pourrons apporter nous-mêmes certaines modifications mineures, ce qui permettra de fusionner votre pull request plus rapidement.
+
+Il se peut que l'on vous demande d'apporter des modifications à votre pull request. Il n'est jamais nécessaire d'ouvrir une autre pull request. Envoyez plus de commits à votre branche existante. Nous les écraserons (squash) lorsque nous fusionnerons le PR.
+
+Les dépendances sont gérées par `npm`. Ne mettez à jour les dépendances que lorsque cela est nécessaire pour votre pull request. Ne reconstruisez pas le fichier de verrouillage (lockfile).
+
+Et enfin, amusez-vous bien !

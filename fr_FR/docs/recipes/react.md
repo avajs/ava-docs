@@ -1,15 +1,17 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/main/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...main#diff-2cb79c7fb78b66228297358846395c3a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/main/docs/recipes/react.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-60cb6077059951c16eae00b64c2505290aebf57a66e29c37a23f03cc51b68581) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `react.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
-# Tester les composants React
+# Tester les composants React avec AVA 3
 
 Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md)
 
+**AVA 4 n'a plus de support Babel intégré, et `t.snapshot()` et `t.deepEqual()` ne reconnaissent plus les éléments React non plus. Par conséquent, cette recette s'adresse principalement aux utilisateurs d'AVA 3**.
+
 ## Installer Babel
 
-Lorsque vous [activez Babel](https://github.com/avajs/babel), AVA étendra automatiquement votre configuration Babel actuelle (au niveau du projet). Vous devriez être en mesure d'utiliser React dans vos fichiers de test sans aucune configuration supplémentaire.
+Lorsque vous [activez Babel](https://github.com/avajs/babel), AVA 3 étendra automatiquement votre configuration Babel actuelle (au niveau du projet). Vous devriez être en mesure d'utiliser React dans vos fichiers de test sans aucune configuration supplémentaire.
 
 Cependant, si vous voulez le configurer explicitement, ajoutez le preset aux options de test dans le pipeline Babel d'AVA en modifiant votre `package.json` ou votre fichier `ava.config.*`.
 
@@ -31,22 +33,60 @@ Vous pouvez trouver plus d'informations dans [`@ava/babel`](https://github.com/a
 
 ## Utiliser [Enzyme](https://github.com/airbnb/enzyme)
 
-Commençons par voir comment utiliser AVA avec l'une des bibliothèques de test de React parmi les plus populaires : [Enzyme](https://github.com/airbnb/enzyme).
+Commençons par voir comment utiliser AVA avec l'une des bibliothèques de test de React parmi les plus populaires : [Enzyme](https://github.com/enzymejs/enzyme).
 
 Si vous comptez utiliser seulement [le rendu de composants shallow](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering), vous n'avez pas besoin de configuration supplémentaire.
 
-Premièrement, installez [les packages requis par Enzyme](https://github.com/airbnb/enzyme/#installation) :
+### Installez Enzyme
+
+Premièrement, installez [Enzyme et son adaptateur requis](https://github.com/enzymejs/enzyme#installation) :
 
 ```console
-$ npm install --save-dev enzyme react-addons-test-utils react-dom
+$ npm install --save-dev enzyme enzyme-adapter-react-16
 ```
+
+### Mettez en place Enzyme
+
+Créez un fichier helper, préfixé par un underscore. Cela permet à AVA de ne pas le traiter comme un test.
+
+`test/_setup-enzyme-adapter.js`:
+
+```js
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({
+	adapter: new Adapter()
+});
+```
+
+### Configurez des tests pour utiliser Enzyme
+
+Configurez AVA pour faire un `require` du helper avant chaque fichier de test.
+
+**`package.json` :**
+
+```json
+{
+	"ava": {
+		"require": [
+			"./test/_setup-enzyme-adapter.js"
+		]
+	}
+}
+```
+
+### C'est prêt !
 
 Ensuite vous pouvez utiliser Enzyme directement :
 
+`test.js`:
+
 ```js
-const test = require('ava');
-const React = require('react');
-const {shallow} = require('enzyme');
+import test from 'ava';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {shallow} from 'enzyme';
 
 const Foo = ({children}) =>
 	<div className="Foo">
@@ -56,7 +96,7 @@ const Foo = ({children}) =>
 	</div>;
 
 Foo.propTypes = {
-	children: React.PropTypes.any
+	children: PropTypes.any
 };
 
 test('a une classe .Foo', t => {
@@ -83,7 +123,7 @@ Enzyme a aussi des helpers `mount` et `render` pour tester dans un vrai environn
 
 Pour voir un exemple d'AVA fonctionnant avec Enzyme configuré pour les tests de navigateur, vous pouvez regarder [cet exemple de projet](https://github.com/adriantoine/ava-enzyme-demo).
 
-Ceci n'est qu'un exemple basique sur l'intégration d'Enzyme avec AVA. Pour plus d'informations sur l'utilisation d'Enzyme pour tester les composants React, allez voir [la documentation d'Enzyme](http://airbnb.io/enzyme/).
+Ceci n'est qu'un exemple basique sur l'intégration d'Enzyme avec AVA. Pour plus d'informations sur l'utilisation d'Enzyme pour tester les composants React, allez voir [la documentation d'Enzyme](https://enzymejs.github.io/enzyme/).
 
 ## Utiliser les helpers JSX
 
@@ -96,9 +136,10 @@ $ npm install --save-dev jsx-test-helpers
 Exemple d'utilisation :
 
 ```js
-const test = require('ava');
-const React = require('react');
-const {renderJSX, JSX} = require('jsx-test-helpers');
+import test from 'ava';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {renderJSX, JSX} from 'jsx-test-helpers';
 
 const Foo = ({children}) =>
 	<div className="Foo">
@@ -108,7 +149,7 @@ const Foo = ({children}) =>
 	</div>;
 
 Foo.propTypes = {
-	children: React.PropTypes.any
+	children: PropTypes.any
 };
 
 test('rend un balisage correct', t => {

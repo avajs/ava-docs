@@ -1,13 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/master/README.md). Voici un [lien](https://github.com/avajs/babel/compare/578822a18c88dd95439eb0634b009ef6026f671a...main#diff-04c6e90faac2675aa89e2176d2eec7d8) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [README.md](https://github.com/avajs/babel/blob/main/README.md). Voici un [lien](https://github.com/avajs/babel/compare/3b83e951d4a51f9f0ed1d6d9193a023bd00b897d...main#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5) vers les différences avec le master de babel de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `README.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # @ava/babel
 
-Traductions : [English](https://github.com/avajs/babel/blob/master/README.md)
+Traductions : [English](https://github.com/avajs/babel/blob/main/README.md)
 
-Ajoutez la prise en charge de [Babel 7](https://babeljs.io) à [AVA](https://avajs.dev) afin que vous puissiez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset `@ava/babel/stage-4`. Nous utilisons également un second preset, `@ava/babel/transform-test-files` pour activer [une amélioration des messages d'assertion](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/03-assertions.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
+**Ne fonctionne pas avec AVA 4.**
+
+Ajoutez la prise en charge de [Babel 7](https://babeljs.io) à [AVA 3](https://avajs.dev) afin que vous puissiez utiliser la dernière syntaxe JavaScript dans vos tests. Nous faisons cela en compilant des fichiers de test et de helper en utilisant notre preset `@ava/babel/stage-4`. Nous utilisons également un second preset, `@ava/babel/transform-test-files` pour activer [une amélioration des messages d'assertion](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/03-assertions.md#messages-dassertions-améliorés) et détecter une utilisation incorrecte des assertions `t.throws()`.
 
 Par défaut, notre pipeline Babel est appliqué aux fichiers de test et de helper se terminant par `.cjs` and `.js`. Si votre projet utilise Babel, nous compilerons automatiquement ces fichiers en utilisant la configuration Babel de votre projet. Le preset `@ava/babel/transform-helper-files` est appliqué en premier et le preset `@ava/babel/stage-4` en dernier.
 
@@ -35,7 +37,7 @@ Ensuite, activez le support Babel dans le `package.json` ou `ava.config.*` :
 
 ## Personnaliser la manière dont AVA compile votre fichier de test
 
-Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA pour la compilation de fichiers de test dans `package.json` ou `ava.config.*`. Par exemple, la configuration ci-dessous ajoute la prise en charge de la syntaxe JSX et des fonctionnalités du stage 3.
+Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA pour la compilation de fichiers de test dans `package.json` ou `ava.config.*`. Par exemple, la configuration ci-dessous ajoute la prise en charge de la syntaxe JSX et [preset-env](https://babeljs.io/docs/en/babel-preset-env).
 
 **`package.json`:**
 
@@ -43,9 +45,13 @@ Vous pouvez remplacer la configuration par défaut de Babel utilisée par AVA po
 {
 	"ava": {
 		"babel": {
+			"extensions": [
+				"js",
+				"jsx"
+			],
 			"testOptions": {
 				"plugins": ["@babel/plugin-syntax-jsx"],
-				"presets": ["@babel/preset-stage-3"]
+				"presets": ["@babel/preset-env"]
 			}
 		}
 	}
@@ -58,7 +64,7 @@ Toutes les [options de Babel] sont autorisées dans l'objet `testOptions`.
 
 Par défaut, seuls les fichiers de test sont compilés. Vous pouvez compiler des fichiers supplémentaires en tant que tests en fournissant des glob patterns :
 
-**`package.sjon`:**
+**`package.json`:**
 
 ```json
 {
@@ -277,7 +283,7 @@ Installez `babel-plugin-webpack-alias-7` comme dépendance de développement. Pu
 
 ## `@ava/babel/stage-4`
 
-A pour ambition d'apporter les [propositions ECMAScript terminées](https://github.com/tc39/proposals/blob/master/finished-proposals.md) aux fichiers de test et helpers de AVA.
+A pour ambition d'apporter les [propositions ECMAScript terminées](https://github.com/tc39/proposals/blob/main/finished-proposals.md) aux fichiers de test et helpers de AVA.
 
 D'appliquer efficacement le minimum de transformations pour exécuter la dernière syntaxe JavaScript sur Node.js 10 et 12.
 

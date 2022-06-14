@@ -1,70 +1,23 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...main#diff-92da4f3d087d796fdf4a45be88586b62) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [watch-mode.md](https://github.com/avajs/ava/blob/main/docs/recipes/watch-mode.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-e759e03510c7ba375dbdc805e9348e62c3a3b3be18520c167a15c0d7e9751480) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `watch-mode` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Mode watch
 
 Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/watch-mode.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/watch-mode.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/watch-mode.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/watch-mode.md)
 
-**Ceci documente la prochaine version de AVA 3. Consultez plutôt la documentation [AVA 2](https://github.com/avajs/ava-docs/blob/9476dfc031350e4f3e549b6f0f5ad445d622e36d/fr_FR/docs/recipes/watch-mode.md).**
-
 AVA est livré avec un mode watch intelligent. Il surveille les fichiers modifiés et exécute seulement les tests qui sont impactés.
 
 ## Exécution des tests avec le mode watch activé
 
-Vous pouvez activer le mode watch en utilisant l'option `--watch` ou `-w`. Si vous avez installé AVA globalement :
+Vous pouvez activer le mode watch en utilisant l'option `--watch` ou `-w`.
 
 ```console
-$ ava --watch
+$ npx ava --watch
 ```
 
-Si vous l'avez configuré dans votre `package.json` de cette manière :
-
-```json
-{
-	"scripts": {
-		"test": "ava"
-	}
-}
-```
-
-Vous pouvez lancer :
-
-```console
-$ npm test -- --watch
-```
-
-Vous pouvez aussi mettre en place un script spécial :
-
-```json
-{
-	"scripts": {
-		"test": "ava",
-		"watch:test": "ava --watch"
-	}
-}
-```
-
-Et l'utiliser ainsi :
-
-```console
-$ npm run watch:test
-```
-
-Enfin, vous pouvez configurer AVA pour qu'il s'exécute *toujours* en mode watch en définissant la clé `watch` dans la [section `ava` de votre `package.json` ou le fichier `ava.config.*`][config].
-
-**`package.json` :**
-
-```json
-{
-	"ava": {
-		"watch": true
-	}
-}
-```
-
-Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du mode watch.
+Veuillez noter que le débogage intégré et le reporter TAP ne sont pas disponibles lors de l'utilisation du mode watch.
 
 ## Prérequis
 
@@ -105,14 +58,7 @@ Vous pouvez mettre à jour les instantanés défaillants en tapant <kbd>u</kbd> 
 Parfois, le mode watch fait des choses surprenantes comme ré-exécuter tous les tests alors que vous pensiez qu'un seul test aurait été ré-exécuté. Pour voir son raisonnement, vous pouvez activer un mode de débogage. Cela fonctionne mieux avec le reporter verbose :
 
 ```console
-$ DEBUG=ava:watcher npm test -- --watch --verbose
-```
-
-Sous Windows utilisez :
-
-```console
-$ set DEBUG=ava:watcher
-$ npm test -- --watch --verbose
+$ DEBUG=ava:watcher npx ava --watch
 ```
 
 ## Aidez-nous à améliorer le mode watch

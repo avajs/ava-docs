@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [passing-arguments-to-your-test-files.md](https://github.com/avajs/ava/blob/main/docs/recipes/passing-arguments-to-your-test-files.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-6b09519f1a3599f39e02aec0e613151c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `passing-arguments-to-your-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [passing-arguments-to-your-test-files.md](https://github.com/avajs/ava/blob/main/docs/recipes/passing-arguments-to-your-test-files.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-0fec390b042c2bb40f272fed2d1bd695f95995a60764bb7f3801f58babfe8cd0) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `passing-arguments-to-your-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Passer des arguments à vos fichiers de test
 
@@ -11,7 +11,7 @@ Vous pouvez passer des arguments à ligne de commande pour vos fichiers de test.
 
 ```js
 // test.js
-const test = require('ava');
+import test from 'ava';
 
 test('argv', t => {
 	t.deepEqual(process.argv.slice(2), ['--hello', 'world']);

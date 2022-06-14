@@ -1,13 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/main/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-ea157780fd005702cef8a1ddf5ec347b) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/main/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-5fde374b4d4a09ce36d97c58a362f035bacbe04f71f5b837f6bd7c8b61e3f0e9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
 Traductions : [English](https://github.com/avajs/ava/raw/main/docs/08-common-pitfalls.md)
 
-Si vous utilisez [ESLint](http://eslint.org/), vous pouvez installer [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Il vous aidera à utiliser correctement AVA et ainsi vous évitera certains pièges classiques.
+Si vous utilisez [ESLint](http://eslint.org), vous pouvez installer [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Il vous aidera à utiliser correctement AVA et ainsi vous évitera certains pièges classiques.
 
 ## AVA dans Docker
 
@@ -44,22 +44,13 @@ test('fetches foo', async t => {
 });
 ```
 
-Si l'on utilise des callbacks, veuillez utilisez [`test.cb`](./01-writing-tests.md#prise-en-charge-du-callback):
+Si l'on utilise des callbacks, il faut transformer la fonction de rappel en promesse en utilisant quelque chose comme [`util.promisify()`](https://nodejs.org/dist/latest/docs/api/util.html#util_util_promisify_original) :
 
 ```js
-test.cb('fetches foo', t => {
-	fetch((err, data) => {
-		t.is(data, 'foo');
-		t.end();
-	});
-});
-```
+import {promisify} from 'util';
 
-Alternativement, vous pouvez transformer une fonction callback en promesse en utilisant quelque chose comme [`pify`](https://github.com/sindresorhus/pify).
-
-```js
 test('fetches foo', async t => {
-	const data = await pify(fetch)();
+	const data = await promisify(fetch)();
 	t.is(data, 'foo');
 });
 ```
@@ -68,18 +59,6 @@ test('fetches foo', async t => {
 
 AVA [ne peut pas tracer les exceptions non interceptées](https://github.com/avajs/ava/issues/214) par le retour du test qui les déclenche. Les fonctions de prise de callback peuvent conduire à des exceptions non interceptées qui peuvent ensuite être difficiles à déboguer. Utilisez la transformation d'un callback en promesse et l'utilisation de `async`/`await`, comme dans l'exemple ci-dessus. Cela devrait permettre à AVA d'attraper l'exception et de l'attribuer au test correctement.
 
-## Pourquoi les messages d'assertion améliorés ne s'affichent pas ?
-
-Assurez-vous que le premier paramètre passé dans votre test est nommé `t`. C'est une exigence de [`power-assert`](https://github.com/power-assert-js/power-assert), la bibliothèque qui fournit les [messages améliorés](./03-assertions.md#messages-dassertions-améliorés).
-
-```js
-test('un est un', t => {
-	t.assert(1 === 1);
-});
-```
-
-Assurez-vous d'activer également [Babel](./recipes/babel.md).
-
 ## Partage de variables entre tests asynchrones
 
 Par défaut, AVA exécute les tests simultanément. Cela peut poser problème si vos tests sont asynchrones et partagent des variables.
@@ -87,7 +66,7 @@ Par défaut, AVA exécute les tests simultanément. Cela peut poser problème si
 Prenons cet exemple bidon :
 
 ```js
-const test = require('ava');
+import test from 'ava';
 
 let count = 0;
 const incr = async () => {
@@ -114,7 +93,7 @@ test('incrémente deux fois', async t => {
 Les tests simultanés permettent aux tests asynchrones de s'exécuter plus rapidement, mais s'ils reposent sur un état partagé, cela peut entraîner des échecs de test inattendus. Si l'état partagé ne peut pas être évité, vous pouvez exécuter vos tests en série :
 
 ```js
-const test = require('ava');
+import test from 'ava';
 
 let count = 0;
 const incr = async () => {

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [endpoint-testing-with-mongoose.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing-with-mongoose.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-0d4979fa38dcd3f583de1cad2529b9c4) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing-with-mongoose.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [endpoint-testing-with-mongoose.md](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing-with-mongoose.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-dd8d33cacc14d7ed4ab41ba1e7351a9fcc3901ddf5b16cf097fae7efc60fe5bb) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `endpoint-testing-with-mongoose.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Tester un endpoint avec Mongoose
 
@@ -15,7 +15,7 @@ Cette recette utilise les bibliothèques suivantes :
 
 1. [`mongodb-memory-server`](https://github.com/nodkz/mongodb-memory-server) (Un serveur de MongoDB en mémoire)
 2. [SuperTest](https://github.com/visionmedia/supertest) (Une bibliothèque de test pour endpoint)
-3. [Mongoose](http://mongoosejs.com)
+3. [Mongoose](https://mongoosejs.com)
 
 Veuillez d'abord installer les deux premières bibliothèques en exécutant le code suivant :
 
@@ -43,26 +43,25 @@ Incluez d'abord les bibliothèques dont vous avez besoin :
 
 ```js
 // Bibliothèques utiles pour les tests
-const test = require('ava');
-const request = require('supertest');
-const {MongoMemoryServer} = require('mongodb-memory-server');
-const mongoose = require('mongoose');
+import test from 'ava';
+import request from 'supertest';
+import {MongoMemoryServer} from 'mongodb-memory-server';
+import mongoose from 'mongoose';
 
 // Votre serveur et vos modèles
-const app = require('../server');
-const User = require('../models/User');
+import app from '../server';
+import User from '../models/User';
 ```
 
 Ensuite lancez l'instance MongoDB en mémoire et connectez-vous à Mongoose :
 
 ```js
-// Démarre l'instance MongoDB
-const mongod = new MongoMemoryServer()
-
 // Créer la connexion à Mongoose avant d'exécuter les tests
-test.before(async () => {
-	const uri = await mongod.getConnectionString();
-	await mongoose.connect(uri, {useMongoClient: true});
+test.before(async t => {
+	// Démarre d'abord l'instance MongoDB
+	t.context.mongod = await MongoMemoryServer.create();
+	// Et se connecte
+	await mongoose.connect(t.context.mongod.getUri());
 });
 ```
 
@@ -121,10 +120,10 @@ test.serial('litmus create user', async t => {
 Enfin, déconnectez et arrêtez MongoDB quand tous les tests sont faits :
 
 ```js
-test.after.always(async () => {
-	mongoose.disconnect()
-	mongod.stop()
-})
+test.after.always(async t => {
+	await mongoose.disconnect();
+	await t.context.mongod.stop();
+});
 
 ```
 

@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/7babf6be0fa5b25d31e4987d09b039834c61dea2...main#diff-0c25d982e94d600cb6b8e438a0e67169) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [when-to-use-plan.md](https://github.com/avajs/ava/blob/main/docs/recipes/when-to-use-plan.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-75a61a239320caf424492802030515ad602bf2b7a926de429e8fb907de2b6794) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `when-to-use-plan.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Quand utiliser `t.plan()` ?
 
@@ -98,31 +98,15 @@ Comme indiqué dans l'exemple précédent, l'utilisation de l'assertion `t.throw
 
 `t.plan()` fournit une valeur dans les cas suivants.
 
-### S'assurer que plusieurs callbacks sont réellement appelés
-
-```js
-test.cb('invokes callbacks', t => {
-	t.plan(2);
-
-	const callbackA = () => {
-		t.pass();
-		t.end();
-	};
-
-	const callbackB = () => t.pass();
-
-	bThenA(callbackA, callbackB);
-});
-```
-
-Ci-dessus, cela permet de s'assurer que `callbackB` est appelé en premier (et une seule fois), suivi de `callbackA`. Toute autre combinaison ne satisferaient pas `plan`.
-
 ### Tests avec un débranchement
 
 Dans la plupart des cas, c'est une mauvaise idée d'utiliser un débranchement complexe à l'intérieur de vos tests. Une exception notable, c'est pour les tests qui sont générés automatiquement (peut-être venant d'un document JSON). Ci-dessous `t.plan()` est utilisé pour s'assurer de l'exactitude du fichier JSON :
 
 ```js
-const testData = require('./fixtures/test-definitions.json');
+import fs from 'fs';
+import path from 'path';
+
+const testData = JSON.parse(fs.readFileSync(new URL('./fixtures/test-definitions.json', import.meta.url)));
 
 for (const testDefinition of testData) {
 	test('foo ou bar', t => {

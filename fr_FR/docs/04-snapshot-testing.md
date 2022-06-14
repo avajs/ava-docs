@@ -1,34 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/main/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-8bbf7878707eea81476dea0f83a36ae3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs/ava/blob/main/docs/04-snapshot-testing.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-4393cc239e3dbd4a27a2947be85a7bad4310a5dfa35c343e56f79baffe8d48fc) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `04-snapshot-testing.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Test d'instantané
 
 Traductions : [English](https://github.com/avajs/ava/raw/main/docs/04-snapshot-testing.md)
 
-AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur ainsi que des éléments de React :
-
-```js
-// Votre composant
-const HelloWorld = () => <h1>Hello World...!</h1>;
-
-export default HelloWorld;
-```
-
-```js
-// Votre test
-const test = require('ava');
-const render = require('react-test-renderer');
-const HelloWorld = require('.');
-
-test('HelloWorld component', t => {
-	const tree = render.create(<HelloWorld/>).toJSON();
-	t.snapshot(tree);
-});
-```
-
-[Essayez-le dans ce projet d'exemple.](https://github.com/avajs/ava-snapshot-example)
+AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur.
 
 Les instantanés sont stockés aux côtés de vos fichiers de test. Si vos tests se trouvent dans un dossier `test` ou `tests`, les instantanés seront stockés dans un dossier `snapshots`. Si vos tests se trouvent dans un dossier `__tests__` alors ils seront stockés dans un dossier `__snapshots__`.
 
@@ -48,6 +27,8 @@ Vous pouvez ensuite vérifier votre code. Si le changement était intentionnel, 
 ```console
 $ ava --update-snapshots
 ```
+
+Si vous avez besoin de mettre à jour les instantanés pour un test particulier, vous pouvez utiliser `--update-snapshots` avec par exemple `--match` ou `.only()` pour sélectionner le test.
 
 Vous pouvez définir un emplacement fixe pour stocker les fichiers d'instantanés dans la configuration d'AVA [inclus dans le `package.json`](./06-configuration.md) :
 

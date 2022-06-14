@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [test-setup.md](https://github.com/avajs/ava/blob/main/docs/recipes/es-modules.md). Voici un [lien](https://github.com/avajs/ava/compare/0948d87a79ac6f91afa5766a45dee212e511b6f9...main#diff-68fa5258df1d0b29e70b94f0d08b9f28) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-setup.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [test-setup.md](https://github.com/avajs/ava/blob/main/docs/recipes/test-setup.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-7f4a52ef11d70513180b90e54ffeb24c74cf6d6e1cefa9cebdfdef7cf04142c3) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `test-setup.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration de test
 
@@ -68,6 +68,8 @@ test('second scénario', t => {
 	t.true(someOtherCondition);
 });
 ```
+
+Vous pouvez utiliser [`t.teardown()`](../02-execution-context.md#tteardownfn) pour enregistrer une fonction de nettoyage qui s'exécutera une fois le test terminé (qu'il soit passé ou échoué).
 
 ## Un exemple pratique
 
