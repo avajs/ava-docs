@@ -5,7 +5,7 @@ C'est la traduction du fichier [01-writing-tests.md](https://github.com/avajs/av
 ___
 # Ecriture des tests
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/01-writing-tests.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/01-writing-tests.md)
 
 Les tests sont exécutés simultanément. Vous pouvez spécifier des tests synchrones et asynchrones. Les tests sont considérés synchrones sauf si vous retournez une promesse, un [observable](https://github.com/zenparsing/zen-observable) ou vous le déclarez dans un calback de test.
 

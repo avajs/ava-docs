@@ -5,7 +5,7 @@ C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava
 ___
 # CLI
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/05-command-line.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/05-command-line.md)
 
 ```console
 ava [<pattern>...]

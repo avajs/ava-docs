@@ -5,7 +5,7 @@ C'est la traduction du fichier [endpoint-testing-with-mongoose.md](https://githu
 ___
 # Tester un endpoint avec Mongoose
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/endpoint-testing-with-mongoose.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing-with-mongoose.md)
 
 Cette recette montre comment vous pouvez tester vos endpoints avec AVA et Mongoose, en supposant que vous utilisez Express comme framework.
 

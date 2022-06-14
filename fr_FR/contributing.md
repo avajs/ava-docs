@@ -48,7 +48,7 @@ Vous trouverez ci-dessous des conseils pour contribuer au code.
 
 ### Promenez-vous et discutez
 
-Nous utilisons [GitHub Discussions] (https://github.com/avajs/ava/discussions). Allez-y pour observer, nous parler et aider les autres.
+Nous utilisons [GitHub Discussions](https://github.com/avajs/ava/discussions). Allez-y pour observer, nous parler et aider les autres.
 
 ## Contribuer au code
 
@@ -58,7 +58,7 @@ Bien sûr, vous pouvez travailler sur des choses qui n'ont pas encore d'issue. C
 
 Lorsque vous êtes prêt à recevoir des commentaires sur votre travail, ouvrez une [draft pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests). Ce n'est pas grave si le travail n'est pas encore terminé, mais faites-nous savoir ce qu'il reste à faire. Les relecteurs sauront ainsi qu'il ne faut pas pinailler sur les petits détails ou signaler les améliorations que vous savez déjà devoir apporter.
 
-La relecture de pull request importantes peut prendre beaucoup de temps. Un temps qui n'est pas toujours disponible. Les demandes plus petites peuvent être traitées plus rapidement. Si vous introduisez une nouvelle fonctionnalité, réfléchissez à la manière dont elle pourrait être décomposée. Il n'y a pas de mal à introduire des fonctionnalités comme [expérimentales](https://github.com/avajs/ava/blob/main/docs/06-configuration.md#experiments). Celles-ci nécessitent moins de documentation et de couverture de test.
+La relecture de pull request importantes peut prendre beaucoup de temps. Un temps qui n'est pas toujours disponible. Les demandes plus petites peuvent être traitées plus rapidement. Si vous introduisez une nouvelle fonctionnalité, réfléchissez à la manière dont elle pourrait être décomposée. Il n'y a pas de mal à introduire des fonctionnalités comme [expérimentales](https://github.com/avajs/ava-docs/blob/main/fr_FR/docs/06-configuration.md#expérimentations). Celles-ci nécessitent moins de documentation et de couverture de test.
 
 Essayez d'éviter d'apporter des modifications de ruptures (breaking changes). Celles-ci sont plus longues à livrer. Au lieu de cela, faites en sorte que le nouveau comportement soit expérimental. De cette façon, votre fonctionnalité peut être livrée, et vous pouvez l'utiliser, selon son propre échéancier.
 

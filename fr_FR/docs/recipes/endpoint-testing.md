@@ -5,7 +5,7 @@ C'est la traduction du fichier [endpoint-testing.md](https://github.com/avajs/av
 ___
 # Tester un endpoint
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/endpoint-testing.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/endpoint-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/endpoint-testing.md),  [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/endpoint-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/endpoint-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/endpoint-testing.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/endpoint-testing.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/endpoint-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/endpoint-testing.md),  [日本語](https://github.com/avajs/ava-docs/blob/main/ja_JP/docs/recipes/endpoint-testing.md), [Português](https://github.com/avajs/ava-docs/blob/main/pt_BR/docs/recipes/endpoint-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/endpoint-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/endpoint-testing.md)
 
 [![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/avajs/ava/tree/main/examples/endpoint-testing?file=test.js&terminal=test&view=editor)
 

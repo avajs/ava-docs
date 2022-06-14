@@ -7,7 +7,7 @@ ___
 
 AVA détecte automatiquement si votre environnement CI prend en charge les constructions en parallèle en utilisant [ci-parallel-vars](https://www.npmjs.com/package/ci-parallel-vars). Lorsque la prise en charge des constructions en parallèle est détectée, AVA trie tous les fichiers de test détectés par nom, et les divise en morceaux. Chaque machine CI est assignée à un morceau (sous-ensemble) des tests, et ensuite chaque morceau est exécuté en parallèle.
 
-Pour désactiver cette fonctionnalité, mettez `utilizeParallelBuilds` à `false` dans votre [configuration AVA](/docs/06-configuration.md#options).
+Pour désactiver cette fonctionnalité, mettez `utilizeParallelBuilds` à `false` dans votre [configuration AVA](/fr_FR/docs/06-configuration.md#options).
 
 Pour mieux répartir les tests sur les machines, vous pouvez configurer une fonction de comparaison personnalisée :
 

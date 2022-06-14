@@ -5,7 +5,7 @@ C'est la traduction du fichier [02-execution-context.md](https://github.com/avaj
 ___
 # Contexte d'exécution (argument `t`)
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/02-execution-context.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/02-execution-context.md)
 
 Chaque test ou hook est appelé avec un contexte d'exécution. Par convention, il s'appelle `t`.
 
@@ -37,7 +37,7 @@ Enregistre les valeurs contextuellement à côté du résultat du test au lieu d
 
 ## `t.plan(count)`
 
-Planifie le nombre d'assertions dans le test. Le test échouera si le nombre d'assertions réel ne correspond pas au nombre d'assertions planifiées. Voir [planification des assertions](./03-assertions.md#planification-d-assertion).
+Planifie le nombre d'assertions dans le test. Le test échouera si le nombre d'assertions réel ne correspond pas au nombre d'assertions planifiées. Voir [planification des assertions](./03-assertions.md#planification-dassertion).
 
 ## `t.teardown(fn)`
 

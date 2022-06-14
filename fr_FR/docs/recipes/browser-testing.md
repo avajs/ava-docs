@@ -5,7 +5,7 @@ C'est la traduction du fichier [browser-testing.md](https://github.com/avajs/ava
 ___
 # Configuration de AVA pour des tests de navigateur
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/browser-testing.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/browser-testing.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/browser-testing.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/browser-testing.md), [Italiano](https://github.com/avajs/ava-docs/blob/main/it_IT/docs/recipes/browser-testing.md), [Русский](https://github.com/avajs/ava-docs/blob/main/ru_RU/docs/recipes/browser-testing.md), [简体中文](https://github.com/avajs/ava-docs/blob/main/zh_CN/docs/recipes/browser-testing.md)
 
 AVA ne supporte pas [encore](https://github.com/avajs/ava/issues/24) l'exécution de tests dans les navigateurs. Cependant, les bibliothèques JavaScript nécessitant des globales, spécifiques aux navigateurs (`window`, `document`, `navigator`, etc) peuvent encore être testé avec AVA en maquettant ces globales.
 

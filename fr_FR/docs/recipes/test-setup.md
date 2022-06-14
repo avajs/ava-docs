@@ -5,7 +5,7 @@ C'est la traduction du fichier [test-setup.md](https://github.com/avajs/ava/blob
 ___
 # Configuration de test
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/test-setup.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/test-setup.md)
 
 Les tests peuvent être mis en place en utilisant le hook `beforeEach()`. Souvent, vous pouvez utiliser  à la place une simple fonction de configuration. Cette recette peut vous aider pour décider ce qui convient le mieux à votre cas d'utilisation.
 

@@ -5,7 +5,7 @@ C'est la traduction du fichier [react.md](https://github.com/avajs/ava/blob/main
 ___
 # Tester les composants React avec AVA 3
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/react.md), [Español](https://github.com/avajs/ava-docs/blob/main/es_ES/docs/recipes/react.md)
 
 **AVA 4 n'a plus de support Babel intégré, et `t.snapshot()` et `t.deepEqual()` ne reconnaissent plus les éléments React non plus. Par conséquent, cette recette s'adresse principalement aux utilisateurs d'AVA 3**.
 

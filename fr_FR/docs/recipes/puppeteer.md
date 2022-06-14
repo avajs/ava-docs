@@ -5,7 +5,7 @@ C'est la traduction du fichier [puppeteer.md](https://github.com/avajs/ava/blob/
 ___
 # Test d'applications Web à l'aide de Puppeteer
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/puppeteer.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/puppeteer.md)
 
 ## Les dépendances
 

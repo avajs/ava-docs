@@ -5,7 +5,7 @@ C'est la traduction du fichier [support-statement.md](https://github.com/avajs/a
 ___
 # Les versions Node.js supportées
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/support-statement.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/support-statement.md)
 
 AVA prend en charge la dernière version de toute version majeure [prise en charge par Node.js](https://github.com/nodejs/Release#release-schedule).
 

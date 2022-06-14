@@ -5,7 +5,7 @@ C'est la traduction du fichier [babel.md](https://github.com/avajs/ava/blob/main
 ___
 # Configuration de Babel avec AVA
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/babel.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/babel.md)
 
 Vous pouvez activer la prise en charge de Babel en installant [`@babel/register`](https://babeljs.io/docs/en/babel-register) et `@babel/core`, et ensuite dans la configuration de AVA, en exigeant `@babel/register` :
 

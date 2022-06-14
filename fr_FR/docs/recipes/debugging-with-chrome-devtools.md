@@ -5,7 +5,7 @@ C'est la traduction du fichier [debugging-with-chrome-devtools.md](https://githu
 ___
 # Débogage des tests avec Chrome DevTools
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/debugging-with-chrome-devtools.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/debugging-with-chrome-devtools.md)
 
 Vous pouvez déboguer vos tests en utilisant [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools).
 

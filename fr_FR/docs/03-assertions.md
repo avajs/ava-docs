@@ -5,7 +5,7 @@ C'est la traduction du fichier [03-assertions.md](https://github.com/avajs/ava/b
 ___
 # Assertions
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/03-assertions.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/03-assertions.md)
 
 Les assertions sont incluses dans l'[objet d'exécution](./02-execution-context.md) fourni à chaque implémentation de test :
 

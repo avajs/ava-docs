@@ -5,7 +5,7 @@ C'est la traduction du fichier [passing-arguments-to-your-test-files.md](https:/
 ___
 # Passer des arguments à vos fichiers de test
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/passing-arguments-to-your-test-files.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/passing-arguments-to-your-test-files.md)
 
 Vous pouvez passer des arguments à ligne de commande pour vos fichiers de test. Utilisez l'argument `--` pour les séparer des arguments de AVA :
 

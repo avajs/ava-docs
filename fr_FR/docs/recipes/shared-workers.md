@@ -5,7 +5,7 @@ C'est la traduction du fichier [shared-workers.md](https://github.com/avajs/ava/
 ___
 # Extension de AVA en utilisant des workers partagés
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/shared-workers.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/shared-workers.md)
 
 Les workers partagés sont une fonctionnalité puissante d'AVA. Un programme peut être chargé dans une [tâche de worker](https://nodejs.org/docs/latest/api/worker_threads.html) dans le processus principal d'AVA, puis communiquer avec le code exécuté dans les workers de test. Cela permet à vos tests de mieux utiliser les ressources partagées pendant l'exécution d'un test, tout en offrant la possibilité de configurer ces ressources avant le début des tests (ou de les nettoyer après).
 

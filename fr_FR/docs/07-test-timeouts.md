@@ -5,7 +5,7 @@ C'est la traduction du fichier [07-test-timeouts.md](https://github.com/avajs/av
 ___
 # Timeouts des tests
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/07-test-timeouts.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/07-test-timeouts.md)
 
 [![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/avajs/ava/tree/main/examples/timeouts?file=test.js&terminal=test&view=editor)
 

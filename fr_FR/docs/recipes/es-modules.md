@@ -5,6 +5,6 @@ C'est la traduction du fichier [es-modules.md](https://github.com/avajs/ava/blob
 ___
 # Utilisation des ES modules dans AVA
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/es-modules.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/es-modules.md)
 
 AVA 4 prend en charge les modules ES.

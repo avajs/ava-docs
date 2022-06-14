@@ -5,7 +5,7 @@ C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://g
 ___
 # Configuration d'AVA pour les tests d'intégration isolés de MongoDB
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/isolated-mongodb-integration-tests.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/isolated-mongodb-integration-tests.md)
 
 Comment exécuter les bases de données MongoDB à usage unique dans vos tests AVA avec une isolation pour chaque test. Pour cela, on utilise `mongomem` qui est disponible sur [npm](https://www.npmjs.com/package/mongomem).
 

@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [common-pitfalls.md](https://github.com/avajs/ava/blob/main/docs/common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-5fde374b4d4a09ce36d97c58a362f035bacbe04f71f5b837f6bd7c8b61e3f0e9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [08-common-pitfalls.md](https://github.com/avajs/ava/blob/main/docs/08-common-pitfalls.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-5fde374b4d4a09ce36d97c58a362f035bacbe04f71f5b837f6bd7c8b61e3f0e9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `08-common-pitfalls.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Pièges classiques
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/08-common-pitfalls.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/08-common-pitfalls.md)
 
 Si vous utilisez [ESLint](http://eslint.org), vous pouvez installer [eslint-plugin-ava](https://github.com/avajs/eslint-plugin-ava). Il vous aidera à utiliser correctement AVA et ainsi vous évitera certains pièges classiques.
 

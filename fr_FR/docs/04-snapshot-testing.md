@@ -5,9 +5,9 @@ C'est la traduction du fichier [04-snapshot-testing.md](https://github.com/avajs
 ___
 # Test d'instantané
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/04-snapshot-testing.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/04-snapshot-testing.md)
 
-AVA prend en charge les tests instantanés, [comme présentés par Jest](https://facebook.github.io/jest/docs/snapshot-testing.html), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur.
+AVA prend en charge les tests instantanés, [comme présentés par Jest](https://jestjs.io/fr/docs/snapshot-testing), à travers son interface [Assertions](./03-assertions.md). Vous pouvez faire un instantané de n'importe quelle valeur.
 
 Les instantanés sont stockés aux côtés de vos fichiers de test. Si vos tests se trouvent dans un dossier `test` ou `tests`, les instantanés seront stockés dans un dossier `snapshots`. Si vos tests se trouvent dans un dossier `__tests__` alors ils seront stockés dans un dossier `__snapshots__`.
 

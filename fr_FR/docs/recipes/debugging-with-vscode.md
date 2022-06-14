@@ -5,7 +5,7 @@ C'est la traduction du fichier [debugging-with-vscode.md](https://github.com/ava
 ___
 # Débogage des tests avec Visual Studio Code
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/debugging-with-vscode.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/debugging-with-vscode.md)
 
 Vous pouvez déboguer vos tests en utilisant [Visual Studio Code](https://code.visualstudio.com/).
 

@@ -5,7 +5,7 @@ C'est la traduction du fichier [debugging-with-webstorm.md](https://github.com/a
 ___
 # Débogage des tests avec WebStorm
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/debugging-with-webstorm.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/debugging-with-webstorm.md)
 
 **Cette recette est obsolète.**
 

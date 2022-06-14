@@ -5,7 +5,7 @@ C'est la traduction du fichier [vue.md](https://github.com/avajs/ava/blob/main/d
 ___
 # Tester les composants Vue.js
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/vue.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/vue.md)
 
 ## Dépendances
 
