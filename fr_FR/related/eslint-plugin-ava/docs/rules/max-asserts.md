@@ -1,16 +1,15 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [max-asserts.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...main#diff-fca60e7ef485498c6b37c6a950f9d59a) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [max-asserts.md](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/max-asserts.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/dee1802d39e22aec0915d5067062356f5abfbd84...main#diff-01a069e556e28c486d139a3458114fd7334c2a056f50481339a458577a0d2aa9) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `max-asserts.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Limiter le nombre d'assertions dans un test
 
-Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/max-asserts.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/max-asserts.md)
 
 Limite la quantité d'assertions dans un test afin d'appliquer le découpage des gros tests en plusieurs plus petits.
 
 Les assertions passées (skip) sont comptés.
-
 
 ## Échoue
 
@@ -30,7 +29,6 @@ test('getSomeObject devrait définir le nom du joueur', t => {
 	t.is(object.opponent.lastName, 'Vader');
 });
 ```
-
 
 ## Passe
 

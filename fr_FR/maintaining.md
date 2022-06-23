@@ -1,7 +1,7 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/main/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/7a668a63b19efdd1b6658eda404a1e5f06d9aa17...main#diff-af20adbc8ab4842b04d1f5c7df6f563a) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [maintaining.md](https://github.com/avajs/ava/blob/main/maintaining.md). Voici un [lien](https://github.com/avajs/ava/compare/c8f31a39ca7a2b13a5b3c85c5b1467da2ecc5c7a...main#diff-af603132939e2fa7a0294894ba3231d6e800fd3ef8c54bc83780229d436ff4d5) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `maintaining.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Maintenance
 
@@ -11,8 +11,9 @@ ___
 
 ## Test
 
-* `npm test`: Vérifie le code (Lint) et exécute tous les tests avec une couverture de code
-* `tap test/fork.js --bail`: Exécute un fichier de test spécifique et s'arrête au premier échec (utile quand on cherche des bugs).
+* `npm test` : Vérifie le code (Lint) et exécute tous les tests avec une couverture de code
+* `npx tap test-tap/fork.js --bail` : Exécute un fichier de test spécifique et s'arrête au premier échec (utile quand on cherche des bugs).
+* `npx test-ava test/{file}.js` : Exécute des tests auto-hébergés.
 
 ## CI
 
@@ -51,5 +52,5 @@ Lorsqu'on parle d'utiliser les nouvelles fonctionnalités de TypeScript, ça pou
 * Si [nécessaire](docs/support-statement.md), mettez à jour le champ `engines` dans `package.json`.
 	* Supprimez les versions non prises en charge (ou sur le point de l'être) de Node.js.
     * Lorsque vous effectuez une modification majeure de la version, veillez à exiger les dernières versions de chaque version de Node.js prise en charge.
-* Publier une nouvelle version en utilisant [`np`](https://github.com/sindresorhus/np) avec un numéro de version selon [SemVer](http://semver.org).
+* Publier une nouvelle version en utilisant [`np`](https://github.com/sindresorhus/np) avec un numéro de version selon [SemVer](https://semver.org).
 * Ecrivez une [note de version](https://github.com/avajs/ava/releases/new) en suivant le style des notes des versions précédentes.

@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/main/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/8fa28254dbebef32cbde05c0c9a49061d0ef82f8...main#diff-691ae7cb3c0d49e7c7e7d1887739ecf8) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [05-command-line.md](https://github.com/avajs/ava/blob/main/docs/05-command-line.md). Voici un [lien](https://github.com/avajs/ava/compare/b208d143ad852dc95aa8b44eed94ac1f404a25f4...main#diff-a89aa74aa84d41f245185beac2e62ca024ba87d84740430e06aacf9b156cf5ba) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `05-command-line.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # CLI
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/05-command-line.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/05-command-line.md)
 
 ```console
 ava [<pattern>...]
@@ -17,56 +17,71 @@ Commands: (Commandes:)
   ava debug [<pattern>...] Activate Node.js inspector and run the test file
                            (Active l'inspecteur Node.js et exécute le fichier
                            de test)
-  ava reset-cache          Reset AVA's compilation cache and exit
-                           (Réinitialise le cache de compilation d'AVA et sort)
+  ava reset-cache          Delete any temporary files and state kept by AVA,
+                           then exit (Supprime tous les fichiers temporaires et
+                           l'état conservés par AVA, puis quitte)
 
 Positionals: (Positionnels:)
-  pattern  Glob patterns to select what test files to run. Leave empty if you
-           want AVA to run all test files instead                       [string]
-           (Glob patterns pour sélectionner les fichiers de test à exécuter.
-           Laissez vide si vous voulez que AVA exécute tous les fichiers de
-           test à la place)
+  pattern  Select which test files to run. Leave empty if you want AVA to run
+           all test files as per your configuration. Accepts glob patterns,
+           directories that (recursively) contain test files, and file paths
+           optionally suffixed with a colon and comma-separated numbers and/or
+           ranges identifying the 1-based line(s) of specific tests to run
+           (Sélectionne les fichiers de test à exécuter. Laissez vide si vous
+           voulez qu'AVA exécute tous les fichiers de test conformément à votre
+           configuration. Accepte les glob patterns, les répertoires qui
+           contiennent (récursivement) des fichiers de test, et les chemins de
+           fichier éventuellement suffixés par deux points et des nombres
+           et/ou des plages séparés par des virgules identifiant la ou les
+           lignes basées sur 1 des tests spécifiques à exécuter.)
+                                                                        [string]
 
 Options
-  --version               Show version number (Affiche n° de version)  [boolean]
-  --color                 Force color output                           [boolean]
+        --version         Show version number (Affiche n° de version)  [boolean]
+        --color           Force color output                           [boolean]
                           (Force la sortie en couleur)
-  --config                Specific JavaScript file for AVA to read its config
+        --config          Specific JavaScript file for AVA to read its config
                           from, instead of using package.json or ava.config.*
                           files (Fichier JavaScript spécifique pour AVA pour lire
                           sa configuration, au lieu d'utiliser des fichiers
                           package.json ou ava.config.*)
-  --help                  Show help (Affiche l'aide)                   [boolean]
-  --concurrency, -c       Max number of test files running at the same time
+        --help            Show help (Affiche l'aide)                   [boolean]
+  -c, --concurrency        Max number of test files running at the same time
                           (Default: CPU cores)                          [number]
                           (Nombre max de fichiers de test exécutés en même
                           temps (Par défaut : coeurs CPU))
-  --fail-fast             Stop after first test failure                [boolean]
+        --fail-fast       Stop after first test failure                [boolean]
                           (S'arrête dès qu'un test échoue)
-  --match, -m             Only run tests with matching title (Can be repeated)
-                                                                        [string]
+  -m, --match             Only run tests with matching title (Can be repeated)
                           (Exécute seulement les tests qui correspondent au
                           titre (peut être répété))
-  --serial, -s            Run tests serially                           [boolean]
+                                                                        [string]
+      --no-worker-threads Don't use worker threads
+			                    (N'utilise pas de processus de travail)      [boolean]
+      --node-arguments    Additional Node.js arguments for launching worker
+                          processes (specify as a single string)
+                          (Arguments Node.js supplémentaires pour le lancement de
+                          processus (à spécifier comme une seule chaîne))
+                                                                        [string]
+  -s, --serial            Run tests serially                           [boolean]
                           (Exécute les tests en série)
-  --tap, -t               Generate TAP output                          [boolean]
+  -t, --tap               Generate TAP output                          [boolean]
                           (Génére une sortie au format TAP)
-  --timeout, -T           Set global timeout (milliseconds or human-readable,
-                          e.g. 10s, 2m)                                 [string]
+  -T, --timeout           Set global timeout (milliseconds or human-readable,
+                          e.g. 10s, 2m)
                           (Définir un timeout global (millisecondes ou
-                          lisible par l'homme, exemple 10s, 2m))
-  --update-snapshots, -u  Update snapshots (Met à jour les snapshots)  [boolean]
-  --verbose, -v           Enable verbose output                        [boolean]
+                          lisible par l'homme, exemple 10s, 2m))        [string]
+  -u, --update-snapshots  Update snapshots (Met à jour les snapshots)  [boolean]
+  -v, --verbose           Enable verbose output                        [boolean]
                           (Active le mode verbose)
-  --watch, -w             Re-run tests when files change               [boolean]
+  -w, --watch             Re-run tests when files change               [boolean]
                           (Re-exécute les tests quand les fichiers ont changé)
 
 Examples:
   ava
   ava test.js
+  ava test.js:4,7-9
 ```
-
-*Notez que le CLI utilisera votre installation locale de AVA lorsqu'il est disponible, même lorsqu'il est exécuté de manière globale.*
 
 AVA recherche les fichiers de tests en utilisant les patterns suivants :
 
@@ -98,6 +113,8 @@ Les fichiers à l'intérieur de `node_modules` sont *toujours* ignorés. Idem po
 Lors de l'utilisation de `npm test`, vous pouvez passer directement des arguments `npm test test2.js`, mais pour les options, vous devez les passez ainsi `npm test -- --verbose`.
 
 ## Exécution de tests correspondants à des titres
+
+[![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/avajs/ava/tree/main/examples/matching-titles?file=test.js&terminal=test&view=editor)
 
 L'option `--match` permet d'exécuter des tests où le titre correspond à la demande. Ceci est réalisé avec des patterns génériques simples. Les patterns sont insensibles à la casse. Consultez [matcher](https://github.com/sindresorhus/matcher) pour plus d'informations.
 
@@ -171,9 +188,70 @@ test(function foo(t) {
 });
 ```
 
+## Exécution de tests à des numéros de ligne spécifiques
+
+[![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/avajs/ava/tree/main/examples/specific-line-numbers?file=test.js&terminal=test&view=editor)
+
+AVA vous permet de lancer des tests exclusivement en vous référant à leur numéro de ligne. Ciblez une seule ligne, une série de lignes ou les deux. Vous pouvez sélectionner n'importe quel numéro de ligne d'un test.
+
+Le format est une liste séparée par des virgules de `[X|Y-Z]` où `X`, `Y` et `Z` sont des entiers entre `1` et le dernier numéro de ligne du fichier.
+
+Cette fonctionnalité n'est disponible que depuis la ligne de commande.
+### Exécution d'un seul test
+
+Pour n'exécuter qu'un test particulier dans un fichier, ajoutez le numéro de ligne du test au chemin ou au modèle transmis à AVA.
+
+Soit le fichier de test suivant :
+
+`test.js`
+
+```js
+1: test('unicorn', t => {
+2:   t.pass();
+3: });
+4:
+5: test('rainbow', t => {
+6:  t.fail();
+7: });
+```
+
+En exécutant `npx ava test.js:2`, vous exécuterez le test `unicorn`. En fait, vous pouvez utiliser n'importe quel numéro de ligne entre `1` et `3`.
+
+### Exécution de plusieurs tests
+
+Pour exécuter plusieurs tests, vous pouvez les cibler un par un ou sélectionner une série de numéros de ligne. Comme les numéros de ligne sont donnés par fichier, vous pouvez exécuter plusieurs fichiers avec des numéros de ligne différents pour chaque fichier. Si le même fichier est fourni plusieurs fois, les numéros de ligne sont fusionnés et ne sont exécutés qu'une seule fois.
+
+### Exemples
+
+Numéros de ligne unique :
+
+```console
+npx ava test.js:2,9
+```
+
+Plage :
+
+```console
+npx ava test.js:4-7
+```
+
+Mélange de numéro de ligne unique et de plage :
+
+```console
+npx ava test.js:4,9-12
+```
+
+Différents fichiers :
+
+```console
+npx ava test.js:3 test2.js:4,7-9
+```
+
+Lorsqu'on exécute un fichier avec et sans numéros de ligne, les numéros de ligne sont prioritaires.
+
 ## Réinitialisation du cache de AVA
 
-AVA peut mettre en cache certains fichiers, en particulier lorsque vous utilisez notre fournisseur [`@ava/babel`](https://github.com/avajs/babel). S'il semble que vos derniers changements ne sont pas pris en compte par AVA, vous pouvez réinitialiser le cache en exécutant :
+AVA maintient un certain état temporaire. Vous pouvez effacer cet état en exécutant :
 
 ```console
 npx ava reset-cache
@@ -183,15 +261,13 @@ Cela supprime tous les fichiers du répertoire `node_modules/.cache/ava`.
 
 ## Reporters
 
-Par défaut, Ava utilise le mini reporter :
-
-<img src="https://github.com/avajs/ava/raw/main/media/mini-reporter.gif" width="460">
-
-Utilisez l'option `--verbose` pour activer le reporter verbose. Il est toujours utilisé dans les environnements de CI, sauf si [`--tap`](#reporter-de-tap) est activé.
+AVA utilise par défaut un rapporteur lisible par l'homme :
 
 <img src="https://github.com/avajs/ava/raw/main/media/verbose-reporter.png" width="294">
 
 ### Reporter de TAP
+
+[![Ouvrir dans StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/avajs/ava/tree/main/examples/tap-reporter?file=test.js&terminal=test&view=editor)
 
 AVA prend en charge le format de TAP et est compatible avec [tous les reporters de TAP](https://github.com/sindresorhus/awesome-tap#reporters). Utilisez l'option `--tap` pour activer la restitution de TAP.
 
@@ -202,3 +278,17 @@ $ ava --tap | tap-nyan
 <img src="https://github.com/avajs/ava/raw/main/media/tap-reporter.png" width="420">
 
 Veuillez noter que le reporter TAP est indisponible lors de l'utilisation du [mode watch](./recipes/watch-mode.md).
+
+## Node arguments
+
+L'argument `--node-arguments` peut être utilisé pour spécifier des arguments supplémentaires pour le lancement des processus de travail. Ceux-ci sont combinés avec la configuration `nodeArguments` et tous les arguments passés au binaire `node` lors du démarrage d'AVA.
+
+**Ne passez que des valeurs de confiance.**
+
+Spécifiez les arguments comme une seule chaîne :
+
+```console
+npx ava --node-arguments="--throw-deprecation --zero-fill-buffers"
+```
+
+**Ne passez que des valeurs de confiance.**

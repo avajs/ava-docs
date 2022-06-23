@@ -1,11 +1,11 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/main/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-fa5b24a10aa6bb9abd440902e222e84c) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [isolated-mongodb-integration-tests.md](https://github.com/avajs/ava/blob/main/docs/recipes/isolated-mongodb-integration-tests.md). Voici un [lien](https://github.com/avajs/ava/compare/79b2ea30c125f44e4d47bdafdeec351cddb5911a...main#diff-2b49a4116302a910c3ee7721ca0cdd5b6172074c7c0447401c080ce2456ee7c9) vers les différences avec le master de AVA (Si en cliquant sur le lien, vous ne trouvez pas le fichier `isolated-mongodb-integration-tests.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # Configuration d'AVA pour les tests d'intégration isolés de MongoDB
 
-Traductions : [English](https://github.com/avajs/ava/raw/main/docs/recipes/isolated-mongodb-integration-tests.md)
+Traductions : [English](https://github.com/avajs/ava/blob/main/docs/recipes/isolated-mongodb-integration-tests.md)
 
 Comment exécuter les bases de données MongoDB à usage unique dans vos tests AVA avec une isolation pour chaque test. Pour cela, on utilise `mongomem` qui est disponible sur [npm](https://www.npmjs.com/package/mongomem).
 
@@ -28,8 +28,8 @@ Dans votre fichier de test, importez le module et exécuter le serveur.
 **Assurez-vous d'exécuter le serveur au début de votre fichier et en dehors des cas de test.**
 
 ```js
-const test = require('ava');
-const {MongoDBServer} = require('mongomem');
+import test from 'ava';
+import {MongoDBServer} from 'mongomem';
 
 test.before('start server', async t => {
 	await MongoDBServer.start();
@@ -63,6 +63,6 @@ Si le serveur ne semble pas démarrer, vous pouvez définir l'option `MongoDBSer
 
 ## Extra : configuration et utilisation dans Mongoose
 
-[Mongoose](http://mongoosejs.com) est un robuste Object-Document-Mapper (ODM) pour MongoDB. Reportez-vous à sa documentation pour débuter avec Mongoose.
+[Mongoose](https://mongoosejs.com) est un robuste Object-Document-Mapper (ODM) pour MongoDB. Reportez-vous à sa documentation pour débuter avec Mongoose.
 
 Pour utiliser efficacement Mongoose avec AVA, consultez les [documents d'intégration Mongoose](endpoint-testing-with-mongoose.md).

@@ -1,14 +1,13 @@
 ___
 **Note du traducteur**
 
-C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/7542453058c30ebbc79c7bfeb689492fce226d8f...main#diff-dfdc73f3a1c1fc001ea0161104cf3d13) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
+C'est la traduction du fichier [no-ignored-test-files.md](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/no-ignored-test-files.md). Voici un [lien](https://github.com/avajs/eslint-plugin-ava/compare/dee1802d39e22aec0915d5067062356f5abfbd84...main#diff-0de18f519aaa500ed2e199666148950c8dcd5dfd8b2dc81785818e88ecdb8fb4) vers les différences avec le master de eslint-plugin-ava (Si en cliquant sur le lien, vous ne trouvez pas le fichier `no-ignored-test-files.md` parmi les fichiers modifiés, vous pouvez donc en déduire que la traduction est à jour).
 ___
 # S'assurer qu'aucun test ne soit écrit dans des fichiers ignorés
 
-Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/master/docs/rules/no-ignored-test-files.md)
+Traductions : [English](https://github.com/avajs/eslint-plugin-ava/blob/main/docs/rules/no-ignored-test-files.md)
 
 Cette règle vérifiera que les fichiers qui créent des tests sont traités comme des fichiers de test par AVA. Il examinera à partir de la racine du projet pour être dans le dossier le plus proche contenant un fichier `package.json`, et ne fera rien s'il n'en trouve pas. Les fichiers de test dans `node_modules` ne seront pas vérifiés car ils sont ignorés par ESLint.
-
 
 ## Échoue
 
@@ -29,7 +28,6 @@ test('foo', t => {
 	t.pass();
 });
 ```
-
 
 ## Passe
 
