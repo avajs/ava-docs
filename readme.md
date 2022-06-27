@@ -7,7 +7,7 @@
 - [Português](pt_BR/readme.md) *(by [@charbelrami](https://github.com/charbelrami))*
 - [Русский](ru_RU/readme.md) *(by [@sohje](https://github.com/sohje))*
 - [简体中文](zh_CN/readme.md) *(by [@zhaozhiming](https://github.com/zhaozhiming))*
-- [한국어](ko_KR/readme.md) *(by [@preco21](https://github.com/preco21))*
+- [한국어](ko_KR/readme.md) *(by [@preco21](https://github.com/preco21), [@jopemachine](https://github.com/jopemachine))*
 - [Polski](pl_PL/readme.md) *(by [@mbiesiad](https://github.com/mbiesiad))*
 
 
